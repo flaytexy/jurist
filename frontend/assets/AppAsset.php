@@ -9,15 +9,50 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    //public $basePath = '@webroot';
+    //public $baseUrl = '@web';
+    public $sourcePath = '@frontend/media';
     public $css = [
-        'css/site.css',
+        'css/font-awesome/css/font-awesome.min.css',
+        'css/flaticon.css',
+        'css/datepicker.css',
+        'css/select2.css',
+        'css/perfect-scrollbar.css',
+        'css/owl.css',
+        'css/styles.css',
+        'css/responsive.css',
+        'css/color.css'
     ];
     public $js = [
+        'js/bootstrap-datepicker.js',
+        'js/owl.carousel.min.js',
+        'js/select2.full.js',
+        'js/scrollupbar.js',
+        'js/perfect-scrollbar.js',
+        'js/perfect-scrollbar.jquery.js',
+        'js/jquery.scrolly.js',
+        'js/script2.js',
+
+        'js/revolution/jquery.themepunch.tools.min.js',
+        'js/revolution/jquery.themepunch.revolution.min.js',
+
+        'js/revolution/revolution.extension.actions.min.js',
+        'js/revolution/revolution.extension.carousel.min.js',
+        'js/revolution/revolution.extension.kenburn.min.js',
+        'js/revolution/revolution.extension.layeranimation.min.js',
+        'js/revolution/revolution.extension.migration.min.js',
+        'js/revolution/revolution.extension.navigation.min.js',
+        'js/revolution/revolution.extension.parallax.min.js',
+        'js/revolution/revolution.extension.slideanims.min.js',
+        'js/revolution/revolution.extension.video.min.js',
+        'js/revolution/revolution.initialize.js',
+
+        'js/scripts.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
+        'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
 }

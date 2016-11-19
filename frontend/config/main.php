@@ -11,7 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
-    'defaultRoute' => 'catalog/list',
+    //'defaultRoute' => 'catalog/list',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -53,9 +53,27 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
+                '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',
             ],
-        ]
+        ],
+
+        'assetManager' => [
+            // uncomment the following line if you want to auto update your assets (unix hosting only)
+            //'linkAssets' => true,
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js'],
+                ],
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [YII_DEBUG ? 'css/bootstrap.css' : 'css/bootstrap.min.css'],
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'js' => [YII_DEBUG ? 'js/bootstrap.js' : 'js/bootstrap.min.js'],
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];
