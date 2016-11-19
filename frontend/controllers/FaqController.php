@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace frontend\controllers;
 
 class FaqController extends \yii\web\Controller
 {

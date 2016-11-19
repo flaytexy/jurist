@@ -1,5 +1,5 @@
 <?php
-namespace app\controllers;
+namespace frontend\controllers;
 
 use frontend\modules\news\api\News;
 

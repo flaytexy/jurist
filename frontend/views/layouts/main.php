@@ -1,18 +1,11 @@
 <?php
-use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
+use frontend\modules\shopcart\api\Shopcart;
+use frontend\modules\subscribe\api\Subscribe;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
 
-use frontend\widgets\Alert;
-use frontend\assets\AppAsset;
-
-/* @var $this \yii\web\View */
-/* @var $content string */
-
-AppAsset::register($this);
+$goodsCount = count(Shopcart::goods());
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 <div class="theme-layout" style="padding-top: 156px;">

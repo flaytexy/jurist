@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace frontend\controllers;
 
 use Yii;
 use frontend\models\InstallForm;
@@ -105,7 +105,7 @@ class InstallController extends \yii\web\Controller
         $this->db->createCommand('TRUNCATE TABLE `'.Text::tableName().'`')->query();
 
         (new Text([
-            'text' => 'Welcome on EasyiiCMS demo website',
+            'text' => 'Welcome on NNNCMS demo website',
             'slug' => 'index-welcome-title'
         ]))->save();
 
@@ -125,7 +125,7 @@ class InstallController extends \yii\web\Controller
             'slug' => 'page-index'
         ]);
         $page1->save();
-        $this->attachSeo($page1, '', 'EasyiiCMS demo', 'yii2, easyii, admin');
+        $this->attachSeo($page1, '', 'NNNCMS demo', 'yii2, easyii, admin');
 
         $page2 = new Page([
             'title' => 'Shop',

@@ -1,77 +1,82 @@
 <?php
-use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
+use frontend\modules\shopcart\api\Shopcart;
+use frontend\modules\subscribe\api\Subscribe;
+use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
-use frontend\widgets\Alert;
+use yii\widgets\Menu;
 
-/* @var $this \yii\web\View */
-/* @var $content string */
-
-AppAsset::register($this);
+$goodsCount = count(Shopcart::goods());
 ?>
-<?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
-</head>
-<body>
-    <?php $this->beginBody() ?>
-    <div class="wrap">
-        <?php
-            NavBar::begin([
-                'brandLabel' => 'Shop',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
-            ]);
-            $itemsInCart = Yii::$app->cart->getCount();
-            $menuItems = [
-                ['label' => 'About', 'url' => ['/site/about']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
-                ['label' => 'My cart' . ($itemsInCart ? " ($itemsInCart)" : ''), 'url' => ['/cart/list']],
-            ];
-            /*if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-            } else {
-                $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ];
-            }*/
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => $menuItems,
-            ]);
-            NavBar::end();
-        ?>
+<?php $this->beginContent('@app/views/layouts/base.php'); ?>
+<div id="wrapper" class="container">
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?= Url::home() ?>">Easyii shop</a>
+                </div>
 
-        <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <?= Menu::widget([
+                        'options' => ['class' => 'nav navbar-nav'],
+                        'items' => [
+                            ['label' => 'Home', 'url' => ['site/index']],
+                            ['label' => 'Shop', 'url' => ['shop/index']],
+                            ['label' => 'News', 'url' => ['news/index']],
+                            ['label' => 'Articles', 'url' => ['articles/index']],
+                            ['label' => 'Gallery', 'url' => ['gallery/index']],
+                            ['label' => 'Guestbook', 'url' => ['guestbook/index']],
+                            ['label' => 'FAQ', 'url' => ['faq/index']],
+                            ['label' => 'Contact', 'url' => ['/contact/index']],
+                        ],
+                    ]); ?>
+                    <a href="<?= Url::to(['/shopcart']) ?>" class="btn btn-default navbar-btn navbar-right" title="Complete order">
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                        <?php if($goodsCount > 0) : ?>
+                            <?= $goodsCount ?> <?= $goodsCount > 1 ? 'items' : 'item' ?> - <?= Shopcart::cost() ?>$
+                        <?php else : ?>
+                            <span class="text-muted">empty</span>
+                        <?php endif; ?>
+                    </a>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <?php if($this->context->id != 'site') : ?>
+            <br/>
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ])?>
+        <?php endif; ?>
         <?= $content ?>
+        <div class="push"></div>
+    </main>
+</div>
+<footer>
+    <div class="container footer-content">
+        <div class="row">
+            <div class="col-md-2">
+                Subscribe to newsletters
+            </div>
+            <div class="col-md-6">
+                <?php if(Yii::$app->request->get(Subscribe::SENT_VAR)) : ?>
+                    You have successfully subscribed
+                <?php else : ?>
+                    <?= Subscribe::form() ?>
+                <?php endif; ?>
+            </div>
+            <div class="col-md-4 text-right">
+                ©2015 noumo
+            </div>
         </div>
     </div>
-
-    <footer class="footer">
-        <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
-        </div>
-    </footer>
-
-    <?php $this->endBody() ?>
-</body>
-</html>
-<?php $this->endPage() ?>
+</footer>
+<?php $this->endContent(); ?>

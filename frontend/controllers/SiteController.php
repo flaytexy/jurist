@@ -72,8 +72,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
         $this->view->registerCssFile(Yii::$app->request->baseUrl . '/css/revicons/revolution.css', ['depends' => ['yii\bootstrap\BootstrapAsset']]);
         //$this->view->registerJsFile('path/to/myfile');
+
+        if (!Yii::$app->getModule('admin')->installed) {
+            //return $this->redirect(['/install/step1']);
+        }
 
         return $this->render('main');
     }
@@ -87,6 +92,9 @@ class SiteController extends Controller
         $this->view->registerCssFile(Yii::$app->request->baseUrl . '/css/revicons/revolution.css', ['depends' => ['yii\bootstrap\BootstrapAsset']]);
         //$this->view->registerJsFile('path/to/myfile');
 
+        if (!Yii::$app->getModule('admin')->installed) {
+            //return $this->redirect(['/install/step1']);
+        }
         // layout from /frontend/views/layouts/layoutName.php
         $this->layout = "@app/views/layouts/main.old.php";
 

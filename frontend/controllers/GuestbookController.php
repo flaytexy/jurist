@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace frontend\controllers;
 
 class GuestbookController extends \yii\web\Controller
 {

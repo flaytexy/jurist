@@ -1,4 +1,5 @@
 <?php
+
 $params = array_merge(
     require(__DIR__ . '/../../common/config/params.php'),
     require(__DIR__ . '/../../common/config/params-local.php'),
@@ -8,18 +9,56 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    //'language' => 'en-US',
+    //'language'=>'ru-RU',
+    //'language' => 'en',
+    'language' => 'en-US',
+    'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    //'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     //'defaultRoute' => 'catalog/list',
+/*    'modules' => [
+        'admin' => [
+            'class' => 'frontend\modules\admin\AdminModule',
+        ],
+    ],*/
     'components' => [
+        'i18n' => [ // наш компонент мультиязычности
+            'translations' => [
+                'frontend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en-US',
+                    'basePath' => '@common/messages',
+                ],
+                'backend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en-US',
+                    'basePath' => '@common/messages',
+                ],
+                'easyii*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en-US',
+                    'basePath' => '@common/messages',
+                    'fileMap' => [
+                        //'easyii' => 'admin.php',
+                    ]
+                ],
+            ],
+        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
-        'user' => [
+/*        'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+        ],*/
+        'user' => [
+            'identityClass' => 'frontend\models\Admin',
+            'enableAutoLogin' => true,
+            'authTimeout' => 86400,
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
@@ -56,6 +95,8 @@ return [
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',
+                'admin/<controller:\w+>/<action:[\w-]+>/<id:\d+>' => 'admin/<controller>/<action>',
+                'admin/<module:\w+>/<controller:\w+>/<action:[\w-]+>/<id:\d+>' => 'admin/<module>/<controller>/<action>',
             ],
         ],
 
@@ -76,4 +117,15 @@ return [
         ],
     ],
     'params' => $params,
+    'modules' => [
+        'admin' => [
+            'class' => 'frontend\modules\admin\AdminModule',
+        ],
+    ],
+    'bootstrap' => [
+        'log',
+        //'debug',
+        //'gii'
+    ]
+
 ];
