@@ -325,20 +325,27 @@ header {
     list-style: none;
     margin-bottom: 0;
 }
-.sign-btns {float: left;}
+.sign-btns, .top-menus {float: left;}
 .sign-btns > li {
     float: left;
-    font-size: 11px;
+    font-size: 15px;
+    color: #e4e3e3;
+    font-weight: 300;
+
+}
+.top-menus > li {
+    float: left;
     color: #e4e3e3;
     font-weight: 300;
 }
-.sign-btns > li > a {
+.sign-btns > li > a, .top-menus > li > a {
     background: #121212;
     float: left;
     padding: 18px 30px;
     color: inherit;
+   /* font-family: Arial;*/
 }
-.sign-btns > li:hover > a {background: #1d1d1d;}
+.sign-btns > li:hover > a, .top-menus > li:hover > a {background: #1d1d1d;}
 .sign-btns > li > a > i {margin-right: 5px;}
 .topbar-contact {
     float: left;

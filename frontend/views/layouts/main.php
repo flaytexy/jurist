@@ -13,16 +13,12 @@ $goodsCount = count(Shopcart::goods());
         <div class="top-bar">
             <div class="container">
                 <div class="topbar-data">
-                    <ul class="sign-btns">
-                        <li><a href="#" title=""><i class="fa fa-unlock-alt"></i> Log In</a></li>
-                        <li><a href="#" title=""><i class="fa fa-plus"></i> Sign Up</a></li>
-                    </ul>
-                    <ul class="topbar-contact">
-                        <li class="active"><i class="fa fa-envelope-o"></i> contacts@yoursites.com</li>
-                        <li><i class="fa fa-phone"></i> 111-4558-3333</li>
-                    </ul>
-                    <ul class="language-select">
-                        <li><img src="/uploads/theme_villa/lang1.jpg" alt=""></li>
+                    <ul class="top-menus">
+                        <li><a href="/offshornyie-predlozheniya" title="Оффшорные предложения">Оффшорные предложения</a></li>
+                        <li><a href="/evropejskie-kompanii" title="Европейские компании">Европейские компании</a></li>
+                        <li><a href="/banki-i-proczessing" title="Банки и процессинг">Банки и процессинг</a></li>
+                        <li><a href="/liczenzii-beliza" title="Лицензии Белиза">Лицензии Белиза</a></li>
+                        <li><a href="/licenzii" title="Лицензии">Лицензии</a></li>
                     </ul>
                 </div>
             </div>
