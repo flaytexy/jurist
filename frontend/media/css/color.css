@@ -41,7 +41,10 @@
 .close-btn,
 .service-title > span,
 .tp-arr-allwrapper:hover::before,
-.s2-l5
+.s2-l5,
+.pagination > .active > a, .pagination > .active > span,
+.pagination > .active > a:hover, .pagination > .active > span:hover,
+.pagination > .active > a:focus, .pagination > .active > span:focus
 {
 	background:#7dc20f;
 }

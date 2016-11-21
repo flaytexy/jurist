@@ -13,6 +13,8 @@ class AppAsset extends AssetBundle
     //public $baseUrl = '@web';
     public $sourcePath = '@frontend/media';
     public $css = [
+        /*'css/bootstrap.css',*/
+        /*'css/icons.css',*/
         'css/font-awesome/css/font-awesome.min.css',
         'css/flaticon.css',
         'css/datepicker.css',

@@ -8,7 +8,7 @@ class OffersController extends \yii\web\Controller
     public function actionIndex($tag = null)
     {
         return $this->render('index',[
-            'offers' => Offers::items(['tags' => $tag, 'pagination' => ['pageSize' => 2]])
+            'offers' => Offers::items(['tags' => $tag, 'pagination' => ['pageSize' => 15]])
         ]);
     }
 

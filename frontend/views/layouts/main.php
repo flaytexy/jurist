@@ -30,14 +30,14 @@ $goodsCount = count(Shopcart::goods());
                             <?= Menu::widget([
                                 'options' => ['class' => 'nav navbar-nav'],
                                 'items' => [
-                                    ['label' => 'Home', 'url' => ['site/index']],
-                                    ['label' => 'Shop', 'url' => ['shop/index']],
-                                    ['label' => 'News', 'url' => ['news/index']],
+                                    ['label' => 'Главная', 'url' => ['site/index']],
+                                    //['label' => 'Shop', 'url' => ['shop/index']],
+                                    ['label' => 'Новости', 'url' => ['news/index']],
                                     ['label' => 'Articles', 'url' => ['articles/index']],
                                     ['label' => 'Gallery', 'url' => ['gallery/index']],
                                     ['label' => 'Guestbook', 'url' => ['guestbook/index']],
-                                    ['label' => 'FAQ', 'url' => ['faq/index']],
-                                    ['label' => 'Contact', 'url' => ['/contact/index']],
+                                    ['label' => 'Информация', 'url' => ['faq/index']],
+                                    ['label' => 'Контакты', 'url' => ['/contact/index']],
                                 ],
                             ]); ?>
                 </nav>
@@ -65,14 +65,14 @@ $goodsCount = count(Shopcart::goods());
             <?= Menu::widget([
                 'options' => ['class' => 'nav navbar-nav'],
                 'items' => [
-                    ['label' => 'Home', 'url' => ['site/index']],
-                    ['label' => 'Shop', 'url' => ['shop/index']],
-                    ['label' => 'News', 'url' => ['news/index']],
+                    ['label' => 'Главная', 'url' => ['site/index']],
+                    //['label' => 'Shop', 'url' => ['shop/index']],
+                    ['label' => 'Новости', 'url' => ['news/index']],
                     ['label' => 'Articles', 'url' => ['articles/index']],
                     ['label' => 'Gallery', 'url' => ['gallery/index']],
                     ['label' => 'Guestbook', 'url' => ['guestbook/index']],
-                    ['label' => 'FAQ', 'url' => ['faq/index']],
-                    ['label' => 'Contact', 'url' => ['/contact/index']],
+                    ['label' => 'Информация', 'url' => ['faq/index']],
+                    ['label' => 'Контакты', 'url' => ['/contact/index']],
                 ],
             ]); ?>
             <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div><div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div><!-- Responsive Menu -->

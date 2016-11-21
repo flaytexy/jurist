@@ -1340,6 +1340,7 @@ footer .title1.style2 > h2 {font-weight: 600;}
     padding: 30px;
     text-align: center;
     width: 100%;
+    min-height: 150px;
 }
 .cate {
     display: block;
@@ -2880,6 +2881,7 @@ footer .title1.style2 > h2 {font-weight: 600;}
     margin-left: 0;
     padding: 0;
     width: 100%;
+    text-align: center;
 }
 .pagination > li:last-child {margin-right: 0;}
 .pagination > li.prev > a,
@@ -4177,6 +4179,9 @@ ul.Social-btn {
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
     transform: scale(1.2);
+}
+.package .cate {
+
 }
 /*=============== Services Page ===============*/
 
