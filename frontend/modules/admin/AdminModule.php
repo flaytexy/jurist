@@ -23,6 +23,7 @@ class AdminModule extends \yii\base\Module implements BootstrapInterface
     public function init()
     {
         Yii::setAlias('easyii', '@frontend/modules/admin');
+        Yii::setAlias('easyii/modules', '@frontend/modules');
         parent::init();
 
         if (Yii::$app->cache === null) {
@@ -51,6 +52,7 @@ class AdminModule extends \yii\base\Module implements BootstrapInterface
     public function bootstrap($app)
     {
         Yii::setAlias('easyii', '@frontend/modules/admin');
+        Yii::setAlias('easyii/modules', '@frontend/modules');
 
         if (!$app->user->isGuest && strpos($app->request->pathInfo, 'admin') === false) {
             $app->on(Application::EVENT_BEFORE_REQUEST, function () use ($app) {
