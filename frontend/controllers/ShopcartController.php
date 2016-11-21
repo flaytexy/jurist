@@ -2,7 +2,7 @@
 
 namespace frontend\controllers;
 
-use app\models\AddToCartForm;
+use frontend\models\AddToCartForm;
 use Yii;
 use frontend\modules\catalog\api\Catalog;
 use frontend\modules\shopcart\api\Shopcart;

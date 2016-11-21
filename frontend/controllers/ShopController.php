@@ -2,7 +2,7 @@
 
 namespace frontend\controllers;
 
-use app\models\GadgetsFilterForm;
+use frontend\models\GadgetsFilterForm;
 use Yii;
 use frontend\modules\catalog\api\Catalog;
 use yii\web\NotFoundHttpException;
@@ -58,7 +58,7 @@ class ShopController extends \yii\web\Controller
 
         return $this->render('view', [
             'item' => $item,
-            'addToCartForm' => new \app\models\AddToCartForm()
+            'addToCartForm' => new \frontend\models\AddToCartForm()
         ]);
     }
 }

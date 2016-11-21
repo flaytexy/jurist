@@ -33,3 +33,4 @@ phpunit.phar
 /vagrant/
 /environments/
 
+/frontend/system/
