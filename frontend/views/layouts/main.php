@@ -103,12 +103,12 @@ $goodsCount = count(Shopcart::goods());
                         </div>
                         <div class="instagram-gallery">
                             <ul>
-                                <li><a href="#" title=""><img src="images/resource/instagram1.jpg" alt="" /></a></li>
-                                <li><a href="#" title=""><img src="images/resource/instagram2.jpg" alt="" /></a></li>
-                                <li><a href="#" title=""><img src="images/resource/instagram3.jpg" alt="" /></a></li>
-                                <li><a href="#" title=""><img src="images/resource/instagram4.jpg" alt="" /></a></li>
-                                <li><a href="#" title=""><img src="images/resource/instagram5.jpg" alt="" /></a></li>
-                                <li><a href="#" title=""><img src="images/resource/instagram6.jpg" alt="" /></a></li>
+                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram1.jpg" alt="" /></a></li>
+                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram2.jpg" alt="" /></a></li>
+                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram3.jpg" alt="" /></a></li>
+                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram4.jpg" alt="" /></a></li>
+                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram5.jpg" alt="" /></a></li>
+                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram6.jpg" alt="" /></a></li>
                             </ul>
                         </div><!-- Instagram Gallery -->
                     </div><!-- Instagram -->

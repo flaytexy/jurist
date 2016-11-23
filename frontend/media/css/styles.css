@@ -3175,7 +3175,7 @@ footer .title1.style2 > h2 {font-weight: 600;}
     transform: scale(1);
 }
 .tags-social .social-btns > ul > li > a:hover {color: #ffffff;}
-.blogpost-detail > p {
+.blogpost-detail > p, .blogpost-detail .text-con p {
     color: #666666;
     float: left;
     line-height: 28px;
@@ -3183,7 +3183,7 @@ footer .title1.style2 > h2 {font-weight: 600;}
     width: 100%;
 }
 blockquote {
-    background: rgba(0, 0, 0, 0) url(../images/blockquote-bg.jpg) no-repeat scroll center center / cover ;
+    background: rgba(0, 0, 0, 0) url(../uploads/theme_villa/blockquote-bg.jpg) no-repeat scroll center center / cover ;
     border-left: 0 none;
     color: #ffffff;
     float: left;
@@ -4257,3 +4257,30 @@ ul.Social-btn {
 }
 .loader {display: none;}
 .featured-carouselsec.style2::before {display: none;}
+ul.faq li {
+    list-style: none;
+    padding: 6px 0;
+}
+ul.faq li.a {
+    display: none;
+}
+ul.faq li.q p:hover {
+    color: #7DC20F;
+}
+ul.faq li.q p {
+    display: inline;
+}
+ul.faq li.q > div {
+    background-color: #7DC20F;
+    border-radius: 10px;
+    display: inline-block;
+    height: 18px;
+    margin-right: 3px;
+    text-align: center;
+    width: 18px;
+}
+ul.faq li.a blockquote {
+    margin-bottom: 20px;
+    margin-top: 5px;
+    background-color: rgba(153, 236, 15, 0.79);
+}

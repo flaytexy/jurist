@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <div class="col-md-4">
                                         <div class="package">
                                             <div class="package-thumb">
-                                                <?= Html::img($item->thumb(160, 120)) ?>
+                                                <?= Html::img($item->thumb(500, 375)) ?>
                                                 <span><i>$380</i> / Минимал</span>
                                             </div>
                                             <div class="package-detail">
@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                     <a href="<?= Url::to(['/offers', 'tag' => $tag]) ?>" class="label label-info"><?= $tag ?></a>
                                                 <?php endforeach; ?>
                                             </span>
-                                                <h4><a href="packages-detail.html" title=""> <?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?></a></h4>
+                                                <h4><?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?></h4>
                                                 <ul class="location-book">
                                                     <li class="active"><i class="fa fa-map-marker"></i> <span><?= $item->date ?></span></li>
                                                     <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a href="#" title="">BOOK NOW</a></li>

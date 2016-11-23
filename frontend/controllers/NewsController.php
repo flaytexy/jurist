@@ -8,7 +8,7 @@ class NewsController extends \yii\web\Controller
     public function actionIndex($tag = null)
     {
         return $this->render('index',[
-            'news' => News::items(['tags' => $tag, 'pagination' => ['pageSize' => 15]])
+            'news' => News::items(['tags' => $tag, 'pagination' => ['pageSize' => 4]])
         ]);
     }
 

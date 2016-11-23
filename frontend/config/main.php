@@ -14,10 +14,13 @@ return [
     //'language' => 'en',
     'language' => 'en-US',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-
+    'aliases' => [
+        //'@runtime' => dirname(dirname(__DIR__)) . '/runtime'
+    ],
     'basePath' => dirname(__DIR__),
     //'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+
     //'defaultRoute' => 'catalog/list',
 /*    'modules' => [
         'admin' => [
@@ -25,7 +28,7 @@ return [
         ],
     ],*/
     'components' => [
-        'i18n' => [ // наш компонент мультиязычности
+        'i18n' => [ // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             'translations' => [
                 'frontend*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
@@ -70,6 +73,7 @@ return [
                 [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
+                    'logFile' => '@runtime/log/requests.log',
                 ],
             ],
         ],

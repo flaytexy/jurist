@@ -1,5 +1,18 @@
+var actionFaq = 'click';
+var speedFaq = "500";
+
+
 jQuery(document).ready(function ($) {
     'use strict';
+
+	$('li.q').on(actionFaq, function () {
+		$(this).next().slideToggle(speedFaq)
+			.siblings('li.a').slideUp();
+
+		var img = $(this).children('img');
+		$('img').not(img).removeClass('rotate');
+		img.toggleClass('rotate');
+	});
 
     //===== Menu Active =====//
     var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
