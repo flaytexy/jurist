@@ -14,6 +14,10 @@ class OffersObject extends \frontend\components\ApiObject
     public $views;
     public $time;
 
+    public $pre_option;
+    public $pre_image;
+    public $pre_text;
+
     private $_photos;
 
     public function getTitle(){

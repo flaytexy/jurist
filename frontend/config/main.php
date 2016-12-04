@@ -7,7 +7,7 @@ $params = array_merge(
     require(__DIR__ . '/params-local.php')
 );
 
-return [
+$config = [
     'id' => 'app-frontend',
     //'language' => 'en-US',
     //'language'=>'ru-RU',
@@ -15,18 +15,18 @@ return [
     'language' => 'en-US',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [
-        //'@runtime' => dirname(dirname(__DIR__)) . '/runtime'
+        '@runtime' => '@frontend/runtime'
     ],
     'basePath' => dirname(__DIR__),
     //'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
 
     //'defaultRoute' => 'catalog/list',
-/*    'modules' => [
-        'admin' => [
-            'class' => 'frontend\modules\admin\AdminModule',
-        ],
-    ],*/
+    /*    'modules' => [
+            'admin' => [
+                'class' => 'frontend\modules\admin\AdminModule',
+            ],
+        ],*/
     'components' => [
         'i18n' => [ // ��� ��������� ���������������
             'translations' => [
@@ -53,11 +53,11 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
-/*        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
-        ],*/
+        /*        'user' => [
+                    'identityClass' => 'common\models\User',
+                    'enableAutoLogin' => true,
+                    'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+                ],*/
         'user' => [
             'identityClass' => 'frontend\models\Admin',
             'enableAutoLogin' => true,
@@ -134,3 +134,10 @@ return [
     ]
 
 ];
+
+if(YII_ENV_DEV){
+    $config['components']['assetManager']['forceCopy'] = true;
+}
+
+return $config;
+

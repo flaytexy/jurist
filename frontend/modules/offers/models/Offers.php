@@ -2,7 +2,7 @@
 namespace frontend\modules\offers\models;
 
 use Yii;
-use yii\behaviors\SluggableBehavior;
+use common\behaviors\MySluggableBehavior;
 use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;
 use frontend\models\Photo;
@@ -22,6 +22,7 @@ class Offers extends \frontend\components\ActiveRecord
     {
         return [
             [['text', 'title'], 'required'],
+            ['pre_options', 'string', 'max' => 128],
             [['title', 'short', 'text'], 'trim'],
             ['title', 'string', 'max' => 128],
             ['image', 'image'],
@@ -38,6 +39,11 @@ class Offers extends \frontend\components\ActiveRecord
     {
         return [
             'title' => Yii::t('easyii', 'Title'),
+
+            'pre_options' => 'pre_options!',
+            //'title' => Yii::t('easyii', 'Title'),
+            //'title' => Yii::t('easyii', 'Title'),
+
             'text' => Yii::t('easyii', 'Text'),
             'short' => Yii::t('easyii/offers', 'Short'),
             'image' => Yii::t('easyii', 'Image'),
@@ -53,7 +59,7 @@ class Offers extends \frontend\components\ActiveRecord
             'seoBehavior' => SeoBehavior::className(),
             'taggabble' => Taggable::className(),
             'sluggable' => [
-                'class' => SluggableBehavior::className(),
+                'class' => MySluggableBehavior::className(),
                 'attribute' => 'title',
                 'ensureUnique' => true
             ],
@@ -62,7 +68,7 @@ class Offers extends \frontend\components\ActiveRecord
 
     public function getPhotos()
     {
-        return $this->hasMany(Photo::className(), ['item_id' => 'offers_id'])->where(['class' => self::className()])->sort();
+        return $this->hasMany(Photo::className(), ['item_id' => 'offer_id'])->where(['class' => self::className()])->sort();
     }
 
 

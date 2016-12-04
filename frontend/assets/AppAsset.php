@@ -48,7 +48,7 @@ class AppAsset extends AssetBundle
         'js/revolution/revolution.extension.slideanims.min.js',
         'js/revolution/revolution.extension.video.min.js',
         'js/revolution/revolution.initialize.js',
-
+        //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
         'js/scripts.js'
     ];
     public $depends = [

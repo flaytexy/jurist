@@ -15,10 +15,24 @@ $module = $this->context->module->id;
     'options' => ['enctype' => 'multipart/form-data', 'class' => 'model-form']
 ]); ?>
 <?= $form->field($model, 'title') ?>
+<hr />
+
+
+<?= $form->field($model, 'pre_options') ?>
+
+<?php if($model->image) : ?>
+    <img src="<?= Image::thumb($model->image, 240) ?>">
+<?php endif; ?>
+<?= $form->field($model, 'pre_image')->fileInput() ?>
+
+<?= $form->field($model, 'pre_text')->textarea() ?>
+
+<hr />
+
 <?php if($this->context->module->settings['enableThumb']) : ?>
     <?php if($model->image) : ?>
         <img src="<?= Image::thumb($model->image, 240) ?>">
-        <a href="<?= Url::to(['/admin/'.$module.'/a/clear-image', 'id' => $model->offers_id]) ?>" class="text-danger confirm-delete" title="<?= Yii::t('easyii', 'Clear image')?>"><?= Yii::t('easyii', 'Clear image')?></a>
+        <a href="<?= Url::to(['/admin/'.$module.'/a/clear-image', 'id' => $model->offer_id]) ?>" class="text-danger confirm-delete" title="<?= Yii::t('easyii', 'Clear image')?>"><?= Yii::t('easyii', 'Clear image')?></a>
     <?php endif; ?>
     <?= $form->field($model, 'image')->fileInput() ?>
 <?php endif; ?>

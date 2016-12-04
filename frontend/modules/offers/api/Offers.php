@@ -46,7 +46,7 @@ class Offers extends \frontend\components\API
                 $query
                     ->innerJoinWith('tags', false)
                     ->andWhere([Tag::tableName() . '.name' => (new OffersModel)->filterTagValues($options['tags'])])
-                    ->addGroupBy('offers_id');
+                    ->addGroupBy('offer_id');
             }
             if(!empty($options['orderBy'])){
                 $query->orderBy($options['orderBy']);
@@ -118,7 +118,7 @@ class Offers extends \frontend\components\API
 
     private function findOffers($id_slug)
     {
-        $offers = OffersModel::find()->where(['or', 'offers_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->status(OffersModel::STATUS_ON)->one();
+        $offers = OffersModel::find()->where(['or', 'offer_id=:id_slug', 'slug=:id_slug'], [':id_slug' => $id_slug])->status(OffersModel::STATUS_ON)->one();
         if($offers) {
             $offers->updateCounters(['views' => 1]);
             return new OffersObject($offers);
