@@ -18,6 +18,7 @@ class ParserController extends \yii\web\Controller
 
         $db = \Yii::$app->db;
         $db->createCommand()->truncateTable('easyii_offers')->execute();
+        $db->createCommand()->truncateTable('easyii_offers_options')->execute();
         $db->createCommand()->truncateTable('easyii_offers_packets')->execute();
         $db->createCommand()->truncateTable('easyii_offers_packets_options')->execute();
         $db->createCommand()->truncateTable('easyii_offers_properties')->execute();
@@ -50,7 +51,7 @@ class ParserController extends \yii\web\Controller
                 $img = $block->find('div.map img', 0)->src;
                 if (!empty($img)) {
                     $imgUpload = 'https://it-offshore.com/' . $img;
-                    $imagePath = '\uploads\offers\\' . Text::transliterate($title) . '.png';
+                    $imagePath = '/uploads/offers/' . Text::transliterate($title) . '.png';
                     file_put_contents(\Yii::getAlias('@webroot') . $imagePath, file_get_contents($imgUpload));
                 }
             }

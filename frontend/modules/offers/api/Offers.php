@@ -5,6 +5,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use frontend\models\Tag;
 use frontend\widgets\Fancybox;
+use yii\db\Query;
 use yii\widgets\LinkPager;
 
 use frontend\modules\offers\models\Offers as OffersModel;
@@ -33,11 +34,19 @@ class Offers extends \frontend\components\API
         if(!$this->_items){
             $this->_items = [];
 
+             $subQuery = (new Query())
+                 ->select(['GROUP_CONCAT(op.title SEPARATOR ":: " )'])
+                 ->from('easyii_offers_properties_relations as opr')
+                 ->join('INNER JOIN', 'easyii_offers_properties as op', 'op.property_id = opr.property_id')
+                 ->where('opr.offer_id=easyii_offers.offer_id');
+
             $with = ['seo'];
             if(Yii::$app->getModule('admin')->activeModules['offers']->settings['enableTags']){
                 $with[] = 'tags';
             }
-            $query = OffersModel::find()->with($with)->status(OffersModel::STATUS_ON);
+            $query = OffersModel::find()->select(['*', 'property_list' => $subQuery])
+                ->with($with)
+                ->status(OffersModel::STATUS_ON);
 
             if(!empty($options['where'])){
                 $query->andFilterWhere($options['where']);
@@ -60,9 +69,12 @@ class Offers extends \frontend\components\API
             ]);
 
             foreach($this->_adp->models as $model){
-                $this->_items[] = new OffersObject($model);
+                $item = new OffersObject($model);
+                $item->properties = explode('::', $item->model->property_list);
+                $this->_items[] = $item;
             }
         }
+
         return $this->_items;
     }
 

@@ -13,6 +13,9 @@ class Offers extends \frontend\components\ActiveRecord
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
+    public $property_list;
+/*    public $properties;*/
+
     public static function tableName()
     {
         return 'easyii_offers';

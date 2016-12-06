@@ -18,6 +18,8 @@ class OffersObject extends \frontend\components\ApiObject
     public $pre_image;
     public $pre_text;
 
+    public $properties;
+
     private $_photos;
 
     public function getTitle(){

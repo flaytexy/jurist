@@ -4330,7 +4330,7 @@ ul.faq li.a blockquote {
     position: absolute;
     text-decoration: none;
 }
-/*
+
 .offshores_map_marker::before {
     border: 3px solid green;
     border-radius: 38px;
@@ -4345,7 +4345,7 @@ ul.faq li.a blockquote {
 .offshores_map_marker::after {
     border: none;
 }
-*/
+
 
 .map-pos {
     display: block;
@@ -4356,4 +4356,23 @@ ul.faq li.a blockquote {
 }
 .map-pos a {
     position: absolute;
+}
+
+.block-zone .abtn{
+    position: absolute; right: 15px; bottom: -80px;
+}
+
+.table-container {
+    display: table;
+}
+
+.table-container .table-row {
+    height: 100%;
+    display: table-row;
+}
+
+.table-container .table-row .table-col {
+    display: table-cell;
+    float: none;
+    vertical-align: top;
 }

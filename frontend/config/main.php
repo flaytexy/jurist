@@ -130,12 +130,13 @@ $config = [
     'bootstrap' => [
         'log',
         //'debug',
-        //'gii'
+        'gii'
     ]
 
 ];
 
 if(YII_ENV_DEV){
+
     $config['components']['assetManager']['forceCopy'] = true;
 }
 
