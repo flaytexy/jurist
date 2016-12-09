@@ -44,7 +44,7 @@ class Offers extends \frontend\components\API
             if(Yii::$app->getModule('admin')->activeModules['offers']->settings['enableTags']){
                 $with[] = 'tags';
             }
-            $query = OffersModel::find()->select(['*', 'property_list' => $subQuery])
+            $query = OffersModel::find()
                 ->with($with)
                 ->status(OffersModel::STATUS_ON);
 
