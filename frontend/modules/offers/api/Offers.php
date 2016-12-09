@@ -31,6 +31,7 @@ class Offers extends \frontend\components\API
 
     public function api_items($options = [])
     {
+        //dsadas
         if(!$this->_items){
             $this->_items = [];
 
