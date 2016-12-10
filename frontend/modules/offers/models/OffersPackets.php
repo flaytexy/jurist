@@ -13,6 +13,12 @@ class OffersPackets extends ActiveRecord
 {
 
     public $itemId;
+    public $options;
+
+    public static function tableVia()
+    {
+        return 'easyii_offers_packets_options';
+    }
 
     public static function tableName()
     {
@@ -32,4 +38,8 @@ class OffersPackets extends ActiveRecord
         ];
     }
 
+    public function getPacketsOptions () {
+        return $this->hasMany(OffersPacketsOptions::className(), ['option_id' => 'option_id'])
+            ->viaTable(OffersPackets::tableVia(), ['packet_id' => 'packet_id']);
+    }
 }

@@ -4299,7 +4299,7 @@ ul.faq li.a blockquote {
     min-width: 1150px;
 }
 
-.offshores_map_marker::before {
+.map-marker::before {
     border: 3px solid #3ab0ed;
     border-radius: 5px;
     box-sizing: border-box;
@@ -4310,7 +4310,7 @@ ul.faq li.a blockquote {
     top: 5px;
     width: 10px;
 }
-.offshores_map_marker::after {
+.map-marker::after {
     border: 2px solid #3ab0ed;
     border-radius: 10px;
     box-sizing: border-box;
@@ -4321,7 +4321,7 @@ ul.faq li.a blockquote {
     top: 0;
     width: 20px;
 }
-.offshores_map_marker {
+.map-marker {
     color: #fff;
     font-size: 12px;
     font-weight: normal;
@@ -4331,7 +4331,7 @@ ul.faq li.a blockquote {
     text-decoration: none;
 }
 
-.offshores_map_marker::before {
+.map-marker::before {
     border: 3px solid green;
     border-radius: 38px;
     box-sizing: border-box;
@@ -4342,7 +4342,7 @@ ul.faq li.a blockquote {
     top: 7px;
     width: 5px;
 }
-.offshores_map_marker::after {
+.map-marker::after {
     border: none;
 }
 
@@ -4375,4 +4375,79 @@ ul.faq li.a blockquote {
     display: table-cell;
     float: none;
     vertical-align: top;
+}
+
+.easyii-box img {
+    height: 100% !important;
+    width: auto;
+}
+
+
+.package-features .table td {
+    min-width: 150px;
+}
+.package-features .table td:nth-child(2),
+.package-features .table td:nth-child(3),
+.package-features .table td:nth-child(4) {
+    text-align: center;
+}
+
+.register-packet{
+    font-size: 16px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.regbutton{
+    height: 50px;
+    width: 200px;
+    background-color: #449D44;
+    border-radius: 0px;
+    font-size: 18px;
+    color:white;
+    border: none !important;
+    margin-bottom: 5px;
+}
+.regbutton:hover{
+    color: white;
+    background-color:#aa422f;
+}
+.regbutton:active{
+    color: white;
+    background-color:#aa422f;
+}
+.logbutton{
+    height: 50px;
+    width: 200px;
+    background-color:yellowgreen;
+    border-radius: 0px;
+    font-size: 18px;
+    color:white;
+    border: none !important;
+    margin-bottom: 5px;
+}
+.logbutton:hover{
+    color: white;
+    background-color:darkolivegreen;
+}
+.logbutton:active{
+    color: white;
+    background-color:darkolivegreen;
+}
+
+
+
+.register-packet label{
+    color: aliceblue;
+
+}
+.register-packet input{
+    margin-bottom: 5px;
+    width: 430px;
+    height: 40px;
+    border-radius: 0px;
 }

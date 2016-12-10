@@ -23,7 +23,7 @@ $goodsCount = count(Shopcart::goods());
                 </div>
             </div>
         </div><!-- Top Bar -->
-        <div class="logomenu-sec">
+        <div class="logomenu-sec" id="logomenu-sec">
             <div class="container">
                 <div class="logo"><a href="index.html" title=""><img src="/uploads/theme_villa/logo.png" alt=""></a></div>
                 <nav class="navbar22 navbar-default22">

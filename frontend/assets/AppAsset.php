@@ -17,6 +17,7 @@ class AppAsset extends AssetBundle
         /*'css/icons.css',*/
         'css/font-awesome/css/font-awesome.min.css',
         'css/flaticon.css',
+        'js/fancybox/jquery.fancybox.css',
         'css/datepicker.css',
         'css/select2.css',
         'css/perfect-scrollbar.css',
@@ -27,6 +28,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/bootstrap-datepicker.js',
+        'js/fancybox/jquery.fancybox.pack.js',
         'js/owl.carousel.min.js',
         'js/select2.full.js',
         'js/scrollupbar.js',

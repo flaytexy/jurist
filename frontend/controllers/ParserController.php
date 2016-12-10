@@ -30,18 +30,37 @@ class ParserController extends \yii\web\Controller
 
         $dom = HtmlDomParser::file_get_html(\Yii::getAlias('@webroot') . '\1.html');
 
-        $blocks = $dom->find(".//*[@id='offshore-windows'] div.window");
 
-        foreach ($blocks as $block) {
+        $myHref = $dom->find(".//*[@id='offshore-map'] a.offshores_map_marker");
+        foreach ($myHref as $a) {
+            $aAttr = $a->getAllAttributes();
+            $style = $aAttr['style'];
+            //e_print($style,'$style');
+
+            preg_match_all( '/(?:[0-9]{1,4})/', $style, $arr);
+            //e_print($arr,'$arr');
+            $pos = '';
+            if(isset($arr[0][0])){
+                $pos = trim($arr[0][0]).';'.trim($arr[0][1]);
+            }
+            e_print($pos,'$pos');
+            $idBlockOpen = $aAttr['data-open-block'];
+            e_print($idBlockOpen);
+
+            $block = $dom->find(".//*[@id='offshore-windows'] div.window[@data-place='" . $a = str_replace('b', 'id', $idBlockOpen) . "']", 0);
+
+            $blockDetail = false;
+            if($idBlockOpen){
+                $blockDetail = $dom->find(".//*[@id='" . $idBlockOpen . "']", 0);
+            }
+
             echo $block . "<hr />";
             //$le = $block->find('div.grid',0);
             $title = $block->find('div.top span.name', 0)->text();
             $title = trim($title);
 
-            $blockDetail = false;
-            $idBlockOpen = $block->find('a.offshore-text-show-top', 0)->getAllAttributes()['data-open-block'];
-            if($idBlockOpen)
-                $blockDetail = $dom->find(".//*[@id='" . $idBlockOpen . "']", 0);
+
+
 
             $descBlock = '';
             $imagePath = '';
@@ -70,6 +89,7 @@ class ParserController extends \yii\web\Controller
                 $offer->text = $descBlock;
                 $offer->image = $imagePath;
                 $offer->pre_image = $imagePath;
+                $offer->pos = $pos;
                 //$offer->pre_options = $pre_options;
                 //$offer->pre_text = $imagePath;
                 $re = $offer->save();

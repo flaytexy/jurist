@@ -19,8 +19,15 @@ class OffersObject extends \frontend\components\ApiObject
     public $pre_text;
 
     public $properties;
+    public $pos;
+    public $position;
 
     private $_photos;
+
+    public function __construct($model){
+        parent::__construct($model);
+        $this->position = explode(';', $this->pos);
+    }
 
     public function getTitle(){
         return LIVE_EDIT ? API::liveEdit($this->model->title, $this->editLink) : $this->model->title;
