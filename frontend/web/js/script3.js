@@ -3,6 +3,10 @@
  */
 
 $(document).ready(function(){
+
+
+
+
     'use strict';
 
     //===== Package Image Gallery Carousel =====//
@@ -38,14 +42,9 @@ $(document).ready(function(){
             {
                 maxWidth	: 1000,
                 maxHeight	: 500,
-                fitToView	: false,
                 width		: '80%',
                 height		: '60%',
                 autoSize	: false,
-                'autoScale'         : false,
-                'transitionIn'      : 'none',
-                'transitionOut'     : 'none',
-                'hideOnContentClick': false,
                 'onStart': function () {
                     //On Start callback if needed
                 },
@@ -56,26 +55,30 @@ $(document).ready(function(){
         );
     });
 
-    $("#succes_packet").bind("submit", function() {
 
-        if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
-            $("#login_error").show();
-            $.fancybox.resize();
-            return false;
-        }
-
-        $.fancybox.showActivity();
-
-        $.ajax({
-            type		: "POST",
-            cache	: false,
-            url		: "/data/login.php",
-            data		: $(this).serializeArray(),
-            success: function(data) {
-                $.fancybox(data);
-            }
-        });
-
-        return false;
+    $('body').on('click', '.fancybox-wrap #top-save-button', function(){
+        alert("dsadas");
     });
+    //$("#succes_packet_form").bind("submit", function() {
+    //
+    //    if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+    //        $("#login_error").show();
+    //        $.fancybox.resize();
+    //        return false;
+    //    }
+    //
+    //    $.fancybox.showActivity();
+    //
+    //    $.ajax({
+    //        type		: "POST",
+    //        cache	: false,
+    //        url		: "/data/login.php",
+    //        data		: $(this).serializeArray(),
+    //        success: function(data) {
+    //            $.fancybox(data);
+    //        }
+    //    });
+    //
+    //    return false;
+    //});
 });

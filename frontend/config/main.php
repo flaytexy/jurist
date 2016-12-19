@@ -96,7 +96,23 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                'offshornyie-predlozheniya' => 'offers/index',
+
+                //'offshornyie-predlozheniya' => 'offers/index',
+                [
+                    'pattern' => 'offshornyie-predlozheniya',
+                    'route' => 'offers/index',
+                    'defaults' => [
+                        'type_id' => 1
+                    ],
+                ],
+                [
+                    'pattern' => 'evropejskie-kompanii',
+                    'route' => 'offers/index',
+                    'defaults' => [
+                        'type_id' => 2
+                    ],
+                ],
+
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',

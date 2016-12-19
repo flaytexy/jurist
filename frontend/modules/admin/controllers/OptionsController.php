@@ -2,11 +2,11 @@
 namespace frontend\modules\admin\controllers;
 
 use Yii;
-use frontend\models\Tag;
+use frontend\models\Option;
 use yii\helpers\Html;
 use yii\web\Response;
 
-class TagsController extends \frontend\components\Controller
+class OptionsController extends \frontend\components\Controller
 {
     public function actionList($query, $type = 1)
     {
@@ -14,7 +14,7 @@ class TagsController extends \frontend\components\Controller
 
         $items = [];
         $query = urldecode(mb_convert_encoding($query, "UTF-8"));
-        $tags = Tag::find()
+        $tags = Option::find()
             ->where(['like', 'name', $query])
             ->asArray()
             ->all();

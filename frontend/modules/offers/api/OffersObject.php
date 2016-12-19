@@ -45,6 +45,10 @@ class OffersObject extends \frontend\components\ApiObject
         return $this->model->tagsArray;
     }
 
+    public function getOptions(){
+        return $this->model->optionsArray;
+    }
+
     public function getDate(){
         return Yii::$app->formatter->asDate($this->time);
     }

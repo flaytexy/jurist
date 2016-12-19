@@ -2,6 +2,7 @@
 use frontend\widgets\DateTimePicker;
 use frontend\helpers\Image;
 use frontend\widgets\TagsInput;
+use frontend\widgets\OptionsInput;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
@@ -53,6 +54,8 @@ $module = $this->context->module->id;
 <?php if($this->context->module->settings['enableTags']) : ?>
     <?= $form->field($model, 'tagNames')->widget(TagsInput::className()) ?>
 <?php endif; ?>
+
+<?= $form->field($model, 'optionNames')->widget(OptionsInput::className()) ?>
 
 <?php if(IS_ROOT) : ?>
     <?= $form->field($model, 'slug') ?>

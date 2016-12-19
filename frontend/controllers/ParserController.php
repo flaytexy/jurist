@@ -3,6 +3,8 @@
 namespace frontend\controllers;
 
 use common\helpers\Text;
+use frontend\behaviors\Optionable;
+use frontend\models\Option;
 use frontend\models\Parse;
 use frontend\modules\offers\models\Offers;
 use frontend\modules\offers\models\OffersPackets;
@@ -28,7 +30,32 @@ class ParserController extends \yii\web\Controller
         //$current = file_get_contents($url);
         //file_put_contents(\Yii::getAlias('@webroot').'\1.html', $current);
 
-        $dom = HtmlDomParser::file_get_html(\Yii::getAlias('@webroot') . '\1.html');
+        $pageData = array(
+            array(
+                'url' => \Yii::getAlias('@webroot') . '\1.html',
+                'type' => 1
+            ),
+            array(
+                'url' => \Yii::getAlias('@webroot') . '\2.htm',
+                'type' => 2
+            )
+        );
+
+        foreach ($pageData as $pageItem) {
+            $this->htmlParse($pageItem['url'], $pageItem['type']);
+        }
+
+        exit;
+        //return $this->render('index');
+    }
+
+
+    function htmlParse($url, $type)
+    {
+
+        $db = \Yii::$app->db;
+
+        $dom = HtmlDomParser::file_get_html($url);
 
 
         $myHref = $dom->find(".//*[@id='offshore-map'] a.offshores_map_marker");
@@ -37,20 +64,20 @@ class ParserController extends \yii\web\Controller
             $style = $aAttr['style'];
             //e_print($style,'$style');
 
-            preg_match_all( '/(?:[0-9]{1,4})/', $style, $arr);
+            preg_match_all('/(?:[0-9]{1,4})/', $style, $arr);
             //e_print($arr,'$arr');
             $pos = '';
-            if(isset($arr[0][0])){
-                $pos = trim($arr[0][0]).';'.trim($arr[0][1]);
+            if (isset($arr[0][0])) {
+                $pos = trim($arr[0][0]) . ';' . trim($arr[0][1]);
             }
-            e_print($pos,'$pos');
+            e_print($pos, '$pos');
             $idBlockOpen = $aAttr['data-open-block'];
             e_print($idBlockOpen);
 
             $block = $dom->find(".//*[@id='offshore-windows'] div.window[@data-place='" . $a = str_replace('b', 'id', $idBlockOpen) . "']", 0);
 
             $blockDetail = false;
-            if($idBlockOpen){
+            if ($idBlockOpen) {
                 $blockDetail = $dom->find(".//*[@id='" . $idBlockOpen . "']", 0);
             }
 
@@ -60,17 +87,17 @@ class ParserController extends \yii\web\Controller
             $title = trim($title);
 
 
-
-
             $descBlock = '';
             $imagePath = '';
             if ($blockDetail) {
                 $descBlock = trim($blockDetail->find('div.grid', 0)->innertext);
 
                 $img = $block->find('div.map img', 0)->src;
+                e_print($img,'$imgx');
                 if (!empty($img)) {
                     $imgUpload = 'https://it-offshore.com/' . $img;
                     $imagePath = '/uploads/offers/' . Text::transliterate($title) . '.png';
+                    e_print($imagePath,'$imagePath');
                     file_put_contents(\Yii::getAlias('@webroot') . $imagePath, file_get_contents($imgUpload));
                 }
             }
@@ -84,7 +111,7 @@ class ParserController extends \yii\web\Controller
 
             if (empty($offer)) {
                 $offer = new Parse();
-                $offer->type_id = '1';
+                $offer->type_id = $type;
                 $offer->title = $title;
                 $offer->text = $descBlock;
                 $offer->image = $imagePath;
@@ -109,35 +136,42 @@ class ParserController extends \yii\web\Controller
                         $listTitle = $listItem->text();
                         $listTitle = trim($listTitle);
                         if ($listTitle) {
-                            e_print($listTitle, 'listTitle');
+                            e_print($listTitle, 'listName');
 
-                            $offersProperties = OffersProperties::find()
-                                ->where(['title' => $listTitle])
+                            $offersProperties = Option::find()
+                                ->where(['name' => $listTitle])
                                 ->one();
 
                             if (empty($offersProperties)) {
-                                $offersProperties = new OffersProperties();
-                                $offersProperties->title = $listTitle;
+                                $offersProperties = new Option();
+                                $offersProperties->name = $listTitle;
                                 $offersProperties->save();
                             }
 
-                            $property_id = $offersProperties->property_id;
+                            $property_id = $offersProperties->option_id;
 
                             if ($property_id) {
                                 e_print($property_id, '$property_id');
                                 $row = $db
                                     ->createCommand('SELECT *
-                                      FROM easyii_offers_properties_relations
-                                      WHERE property_id  = :property_id AND offer_id = :offer_id ')
+                                      FROM `easyii_options_assign`
+                                      WHERE option_id  = :option_id AND item_id = :item_id ')
                                     ->bindValues([
-                                        ':property_id' => $property_id,
-                                        ':offer_id' => $offer_id
+                                        ':option_id' => $property_id,
+                                        ':item_id' => $offer_id
                                     ])
                                     ->queryOne();
 
                                 if (empty($row)) {
                                     $row = $db->createCommand()
-                                        ->insert('easyii_offers_properties_relations', ['offer_id' => $offer_id, 'property_id' => $property_id])
+                                        ->insert('easyii_options_assign',
+                                            [
+                                                'item_id' => $offer_id,
+                                                'option_id' => $property_id,
+                                                'class' => 'frontend\modules\offers\models\Offers'
+
+                                            ]
+                                        )
                                         ->execute();
                                 }
 
@@ -238,9 +272,6 @@ class ParserController extends \yii\web\Controller
         unset($block);
         unset($dom);
 
-
-        exit;
-        //return $this->render('index');
     }
 
 

@@ -4298,6 +4298,14 @@ ul.faq li.a blockquote {
     height: 500px;
     min-width: 1150px;
 }
+.map-bg-eu {
+    /*background-attachment: fixed;*/
+    background-image: url("/images/europe.jpg");
+    background-position: center -146px;
+    background-repeat: no-repeat;
+    height: 500px;
+    min-width: 1150px;
+}
 
 .map-marker::before {
     border: 3px solid #3ab0ed;

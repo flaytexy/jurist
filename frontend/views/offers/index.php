@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <section>
     <div class="row">
         <div class="col-md-12">
-            <div class="map-bg">
+            <div class="<? if($offer_type==2) : ?>map-bg-eu<? else: ?>map-bg<? endif; ?>">
                 <div id="map-pos" class="map-pos">
                     <?php foreach ($offers as $item) : ?>
                     <a class="map-marker" style="top: <?= $item->position[0] ?>px; left: <?= $item->position[1] ?>px;" data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a>
@@ -75,7 +75,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             <ul>
                                 <?php foreach ($item->properties as $prop) : ?>
                                     <li>
-                                        <?= $prop->title ?>
+                                        <?= $prop->name ?>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>

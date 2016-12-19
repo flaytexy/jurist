@@ -18,7 +18,7 @@ class OffersModule extends \frontend\components\Module
             'en' => 'Offers',
             'ru' => 'Предожения',
         ],
-        'icon' => 'bullhorn',
+        'icon' => 'suitcase',
         'order_num' => 70,
     ];
 }

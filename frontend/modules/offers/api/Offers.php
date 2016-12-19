@@ -1,6 +1,7 @@
 <?php
 namespace frontend\modules\offers\api;
 
+use frontend\models\Option;
 use frontend\modules\offers\models\OffersProperties;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -35,11 +36,11 @@ class Offers extends \frontend\components\API
         if (!$this->_items) {
             $this->_items = [];
 
-            $subQuery = (new Query())
+/*            $subQuery = (new Query())
                 ->select(['GROUP_CONCAT(op.title SEPARATOR ":: " )'])
                 ->from('easyii_offers_properties_relations as opr')
                 ->join('INNER JOIN', 'easyii_offers_properties as op', 'op.property_id = opr.property_id')
-                ->where('opr.offer_id=easyii_offers.offer_id');
+                ->where('opr.offer_id=easyii_offers.offer_id');*/
 
             $with = ['seo'];
             if (Yii::$app->getModule('admin')->activeModules['offers']->settings['enableTags']) {
@@ -58,6 +59,10 @@ class Offers extends \frontend\components\API
                     ->andWhere([Tag::tableName() . '.name' => (new OffersModel)->filterTagValues($options['tags'])])
                     ->addGroupBy('offer_id');
             }
+            if (!empty($options['type_id'])) {
+                $query
+                    ->andWhere([ 'type_id' => $options['type_id'] ]);
+            }
             if (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
             } else {
@@ -71,14 +76,16 @@ class Offers extends \frontend\components\API
 
             foreach ($this->_adp->models as $model) {
                 $item = new OffersObject($model);
-                $item->properties = OffersProperties::find()
+                $item->properties = Option::find()
                     ->join(
                         'LEFT JOIN',
-                        'easyii_offers_properties_relations as pr',
-                        ' pr.`property_id` = `easyii_offers_properties`.`property_id`'
+                        'easyii_options_assign as oa',
+                        ' oa.`option_id` = `easyii_options`.`option_id`'
                     )
-                    ->andWhere([ 'offer_id'  => (int)$model->offer_id ])
-                    ->all();
+                    ->andWhere([
+                        'item_id'  => (int)$model->offer_id,
+                        'class'  => \frontend\modules\offers\models\Offers::className()
+                    ])->all();
 
                 $this->_items[] = $item;
             }

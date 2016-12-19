@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\behaviors\Optionable;
 use frontend\modules\offers\api\Offers;
 use frontend\modules\offers\models\OffersPackets;
 use yii\db\Query;
@@ -9,8 +10,11 @@ class OffersController extends \yii\web\Controller
 {
     public function actionIndex($tag = null)
     {
+        $type_id = \Yii::$app->request->get('type_id');
+
         return $this->render('index', [
-            'offers' => Offers::items(['tags' => $tag, 'pagination' => ['pageSize' => 30]])
+            'offers' => Offers::items(['tags' => $tag, 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 30]]),
+            'offer_type' => $type_id
         ]);
     }
 
@@ -24,6 +28,7 @@ class OffersController extends \yii\web\Controller
 
         $offer_id = $offers->model->offer_id;
         $packets = OffersPackets::find()->where(['offer_id' => $offer_id])->all();
+        $packets = Optionable::find()->where(['offer_id' => $offer_id])->all();
 
         foreach ($packets as $packet) {
             $packet_id = $packet->packet_id;

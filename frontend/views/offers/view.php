@@ -133,26 +133,26 @@ $this->params['breadcrumbs'][] = $offers->model->title;
 </section>
 
 <div style="display:none">
-    <form name="succes_packet" class="" action="" method="post" enctype="multipart/form-data" id="succes_packet">
-        <div class="container-fluid">
+    <div class="container-fluid" id="succes_packet">
+        <form id="succes_packet_form" name="succes_packet_form" class="succes_packet_form" action="/admin/orders/send" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <div class="row-fluid">
                         <div class="form-group">
                             <label for="firstName">ИМЯ</label>
-                            <input name="firstName" class="form-control" type="text">
+                            <input name="Feedback[name]" class="form-control" type="text">
                         </div>
                     </div>
                     <div class="row-fluid">
                         <div class="form-group">
                             <label for="email">Е-МЕЙЛ</label>
-                            <input name="email" class="form-control" type="email">
+                            <input name="Feedback[email]" class="form-control" type="email">
                         </div>
                     </div>
                     <div class="row-fluid">
                         <div class="form-group">
                             <label for="password">ТЕЛЕФОН</label>
-                            <input name="password" class="form-control" type="text">
+                            <input name="Feedback[phone]" class="form-control" type="text">
                         </div>
                     </div>
 
@@ -162,7 +162,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                     <div class="row-fluid">
                         <div class="form-group">
                             <label for="password">ВАШ КОММЕНТАРИЙ</label><br/>
-                            <textarea name="comments" class="form-control" rows="7"></textarea>
+                            <textarea name="Feedback[comment]" class="form-control" rows="7"></textarea>
                         </div>
                     </div>
                 </div>
@@ -171,9 +171,9 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" style="text-align: center;">
                     <hr>
-                    <button class="btn btn-success regbutton">Подтвердить</button>
+                    <input id="top-save-button" type="submit" name="save" value="Подтвердить" class="btn btn-success regbutton" />
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
