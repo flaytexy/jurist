@@ -5,11 +5,10 @@ namespace frontend\controllers;
 use common\helpers\Text;
 use frontend\behaviors\Optionable;
 use frontend\models\Option;
+use frontend\models\Packet;
 use frontend\models\Parse;
 use frontend\modules\offers\models\Offers;
-use frontend\modules\offers\models\OffersPackets;
 use frontend\modules\offers\models\OffersPacketsOptions;
-use frontend\modules\offers\models\OffersProperties;
 use Sunra\PhpSimple\HtmlDomParser;
 
 
@@ -21,10 +20,10 @@ class ParserController extends \yii\web\Controller
         $db = \Yii::$app->db;
         $db->createCommand()->truncateTable('easyii_offers')->execute();
         $db->createCommand()->truncateTable('easyii_offers_options')->execute();
-        $db->createCommand()->truncateTable('easyii_offers_packets')->execute();
+        $db->createCommand()->truncateTable('easyii_packets')->execute();
+        $db->createCommand()->truncateTable('easyii_options')->execute();
         $db->createCommand()->truncateTable('easyii_offers_packets_options')->execute();
-        $db->createCommand()->truncateTable('easyii_offers_properties')->execute();
-        $db->createCommand()->truncateTable('easyii_offers_properties_relations')->execute();
+
 
         $url = 'https://it-offshore.com/offshornyie-predlozheniya.html';
         //$current = file_get_contents($url);
@@ -191,20 +190,23 @@ class ParserController extends \yii\web\Controller
                 if ($packets) {
                     $pack = [];
                     foreach ($packets as $packet) {
+                        echo '-->'.$packet;
+
                         $pack['title'] = trim($packet->find('div.name', 0)->text());
-                        $pack['price'] = trim($packet->find('div.price', 0)->text());
+                        //$pack['price'] = trim($packet->find('div.price', 0)->text());
+                        $pack['price'] = trim(preg_replace("/[^A-Za-z0-9]/", "", $packet->find('div.price', 0)->text()));
 
-
-                        $packObj = OffersPackets::find()
+                        $packObj = Packet::find()
                             ->where(['title' => $title])
                             ->one();
 
                         if (empty($packObj)) {
-                            $packObj = new OffersPackets();
+                            $packObj = new Packet();
                             //$packObj->load($pack);
                             $packObj->title = $pack['title'];
-                            $packObj->price = $pack['price'];
-                            $packObj->offer_id = $offer_id;
+                            $packObj->price = (int)$pack['price'];
+                            $packObj->item_id = $offer_id;
+                            $packObj->class = Offers::className();
                             $re = $packObj->save();
                             e_print($re, '$reSaveOffersPackets');
                         }
@@ -212,23 +214,26 @@ class ParserController extends \yii\web\Controller
                         $packet_id = $packObj->packet_id;
                         e_print($packet_id, '$packet_id');
 
-                        $uls = $block->find('div.description li');
+                        $uls = $packet->find('div.description li');
 
                         if (!empty($uls)) {
                             foreach ($uls as $listItem) {
                                 $listTitle = $listItem->text();
                                 $listTitle = trim($listTitle);
                                 if ($listTitle) {
-                                    e_print($listTitle, 'listTitle_OffersPacketsOptions');
+
 
                                     $offersProperties = OffersPacketsOptions::find()
                                         ->where(['title' => $listTitle])
                                         ->one();
 
                                     if (empty($offersProperties)) {
+                                        e_print($listTitle, 'listTitle_OffersPacketsOptionsNotFIND');
                                         $offersProperties = new OffersPacketsOptions();
                                         $offersProperties->title = $listTitle;
                                         $offersProperties->save();
+                                    }else{
+                                        e_print($listTitle, 'listTitle_OffersPacketsOptions');
                                     }
 
                                     $option_id = $offersProperties->option_id;
@@ -247,6 +252,7 @@ class ParserController extends \yii\web\Controller
                                             ->queryOne();
 
                                         if (empty($row)) {
+                                            e_print(array('packet_id' => $packet_id, 'option_id' => $option_id),'easyii_offers_packets_options');
                                             $row = $db->createCommand()
                                                 ->insert('easyii_offers_packets_options', ['packet_id' => $packet_id, 'option_id' => $option_id])
                                                 ->execute();
@@ -258,8 +264,11 @@ class ParserController extends \yii\web\Controller
                             }
 
                         }
+
+                        echo $packet;
                     }
                 }
+
             }
 
             e_print($offer->offer_id, 'offer_id');

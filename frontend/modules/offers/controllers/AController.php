@@ -1,6 +1,7 @@
 <?php
 namespace frontend\modules\offers\controllers;
 
+
 use Yii;
 use yii\data\ActiveDataProvider;
 use frontend\behaviors\SortableDateController;
@@ -124,6 +125,18 @@ class AController extends Controller
         }
 
         return $this->render('photos', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionPackets($id)
+    {
+
+        if(!($model = Offers::findOne($id))){
+            return $this->redirect(['/admin/'.$this->module->id]);
+        }
+
+        return $this->render('packets', [
             'model' => $model,
         ]);
     }

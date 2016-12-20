@@ -2,8 +2,8 @@
 namespace frontend\controllers;
 
 use frontend\behaviors\Optionable;
+use frontend\models\Packet;
 use frontend\modules\offers\api\Offers;
-use frontend\modules\offers\models\OffersPackets;
 use yii\db\Query;
 
 class OffersController extends \yii\web\Controller
@@ -27,15 +27,18 @@ class OffersController extends \yii\web\Controller
         $offers = Offers::get($slug);
 
         $offer_id = $offers->model->offer_id;
-        $packets = OffersPackets::find()->where(['offer_id' => $offer_id])->all();
-        $packets = Optionable::find()->where(['offer_id' => $offer_id])->all();
+        $packets = Packet::find()
+            ->where([
+                'item_id' => $offer_id,
+                'class' => \frontend\modules\offers\models\Offers::className()
+            ])->all();
 
         foreach ($packets as $packet) {
             $packet_id = $packet->packet_id;
 
             $findOptions = $db
                 ->createCommand('SELECT *
-                                      FROM `easyii_offers_packets` as p
+                                      FROM `easyii_packets` as p
                                       INNER JOIN `easyii_offers_packets_options` as po ON po.packet_id= p.packet_id
                                       INNER JOIN `easyii_offers_options` as o ON po.option_id = o.option_id
                                       WHERE p.packet_id = :packet_id
@@ -46,7 +49,7 @@ class OffersController extends \yii\web\Controller
                 ->queryAll();
 
             $packetOptions = [];
-            foreach($findOptions as $packetOption){
+            foreach ($findOptions as $packetOption) {
 
                 $packetOptions[$packetOption['option_id']] = $packetOption;
             }
@@ -54,19 +57,20 @@ class OffersController extends \yii\web\Controller
             $packet->options = $packetOptions;
         }
 
-
         $options = $db
-            ->createCommand('SELECT o.*,  COUNT(p.packet_id) as countPacket
-                                      FROM `easyii_offers_packets` as p
-                                      INNER JOIN `easyii_offers_packets_options` as po ON po.packet_id= p.packet_id
+            ->createCommand('SELECT o.*, po.packet_id as packetId, COUNT(p.packet_id) as countPacket
+                                      FROM `easyii_packets` as p
+                                      INNER JOIN `easyii_offers_packets_options` as po ON po.packet_id = p.packet_id
                                       INNER JOIN `easyii_offers_options` as o ON po.option_id = o.option_id
-                                      WHERE p.offer_id = :offer_id
+                                      WHERE p.item_id = :item_id AND p.class = :className
                                         GROUP BY po.option_id
-                                      ORDER BY po.option_id ASC, countPacket ASC
+                                      ORDER BY po.option_id ASC
 
                                       ')
             ->bindValues([
-                ':offer_id' => $offer_id
+                ':item_id' => $offer_id,
+                ':className' => \frontend\modules\offers\models\Offers::className()
+
             ])
             ->queryAll();
 
@@ -75,11 +79,11 @@ class OffersController extends \yii\web\Controller
             throw new \yii\web\NotFoundHttpException('Offers not found.');
         }
 
-        foreach($options as $key => $option){
-            foreach($packets as $key2 => $packet){
+        foreach ($options as $key => $option) {
+            foreach ($packets as $key2 => $packet) {
                 $options[$key]['child'][$key2] = 0;
 
-                if(isset($packet['options'][$option['option_id']])){
+                if (isset($packet['options'][$option['option_id']])) {
                     $options[$key]['child'][$key2] = 1;
                 }
             }

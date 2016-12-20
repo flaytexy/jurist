@@ -1,24 +1,21 @@
 <?php
-namespace frontend\modules\offers\models;
+namespace frontend\models;
 
-
-use frontend\components\ActiveRecord;
 use Yii;
+use frontend\components\ActiveRecord;
 use common\behaviors\MySluggableBehavior;
 use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;
 
 
-class OffersPackets2 extends ActiveRecord
+class Packet extends ActiveRecord
 {
-
-    public $itemId;
     public $options;
 
-/*    public static function tableVia()
-    {
-        return 'easyii_offers_packets_options';
-    }*/
+    /*    public static function tableVia()
+        {
+            return 'easyii_offers_packets_options';
+        }*/
 
     public static function tableName()
     {
@@ -38,8 +35,8 @@ class OffersPackets2 extends ActiveRecord
         ];
     }
 
-/*    public function getPacketsOptions () {
-        return $this->hasMany(OffersPacketsOptions::className(), ['option_id' => 'option_id'])
-            ->viaTable(OffersPackets::tableVia(), ['packet_id' => 'packet_id']);
-    }*/
+    /*    public function getPacketsOptions () {
+            return $this->hasMany(OffersPacketsOptions::className(), ['option_id' => 'option_id'])
+                ->viaTable(OffersPackets::tableVia(), ['packet_id' => 'packet_id']);
+        }*/
 }
