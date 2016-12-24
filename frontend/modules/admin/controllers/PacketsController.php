@@ -65,9 +65,17 @@ class PacketsController extends Controller
     {
         if(($model = Packet::findOne($id)))
         {
-            if(Yii::$app->request->post('description'))
+            if(Yii::$app->request->post('description') ||
+                Yii::$app->request->post('title') ||
+                Yii::$app->request->post('tagNames') ||
+                Yii::$app->request->post('price')
+            )
             {
+                $model->title = Yii::$app->request->post('title');
                 $model->description = Yii::$app->request->post('description');
+                $model->tagNames = Yii::$app->request->post('tagNames');
+                $model->price = Yii::$app->request->post('price');
+
                 if(!$model->update()) {
                     $this->error = Yii::t('easyii', 'Update error. {0}', $model->formatErrors());
                 }

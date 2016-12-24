@@ -28,6 +28,8 @@ class Offers extends \frontend\components\ActiveRecord
             ['pre_options', 'string', 'max' => 128],
             [['title', 'short', 'text'], 'trim'],
             ['title', 'string', 'max' => 128],
+            ['pos', 'string', 'max' => 64],
+            ['coordinates', 'string', 'max' => 64],
             ['image', 'image'],
             [['views', 'time', 'status'], 'integer'],
             ['time', 'default', 'value' => time()],
@@ -47,7 +49,8 @@ class Offers extends \frontend\components\ActiveRecord
             'pre_options' => 'pre_options!',
             //'title' => Yii::t('easyii', 'Title'),
             //'title' => Yii::t('easyii', 'Title'),
-
+            //'title' => Yii::t('easyii', 'Title'),
+            //'title' => Yii::t('easyii', 'Title'),
             'text' => Yii::t('easyii', 'Text'),
             'short' => Yii::t('easyii/offers', 'Short'),
             'image' => Yii::t('easyii', 'Image'),

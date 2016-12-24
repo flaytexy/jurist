@@ -8,7 +8,7 @@ use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;
 
 
-class Packet extends ActiveRecord
+class Packet extends \frontend\components\ActiveRecord
 {
     public $options;
 
@@ -22,6 +22,15 @@ class Packet extends ActiveRecord
         return 'easyii_packets';
     }
 
+    public function rules()
+    {
+        return [
+            [['title'], 'required'],
+            [['title'], 'trim'],
+            ['title', 'string', 'max' => 128],
+            ['tagNames', 'safe']
+        ];
+    }
     public function behaviors()
     {
         return [

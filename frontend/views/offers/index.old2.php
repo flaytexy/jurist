@@ -3,19 +3,14 @@ use frontend\modules\offers\api\Offers;
 use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use frontend\assets\MapsAsset;
 
-MapsAsset::register($this);
 $page = Page::get('page-offers');
 
 $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
 ?>
 <h1><?= $page->seo('h1', $page->title) ?></h1>
-
-<script type="application/javascript">
-    var myMarker = <?= $markers; ?>;
-</script>
+<br/>
 
 <?php /*foreach($offers as $item) : ?>
     <div class="row">
@@ -37,33 +32,19 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <?php endforeach; ?>
 
 <?= Offers::pages() */ ?>
-
-<section>
-    <div class="row">
-        <div class="col-md-12">
-            <article class="format-standard">
-                <figure>
-                    <div id="world-map-markers" style="margin:0 auto; width: 1020px; height: 400px"></div>
-                </figure>
-            </article>
-        </div>
-    </div>
-</section>
-
 <section>
     <div class="row">
         <div class="col-md-12">
             <div class="<? if($offer_type==2) : ?>map-bg-eu<? else: ?>map-bg<? endif; ?>">
                 <div id="map-pos" class="map-pos">
                     <?php foreach ($offers as $item) : ?>
-                        <a class="map-marker" style="left: <?= $item->position[0] ?>px; top: <?= $item->position[1] ?>px;" data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a>
+                    <a class="map-marker" style="top: <?= $item->position[0] ?>px; left: <?= $item->position[1] ?>px;" data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a>
                     <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <section id="offers">
     <div class="block">
         <div class="container">

@@ -19,7 +19,8 @@ $module = $this->context->module->id;
 <hr />
 
 
-<?= $form->field($model, 'pre_options') ?>
+<?= $form->field($model, 'coordinates') ?>
+
 
 <?php if($model->image) : ?>
     <img src="<?= Image::thumb($model->image, 240) ?>">

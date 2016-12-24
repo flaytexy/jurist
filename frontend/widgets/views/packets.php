@@ -1,13 +1,13 @@
 <?php
-use frontend\helpers\Image;
-use frontend\models\Photo;
-use frontend\widgets\Fancybox;
+
 use yii\helpers\Html;
 use yii\helpers\Url;
-use frontend\assets\PhotosAsset;
+use frontend\assets\PacketsAsset;
 
-PhotosAsset::register($this);
-Fancybox::widget(['selector' => '.plugin-box']);
+use frontend\widgets\TagsInput;
+
+
+PacketsAsset::register($this);
 
 $class = get_class($this->context->model);
 $item_id = $this->context->model->primaryKey;
@@ -17,18 +17,26 @@ $linkParams = [
     'item_id' => $item_id,
 ];
 
-$packetTemplate = '<tr data-id="{{photo_id}}">'.(IS_ROOT ? '<td>{{photo_id}}</td>' : '').'\
+$packetTemplate = '<tr data-id="{{packet_id}}">'.(IS_ROOT ? '<td>{{packet_id}}</td>' : '').'\
     <td>\
-        <input type="text" name="Photo[title]" value="{{photo_title}}"  >\
-        <textarea class="form-control photo-description">{{photo_description}}</textarea>\
-        <a href="' . Url::to(['/admin/photos/description/{{photo_id}}']) . '" class="btn btn-sm btn-primary disabled save-photo-description">'. Yii::t('easyii', 'Save') .'</a>\
+        <input class="form-control packet-price" type="text" name="Photo[price]" value="{{packet_price}}"  >\
+        <input class="form-control packet-title" type="text" name="Photo[title]" value="{{packet_title}}"  >\
+        <textarea class="form-control packet-description">{{packet_description}}</textarea>\
+        '. TagsInput::widget([
+            'model' => $model,
+            'value' => "{{packet_tagNames}}",
+            'name' => "tag_name_{{packet_id}}"
+        ])
+        .'
+        <?=  ?>
+        <a href="' . Url::to(['/admin/packets/description/{{packet_id}}']) . '" class="btn btn-sm btn-primary disabled save-packet-description">'. Yii::t('easyii', 'Save') .'</a>\
     </td>\
     <td class="control vtop">\
         <div class="btn-group btn-group-sm" role="group">\
-            <a href="' . Url::to(['/admin/photos/up/{{photo_id}}'] + $linkParams) . '" class="btn btn-default move-up" title="'. Yii::t('easyii', 'Move up') .'"><span class="glyphicon glyphicon-arrow-up"></span></a>\
-            <a href="' . Url::to(['/admin/photos/down/{{photo_id}}'] + $linkParams) . '" class="btn btn-default move-down" title="'. Yii::t('easyii', 'Move down') .'"><span class="glyphicon glyphicon-arrow-down"></span></a>\
-            <a href="' . Url::to(['/admin/photos/edit/{{photo_id}}'] + $linkParams) . '" class="btn btn-default change-image-button" title="'. Yii::t('easyii', 'Change image') .'"><span class="glyphicon glyphicon-floppy-disk"></span></a>\
-            <a href="' . Url::to(['/admin/photos/delete/{{photo_id}}']) . '" class="btn btn-default color-red delete-photo" title="'. Yii::t('easyii', 'Delete item') .'"><span class="glyphicon glyphicon-remove"></span></a>\
+            <a href="' . Url::to(['/admin/packets/up/{{packet_id}}'] + $linkParams) . '" class="btn btn-default move-up" title="'. Yii::t('easyii', 'Move up') .'"><span class="glyphicon glyphicon-arrow-up"></span></a>\
+            <a href="' . Url::to(['/admin/packets/down/{{packet_id}}'] + $linkParams) . '" class="btn btn-default move-down" title="'. Yii::t('easyii', 'Move down') .'"><span class="glyphicon glyphicon-arrow-down"></span></a>\
+            <a href="' . Url::to(['/admin/packets/edit/{{packet_id}}'] + $linkParams) . '" class="btn btn-default change-image-button" title="'. Yii::t('easyii', 'Change image') .'"><span class="glyphicon glyphicon-floppy-disk"></span></a>\
+            <a href="' . Url::to(['/admin/packets/delete/{{packet_id}}']) . '" class="btn btn-default color-red delete-photo" title="'. Yii::t('easyii', 'Delete item') .'"><span class="glyphicon glyphicon-remove"></span></a>\
         </div>\
     </td>\
 </tr>';
@@ -55,8 +63,8 @@ $packetTemplate = str_replace('>\\', '>', $packetTemplate);
     <tbody>
     <?php foreach($packets as $packet) : ?>
         <?= str_replace(
-            ['{{photo_id}}', '{{photo_title}}', '{{photo_description}}'],
-            [$packet->primaryKey, $packet->title, $packet->description],
+            ['{{packet_id}}', '{{packet_title}}', '{{packet_description}}', '{{packet_price}}' , '{{packet_tagNames}}'],
+            [$packet->primaryKey, $packet->title, $packet->description, $packet->price, $packet->tagNames],
             $packetTemplate)
         ?>
     <?php endforeach; ?>
@@ -65,11 +73,3 @@ $packetTemplate = str_replace('>\\', '>', $packetTemplate);
 
 <p class="empty" style="display: <?= count($packets) ? 'none' : 'block' ?>;"><?= Yii::t('easyii', 'No packets yet') ?>.</p>
 
-<?= Html::beginForm(Url::to(['/admin/photos/upload'] + $linkParams), 'post', ['enctype' => 'multipart/form-data']) ?>
-<?= Html::fileInput('', null, [
-    'id' => 'photo-file',
-    'class' => 'hidden',
-    'multiple' => 'multiple',
-])
-?>
-<?php Html::endForm() ?>

@@ -1,10 +1,8 @@
 <?php
 namespace frontend\controllers;
-
-use frontend\behaviors\Optionable;
 use frontend\models\Packet;
 use frontend\modules\offers\api\Offers;
-use yii\db\Query;
+//use yii\db\Query;
 
 class OffersController extends \yii\web\Controller
 {
@@ -12,8 +10,19 @@ class OffersController extends \yii\web\Controller
     {
         $type_id = \Yii::$app->request->get('type_id');
 
+        $offers = Offers::items(['tags' => $tag, 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 300]]);
+
+        $markers = array();
+        foreach($offers as $offer){
+            $data = array();
+            $data['latLng'] = explode(';', $offer->model->coordinates);
+            $data['name'] = $offer->title;
+            $markers[] = $data;
+        }
+
         return $this->render('index', [
-            'offers' => Offers::items(['tags' => $tag, 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 30]]),
+            'markers' => json_encode($markers),
+            'offers' => $offers,
             'offer_type' => $type_id
         ]);
     }
@@ -64,7 +73,7 @@ class OffersController extends \yii\web\Controller
                                       INNER JOIN `easyii_offers_options` as o ON po.option_id = o.option_id
                                       WHERE p.item_id = :item_id AND p.class = :className
                                         GROUP BY po.option_id
-                                      ORDER BY po.option_id ASC
+                                      ORDER BY po.option_id ASC, countPacket ASC
 
                                       ')
             ->bindValues([

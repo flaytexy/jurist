@@ -61,15 +61,24 @@ class ParserController extends \yii\web\Controller
         foreach ($myHref as $a) {
             $aAttr = $a->getAllAttributes();
             $style = $aAttr['style'];
-            //e_print($style,'$style');
 
             preg_match_all('/(?:[0-9]{1,4})/', $style, $arr);
-            //e_print($arr,'$arr');
+
             $pos = '';
+            $cords = '';
+            $oldXSize = 1170;
+            $oldYSize = 700;
+
             if (isset($arr[0][0])) {
-                $pos = trim($arr[0][0]) . ';' . trim($arr[0][1]);
+                $y = trim($arr[0][0]); //top
+                $x = trim($arr[0][1]); // left
+
+                $pos =  $x. ';' . $y;
+                $cords = (-$y + ($oldYSize - 110)/2)*((360/2)/$oldYSize) . ';' . ($x - ($oldXSize - 340 )/2)*(360/$oldXSize);
             }
             e_print($pos, '$pos');
+            e_print($cords, '$cords');
+
             $idBlockOpen = $aAttr['data-open-block'];
             e_print($idBlockOpen);
 
@@ -97,7 +106,11 @@ class ParserController extends \yii\web\Controller
                     $imgUpload = 'https://it-offshore.com/' . $img;
                     $imagePath = '/uploads/offers/' . Text::transliterate($title) . '.png';
                     e_print($imagePath,'$imagePath');
-                    file_put_contents(\Yii::getAlias('@webroot') . $imagePath, file_get_contents($imgUpload));
+                    if(!file_exists(\Yii::getAlias('@webroot') . $imagePath)){
+                        e_print($imagePath,'$imagePath_get');
+                        file_put_contents(\Yii::getAlias('@webroot') . $imagePath, file_get_contents($imgUpload));
+                    }
+
                 }
             }
 
@@ -116,6 +129,7 @@ class ParserController extends \yii\web\Controller
                 $offer->image = $imagePath;
                 $offer->pre_image = $imagePath;
                 $offer->pos = $pos;
+                $offer->coordinates = $cords;
                 //$offer->pre_options = $pre_options;
                 //$offer->pre_text = $imagePath;
                 $re = $offer->save();

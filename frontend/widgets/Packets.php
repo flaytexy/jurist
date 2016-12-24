@@ -23,6 +23,7 @@ class Packets extends Widget
     public function run()
     {
         $packets = Packet::find()->where(['class' => get_class($this->model), 'item_id' => $this->model->primaryKey])->sort()->all();
+
         echo $this->render('packets', [
             'packets' => $packets
         ]);
