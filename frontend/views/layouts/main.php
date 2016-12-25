@@ -16,9 +16,9 @@ $goodsCount = count(Shopcart::goods());
                     <ul class="top-menus">
                         <li><a href="/offshornyie-predlozheniya" title="Оффшорные предложения">Оффшорные предложения</a></li>
                         <li><a href="/evropejskie-kompanii" title="Европейские компании">Европейские компании</a></li>
-                        <li><a href="/banki-i-proczessing" title="Банки и процессинг">Банки и процессинг</a></li>
+                        <!--<li><a href="/banki-i-proczessing" title="Банки и процессинг">Банки и процессинг</a></li>
                         <li><a href="/liczenzii-beliza" title="Лицензии Белиза">Лицензии Белиза</a></li>
-                        <li><a href="/licenzii" title="Лицензии">Лицензии</a></li>
+                        <li><a href="/licenzii" title="Лицензии">Лицензии</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -31,13 +31,15 @@ $goodsCount = count(Shopcart::goods());
                                 'options' => ['class' => 'nav navbar-nav'],
                                 'items' => [
                                     ['label' => 'Главная', 'url' => ['site/index']],
+                                    //['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
+                                    //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                                     //['label' => 'Shop', 'url' => ['shop/index']],
                                     ['label' => 'Новости', 'url' => ['news/index']],
-                                    ['label' => 'Articles', 'url' => ['articles/index']],
-                                    ['label' => 'Gallery', 'url' => ['gallery/index']],
-                                    ['label' => 'Guestbook', 'url' => ['guestbook/index']],
+                                    //['label' => 'Articles', 'url' => ['articles/index']],
+                                    //['label' => 'Gallery', 'url' => ['gallery/index']],
+                                    //['label' => 'Guestbook', 'url' => ['guestbook/index']],
                                     ['label' => 'Информация', 'url' => ['faq/index']],
-                                    ['label' => 'Контакты', 'url' => ['/contact/index']],
+                                    ['label' => 'Контакты', 'url' => ['/contact/index']]
                                 ],
                             ]); ?>
                 </nav>
@@ -66,13 +68,15 @@ $goodsCount = count(Shopcart::goods());
                 'options' => ['class' => 'nav navbar-nav'],
                 'items' => [
                     ['label' => 'Главная', 'url' => ['site/index']],
+                    ['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
+                    ['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                     //['label' => 'Shop', 'url' => ['shop/index']],
                     ['label' => 'Новости', 'url' => ['news/index']],
-                    ['label' => 'Articles', 'url' => ['articles/index']],
-                    ['label' => 'Gallery', 'url' => ['gallery/index']],
-                    ['label' => 'Guestbook', 'url' => ['guestbook/index']],
+                    //['label' => 'Articles', 'url' => ['articles/index']],
+                    //['label' => 'Gallery', 'url' => ['gallery/index']],
+                    //['label' => 'Guestbook', 'url' => ['guestbook/index']],
                     ['label' => 'Информация', 'url' => ['faq/index']],
-                    ['label' => 'Контакты', 'url' => ['/contact/index']],
+                    ['label' => 'Контакты', 'url' => ['/contact/index']]
                 ],
             ]); ?>
             <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div><div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div><!-- Responsive Menu -->
