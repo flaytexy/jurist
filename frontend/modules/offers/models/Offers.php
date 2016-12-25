@@ -31,7 +31,7 @@ class Offers extends \frontend\components\ActiveRecord
             ['pos', 'string', 'max' => 64],
             ['coordinates', 'string', 'max' => 64],
             ['image', 'image'],
-            [['views', 'time', 'status'], 'integer'],
+            [['views', 'time', 'status', 'type_id'], 'integer'],
             ['time', 'default', 'value' => time()],
             ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],
@@ -45,12 +45,7 @@ class Offers extends \frontend\components\ActiveRecord
     {
         return [
             'title' => Yii::t('easyii', 'Title'),
-
-            'pre_options' => 'pre_options!',
-            //'title' => Yii::t('easyii', 'Title'),
-            //'title' => Yii::t('easyii', 'Title'),
-            //'title' => Yii::t('easyii', 'Title'),
-            //'title' => Yii::t('easyii', 'Title'),
+            'type_id' => Yii::t('easyii', 'Регион'),
             'text' => Yii::t('easyii', 'Text'),
             'short' => Yii::t('easyii/offers', 'Short'),
             'image' => Yii::t('easyii', 'Image'),

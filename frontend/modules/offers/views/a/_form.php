@@ -16,32 +16,37 @@ $module = $this->context->module->id;
     'options' => ['enctype' => 'multipart/form-data', 'class' => 'model-form']
 ]); ?>
 <?= $form->field($model, 'title') ?>
-<hr />
+<hr/>
 
-
+<?= $form->field($model, 'type_id')->dropDownList([
+    '1' => 'Весь мир',
+    '2' => 'Европа'
+]) ?>
 <?= $form->field($model, 'coordinates') ?>
+<?= $form->field($model, 'pre_image')->fileInput() ?>
 
-
-<?php if($model->image) : ?>
+<?php if ($model->image) : ?>
     <img src="<?= Image::thumb($model->image, 240) ?>">
 <?php endif; ?>
 <?= $form->field($model, 'pre_image')->fileInput() ?>
 
 <?= $form->field($model, 'pre_text')->textarea() ?>
 
-<hr />
+<hr/>
 
-<?php if($this->context->module->settings['enableThumb']) : ?>
-    <?php if($model->image) : ?>
+<?php if ($this->context->module->settings['enableThumb']) : ?>
+    <?php if ($model->image) : ?>
         <img src="<?= Image::thumb($model->image, 240) ?>">
-        <a href="<?= Url::to(['/admin/'.$module.'/a/clear-image', 'id' => $model->offer_id]) ?>" class="text-danger confirm-delete" title="<?= Yii::t('easyii', 'Clear image')?>"><?= Yii::t('easyii', 'Clear image')?></a>
+        <a href="<?= Url::to(['/admin/' . $module . '/a/clear-image', 'id' => $model->offer_id]) ?>"
+           class="text-danger confirm-delete"
+           title="<?= Yii::t('easyii', 'Clear image') ?>"><?= Yii::t('easyii', 'Clear image') ?></a>
     <?php endif; ?>
     <?= $form->field($model, 'image')->fileInput() ?>
 <?php endif; ?>
-<?php if($this->context->module->settings['enableShort']) : ?>
+<?php if ($this->context->module->settings['enableShort']) : ?>
     <?= $form->field($model, 'short')->textarea() ?>
 <?php endif; ?>
-<?= $form->field($model, 'text')->widget(Redactor::className(),[
+<?= $form->field($model, 'text')->widget(Redactor::className(), [
     'options' => [
         'minHeight' => 400,
         'imageUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
@@ -52,13 +57,13 @@ $module = $this->context->module->id;
 
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 
-<?php if($this->context->module->settings['enableTags']) : ?>
+<?php if ($this->context->module->settings['enableTags']) : ?>
     <?= $form->field($model, 'tagNames')->widget(TagsInput::className()) ?>
 <?php endif; ?>
 
 <?= $form->field($model, 'optionNames')->widget(OptionsInput::className()) ?>
 
-<?php if(IS_ROOT) : ?>
+<?php if (IS_ROOT) : ?>
     <?= $form->field($model, 'slug') ?>
     <?= SeoForm::widget(['model' => $model]) ?>
 <?php endif; ?>
