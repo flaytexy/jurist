@@ -43,12 +43,27 @@ $(function () {
     $('#world-map-markers').width($(window).width());
     $('#world-map-markers').height($(window).height());
 
+    var mapData = {
+        'world_mill': {
+            focusX: 0.54,
+            focusY: 1.5,
+            scale: 0.5,
+            zoomMin: 1.25
 
+        },
+        'europe_mill' : {
+            focusX: 0.5,
+            focusY: 0.6,
+            scale: 1.22,
+            zoomMin: 1.85
+        }
+    };
+console.log(mapData[mapType].focusX);
     $('#world-map-markers').vectorMap({
-        map: 'world_mill',
-        zoomMin: 1.45,
-        focusOn:{x:0.55, y:0.5, scale: 1},
-        zoomOnScroll: true,
+        map: mapType,
+        zoomMin: mapData[mapType].zoomMin,
+        focusOn: {x: mapData[mapType].focusX, y: mapData[mapType].focusY, scale: mapData[mapType].scale},
+        zoomOnScroll: false,
         scaleColors: ['#C8EEFF', '#b70000'],
         normalizeFunction: 'polynomial',
         hoverOpacity: 0.7,
@@ -69,7 +84,14 @@ $(function () {
             selected: {
                 fill: 'blue'
             },
-            selectedHover: {
+            selectedHover: {}
+        },
+        markerLabelStyle: {
+            initial: {
+                fill: '#000'
+            },
+            hover: {
+                fill: '#2B4773'
             }
         },
         regionStyle: {
@@ -81,13 +103,11 @@ $(function () {
                 fill: '#7DC20F'
             },
             hover: {
-                fill: "#649b0c",
-                cursor: 'pointer'
+                fill: "#7DC20F",
+                cursor: 'default'
             }
         },
-        regionLabelStyle: {
-
-        },
+        regionLabelStyle: {},
         backgroundColor: '#A3C7FF', //'transparent', //3B5BC6 //
         markers: myMarker,
         labels: {
@@ -114,7 +134,7 @@ $(function () {
                     p[i] = c.status;
                     return p
                 }, {})/*,
-                legend: {
+                 legend: {
                  horizontal: true,
                  title: 'Nuclear power station status',
                  labelRender: function(v){
@@ -126,9 +146,16 @@ $(function () {
                  }
                  }*/
             }]
+        },
+        onMarkerClick: function (events, label, index, weburl) {
+            //console.log(myMarker[label].weburl);
+            $('#menu-show-block-zone').show();
+            $('#menu-show-block-zone .block-zone').hide();
+            $('#' + myMarker[label].weburl).show();
+            $.scrollTo('#' + myMarker[label].weburl, -250);
         }
-        /*onMarkerLabelShow: function(event, label, index) {
-         label.html('<img src="/img/map-pin-marker-circle-512.png"><br />' + label.html());
+        /*onMarkerOver: function (event, code, region) {
+         console.log('sdadas22');
          }*/
     });
 });

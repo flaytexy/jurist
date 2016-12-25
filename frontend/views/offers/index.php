@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 <script type="application/javascript">
     var myMarker = <?= $markers; ?>;
+    var mapType = "<?= $mapType; ?>";
 </script>
 
 <?php /*foreach($offers as $item) : ?>
@@ -50,19 +51,6 @@ $this->params['breadcrumbs'][] = $page->model->title;
     </div>
 </section>
 
-<section>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="<? if($offer_type==2) : ?>map-bg-eu<? else: ?>map-bg<? endif; ?>">
-                <div id="map-pos" class="map-pos">
-                    <?php foreach ($offers as $item) : ?>
-                        <a class="map-marker" style="left: <?= $item->position[0] ?>px; top: <?= $item->position[1] ?>px;" data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section id="offers">
     <div class="block">
@@ -89,6 +77,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             </div>
                         </div>
                         <div class="col-md-8">
+                            <span><b><?= $item->title ?></b></span>
                             <?= $item->short ?>
 
                             <ul>

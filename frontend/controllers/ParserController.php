@@ -118,7 +118,7 @@ class ParserController extends \yii\web\Controller
             e_print($imagePath, '$imagePath');
 
             $offer = Offers::find()
-                ->where(['title' => $title])
+                ->where(['title' => $title, 'type_id' => $type])
                 ->one();
 
             if (empty($offer)) {

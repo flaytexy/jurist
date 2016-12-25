@@ -17,13 +17,20 @@ class OffersController extends \yii\web\Controller
             $data = array();
             $data['latLng'] = explode(';', $offer->model->coordinates);
             $data['name'] = $offer->title;
+            $data['weburl'] = 'b_' . $offer->model->offer_id;
             $markers[] = $data;
         }
+
+        if($type_id==2)
+            $mapType = 'europe_mill';
+        else
+            $mapType = 'world_mill';
 
         return $this->render('index', [
             'markers' => json_encode($markers),
             'offers' => $offers,
-            'offer_type' => $type_id
+            'offer_type' => $type_id,
+            'mapType' => $mapType
         ]);
     }
 
