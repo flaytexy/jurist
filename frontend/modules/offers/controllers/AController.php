@@ -61,8 +61,9 @@ class AController extends Controller
                     }
                 }
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/offers', 'Offers created'));
-                    return $this->redirect(['/admin/'.$this->module->id]);
+                    $this->flash('success', Yii::t('easyii/offers', 'Offers created: '. $model->offer_id));
+                    //return $this->redirect(['/admin/'.$this->module->id]);
+                    return $this->redirect(['/admin/'.$this->module->id.'/a/edit/'.$model->offer_id]);
                 }
                 else{
                     $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));

@@ -1,7 +1,55 @@
 $(function(){
-    var photosBody = $('#photo-table > tbody');
 
-    photosBody.on('input propertychange', '.packet-description, .packet-title, .packet-price, .selectized', function(){
+    var packetBody = $('#packet-table');
+
+    $(document).on('click', '#create-packet', function(){
+        var urlTo = $(this).attr('data-url');
+
+        $.ajax({
+            url: urlTo,
+            dataType: 'json',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: {},
+            type: 'post',
+            success: function(response){
+
+                if(response.result === 'success'){
+                    var html = $(packetTemplate
+                            .replace(/\{\{packet_id\}\}/g, response.packet.id)
+                            .replace(/\{\{packet_description\}\}/g, '')
+                            .replace(/\{\{packet_price\}\}/g, '')
+                            .replace(/\{\{packet_title\}\}/g, '')
+                            .replace(/\{\{packet_tagNames\}\}/g, '')
+
+                        )
+                        .hide();
+
+                    var prevId = $('tr[data-id='+( response.packet.id - 1 )+']', packetBody);
+                    if(prevId.get(0)){
+                        prevId.before(html);
+                    } else {
+                        packetBody.prepend(html);
+                    }
+                    html.fadeIn();
+
+                    checkEmpty();
+                } else {
+                    alert(response.error);
+                }
+
+                if(++uploaded >= $this.prop('files').length)
+                {
+                    uploadButton.removeClass('disabled');
+                    uploadingText.hide();
+                    clearInterval(uploadingTextInterval);
+                }
+            }
+        });
+    });
+
+    packetBody.on('input propertychange', '.packet-description, .packet-title, .packet-price, .selectized', function(){
 
         var saveBtn = $(this).siblings('.save-packet-description');
         if(saveBtn.hasClass('disabled')){
@@ -32,7 +80,7 @@ $(function(){
         }
     });
 
-    photosBody.on('click', '.delete-photo', function(){
+    packetBody.on('click', '.delete-photo', function(){
         var $this = $(this).addClass('disabled');
         if(confirm($this.attr('title')+'?')){
             $.getJSON($this.attr('href'), function(response){
@@ -52,8 +100,8 @@ $(function(){
     });
 
     function checkEmpty(){
-        var table = photosBody.parent();
-        if(photosBody.find('tr').length) {
+        var table = packetBody.parent();
+        if(packetBody.find('tr').length) {
             if(!table.is(':visible')) {
                 table.show();
                 $('.empty').hide();

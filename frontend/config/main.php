@@ -12,7 +12,7 @@ $config = [
     //'language' => 'en-US',
     //'language'=>'ru-RU',
     //'language' => 'en',
-    'language' => 'en-US',
+    'language' => 'uk-UA',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [
         '@runtime' => '@frontend/runtime'
@@ -94,6 +94,8 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            //'class'=>'frontend\components\LangUrlManager',
+            //'languages' => ['ru' => 'ru-RU', 'en' => 'en-US', 'uk' => 'uk-UA'],
             'rules' => [
                 '' => 'site/index',
 

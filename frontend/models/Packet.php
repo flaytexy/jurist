@@ -25,7 +25,7 @@ class Packet extends \frontend\components\ActiveRecord
     public function rules()
     {
         return [
-            [['title'], 'required'],
+            //[['title'], 'required'],
             [['title'], 'trim'],
             ['title', 'string', 'max' => 128],
             ['tagNames', 'safe']

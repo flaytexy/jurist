@@ -338,6 +338,7 @@ header {
     color: #e4e3e3;
     font-weight: 300;
 }
+.top-menus > li > a { font-family: Georgia; }
 .sign-btns > li > a, .top-menus > li > a {
     background: #121212;
     float: left;
@@ -700,7 +701,8 @@ header.sticky .logomenu-sec nav > ul > li > a {padding: 25px 45px 22px 0;}
 }
 .search-luxuriousvilla > h3 {
     float: left;
-    font-family: great vibes;
+    /*font-family: great vibes;*/
+    font-family: initial;
     font-size: 30px;
     font-weight: 400;
     line-height: 78px;
@@ -709,6 +711,7 @@ header.sticky .logomenu-sec nav > ul > li > a {padding: 25px 45px 22px 0;}
 .search-luxuriousvilla > h3 span {
     color: #f5f7f9;
     font-family: poppins;
+/*    font-family: initial;*/
     font-size: 12px;
     font-weight: 300;
     margin-left: 17px;

@@ -26,31 +26,28 @@ $packetTemplate = '<tr data-id="{{packet_id}}">'.(IS_ROOT ? '<td>{{packet_id}}</
             'model' => $model,
             'value' => "{{packet_tagNames}}",
             'name' => "tag_name_{{packet_id}}"
-        ])
-        .'
-        <?=  ?>
+        ]).'\
         <a href="' . Url::to(['/admin/packets/description/{{packet_id}}']) . '" class="btn btn-sm btn-primary disabled save-packet-description">'. Yii::t('easyii', 'Save') .'</a>\
     </td>\
     <td class="control vtop">\
         <div class="btn-group btn-group-sm" role="group">\
             <a href="' . Url::to(['/admin/packets/up/{{packet_id}}'] + $linkParams) . '" class="btn btn-default move-up" title="'. Yii::t('easyii', 'Move up') .'"><span class="glyphicon glyphicon-arrow-up"></span></a>\
             <a href="' . Url::to(['/admin/packets/down/{{packet_id}}'] + $linkParams) . '" class="btn btn-default move-down" title="'. Yii::t('easyii', 'Move down') .'"><span class="glyphicon glyphicon-arrow-down"></span></a>\
-            <a href="' . Url::to(['/admin/packets/edit/{{packet_id}}'] + $linkParams) . '" class="btn btn-default change-image-button" title="'. Yii::t('easyii', 'Change image') .'"><span class="glyphicon glyphicon-floppy-disk"></span></a>\
             <a href="' . Url::to(['/admin/packets/delete/{{packet_id}}']) . '" class="btn btn-default color-red delete-photo" title="'. Yii::t('easyii', 'Delete item') .'"><span class="glyphicon glyphicon-remove"></span></a>\
         </div>\
     </td>\
 </tr>';
 $this->registerJs("
-var photoTemplate = '{$packetTemplate}';
+var packetTemplate = '{$packetTemplate}';
 ", \yii\web\View::POS_HEAD);
 $packetTemplate = str_replace('>\\', '>', $packetTemplate);
 ?>
-<button id="photo-upload2" class="btn btn-success text-uppercase"><span class="glyphicon glyphicon-plus"></span>
+<button id="create-packet" data-url="/admin/packets/upload?class=frontend%5Cmodules%5Coffers%5Cmodels%5COffers&item_id=<?=$item_id?>" class="btn btn-success text-uppercase"><span class="glyphicon glyphicon-plus"></span>
     <?= Yii::t('easyii', 'New')?>
 </button>
 
 
-<table id="photo-table" class="table table-hover" style="display: <?= count($packets) ? 'table' : 'none' ?>;">
+<table id="packet-table" class="table table-hover" style="display: <?= count($packets) ? 'table' : 'none' ?>;">
     <thead>
     <tr>
         <?php if(IS_ROOT) : ?>

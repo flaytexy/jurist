@@ -16,7 +16,7 @@ use yii\helpers\Html;
                     <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
                         <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" style="display:none;">
                             <ul>
-                                <li data-index="rs-1" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="We Have 30K+">
+                                <li data-index="rs-1" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="Более 30 банков">
                                     <!-- MAIN IMAGE -->
                                     <img src="/uploads/theme_villa/slider1.jpg"  alt=""  data-bgposition="center center"  data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45" class="rev-slidebg" data-no-retina />
 
@@ -36,7 +36,7 @@ use yii\helpers\Html;
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
-                                        We Have <span>30K</span><i>+</i>
+                                            Официальные агенты банка
                                     </div>
 
                                     <!-- LAYER NR. 2 -->
@@ -55,7 +55,7 @@ use yii\helpers\Html;
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:30px;color:#fff;font-family:poppins;font-weight:700;letter-spacing:.3px;">
-                                        Villas <span>Avalible For Booking</span>
+                                        <span>Откроем счет за 2 дня</span>
                                     </div>
 
                                     <!-- LAYER NR. 3 -->
@@ -74,10 +74,10 @@ use yii\helpers\Html;
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
                                        style="font-size:16px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
-                                        Vestibulum at magna tellus ivamus
+                                        Широкий выбор: более 30 банков
                                     </p>
                                 </li>
-                                <li data-index="rs-2" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="Over 1 Million Listings">
+                                <li data-index="rs-2" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="Банковский счет за 2 дня">
                                     <!-- MAIN IMAGE -->
                                     <img src="/uploads/theme_villa/slider2.jpg"  alt=""  data-bgposition="center center"  data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45" class="rev-slidebg" data-no-retina />
 
@@ -115,7 +115,7 @@ use yii\helpers\Html;
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:36px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
-                                        Over 1 Million Listings
+                                        Официальные <span>агенты банка</span>
                                     </div>
 
                                     <!-- LAYER NR. 2 -->
@@ -134,7 +134,7 @@ use yii\helpers\Html;
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:55px;color:#fff;font-family:poppins;font-weight:600;letter-spacing:15px;">
-                                        Across <span>Family</span>
+                                        Откроем <span>счет за 2 дня</span>
                                     </div>
 
                                     <!-- LAYER NR. 3 -->
@@ -153,7 +153,7 @@ use yii\helpers\Html;
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
                                        style="font-size:18px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
-                                        "Helping Families and Friends Stay Togather in a Vacation Home"
+                                        Широкий выбор: более 30 банков
                                     </i>
 
                                     <!-- LAYER NR. 4 -->
@@ -172,7 +172,7 @@ use yii\helpers\Html;
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
                                        style="font-size:15px;color:#d7d7d7;font-family:arimo;letter-spacing:.3px;width:520px;line-height:26px;">
-                                        We aim to quickly and effectively find the best solution, tools and additional <br /> tips that you might be requesting for the best design experience!
+                                        Высокий уровень индивидуального подхода. <br /> Даже с минимальным бюджетом.
                                     </p>
                                 </li>
                             </ul>
@@ -190,7 +190,7 @@ use yii\helpers\Html;
             <div class="row">
                 <div class="col-md-12">
                     <div class="search-luxuriousvilla overlape">
-                        <h3>Search luxurious Villa <span>We Offer a Full Range of Services!</span></h3>
+                        <h3>High level of individual approach. <span>Even with minimal budget</span></h3>
                         <span><i class="fa fa-caret-down"></i></span>
                         <div class="search-luxuriousform">
                             <div class="row">

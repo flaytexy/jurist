@@ -37,14 +37,12 @@ class PacketsController extends Controller
         $packet->class = $class;
         $packet->item_id = $item_id;
 
-        if($packet->title){
+        if($packet->item_id){
             if($packet->save()){
                 $success = [
                     'message' => Yii::t('easyii', 'Packet uploaded'),
                     'packet' => [
-                        'id' => $packet->primaryKey,
-                        'title' => $packet->title,
-                        'description' => ''
+                        'id' => $packet->primaryKey
                     ]
                 ];
             }
