@@ -6,11 +6,11 @@ class TablesAsset extends \yii\web\AssetBundle
     public $sourcePath = '@frontend/assets/tables';
 
     public $css = [
-        'jquery.dataTables.min.css',
+        'css/jquery.dataTables.min.css',
     ];
     public $js = [
-        'init.js',
-        'jquery.dataTables.min.js'
+        'js/init.js',
+        'js/jquery.dataTables.min.js'
     ];
 
     public $depends = ['yii\web\JqueryAsset'];
