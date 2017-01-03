@@ -155,7 +155,7 @@ $goodsCount = count(Shopcart::goods());
                     <div class="footer-widget">
                         <div class="about-widget">
                             <div class="logo">
-                                <a href="index.html" title=""><img src="/uploads/theme_villa/logo2.png" alt=""></a>
+                                <a href="/" title=""><img src="/uploads/theme_villa/logo2.png" alt=""></a>
                             </div>
                             <p>Vestibulum at magna tellus ivamus sagitt is etnunc utaliquac vulputate leo vehicu auris porttitor eros vels aphicula mconse quat rhoncus elit diam nonumy nibidunt utthering does work.</p>
                             <p>Aenean molestie senec tus etnetus malei uada. Cnsectetuer adipisc, sed diam non ummy nibh.</p>
@@ -170,7 +170,7 @@ $goodsCount = count(Shopcart::goods());
                                 <li><span>Phone:</span> 215 - 123 - 4567</li>
                                 <li><span>Email:</span> <a href="#" title="">info@webinane.com</a></li>
                             </ul>
-                            <a href="#" class="theme-btn" title="">Contact Us Now</a>
+                            <a href="/contact" class="theme-btn" title="">Связаться с нами</a>
                         </div>
                     </div>
                 </div>
