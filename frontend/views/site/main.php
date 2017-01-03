@@ -16,6 +16,7 @@ use yii\helpers\Html;
                     <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
                         <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" style="display:none;">
                             <ul>
+                                <!-- 1-2 -->
                                 <li data-index="rs-1" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="Более 30 банков">
                                     <!-- MAIN IMAGE -->
                                     <img src="/uploads/theme_villa/slider1.jpg"  alt=""  data-bgposition="center center"  data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45" class="rev-slidebg" data-no-retina />
@@ -114,8 +115,8 @@ use yii\helpers\Html;
                                          data-splitout="none"
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
-                                         style="font-size:36px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
-                                        Официальные <span>агенты банка</span>
+                                         style="font-size:36px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.2px;">
+                                         От прямых регистраторов
                                     </div>
 
                                     <!-- LAYER NR. 2 -->
@@ -133,8 +134,8 @@ use yii\helpers\Html;
                                          data-splitout="none"
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
-                                         style="font-size:55px;color:#fff;font-family:poppins;font-weight:600;letter-spacing:15px;">
-                                        Откроем <span>счет за 2 дня</span>
+                                         style="font-size:45px;color:#fff;font-family:poppins;font-weight:600;letter-spacing:8px;">
+                                        Компания в Европе за 1 день
                                     </div>
 
                                     <!-- LAYER NR. 3 -->
@@ -153,11 +154,11 @@ use yii\helpers\Html;
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
                                        style="font-size:18px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
-                                        Широкий выбор: более 30 банков
+                                        Законное нулевое налогообложение
                                     </i>
 
                                     <!-- LAYER NR. 4 -->
-                                    <p class="tp-caption s2-l4 tp-resizeme"
+                                    <!--<p class="tp-caption s2-l4 tp-resizeme"
                                        data-x="100" data-hoffset=""
                                        data-y="345" data-voffset=""
                                        data-width="['auto','auto','auto','auto']"
@@ -173,8 +174,169 @@ use yii\helpers\Html;
                                        data-elementdelay="0.05"
                                        style="font-size:15px;color:#d7d7d7;font-family:arimo;letter-spacing:.3px;width:520px;line-height:26px;">
                                         Высокий уровень индивидуального подхода. <br /> Даже с минимальным бюджетом.
+                                    </p>-->
+                                </li>
+                                <!-- 3-4 -->
+                                <li data-index="rs-3" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="Оффшор за 449 USD">
+                                    <!-- MAIN IMAGE -->
+                                    <img src="/uploads/theme_villa/slider1.jpg"  alt=""  data-bgposition="center center"  data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45" class="rev-slidebg" data-no-retina />
+
+                                    <!-- LAYER NR. 1 -->
+                                    <div class="tp-caption s1-l1 tp-resizeme"
+                                         data-x="center" data-hoffset=""
+                                         data-y="170" data-voffset=""
+                                         data-width="['auto','auto','auto','auto']"
+                                         data-height="['auto','auto','auto','auto']"
+                                         data-transform_idle="o:1;"
+                                         data-transform_in="x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                         data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
+                                         data-start="500"
+                                         data-splitin="none"
+                                         data-splitout="none"
+                                         data-responsive_offset="on"
+                                         data-elementdelay="0.05"
+                                         style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
+                                        От прямых регистраторов
+                                    </div>
+
+                                    <!-- LAYER NR. 2 -->
+                                    <div class="tp-caption s1-l2 tp-resizeme"
+                                         data-x="center" data-hoffset=""
+                                         data-y="243" data-voffset=""
+                                         data-width="['auto','auto','auto','auto']"
+                                         data-height="['auto','auto','auto','auto']"
+                                         data-transform_idle="o:1;"
+                                         data-transform_in="x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                         data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
+                                         data-start="500"
+                                         data-splitin="none"
+                                         data-splitout="none"
+                                         data-responsive_offset="on"
+                                         data-elementdelay="0.05"
+                                         style="font-size:30px;color:#fff;font-family:poppins;font-weight:700;letter-spacing:.3px;">
+                                        <span>Оффшор за 449 USD</span>
+                                    </div>
+
+                                    <!-- LAYER NR. 3 -->
+                                    <p class="tp-caption s1-l3 tp-resizeme"
+                                       data-x="center" data-hoffset=""
+                                       data-y="297" data-voffset=""
+                                       data-width="['auto','auto','auto','auto']"
+                                       data-height="['auto','auto','auto','auto']"
+                                       data-transform_idle="o:1;"
+                                       data-transform_in="x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                       data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                       data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
+                                       data-start="500"
+                                       data-splitin="none"
+                                       data-splitout="none"
+                                       data-responsive_offset="on"
+                                       data-elementdelay="0.05"
+                                       style="font-size:16px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
+                                        24 часа
                                     </p>
                                 </li>
+                                <li data-index="rs-4" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="Лицензия для Forex">
+                                    <!-- MAIN IMAGE -->
+                                    <img src="/uploads/theme_villa/slider2.jpg"  alt=""  data-bgposition="center center"  data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45" class="rev-slidebg" data-no-retina />
+
+                                    <!-- LAYER NR. 5 -->
+											<span class="tp-caption s2-l5 tp-resizeme"
+                                                  data-x="585" data-hoffset=""
+                                                  data-y="130" data-voffset=""
+                                                  data-width="['auto','auto','auto','auto']"
+                                                  data-height="['auto','auto','auto','auto']"
+                                                  data-transform_idle="o:1;"
+                                                  data-transform_in="x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                                  data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                                  data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
+                                                  data-start="500"
+                                                  data-splitin="none"
+                                                  data-splitout="none"
+                                                  data-responsive_offset="on"
+                                                  data-elementdelay="0.05"
+                                                  style="height:274px;width:193px;">
+											</span>
+
+                                    <!-- LAYER NR. 1 -->
+                                    <div class="tp-caption s2-l1 tp-resizeme"
+                                         data-x="100" data-hoffset=""
+                                         data-y="170" data-voffset=""
+                                         data-width="['auto','auto','auto','auto']"
+                                         data-height="['auto','auto','auto','auto']"
+                                         data-transform_idle="o:1;"
+                                         data-transform_in="x:0;y:[-175%];z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                         data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
+                                         data-start="500"
+                                         data-splitin="none"
+                                         data-splitout="none"
+                                         data-responsive_offset="on"
+                                         data-elementdelay="0.05"
+                                         style="font-size:36px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.2px;">
+                                        По выгодной цене
+                                    </div>
+
+                                    <!-- LAYER NR. 2 -->
+                                    <div class="tp-caption s2-l2 tp-resizeme"
+                                         data-x="100" data-hoffset=""
+                                         data-y="223" data-voffset=""
+                                         data-width="['auto','auto','auto','auto']"
+                                         data-height="['auto','auto','auto','auto']"
+                                         data-transform_idle="o:1;"
+                                         data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                         data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
+                                         data-start="500"
+                                         data-splitin="none"
+                                         data-splitout="none"
+                                         data-responsive_offset="on"
+                                         data-elementdelay="0.05"
+                                         style="font-size:45px;color:#fff;font-family:poppins;font-weight:600;letter-spacing:8px;">
+                                        Лицензия для Forex
+                                    </div>
+
+                                    <!-- LAYER NR. 3 -->
+                                    <i class="tp-caption s2-l3 tp-resizeme"
+                                       data-x="100" data-hoffset=""
+                                       data-y="307" data-voffset=""
+                                       data-width="['auto','auto','auto','auto']"
+                                       data-height="['auto','auto','auto','auto']"
+                                       data-transform_idle="o:1;"
+                                       data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                       data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                       data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
+                                       data-start="500"
+                                       data-splitin="none"
+                                       data-splitout="none"
+                                       data-responsive_offset="on"
+                                       data-elementdelay="0.05"
+                                       style="font-size:18px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
+                                        Компания <span>+</span> Лицензия <span>+</span> Счет
+                                    </i>
+
+                                    <!-- LAYER NR. 4 -->
+                                    <!--<p class="tp-caption s2-l4 tp-resizeme"
+                                       data-x="100" data-hoffset=""
+                                       data-y="345" data-voffset=""
+                                       data-width="['auto','auto','auto','auto']"
+                                       data-height="['auto','auto','auto','auto']"
+                                       data-transform_idle="o:1;"
+                                       data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                       data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                       data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
+                                       data-start="500"
+                                       data-splitin="none"
+                                       data-splitout="none"
+                                       data-responsive_offset="on"
+                                       data-elementdelay="0.05"
+                                       style="font-size:15px;color:#d7d7d7;font-family:arimo;letter-spacing:.3px;width:520px;line-height:26px;">
+                                        Высокий уровень индивидуального подхода. <br /> Даже с минимальным бюджетом.
+                                    </p>-->
+                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -254,55 +416,65 @@ use yii\helpers\Html;
                     <div class="spec-services">
                         <div class="title1 vertical">
                             <h2>Special <span>New Services</span></h2>
-                            <span>We Provide Best Services</span>
+                            <span>Предлагаем продвинутые услуги</span>
                         </div>
                         <div class="about-services">
-                            <p>Vestibulum at magna tellus ivamus sagitt is etnunc utaliquac vulputate leo vehicu auris porttitor eros vels aphicula mconse quat rhoncus elit. Aenean molestie senec tus etnetus males uada. When an unknown printer took a galley.</p>
+                            <p>Лучшее предложение это то, после которого
+                                Вы будете нас рекомендовать партнерам или близким,
+                                а не то, где мы больше на Вас заработаем.
+                                Мы реализуем Ваши заказы по отработанным системам,
+                                заведомо известным нам из опыта, а не в теории.
+                                В динамично меняющейся среде мы ищем актуальные
+                                новые решения, а не останавливаемся, если всем
+                                известные стандартные не срабатывают.</p>
                             <ul class="about-serlist">
-                                <li><a href="#" title="">We deliver Top Rankings.</a></li>
-                                <li><a href="#" title="">High customer retention rate.</a></li>
-                                <li><a href="#" title="">Afordable pricing offers.</a></li>
+                                <li><a href="#" title="">Главное наше отличие - это поиск своих путей,
+                                        а не надежда на оппонентов</a></li>
+                                <li><a href="#" title="">Степень доверия в непростых вопросах
+                                        является определяющим фактором</a></li>
+                                <li><a href="#" title="">Полностью оправданные затраты</a></li>
                             </ul>
                         </div>
-                        <div class="services-list1">
+                        <div class="services-list1" id="services-list1">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-glass-and-bottle-of-wine"></i></span>
-                                        <h4><a href="services-detail.html" title="">Concierge Service</a></h4>
-                                        <i>Holiday Needs</i>
+                                        <h4><a href="#services-list1" title="">Подбор подходящей юрисдикции</a></h4>
+                                        <i>Страны и их особенности</i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-stack"></i></span>
-                                        <h4><a href="services-detail.html" title="">Handpicked Estate</a></h4>
-                                        <i>Villa Vacation</i>
+                                        <h4><a href="#services-list1" title="">SWIFT</a></h4>
+                                        <i>Регистрация под Вашу систему</i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-notebook-and-mouse-cursor"></i></span>
-                                        <h4><a href="services-detail.html" title="">Easy Booking</a></h4>
-                                        <i>Luxury Villas</i>
+                                        <h4><a href="#services-list1" title="">Брендированные карты
+                                                без привязки к банку</a></h4>
+                                        <i>Visa & MasterCard</i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-security"></i></span>
-                                        <h4><a href="services-detail.html" title="">Secure Payment</a></h4>
-                                        <i>Holiday Needs</i>
+                                        <h4><a href="#services-list1" title="">Анонимные карты</a></h4>
+                                        <i>Субсчета</i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-cleaning-lady"></i></span>
-                                        <h4><a href="services-detail.html" title="">Housekeeping Service</a></h4>
-                                        <i>Villa Vacation</i>
+                                        <h4><a href="#services-list1" title="">Холдинги</a></h4>
+                                        <i>Крупный бизнес</i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="services.html" title="" class="theme-btn">View All Services</a>
+                                    <a href="/offshornyie-predlozheniya" title="" class="theme-btn">Просмотреть все</a>
                                 </div>
                             </div>
                         </div>
@@ -326,7 +498,18 @@ use yii\helpers\Html;
                                     <img src="/uploads/theme_villa/customer-sign.png" alt="" />
                                 </div>
                                 <div class="customer-reviewrating">
-                                    <p>"A relaxing and luxurious French atmosphere with a real sense of service."</p>
+                                    <p>"По рекомендации друга решил открыть счет на компанию в определенном латвийском банке.
+                                        Я обратился в эту компанию так, как банк у них был представлен на сайте,
+                                        на что не отказывая предложили открыть в других банках.
+                                        Я стоял на своем и спустя полтора месяца, вместо обещанного одного месяца, мне открыли счет.
+                                        Но дело не в том. Я пол года с горем пополам пользовался счетом,
+                                        давая бесконечные подтверждения по запросу банка на сомнительные по их мнению переводы.
+                                        И вот спустя пол года доступ к моему счету заблокировали совершенно безосновательно.
+                                        Я был вынужден обратиться за открытием нового счета пока велись разбирательства по тому.
+                                        В этот раз у меня не было на примете определенного банка и я согласился на предложенный мне.
+                                        Через две недели я уже пользовался новым счетом и по сей день никаких нареканий. Ребята молодцы,
+                                        а я потерял время и так пока и не вернул деньги с латвийского банка. Зря я не послушал с самого начала...
+                                        "</p>
                                     <div class="ratings">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -334,7 +517,7 @@ use yii\helpers\Html;
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-half-o"></i>
                                     </div>
-                                    <span>Customer Review From <i>Trip Advisor.</i></span>
+                                    <span>Клиентский отзыв <i>Евгений</i></span>
                                 </div>
                             </div>
                         </div>
@@ -345,15 +528,18 @@ use yii\helpers\Html;
                                     <img src="/uploads/theme_villa/customer-sign2.png" alt="" />
                                 </div>
                                 <div class="customer-reviewrating">
-                                    <p>"A relaxing and luxurious French atmosphere with a real sense of service."</p>
+                                    <p>"У другой компании заказала регистрацию оффшора и открытие счета.
+                                        Компанию зарегистрировали, а счет открыть не смогли. После этого обратившись к другим я узнала, что оказывается
+                                        можно открыть счет покупая у них и компанию и так не только у них... От всей души благодарна IQ Decision, что
+                                        вошли в положение и открыли мне счет без регистрации еще одной кмпании. "</p>
                                     <div class="ratings">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
+                                        <i class="fa fa-star"></i>
                                     </div>
-                                    <span>Customer Review From <i>Trip Advisor.</i></span>
+                                    <span>Клиентский отзыв <i>Светлана</i></span>
                                 </div>
                             </div>
                         </div>
@@ -372,9 +558,9 @@ use yii\helpers\Html;
                 <div class="col-md-12">
                     <div class="villaeditors-picks">
                         <div class="title1">
-                            <h2>Villa Editor's Picks</h2>
-                            <span>We Provide Best Services</span>
-                            <p>Vestibulum at magna tellus. Vivamus sagi ttis et nunc ut aliquet. Vivam pulput vehic ula. Mauris prottitor erovel sapien. Sed ut Persp voluptatem accusanti ore</p>
+                            <h2>Популярные юрисдикции</h2>
+                            <span>Все юрисдикции</span>
+                            <p>Решения мы предлагаем не только стандартне - мы можем гибко подойти к вопросу и реализовать согласно Вашим пожеланиям</p>
                         </div>
                         <div class="packages remove-ext2">
                             <div class="row">
@@ -385,7 +571,7 @@ use yii\helpers\Html;
                                             <span><i>$380</i> / Per Night</span>
                                         </div>
                                         <div class="package-detail">
-                                            <span class="cate">Crowd Spot / Private Villa</span>
+                                            <span class="cate">Lite/Classic/Pro</span>
                                             <h4><a href="packages-detail.html" title="">Tigers Plaza Apartments</a></h4>
                                             <ul class="location-book">
                                                 <li><i class="fa fa-map-marker"></i> <span>Spain, Madrid, 4753 Fourth St</span></li>
@@ -401,7 +587,7 @@ use yii\helpers\Html;
                                             <span><i>$380</i> / Per Night</span>
                                         </div>
                                         <div class="package-detail">
-                                            <span class="cate">Crowd Spot / Private Villa</span>
+                                            <span class="cate">Lite/Classic/Pro</span>
                                             <h4><a href="packages-detail.html" title="">Riba Pila Apartments</a></h4>
                                             <ul class="location-book">
                                                 <li><i class="fa fa-map-marker"></i> <span>Spain, Madrid, 4753 Fourth St</span></li>
@@ -417,7 +603,7 @@ use yii\helpers\Html;
                                             <span><i>$380</i> / Per Night</span>
                                         </div>
                                         <div class="package-detail">
-                                            <span class="cate">Crowd Spot / Private Villa</span>
+                                            <span class="cate">Lite/Classic/Pro</span>
                                             <h4><a href="packages-detail.html" title="">Paradice Hotel in Mamaia</a></h4>
                                             <ul class="location-book">
                                                 <li><i class="fa fa-map-marker"></i> <span>Spain, Madrid, 4753 Fourth St</span></li>
@@ -445,7 +631,7 @@ use yii\helpers\Html;
                             <div class="col-md-5">
                                 <div class="villa-arrangementsinfo">
                                     <div class="title1">
-                                        <h2>Villa Arrangements</h2>
+                                        <h2>Рекомендуемые банки</h2>
                                         <span>We Provide Best Services</span>
                                     </div>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.</p>

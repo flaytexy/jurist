@@ -1,5 +1,5 @@
 <?php
-namespace frontend\modules\offers\controllers;
+namespace frontend\modules\banks\controllers;
 
 
 use Yii;
@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 use yii\web\UploadedFile;
 
 use frontend\components\Controller;
-use frontend\modules\offers\models\Offers;
+use frontend\modules\banks\models\Banks;
 use frontend\helpers\Image;
 use frontend\behaviors\StatusController;
 
@@ -20,11 +20,11 @@ class AController extends Controller
         return [
             [
                 'class' => SortableDateController::className(),
-                'model' => Offers::className(),
+                'model' => Banks::className(),
             ],
             [
                 'class' => StatusController::className(),
-                'model' => Offers::className()
+                'model' => Banks::className()
             ]
         ];
     }
@@ -32,7 +32,7 @@ class AController extends Controller
     public function actionIndex()
     {
         $data = new ActiveDataProvider([
-            'query' => Offers::find()->sortDate(),
+            'query' => Banks::find()->sortDate(),
         ]);
 
         return $this->render('index', [
@@ -42,7 +42,7 @@ class AController extends Controller
 
     public function actionCreate()
     {
-        $model = new Offers;
+        $model = new Banks;
         $model->time = time();
 
         if ($model->load(Yii::$app->request->post())) {
@@ -54,7 +54,7 @@ class AController extends Controller
                 if(isset($_FILES) && $this->module->settings['enableThumb']){
                     $model->image = UploadedFile::getInstance($model, 'image');
                     if($model->image && $model->validate(['image'])){
-                        $model->image = Image::upload($model->image, 'offers');
+                        $model->image = Image::upload($model->image, 'banks');
                     }
                     else{
                         $model->image = '';
@@ -62,9 +62,9 @@ class AController extends Controller
                 }
 
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/offers', 'Offers created: '. $model->offer_id));
+                    $this->flash('success', Yii::t('easyii/banks', 'Banks created: '. $model->bank_id));
                     //return $this->redirect(['/admin/'.$this->module->id]);
-                    return $this->redirect(['/admin/'.$this->module->id.'/a/edit/'.$model->offer_id]);
+                    return $this->redirect(['/admin/'.$this->module->id.'/a/edit/'.$model->bank_id]);
                 }
                 else{
                     $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
@@ -81,7 +81,7 @@ class AController extends Controller
 
     public function actionEdit($id)
     {
-        $model = Offers::findOne($id);
+        $model = Banks::findOne($id);
 
         if($model === null){
             $this->flash('error', Yii::t('easyii', 'Not found'));
@@ -97,7 +97,7 @@ class AController extends Controller
                 if(isset($_FILES) && $this->module->settings['enableThumb']){
                     $model->image = UploadedFile::getInstance($model, 'image');
                     if($model->image && $model->validate(['image'])){
-                        $model->image = Image::upload($model->image, 'offers');
+                        $model->image = Image::upload($model->image, 'banks');
                     }
                     else{
                         $model->image = $model->oldAttributes['image'];
@@ -105,7 +105,7 @@ class AController extends Controller
                 }
 
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/offers', 'Offers updated'));
+                    $this->flash('success', Yii::t('easyii/banks', 'Banks updated'));
                 }
                 else{
                     $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
@@ -122,7 +122,7 @@ class AController extends Controller
 
     public function actionPhotos($id)
     {
-        if(!($model = Offers::findOne($id))){
+        if(!($model = Banks::findOne($id))){
             return $this->redirect(['/admin/'.$this->module->id]);
         }
 
@@ -134,7 +134,7 @@ class AController extends Controller
     public function actionPackets($id)
     {
 
-        if(!($model = Offers::findOne($id))){
+        if(!($model = Banks::findOne($id))){
             return $this->redirect(['/admin/'.$this->module->id]);
         }
 
@@ -145,17 +145,17 @@ class AController extends Controller
 
     public function actionDelete($id)
     {
-        if(($model = Offers::findOne($id))){
+        if(($model = Banks::findOne($id))){
             $model->delete();
         } else {
             $this->error = Yii::t('easyii', 'Not found');
         }
-        return $this->formatResponse(Yii::t('easyii/offers', 'Offers deleted'));
+        return $this->formatResponse(Yii::t('easyii/banks', 'Banks deleted'));
     }
 
     public function actionClearImage($id)
     {
-        $model = Offers::findOne($id);
+        $model = Banks::findOne($id);
 
         if($model === null){
             $this->flash('error', Yii::t('easyii', 'Not found'));
@@ -184,11 +184,11 @@ class AController extends Controller
 
     public function actionOn($id)
     {
-        return $this->changeStatus($id, Offers::STATUS_ON);
+        return $this->changeStatus($id, Banks::STATUS_ON);
     }
 
     public function actionOff($id)
     {
-        return $this->changeStatus($id, Offers::STATUS_OFF);
+        return $this->changeStatus($id, Banks::STATUS_OFF);
     }
 }

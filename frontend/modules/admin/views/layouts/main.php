@@ -7,6 +7,7 @@ $asset = AdminAsset::register($this);
 $moduleName = $this->context->module->id;
 ?>
 <?php $this->beginPage() ?>
+<!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>

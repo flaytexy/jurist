@@ -11,7 +11,11 @@ $page = Page::get('page-offers');
 $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
 ?>
-<h1><?= $page->seo('h1', $page->title) ?></h1>
+
+<div class="container">
+    <h1><?= $page->seo('h1', $page->title) ?></h1>
+    <div><?= $page->seo('div', $page->text) ?></div>
+</div>
 
 <script type="application/javascript">
     var myMarker = <?= $markers; ?>;
@@ -110,7 +114,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                                             <div class="package-thumb">
                                                 <?= Html::img($item->thumb(500, 375)) ?>
-                                                <span><i>$380</i> / Минимал</span>
+                                                <span><i>$<?= $item->model->price ?></i> / <? if ($item->model->how_days): ?><?= $item->model->how_days?><? else: ?>Минимал<? endif; ?></span>
                                             </div>
                                             <div class="package-detail">
                                             <span class="cate">

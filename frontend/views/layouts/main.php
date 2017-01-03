@@ -25,7 +25,7 @@ $goodsCount = count(Shopcart::goods());
         </div><!-- Top Bar -->
         <div class="logomenu-sec" id="logomenu-sec">
             <div class="container">
-                <div class="logo"><a href="index.html" title=""><img src="/uploads/theme_villa/logo.png" alt=""></a></div>
+                <div class="logo"><a href="/" title=""><img src="/uploads/theme_villa/logo2016-2.png" alt=""></a></div>
                 <nav class="navbar22 navbar-default22">
                             <?= Menu::widget([
                                 'options' => ['class' => 'nav navbar-nav'],
@@ -34,12 +34,13 @@ $goodsCount = count(Shopcart::goods());
                                     //['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
                                     //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                                     //['label' => 'Shop', 'url' => ['shop/index']],
-                                    ['label' => 'Новости', 'url' => ['news/index']],
+                                    ['label' => 'Новости', 'url' => ['/news']],
+                                    ['label' => 'Банки', 'url' => ['/banks']],
                                     //['label' => 'Articles', 'url' => ['articles/index']],
                                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
-                                    ['label' => 'Информация', 'url' => ['faq/index']],
-                                    ['label' => 'Контакты', 'url' => ['/contact/index']]
+                                    ['label' => 'Информация', 'url' => ['/faq']],
+                                    ['label' => 'Контакты', 'url' => ['/contact']]
                                 ],
                             ]); ?>
                 </nav>
@@ -71,12 +72,13 @@ $goodsCount = count(Shopcart::goods());
                     ['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
                     ['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                     //['label' => 'Shop', 'url' => ['shop/index']],
-                    ['label' => 'Новости', 'url' => ['news/index']],
+                    ['label' => 'Новости', 'url' => ['/news']],
+                    ['label' => 'Банки', 'url' => ['/banks']],
                     //['label' => 'Articles', 'url' => ['articles/index']],
                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
-                    ['label' => 'Информация', 'url' => ['faq/index']],
-                    ['label' => 'Контакты', 'url' => ['/contact/index']]
+                    ['label' => 'Информация', 'url' => ['/faq']],
+                    ['label' => 'Контакты', 'url' => ['/contact']]
                 ],
             ]); ?>
             <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div><div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div><!-- Responsive Menu -->
@@ -86,12 +88,13 @@ $goodsCount = count(Shopcart::goods());
         </ul>
     </div><!-- Responsive Header -->
 
-    <?php if($this->context->id != 'site') : ?>
-        <br/>
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ])?>
-    <?php endif; ?>
+    <div class="container">
+        <?php if($this->context->id != 'site') : ?>
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ])?>
+        <?php endif; ?>
+    </div>
 
     <?= $content ?>
     <div class="push"></div>

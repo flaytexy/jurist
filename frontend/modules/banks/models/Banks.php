@@ -1,5 +1,5 @@
 <?php
-namespace frontend\modules\offers\models;
+namespace frontend\modules\banks\models;
 
 use Yii;
 use common\behaviors\MySluggableBehavior;
@@ -9,7 +9,7 @@ use frontend\behaviors\Optionable;
 use frontend\models\Photo;
 use yii\helpers\StringHelper;
 
-class Offers extends \frontend\components\ActiveRecord
+class Banks extends \frontend\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
@@ -18,7 +18,7 @@ class Offers extends \frontend\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_offers';
+        return 'easyii_banks';
     }
 
     public function rules()
@@ -32,7 +32,7 @@ class Offers extends \frontend\components\ActiveRecord
             ['to_main', 'integer', 'max' => 1],
             [['price'], 'required'],
             [['price'], 'number', 'max' => 100000000],
-            ['how_days', 'integer', 'max' => 255],
+            ['how_days', 'integer', 'max' => 999],
             ['coordinates', 'string', 'max' => 64],
             ['image', 'image'],
             [['views', 'time', 'status', 'type_id'], 'integer'],
@@ -51,10 +51,10 @@ class Offers extends \frontend\components\ActiveRecord
             'title' => Yii::t('easyii', 'Title'),
             'type_id' => Yii::t('easyii', 'Регион'),
             'text' => Yii::t('easyii', 'Text'),
-            'short' => Yii::t('easyii/offers', 'Short'),
-            'to_main' => Yii::t('easyii/offers', 'На главную'),
-            'price' => Yii::t('easyii/offers', 'Цена'),
-            'how_days' => Yii::t('easyii/offers', 'Дней'),
+            'short' => Yii::t('easyii/banks', 'Short'),
+            'to_main' => Yii::t('easyii/banks', 'На главную'),
+            'price' => Yii::t('easyii/banks', 'Цена'),
+            'how_days' => Yii::t('easyii/banks', 'Дней'),
             'image' => Yii::t('easyii', 'Image'),
             'time' => Yii::t('easyii', 'Date'),
             'slug' => Yii::t('easyii', 'Slug'),
@@ -79,7 +79,7 @@ class Offers extends \frontend\components\ActiveRecord
 
     public function getPhotos()
     {
-        return $this->hasMany(Photo::className(), ['item_id' => 'offer_id'])->where(['class' => self::className()])->sort();
+        return $this->hasMany(Photo::className(), ['item_id' => 'bank_id'])->where(['class' => self::className()])->sort();
     }
 
 
@@ -89,7 +89,7 @@ class Offers extends \frontend\components\ActiveRecord
         if (parent::beforeSave($insert)) {
             $this->price = str_replace(",", ".", $this->price);
 
-            $settings = Yii::$app->getModule('admin')->activeModules['offers']->settings;
+            $settings = Yii::$app->getModule('admin')->activeModules['banks']->settings;
             $this->short = StringHelper::truncate($settings['enableShort'] ? $this->short : strip_tags($this->text), $settings['shortMaxLength']);
 
             if(!$insert && $this->image != $this->oldAttributes['image'] && $this->oldAttributes['image']){

@@ -19,30 +19,23 @@ $module = $this->context->module->id;
 <hr/>
 
 <?= $form->field($model, 'type_id')->dropDownList([
-    '1' => 'Весь мир',
-    '2' => 'Европа'
+    '1' => 'Корпоративный счет',
+    '2' => 'Личный счет'
 ]) ?>
-<?= $form->field($model, 'coordinates') ?>
+
 
 <?= $form->field($model, 'price') ?>
 <?= $form->field($model, 'how_days') ?>
+
 <?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
 
-<?= $form->field($model, 'pre_image')->fileInput() ?>
-
-<?php if ($model->image) : ?>
-    <img src="<?= Image::thumb($model->image, 240) ?>">
-<?php endif; ?>
-<?= $form->field($model, 'pre_image')->fileInput() ?>
-
-<?= $form->field($model, 'pre_text')->textarea() ?>
 
 <hr/>
 
 <?php if ($this->context->module->settings['enableThumb']) : ?>
     <?php if ($model->image) : ?>
         <img src="<?= Image::thumb($model->image, 240) ?>">
-        <a href="<?= Url::to(['/admin/' . $module . '/a/clear-image', 'id' => $model->offer_id]) ?>"
+        <a href="<?= Url::to(['/admin/' . $module . '/a/clear-image', 'id' => $model->bank_id]) ?>"
            class="text-danger confirm-delete"
            title="<?= Yii::t('easyii', 'Clear image') ?>"><?= Yii::t('easyii', 'Clear image') ?></a>
     <?php endif; ?>
@@ -54,8 +47,8 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'text')->widget(Redactor::className(), [
     'options' => [
         'minHeight' => 400,
-        'imageUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
-        'fileUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
+        'imageUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'banks']),
+        'fileUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'banks']),
         'plugins' => ['fullscreen']
     ]
 ]) ?>
