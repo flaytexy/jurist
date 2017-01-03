@@ -9,6 +9,7 @@ class TablesAsset extends \yii\web\AssetBundle
         //'jquery.fancybox.css',
     ];
     public $js = [
+        'init.js',
         'jquery.dataTables.min.js'
     ];
 

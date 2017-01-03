@@ -22,10 +22,15 @@ $this->params['breadcrumbs'][] = $page->model->title;
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <table>
+                    <table class="table" id="table-js">
                         <thead>
                             <tr>
-                                <th>w</th>
+                                <th>Название</th>
+                                <th>Страна</th>
+                                <th>Сайт</th>
+                                <th>Мин. депозит/баланс</th>
+                                <th>Срок</th>
+                                <th>Цена</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,6 +38,21 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             <tr>
                                 <td>
                                     <?= $item->title ?>
+                                </td>
+                                <td>
+                                    <?= $item->title ?>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <?= $item->model->how_days ?>
+                                </td>
+                                <td>
+                                    <?= $item->price ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

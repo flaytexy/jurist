@@ -14,19 +14,13 @@ class BanksObject extends \frontend\components\ApiObject
     public $views;
     public $time;
 
-    public $pre_option;
-    public $pre_image;
-    public $pre_text;
-
     public $properties;
     public $pos;
-    public $position;
 
     private $_photos;
 
     public function __construct($model){
         parent::__construct($model);
-        $this->position = explode(';', $this->pos);
     }
 
     public function getTitle(){
@@ -47,6 +41,10 @@ class BanksObject extends \frontend\components\ApiObject
 
     public function getOptions(){
         return $this->model->optionsArray;
+    }
+
+    public function getPrice(){
+        return $this->model->price;
     }
 
     public function getDate(){
