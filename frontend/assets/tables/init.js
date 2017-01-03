@@ -2,7 +2,12 @@
  * Created by Vitaliy on 03.01.2017.
  */
 jQuery(document).ready(function ($) {
-    var table = $('#table-js').DataTable();
+    $('#table-js').DataTable( {
+        "paging":   false,
+        "ordering": true,
+        "info":     false,
+        "searching": false
+    } );
 
     $('#table-js')
         .on( 'mouseenter', 'td', function () {
