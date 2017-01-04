@@ -67,7 +67,7 @@ section {
 }
 .block {
     float: left;
-    padding: 25px 0 90px;
+    padding: 100px 0 90px;
     position: relative;
     width: 100%;
 }
@@ -879,6 +879,7 @@ form.check-sec > .row > div {padding: 0 2.5px;}
 .select-date > i {left: 30px;}
 .select2-container--open {z-index: 9;}
 .check-sec .theme-btn {padding: 18px 44px 17px;}
+
 /*================ Theme Btn ================*/
 .theme-btn {
     color: #fff;
@@ -1198,7 +1199,7 @@ footer .title1.style2 > h2 {font-weight: 600;}
 }
 .customer-reviewrating {
     display: table;
-    max-width: 632px;
+ /*   max-width: 632px;*/
 }
 .customer-reviewrating > p {
     color: #ffffff;
@@ -1348,10 +1349,10 @@ footer .title1.style2 > h2 {font-weight: 600;}
     -o-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
     float: left;
-    padding: 30px;
+    min-height: 0;
+    padding: 30px 20px 25px;
     text-align: center;
     width: 100%;
-    min-height: 150px;
 }
 .cate {
     display: block;
@@ -1765,9 +1766,11 @@ footer .title1.style2 > h2 {font-weight: 600;}
     width: 100%;
 }
 .single-property .theme-btn {
+    font-family: Calibri, Helvetica, Arial, sans-serif;
+    font-size: 22px;
     float: right;
     height: 55px;
-    padding: 20px 45px;
+    padding: 10px 45px;
 }
 /*=============== Recent News ===============*/
 .recentnews-carousel {

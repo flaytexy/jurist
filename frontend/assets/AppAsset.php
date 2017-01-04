@@ -35,7 +35,7 @@ class AppAsset extends AssetBundle
         'js/perfect-scrollbar.js',
         'js/perfect-scrollbar.jquery.js',
         'js/jquery.scrolly.js',
-        'js/script2.js',
+        'js/all.js',
 
         'js/revolution/jquery.themepunch.tools.min.js',
         'js/revolution/jquery.themepunch.revolution.min.js',

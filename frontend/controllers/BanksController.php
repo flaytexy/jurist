@@ -29,7 +29,7 @@ class BanksController extends \yii\web\Controller
 
     public function actionView($slug)
     {
-        $this->getView()->registerJsFile(\Yii::$app->request->BaseUrl . '/js/script3.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+        $this->getView()->registerJsFile(\Yii::$app->request->BaseUrl . '/js/site.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
         $banks = Banks::get($slug);
 
