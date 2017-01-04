@@ -1,10 +1,9 @@
 <?php
 
 use yii\helpers\Html;
+use frontend\assets\MainAsset;
 
-
-
-
+MainAsset::register($this);
 
 ?>
 

@@ -72,12 +72,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
         $this->view->registerCssFile(Yii::$app->request->baseUrl . '/css/revicons/revolution.css', ['depends' => ['yii\bootstrap\BootstrapAsset']]);
-        $this->view->registerJsFile(
+/*        $this->view->registerJsFile(
             \Yii::$app->request->BaseUrl . '/js/main.js',
             ['depends' => [\yii\web\JqueryAsset::className()]]
-        );
+        );*/
 
         if (!Yii::$app->getModule('admin')->installed) {
             //return $this->redirect(['/install/step1']);
