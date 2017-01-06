@@ -13,13 +13,21 @@ MainAsset::register($this);
         <div class="row">
             <div class="col-md-12">
                 <div class="creative-slider">
-                    <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
+                    <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container"
+                         data-alias="classicslider1">
                         <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" style="display:none;">
                             <ul>
                                 <!-- 1-2 -->
-                                <li data-index="rs-1" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="Более 30 банков">
+                                <li data-index="rs-1" data-transition="random" data-slotamount="default"
+                                    data-hideafterloop="0" data-easein="default" data-easeout="default"
+                                    data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-param1=""
+                                    data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                                    data-param7="" data-param8="" data-param9="" data-param10=""
+                                    data-title="Более 30 банков">
                                     <!-- MAIN IMAGE -->
-                                    <img src="/uploads/theme_villa/slider1.jpg"  alt=""  data-bgposition="center center"  data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45" class="rev-slidebg" data-no-retina />
+                                    <img src="/uploads/theme_villa/slider1.jpg" alt="" data-bgposition="center center"
+                                         data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
+                                         class="rev-slidebg" data-no-retina/>
 
                                     <!-- LAYER NR. 1 -->
                                     <div class="tp-caption s1-l1 tp-resizeme"
@@ -37,7 +45,7 @@ MainAsset::register($this);
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
-                                            Официальные агенты банка
+                                        Официальные агенты банка
                                     </div>
 
                                     <!-- LAYER NR. 2 -->
@@ -78,9 +86,16 @@ MainAsset::register($this);
                                         Широкий выбор: более 30 банков
                                     </p>
                                 </li>
-                                <li data-index="rs-2" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="Банковский счет за 2 дня">
+                                <li data-index="rs-2" data-transition="random" data-slotamount="default"
+                                    data-hideafterloop="0" data-easein="default" data-easeout="default"
+                                    data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-param1=""
+                                    data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                                    data-param7="" data-param8="" data-param9="" data-param10=""
+                                    data-title="Банковский счет за 2 дня">
                                     <!-- MAIN IMAGE -->
-                                    <img src="/uploads/theme_villa/slider2.jpg"  alt=""  data-bgposition="center center"  data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45" class="rev-slidebg" data-no-retina />
+                                    <img src="/uploads/theme_villa/slider2.jpg" alt="" data-bgposition="center center"
+                                         data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
+                                         class="rev-slidebg" data-no-retina/>
 
                                     <!-- LAYER NR. 5 -->
 											<span class="tp-caption s2-l5 tp-resizeme"
@@ -116,7 +131,7 @@ MainAsset::register($this);
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:36px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.2px;">
-                                         От прямых регистраторов
+                                        От прямых регистраторов
                                     </div>
 
                                     <!-- LAYER NR. 2 -->
@@ -177,9 +192,16 @@ MainAsset::register($this);
                                     </p>-->
                                 </li>
                                 <!-- 3-4 -->
-                                <li data-index="rs-3" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="Оффшор за 449 USD">
+                                <li data-index="rs-3" data-transition="random" data-slotamount="default"
+                                    data-hideafterloop="0" data-easein="default" data-easeout="default"
+                                    data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-param1=""
+                                    data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                                    data-param7="" data-param8="" data-param9="" data-param10=""
+                                    data-title="Оффшор за 449 USD">
                                     <!-- MAIN IMAGE -->
-                                    <img src="/uploads/theme_villa/slider1.jpg"  alt=""  data-bgposition="center center"  data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45" class="rev-slidebg" data-no-retina />
+                                    <img src="/uploads/theme_villa/slider1.jpg" alt="" data-bgposition="center center"
+                                         data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
+                                         class="rev-slidebg" data-no-retina/>
 
                                     <!-- LAYER NR. 1 -->
                                     <div class="tp-caption s1-l1 tp-resizeme"
@@ -238,9 +260,16 @@ MainAsset::register($this);
                                         24 часа
                                     </p>
                                 </li>
-                                <li data-index="rs-4" data-transition="random" data-slotamount="default" data-hideafterloop="0"  data-easein="default" data-easeout="default" data-masterspeed="default" data-rotate="0"  data-saveperformance="off" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-title="Лицензия для Forex">
+                                <li data-index="rs-4" data-transition="random" data-slotamount="default"
+                                    data-hideafterloop="0" data-easein="default" data-easeout="default"
+                                    data-masterspeed="default" data-rotate="0" data-saveperformance="off" data-param1=""
+                                    data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                                    data-param7="" data-param8="" data-param9="" data-param10=""
+                                    data-title="Лицензия для Forex">
                                     <!-- MAIN IMAGE -->
-                                    <img src="/uploads/theme_villa/slider2.jpg"  alt=""  data-bgposition="center center"  data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45" class="rev-slidebg" data-no-retina />
+                                    <img src="/uploads/theme_villa/slider2.jpg" alt="" data-bgposition="center center"
+                                         data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
+                                         class="rev-slidebg" data-no-retina/>
 
                                     <!-- LAYER NR. 5 -->
 											<span class="tp-caption s2-l5 tp-resizeme"
@@ -340,7 +369,8 @@ MainAsset::register($this);
                             </ul>
                         </div>
                     </div>
-                </div><!-- Creative Slider  -->
+                </div>
+                <!-- Creative Slider  -->
             </div>
         </div>
     </div>
@@ -354,6 +384,7 @@ MainAsset::register($this);
                     <div class="search-luxuriousvilla overlape">
                         <h3>High level of individual approach. <span>Even with minimal budget</span></h3>
                         <span><i class="fa fa-caret-down"></i></span>
+
                         <div class="search-luxuriousform">
                             <div class="row">
                                 <div class="col-md-4">
@@ -372,13 +403,13 @@ MainAsset::register($this);
                                             <div class="col-md-3">
                                                 <div class="select-box select-date">
                                                     <i class="fa fa-calendar"></i>
-                                                    <input type="text" class="datepicker1" placeholder="Check In" />
+                                                    <input type="text" class="datepicker1" placeholder="Check In"/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="select-box select-date">
                                                     <i class="fa fa-calendar"></i>
-                                                    <input type="text" class="datepicker2" placeholder="Check Out" />
+                                                    <input type="text" class="datepicker2" placeholder="Check Out"/>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -399,8 +430,10 @@ MainAsset::register($this);
                                     </form>
                                 </div>
                             </div>
-                        </div><!-- Search Luxurious Form -->
-                    </div><!-- Search luxurious Villa -->
+                        </div>
+                        <!-- Search Luxurious Form -->
+                    </div>
+                    <!-- Search luxurious Villa -->
                 </div>
             </div>
         </div>
@@ -478,7 +511,8 @@ MainAsset::register($this);
                                 </div>
                             </div>
                         </div>
-                    </div><!-- Special Services -->
+                    </div>
+                    <!-- Special Services -->
                 </div>
             </div>
         </div>
@@ -490,26 +524,36 @@ MainAsset::register($this);
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="customers-reviews overlape" style="background-image: url(/uploads/theme_villa/customer-reviews-bg.jpg);">
+                    <div class="customers-reviews overlape"
+                         style="background-image: url(/uploads/theme_villa/customer-reviews-bg.jpg);">
                         <div class="customer-review">
                             <div class="review-detail">
                                 <div class="customer-thumb">
-                                    <img src="/uploads/theme_villa/customer1.jpg" alt="" />
-                                    <img src="/uploads/theme_villa/customer-sign.png" alt="" />
+                                    <img src="/uploads/theme_villa/customer1.jpg" alt=""/>
+                                    <img src="/uploads/theme_villa/customer-sign.png" alt=""/>
                                 </div>
                                 <div class="customer-reviewrating">
-                                    <p>"По рекомендации друга решил открыть счет на компанию в определенном латвийском банке.
+                                    <p>"По рекомендации друга решил открыть счет на компанию в определенном латвийском
+                                        банке.
                                         Я обратился в эту компанию так, как банк у них был представлен на сайте,
                                         на что не отказывая предложили открыть в других банках.
-                                        Я стоял на своем и спустя полтора месяца, вместо обещанного одного месяца, мне открыли счет.
+                                        Я стоял на своем и спустя полтора месяца, вместо обещанного одного месяца, мне
+                                        открыли счет.
                                         Но дело не в том. Я пол года с горем пополам пользовался счетом,
-                                        давая бесконечные подтверждения по запросу банка на сомнительные по их мнению переводы.
-                                        И вот спустя пол года доступ к моему счету заблокировали совершенно безосновательно.
-                                        Я был вынужден обратиться за открытием нового счета пока велись разбирательства по тому.
-                                        В этот раз у меня не было на примете определенного банка и я согласился на предложенный мне.
-                                        Через две недели я уже пользовался новым счетом и по сей день никаких нареканий. Ребята молодцы,
-                                        а я потерял время и так пока и не вернул деньги с латвийского банка. Зря я не послушал с самого начала...
+                                        давая бесконечные подтверждения по запросу банка на сомнительные по их мнению
+                                        переводы.
+                                        И вот спустя пол года доступ к моему счету заблокировали совершенно
+                                        безосновательно.
+                                        Я был вынужден обратиться за открытием нового счета пока велись разбирательства
+                                        по тому.
+                                        В этот раз у меня не было на примете определенного банка и я согласился на
+                                        предложенный мне.
+                                        Через две недели я уже пользовался новым счетом и по сей день никаких нареканий.
+                                        Ребята молодцы,
+                                        а я потерял время и так пока и не вернул деньги с латвийского банка. Зря я не
+                                        послушал с самого начала...
                                         "</p>
+
                                     <div class="ratings">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -524,14 +568,17 @@ MainAsset::register($this);
                         <div class="customer-review">
                             <div class="review-detail">
                                 <div class="customer-thumb">
-                                    <img src="/uploads/theme_villa/customer2.jpg" alt="" />
-                                    <img src="/uploads/theme_villa/customer-sign2.png" alt="" />
+                                    <img src="/uploads/theme_villa/customer2.jpg" alt=""/>
+                                    <img src="/uploads/theme_villa/customer-sign2.png" alt=""/>
                                 </div>
                                 <div class="customer-reviewrating">
                                     <p>"У другой компании заказала регистрацию оффшора и открытие счета.
-                                        Компанию зарегистрировали, а счет открыть не смогли. После этого обратившись к другим я узнала, что оказывается
-                                        можно открыть счет покупая у них и компанию и так не только у них... От всей души благодарна IQ Decision, что
+                                        Компанию зарегистрировали, а счет открыть не смогли. После этого обратившись к
+                                        другим я узнала, что оказывается
+                                        можно открыть счет покупая у них и компанию и так не только у них... От всей
+                                        души благодарна IQ Decision, что
                                         вошли в положение и открыли мне счет без регистрации еще одной кмпании. "</p>
+
                                     <div class="ratings">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -543,7 +590,8 @@ MainAsset::register($this);
                                 </div>
                             </div>
                         </div>
-                    </div><!-- Customers Reviews -->
+                    </div>
+                    <!-- Customers Reviews -->
                 </div>
             </div>
         </div>
@@ -560,33 +608,40 @@ MainAsset::register($this);
                         <div class="title1">
                             <h2>Популярные юрисдикции</h2>
                             <span>Все юрисдикции</span>
-                            <p>Решения мы предлагаем не только стандартне - мы можем гибко подойти к вопросу и реализовать согласно Вашим пожеланиям</p>
+
+                            <p>Решения мы предлагаем не только стандартне - мы можем гибко подойти к вопросу и
+                                реализовать согласно Вашим пожеланиям</p>
                         </div>
                         <div class="packages remove-ext2">
                             <div class="row">
-                                <? foreach($offers as $offer): ?>
-                                <div class="col-md-4">
-                                    <div class="package">
-                                        <div class="package-thumb">
+                                <? foreach ($offers as $offer): ?>
+                                    <div class="col-md-4">
+                                        <div class="package">
+                                            <div class="package-thumb">
 
-                                            <?= Html::img($offer->thumb(370, 259), array('class' => 'sadsa')) ?>
-                                            <span><i>$<?= $offer->model->price?></i> / дней: <?= $offer->model->how_days?> </span>
-                                        </div>
-                                        <div class="package-detail">
-                                            <span class="cate">Lite/Classic/Pro</span>
-                                            <h4><a href="/offers/view/<?= $offer->model->slug?>" title=""><?= $offer->model->title?></a></h4>
-                                            <ul class="location-book">
-                                                <li><i class="fa fa-map-marker"></i> <span><?= $offer->model->title?></span></li>
-                                                <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a href="/offers/view/<?= $offer->model->slug?>" title="">Смотреть</a></li>
-                                            </ul>
+                                                <?= Html::img($offer->thumb(370, 259), array('class' => 'sadsa')) ?>
+                                                <span><i>$<?= $offer->model->price ?></i> / дней: <?= $offer->model->how_days ?> </span>
+                                            </div>
+                                            <div class="package-detail">
+                                                <span class="cate">Lite/Classic/Pro</span>
+                                                <h4><a href="/offers/<?= $offer->model->slug ?>"
+                                                       title=""><?= $offer->model->title ?></a></h4>
+                                                <ul class="location-book">
+                                                    <li><i class="fa fa-map-marker"></i>
+                                                        <span><?= $offer->model->title ?></span></li>
+                                                    <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a
+                                                            href="/offers/<?= $offer->model->slug ?>"
+                                                            title="">Смотреть</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <? endforeach; ?>
 
                             </div>
                         </div>
-                    </div><!-- Villa Editors Picks -->
+                    </div>
+                    <!-- Villa Editors Picks -->
                 </div>
             </div>
         </div>
@@ -624,21 +679,23 @@ MainAsset::register($this);
                             <div class="col-md-7">
                                 <div class="we-offers">
                                     <div class="row">
-                                        <? foreach($banks as $item): ?>
-                                        <div class="col-md-6">
-                                            <div class="offered-service">
-                                                <?= Html::img($item->thumb(300, 190), array('class' => 'main-banks')) ?>
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="/banks/<?= $item->model->slug?>" title=""><?= $item->model->title?></a></h4>
-                                                    <span><?= $item->model->location_title?></span>
+                                        <? foreach ($banks as $item): ?>
+                                            <div class="col-md-6">
+                                                <div class="offered-service">
+                                                    <?= Html::img($item->thumb(300, 190), array('class' => 'main-banks')) ?>
+                                                    <div class="offered-serviceinfo">
+                                                        <h4><a href="/banks/<?= $item->model->slug ?>"
+                                                               title=""><?= $item->model->title ?></a></h4>
+                                                        <span><?= $item->model->location_title ?></span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         <? endforeach; ?>
 
                                         <div class="col-md-6">
                                             <div class="offered-service">
-                                                <img src="/uploads/theme_villa/offered-service6.jpg" alt="" />
+                                                <img src="/uploads/theme_villa/offered-service6.jpg" alt=""/>
+
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="/banks" title="">Другие банки</a></h4>
                                                     <!--<span>banks</span>-->
@@ -646,10 +703,12 @@ MainAsset::register($this);
                                             </div>
                                         </div>
                                     </div>
-                                </div><!-- We Offers -->
+                                </div>
+                                <!-- We Offers -->
                             </div>
                         </div>
-                    </div><!-- Villa Arrangements -->
+                    </div>
+                    <!-- Villa Arrangements -->
                 </div>
             </div>
         </div>
@@ -666,15 +725,19 @@ MainAsset::register($this);
                         <div class="title1">
                             <h2>Лицензии</h2>
                             <span>Мы будем сопровождать Вас, пока не вручим готовую лицензию</span>
-                            <p>Подскажем какая именно лицензия нужна. Расскажем что необходимо и доступно обьясним поэтапно все моменты.
-                                Процес получения занимает 1-2, а то и 3 месяца. От слаженной нашей с Вами работы также зависит,
+
+                            <p>Подскажем какая именно лицензия нужна. Расскажем что необходимо и доступно обьясним
+                                поэтапно все моменты.
+                                Процес получения занимает 1-2, а то и 3 месяца. От слаженной нашей с Вами работы также
+                                зависит,
                                 как быстро лицензия будет готова.</p>
                         </div>
                         <div class="villa-locationslist">
                             <ul>
                                 <li>
                                     <div class="villa-location">
-                                        <img src="/uploads/theme_villa/villa-location1.jpg" alt="" />
+                                        <img src="/uploads/theme_villa/villa-location1.jpg" alt=""/>
+
                                         <div class="villa-locationinfo">
                                             <span>Торговля на FOREX</span>
                                             <h4><a href="#" title="">Licence</a></h4>
@@ -683,7 +746,8 @@ MainAsset::register($this);
                                 </li>
                                 <li>
                                     <div class="villa-location">
-                                        <img src="/uploads/theme_villa/villa-location2.jpg" alt="" />
+                                        <img src="/uploads/theme_villa/villa-location2.jpg" alt=""/>
+
                                         <div class="villa-locationinfo">
                                             <span>Обменно-валютные операции</span>
                                             <h4><a href="#" title="">Licence</a></h4>
@@ -692,7 +756,8 @@ MainAsset::register($this);
                                 </li>
                                 <li>
                                     <div class="villa-location">
-                                        <img src="/uploads/theme_villa/villa-location3.jpg" alt="" />
+                                        <img src="/uploads/theme_villa/villa-location3.jpg" alt=""/>
+
                                         <div class="villa-locationinfo">
                                             <span>Процессинг платежей</span>
                                             <h4><a href="#" title="">Licence</a></h4>
@@ -701,7 +766,8 @@ MainAsset::register($this);
                                 </li>
                                 <li>
                                     <div class="villa-location">
-                                        <img src="/uploads/theme_villa/villa-location4.jpg" alt="" />
+                                        <img src="/uploads/theme_villa/villa-location4.jpg" alt=""/>
+
                                         <div class="villa-locationinfo">
                                             <span>Кредитные и залоговые операции</span>
                                             <h4><a href="#" title="">Licence</a></h4>
@@ -710,7 +776,8 @@ MainAsset::register($this);
                                 </li>
                                 <li>
                                     <div class="villa-location">
-                                        <img src="/uploads/theme_villa/villa-location5.jpg" alt="" />
+                                        <img src="/uploads/theme_villa/villa-location5.jpg" alt=""/>
+
                                         <div class="villa-locationinfo">
                                             <span>Другие</span>
                                             <h4><a href="#" title="">Licence</a></h4>
@@ -719,7 +786,8 @@ MainAsset::register($this);
                                 </li>
                             </ul>
                         </div>
-                    </div><!-- Villa Locations -->
+                    </div>
+                    <!-- Villa Locations -->
                 </div>
             </div>
         </div>
@@ -728,7 +796,8 @@ MainAsset::register($this);
 
 <section>
     <div class="block no-padding blackish high2-opacity">
-        <div class="parallax" data-velocity="-.4" style="background-image: url(/uploads/theme_villa/parallax4.jpg);"></div>
+        <div class="parallax" data-velocity="-.4"
+             style="background-image: url(/uploads/theme_villa/parallax4.jpg);"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -736,7 +805,7 @@ MainAsset::register($this);
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="logo2">
-                                    <span><img src="/uploads/logo/logo2.png" alt="" /></span>
+                                    <span><img src="/uploads/logo/logo2.png" alt=""/></span>
                                 </div>
                             </div>
                             <div class="col-md-5">
@@ -748,7 +817,8 @@ MainAsset::register($this);
                                 <a href="/contact" class="theme-btn" title="Написать">Написать</a>
                             </div>
                         </div>
-                    </div><!-- Single Property -->
+                    </div>
+                    <!-- Single Property -->
                 </div>
             </div>
         </div>
@@ -764,12 +834,15 @@ MainAsset::register($this);
                         <div class="title1">
                             <h2>Процессинг Мерчант</h2>
                             <span>Широкий спектр вариантов и решений</span>
-                            <p>Для низкорискового бизнеса у нас имеются варианты открытия в надежных европейских банках с минимальными комиссиями.
+
+                            <p>Для низкорискового бизнеса у нас имеются варианты открытия в надежных европейских банках
+                                с минимальными комиссиями.
                                 Даже с High Risck мы работаем, если для нас понятна Ваша деятельность.</p>
+
                             <div class="remove-ext">
                                 <div class="recentnews-carousel2">
                                     <div class="recentnew-post">
-                                        <img src="/uploads/theme_villa/recent-news1.jpg" alt="" />
+                                        <img src="/uploads/theme_villa/recent-news1.jpg" alt=""/>
                                     </div>
                                 </div>
                             </div>
@@ -778,7 +851,8 @@ MainAsset::register($this);
                             <div class="h5">Фонды и Трасты</div>
                             <div class="recentnews-carousel">
                                 <div class="recentnew-post">
-                                    <img src="/uploads/theme_villa/recent-news2.jpg" alt="" />
+                                    <img src="/uploads/theme_villa/recent-news2.jpg" alt=""/>
+
                                     <div class="recentnew-detail">
                                         <h4><a title="">Инвестиционный фонд</a></h4>
                                         <?php /*<ul class="post-meta">
@@ -788,7 +862,8 @@ MainAsset::register($this);
                                     </div>
                                 </div>
                                 <div class="recentnew-post">
-                                    <img src="/uploads/theme_villa/recent-news3.jpg" alt="" />
+                                    <img src="/uploads/theme_villa/recent-news3.jpg" alt=""/>
+
                                     <div class="recentnew-detail">
                                         <h4><a title="">Благотворительный фонд</a></h4>
                                         <?php /*<ul class="post-meta">
@@ -797,9 +872,11 @@ MainAsset::register($this);
                                         </ul> */ ?>
                                     </div>
                                 </div>
-                            </div><!-- Recent News Carousel -->
+                            </div>
+                            <!-- Recent News Carousel -->
                         </div>
-                    </div><!-- Recent News -->
+                    </div>
+                    <!-- Recent News -->
                 </div>
             </div>
         </div>
@@ -810,12 +887,13 @@ MainAsset::register($this);
     <div class="block no-padding gray2">
         <div class="container">
             <div class="sponsor-carousel">
-                <div class="sponsor"><a href="#" title=""><img src="/uploads/theme_villa/sponsor1.png" alt="" /></a></div>
-                <div class="sponsor"><a href="#" title=""><img src="/uploads/theme_villa/sponsor2.png" alt="" /></a></div>
-                <div class="sponsor"><a href="#" title=""><img src="/uploads/theme_villa/sponsor3.png" alt="" /></a></div>
-                <div class="sponsor"><a href="#" title=""><img src="/uploads/theme_villa/sponsor4.png" alt="" /></a></div>
-                <div class="sponsor"><a href="#" title=""><img src="/uploads/theme_villa/sponsor5.png" alt="" /></a></div>
-            </div><!-- Sponsor Carousel -->
+                <? foreach ($news as $item): ?>
+                    <div class="sponsor"><a href="/news/<?= $item->slug ?>" title="<?= $item->title ?>"><?= Html::img($item->thumb(122, 60), array('class' => 'main-news')) ?></a>
+                    </div>
+                <? endforeach; ?>
+                </div>
+            </div>
+            <!-- Sponsor Carousel -->
         </div>
     </div>
 </section>

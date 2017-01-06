@@ -86,22 +86,22 @@ class SiteController extends Controller
 
         $offers = Offers::items([
             'where' => ['to_main' => 1, 'status' => 1],
-            'pagination' => ['pageSize' => 300]
+            'pagination' => ['pageSize' => 10]
         ]);
 
         $news = News::items([
-            'where' => ['type_id' => 0, 'to_main' => 1, 'status' => 1],
-            'pagination' => ['pageSize' => 300]
+            'where' => ['type_id' => 0, 'to_main' => 0, 'status' => 1],
+            'pagination' => ['pageSize' => 6]
         ]);
 
         $licenses = News::items([
-            'where' => ['type_id' => 1, 'to_main' => 1, 'status' => 1],
-            'pagination' => ['pageSize' => 300]
+            'where' => ['type_id' => 2, 'to_main' => 1, 'status' => 1],
+            'pagination' => ['pageSize' => 10]
         ]);
 
         $banks = Banks::items([
             'where' => ['to_main' => 1, 'status' => 1],
-            'pagination' => ['pageSize' => 300]
+            'pagination' => ['pageSize' => 10]
         ]);
 
         return $this->render('main', [

@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <?= $item->title ?>
                                 </td>
                                 <td>
-                                    <?= $item->location_title ?>
+                                    <?= $item->model->location_title ?>
                                 </td>
                                 <td>
 
