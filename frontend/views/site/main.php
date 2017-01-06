@@ -888,7 +888,9 @@ MainAsset::register($this);
         <div class="container">
             <div class="sponsor-carousel">
                 <? foreach ($news as $item): ?>
-                    <div class="sponsor"><a href="/news/<?= $item->slug ?>" title="<?= $item->title ?>"><?= Html::img($item->thumb(122, 60), array('class' => 'main-news')) ?></a>
+                    <div class="sponsor"><a href="/news/<?= $item->slug ?>" title="<?= $item->title ?>">
+                            <?= Html::img($item->thumb(183, 90), array('class' => 'main-news')) ?>
+                        </a>
                     </div>
                 <? endforeach; ?>
                 </div>
