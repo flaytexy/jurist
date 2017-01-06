@@ -1,4 +1,5 @@
 <?php
+/** Created by CyberBrain  */
 use frontend\modules\shopcart\api\Shopcart;
 use frontend\modules\subscribe\api\Subscribe;
 use yii\helpers\Url;
@@ -14,10 +15,10 @@ $goodsCount = count(Shopcart::goods());
             <div class="container">
                 <div class="topbar-data">
                     <ul class="top-menus">
+                        <li><a href="/banks" title="Банки">Банки</a></li>
                         <li><a href="/offshornyie-predlozheniya" title="Оффшорные предложения">Оффшорные предложения</a></li>
                         <li><a href="/evropejskie-kompanii" title="Европейские компании">Европейские компании</a></li>
-                        <!--<li><a href="/banki-i-proczessing" title="Банки и процессинг">Банки и процессинг</a></li>
-                        <li><a href="/liczenzii-beliza" title="Лицензии Белиза">Лицензии Белиза</a></li>
+                        <!--<li><a href="/liczenzii-beliza" title="Лицензии Белиза">Лицензии Белиза</a></li>
                         <li><a href="/licenzii" title="Лицензии">Лицензии</a></li>-->
                     </ul>
                 </div>
@@ -25,7 +26,7 @@ $goodsCount = count(Shopcart::goods());
         </div><!-- Top Bar -->
         <div class="logomenu-sec" id="logomenu-sec">
             <div class="container">
-                <div class="logo"><a href="/" title=""><img src="/uploads/theme_villa/logo2016-2.png" alt=""></a></div>
+                <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.png" alt=""></a></div>
                 <nav class="navbar22 navbar-default22">
                             <?= Menu::widget([
                                 'options' => ['class' => 'nav navbar-nav'],
@@ -35,7 +36,7 @@ $goodsCount = count(Shopcart::goods());
                                     //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                                     //['label' => 'Shop', 'url' => ['shop/index']],
                                     ['label' => 'Новости', 'url' => ['/news']],
-                                    ['label' => 'Банки', 'url' => ['/banks']],
+                                    //['label' => 'Банки', 'url' => ['/banks']],
                                     //['label' => 'Articles', 'url' => ['articles/index']],
                                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
@@ -59,7 +60,7 @@ $goodsCount = count(Shopcart::goods());
         </div>
         <div class="logomenu-bar">
             <div class="container">
-                <div class="logo"><a href="http://themes.webinane.com/getvilla/index2.html" title=""><img src="/uploads/theme_villa/logo3.png" alt=""></a></div>
+                <div class="logo"><a href="http://themes.webinane.com/getvilla/index2.html" title=""><img src="/uploads/logo/logo.png" alt=""></a></div>
                 <span class="menu-btn"><i class="fa fa-list"></i></span>
             </div>
         </div>
@@ -155,10 +156,17 @@ $goodsCount = count(Shopcart::goods());
                     <div class="footer-widget">
                         <div class="about-widget">
                             <div class="logo">
-                                <a href="/" title=""><img src="/uploads/theme_villa/logo2016-2.png" alt=""></a>
+                                <a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a>
                             </div>
-                            <p>Vestibulum at magna tellus ivamus sagitt is etnunc utaliquac vulputate leo vehicu auris porttitor eros vels aphicula mconse quat rhoncus elit diam nonumy nibidunt utthering does work.</p>
-                            <p>Aenean molestie senec tus etnetus malei uada. Cnsectetuer adipisc, sed diam non ummy nibh.</p>
+                            <p>Оптимизация налогообложения Вашей компании
+                                законным путем это то, на чем мы специализируемся.<br />
+                                Мы не несем ответственность за успех Вашего бизнеса,
+                                но поспособствовать получению возможности уменьшить
+                                затраты и вручить зарегистрированную новую компанию
+                                в нужной юрисдикции мы можем.</p>
+                            <p>Чтобы получить результат стоит с чего-то начать,
+                                например написать нам в чат и мы согласуем запуск
+                                выполнения Вашего заказа.</p>
                         </div>
                     </div>
                 </div>
@@ -166,9 +174,9 @@ $goodsCount = count(Shopcart::goods());
                     <div class="footer-widget">
                         <div class="address-widget">
                             <ul>
-                                <li><span>Address:</span> New York City, NY - 10001 United States.</li>
-                                <li><span>Phone:</span> 215 - 123 - 4567</li>
-                                <li><span>Email:</span> <a href="#" title="">info@webinane.com</a></li>
+                                <li><span>Address:</span> Russia, Moscow</li>
+                                <li><span>Phone:</span> +79251754417</li>
+                                <!--<li><span>Email:</span> <a href="/contact" title="">sendme@it-offshore.com</a></li>-->
                             </ul>
                             <a href="/contact" class="theme-btn" title="">Связаться с нами</a>
                         </div>
@@ -177,37 +185,43 @@ $goodsCount = count(Shopcart::goods());
                 <div class="col-md-4">
                     <div class="footer-widget">
                         <div class="title1 style2">
-                            <h2>Fun Facts</h2>
-                            <span>We Provide Best Services</span>
+                            <h2>Факты о нас</h2>
+
                         </div>
                         <div class="fun-facts">
                             <ul>
                                 <li>
                                     <div class="fun-fact">
+                                        <span>Успешный опыт регистраций </span>
                                         <i class="flaticon-house"></i>
-                                        <strong>28</strong>
-                                        <span>Offices Worldwide</span>
+                                        в <strong>28</strong>
+                                        <span>странах мира</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="fun-fact">
+                                        <span>Отрываем счета</span>
                                         <i class="flaticon-people-1"></i>
-                                        <strong>35+</strong>
-                                        <span>Expert Mumbers</span>
+                                        в <strong>35</strong>
+                                        <span>банках мира и активно расширяем список</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="fun-fact">
+                                        <span>Консультации в удобное для Вас время</span>
                                         <i class="flaticon-people"></i>
-                                        <strong>91K</strong>
-                                        <span>Happy Customers</span>
+                                        <!--<strong>91K</strong>-->
                                     </div>
                                 </li>
                                 <li>
                                     <div class="fun-fact">
+                                                     <span>Мы терпеливо
+                                            расскажем с чего
+                                            начать, даже если
+                                            это Ваш первый
+                                            бизнес
+                                        </span>
                                         <i class="flaticon-transport"></i>
-                                        <strong>487</strong>
-                                        <span>Project Completed</span>
                                     </div>
                                 </li>
                             </ul>
@@ -217,17 +231,14 @@ $goodsCount = count(Shopcart::goods());
                 <div class="col-md-2">
                     <div class="footer-widget">
                         <div class="title1 style2">
-                            <h2>Quick Links</h2>
-                            <span>We Provide Best Services</span>
+                            <h2>Быстрый переход</h2>
                         </div>
                         <div class="menu-links">
                             <ul>
-                                <li><a href="#" title="">Faq's</a></li>
-                                <li><a href="#" title="">Support</a></li>
-                                <li><a href="#" title="">Community</a></li>
-                                <li><a href="#" title="">Membership</a></li>
-                                <li><a href="#" title="">Events</a></li>
-                                <li><a href="#" title="">Contact us</a></li>
+                                <li><a href="/faq" title="">Faq's</a></li>
+                                <li><a href="/contact" title="">Support</a></li>
+                                <li><a href="/about" title="">About Us</a></li>
+                                <li><a href="/contact" title="">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -239,11 +250,11 @@ $goodsCount = count(Shopcart::goods());
         <div class="bottom-menu">
             <div class="container">
                 <ul class="footer-links">
-                    <li><a href="#" title="">Home</a></li>
-                    <li><a href="#" title="">Our Services</a></li>
-                    <li><a href="#" title="">Properties</a></li>
-                    <li><a href="#" title="">Our Blog</a></li>
-                    <li><a href="#" title="">Contact Us</a></li>
+                    <li><a href="/" title="">Главная</a></li>
+                    <li><a href="/news" title="">Новости</a></li>
+                    <li><a href="/contact" title="">Информация</a></li>
+                    <li><a href="/about" title="">О нас</a></li>
+                    <li><a href="/contact" title="">Контакты</a></li>
                 </ul>
                 <ul class="Social-btn">
                     <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
@@ -254,10 +265,11 @@ $goodsCount = count(Shopcart::goods());
             </div>
         </div>
         <div class="copyright">
-            <div class="container">
-                <p><span>Copyright 2016.</span> All Rights Reserved <span>by</span> <a href="#" title="">webinane - Multi Property Theme.</a></p>
-            </div>
+            <?php /*<div class="container">
+                <p><span>Copyright 2016.</span> Created by <a title="Cyber Brain - Web Studio">Cyber Brain </a></p>
+            </div> */ ?>
         </div>
+
     </div><!-- Bottom Line -->
 </footer>
 

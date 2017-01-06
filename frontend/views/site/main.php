@@ -1,4 +1,5 @@
 <?php
+/** Created by CyberBrain  */
 
 use yii\helpers\Html;
 use frontend\assets\MainAsset;
@@ -563,54 +564,26 @@ MainAsset::register($this);
                         </div>
                         <div class="packages remove-ext2">
                             <div class="row">
+                                <? foreach($offers as $offer): ?>
                                 <div class="col-md-4">
                                     <div class="package">
                                         <div class="package-thumb">
-                                            <img src="/uploads/theme_villa/package1.jpg" alt="" />
-                                            <span><i>$380</i> / Per Night</span>
+
+                                            <?= Html::img($offer->thumb(370, 259), array('class' => 'sadsa')) ?>
+                                            <span><i>$<?= $offer->model->price?></i> / дней: <?= $offer->model->how_days?> </span>
                                         </div>
                                         <div class="package-detail">
                                             <span class="cate">Lite/Classic/Pro</span>
-                                            <h4><a href="packages-detail.html" title="">Tigers Plaza Apartments</a></h4>
+                                            <h4><a href="/offers/view/<?= $offer->model->slug?>" title=""><?= $offer->model->title?></a></h4>
                                             <ul class="location-book">
-                                                <li><i class="fa fa-map-marker"></i> <span>Spain, Madrid, 4753 Fourth St</span></li>
-                                                <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a href="#" title="">BOOK NOW</a></li>
+                                                <li><i class="fa fa-map-marker"></i> <span><?= $offer->model->title?></span></li>
+                                                <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a href="/offers/view/<?= $offer->model->slug?>" title="">Смотреть</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="package">
-                                        <div class="package-thumb">
-                                            <img src="/uploads/theme_villa/package2.jpg" alt="" />
-                                            <span><i>$380</i> / Per Night</span>
-                                        </div>
-                                        <div class="package-detail">
-                                            <span class="cate">Lite/Classic/Pro</span>
-                                            <h4><a href="packages-detail.html" title="">Riba Pila Apartments</a></h4>
-                                            <ul class="location-book">
-                                                <li><i class="fa fa-map-marker"></i> <span>Spain, Madrid, 4753 Fourth St</span></li>
-                                                <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a href="#" title="">BOOK NOW</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="package">
-                                        <div class="package-thumb">
-                                            <img src="/uploads/theme_villa/package3.jpg" alt="" />
-                                            <span><i>$380</i> / Per Night</span>
-                                        </div>
-                                        <div class="package-detail">
-                                            <span class="cate">Lite/Classic/Pro</span>
-                                            <h4><a href="packages-detail.html" title="">Paradice Hotel in Mamaia</a></h4>
-                                            <ul class="location-book">
-                                                <li><i class="fa fa-map-marker"></i> <span>Spain, Madrid, 4753 Fourth St</span></li>
-                                                <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a href="#" title="">BOOK NOW</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                                <? endforeach; ?>
+
                             </div>
                         </div>
                     </div><!-- Villa Editors Picks -->
@@ -631,71 +604,44 @@ MainAsset::register($this);
                                 <div class="villa-arrangementsinfo">
                                     <div class="title1">
                                         <h2>Рекомендуемые банки</h2>
-                                        <span>We Provide Best Services</span>
+                                        <span>Мы проконсультируем по интересующему именно Вас банку,
+            а не только по представленным на сайте</span>
                                     </div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.</p>
+                                    <p>Для каждого банка характерны свои особенности.
+                                        Мы поможем понять, какой самый лучший для Вас.
+                                        Даже самый лучший Ваш друг (партнер) может ввести Вас в заблуждение
+                                        искренне того не желая потому, как даже то, что было всего
+                                        несколько месяцев назад уже может таковым не являться
+                                        на быстро меняющемся рынке банковского сектора.</p>
                                     <ul class="about-serlist style2">
-                                        <li>Alienum phaedrum torquatos nec eu.</li>
-                                        <li>Eius lorem tincidunt vix at vel pertinax sensibus.</li>
-                                        <li>Lorem Ipsum is simply dummy.</li>
+                                        <li>Рассчетные счета.</li>
+                                        <li>Мерчант счета.</li>
+                                        <li>Личные счета.</li>
                                     </ul>
-                                    <a href="#" class="theme-btn" title="">More Arrangements</a>
+                                    <a href="/banks" class="theme-btn" title="Банки">Детально</a>
                                 </div>
                             </div>
                             <div class="col-md-7">
                                 <div class="we-offers">
                                     <div class="row">
+                                        <? foreach($banks as $item): ?>
                                         <div class="col-md-6">
                                             <div class="offered-service">
-                                                <img src="/uploads/theme_villa/offered-service1.jpg" alt="" />
+                                                <?= Html::img($item->thumb(300, 190), array('class' => 'main-banks')) ?>
                                                 <div class="offered-serviceinfo">
-                                                    <h4><a href="#" title="">Handpicked Estate</a></h4>
-                                                    <span>Easy Import</span>
+                                                    <h4><a href="/banks/<?= $item->model->slug?>" title=""><?= $item->model->title?></a></h4>
+                                                    <span><?= $item->model->location_title?></span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="offered-service">
-                                                <img src="/uploads/theme_villa/offered-service2.jpg" alt="" />
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="#" title="">Tour Booking</a></h4>
-                                                    <span>Easy Import</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="offered-service">
-                                                <img src="/uploads/theme_villa/offered-service3.jpg" alt="" />
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="#" title="">Spa In Villas</a></h4>
-                                                    <span>Easy Import</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="offered-service">
-                                                <img src="/uploads/theme_villa/offered-service4.jpg" alt="" />
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="#" title="">Events</a></h4>
-                                                    <span>Easy Import</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="offered-service">
-                                                <img src="/uploads/theme_villa/offered-service5.jpg" alt="" />
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="#" title="">Maintenance Staff</a></h4>
-                                                    <span>Easy Import</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <? endforeach; ?>
+
                                         <div class="col-md-6">
                                             <div class="offered-service">
                                                 <img src="/uploads/theme_villa/offered-service6.jpg" alt="" />
                                                 <div class="offered-serviceinfo">
-                                                    <h4><a href="#" title="">Private Swimming Pool</a></h4>
-                                                    <span>Easy Import</span>
+                                                    <h4><a href="/banks" title="">Другие банки</a></h4>
+                                                    <!--<span>banks</span>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -718,9 +664,11 @@ MainAsset::register($this);
                 <div class="col-md-12">
                     <div class="villa-locations">
                         <div class="title1">
-                            <h2>Villa Locations</h2>
-                            <span>We Provide Best Services</span>
-                            <p>Vestibulum at magna tellus. Vivamus sagi ttis et nunc ut aliquet. Vivam pulput vehic ula. Mauris prottitor erovel sapien. Sed ut Persp voluptatem accusanti ore</p>
+                            <h2>Лицензии</h2>
+                            <span>Мы будем сопровождать Вас, пока не вручим готовую лицензию</span>
+                            <p>Подскажем какая именно лицензия нужна. Расскажем что необходимо и доступно обьясним поэтапно все моменты.
+                                Процес получения занимает 1-2, а то и 3 месяца. От слаженной нашей с Вами работы также зависит,
+                                как быстро лицензия будет готова.</p>
                         </div>
                         <div class="villa-locationslist">
                             <ul>
@@ -728,8 +676,8 @@ MainAsset::register($this);
                                     <div class="villa-location">
                                         <img src="/uploads/theme_villa/villa-location1.jpg" alt="" />
                                         <div class="villa-locationinfo">
-                                            <span>Crowd Spot / Private Villa</span>
-                                            <h4><a href="#" title="">Tigers Plaza Apartments</a></h4>
+                                            <span>Торговля на FOREX</span>
+                                            <h4><a href="#" title="">Licence</a></h4>
                                         </div>
                                     </div>
                                 </li>
@@ -737,8 +685,8 @@ MainAsset::register($this);
                                     <div class="villa-location">
                                         <img src="/uploads/theme_villa/villa-location2.jpg" alt="" />
                                         <div class="villa-locationinfo">
-                                            <span>Crowd Spot / Private Villa</span>
-                                            <h4><a href="#" title="">Riba Pila Apartments</a></h4>
+                                            <span>Обменно-валютные операции</span>
+                                            <h4><a href="#" title="">Licence</a></h4>
                                         </div>
                                     </div>
                                 </li>
@@ -746,8 +694,8 @@ MainAsset::register($this);
                                     <div class="villa-location">
                                         <img src="/uploads/theme_villa/villa-location3.jpg" alt="" />
                                         <div class="villa-locationinfo">
-                                            <span>Crowd Spot / Private Villa</span>
-                                            <h4><a href="#" title="">Ostrov City Apartments</a></h4>
+                                            <span>Процессинг платежей</span>
+                                            <h4><a href="#" title="">Licence</a></h4>
                                         </div>
                                     </div>
                                 </li>
@@ -755,8 +703,8 @@ MainAsset::register($this);
                                     <div class="villa-location">
                                         <img src="/uploads/theme_villa/villa-location4.jpg" alt="" />
                                         <div class="villa-locationinfo">
-                                            <span>Crowd Spot / Private Villa</span>
-                                            <h4><a href="#" title="">Acula Plaza Hotel</a></h4>
+                                            <span>Кредитные и залоговые операции</span>
+                                            <h4><a href="#" title="">Licence</a></h4>
                                         </div>
                                     </div>
                                 </li>
@@ -764,8 +712,8 @@ MainAsset::register($this);
                                     <div class="villa-location">
                                         <img src="/uploads/theme_villa/villa-location5.jpg" alt="" />
                                         <div class="villa-locationinfo">
-                                            <span>Crowd Spot / Private Villa</span>
-                                            <h4><a href="#" title="">Flavamed Hotel Bran</a></h4>
+                                            <span>Другие</span>
+                                            <h4><a href="#" title="">Licence</a></h4>
                                         </div>
                                     </div>
                                 </li>
@@ -788,7 +736,7 @@ MainAsset::register($this);
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="logo2">
-                                    <span><img src="/uploads/theme_villa/logo2.png" alt="" /></span>
+                                    <span><img src="/uploads/logo/logo2.png" alt="" /></span>
                                 </div>
                             </div>
                             <div class="col-md-5">
@@ -818,27 +766,35 @@ MainAsset::register($this);
                             <span>Широкий спектр вариантов и решений</span>
                             <p>Для низкорискового бизнеса у нас имеются варианты открытия в надежных европейских банках с минимальными комиссиями.
                                 Даже с High Risck мы работаем, если для нас понятна Ваша деятельность.</p>
-                        </div>
-                        <div class="remove-ext">
-                            <div class="recentnews-carousel">
-                                <div class="recentnew-post">
-                                    <img src="/uploads/theme_villa/recent-news1.jpg" alt="" />
-                                    <div class="recentnew-detail">
-                                        <h4><a href="blog-detail-no-sidebar.html" title="">Curabitur Euismod Sem Vetiore Blandit Amet Molestie</a></h4>
-                                        <ul class="post-meta">
-                                            <li><i class="fa fa-calendar"></i> 26 May 2016</li>
-                                            <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>
-                                        </ul>
+                            <div class="remove-ext">
+                                <div class="recentnews-carousel2">
+                                    <div class="recentnew-post">
+                                        <img src="/uploads/theme_villa/recent-news1.jpg" alt="" />
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="remove-ext">
+                            <div class="h5">Фонды и Трасты</div>
+                            <div class="recentnews-carousel">
                                 <div class="recentnew-post">
                                     <img src="/uploads/theme_villa/recent-news2.jpg" alt="" />
                                     <div class="recentnew-detail">
-                                        <h4><a href="blog-detail-no-sidebar.html" title="">The Most Creative Branding Design 2015 - 2016</a></h4>
-                                        <ul class="post-meta">
+                                        <h4><a title="">Инвестиционный фонд</a></h4>
+                                        <?php /*<ul class="post-meta">
                                             <li><i class="fa fa-calendar"></i> 26 May 2016</li>
                                             <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>
-                                        </ul>
+                                        </ul> */ ?>
+                                    </div>
+                                </div>
+                                <div class="recentnew-post">
+                                    <img src="/uploads/theme_villa/recent-news3.jpg" alt="" />
+                                    <div class="recentnew-detail">
+                                        <h4><a title="">Благотворительный фонд</a></h4>
+                                        <?php /*<ul class="post-meta">
+                                            <li><i class="fa fa-calendar"></i> 26 May 2016</li>
+                                            <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>
+                                        </ul> */ ?>
                                     </div>
                                 </div>
                             </div><!-- Recent News Carousel -->

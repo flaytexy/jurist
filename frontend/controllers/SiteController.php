@@ -1,6 +1,8 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\modules\banks\api\Banks;
+use frontend\modules\news\api\News;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -12,7 +14,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-
+use frontend\modules\offers\api\Offers;
 /**
  * Site controller
  */
@@ -82,7 +84,32 @@ class SiteController extends Controller
             //return $this->redirect(['/install/step1']);
         }
 
-        return $this->render('main');
+        $offers = Offers::items([
+            'where' => ['to_main' => 1, 'status' => 1],
+            'pagination' => ['pageSize' => 300]
+        ]);
+
+        $news = News::items([
+            'where' => ['type_id' => 0, 'to_main' => 1, 'status' => 1],
+            'pagination' => ['pageSize' => 300]
+        ]);
+
+        $licenses = News::items([
+            'where' => ['type_id' => 1, 'to_main' => 1, 'status' => 1],
+            'pagination' => ['pageSize' => 300]
+        ]);
+
+        $banks = Banks::items([
+            'where' => ['to_main' => 1, 'status' => 1],
+            'pagination' => ['pageSize' => 300]
+        ]);
+
+        return $this->render('main', [
+            'offers' => $offers,
+            'news' => $news,
+            'licenses' => $licenses,
+            'banks' => $banks
+        ]);
     }
 
     /**

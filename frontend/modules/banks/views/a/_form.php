@@ -22,6 +22,7 @@ $module = $this->context->module->id;
     '1' => 'Корпоративный счет',
     '2' => 'Личный счет'
 ]) ?>
+<?= $form->field($model, 'personal')->checkbox(['id' => 'personal', 'checked' => true])->label(false)->error(false) ?>
 
 
 <?= $form->field($model, 'price') ?>
