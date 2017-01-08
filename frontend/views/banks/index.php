@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <?php foreach ($banks as $item) : ?>
                             <tr>
                                 <td>
-                                    <?= $item->title ?>
+                                    <?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?>
                                 </td>
                                 <td>
                                     <?= $item->model->location_title ?>
