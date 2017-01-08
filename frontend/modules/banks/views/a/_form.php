@@ -17,6 +17,7 @@ $module = $this->context->module->id;
 ]); ?>
 <?= $form->field($model, 'title') ?>
 <hr/>
+<?= $form->field($model, 'location_title') ?>
 
 <?= $form->field($model, 'type_id')->dropDownList([
     '1' => 'Корпоративный счет',

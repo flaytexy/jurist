@@ -2,7 +2,7 @@
 namespace frontend\controllers;
 
 use frontend\modules\banks\api\Banks;
-use frontend\modules\news\api\News;
+use frontend\modules\page\api\Page;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -89,12 +89,12 @@ class SiteController extends Controller
             'pagination' => ['pageSize' => 10]
         ]);
 
-        $news = News::items([
+        $news = Page::items([
             'where' => ['type_id' => 0, 'to_main' => 0, 'status' => 1],
             'pagination' => ['pageSize' => 6]
         ]);
 
-        $licenses = News::items([
+        $licenses = Page::items([
             'where' => ['type_id' => 2, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 10]
         ]);

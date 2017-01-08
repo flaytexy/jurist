@@ -620,7 +620,7 @@ MainAsset::register($this);
                                             <div class="package-thumb">
 
                                                 <?= Html::img($offer->thumb(370, 259), array('class' => 'sadsa')) ?>
-                                                <span><i>$<?= $offer->model->price ?></i> / дней: <?= $offer->model->how_days ?> </span>
+                                                <span><i>$<?= $offer->model->price ?></i> / <i><?= $offer->model->how_days ?></i> days </span>
                                             </div>
                                             <div class="package-detail">
                                                 <span class="cate">Lite/Classic/Pro</span>
@@ -631,7 +631,7 @@ MainAsset::register($this);
                                                         <span><?= $offer->model->title ?></span></li>
                                                     <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a
                                                             href="/offers/<?= $offer->model->slug ?>"
-                                                            title="">Смотреть</a></li>
+                                                            title="">Купить</a></li>
                                                 </ul>
                                             </div>
                                         </div>

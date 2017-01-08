@@ -1,9 +1,12 @@
 <?php
 return [
-    'Pages' => 'صفحات',
-    'Create page' => 'ایجاد صفحه',
-    'Edit page' => 'ویرایش صفحه',
-    'Page created' => 'صفحه ایجاد شد',
-    'Page updated' => 'صفحه ویرایش شد',
-    'Page deleted' => 'صفحه حذف شد'
+    'Page' => 'اخبار',
+    'Create page' => 'ایجاد خبر',
+    'Edit page' => 'ویرایش خبر',
+    'Page created' => 'خبر ایجاد شد',
+    'Page updated' => 'خبر ویرایش شد',
+    'Page deleted' => 'خبر حذف شد',
+    'Page image cleared' => 'عکس های خبر پاک شد',
+    'Short' => 'کوتاه',
+    'Clear image' => 'پاک کردن عکس',
 ];

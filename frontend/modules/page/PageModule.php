@@ -1,16 +1,22 @@
 <?php
 namespace frontend\modules\page;
 
-use Yii;
-
 class PageModule extends \frontend\components\Module
 {
+    public $settings = [
+        'enableThumb' => true,
+        'enablePhotos' => true,
+        'enableShort' => true,
+        'shortMaxLength' => 256,
+        'enableTags' => true
+    ];
+
     public static $installConfig = [
         'title' => [
-            'en' => 'Pages',
-            'ru' => 'Страницы',
+            'en' => 'Page and Pages',
+            'ru' => 'Страницы и новости',
         ],
-        'icon' => 'file',
-        'order_num' => 50,
+        'icon' => 'bullhorn',
+        'order_num' => 70,
     ];
 }

@@ -1,5 +1,4 @@
 <?php
-use frontend\modules\news\api\News;
 use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -24,13 +23,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <div class="recent-news">
                         <div class="remove-ext">
                             <div class="row">
-                                <?php foreach($news as $item) : ?>
+                                <?php foreach($pages as $item) : ?>
                                 <div class="col-md-6">
                                     <div class="recentnew-post">
                                         <?= Html::img($item->thumb(500, 375)) ?>
                                         <div class="recentnew-detail">
                                             <h4>
-                                                <?= Html::a($item->title, ['news/view', 'slug' => $item->slug]) ?>
+                                                <?= Html::a($item->title, ['page/view', 'slug' => $item->slug]) ?>
                                             </h4>
                                             <ul class="post-meta">
                                                 <li><i class="fa fa-calendar"></i> <?= $item->date ?></li>
@@ -44,9 +43,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                             </div>
                         </div>
-                    </div><!-- Recent News -->
+                    </div><!-- Recent Pages -->
                     <div id="pagination">
-                        <?= News::pages() ?>
+                        <?= Pages::pages() ?>
                     </div><!-- Pagination -->
                 </div>
             </div>

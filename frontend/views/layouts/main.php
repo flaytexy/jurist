@@ -106,8 +106,8 @@ $goodsCount = count(Shopcart::goods());
                 <div class="col-md-12">
                     <div class="instagram">
                         <div class="title1 light">
-                            <h2>Instagram Images</h2>
-                            <span>We Provide Best Services</span>
+                            <h2>Последнее просмотренное нашими посетителями:</h2>
+                            <span>Возможно, это и Вас заинтересует</span>
                         </div>
                         <div class="instagram-gallery">
                             <ul>
