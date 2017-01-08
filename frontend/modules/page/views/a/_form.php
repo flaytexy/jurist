@@ -15,6 +15,15 @@ $module = $this->context->module->id;
     'options' => ['enctype' => 'multipart/form-data', 'class' => 'model-form']
 ]); ?>
 <?= $form->field($model, 'title') ?>
+
+
+<?= $form->field($model, 'type_id')->dropDownList([
+    '1' => 'Страница',
+    '2' => 'Новости',
+    '3' => 'Лицензии'
+]) ?>
+
+
 <?php if($this->context->module->settings['enableThumb']) : ?>
     <?php if($model->image) : ?>
         <img src="<?= Image::thumb($model->image, 240) ?>">
