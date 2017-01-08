@@ -13,7 +13,7 @@ class PageModule extends \frontend\components\Module
 
     public static $installConfig = [
         'title' => [
-            'en' => 'Page and Pages',
+            'en' => 'Pages and newses',
             'ru' => 'Страницы и новости',
         ],
         'icon' => 'bullhorn',

@@ -8,19 +8,19 @@ class NewsController extends \yii\web\Controller
     public function actionIndex($tag = null)
     {
         return $this->render('index',[
-            'pages' => Page::items(['tags' => $tag, 'pagination' => ['pageSize' => 4]])
+            'news' => Page::items(['tags' => $tag, 'pagination' => ['pageSize' => 4]])
         ]);
     }
 
     public function actionView($slug)
     {
-        $pages = Page::get($slug);
-        if(!$pages){
+        $news = Page::get($slug);
+        if(!$news){
             throw new \yii\web\NotFoundHttpException('Page not found.');
         }
 
         return $this->render('view', [
-            'pages' => $pages
+            'news' => $news
         ]);
     }
 }

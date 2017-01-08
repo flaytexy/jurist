@@ -3,9 +3,9 @@ use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = $pages->seo('title', $pages->model->title);
+$this->title = $news->seo('title', $news->model->title);
 $this->params['breadcrumbs'][] = ['label' => 'News', 'url' => ['/news']];
-$this->params['breadcrumbs'][] = $pages->model->title;
+$this->params['breadcrumbs'][] = $news->model->title;
 ?>
 
 
@@ -18,22 +18,22 @@ $this->params['breadcrumbs'][] = $pages->model->title;
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="blog-post2">
-                                    <?= Html::img($pages->thumb(600, 450)) ?>
+                                    <?= Html::img($news->thumb(600, 450)) ?>
                                     <div class="blogpost-detail">
                                         <ul class="post-meta style2">
-                                            <li><i class="fa fa-calendar"></i> <?= $pages->date ?></li>
+                                            <li><i class="fa fa-calendar"></i> <?= $news->date ?></li>
                                             <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>
-                                            <li><i class="fa fa-comment"></i><a href="#" title=""><?= $pages->views?> Views</a></li>
+                                            <li><i class="fa fa-comment"></i><a href="#" title=""><?= $news->views?> Views</a></li>
                                             <li><i class="fa fa-comment"></i><a href="#" title="">03 Comments</a></li>
                                         </ul>
 
 
 
-                                        <h1><?= $pages->seo('h1', $pages->title) ?></h1>
+                                        <h1><?= $news->seo('h1', $news->title) ?></h1>
                                         <div class="tags-social">
                                             <div class="tags">
                                                 <ul class="cate-list">
-                                                    <?php foreach($pages->tags as $tag) : ?>
+                                                    <?php foreach($news->tags as $tag) : ?>
                                                     <li><a href="<?= Url::to(['/news', 'tag' => $tag]) ?>" class="label label-info"><?= $tag ?></a></li>
                                                     <?php endforeach; ?>
                                                 </ul>
@@ -47,20 +47,20 @@ $this->params['breadcrumbs'][] = $pages->model->title;
                                             </div>
                                         </div>
                                         <div class="text-con">
-                                            <?= $pages->text ?>
+                                            <?= $news->text ?>
                                         </div>
 
                                         <div class="comments-sec">
-                                            <h2 class="title2"><span><?php echo count($pages->photos);?></span> Photos</h2>
-                                            <?php if(count($pages->photos)) : ?>
+                                            <h2 class="title2"><span><?php echo count($news->photos);?></span> Photos</h2>
+                                            <?php if(count($news->photos)) : ?>
                                                 <ul class="list-inline">
-                                                    <?php foreach($pages->photos as $photo) : ?>
+                                                    <?php foreach($news->photos as $photo) : ?>
                                                     <li><?= $photo->box(150, 120) ?></li>
                                                     <?php endforeach;?>
                                                 </ul>
                                             <?php endif; ?>
                                         </div>
-                                        <?php Pages::plugin() ?>
+                                        <?php Page::plugin() ?>
                                     </div>
                                     <div class="author-info">
                                         <span class="author-thumb"><img src="/uploads/theme_villa/author.jpg" alt=""></span>
@@ -255,25 +255,25 @@ $this->params['breadcrumbs'][] = $pages->model->title;
 
 
 <?php /*if(false) : */?><!--
-<h1><?/*= $pages->seo('h1', $pages->title) */?></h1>
+<h1><?/*= $news->seo('h1', $news->title) */?></h1>
 
-<?/*= $pages->text */?>
+<?/*= $news->text */?>
 
-<?php /*if(count($pages->photos)) : */?>
+<?php /*if(count($news->photos)) : */?>
     <div>
         <h4>Photos</h4>
-        <?php /*foreach($pages->photos as $photo) : */?>
+        <?php /*foreach($news->photos as $photo) : */?>
             <?/*= $photo->box(100, 100) */?>
         <?php /*endforeach;*/?>
-        <?php /*Pages::plugin() */?>
+        <?php /*News::plugin() */?>
     </div>
     <br/>
 <?php /*endif; */?>
 <p>
-    <?php /*foreach($pages->tags as $tag) : */?>
+    <?php /*foreach($news->tags as $tag) : */?>
         <a href="<?/*= Url::to(['/news', 'tag' => $tag]) */?>" class="label label-info"><?/*= $tag */?></a>
     <?php /*endforeach; */?>
 </p>
 
-<div class="small-muted">Views: <?/*= $pages->views*/?></div>
+<div class="small-muted">Views: <?/*= $news->views*/?></div>
 --><?php /*endif; */?>

@@ -3,7 +3,7 @@ use frontend\modules\page\models\Pages;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = Yii::t('easyii/page', 'Pages');
+$this->title = Yii::t('easyii/page', 'Pages and newses');
 
 $module = $this->context->module->id;
 ?>

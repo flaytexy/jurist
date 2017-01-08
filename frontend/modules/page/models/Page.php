@@ -8,6 +8,7 @@ use frontend\behaviors\Taggable;
 use frontend\models\Photo;
 use yii\helpers\StringHelper;
 
+
 class Page extends \frontend\components\ActiveRecord
 {
     const STATUS_OFF = 0;
@@ -29,6 +30,7 @@ class Page extends \frontend\components\ActiveRecord
             ['time', 'default', 'value' => time()],
             ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],
+            ['slug', 'unique'],
             ['status', 'default', 'value' => self::STATUS_ON],
             ['tagNames', 'safe']
         ];
