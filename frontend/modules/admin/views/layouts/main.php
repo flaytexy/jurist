@@ -35,12 +35,20 @@ $moduleName = $this->context->module->id;
             </div>
             <div class="main">
                 <div class="box sidebar">
+                    <a href="<?= Url::to(['/admin/page?type=1']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'page') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        <?= Yii::t('easyii', 'Page') ?>
+                    </a>
+                    <a href="<?= Url::to(['/admin/page?type=2']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'news') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        <?= Yii::t('easyii', 'News') ?>
+                    </a>
                     <?php foreach(Yii::$app->getModule('admin')->activeModules as $module) : ?>
                         <a href="<?= Url::to(["/admin/$module->name"]) ?>" class="menu-item <?= ($moduleName == $module->name ? 'active' : '') ?>">
                             <?php if($module->icon != '') : ?>
                                 <i class="glyphicon glyphicon-<?= $module->icon ?>"></i>
                             <?php endif; ?>
-                            <?= $module->title ?>
+                            <?= $module->title ?>!
                             <?php if($module->notice > 0) : ?>
                                 <span class="badge"><?= $module->notice ?></span>
                             <?php endif; ?>

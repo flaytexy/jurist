@@ -1,5 +1,5 @@
 <?php
-use frontend\modules\page\models\Pages;
+use frontend\modules\page\models\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -32,7 +32,7 @@ $module = $this->context->module->id;
                 <td><a href="<?= Url::to(['/admin/'.$module.'/a/edit/', 'id' => $item->primaryKey]) ?>"><?= $item->title ?></a></td>
                 <td><?= $item->views ?></td>
                 <td class="status">
-                    <?= Html::checkbox('', $item->status == Pages::STATUS_ON, [
+                    <?= Html::checkbox('', $item->status == Page::STATUS_ON, [
                         'class' => 'switch',
                         'data-id' => $item->primaryKey,
                         'data-link' => Url::to(['/admin/'.$module.'/a']),

@@ -30,9 +30,25 @@ class AController extends Controller
 
     public function actionIndex()
     {
+        $type_id = Yii::$app->request->get('type');
+
+        $query  = Page::find()->sortDate();
+
+        if(!empty($type_id)){
+            $query->andWhere(['type_id' => (int)$type_id]);
+        }
         $data = new ActiveDataProvider([
-            'query' => Page::find()->sortDate(),
+            'query' => $query,
         ]);
+
+/*        $data = [
+            'data' => \frontend\modules\page\api\Page::items([
+                'where' => ['type_id' => $type_id],
+                'pagination' => ['pageSize' => 20]
+            ])
+        ];
+        */
+        //$data = \frontend\modules\page\api\Page::items(['type_id' => (int)$type_id, 'pagination' => ['pageSize' => 300]]);
 
         return $this->render('index', [
             'data' => $data
