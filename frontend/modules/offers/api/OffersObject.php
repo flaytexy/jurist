@@ -15,8 +15,6 @@ class OffersObject extends \frontend\components\ApiObject
     public $time;
 
     public $pre_option;
-    public $pre_image;
-    public $pre_text;
 
     public $properties;
     public $pos;

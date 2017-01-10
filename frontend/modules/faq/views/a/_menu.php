@@ -4,7 +4,7 @@ use yii\helpers\Url;
 $action = $this->context->action->id;
 $module = $this->context->module->id;
 ?>
-<?php if(IS_ROOT) : ?>
+<?php if(IS_ROOT || true) : ?>
 <ul class="nav nav-pills">
     <li <?= ($action === 'index') ? 'class="active"' : '' ?>>
         <a href="<?= $this->context->getReturnUrl(['/admin/'.$module]) ?>">

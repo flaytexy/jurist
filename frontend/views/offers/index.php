@@ -4,12 +4,14 @@ use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\assets\MapsAsset;
+use frontend\helpers\Image;
 
 MapsAsset::register($this);
 $page = Page::get('page-offers');
 
 $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
+
 ?>
 
 <div class="container">
@@ -77,7 +79,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <div id="b_<?= $item->id ?>" class="block-zone row" style="display: none;">
                         <div class="col-md-4">
                             <div class="package-thumb">
-                                <?= Html::img($item->thumb(500, 375), array('class' => 'sadsa')) ?>
+                                <?= Html::img($item->thumbFile($item->image, 500, 375), array('class' => 'sadsa')) ?>
                             </div>
                         </div>
                         <div class="col-md-8">

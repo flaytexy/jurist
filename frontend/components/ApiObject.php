@@ -58,6 +58,24 @@ class ApiObject extends \yii\base\Object
     }
 
     /**
+     * Creates thumb from model->image attribute with specified width and height.
+     * @param bool|false $fileName
+     * @param null $width
+     * @param null $height
+     * @param bool|true $crop
+     * @return string
+     */
+    public function thumbFile($fileName = false, $width = null, $height = null, $crop = true)
+    {
+        if(empty($fileName))
+            $fileName = $this->image;
+
+        if($fileName && ($width || $height)){
+            return Image::thumb($fileName, $width, $height, $crop);
+        }
+        return '';
+    }
+    /**
      * Get seo text attached to object
      * @param string $attribute name of seo attribute can be h1, title, description, keywords
      * @param string $default default string applied if seo text not found

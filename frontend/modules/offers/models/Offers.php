@@ -34,6 +34,8 @@ class Offers extends \frontend\components\ActiveRecord
             [['price'], 'number', 'max' => 100000000],
             ['how_days', 'integer', 'max' => 255],
             ['coordinates', 'string', 'max' => 64],
+            //['pre_image', 'image'],
+            //['pre_image', 'string', 'max' => 128],
             ['image', 'image'],
             [['views', 'time', 'status', 'type_id'], 'integer'],
             ['time', 'default', 'value' => time()],

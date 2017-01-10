@@ -10,6 +10,7 @@ use frontend\widgets\Redactor;
 use frontend\widgets\SeoForm;
 
 $module = $this->context->module->id;
+
 ?>
 <?php $form = ActiveForm::begin([
     'enableAjaxValidation' => true,
@@ -28,12 +29,12 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'how_days') ?>
 <?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
 
+<?php /*if ($model->pre_image) : */?><!--
+    <img src="<?/*= Image::thumb($model->pre_image, 240) */?>">
+--><?php /*endif; */?>
+
 <?= $form->field($model, 'pre_image')->fileInput() ?>
 
-<?php if ($model->image) : ?>
-    <img src="<?= Image::thumb($model->image, 240) ?>">
-<?php endif; ?>
-<?= $form->field($model, 'pre_image')->fileInput() ?>
 
 <?= $form->field($model, 'pre_text')->textarea() ?>
 

@@ -530,7 +530,7 @@ MainAsset::register($this);
                             <div class="review-detail">
                                 <div class="customer-thumb">
                                     <img src="/uploads/theme_villa/customer1.jpg" alt=""/>
-                                    <img src="/uploads/theme_villa/customer-sign.png" alt=""/>
+                            <!--        <img src="/uploads/theme_villa/customer-sign.png" alt=""/>-->
                                 </div>
                                 <div class="customer-reviewrating">
                                     <p>"По рекомендации друга решил открыть счет на компанию в определенном латвийском
@@ -569,7 +569,7 @@ MainAsset::register($this);
                             <div class="review-detail">
                                 <div class="customer-thumb">
                                     <img src="/uploads/theme_villa/customer2.jpg" alt=""/>
-                                    <img src="/uploads/theme_villa/customer-sign2.png" alt=""/>
+                                   <!-- <img src="/uploads/theme_villa/customer-sign2.png" alt=""/>-->
                                 </div>
                                 <div class="customer-reviewrating">
                                     <p>"У другой компании заказала регистрацию оффшора и открытие счета.
