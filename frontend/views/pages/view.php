@@ -1,12 +1,12 @@
 <?php
-use frontend\modules\offers\api\Offers;
+use frontend\modules\page\api\Pages;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
 
-$this->title = $offers->seo('title', $offers->model->title);
-$this->params['breadcrumbs'][] = ['label' => 'Offers', 'url' => ['offers/index']];
-$this->params['breadcrumbs'][] = $offers->model->title;
+$this->title = $pages->seo('title', $pages->model->title);
+$this->params['breadcrumbs'][] = ['label' => 'Pages', 'url' => ['pages/index']];
+$this->params['breadcrumbs'][] = $pages->model->title;
 ?>
 
 <section>
@@ -16,10 +16,10 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             <div class="row">
                 <div class="col-md-12">
                     <div class="packages-detail">
-                        <?php if (count($offers->photos)) : ?>
+                        <?php if (count($pages->photos)) : ?>
                             <div class="package-video">
                                 <div>
-                                    <?= Html::img(Image::thumb($offers->photos[1]->image, 800, 450), ['width' => '100%', 'height' => '100%']) ?>
+                                    <?= Html::img(Image::thumb($pages->photos[1]->image, 800, 450), ['width' => '100%', 'height' => '100%']) ?>
                                 </div>
 
 
@@ -30,11 +30,11 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                             </div>
                         <?php endif; ?>
                         <div class="title1 alignleft">
-                            <h1><?= $offers->seo('h1', $offers->title) ?></h1>
-                            <span><?= $offers->seo('h1', $offers->short) ?></span>
+                            <h1><?= $pages->seo('h1', $pages->title) ?></h1>
+                            <span><?= $pages->seo('h1', $pages->short) ?></span>
                         </div>
                         <p>
-                            <?= $offers->text ?>
+                            <?= $pages->text ?>
                         </p>
 
                         <div class="package-features">
@@ -100,8 +100,8 @@ $this->params['breadcrumbs'][] = $offers->model->title;
 
                                 <div class="col-md-4">
                                     <div class="packageimg-gallery">
-                                        <?php if (count($offers->photos)) : ?>
-                                            <?php foreach ($offers->photos as $photo) : ?>
+                                        <?php if (count($pages->photos)) : ?>
+                                            <?php foreach ($pages->photos as $photo) : ?>
                                                 <div class="packageimg-gallerythumb"><?= $photo->box(555, 483) ?></div>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
@@ -119,13 +119,13 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             <div class="row" style="margin-top: 80px;">
                 <div class="col-md-12">
                     <p>
-                        <?php foreach ($offers->tags as $tag) : ?>
-                            <a href="<?= Url::to(['/offers', 'tag' => $tag]) ?>"
+                        <?php foreach ($pages->tags as $tag) : ?>
+                            <a href="<?= Url::to(['/pages', 'tag' => $tag]) ?>"
                                class="label label-info"><?= $tag ?></a>
                         <?php endforeach; ?>
                     </p>
 
-                    <div class="small-muted">Views: <?= $offers->views ?></div>
+                    <div class="small-muted">Views: <?= $pages->views ?></div>
                 </div>
             </div>
         </div>

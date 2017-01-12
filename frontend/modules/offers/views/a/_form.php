@@ -8,6 +8,7 @@ use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use frontend\widgets\Redactor;
 use frontend\widgets\SeoForm;
+use dosamigos\ckeditor\CKEditor;
 
 $module = $this->context->module->id;
 
@@ -33,11 +34,10 @@ $module = $this->context->module->id;
     <img src="<?/*= Image::thumb($model->pre_image, 240) */?>">
 --><?php /*endif; */?>
 
-<?= $form->field($model, 'pre_image')->fileInput() ?>
+<?/*= $form->field($model, 'pre_image')->fileInput() */?>
 
 
-<?= $form->field($model, 'pre_text')->textarea() ?>
-
+<?= $form->field($model, 'pre_text')->textarea(array('rows' => 6)) ?>
 <hr/>
 
 <?php if ($this->context->module->settings['enableThumb']) : ?>
@@ -50,8 +50,9 @@ $module = $this->context->module->id;
     <?= $form->field($model, 'image')->fileInput() ?>
 <?php endif; ?>
 <?php if ($this->context->module->settings['enableShort']) : ?>
-    <?= $form->field($model, 'short')->textarea() ?>
+    <?= $form->field($model, 'short')->textarea(array('rows' => 6)) ?>
 <?php endif; ?>
+
 <?= $form->field($model, 'text')->widget(Redactor::className(), [
     'options' => [
         'minHeight' => 400,
@@ -60,6 +61,13 @@ $module = $this->context->module->id;
         'plugins' => ['fullscreen']
     ]
 ]) ?>
+<!--<hr />
+
+--><?/*= $form->field($model, 'text')->widget(CKEditor::className(), [
+    'options' => ['rows' => 6],
+    'preset' => 'advance'
+]) */?>
+
 
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 

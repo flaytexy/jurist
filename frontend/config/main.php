@@ -113,11 +113,44 @@ $config = [
                         'type_id' => 2
                     ],
                 ],
-
+                [
+                    'pattern' => 'fonds',
+                    'route' => 'pages/index',
+                    'defaults' => [
+                        'type' => 4,
+                        'name' => 'fonds'
+                    ],
+                ],
+                [
+                    'pattern' => 'processing',
+                    'route' => 'pages/index',
+                    'defaults' => [
+                        'type' => 5,
+                        'name' => 'processing'
+                    ],
+                ],
+/*                [
+                    'pattern' => 'fonds/<slug:[\w-]+>',
+                    'route' => 'pages/view',
+                    'defaults' => [
+                        'type' => 4
+                    ],
+                ],
+                [
+                    'pattern' => 'processing/<slug:[\w-]+>',
+                    'route' => 'pages/view',
+                    'defaults' => [
+                        'type' => 5
+                    ],
+                ],*/
+                //'fonds' => 'pages/index/4',
+                //'processing' => 'pages/index',
                 'offers/<slug:[\w-]+>' => 'offers/view',
                 'news/<slug:[\w-]+>' => 'news/view',
                 'licenses/<slug:[\w-]+>' => 'news/view',
                 'banks/<slug:[\w-]+>' => 'banks/view',
+                //'fonds' => 'page/index',
+                //'processing/<slug:[\w-]+>' => 'processing/view',
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',

@@ -734,49 +734,23 @@ MainAsset::register($this);
                         </div>
                         <div class="villa-locationslist">
                             <ul>
+                                <? foreach ($licenses as $item): ?>
                                 <li>
                                     <div class="villa-location">
-                                        <img src="/uploads/theme_villa/villa-location1.jpg" alt=""/>
+
+                                            <?= Html::img($item->thumb(226, 360), array('class' => 'main-banks')) ?>
 
                                         <div class="villa-locationinfo">
-                                            <span>Торговля на FOREX</span>
-                                            <h4><a href="#" title="">Licence</a></h4>
+                                            <span><?= $item->model->title ?></span>
+                                            <h4><a href="/banks/<?= $item->model->slug ?>"
+                                                   title="">Licence</a></h4>
                                         </div>
                                     </div>
                                 </li>
+                                <? endforeach; ?>
                                 <li>
                                     <div class="villa-location">
-                                        <img src="/uploads/theme_villa/villa-location2.jpg" alt=""/>
-
-                                        <div class="villa-locationinfo">
-                                            <span>Обменно-валютные операции</span>
-                                            <h4><a href="#" title="">Licence</a></h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="villa-location">
-                                        <img src="/uploads/theme_villa/villa-location3.jpg" alt=""/>
-
-                                        <div class="villa-locationinfo">
-                                            <span>Процессинг платежей</span>
-                                            <h4><a href="#" title="">Licence</a></h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="villa-location">
-                                        <img src="/uploads/theme_villa/villa-location4.jpg" alt=""/>
-
-                                        <div class="villa-locationinfo">
-                                            <span>Кредитные и залоговые операции</span>
-                                            <h4><a href="#" title="">Licence</a></h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="villa-location">
-                                        <img src="/uploads/theme_villa/villa-location5.jpg" alt=""/>
+                                        <?= Html::img($item->thumbFile("/uploads/theme_villa/villa-location5.jpg", 226, 360), array('class' => 'main-banks')) ?>
 
                                         <div class="villa-locationinfo">
                                             <span>Другие</span>
@@ -865,7 +839,7 @@ MainAsset::register($this);
                                     <img src="/uploads/theme_villa/recent-news3.jpg" alt=""/>
 
                                     <div class="recentnew-detail">
-                                        <h4><a title="">Благотворительный фонд</a></h4>
+                                        <h4><a href="/blagotvoritelnyj-fond" title="">Благотворительный фонд</a></h4>
                                         <?php /*<ul class="post-meta">
                                             <li><i class="fa fa-calendar"></i> 26 May 2016</li>
                                             <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>

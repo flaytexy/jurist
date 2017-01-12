@@ -15,6 +15,8 @@ $goodsCount = count(Shopcart::goods());
             <div class="container">
                 <div class="topbar-data">
                     <ul class="top-menus">
+                        <li><a href="/fonds" title="Банки">Фонды</a></li>
+                        <li><a href="/processing" title="Банки">Мерчант (процессинг)</a></li>
                         <li><a href="/banks" title="Банки">Банки</a></li>
                         <li><a href="/offshornyie-predlozheniya" title="Оффшорные предложения">Оффшорные предложения</a></li>
                         <li><a href="/evropejskie-kompanii" title="Европейские компании">Европейские компании</a></li>
