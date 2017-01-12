@@ -22,50 +22,6 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <section id="pages">
     <div class="block">
         <div class="container">
-            <nav id="menus" class="navbar">
-                <div class="navbar-header"><span id="category" class="visible-xs">Перечень офшоров</span>
-                    <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse"
-                            data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
-                </div>
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav" id="menu-show-block">
-                        <?php foreach ($pages as $item) : ?>
-                            <li><a data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </nav>
-            <div id="menu-show-block-zone" class="" style="display: none;">
-                <?php foreach ($pages as $item) : ?>
-                    <div id="b_<?= $item->id ?>" class="block-zone row" style="display: none;">
-                        <div class="col-md-4">
-                            <div class="package-thumb">
-                                <?= Html::img($item->thumbFile($item->image, 500, 375), array('class' => 'sadsa')) ?>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <span><b><?= $item->title ?></b></span>
-                            <?= $item->short ?>
-
-                            <ul>
-                                <?php foreach ($item->properties as $prop) : ?>
-                                    <li>
-                                        <?= $prop->name ?>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-
-                            <div class="btn abtn">
-                                <?= Html::a('Подробнее', ['pages/view', 'slug' => $item->slug], ['class'=>'btn btn-default']) ?>
-                            </div>
-
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-
-        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="villaeditors-picks">

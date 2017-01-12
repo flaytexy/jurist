@@ -12,7 +12,7 @@ class PagesController extends \yii\web\Controller
             'where' => ['type_id' => (int)$type, 'status' => 1],
             'pagination' => ['pageSize' => 10]
         ]);
-
+ex_print($pages);
         return $this->render('index',[
             'pages' => $pages,
             'typeTitle' => $name
