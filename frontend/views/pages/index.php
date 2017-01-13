@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                                             <div class="package-thumb">
                                                 <?= Html::img($item->thumb(500, 375)) ?>
-                                                <span><i>$<?= $item->model->price ?></i> / <? if ($item->model->how_days): ?><?= $item->model->how_days?><? else: ?>Минимал<? endif; ?></span>
+                                                <!--<span><i>$<?/*= $item->model->price */?></i> / <?/* if ($item->model->how_days): */?><?/*= $item->model->how_days*/?><?/* else: */?>Минимал<?/* endif; */?></span>-->
                                             </div>
                                             <div class="package-detail">
                                             <span class="cate">

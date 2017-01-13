@@ -25,6 +25,8 @@ class Page extends \frontend\components\ActiveRecord
             [['text', 'title'], 'required'],
             [['title', 'short', 'text'], 'trim'],
             ['title', 'string', 'max' => 128],
+            [['views', 'time', 'status', 'type_id'], 'integer'],
+            ['to_main', 'integer', 'max' => 1],
             ['image', 'image'],
             [['views', 'time', 'status'], 'integer'],
             ['time', 'default', 'value' => time()],

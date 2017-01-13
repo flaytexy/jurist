@@ -25,6 +25,8 @@ $module = $this->context->module->id;
     '5' => 'Процессинг'
 ]) ?>
 
+<?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
+
 
 <?php if($this->context->module->settings['enableThumb']) : ?>
     <?php if($model->image) : ?>

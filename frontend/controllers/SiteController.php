@@ -104,10 +104,16 @@ class SiteController extends Controller
             'pagination' => ['pageSize' => 10]
         ]);
 
+        $fonds = Page::items([
+            'where' => ['type_id' => 5, 'to_main' => 1, 'status' => 1],
+            'pagination' => ['pageSize' => 2]
+        ]);
+
         return $this->render('main', [
             'offers' => $offers,
             'news' => $news,
             'licenses' => $licenses,
+            'fonds' => $fonds,
             'banks' => $banks
         ]);
     }

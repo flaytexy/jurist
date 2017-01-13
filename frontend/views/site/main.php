@@ -824,17 +824,22 @@ MainAsset::register($this);
                         <div class="remove-ext">
                             <div class="h5">Фонды и Трасты</div>
                             <div class="recentnews-carousel">
+                                <? foreach ($fonds as $item): ?>
                                 <div class="recentnew-post">
                                     <img src="/uploads/theme_villa/recent-news2.jpg" alt=""/>
 
                                     <div class="recentnew-detail">
-                                        <h4><a title="">Инвестиционный фонд</a></h4>
+                                        <h4>
+                                            <a href="/fonds/<?= $item->model->slug ?>"
+                                               title="<?= $item->model->title ?>"><?= $item->model->title ?></a>
+                                        </h4>
                                         <?php /*<ul class="post-meta">
                                             <li><i class="fa fa-calendar"></i> 26 May 2016</li>
                                             <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>
                                         </ul> */ ?>
                                     </div>
                                 </div>
+                                <? endforeach; ?>
                                 <div class="recentnew-post">
                                     <img src="/uploads/theme_villa/recent-news3.jpg" alt=""/>
 
