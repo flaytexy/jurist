@@ -826,7 +826,7 @@ MainAsset::register($this);
                             <div class="recentnews-carousel">
                                 <? foreach ($fonds as $item): ?>
                                 <div class="recentnew-post">
-                                    <img src="/uploads/theme_villa/recent-news2.jpg" alt=""/>
+                                    <?= Html::img($item->thumb(470, 295), array('class' => 'main-banks')) ?>
 
                                     <div class="recentnew-detail">
                                         <h4>
@@ -840,17 +840,6 @@ MainAsset::register($this);
                                     </div>
                                 </div>
                                 <? endforeach; ?>
-                                <div class="recentnew-post">
-                                    <img src="/uploads/theme_villa/recent-news3.jpg" alt=""/>
-
-                                    <div class="recentnew-detail">
-                                        <h4><a href="/blagotvoritelnyj-fond" title="">Благотворительный фонд</a></h4>
-                                        <?php /*<ul class="post-meta">
-                                            <li><i class="fa fa-calendar"></i> 26 May 2016</li>
-                                            <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>
-                                        </ul> */ ?>
-                                    </div>
-                                </div>
                             </div>
                             <!-- Recent News Carousel -->
                         </div>

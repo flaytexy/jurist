@@ -105,7 +105,7 @@ class SiteController extends Controller
         ]);
 
         $fonds = Page::items([
-            'where' => ['type_id' => 5, 'to_main' => 1, 'status' => 1],
+            'where' => ['type_id' => 4, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 2]
         ]);
 
