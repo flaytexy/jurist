@@ -33,6 +33,9 @@ class RedactorController extends \frontend\components\Controller
     public function actionUpload($dir = '')
     {
         $fileInstance = UploadedFile::getInstanceByName('file');
+        if(empty($fileInstance))
+            $fileInstance = UploadedFile::getInstanceByName('upload');
+
         if ($fileInstance) {
             $file = Image::upload($fileInstance, $dir);
             if($file) {
@@ -41,6 +44,20 @@ class RedactorController extends \frontend\components\Controller
         }
         return ['error' => 'Unable to save image file'];
     }
+
+    public function actionUploader($dir = '')
+    {
+        if (isset($_FILES['upload'])) {
+            $fileInstance = UploadedFile::getInstanceByName('upload');
+            $file = Image::upload($fileInstance, $dir);
+            $funcNum = $_GET['CKEditorFuncNum'];
+
+            $message = '';
+            echo "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '$file', '$message');</script>";
+            exit;
+        }
+    }
+
 
 //    public function actionClipboard()
 //    {

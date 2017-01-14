@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 use frontend\widgets\Redactor;
 use frontend\widgets\SeoForm;
 use dosamigos\ckeditor\CKEditor;
-
+use dosamigos\ckeditor\CKEditorInline;
 $module = $this->context->module->id;
 
 ?>
@@ -53,21 +53,29 @@ $module = $this->context->module->id;
     <?= $form->field($model, 'short')->textarea(array('rows' => 6)) ?>
 <?php endif; ?>
 
-<?= $form->field($model, 'text')->widget(Redactor::className(), [
+<?/*= $form->field($model, 'text')->widget(Redactor::className(), [
     'options' => [
         'minHeight' => 400,
         'imageUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
         'fileUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
         'plugins' => ['fullscreen']
     ]
-]) ?>
-<!--<hr />
-
---><?/*= $form->field($model, 'text')->widget(CKEditor::className(), [
-    'options' => ['rows' => 6],
-    'preset' => 'advance'
 ]) */?>
+<hr />
 
+<?= $form->field($model, 'text')->widget(CKEditor::className(),[
+    'clientOptions' => [
+        'preset' => 'full',
+        'inline' => false,
+        //'filebrowserBrowseUrl'=> Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
+        //'filebrowserUploadUrl'=> Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
+        //'filebrowserBrowseUrl' => '/ckeditor/default/file-browse',
+        //'filebrowserUploadUrl' => '/ckeditor/default/file-upload',
+        //'filebrowserImageBrowseUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
+        'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers'])
+    ]
+]);
+?>
 
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 
