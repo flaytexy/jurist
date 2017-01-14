@@ -21,6 +21,7 @@ class PagesController extends \yii\web\Controller
 
     public function actionView($slug)
     {
+
         $pages = Page::get($slug);
         if(!$pages){
             throw new \yii\web\NotFoundHttpException('Page not found.');

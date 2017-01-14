@@ -1,32 +1,30 @@
-	/*
-  	Flaticon icon font: Flaticon
-  	Creation date: 21/06/2016 07:58
-  	*/
+/*
+  Flaticon icon font: Flaticon
+  Creation date: 14/01/2017 07:58
+  */
 
 @font-face {
-  font-family: "Flaticon";
-  src: url("../fonts/Flaticon.eot");
-  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
-       url("../fonts/Flaticon.woff") format("woff"),
-       url("../fonts/Flaticon.ttf") format("truetype"),
-       url("../fonts/Flaticon.svg#Flaticon") format("svg");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.woff") format("woff"),
+    url("../fonts/Flaticon.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
-[class^="flaticon-"], [class*=" flaticon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: flaticon !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
 
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+[class^="flaticon-"], [class*=" flaticon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: flaticon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .flaticon-cleaning-lady:before { content: "\f100"; }
@@ -45,3 +43,67 @@
 .flaticon-stack:before { content: "\f10d"; }
 .flaticon-transport:before { content: "\f10e"; }
 .flaticon-volkswagen-car-side-view:before { content: "\f10f"; }
+
+
+
+/* Flaticon_new */
+@font-face {
+    font-family: "Flaticon_new";
+    src: url("../fonts/Flaticon2.woff") format("woff"),
+    url("../fonts/Flaticon2.ttf") format("truetype"),
+    url("../fonts/Flaticon2.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: "Flaticon_new";
+        src: url("../fonts/Flaticon2.svg#Flaticon") format("svg");
+    }
+}
+[class^="flaticon-new-"]:before, [class*=" flaticon-new-"]:before,
+[class^="flaticon-new-"]:after, [class*=" flaticon-new-"]:after {
+    font-family: "Flaticon_new" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-new-atm:before { content: "\f100"; }
+.flaticon-new-australia-map:before { content: "\f101"; }
+.flaticon-new-bank:before { content: "\f102"; }
+.flaticon-new-bank-sign:before { content: "\f103"; }
+.flaticon-new-businessman-linked-to-money-and-time:before { content: "\f104"; }
+.flaticon-new-coin:before { content: "\f105"; }
+.flaticon-new-coupon:before { content: "\f106"; }
+.flaticon-new-credit-card:before { content: "\f107"; }
+.flaticon-new-credit-card-1:before { content: "\f108"; }
+.flaticon-new-credit-card-2:before { content: "\f109"; }
+.flaticon-new-credit-card-pay-mode:before { content: "\f10a"; }
+.flaticon-new-credit-cards:before { content: "\f10b"; }
+.flaticon-new-credit-cards-payment:before { content: "\f10c"; }
+.flaticon-new-dollar-analysis-bars-chart:before { content: "\f10d"; }
+.flaticon-new-exchange:before { content: "\f10e"; }
+.flaticon-new-financial-graphic-of-stocks-on-tablet-screen:before { content: "\f10f"; }
+.flaticon-new-group:before { content: "\f110"; }
+.flaticon-new-increase-money:before { content: "\f111"; }
+.flaticon-new-india-republic:before { content: "\f112"; }
+.flaticon-new-investment:before { content: "\f113"; }
+.flaticon-new-investment-model:before { content: "\f114"; }
+.flaticon-new-mastercard:before { content: "\f115"; }
+.flaticon-new-mastercard-1:before { content: "\f116"; }
+.flaticon-new-money-bank:before { content: "\f117"; }
+.flaticon-new-payment-method:before { content: "\f118"; }
+.flaticon-new-paypal-logo:before { content: "\f119"; }
+.flaticon-new-protection:before { content: "\f11a"; }
+.flaticon-new-transfer:before { content: "\f11b"; }
+.flaticon-new-user:before { content: "\f11c"; }
+.flaticon-new-visa:before { content: "\f11d"; }
+.flaticon-new-worlwide:before { content: "\f11e"; }
