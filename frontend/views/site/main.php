@@ -742,7 +742,7 @@ MainAsset::register($this);
 
                                         <div class="villa-locationinfo">
                                             <span><?= $item->model->title ?></span>
-                                            <h4><a href="/banks/<?= $item->model->slug ?>"
+                                            <h4><a href="/licenses/<?= $item->model->slug ?>"
                                                    title="">Licence</a></h4>
                                         </div>
                                     </div>
@@ -750,7 +750,7 @@ MainAsset::register($this);
                                 <? endforeach; ?>
                                 <li>
                                     <div class="villa-location">
-                                        <?= Html::img($item->thumbFile("/uploads/theme_villa/villa-location5.jpg", 226, 360), array('class' => 'main-banks')) ?>
+                                        <?= Html::img($item->thumbFile("/uploads/licenses/license (5).jpg", 226, 360), array('class' => 'main-banks')) ?>
 
                                         <div class="villa-locationinfo">
                                             <span>Другие</span>
@@ -816,7 +816,7 @@ MainAsset::register($this);
                             <div class="remove-ext">
                                 <div class="recentnews-carousel2">
                                     <div class="recentnew-post">
-                                        <img src="/uploads/theme_villa/recent-news1.jpg" alt=""/>
+                                        <img src="/uploads/processing/processing_main.jpg" alt="Процессинг Мерчант"/>
                                     </div>
                                 </div>
                             </div>

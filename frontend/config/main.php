@@ -129,7 +129,22 @@ $config = [
                         'name' => 'processing'
                     ],
                 ],
-/*                [
+                [
+                    'pattern' => 'licenses',
+                    'route' => 'pages/index',
+                    'defaults' => [
+                        'type' => 3,
+                        'name' => 'licenses'
+                    ],
+                ],
+                [
+                    'pattern' => 'licenses/<slug:[\w-]+>',
+                    'route' => 'pages/view',
+                    'defaults' => [
+                        'type' => 3
+                    ],
+                ],
+                [
                     'pattern' => 'fonds/<slug:[\w-]+>',
                     'route' => 'pages/view',
                     'defaults' => [
@@ -142,12 +157,13 @@ $config = [
                     'defaults' => [
                         'type' => 5
                     ],
-                ],*/
-                //'fonds' => 'pages/index/4',
-                //'processing' => 'pages/index',
+                ],
+//                'licenses/<slug:[\w-]+>' => 'page/view',
+//                'fonds/<slug:[\w-]+>' => 'page/view',
+//                'processing/<slug:[\w-]+>' => 'page/view',
+
                 'offers/<slug:[\w-]+>' => 'offers/view',
                 'news/<slug:[\w-]+>' => 'news/view',
-                'licenses/<slug:[\w-]+>' => 'news/view',
                 'banks/<slug:[\w-]+>' => 'banks/view',
                 //'fonds' => 'page/index',
                 //'processing/<slug:[\w-]+>' => 'processing/view',
@@ -173,7 +189,28 @@ $config = [
                     'js' => [YII_DEBUG ? 'js/bootstrap.js' : 'js/bootstrap.min.js'],
                 ],
             ],
-        ],
+        ]
+    ],
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\PathController',
+            'access' => ['@'],
+            'root' => [
+                'baseUrl'=>'@web',
+                'basePath'=>'@webroot',
+                'path' => 'uploads',
+                'name' => 'Global'
+            ],
+            /*                'watermark' => [
+                                'source'         => __DIR__.'/logo.png', // Path to Water mark image
+                                'marginRight'    => 5,          // Margin right pixel
+                                'marginBottom'   => 5,          // Margin bottom pixel
+                                'quality'        => 95,         // JPEG image save quality
+                                'transparency'   => 70,         // Water mark image transparency ( other than PNG )
+                                'targetType'     => IMG_GIF|IMG_JPG|IMG_PNG|IMG_WBMP, // Target image formats ( bit-field )
+                                'targetMinPixel' => 200         // Target image minimum pixel size
+                            ]*/
+        ]
     ],
     'params' => $params,
     'modules' => [

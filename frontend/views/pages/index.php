@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                        class="label label-info"><?= $tag ?></a>
                                                 <?php endforeach; ?>
                                             </span>
-                                                <h4><?= Html::a($item->title, ['pages/view', 'slug' => $item->slug]) ?></h4>
+                                                <h4><?= Html::a($item->title, Url::to([$typeTitle.'/'.$item->slug])) ?></h4>
                                                 <ul class="location-book">
                                                     <li class="active"><i class="fa fa-map-marker"></i>
                                                         <span><?= $item->date ?></span></li>

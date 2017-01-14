@@ -10,6 +10,9 @@ use frontend\widgets\Redactor;
 use frontend\widgets\SeoForm;
 use dosamigos\ckeditor\CKEditor;
 use dosamigos\ckeditor\CKEditorInline;
+//use mihaildev\ckeditor\CKEditor;
+use mihaildev\elfinder\ElFinder;
+
 $module = $this->context->module->id;
 
 ?>
@@ -64,16 +67,10 @@ $module = $this->context->module->id;
 <hr />
 
 <?= $form->field($model, 'text')->widget(CKEditor::className(),[
-    'clientOptions' => [
-        'preset' => 'full',
-        'inline' => false,
-        //'filebrowserBrowseUrl'=> Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
-        //'filebrowserUploadUrl'=> Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
-        //'filebrowserBrowseUrl' => '/ckeditor/default/file-browse',
-        //'filebrowserUploadUrl' => '/ckeditor/default/file-upload',
-        //'filebrowserImageBrowseUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
-        'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers'])
-    ]
+    'clientOptions' => ElFinder::ckeditorOptions('elfinder',[
+            'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers'])
+        ]
+    )
 ]);
 ?>
 

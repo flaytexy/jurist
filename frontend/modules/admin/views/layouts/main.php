@@ -43,6 +43,14 @@ $moduleName = $this->context->module->id;
                         <i class="glyphicon glyphicon-file"></i>
                         <?= Yii::t('easyii', 'News') ?>
                     </a>
+                    <a href="<?= Url::to(['/admin/page?type=3']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'news') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        <?= Yii::t('easyii', 'Licenses') ?>
+                    </a>
+                    <a href="<?= Url::to(['/admin/page?type=4']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'news') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        <?= Yii::t('easyii', 'Fonds') ?>
+                    </a>
                     <?php foreach(Yii::$app->getModule('admin')->activeModules as $module) : ?>
                         <a href="<?= Url::to(["/admin/$module->name"]) ?>" class="menu-item <?= ($moduleName == $module->name ? 'active' : '') ?>">
                             <?php if($module->icon != '') : ?>
