@@ -4,8 +4,15 @@ $(function(){
     var uploadButton = $('#photo-upload');
     var uploadingText = $('#uploading-text');
 
+    
     $(document).on('click', '#create-packet', function(){
         var urlTo = $(this).attr('data-url');
+        var uploaded = 0;
+        var $this = $(this);
+
+        uploadButton.addClass('disabled');
+        uploadingText.show();
+        uploadingTextInterval = setInterval(dotsAnimation, 300);
 
         $.ajax({
             url: urlTo,
@@ -115,5 +122,11 @@ $(function(){
         }
     }
 
+
+    var dots = 0;
+    function dotsAnimation() {
+        dots = ++dots % 4;
+        $("span", uploadingText).html(Array(dots+1).join("."));
+    }
 
 });
