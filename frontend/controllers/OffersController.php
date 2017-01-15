@@ -53,6 +53,7 @@ class OffersController extends \yii\web\Controller
 
         foreach ($packets as $packet) {
             $packet_id = $packet->packet_id;
+            $packet->price = number_format( $packet->price, 0, '.', '');
 
             $findOptions = $db
                 ->createCommand('SELECT *

@@ -64,6 +64,12 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                                             </tr>
                                         <?php endforeach; ?>
                                         <tr>
+                                            <td>Цены</td>
+                                            <?php foreach ($packets as $packet) : ?>
+                                                <td><span>$<?= $packet->price?></span></td>
+                                            <?php endforeach; ?>
+                                        </tr>
+                                        <tr>
                                             <td>Заказ</td>
                                             <?php foreach ($packets as $packet) : ?>
                                                 <td><a class="btn btn-success bb">Заказать</a></td>

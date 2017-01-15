@@ -1,6 +1,8 @@
 $(function(){
 
     var packetBody = $('#packet-table');
+    var uploadButton = $('#photo-upload');
+    var uploadingText = $('#uploading-text');
 
     $(document).on('click', '#create-packet', function(){
         var urlTo = $(this).attr('data-url');
