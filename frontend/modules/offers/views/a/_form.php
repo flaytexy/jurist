@@ -33,11 +33,11 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'how_days') ?>
 <?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
 
-<?php /*if ($model->pre_image) : */?><!--
-    <img src="<?/*= Image::thumb($model->pre_image, 240) */?>">
---><?php /*endif; */?>
+<?php /*if ($model->pre_image) : */ ?><!--
+    <img src="<? /*= Image::thumb($model->pre_image, 240) */ ?>">
+--><?php /*endif; */ ?>
 
-<?/*= $form->field($model, 'pre_image')->fileInput() */?>
+<? /*= $form->field($model, 'pre_image')->fileInput() */ ?>
 
 
 <?= $form->field($model, 'pre_text')->textarea(array('rows' => 6)) ?>
@@ -56,20 +56,39 @@ $module = $this->context->module->id;
     <?= $form->field($model, 'short')->textarea(array('rows' => 6)) ?>
 <?php endif; ?>
 
-<?/*= $form->field($model, 'text')->widget(Redactor::className(), [
+<? /*= $form->field($model, 'text')->widget(Redactor::className(), [
     'options' => [
         'minHeight' => 400,
         'imageUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
         'fileUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'offers']),
         'plugins' => ['fullscreen']
     ]
-]) */?>
+]) */ ?>
 
-<?= $form->field($model, 'text')->widget(CKEditor::className(),[
-    'clientOptions' => ElFinder::ckeditorOptions('elfinder',[
-            'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers'])
+
+<?= $form->field($model, 'text')->widget(CKEditor::className(), [
+    'preset' => 'full',
+    'clientOptions' => [
+        'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
+        'extraPlugins' => 'justify,embed,image2,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog',
+        'toolbar' => [
+            ['name' => 'document', 'groups' => ['mode', 'document', 'doctools'], 'items' => ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']],
+            ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']],
+            ['name' => 'editing', 'groups' => ['find', 'selection', 'spellchecker'], 'items' => ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt']],
+            ['name' => 'forms', 'items' => ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField']],
+            '/',
+            ['name' => 'basicstyles', 'groups' => ['basicstyles', 'cleanup'], 'items' => ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat']],
+            ['name' => 'paragraph', 'groups' => ['list', 'indent', 'blocks', 'align', 'bidi'], 'items' => ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language']],
+            ['name' => 'links', 'items' => ['Link', 'Unlink', 'Anchor']],
+            ['name' => 'insert', 'items' => ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']],
+            '/',
+            ['name' => 'styles', 'items' => ['Styles', 'Format', 'Font', 'FontSize']],
+            ['name' => 'colors', 'items' => ['TextColor', 'BGColor']],
+            ['name' => 'tools', 'items' => ['Maximize', 'ShowBlocks']],
+            ['name' => 'others', 'items' => ['-']],
+            ['name' => 'about', 'items' => ['About']]
         ]
-    )
+    ]
 ]);
 ?>
 
@@ -81,7 +100,7 @@ $module = $this->context->module->id;
 
 <?= $form->field($model, 'optionNames')->widget(OptionsInput::className()) ?>
 
-<?php if(IS_ROOT || true) : ?>
+<?php if (IS_ROOT || true) : ?>
     <?= $form->field($model, 'slug') ?>
     <?= SeoForm::widget(['model' => $model]) ?>
 <?php endif; ?>

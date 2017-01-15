@@ -51,13 +51,32 @@ $module = $this->context->module->id;
 //    ]
 //]) ?>
 
-<?= $form->field($model, 'text')->widget(CKEditor::className(),[
-    'clientOptions' => ElFinder::ckeditorOptions('elfinder',[
-            'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers'])
+<?= $form->field($model, 'text')->widget(CKEditor::className(), [
+    'preset' => 'full',
+    'clientOptions' => [
+        'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
+        'extraPlugins' => 'justify,embed,image2,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog',
+        'toolbar' => [
+            ['name' => 'document', 'groups' => ['mode', 'document', 'doctools'], 'items' => ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']],
+            ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']],
+            ['name' => 'editing', 'groups' => ['find', 'selection', 'spellchecker'], 'items' => ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt']],
+            ['name' => 'forms', 'items' => ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField']],
+            '/',
+            ['name' => 'basicstyles', 'groups' => ['basicstyles', 'cleanup'], 'items' => ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat']],
+            ['name' => 'paragraph', 'groups' => ['list', 'indent', 'blocks', 'align', 'bidi'], 'items' => ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language']],
+            ['name' => 'links', 'items' => ['Link', 'Unlink', 'Anchor']],
+            ['name' => 'insert', 'items' => ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']],
+            '/',
+            ['name' => 'styles', 'items' => ['Styles', 'Format', 'Font', 'FontSize']],
+            ['name' => 'colors', 'items' => ['TextColor', 'BGColor']],
+            ['name' => 'tools', 'items' => ['Maximize', 'ShowBlocks']],
+            ['name' => 'others', 'items' => ['-']],
+            ['name' => 'about', 'items' => ['About']]
         ]
-    )
+    ]
 ]);
 ?>
+
 
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 

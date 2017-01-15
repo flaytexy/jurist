@@ -19,9 +19,6 @@ $goodsCount = count(Shopcart::goods());
                         <li><a href="/processing" title="Банки">Мерчант (процессинг)</a></li>
                         <li><a href="/banks" title="Банки">Банки</a></li>
                         <li><a href="/offshornyie-predlozheniya" title="Оффшорные предложения">Оффшорные предложения</a></li>
-                        <li><a href="/evropejskie-kompanii" title="Европейские компании">Европейские компании</a></li>
-                        <!--<li><a href="/liczenzii-beliza" title="Лицензии Белиза">Лицензии Белиза</a></li>
-                        <li><a href="/licenzii" title="Лицензии">Лицензии</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -73,7 +70,7 @@ $goodsCount = count(Shopcart::goods());
                 'items' => [
                     ['label' => 'Главная', 'url' => ['site/index']],
                     ['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
-                    ['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
+                    //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                     //['label' => 'Shop', 'url' => ['shop/index']],
                     ['label' => 'Новости', 'url' => ['/news']],
                     ['label' => 'Банки', 'url' => ['/banks']],
