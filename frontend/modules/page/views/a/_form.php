@@ -7,6 +7,10 @@ use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use frontend\widgets\Redactor;
 use frontend\widgets\SeoForm;
+use dosamigos\ckeditor\CKEditor;
+use dosamigos\ckeditor\CKEditorInline;
+//use mihaildev\ckeditor\CKEditor;
+use mihaildev\elfinder\ElFinder;
 
 $module = $this->context->module->id;
 ?>
@@ -38,14 +42,22 @@ $module = $this->context->module->id;
 <?php if($this->context->module->settings['enableShort']) : ?>
     <?= $form->field($model, 'short')->textarea() ?>
 <?php endif; ?>
-<?= $form->field($model, 'text')->widget(Redactor::className(),[
-    'options' => [
-        'minHeight' => 400,
-        'imageUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'page']),
-        'fileUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'page']),
-        'plugins' => ['fullscreen']
-    ]
-]) ?>
+<?//= $form->field($model, 'text')->widget(Redactor::className(),[
+//    'options' => [
+//        'minHeight' => 400,
+//        'imageUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'page']),
+//        'fileUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'page']),
+//        'plugins' => ['fullscreen']
+//    ]
+//]) ?>
+
+<?= $form->field($model, 'text')->widget(CKEditor::className(),[
+    'clientOptions' => ElFinder::ckeditorOptions('elfinder',[
+            'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers'])
+        ]
+    )
+]);
+?>
 
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 
@@ -53,7 +65,7 @@ $module = $this->context->module->id;
     <?= $form->field($model, 'tagNames')->widget(TagsInput::className()) ?>
 <?php endif; ?>
 
-<?php if(IS_ROOT) : ?>
+<?php if(IS_ROOT || true) : ?>
     <?= $form->field($model, 'slug') ?>
     <?= SeoForm::widget(['model' => $model]) ?>
 <?php endif; ?>

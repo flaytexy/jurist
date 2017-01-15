@@ -64,7 +64,6 @@ $module = $this->context->module->id;
         'plugins' => ['fullscreen']
     ]
 ]) */?>
-<hr />
 
 <?= $form->field($model, 'text')->widget(CKEditor::className(),[
     'clientOptions' => ElFinder::ckeditorOptions('elfinder',[
@@ -82,7 +81,7 @@ $module = $this->context->module->id;
 
 <?= $form->field($model, 'optionNames')->widget(OptionsInput::className()) ?>
 
-<?php if (IS_ROOT) : ?>
+<?php if(IS_ROOT || true) : ?>
     <?= $form->field($model, 'slug') ?>
     <?= SeoForm::widget(['model' => $model]) ?>
 <?php endif; ?>

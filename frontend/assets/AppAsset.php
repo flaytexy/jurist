@@ -16,7 +16,7 @@ class AppAsset extends AssetBundle
         /*'css/bootstrap.css',*/
         /*'css/icons.css',*/
         'css/font-awesome/css/font-awesome.min.css',
-        'css/flaticon.css',
+        'css/flaticon.css?v=2',
         'js/fancybox/jquery.fancybox.css',
         'css/datepicker.css',
         'css/select2.css',

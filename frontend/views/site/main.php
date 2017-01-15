@@ -472,7 +472,7 @@ MainAsset::register($this);
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="service1">
-                                        <span><i class="flaticon-new-coin"></i></span>
+                                        <span><i class="flaticon-new-india-republic"></i></span>
                                         <h4><a href="#services-list1" title="">Подбор подходящей юрисдикции</a></h4>
                                         <i>Страны и их особенности</i>
                                     </div>
@@ -486,7 +486,7 @@ MainAsset::register($this);
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
-                                        <span><i class="flaticon-new-credit-card"></i></span>
+                                        <span><i class="flaticon-new-credit-card-pay-mode"></i></span>
                                         <h4><a href="#services-list1" title="">Брендированные карты
                                                 без привязки к банку</a></h4>
                                         <i>Visa & MasterCard</i>
@@ -494,14 +494,14 @@ MainAsset::register($this);
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
-                                        <span><i class="flaticon-new-credit-card-pay-mode"></i></span>
+                                        <span><i class="flaticon-new-credit-card-2"></i></span>
                                         <h4><a href="#services-list1" title="">Анонимные карты</a></h4>
                                         <i>Субсчета</i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
-                                        <span><i class="flaticon-new-india-republic"></i></span>
+                                        <span><i class="flaticon-new-coin"></i></span>
                                         <h4><a href="#services-list1" title="">Холдинги</a></h4>
                                         <i>Крупный бизнес</i>
                                     </div>
