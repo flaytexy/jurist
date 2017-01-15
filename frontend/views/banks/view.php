@@ -17,16 +17,15 @@ $this->params['breadcrumbs'][] = $banks->model->title;
             <div class="row">
                 <div class="col-md-12">
                     <div class="packages-detail">
-                        <?php if (count($banks->photos)) : ?>
+                        <?php if (count($banks->photos) || !empty($banks->model->image)) : ?>
                             <div class="package-video">
                                 <div>
-                                    <?= Html::img(Image::thumb($banks->photos[1]->image, 800, 450), ['width' => '100%', 'height' => '100%']) ?>
+                                    <?php if (!empty($banks->model->image)) : ?>
+                                        <?= Html::img(Image::thumb($banks->model->image, 800, 450), ['width' => '100%', 'height' => '100%']) ?>
+                                    <? else: ?>
+                                        <?= Html::img(Image::thumb($banks->photos[1]->image, 800, 450), ['width' => '100%', 'height' => '100%']) ?>
+                                    <? endif ?>
                                 </div>
-
-                                <i class="fa fa-play-circle"></i>
-                                <strong class="per-night"><span>$</span>750 <i>Per Night</i></strong>
-                                <a href="#" class="book-btn2" title="">BOOK THIS VILL</a>
-                                <iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>
                             </div>
                         <?php endif; ?>
                         <div class="title1 alignleft">

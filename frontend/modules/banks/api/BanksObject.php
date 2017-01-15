@@ -44,7 +44,8 @@ class BanksObject extends \frontend\components\ApiObject
     }
 
     public function getPrice(){
-        return $this->model->price;
+        $price = number_format( $this->model->price, 0, '.', '');
+        return $price;
     }
 
     public function getDate(){

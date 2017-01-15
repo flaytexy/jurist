@@ -47,6 +47,11 @@ class OffersObject extends \frontend\components\ApiObject
         return $this->model->optionsArray;
     }
 
+    public function getPrice(){
+        $price = number_format( $this->model->price, 0, '.', '');
+        return $price;
+    }
+
     public function getDate(){
         return Yii::$app->formatter->asDate($this->time);
     }

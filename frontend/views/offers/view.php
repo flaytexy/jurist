@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use frontend\helpers\Image;
 
 $this->title = $offers->seo('title', $offers->model->title);
-$this->params['breadcrumbs'][] = ['label' => 'Offers', 'url' => ['offers/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Компании', 'url' => ['/offers']];
 $this->params['breadcrumbs'][] = $offers->model->title;
 ?>
 
@@ -16,17 +16,20 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             <div class="row">
                 <div class="col-md-12">
                     <div class="packages-detail">
-                        <?php if (count($offers->photos)) : ?>
+                        <?php if (count($offers->photos) || !empty($offers->model->image)) : ?>
                             <div class="package-video">
                                 <div>
-                                    <?= Html::img(Image::thumb($offers->photos[1]->image, 800, 450), ['width' => '100%', 'height' => '100%']) ?>
+                                    <?php if (!empty($offers->model->image)) : ?>
+                                        <?= Html::img(Image::thumb($offers->model->image, 800, 200), ['width' => '100%', 'height' => '100%']) ?>
+                                    <? else: ?>
+                                        <?= Html::img(Image::thumb($offers->photos[0]->image, 800, 200), ['width' => '100%', 'height' => '100%']) ?>
+                                    <? endif ?>
                                 </div>
 
-
-                                <i class="fa fa-play-circle"></i>
-                                <strong class="per-night"><span>$</span>750 <i>Per Night</i></strong>
-                                <a href="#" class="book-btn2" title="">BOOK THIS VILL</a>
-                                <iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>
+                               <!-- <i class="fa fa-play-circle"></i>-->
+                                <strong class="per-night"><span>$</span><?= $offers->price; ?> <i>Дней: <?= $offers->model->how_days; ?></i></strong>
+                                <a href="#order-zone" class="book-btn2" title="">Заказать</a>
+                                <!--<iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>-->
                             </div>
                         <?php endif; ?>
                         <div class="title1 alignleft">
@@ -37,7 +40,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                             <?= $offers->text ?>
                         </p>
 
-                        <div class="package-features">
+                        <div class="package-features" id="order-zone">
                             <!-- 2-block -->
                             <div class="row">
                                 <div class="col-md-12">

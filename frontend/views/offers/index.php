@@ -119,19 +119,19 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                 <span><i>$<?= $item->model->price ?></i> / <? if ($item->model->how_days): ?><?= $item->model->how_days?><? else: ?>Минимал<? endif; ?></span>
                                             </div>
                                             <div class="package-detail">
-                                            <span class="cate">
-                                                <?php foreach ($item->tags as $tag) : ?>
-                                                    <a href="<?= Url::to(['/offers', 'tag' => $tag]) ?>"
-                                                       class="label label-info"><?= $tag ?></a>
-                                                <?php endforeach; ?>
-                                            </span>
+<!--                                            <span class="cate">
+                                                <?php /*foreach ($item->tags as $tag) : */?>
+                                                    <a href="<?/*= Url::to(['/offers', 'tag' => $tag]) */?>"
+                                                       class="label label-info"><?/*= $tag */?></a>
+                                                <?php /*endforeach; */?>
+                                            </span>-->
                                                 <h4><?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?></h4>
                                                 <ul class="location-book">
                                                     <li class="active"><i class="fa fa-map-marker"></i>
                                                         <span><?= $item->date ?></span></li>
-                                                    <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a href="#"
-                                                                                                             title="">BOOK
-                                                            NOW</a></li>
+                                                    <li class="book-btn"><i class="fa fa-thumbs-o-up"></i>
+                                                        <?= Html::a('Детальней', ['pages/view', 'slug' => $item->slug]) ?>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>

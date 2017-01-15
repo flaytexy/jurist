@@ -1486,6 +1486,8 @@ footer .title1.style2 > h2 {font-weight: 600;}
 }
 .location-book > li:hover > a,
 .location-book > li.active > a {
+    font-size: 16px;
+    margin: -2px -6px;
     opacity: 1;
     visibility: visible;
     width: 100%;
@@ -4226,7 +4228,7 @@ ul.Social-btn {
     transform: scale(1.2);
 }
 .package .cate {
-
+    min-height: 20px;
 }
 /*=============== Services Page ===============*/
 
