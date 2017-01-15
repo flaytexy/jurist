@@ -16,27 +16,24 @@ $this->params['breadcrumbs'][] = $pages->model->title;
             <div class="row">
                 <div class="col-md-12">
                     <div class="packages-detail">
-                        <?php if (count($pages->photos)) : ?>
+                        <?php if (count($pages->photos) || !empty($pages->model->image)) : ?>
                             <div class="package-video">
                                 <div>
-                                    <?= Html::img(Image::thumb($pages->photos[1]->image, 800, 450), ['width' => '100%', 'height' => '100%']) ?>
+                                    <?php if (!empty($pages->model->image)) : ?>
+                                        <?= Html::img(Image::thumb($pages->model->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
+                                    <? else: ?>
+                                        <?= Html::img(Image::thumb($pages->photos[1]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
+                                    <? endif ?>
                                 </div>
-
-
-                                <i class="fa fa-play-circle"></i>
-                                <strong class="per-night"><span>$</span>750 <i>Per Night</i></strong>
-                                <a href="#" class="book-btn2" title="">BOOK THIS VILL</a>
-                                <iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>
+                                <div class="title-video alignleft">
+                                    <h1><?= $pages->seo('h1', $pages->title) ?></h1>
+                                    <span><?= $pages->seo('h1', $pages->short) ?></span>
+                                </div>
                             </div>
                         <?php endif; ?>
-                        <div class="title1 alignleft">
-                            <h1><?= $pages->seo('h1', $pages->title) ?></h1>
-                            <span><?= $pages->seo('h1', $pages->short) ?></span>
-                        </div>
                         <p>
                             <?= $pages->text ?>
                         </p>
-
                     </div>
                     <!-- Blog List Posts -->
                 </div>

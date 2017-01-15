@@ -366,6 +366,7 @@ header {
     float: left;
     padding: 18px 30px;
     color: inherit;
+    text-align: center;
    /* font-family: Arial;*/
 }
 .sign-btns > li:hover > a, .top-menus > li:hover > a {background: #1d1d1d;}
@@ -378,7 +379,7 @@ header {
     float: left;
     font-size: 11px;
     font-weight: 300;
-    color: transparent;
+    color: #fff;
     background: #1d1d1d;
     max-width: 34px;
     padding: 18px 10px;
@@ -4045,11 +4046,21 @@ ul.Social-btn {
     margin-bottom: 60px;
 }
 .title-video {
-    background-color: white;
+    background-color: #7dc20f;
     left: 39px;
     padding: 10px 100px;
     position: absolute;
     top: 40px;
+}
+.title-video {
+    background-color: #7dc20f;
+    left: 19px;
+    padding: 10px 100px;
+    position: absolute;
+    top: 19px;
+}
+.title-video > h1 > span {
+    color: #fff;
 }
 .package-video::before {
     background: #000000 none repeat scroll 0 0;

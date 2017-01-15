@@ -16,9 +16,10 @@ $goodsCount = count(Shopcart::goods());
                 <div class="topbar-data">
                     <ul class="top-menus">
                         <li><a href="/fonds" title="Банки">Фонды</a></li>
-                        <li><a href="/processing" title="Банки">Мерчант (процессинг)</a></li>
                         <li><a href="/banks" title="Банки">Банки</a></li>
-                        <li><a href="/offshornyie-predlozheniya" title="Оффшорные предложения">Оффшорные предложения</a></li>
+                        <li><a href="/offshornyie-predlozheniya" title="Компании">Компании</a></li>
+                        <li><a href="/licenses" title="Банки">Лицензии</a></li>
+                        <li><a href="/processing" title="Банки" style="line-height: 0.9">Мерчант (процессинг)<br /> Эквайринг</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,17 +50,17 @@ $goodsCount = count(Shopcart::goods());
     </header><!-- Header -->
     <div class="responsive-header">
         <div class="top-bar">
-            <ul class="sign-btns">
+<!--            <ul class="sign-btns">
                 <li><a href="#" title=""><i class="fa fa-unlock-alt"></i> Log In</a></li>
                 <li><a href="#" title=""><i class="fa fa-plus"></i> Sign Up</a></li>
-            </ul>
-            <ul class="language-select">
+            </ul>-->
+<!--            <ul class="language-select">
                 <li><img src="/uploads/theme_villa/lang1.jpg" alt=""></li>
-            </ul>
+            </ul>-->
         </div>
         <div class="logomenu-bar">
             <div class="container">
-                <div class="logo"><a href="http://themes.webinane.com/getvilla/index2.html" title=""><img src="/uploads/logo/logo.png" alt=""></a></div>
+                <div class="logo"><a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a></div>
                 <span class="menu-btn"><i class="fa fa-list"></i></span>
             </div>
         </div>
@@ -69,11 +70,17 @@ $goodsCount = count(Shopcart::goods());
                 'options' => ['class' => 'nav navbar-nav'],
                 'items' => [
                     ['label' => 'Главная', 'url' => ['site/index']],
-                    ['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
+
+
+                    ['label' => 'Фонды', 'url' => ['/fonds']],
+                    ['label' => 'Банки', 'url' => ['/banks']],
+                    ['label' => 'Компании', 'url' => ['/offshornyie-predlozheniya']],
+                    ['label' => 'Лицензии', 'url' => ['/licenses']],
+                    ['label' => 'Мерчант', 'url' => ['/processing']],
                     //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                     //['label' => 'Shop', 'url' => ['shop/index']],
                     ['label' => 'Новости', 'url' => ['/news']],
-                    ['label' => 'Банки', 'url' => ['/banks']],
+
                     //['label' => 'Articles', 'url' => ['articles/index']],
                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
@@ -83,8 +90,8 @@ $goodsCount = count(Shopcart::goods());
             ]); ?>
             <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div><div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div><!-- Responsive Menu -->
         <ul class="topbar-contact">
-            <li class="active"><i class="fa fa-envelope-o"></i> contacts@yoursites.com</li>
-            <li><i class="fa fa-phone"></i> 111-4558-3333</li>
+          <!--  <li class="active"><i class="fa fa-envelope-o"></i> contacts@yoursites.com</li>-->
+            <li><i class="fa fa-phone"></i> +79251754417</li>
         </ul>
     </div><!-- Responsive Header -->
     <div class="">

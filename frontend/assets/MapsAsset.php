@@ -13,7 +13,7 @@ class MapsAsset extends \yii\web\AssetBundle
         'js/jquery-jvectormap-2.0.3.min.js',
         'js/tabs.js',
         'js/jquery-jvectormap-world-mill.js',
-        'js/mapInit.js'
+        'js/mapInit.js?v=2'
     ];
     public $depends = [
         'yii\web\JqueryAsset',

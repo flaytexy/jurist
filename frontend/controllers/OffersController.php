@@ -15,9 +15,11 @@ class OffersController extends \yii\web\Controller
         $markers = array();
         foreach($offers as $offer){
             $data = array();
-            $data['latLng'] = explode(';', $offer->model->coordinates);
+            $cords = explode(';', $offer->model->coordinates);
+            $data['latLng'] = [$cords[0],$cords[1]];
             $data['name'] = $offer->title;
             $data['weburl'] = 'b_' . $offer->model->offer_id;
+            $data['offsets'] = [$cords[2],$cords[3]];
             $markers[] = $data;
         }
 

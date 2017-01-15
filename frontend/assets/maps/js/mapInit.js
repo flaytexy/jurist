@@ -2,6 +2,10 @@
  * Created by Vitaliy on 23.12.2016.
  */
 
+if(typeof(mapType)==='undefined')
+    mapType = 'world_mill';
+if(typeof(myMarker)==='undefined')
+    myMarker = [];
 
 var prison = [
     {name: 'Albion', coords: [41.890611, -80.366454], status: 'active', offsets: [0, 2]}
@@ -37,6 +41,8 @@ var myMarker2 = [
 ];
 
 
+
+
 //@code_start
 $(function () {
     //#world-map-markers
@@ -45,10 +51,10 @@ $(function () {
 
     var mapData = {
         'world_mill': {
-            focusX: 0.54,
+            focusX: 1.74,
             focusY: 1.5,
-            scale: 0.5,
-            zoomMin: 1.25
+            scale: 0.55,
+            zoomMin: 1.15
 
         },
         'europe_mill' : {
@@ -58,7 +64,9 @@ $(function () {
             zoomMin: 1.85
         }
     };
-console.log(mapData[mapType].focusX);
+
+
+
     $('#world-map-markers').vectorMap({
         map: mapType,
         zoomMin: mapData[mapType].zoomMin,

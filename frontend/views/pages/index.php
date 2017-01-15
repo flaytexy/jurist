@@ -1,12 +1,9 @@
 <?php
-use frontend\modules\pages\api\Pages;
 use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use frontend\assets\MapsAsset;
 use frontend\helpers\Image;
 
-MapsAsset::register($this);
 $page = Page::get('page-'.$typeTitle);
 
 $this->title = $page->seo('title', $page->model->title);
