@@ -187,6 +187,7 @@ iframe {
 .social-btns > li > a,
 .blogpost-detail > h4 > a,
 .breadcrumbs > li > a,
+.breadcrumb > li > a,
 .option-set > li > a,
 .option-set > li > a::before,
 .gallery-info > h4 > a,
@@ -2843,6 +2844,7 @@ footer .title1.style2 > h2 {font-weight: 600;}
     position: relative;
     text-align: center;
     width: 100%;
+    margin-bottom: 20px;
 }
 .page-title {
     background: rgba(0, 0, 0, 0.9) none repeat scroll 0 0;
@@ -2861,14 +2863,21 @@ footer .title1.style2 > h2 {font-weight: 600;}
     text-transform: uppercase;
     width: 100%;
 }
-.breadcrumbs {
+.page-title > strong > h1 {
+    color: #7dc20f;
+}
+.breadcrumb > .active {
+    color: #ffffff;
+}
+.breadcrumbs, .breadcrumb {
     display: inline-block;
     list-style: outside none none;
     margin-bottom: 0;
     margin-top: 10px;
     padding-left: 0;
+    background: none;
 }
-.breadcrumbs > li {
+.breadcrumbs > li, .breadcrumb > li {
     color: #efefef;
     float: left;
     font-size: 12px;
@@ -2877,12 +2886,14 @@ footer .title1.style2 > h2 {font-weight: 600;}
     padding-right: 23px;
     position: relative;
 }
-.breadcrumbs > li > a {color: inherit;}
-.breadcrumbs > li:last-child {
+.breadcrumbs > li > a, .breadcrumb > li > a {
+    color: inherit;
+}
+.breadcrumbs > li:last-child, .breadcrumb > li:last-child {
     margin-right: 0;
     padding-right: 0;
 }
-.breadcrumbs > li::before {
+.breadcrumbs > li::before, .breadcrumb > li::before {
     color: #efefef;
     content: "\f178";
     font-family: fontawesome;
@@ -2895,7 +2906,7 @@ footer .title1.style2 > h2 {font-weight: 600;}
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
 }
-.breadcrumbs > li:last-child::before {display: none;}
+.breadcrumbs > li:last-child::before, .breadcrumb > li:last-child::before {display: none;}
 /*=============== Pagination ===============*/
 #pagination {
     float: left;
@@ -4031,6 +4042,14 @@ ul.Social-btn {
     float: left;
     position: relative;
     width: 100%;
+    margin-bottom: 60px;
+}
+.title-video {
+    background-color: white;
+    left: 39px;
+    padding: 10px 100px;
+    position: absolute;
+    top: 40px;
 }
 .package-video::before {
     background: #000000 none repeat scroll 0 0;
@@ -4077,7 +4096,7 @@ ul.Social-btn {
 .package-video.active > i::before {content: "\f00d";}
 .package-video .per-night {
     background: #000000 none repeat scroll 0 0;
-    bottom: -105px;
+    bottom: -45px;
     color: #ffffff;
     margin-top: 0;
     max-height: 129px;
@@ -4101,7 +4120,7 @@ ul.Social-btn {
     width: 100%;
 }
 .package-video .book-btn2 {
-    bottom: -105px;
+    bottom: -45px;
     right: -168px;
 }
 .package-video iframe {
@@ -4125,6 +4144,9 @@ ul.Social-btn {
     -o-transform: rotateY(0deg);
     transform: rotateY(0deg);
     visibility: visible;
+}
+.package-video .title1::before {
+    background: none;
 }
 .packages-detail > .title1 {
     margin-bottom: 30px;

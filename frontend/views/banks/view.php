@@ -4,11 +4,23 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
 
-
 $this->title = $banks->seo('title', $banks->model->title);
 $this->params['breadcrumbs'][] = ['label' => 'Banks', 'url' => ['banks/index']];
 $this->params['breadcrumbs'][] = $banks->model->title;
 ?>
+
+<div class="pagetop-sec">
+    <div class="fixed-bg2" style="background-image: url(images/pagetop-bg.jpg);"></div>
+    <div class="container">
+        <div class="page-title">
+            <strong>Packages <span>Detail</span></strong>
+            <ul class="breadcrumbs">
+                <li><a href="/" title="">Homepage</a></li>
+                <li>Take A Tour</li>
+            </ul><!-- Bread Crumbs -->
+        </div>
+    </div>
+</div><!-- Page Top Sec -->
 
 <section>
     <div class="block">
@@ -21,10 +33,14 @@ $this->params['breadcrumbs'][] = $banks->model->title;
                             <div class="package-video">
                                 <div>
                                     <?php if (!empty($banks->model->image)) : ?>
-                                        <?= Html::img(Image::thumb($banks->model->image, 800, 450), ['width' => '100%', 'height' => '100%']) ?>
+                                        <?= Html::img(Image::thumb($banks->model->image, 800, 200), ['width' => '100%', 'height' => '100%']) ?>
                                     <? else: ?>
-                                        <?= Html::img(Image::thumb($banks->photos[1]->image, 800, 450), ['width' => '100%', 'height' => '100%']) ?>
+                                        <?= Html::img(Image::thumb($banks->photos[1]->image, 800, 200), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
+                                </div>
+                                <div class="title-video alignleft">
+                                    <h1><?= $offers->seo('h1', $offers->title) ?></h1>
+                                    <span><?= $offers->seo('h1', $offers->short) ?></span>
                                 </div>
                             </div>
                         <?php endif; ?>

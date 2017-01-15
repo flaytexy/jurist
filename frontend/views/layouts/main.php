@@ -87,12 +87,27 @@ $goodsCount = count(Shopcart::goods());
             <li><i class="fa fa-phone"></i> 111-4558-3333</li>
         </ul>
     </div><!-- Responsive Header -->
-
-    <div class="container">
+    <div class="">
         <?php if($this->context->id != 'site') : ?>
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ])?>
+            <div class="pagetop-sec">
+                <div class="fixed-bg2" style="background-image: url('/uploads/theme_villa/pagetop-bg.jpg');"></div>
+                <div class="container">
+                    <div class="page-title">
+                        <strong><span>
+                                <?php if(count($this->params['breadcrumbs'][0])==1): ?>
+                                    <?= $this->params['breadcrumbs'][0] ?>
+                                <? elseif(!empty($this->params['breadcrumbs'][1])): ?>
+                                    <?= $this->params['breadcrumbs'][1] ?>
+                                <? endif; ?>
+                            </span>
+                        </strong>
+                        <?= Breadcrumbs::widget([
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                            'class' => 'breadcrumbs'
+                        ]) ?>
+                    </div>
+                </div>
+            </div><!-- Page Top Sec -->
         <?php endif; ?>
     </div>
 

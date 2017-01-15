@@ -30,12 +30,13 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                                 <strong class="per-night"><span>$</span><?= $offers->price; ?> <i>Дней: <?= $offers->model->how_days; ?></i></strong>
                                 <a href="#order-zone" class="book-btn2" title="">Заказать</a>
                                 <!--<iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>-->
+                                <div class="title-video alignleft">
+                                    <h1><?= $offers->seo('h1', $offers->title) ?></h1>
+                                    <span><?= $offers->seo('h1', $offers->short) ?></span>
+                                </div>
                             </div>
                         <?php endif; ?>
-                        <div class="title1 alignleft">
-                            <h1><?= $offers->seo('h1', $offers->title) ?></h1>
-                            <span><?= $offers->seo('h1', $offers->short) ?></span>
-                        </div>
+
                         <p>
                             <?= $offers->text ?>
                         </p>
