@@ -20,14 +20,15 @@ $module = $this->context->module->id;
 ]); ?>
 <?= $form->field($model, 'title') ?>
 
+<?= $form->field($model, 'type_id')->dropDownList($categories); ?>
 
-<?= $form->field($model, 'type_id')->dropDownList([
+<?/*= $form->field($model, 'type_id')->dropDownList([
     '1' => 'Страница',
     '2' => 'Новости',
     '3' => 'Лицензии',
     '4' => 'Фонды',
     '5' => 'Процессинг'
-]) ?>
+]) */?>
 
 <?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
 

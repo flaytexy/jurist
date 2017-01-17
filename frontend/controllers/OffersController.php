@@ -9,6 +9,8 @@ class OffersController extends \yii\web\Controller
     public function actionIndex($tag = null)
     {
         $type_id = \Yii::$app->request->get('type_id');
+        if(empty($type_id))
+            $type_id = 1;
 
         $offers = Offers::items(['tags' => $tag, 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 300]]);
 

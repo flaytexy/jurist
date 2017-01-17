@@ -1,6 +1,7 @@
 <?php
 namespace frontend\modules\page\controllers;
 
+use frontend\modules\page\models\PageCategories;
 use Yii;
 use yii\data\ActiveDataProvider;
 use frontend\behaviors\SortableDateController;
@@ -94,6 +95,23 @@ class AController extends Controller
 
     public function actionEdit($id)
     {
+        //$categories = PageCategories::findAll();
+        $query = new \yii\db\Query;
+        $query->select('ept.title as parent_title, ept.*, ept2.*')
+            ->from('easyii_pages_categories as ept')
+            ->join('RIGHT JOIN', 'easyii_pages_categories as ept2', 'ept2.parent_id = ept.category_id')
+            ->limit(20);
+        $command = $query->createCommand();
+        $categoriesData = $command->queryAll();
+
+        $categories = [];
+        foreach($categoriesData as $value){
+            if($value['parent_title'])
+                $categories[$value['category_id']] = $value['parent_title'] . " -> ". $value['title'];
+            else
+                $categories[$value['category_id']] = $value['title'];
+        }
+
         $model = Page::findOne($id);
 
         if($model === null){
@@ -128,7 +146,8 @@ class AController extends Controller
         }
         else {
             return $this->render('edit', [
-                'model' => $model
+                'model' => $model,
+                'categories'=>$categories
             ]);
         }
     }

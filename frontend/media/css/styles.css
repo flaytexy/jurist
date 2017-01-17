@@ -4039,6 +4039,9 @@ ul.Social-btn {
 }
 .contact-form .form-sec .theme-btn {float: none;}
 /*=============== Packages Detail ===============*/
+.services-list1 .service1 > span > i {
+    font-size: 38px;
+}
 .package-video {
     float: left;
     position: relative;

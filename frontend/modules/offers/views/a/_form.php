@@ -23,10 +23,10 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'title') ?>
 <hr/>
 
-<?= $form->field($model, 'type_id')->dropDownList([
+<?/*= $form->field($model, 'type_id')->dropDownList([
     '1' => 'Весь мир',
     '2' => 'Европа'
-]) ?>
+]) */?>
 <?= $form->field($model, 'coordinates') ?>
 
 <?= $form->field($model, 'price') ?>

@@ -98,21 +98,21 @@ $config = [
             //'languages' => ['ru' => 'ru-RU', 'en' => 'en-US', 'uk' => 'uk-UA'],
             'rules' => [
                 '' => 'site/index',
-                //'offshornyie-predlozheniya' => 'offers/index',
-                [
-                    'pattern' => 'offshornyie-predlozheniya',
-                    'route' => 'offers/index',
-                    'defaults' => [
-                        'type_id' => 1
-                    ],
-                ],
-                [
-                    'pattern' => 'evropejskie-kompanii',
-                    'route' => 'offers/index',
-                    'defaults' => [
-                        'type_id' => 2
-                    ],
-                ],
+                'offshornyie-predlozheniya' => 'offers/index',
+//                [
+//                    'pattern' => 'offshornyie-predlozheniya',
+//                    'route' => 'offers/index',
+//                    'defaults' => [
+//                        'type_id' => 1
+//                    ],
+//                ],
+//                [
+//                    'pattern' => 'evropejskie-kompanii',
+//                    'route' => 'offers/index',
+//                    'defaults' => [
+//                        'type_id' => 2
+//                    ],
+//                ],
                 [
                     'pattern' => 'fonds',
                     'route' => 'pages/index',

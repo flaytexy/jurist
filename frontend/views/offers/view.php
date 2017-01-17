@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use frontend\helpers\Image;
 
 $this->title = $offers->seo('title', $offers->model->title);
-$this->params['breadcrumbs'][] = ['label' => 'Компании', 'url' => ['/offers']];
+$this->params['breadcrumbs'][] = ['label' => 'Компании', 'url' => ['offers/index']];
 $this->params['breadcrumbs'][] = $offers->model->title;
 ?>
 
