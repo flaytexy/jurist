@@ -14,6 +14,8 @@ class Page extends \frontend\components\ActiveRecord
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
+    public $category_detail;
+
     public static function tableName()
     {
         return 'easyii_pages';
@@ -23,7 +25,7 @@ class Page extends \frontend\components\ActiveRecord
     {
         return [
             [['text', 'title'], 'required'],
-            [['title', 'short', 'text'], 'trim'],
+            [['title', 'short', 'text', 'category_detail'], 'trim'],
             ['title', 'string', 'max' => 128],
             [['views', 'time', 'status', 'type_id'], 'integer'],
             ['to_main', 'integer', 'max' => 1],
@@ -73,9 +75,16 @@ class Page extends \frontend\components\ActiveRecord
 
     public function beforeSave($insert)
     {
+
         if (parent::beforeSave($insert)) {
             $settings = Yii::$app->getModule('admin')->activeModules['page']->settings;
             $this->short = StringHelper::truncate($settings['enableShort'] ? $this->short : strip_tags($this->text), $settings['shortMaxLength']);
+
+            if(strlen($this->category_detail)>1){
+                $categoryData = explode(':',$this->category_detail);
+                $this->type_id = $categoryData[0];
+                $this->category_id = $categoryData[1];
+            }
 
             if(!$insert && $this->image != $this->oldAttributes['image'] && $this->oldAttributes['image']){
                 @unlink(Yii::getAlias('@webroot').$this->oldAttributes['image']);

@@ -58,7 +58,29 @@ class AController extends Controller
 
     public function actionCreate()
     {
+        //$categories = PageCategories::findAll();
+        $query = new \yii\db\Query;
+        $query->select('ept.title as parent_title, ept.*, ept2.*')
+            ->from('easyii_pages_categories as ept')
+            ->join('RIGHT JOIN', 'easyii_pages_categories as ept2', 'ept2.parent_id = ept.category_id')
+            ->limit(20);
+        $command = $query->createCommand();
+        $categoriesData = $command->queryAll();
+
+        $categories = [];
+        foreach($categoriesData as $value){
+            if($value['parent_title']) {
+                $categories[$value['type_id'] . ":" .$value['category_id']] = $value['parent_title'] . " -> ". $value['title'];
+
+            }
+            else {
+                $categories[$value['type_id'] . ":" .$value['category_id']] = $value['title'];
+            }
+
+        }
+
         $model = new Page;
+        $model->category_detail =  $model->type_id . ":" . $model->category_id;
         $model->time = time();
 
         if ($model->load(Yii::$app->request->post())) {
@@ -88,7 +110,8 @@ class AController extends Controller
         }
         else {
             return $this->render('create', [
-                'model' => $model
+                'model' => $model,
+                'categories'=>$categories
             ]);
         }
     }
@@ -106,13 +129,18 @@ class AController extends Controller
 
         $categories = [];
         foreach($categoriesData as $value){
-            if($value['parent_title'])
-                $categories[$value['category_id']] = $value['parent_title'] . " -> ". $value['title'];
-            else
-                $categories[$value['category_id']] = $value['title'];
+            if($value['parent_title']) {
+                $categories[$value['type_id'] . ":" .$value['category_id']] = $value['parent_title'] . " -> ". $value['title'];
+
+            }
+            else {
+                $categories[$value['type_id'] . ":" .$value['category_id']] = $value['title'];
+            }
+
         }
 
         $model = Page::findOne($id);
+        $model->category_detail =  $model->type_id . ":" . $model->category_id;
 
         if($model === null){
             $this->flash('error', Yii::t('easyii', 'Not found'));

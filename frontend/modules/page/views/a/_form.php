@@ -20,8 +20,8 @@ $module = $this->context->module->id;
 ]); ?>
 <?= $form->field($model, 'title') ?>
 
-<?= $form->field($model, 'type_id')->dropDownList($categories); ?>
 
+<?= $form->field($model, 'category_detail')->dropDownList($categories); ?>
 <?/*= $form->field($model, 'type_id')->dropDownList([
     '1' => 'Страница',
     '2' => 'Новости',
