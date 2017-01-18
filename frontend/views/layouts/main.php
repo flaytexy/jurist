@@ -91,7 +91,7 @@ $goodsCount = count(Shopcart::goods());
             <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div><div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div><!-- Responsive Menu -->
         <ul class="topbar-contact">
           <!--  <li class="active"><i class="fa fa-envelope-o"></i> contacts@yoursites.com</li>-->
-            <li><i class="fa fa-phone"></i> +79251754417</li>
+ <!--           <li><i class="fa fa-phone"></i> +79251754417</li>-->
         </ul>
     </div><!-- Responsive Header -->
     <div class="">
@@ -194,11 +194,11 @@ $goodsCount = count(Shopcart::goods());
                 <div class="col-md-3">
                     <div class="footer-widget">
                         <div class="address-widget">
-                            <ul>
+<!--                            <ul>
                                 <li><span>Address:</span> Russia, Moscow</li>
                                 <li><span>Phone:</span> +79251754417</li>
-                                <!--<li><span>Email:</span> <a href="/contact" title="">sendme@it-offshore.com</a></li>-->
-                            </ul>
+                                <li><span>Email:</span> <a href="/contact" title="">sendme@it-offshore.com</a></li>
+                            </ul>-->
                             <a href="/contact" class="theme-btn" title="">Связаться с нами</a>
                         </div>
                     </div>

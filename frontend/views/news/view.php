@@ -161,15 +161,13 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                 <div class="sidebar">
                                     <div class="widget widget-categories">
                                         <div class="title1 style2">
-                                            <h2>Categories</h2>
-                                            <span>We Provide Best Services</span>
+                                            <h2>Категории</h2>
+                                           <!-- <span>We Provide Best Services</span>-->
                                         </div>
                                         <ul>
-                                            <li><a href="#" title="">Rent Sale House</a> <span>120</span></li>
-                                            <li><a href="#" title="">Our Services</a> <span>120</span></li>
-                                            <li><a href="#" title="">Villa Info</a> <span>120</span></li>
-                                            <li><a href="#" title="">About Villa</a> <span>120</span></li>
-                                            <li><a href="#" title="">Sale House</a> <span>120</span></li>
+                                            <?php foreach($categories_tops as $item) : ?>
+                                                <li><a href="<?= Url::to(['news/c/'.$item['slug']]) ?>"><?= $item['title'] ?></a> <span><?= $item['counter'] ?></span></li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </div><!-- Widget -->
                                     <div class="widget villa-photos-widget">

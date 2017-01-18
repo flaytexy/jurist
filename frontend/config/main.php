@@ -158,10 +158,13 @@ $config = [
                         'type' => 5
                     ],
                 ],
+                [
+                    'pattern' => '<controller:\w+>/c/<slug:[\w-]+>',
+                    'route' => '<controller>/index',
+                ],
 //                'licenses/<slug:[\w-]+>' => 'page/view',
 //                'fonds/<slug:[\w-]+>' => 'page/view',
 //                'processing/<slug:[\w-]+>' => 'page/view',
-
                 'offers/<slug:[\w-]+>' => 'offers/view',
                 'news/<slug:[\w-]+>' => 'news/view',
                 'banks/<slug:[\w-]+>' => 'banks/view',

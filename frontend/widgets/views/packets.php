@@ -23,6 +23,10 @@ $packetTemplate = '<tr data-id="{{packet_id}}">'.(IS_ROOT ? '<td>{{packet_id}}</
         <input class="form-control packet-title" type="text" name="Photo[title]" value="{{packet_title}}"  >\
         <textarea class="form-control packet-description">{{packet_description}}</textarea>\
         '. TagsInput::widget([
+            'options' => [
+                'id' => "w_{{packet_id}}",
+                'class' => 'form-control'
+            ],
             'model' => $model,
             'value' => "{{packet_tagNames}}",
             'name' => "tag_name_{{packet_id}}"
