@@ -16,13 +16,13 @@ class AppAsset extends AssetBundle
         /*'css/bootstrap.css',*/
         /*'css/icons.css',*/
         'css/font-awesome/css/font-awesome.min.css',
-        'css/flaticon.css?v=3',
+        'css/flaticon.css?v=5',
         'js/fancybox/jquery.fancybox.css',
         'css/datepicker.css',
         'css/select2.css',
         'css/perfect-scrollbar.css',
         'css/owl.css',
-        'css/styles.css?v=3',
+        'css/styles.css?v=5',
         'css/responsive.css',
         'css/color.css'
     ];

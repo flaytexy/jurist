@@ -6,11 +6,16 @@
 /*=============== General Styling ===============*/
 html,
 body {overflow-x:hidden;}
+body, p, ul li,
+ol li {
+    font-size: 14px;
+    font-family:arimo;
+    letter-spacing: 0.3px;
+    line-height: 22px;
+}
 body {
     float:left;
     width:100%;
-    font-family:arimo;
-    letter-spacing:0.3px;
 }
 h1, h2, h3, h4, h5, h6 {
     color: #444444;
@@ -20,17 +25,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 p {
     color: #555555;
-    font-family: arimo;
-    font-size: 14px;
-    letter-spacing: 0.3px;
-    line-height: 26px;
-    margin-bottom: 0;
+/*    margin-bottom: 0;
+    padding-top: 8px;*/
 }
 ul li,
 ol li {
-    font-family:poppins;
     color:#666666;
 }
+
 a:hover,
 a:focus {
     text-decoration:none;
@@ -64,6 +66,9 @@ section {
     float:left;
     position:relative;
     width:100%;
+}
+.easyiicms-edit {
+    clear: left;
 }
 .block {
     float: left;
@@ -1832,8 +1837,9 @@ footer .title1.style2 > h2 {font-weight: 600;}
 .recentnew-detail > h4 {
     color: #555555;
     font-size: 15px;
-    line-height: 25px;
-    margin-bottom: 10px;
+    line-height: 23px;
+    margin-bottom: 3px;
+    min-height: 51px;
     vertical-align: top;
 }
 .recentnew-detail > h4 > a {color: inherit;}
@@ -3235,8 +3241,7 @@ footer .title1.style2 > h2 {font-weight: 600;}
 .blogpost-detail > p, .blogpost-detail .text-con p {
     color: #666666;
     float: left;
-    line-height: 28px;
-    margin-top: 35px;
+/*    line-height: 28px;*/
     width: 100%;
 }
 blockquote {
