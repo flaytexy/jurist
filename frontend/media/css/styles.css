@@ -11,7 +11,10 @@ ol li {
     font-size: 14px;
     font-family:arimo;
     letter-spacing: 0.3px;
-    line-height: 22px;
+}
+p, ul li,
+ol li {
+
 }
 body {
     float:left;

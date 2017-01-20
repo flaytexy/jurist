@@ -87,12 +87,12 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                        class="label label-info"><?/*= $tag */?></a>
                                                 <?php /*endforeach; */?>
                                             </span>-->
-                                                <h4><?= Html::a($item->title, ['pages/view', 'slug' => $item->slug]) ?></h4>
+                                                <h4><?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?></h4>
                                                 <ul class="location-book">
                                                     <li class="active"><i class="fa fa-map-marker"></i>
                                                         <span><?= $item->date ?></span></li>
                                                     <li class="book-btn"><i class="fa fa-thumbs-o-up"></i>
-                                                        <?= Html::a('Детальней', ['pages/view', 'slug' => $item->slug]) ?>
+                                                        <?= Html::a('Детальней', ['banks/view', 'slug' => $item->slug]) ?>
                                                     </li>
                                                 </ul>
                                             </div>

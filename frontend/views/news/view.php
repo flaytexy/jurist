@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                             <div class="tags">
                                                 <ul class="cate-list">
                                                     <?php foreach($news->tags as $tag) : ?>
-                                                    <li><a href="<?= Url::to(['/news', 'tag' => $tag]) ?>" class="label label-info"><?= $tag ?></a></li>
+                                                    <li><a href="<?= Url::to(['/news/tag/'.$tag]) ?>" class="label label-info"><?= $tag ?></a></li>
                                                     <?php endforeach; ?>
                                                 </ul>
                                             </div>
