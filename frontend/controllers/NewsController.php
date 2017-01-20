@@ -39,6 +39,7 @@ class NewsController extends \yii\web\Controller
     public function actionView($slug)
     {
 
+        // Banks
         //$topOffers = Offers::find(2)->asArray()->all();
         $query = new \yii\db\Query;
         $query->select('*')
@@ -49,6 +50,7 @@ class NewsController extends \yii\web\Controller
         $command = $query->createCommand();
         $topBanks = $command->queryAll();
 
+        // Offers
         $query = new \yii\db\Query;
         $query->select('*')
             ->from('easyii_offers as of')
@@ -58,6 +60,7 @@ class NewsController extends \yii\web\Controller
         $command = $query->createCommand();
         $topOffers = $command->queryAll();
 
+        // News
         $query = new \yii\db\Query;
         $query->select('*')
             ->from('easyii_pages as of')
@@ -67,6 +70,19 @@ class NewsController extends \yii\web\Controller
         $command = $query->createCommand();
         $topNews = $command->queryAll();
 
+        // Tags
+        $query = new \yii\db\Query;
+        $query->select('tg.name, p.page_id, tga.tag_id')
+            ->from('easyii_tags_assign as tga')
+            ->join('LEFT JOIN', 'easyii_tags as tg', 'tga.tag_id = tg.tag_id')
+            ->join('LEFT JOIN', 'easyii_pages as p', 'p.page_id = tga.item_id')
+            ->where("tga.class LIKE '%\\Page' AND p.type_id='2' ")
+            //->orderBy(['views'=> SORT_DESC])
+            ->limit(5);
+        $command = $query->createCommand();
+        $topTags = $command->queryAll();
+
+        // Categories Left Menu
         $query = new \yii\db\Query;
         $query->select('ept.title as parent_title, ept.*, ept2.*,
                 (SELECT count(p.page_id) as count FROM easyii_pages as p
@@ -89,7 +105,8 @@ class NewsController extends \yii\web\Controller
             'categories_tops' => $categoriesTops,
             'top_banks' => $topBanks,
             'top_offers' => $topOffers,
-            'top_news' => $topNews
+            'top_news' => $topNews,
+            'top_tags' => $topTags,
         ]);
     }
 }

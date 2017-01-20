@@ -2778,6 +2778,10 @@ footer .title1.style2 > h2 {font-weight: 600;}
     margin-right: 4px;
     margin-top: 4px;
 }
+.cate-list > li a.label-info {
+    font-family: Arial;
+    font-size: 12px;
+}
 .cate-list > li:last-child {margin-right: 0;}
 .cate-list > li > a {
     background: #000100 none repeat scroll 0 0;

@@ -115,14 +115,9 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                         </div>
                                         <div class="tags">
                                             <ul class="cate-list">
-                                                <li><a href="#" title="">Uncategorized</a></li>
-                                                <li><a href="#" title="">Standard</a></li>
-                                                <li><a href="#" title="">Villa</a></li>
-                                                <li><a href="#" title="">Standard</a></li>
-                                                <li><a href="#" title="">Villa</a></li>
-                                                <li><a href="#" title="">Category</a></li>
-                                                <li><a href="#" title="">Uncategorized</a></li>
-                                                <li><a href="#" title="">Standard</a></li>
+                                                <?php foreach($top_tags as $item) : ?>
+                                                    <li><a href="<?= Url::to(['news/tag/'.$item['name']]) ?>" class="label label-info"><?= $item['name'] ?></a></li>
+                                                <?php endforeach; ?>
                                             </ul>
                                         </div>
                                     </div><!-- Widget -->

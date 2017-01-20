@@ -122,6 +122,13 @@ $config = [
                     ],
                 ],
                 [
+                    'pattern' => '/news/tag/<tag:[\w- ]+>',
+                    'route' => 'news/index',
+                 /*   'defaults' => [
+                        'tag' => 4
+                    ],*/
+                ],
+                [
                     'pattern' => 'processing',
                     'route' => 'pages/index',
                     'defaults' => [
@@ -166,6 +173,7 @@ $config = [
 //                'fonds/<slug:[\w-]+>' => 'page/view',
 //                'processing/<slug:[\w-]+>' => 'page/view',
                 'offers/<slug:[\w-]+>' => 'offers/view',
+                //'news/tag/<slug:[\w-]+>' => 'news/index',
                 'news/<slug:[\w-]+>' => 'news/view',
                 'banks/<slug:[\w-]+>' => 'banks/view',
                 //'fonds' => 'page/index',
