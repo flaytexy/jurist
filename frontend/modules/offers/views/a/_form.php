@@ -12,6 +12,7 @@ use dosamigos\ckeditor\CKEditor;
 use dosamigos\ckeditor\CKEditorInline;
 //use mihaildev\ckeditor\CKEditor;
 use mihaildev\elfinder\ElFinder;
+use dosamigos\selectize\SelectizeTextInput;
 
 $module = $this->context->module->id;
 
@@ -95,8 +96,57 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 
 <?php if ($this->context->module->settings['enableTags']) : ?>
-    <?= $form->field($model, 'tagNames')->widget(TagsInput::className()) ?>
+<!--    --><?//= $form->field($model, 'tagNames')->widget(TagsInput::className()) ?>
 <?php endif; ?>
+
+<?= $form->field($model, 'tagNames')->widget(TagsInput::className(), [
+    'options' => [
+        'id' => 'qasd'
+    ]
+]) ?>
+
+<?= $form->field($model, 'tagNames')->widget(TagsInput::className(), [
+    'options' => [
+        'id' => 'qasd2'
+    ]
+]) ?>
+
+
+<?php
+/*use dosamigos\selectize\SelectizeTextInput;
+
+echo SelectizeTextInput::widget([
+    'options' => ['class' => 'form-control'],
+    'loadUrl' => '/admin/tags/list',
+    'name' => 'tags',
+    'value' => 'love, this, game',
+    'clientOptions' => [
+        'plugins' => ['remove_button'],
+        'valueField' => 'name',
+        'labelField' => 'name',
+        'searchField' => ['name'],
+        'create' => true,
+    ],
+]);
+
+
+echo SelectizeTextInput::widget([
+    'options' => ['class' => 'form-control2'],
+    'loadUrl' => '/admin/tags/list',
+    'name' => 'tags',
+    'value' => 'love, this, game',
+    'clientOptions' => [
+        'plugins' => ['remove_button'],
+        'valueField' => 'name',
+        'labelField' => 'name',
+        'searchField' => ['name'],
+        'create' => true,
+    ],
+]);
+
+
+*/?>
+
 
 <?= $form->field($model, 'optionNames')->widget(OptionsInput::className()) ?>
 

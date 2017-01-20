@@ -3516,16 +3516,30 @@ textarea.text-field {
     top: 0;
 }
 /*===== Widget Gallery =====*/
+div.villa-photos-widget .title1 > h2 {
+    font-size: 18px;
+}
 ul.widget-gallery > li {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     margin-bottom: 0;
-    width: 50%;
+    width: 100%;
 }
+
 ul.widget-gallery > li > a {
     float: left;
     overflow: hidden;
     padding: 0;
     width: 100%;
+}
+ul.widget-gallery > li > span {
+    border: none;
+    width: 100%;
+    float: left;
+    font-size: 17px;
+margin-bottom: 5px;
+}
+ul.widget-gallery > li a {
+    color: #7dc20f;
 }
 ul.widget-gallery > li > a img {
     max-width: 100%;

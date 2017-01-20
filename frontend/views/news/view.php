@@ -49,111 +49,18 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                         <div class="text-con">
                                             <?= $news->text ?>
                                         </div>
-
+                                        <?php if(count($news->photos)) : ?>
                                         <div class="comments-sec">
                                             <h2 class="title2"><span><?php echo count($news->photos);?></span> Photos</h2>
-                                            <?php if(count($news->photos)) : ?>
                                                 <ul class="list-inline">
                                                     <?php foreach($news->photos as $photo) : ?>
                                                     <li><?= $photo->box(150, 120) ?></li>
                                                     <?php endforeach;?>
                                                 </ul>
-                                            <?php endif; ?>
                                         </div>
+                                        <?php endif; ?>
+
                                         <?php Page::plugin() ?>
-                                    </div>
-                                    <div class="author-info">
-                                        <span class="author-thumb"><img src="/uploads/theme_villa/author.jpg" alt=""></span>
-                                        <div class="about-author">
-                                            <div class="author-namesocial">
-                                                <span>By Admin</span>
-                                                <ul class="social-btns">
-                                                    <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
-                                                    <li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <p>Quis autem velum iure reprehe nderit. Lorem ipsum dolor sit amet Proin Condimen adipiscing varius tellus egetmassa pulvinar eu</p>
-                                        </div>
-                                    </div><!-- Author Info -->
-                                    <div class="comments-sec">
-                                        <h2 class="title2"><span>03</span> Comments</h2>
-                                        <ul class="comment-threads">
-                                            <li>
-                                                <div class="comment">
-                                                    <div class="comment-thumb">
-                                                        <img src="/uploads/theme_villa/comment1.jpg" alt="">
-                                                        <a href="#" class="comment-reply-link" title="">Message Reply</a>
-                                                    </div>
-                                                    <div class="comment-content">
-                                                        <div class="comment-info">
-                                                            <h5>Monica Fernando</h5>
-                                                            <i>Nov 17, 2014</i>
-                                                        </div>
-                                                        <p>Quis autem velum iure reprehe nderit. Lorem ipsum consectetur adipiscing velum iure reprehe varius tellus egetmassa pulvinar eu aliquet nibh dapibus.</p>
-                                                    </div>
-                                                </div>
-                                                <ul>
-                                                    <li>
-                                                        <div class="comment reply">
-                                                            <div class="comment-thumb">
-                                                                <img src="/uploads/theme_villa/comment2.jpg" alt="">
-                                                                <a href="#" class="comment-reply-link" title="">Message Reply</a>
-                                                            </div>
-                                                            <div class="comment-content">
-                                                                <div class="comment-info">
-                                                                    <h5>John Smith</h5>
-                                                                    <i>Nov 17, 2014</i>
-                                                                </div>
-                                                                <p>Quis autem velum iure reprehe nderit. Lorem ipsum velum iu nderit varius tellus egetmassa aliquet.</p>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="comment">
-                                                    <div class="comment-thumb">
-                                                        <img src="/uploads/theme_villa/comment3.jpg" alt="">
-                                                        <a href="#" class="comment-reply-link" title="">Message Reply</a>
-                                                    </div>
-                                                    <div class="comment-content">
-                                                        <div class="comment-info">
-                                                            <h5>Kark Fernando</h5>
-                                                            <i>Nov 17, 2014</i>
-                                                        </div>
-                                                        <p>Quis autem velum iure reprehe nderit. Lorem ipsum consectetur adipiscing velum iure reprehe varius tellus egetmassa pulvinar eu aliquet nibh dapibus.</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul><!-- Comments Threads -->
-                                    </div><!-- Comments Sec -->
-                                    <div class="leave-comment">
-                                        <div class="title1 style3">
-                                            <h2>leave A Comment</h2>
-                                            <span>We Provide Best Services</span>
-                                        </div>
-                                        <div class="form-sec">
-                                            <form>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <input class="text-field" placeholder="Complete Name" type="text">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <input class="text-field" placeholder="Email Address" type="email">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <input class="text-field" placeholder="Subject" type="text">
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <textarea class="text-field" placeholder="Description"></textarea>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <button class="theme-btn" type="submit">CONTACT NOW</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div><!-- Form Sec -->
                                     </div>
                                 </div>
                             </div>
@@ -172,18 +79,35 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                     </div><!-- Widget -->
                                     <div class="widget villa-photos-widget">
                                         <div class="title1 style2">
-                                            <h2>Villa Photos</h2>
-                                            <span>We Provide Best Services</span>
+                                            <h2>Хорошие предложения</h2>
+                                            <span>Интересные страны для бизнеса</span>
                                         </div>
                                         <ul class="widget-gallery">
-                                            <li><a href="#" title=""><img src="/uploads/theme_villa/widget-gallery-img1.jpg" alt=""></a></li>
-                                            <li><a href="#" title=""><img src="/uploads/theme_villa/widget-gallery-img2.jpg" alt=""></a></li>
-                                            <li><a href="#" title=""><img src="/uploads/theme_villa/widget-gallery-img3.jpg" alt=""></a></li>
-                                            <li><a href="#" title=""><img src="/uploads/theme_villa/widget-gallery-img4.jpg" alt=""></a></li>
-                                            <li><a href="#" title=""><img src="/uploads/theme_villa/widget-gallery-img5.jpg" alt=""></a></li>
-                                            <li><a href="#" title=""><img src="/uploads/theme_villa/widget-gallery-img6.jpg" alt=""></a></li>
+                                            <?php foreach($top_offers as $item) : ?>
+                                                <li><a href="<?= Url::to(['news/c/'.$item['slug']]) ?>">
+                                                        <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                                                    </a>
+                                                    <span><a href="<?= Url::to(['news/c/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span></li>
+                                            <?php endforeach; ?>
+
                                         </ul>
                                     </div><!-- Widget -->
+                                    <!-- Widget2 -->
+                                    <div class="widget villa-photos-widget">
+                                        <div class="title1 style2">
+                                            <h2>Банки</h2>
+                                            <span>Лучшие банковские условия</span>
+                                        </div>
+                                        <ul class="widget-gallery">
+                                            <?php foreach($top_banks as $item) : ?>
+                                                <li><a href="<?= Url::to(['news/c/'.$item['slug']]) ?>">
+                                                        <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                                                    </a>
+                                                    <span><a href="<?= Url::to(['news/c/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
+                                            <?php endforeach; ?>
+
+                                        </ul>
+                                    </div><!-- Widget2 -->
                                     <div class="widget tags-widget">
                                         <div class="title1 style2">
                                             <h2>Tags Cloud</h2>
@@ -224,21 +148,14 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                             <span>We Provide Best Services</span>
                                         </div>
                                         <div class="recent-posts">
+                                        <?php foreach($top_news as $item) : ?>
                                             <div class="recent-post">
-                                                <img src="/uploads/theme_villa/recent-post1.jpg" alt="">
-                                                <h4><a href="#" title="">That Moment When You Fall in Love....</a></h4>
+                                                <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 90, 90)) ?>
+                                                <h4><a href="<?= Url::to(['news/c/'.$item['slug']]) ?>"><?= $item['title'] ?></a></h4>
                                                 <span><i class="fa fa-calendar"></i> 26 May 2016</span>
                                             </div>
-                                            <div class="recent-post">
-                                                <img src="/uploads/theme_villa/recent-post2.jpg" alt="">
-                                                <h4><a href="#" title="">That Moment When You Fall in Love....</a></h4>
-                                                <span><i class="fa fa-calendar"></i> 26 May 2016</span>
-                                            </div>
-                                            <div class="recent-post">
-                                                <img src="/uploads/theme_villa/recent-post3.jpg" alt="">
-                                                <h4><a href="#" title="">That Moment When You Fall in Love....</a></h4>
-                                                <span><i class="fa fa-calendar"></i> 26 May 2016</span>
-                                            </div>
+                                        <?php endforeach; ?>
+
                                         </div>
                                     </div><!-- Widget -->
                                 </div><!-- Sidebar -->

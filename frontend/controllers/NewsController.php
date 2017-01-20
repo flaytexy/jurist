@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\modules\offers\models\Offers;
 use frontend\modules\page\api\Page;
 
 class NewsController extends \yii\web\Controller
@@ -30,7 +31,6 @@ class NewsController extends \yii\web\Controller
             ]);
         }
 
-
         return $this->render('index',[
             'news' => $news
         ]);
@@ -38,6 +38,34 @@ class NewsController extends \yii\web\Controller
 
     public function actionView($slug)
     {
+
+        //$topOffers = Offers::find(2)->asArray()->all();
+        $query = new \yii\db\Query;
+        $query->select('*')
+            ->from('easyii_banks as ba')
+            ->where("ba.status = '1' ")
+            ->orderBy(['views'=> SORT_DESC])
+            ->limit(5);
+        $command = $query->createCommand();
+        $topBanks = $command->queryAll();
+
+        $query = new \yii\db\Query;
+        $query->select('*')
+            ->from('easyii_offers as of')
+            ->where("of.status = '1' ")
+            ->orderBy(['views'=> SORT_DESC])
+            ->limit(5);
+        $command = $query->createCommand();
+        $topOffers = $command->queryAll();
+
+        $query = new \yii\db\Query;
+        $query->select('*')
+            ->from('easyii_pages as of')
+            ->where("of.status = '1' and type_id = '2'")
+            ->orderBy(['views'=> SORT_DESC])
+            ->limit(5);
+        $command = $query->createCommand();
+        $topNews = $command->queryAll();
 
         $query = new \yii\db\Query;
         $query->select('ept.title as parent_title, ept.*, ept2.*,
@@ -58,7 +86,10 @@ class NewsController extends \yii\web\Controller
 
         return $this->render('view', [
             'news' => $news,
-            'categories_tops' => $categoriesTops
+            'categories_tops' => $categoriesTops,
+            'top_banks' => $topBanks,
+            'top_offers' => $topOffers,
+            'top_news' => $topNews
         ]);
     }
 }
