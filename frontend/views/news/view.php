@@ -126,26 +126,10 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                             </ul>
                                         </div>
                                     </div><!-- Widget -->
-                                    <div class="widget quick-links-widget">
-                                        <div class="title1 style2">
-                                            <h2>Quick Links</h2>
-                                            <span>We Provide Best Services</span>
-                                        </div>
-                                        <div class="menu-links">
-                                            <ul>
-                                                <li><a href="#" title="">Faq's</a></li>
-                                                <li><a href="#" title="">Support</a></li>
-                                                <li><a href="#" title="">Community</a></li>
-                                                <li><a href="#" title="">Membership</a></li>
-                                                <li><a href="#" title="">Events</a></li>
-                                                <li><a href="#" title="">Contact us</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- Widget -->
                                     <div class="widget recent-posts-widget">
                                         <div class="title1 style2">
-                                            <h2>Recent Posts</h2>
-                                            <span>We Provide Best Services</span>
+                                            <h2>Интересные статти</h2>
+                                            <span>Популярные новости</span>
                                         </div>
                                         <div class="recent-posts">
                                         <?php foreach($top_news as $item) : ?>

@@ -3477,7 +3477,7 @@ textarea.text-field {
     width: 100%;
 }
 .widget:last-child {margin-bottom: 0;}
-.widget .title1.style2 {margin-bottom: 30px;}
+.widget .title1.style2 {margin-bottom: 15px;}
 .widget > ul {
     float: left;
     list-style: outside none none;
@@ -3509,15 +3509,29 @@ textarea.text-field {
     padding: 20px 18px;
 }
 .widget.widget-categories > ul > li {padding-right: 57px;}
-.widget.widget-categories > ul > li > a {width: 100%;}
+.widget.widget-categories > ul > li > a {
+    width: 100%;
+    padding: 5px;
+}
 .widget.widget-categories > ul > li > span {
     position: absolute;
     right: 0;
     top: 0;
+    padding: 5px 15px;
 }
+
 /*===== Widget Gallery =====*/
 div.villa-photos-widget .title1 > h2 {
     font-size: 18px;
+}
+div.villa-photos-widget ul > li > span{
+    left: 10px;
+    min-width: 50%;
+    padding: 8px;
+    position: absolute;
+    text-align: center;
+    top: 131px;
+    width: 93%;
 }
 ul.widget-gallery > li {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
