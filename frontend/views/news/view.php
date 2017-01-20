@@ -110,8 +110,8 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                     </div><!-- Widget2 -->
                                     <div class="widget tags-widget">
                                         <div class="title1 style2">
-                                            <h2>Tags Cloud</h2>
-                                            <span>We Provide Best Services</span>
+                                            <h2>Облако тегов</h2>
+                                            <!--<span>We Provide Best Services</span>-->
                                         </div>
                                         <div class="tags">
                                             <ul class="cate-list">

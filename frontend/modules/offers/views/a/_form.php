@@ -67,11 +67,13 @@ $module = $this->context->module->id;
 ]) */ ?>
 
 
+
 <?= $form->field($model, 'text')->widget(CKEditor::className(), [
     'preset' => 'full',
-    'clientOptions' => [
+    'clientOptions' => ElFinder::ckeditorOptions('elfinder',
+        [
         'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
-        'extraPlugins' => 'justify,embed,image2,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog',
+        'extraPlugins' => 'justify,embed,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog',
         'toolbar' => [
             ['name' => 'document', 'groups' => ['mode', 'document', 'doctools'], 'items' => ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']],
             ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']],
@@ -90,6 +92,7 @@ $module = $this->context->module->id;
             ['name' => 'about', 'items' => ['About']]
         ]
     ]
+    ),
 ]);
 ?>
 
