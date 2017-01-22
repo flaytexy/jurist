@@ -12,18 +12,17 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 <div class="container">
     <h1><?= $page->seo('h1', $page->title) ?></h1>
-    <div><?= $page->seo('div', $page->text) ?></div>
+    <?php if($page->text): ?><div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
 </div>
 
-<section>
-    <div class="block">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="recent-news">
-                        <div class="remove-ext">
-                            <div class="row">
-                                <?php foreach($news as $item) : ?>
+<section class="content-zone top20">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="recent-news">
+                    <div class="remove-ext">
+                        <div class="row">
+                            <?php foreach ($news as $item) : ?>
                                 <div class="col-md-6">
                                     <div class="recentnew-post">
                                         <?= Html::img($item->thumb(500, 375)) ?>
@@ -38,17 +37,19 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         </div>
                                     </div>
                                 </div>
-                                <?php endforeach; ?>
+                            <?php endforeach; ?>
 
 
-                            </div>
                         </div>
-                    </div><!-- Recent Pages -->
-                    <div id="pagination">
-                        <?= Page::pages() ?>
-                    </div><!-- Pagination -->
+                    </div>
                 </div>
+                <!-- Recent Pages -->
+                <div id="pagination">
+                    <?= Page::pages() ?>
+                </div>
+                <!-- Pagination -->
             </div>
         </div>
     </div>
+
 </section>

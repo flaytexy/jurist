@@ -13,11 +13,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 <div class="container">
     <h1><?= $page->seo('h1', $page->title) ?></h1>
-    <div><?= $page->seo('div', $page->text) ?></div>
+    <?php if($page->text): ?><div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
 </div>
 
-<section id="pages">
-    <div class="container top20">
+<section id="pages" class="content-zone top20">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="villaeditors-picks">

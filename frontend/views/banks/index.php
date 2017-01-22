@@ -14,54 +14,54 @@ $this->params['breadcrumbs'][] = $page->model->title;
 ?>
 <div class="container">
     <h1><?= $page->seo('h1', $page->title) ?></h1>
-    <div><?= $page->seo('div', $page->text) ?></div>
+    <?php if ($page->text): ?>
+        <div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
 </div>
 
-<section id="banks">
-    <div class="block">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <table class="table" id="table-js">
-                        <thead>
-                            <tr>
-                                <th>Название</th>
-                                <th>Страна</th>
-                                <th>Сайт</th>
-                                <th>Мин. депозит/баланс</th>
-                                <th>Срок</th>
-                                <th>Цена</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach ($banks as $item) : ?>
-                            <tr>
-                                <td>
-                                    <?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?>
-                                </td>
-                                <td>
-                                    <?= $item->model->location_title ?>
-                                </td>
-                                <td>
+<section id="banks" class="content-zone top20">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table" id="table-js">
+                    <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Страна</th>
+                        <th>Сайт</th>
+                        <th>Мин. депозит/баланс</th>
+                        <th>Срок</th>
+                        <th>Цена</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($banks as $item) : ?>
+                        <tr>
+                            <td>
+                                <?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?>
+                            </td>
+                            <td>
+                                <?= $item->model->location_title ?>
+                            </td>
+                            <td>
 
-                                </td>
-                                <td>
+                            </td>
+                            <td>
 
-                                </td>
-                                <td>
-                                    <?= $item->model->how_days ?>
-                                </td>
-                                <td>
-                                    <?= $item->price ?>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
+                            </td>
+                            <td>
+                                <?= $item->model->how_days ?>
+                            </td>
+                            <td>
+                                <?= $item->price ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+
 </section>
 
 <section id="pages">
@@ -78,14 +78,14 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                                             <div class="package-thumb">
                                                 <?= Html::img($item->thumb(500, 375)) ?>
-                                                <!--<span><i>$<?/*= $item->model->price */?></i> / <?/* if ($item->model->how_days): */?><?/*= $item->model->how_days*/?><?/* else: */?>Минимал<?/* endif; */?></span>-->
+                                                <!--<span><i>$<? /*= $item->model->price */ ?></i> / <? /* if ($item->model->how_days): */ ?><? /*= $item->model->how_days*/ ?><? /* else: */ ?>Минимал<? /* endif; */ ?></span>-->
                                             </div>
                                             <div class="package-detail">
-<!--                                            <span class="cate">
-                                                <?php /*foreach ($item->tags as $tag) : */?>
-                                                    <a href="<?/*= Url::to(['/pages', 'tag' => $tag]) */?>"
-                                                       class="label label-info"><?/*= $tag */?></a>
-                                                <?php /*endforeach; */?>
+                                                <!--                                            <span class="cate">
+                                                <?php /*foreach ($item->tags as $tag) : */ ?>
+                                                    <a href="<? /*= Url::to(['/pages', 'tag' => $tag]) */ ?>"
+                                                       class="label label-info"><? /*= $tag */ ?></a>
+                                                <?php /*endforeach; */ ?>
                                             </span>-->
                                                 <h4><?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?></h4>
                                                 <ul class="location-book">
