@@ -57,7 +57,7 @@ $module = $this->context->module->id;
     'clientOptions' => ElFinder::ckeditorOptions('elfinder',
         [
             'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
-            'extraPlugins' => 'justify,embed,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog',
+            'extraPlugins' => 'justify,embed,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog,liststyle',
             'toolbar' => [
                 ['name' => 'document', 'groups' => ['mode', 'document', 'doctools'], 'items' => ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']],
                 ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']],

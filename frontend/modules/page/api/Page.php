@@ -14,6 +14,7 @@ use yii\helpers\Html;
  * Page module API
  * @package frontend\modules\page\api
  *
+ * @property ActiveDataProvider $_adp
  * @method static PageObject get(mixed $id_slug) Get page object by id or slug
  * @method static array items(array $options = []) Get list of page as PageObject objects
  * @method static mixed last(int $limit = 1) Get last page
@@ -115,7 +116,12 @@ class Page extends \frontend\components\API
 
     public function api_pages()
     {
-        return $this->_adp ? LinkPager::widget(['pagination' => $this->_adp->pagination]) : '';
+        $this->_adp->pagination->pageSizeParam = false;
+
+        if($this->_adp){
+            return LinkPager::widget(['pagination' => $this->_adp->pagination]);
+        }
+        return '';
     }
 
     private function findPage($id_slug)

@@ -13,6 +13,7 @@ $config = [
     'language'=> 'ru-RU',
     //'language' => 'en',
     //'language' => 'uk-UA',
+    'sourceLanguage' => 'ru-RU',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [
         '@runtime' => '@frontend/runtime'
@@ -28,6 +29,12 @@ $config = [
             ],
         ],*/
     'components' => [
+        'formatter' => [
+            'dateFormat' => 'yyyy.MM.dd',
+            //'decimalSeparator' => '',
+            'thousandSeparator' => ' ',
+            'currencyCode' => 'USD',
+        ],
         'i18n' => [ // ��� ��������� ���������������
             'translations' => [
                 'frontend*' => [
@@ -174,6 +181,7 @@ $config = [
 //                'processing/<slug:[\w-]+>' => 'page/view',
                 'offers/<slug:[\w-]+>' => 'offers/view',
                 //'news/tag/<slug:[\w-]+>' => 'news/index',
+                'news/page/<page:\d+>' => 'news/index',
                 'news/<slug:[\w-]+>' => 'news/view',
                 'banks/<slug:[\w-]+>' => 'banks/view',
                 //'fonds' => 'page/index',

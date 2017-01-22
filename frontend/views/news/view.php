@@ -123,15 +123,15 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                     </div><!-- Widget -->
                                     <div class="widget recent-posts-widget">
                                         <div class="title1 style2">
-                                            <h2>Интересные статти</h2>
+                                            <h2>Интересные статьи</h2>
                                             <span>Популярные новости</span>
                                         </div>
                                         <div class="recent-posts">
                                         <?php foreach($top_news as $item) : ?>
                                             <div class="recent-post">
-                                                <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 90, 90)) ?>
-                                                <h4><a href="<?= Url::to(['news/c/'.$item['slug']]) ?>"><?= $item['title'] ?></a></h4>
-                                                <span><i class="fa fa-calendar"></i> 26 May 2016</span>
+                                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 90, 90)) ?>
+                                                <h4><a href="<?= Url::to(['news/'.$item->slug]) ?>"><?= $item->title ?></a></h4>
+                                                <span><i class="fa fa-calendar"></i> <?= $item->date ?></span>
                                             </div>
                                         <?php endforeach; ?>
 

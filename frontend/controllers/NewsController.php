@@ -3,6 +3,8 @@ namespace frontend\controllers;
 
 use frontend\modules\offers\models\Offers;
 use frontend\modules\page\api\Page;
+use frontend\modules\page\api\PageObject;
+use frontend\modules\page\models\Page as PageModel;
 
 class NewsController extends \yii\web\Controller
 {
@@ -61,14 +63,22 @@ class NewsController extends \yii\web\Controller
         $topOffers = $command->queryAll();
 
         // News
-        $query = new \yii\db\Query;
+/*        $query = new \yii\db\Query;
         $query->select('*')
             ->from('easyii_pages as of')
             ->where("of.status = '1' and type_id = '2'")
             ->orderBy(['views'=> SORT_DESC])
             ->limit(5);
         $command = $query->createCommand();
-        $topNews = $command->queryAll();
+        $topNews = $command->queryAll();*/
+        $topNews = [];
+        foreach(PageModel::find()
+                    ->andWhere(['type_id' => '2'])
+                    ->status(PageModel::STATUS_ON)
+                    ->sortDate()->limit(5)->all() as $item){
+            $obj = new PageObject($item);
+            $topNews[] = $obj;
+        }
 
         // Tags
         $query = new \yii\db\Query;

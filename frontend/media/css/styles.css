@@ -34,8 +34,14 @@ p {
 ul li,
 ol li {
     color:#666666;
+/*    list-style-position: inside;*/
 }
+ul, ol {
+   /* display: inline-block;*/
+}
+table {
 
+}
 a:hover,
 a:focus {
     text-decoration:none;
@@ -1833,10 +1839,12 @@ footer .title1.style2 > h2 {font-weight: 600;}
     border-top-right-radius: 5px;
     float: left;
     margin-top: -80px;
-    padding: 16px 50px 0 0;
+   /* padding: 16px 50px 0 0;*/
+    padding: 16px 2px 0 0;
     position: relative;
     width: 65%;
 }
+
 .recentnew-detail > h4 {
     color: #555555;
     font-size: 15px;
@@ -1844,8 +1852,9 @@ footer .title1.style2 > h2 {font-weight: 600;}
     margin-bottom: 3px;
     min-height: 51px;
     vertical-align: top;
+    width: 100%;
 }
-.recentnew-detail > h4 > a {color: inherit;}
+.recentnew-detail > h4 > a {color: inherit; width: 100%;}
 .post-meta {
     float: left;
     list-style: outside none none;
@@ -2920,6 +2929,9 @@ footer .title1.style2 > h2 {font-weight: 600;}
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+.breadcrumb > li + li::before {
+    content: "\f178";
+}
 .breadcrumbs > li:last-child::before, .breadcrumb > li:last-child::before {display: none;}
 /*=============== Pagination ===============*/
 #pagination {
@@ -3247,7 +3259,7 @@ footer .title1.style2 > h2 {font-weight: 600;}
 .tags-social .social-btns > ul > li > a:hover {color: #ffffff;}
 .blogpost-detail > p, .blogpost-detail .text-con p {
     color: #666666;
-    float: left;
+
 /*    line-height: 28px;*/
     width: 100%;
 }
