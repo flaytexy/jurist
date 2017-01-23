@@ -14,15 +14,21 @@ class Seo extends \frontend\components\ActiveRecord
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
+//    var $robots;
+//    var $sitemap;
+//    var $scripts_footer;
 
     public static function tableName()
     {
-        return 'easyii_seo';
+        return 'easyii_seo_full';
     }
 
     public function rules()
     {
         return [
+            [['robots', 'scripts_footer'], 'required'],
+            [['robots', 'scripts_footer'], 'string', 'min' => 6],
+            [['sitemap'], 'file', 'skipOnEmpty' => true, 'extensions' => 'xml'],
 /*            [['text', 'title'], 'required'],
             ['pre_options', 'string', 'max' => 128],
             [['title', 'short', 'text'], 'trim'],
@@ -58,16 +64,15 @@ class Seo extends \frontend\components\ActiveRecord
         return [];
     }
 
-    public function beforeSave($insert)
+/*    public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {
             $settings = Yii::$app->getModule('admin')->activeModules['seo']->settings;
-
             return true;
         } else {
             return false;
         }
-    }
+    }*/
 
     public function afterDelete()
     {

@@ -1,43 +1,67 @@
 <?php
 namespace frontend\modules\seo\controllers;
 
-
 use Yii;
-use yii\data\ActiveDataProvider;
-use frontend\behaviors\SortableDateController;
 use yii\helpers\FileHelper;
 use yii\helpers\Json;
 use yii\widgets\ActiveForm;
 use yii\web\UploadedFile;
-
 use frontend\components\Controller;
 use frontend\modules\seo\models\Seo;
 use frontend\helpers\Image;
-use frontend\behaviors\StatusController;
+//use frontend\behaviors\StatusController;
 
 class AController extends Controller
 {
     public function behaviors()
     {
-        return [
-            [
-                'class' => SortableDateController::className(),
-                'model' => Seo::className(),
-            ],
-            [
-                'class' => StatusController::className(),
-                'model' => Seo::className()
-            ]
-        ];
+        return [];
     }
 
     public function actionIndex()
     {
-        $model = new Seo;
+        //$model = Seo::find()->where(['name' => 'robots'])->one();
+        $model = Seo::findOne(1);
 
-        return $this->render('index', [
-            'model' => $model
-        ]);
+        if ($model->load(Yii::$app->request->post())) {
+            if(Yii::$app->request->isAjax){
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                return ActiveForm::validate($model);
+            }
+            else{
+                if(isset($_FILES)){
+                    $uploadFile = UploadedFile::getInstance($model, 'sitemap');
+
+                    if($uploadFile && $model->validate(['sitemap'])){
+                        $uploadFile->saveAs(Yii::getAlias('@upload').'/seo/sitemap.xml');
+                        //$model->sitemap = Image::upload($model->sitemap, 'sitemap');
+                    }
+                }
+
+                if(!empty($model->robots)){
+                    //$content=file_get_contents($file->tempName);
+                    $robotsTxt = Yii::getAlias('@upload').'/seo/robots.txt';
+                    $handle = @fopen($robotsTxt, 'w');
+                    if($handle){
+                        fwrite($handle, $model->robots);
+                    }
+                }
+
+                if($model->save()){
+                    $this->flash('success', Yii::t('easyii/offers', 'Seo updated'));
+                }
+                else{
+                    $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
+                }
+
+                return $this->refresh();
+            }
+        }
+        else {
+            return $this->render('index', [
+                'model' => $model
+            ]);
+        }
     }
 
     public function actionCreate()

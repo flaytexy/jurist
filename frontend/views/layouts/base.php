@@ -4,6 +4,9 @@
 /* @var $dataProvider yii\data\ActiveDataProvider */
 use yii\helpers\Html;
 $asset = \frontend\assets\AppAsset::register($this);
+
+use \frontend\widgets\ScriptsFooter;
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -22,6 +25,7 @@ $asset = \frontend\assets\AppAsset::register($this);
         <?php $this->beginBody() ?>
         <?= $content ?>
         <?php $this->endBody() ?>
+        <?= ScriptsFooter::widget([]) ?>
     </body>
 </html>
 <?php $this->endPage() ?>

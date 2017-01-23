@@ -1,12 +1,11 @@
 <?php
 /** Created by CyberBrain  */
-use frontend\modules\shopcart\api\Shopcart;
-use frontend\modules\subscribe\api\Subscribe;
-use yii\helpers\Url;
+//use frontend\modules\shopcart\api\Shopcart;
+//use frontend\modules\subscribe\api\Subscribe;
+//use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
 
-$goodsCount = count(Shopcart::goods());
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 <div class="theme-layout" style="padding-top: 156px;">
