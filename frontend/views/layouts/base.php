@@ -20,6 +20,7 @@ use \frontend\widgets\ScriptsFooter;
         <link rel="shortcut icon" href="<?= $asset->baseUrl ?>/favicon.ico" type="image/x-icon">
         <link rel="icon" href="<?= $asset->baseUrl ?>/favicon.ico" type="image/x-icon">
 
+        <meta http-equiv="content-language" content="ru">
         <meta name="google-site-verification" content="heki76RWc6-gZB7LnqLlp8rGAjdhIMdErxKGACtbnCg" />
         <?php $this->head() ?>
     </head>

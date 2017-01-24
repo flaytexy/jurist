@@ -37,19 +37,7 @@ class AppAsset extends AssetBundle
         'js/jquery.scrolly.js',
         'js/all.js',
 
-        'js/revolution/jquery.themepunch.tools.min.js',
-        'js/revolution/jquery.themepunch.revolution.min.js',
 
-        'js/revolution/revolution.extension.actions.min.js',
-        'js/revolution/revolution.extension.carousel.min.js',
-        'js/revolution/revolution.extension.kenburn.min.js',
-        'js/revolution/revolution.extension.layeranimation.min.js',
-        'js/revolution/revolution.extension.migration.min.js',
-        'js/revolution/revolution.extension.navigation.min.js',
-        'js/revolution/revolution.extension.parallax.min.js',
-        'js/revolution/revolution.extension.slideanims.min.js',
-        'js/revolution/revolution.extension.video.min.js',
-        'js/revolution/revolution.initialize.js',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
         'js/scripts.js'
     ];
@@ -57,6 +45,6 @@ class AppAsset extends AssetBundle
         'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
-        //'yii\web\YiiAsset',
+        'yii\web\YiiAsset',
     ];
 }

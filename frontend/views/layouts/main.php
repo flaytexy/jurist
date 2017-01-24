@@ -23,7 +23,7 @@ use yii\widgets\Menu;
                 </div>
             </div>
         </div><!-- Top Bar -->
-        <div class="logomenu-sec" id="logomenu-sec">
+        <div class="logomenu-sec hidden-xs" id="logomenu-sec">
             <div class="container">
                 <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.png" alt=""></a></div>
                 <nav class="navbar22 navbar-default22">
@@ -39,7 +39,7 @@ use yii\widgets\Menu;
                                     //['label' => 'Articles', 'url' => ['articles/index']],
                                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
-                                    ['label' => 'Информация', 'url' => ['/faq']],
+                                    //['label' => 'Информация', 'url' => ['/faq']],
                                     ['label' => 'Контакты', 'url' => ['/contact']]
                                 ],
                             ]); ?>
@@ -83,7 +83,7 @@ use yii\widgets\Menu;
                     //['label' => 'Articles', 'url' => ['articles/index']],
                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
-                    ['label' => 'Информация', 'url' => ['/faq']],
+                    //['label' => 'Информация', 'url' => ['/faq']],
                     ['label' => 'Контакты', 'url' => ['/contact']]
                 ],
             ]); ?>
@@ -255,9 +255,8 @@ use yii\widgets\Menu;
                         </div>
                         <div class="menu-links">
                             <ul>
-                                <li><a href="/faq" title="">Faq's</a></li>
+                               <!-- <li><a href="/faq" title="">Faq's</a></li>-->
                                 <li><a href="/contact" title="">Support</a></li>
-                                <li><a href="/about" title="">About Us</a></li>
                                 <li><a href="/contact" title="">Contact us</a></li>
                             </ul>
                         </div>
@@ -273,7 +272,6 @@ use yii\widgets\Menu;
                     <li><a href="/" title="">Главная</a></li>
                     <li><a href="/news" title="">Новости</a></li>
                     <li><a href="/contact" title="">Информация</a></li>
-                    <li><a href="/about" title="">О нас</a></li>
                     <li><a href="/contact" title="">Контакты</a></li>
                 </ul>
                 <ul class="Social-btn">

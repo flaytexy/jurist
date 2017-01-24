@@ -9,19 +9,21 @@ use yii\helpers\Html;
 
 $this->title = $name;
 ?>
-<div class="site-error">
+<div class="container">
+    <div class="site-error">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+        <h1><?= Html::encode('Houston, we have a problem.') ?></h1>
 
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+        <div class="alert alert-danger">
+            <?= nl2br(Html::encode($message)) ?>
+        </div>
+
+        <p>
+            Ошибка 404. Невозможно обработать запрос.
+        </p>
+        <p>
+            Воспользуйтесь пожалуйста меню, чтобы перейти в нужный раздел.
+        </p>
+
     </div>
-
-    <p>
-        Ошибка 404. Невозможно обработать запрос.
-    </p>
-    <p>
-        Воспользуйтесь пожалуйста меню, чтобы перейти в нужный раздел.
-    </p>
-
 </div>

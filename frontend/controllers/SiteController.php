@@ -15,6 +15,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\modules\offers\api\Offers;
+
 /**
  * Site controller
  */
@@ -74,11 +75,23 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $page = \frontend\modules\page\api\Page::get('page-main');
+        $this->view->title = $page->seo('title', $page->model->title);
+        //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
+        $this->view->registerMetaTag([
+            'name' => 'title',
+            'content' => $page->seo('title', '')
+        ]);
+        $this->view->registerMetaTag([
+            'name' => 'description',
+            'content' => $page->seo('description', '')
+        ]);
+
         $this->view->registerCssFile(Yii::$app->request->baseUrl . '/css/revicons/revolution.css', ['depends' => ['yii\bootstrap\BootstrapAsset']]);
-/*        $this->view->registerJsFile(
-            \Yii::$app->request->BaseUrl . '/js/main.js',
-            ['depends' => [\yii\web\JqueryAsset::className()]]
-        );*/
+        /*        $this->view->registerJsFile(
+                    \Yii::$app->request->BaseUrl . '/js/main.js',
+                    ['depends' => [\yii\web\JqueryAsset::className()]]
+                );*/
 
         if (!Yii::$app->getModule('admin')->installed) {
             //return $this->redirect(['/install/step1']);
