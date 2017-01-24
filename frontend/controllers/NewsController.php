@@ -107,7 +107,7 @@ class NewsController extends \yii\web\Controller
 
         $news = Page::get($slug);
         if(!$news){
-            throw new \yii\web\NotFoundHttpException('Page not found.');
+            throw new \yii\web\NotFoundHttpException('Page Houston, we have a problem.');
         }
 
         return $this->render('view', [

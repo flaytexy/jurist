@@ -85,7 +85,7 @@ class PhotosController extends Controller
             }
         }
         else{
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
 
         return $this->formatResponse(Yii::t('easyii', 'Photo description saved'));
@@ -131,7 +131,7 @@ class PhotosController extends Controller
 
         }
         else{
-            $this->error =  Yii::t('easyii', 'Not found');
+            $this->error =  Yii::t('easyii', 'Houston, we have a problem');
         }
 
         return $this->formatResponse($success);
@@ -142,7 +142,7 @@ class PhotosController extends Controller
         if(($model = Photo::findOne($id))){
             $model->delete();
         } else {
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
         return $this->formatResponse(Yii::t('easyii', 'Photo deleted'));
     }

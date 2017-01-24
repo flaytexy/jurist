@@ -14,7 +14,7 @@ class DownloadController extends \yii\web\Controller
             Yii::$app->response->sendFile(Yii::getAlias('@webroot'). DIRECTORY_SEPARATOR .$model->file);
         }
         else{
-            throw new \yii\web\NotFoundHttpException(Yii::t('easyii/file/api', 'File not found'));
+            throw new \yii\web\NotFoundHttpException(Yii::t('easyii/file/api', 'File Houston, we have a problem'));
         }
     }
 }

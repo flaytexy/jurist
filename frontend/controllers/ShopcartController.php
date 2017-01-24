@@ -27,7 +27,7 @@ class ShopcartController extends \yii\web\Controller
         $item = Catalog::get($id);
 
         if(!$item){
-            throw new NotFoundHttpException('Item not found');
+            throw new NotFoundHttpException('Item Houston, we have a problem');
         }
 
         $form = new AddToCartForm();
@@ -56,7 +56,7 @@ class ShopcartController extends \yii\web\Controller
     {
         $order = Shopcart::order($id);
         if(!$order || $order->access_token != $token){
-            throw new NotFoundHttpException('Order not found');
+            throw new NotFoundHttpException('Order Houston, we have a problem');
         }
 
         return $this->render('order', ['order' => $order]);

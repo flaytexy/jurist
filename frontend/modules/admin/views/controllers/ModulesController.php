@@ -73,7 +73,7 @@ class ModulesController extends \frontend\components\Controller
         $model = Module::findOne($id);
 
         if($model === null){
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
             return $this->redirect(['/admin/modules']);
         }
 
@@ -104,7 +104,7 @@ class ModulesController extends \frontend\components\Controller
         $model = Module::findOne($id);
 
         if($model === null){
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
             return $this->redirect(['/admin/modules']);
         }
 
@@ -133,7 +133,7 @@ class ModulesController extends \frontend\components\Controller
             $model->save();
             $this->flash('success', Yii::t('easyii', 'Module default settings was restored'));
         } else {
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
         }
         return $this->back();
     }
@@ -144,7 +144,7 @@ class ModulesController extends \frontend\components\Controller
         $formModel = new CopyModuleForm();
 
         if($module === null){
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
             return $this->redirect('/admin/modules');
         }
         if ($formModel->load(Yii::$app->request->post())){
@@ -265,7 +265,7 @@ class ModulesController extends \frontend\components\Controller
         if(($model = Module::findOne($id))){
             $model->delete();
         } else {
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
         return $this->formatResponse(Yii::t('easyii', 'Module deleted'));
     }

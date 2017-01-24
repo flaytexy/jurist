@@ -83,7 +83,7 @@ class PacketsController extends Controller
             }
         }
         else{
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
 
         return $this->formatResponse(Yii::t('easyii', 'Packet description saved'));
@@ -115,7 +115,7 @@ class PacketsController extends Controller
 
         }
         else{
-            $this->error =  Yii::t('easyii', 'Not found');
+            $this->error =  Yii::t('easyii', 'Houston, we have a problem');
         }
 
         return $this->formatResponse($success);
@@ -126,7 +126,7 @@ class PacketsController extends Controller
         if(($model = Packet::findOne($id))){
             $model->delete();
         } else {
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
         return $this->formatResponse(Yii::t('easyii', 'Packet deleted'));
     }

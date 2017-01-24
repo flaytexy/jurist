@@ -25,7 +25,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             <?php foreach ($news as $item) : ?>
                                 <div class="col-md-6">
                                     <div class="recentnew-post">
-                                        <?= Html::img($item->thumb(500, 375)) ?>
+                                        <a href="<?= Url::to([$typeTitle.'/'.$item->slug]) ?>" class="">
+                                            <?= Html::img($item->thumb(500, 375)) ?>
+                                        </a>
                                         <div class="recentnew-detail">
                                             <h4>
                                                 <?= Html::a($item->title, ['news/view', 'slug' => $item->slug]) ?>

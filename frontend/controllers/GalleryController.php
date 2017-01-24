@@ -15,7 +15,7 @@ class GalleryController extends \yii\web\Controller
     {
         $album = Gallery::cat($slug);
         if(!$album){
-            throw new \yii\web\NotFoundHttpException('Album not found.');
+            throw new \yii\web\NotFoundHttpException('Album Houston, we have a problem.');
         }
 
         return $this->render('view', [

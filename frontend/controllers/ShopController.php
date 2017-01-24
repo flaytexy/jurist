@@ -20,7 +20,7 @@ class ShopController extends \yii\web\Controller
         $cat = Catalog::cat($slug);
 
         if(!$cat){
-            throw new NotFoundHttpException('Shop category not found.');
+            throw new NotFoundHttpException('Shop category Houston, we have a problem.');
         }
         $filters = null;
         if($filterForm->load(Yii::$app->request->get()) && $filterForm->validate()) {
@@ -53,7 +53,7 @@ class ShopController extends \yii\web\Controller
     {
         $item = Catalog::get($slug);
         if(!$item){
-            throw new NotFoundHttpException('Item not found.');
+            throw new NotFoundHttpException('Item Houston, we have a problem.');
         }
 
         return $this->render('view', [

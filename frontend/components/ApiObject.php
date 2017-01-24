@@ -78,7 +78,7 @@ class ApiObject extends \yii\base\Object
     /**
      * Get seo text attached to object
      * @param string $attribute name of seo attribute can be h1, title, description, keywords
-     * @param string $default default string applied if seo text not found
+     * @param string $default default string applied if seo text Houston, we have a problem
      * @return string
      */
     public function seo($attribute, $default = ''){

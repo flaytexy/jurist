@@ -54,7 +54,7 @@ class SettingsController extends \frontend\components\Controller
         $model = Setting::findOne($id);
 
         if($model === null || ($model->visibility < (IS_ROOT ? Setting::VISIBLE_ROOT : Setting::VISIBLE_ALL))){
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
             return $this->redirect(['/admin/settings']);
         }
 
@@ -85,7 +85,7 @@ class SettingsController extends \frontend\components\Controller
         if(($model = Setting::findOne($id))){
             $model->delete();
         } else {
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
         return $this->formatResponse(Yii::t('easyii', 'Setting deleted'));
     }

@@ -79,7 +79,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <div id="b_<?= $item->id ?>" class="block-zone row" style="display: none;">
                         <div class="col-md-4">
                             <div class="package-thumb">
-                                <?= Html::img($item->thumbFile($item->image, 500, 375), array('class' => 'sadsa')) ?>
+                                <a href="<?= Url::to(['offers/'.$item->slug]) ?>" class="label label-info">
+                                    <?= Html::img($item->thumbFile($item->image, 500, 375), array('class' => 'sadsa')) ?>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -107,17 +109,18 @@ $this->params['breadcrumbs'][] = $page->model->title;
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="villaeditors-picks">
+                    <div class="villaeditors-picks offers-list">
                         <div class="packages style2 remove-ext2">
                             <div class="row">
                                 <?php foreach ($offers as $item) : ?>
                                     <div class="col-md-4">
                                         <div class="package">
-
+                                            <a href="<?= Url::to(['offers/'.$item->slug]) ?>">
                                             <div class="package-thumb">
                                                 <?= Html::img($item->thumb(500, 375)) ?>
-                                                <span><i>$<?= $item->model->price ?></i> / <? if ($item->model->how_days): ?><?= $item->model->how_days?><? else: ?>Минимал<? endif; ?></span>
+                                                <span><i>$<?= $item->model->price ?></i> / <? if ($item->model->how_days): ?><?= $item->model->how_days?> дней<? else: ?>Минимал<? endif; ?></span>
                                             </div>
+                                            </a>
                                             <div class="package-detail">
 <!--                                            <span class="cate">
                                                 <?php /*foreach ($item->tags as $tag) : */?>
@@ -128,7 +131,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                 <h4><?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?></h4>
                                                 <ul class="location-book">
                                                     <li class="active"><i class="fa fa-map-marker"></i>
-                                                        <span><?= $item->date ?></span></li>
+                                                        <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>">Заказать</a></span></li>
                                                     <li class="book-btn"><i class="fa fa-thumbs-o-up"></i>
                                                         <?= Html::a('Детальней', ['offers/view', 'slug' => $item->slug]) ?>
                                                     </li>

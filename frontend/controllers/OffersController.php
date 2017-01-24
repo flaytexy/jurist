@@ -97,7 +97,7 @@ class OffersController extends \yii\web\Controller
 
 
         if (!$offers) {
-            throw new \yii\web\NotFoundHttpException('Offers not found.');
+            throw new \yii\web\NotFoundHttpException('Offers Houston, we have a problem.');
         }
 
         foreach ($options as $key => $option) {

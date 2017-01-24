@@ -15,7 +15,7 @@ class ArticlesController extends \yii\web\Controller
     {
         $cat = Article::cat($slug);
         if(!$cat){
-            throw new \yii\web\NotFoundHttpException('Article category not found.');
+            throw new \yii\web\NotFoundHttpException('Article category Houston, we have a problem.');
         }
 
         return $this->render('cat', [
@@ -28,7 +28,7 @@ class ArticlesController extends \yii\web\Controller
     {
         $article = Article::get($slug);
         if(!$article){
-            throw new \yii\web\NotFoundHttpException('Article not found.');
+            throw new \yii\web\NotFoundHttpException('Article Houston, we have a problem.');
         }
 
         return $this->render('view', [

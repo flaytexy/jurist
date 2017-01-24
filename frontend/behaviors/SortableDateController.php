@@ -45,7 +45,7 @@ class SortableDateController extends \yii\base\Behavior
             }
         }
         else{
-            $this->owner->error = Yii::t('easyii', 'Not found');
+            $this->owner->error = Yii::t('easyii', 'Houston, we have a problem');
         }
 
         return $this->owner->formatResponse($success);

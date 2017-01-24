@@ -1,5 +1,5 @@
 <?php
 return [
     'Create file' => 'Создать файл',
-    'File not found' => 'Файл не найден'
+    'File Houston, we have a problem' => 'Файл не найден'
 ];

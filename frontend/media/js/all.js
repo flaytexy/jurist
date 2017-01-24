@@ -118,7 +118,7 @@ jQuery(document).ready(function ($) {
 
     //===== Sponsor Carousel =====//
     if ($.isFunction($.fn.owlCarousel)) {
-	$('.sponsor-carousel').owlCarousel({
+/*	$('.all-carousel').owlCarousel({
 	    autoplay: true,
 	    smartSpeed: 600,
 	    loop: true,
@@ -126,13 +126,13 @@ jQuery(document).ready(function ($) {
 	    dots: false,
 	    slideSpeed: 2000,
 	    nav: true,
-	    margin: 30,
+	    margin: 15,
 	    responsive: {
 		0: {items: 2},
-		480: {items: 3},
-		768: {items: 4},
-		1200: {items: 5}
+		480: {items: 4},
+		768: {items: 6},
+		1200: {items: 8}
 	    }
-	});
+	});*/
     }
 });/*========== Document Ready Function Ends Here ==========*/

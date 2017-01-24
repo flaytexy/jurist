@@ -19,6 +19,8 @@ use \frontend\widgets\ScriptsFooter;
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="<?= $asset->baseUrl ?>/favicon.ico" type="image/x-icon">
         <link rel="icon" href="<?= $asset->baseUrl ?>/favicon.ico" type="image/x-icon">
+
+        <meta name="google-site-verification" content="heki76RWc6-gZB7LnqLlp8rGAjdhIMdErxKGACtbnCg" />
         <?php $this->head() ?>
     </head>
     <body>

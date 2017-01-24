@@ -24,7 +24,7 @@ class PagesController extends \yii\web\Controller
 
         $pages = Page::get($slug);
         if(!$pages){
-            throw new \yii\web\NotFoundHttpException('Page not found.');
+            throw new \yii\web\NotFoundHttpException('Page Houston, we have a problem.');
         }
 
         return $this->render('view', [

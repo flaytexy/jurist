@@ -79,6 +79,18 @@ section {
 .easyiicms-edit {
     clear: left;
 }
+.height30 {
+    height: 30px;
+}
+.height50 {
+    height: 50px;
+}
+.height60 {
+    height: 60px;
+}
+.padv-30 {
+    padding: 30px 0;
+}
 .block {
     float: left;
     padding: 100px 0 90px;
@@ -1500,6 +1512,7 @@ footer .title1.style2 > h2 {font-weight: 600;}
     white-space: nowrap;
     width: 0;
 }
+
 .location-book > li:hover > a,
 .location-book > li.active > a {
     font-size: 16px;
@@ -1508,7 +1521,20 @@ footer .title1.style2 > h2 {font-weight: 600;}
     visibility: visible;
     width: 100%;
 }
-.location-book > li.book-btn > i {color: #ffffff;}
+
+.location-book > li.book-btn > i {
+    color: #ffffff;
+}
+
+.offers-list .location-book > li span {
+    text-align: center;
+}
+
+.offers-list .location-book > li span > a {
+    font-size: 15px;
+    color: #555555;
+    line-height: 38px;
+}
 /*=============== Villa Arrangements ===============*/
 .villa-arrangements {
     float: left;
@@ -1964,6 +1990,13 @@ footer .title1.style2 > h2 {font-weight: 600;}
 }
 .sponsor-carousel .owl-nav > div.owl-next::before {content: "\f105";}
 .sponsor-carousel .owl-nav > div:hover::before {color: #ffffff;}
+
+#menu-show-block .owl-item li {
+    text-align: center;
+}
+#menu-show-block .owl-nav {
+    top: -1%;
+}
 /*=============== Instagram ===============*/
 .instagram {
     background: #79bb10 none repeat scroll 0 0;

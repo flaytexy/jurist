@@ -271,4 +271,13 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionRedirect($url = '')
+    {
+        if (substr($url, -1) === '/') {
+            return $this->redirect('/' . substr($url, 0, -1), 301);
+        } else {
+            throw new NotFoundHttpException;
+        }
+    }
 }

@@ -55,7 +55,7 @@ class AdminsController extends \frontend\components\Controller
         $model = Admin::findOne($id);
 
         if($model === null){
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
             return $this->redirect(['/admin/admins']);
         }
 
@@ -86,7 +86,7 @@ class AdminsController extends \frontend\components\Controller
         if(($model = Admin::findOne($id))){
             $model->delete();
         } else {
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
         return $this->formatResponse(Yii::t('easyii', 'Admin deleted'));
     }

@@ -28,7 +28,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <div class="package">
 
                                         <div class="package-thumb">
-                                            <?= Html::img($item->thumb(500, 375)) ?>
+                                            <a href="<?= Url::to([$typeTitle.'/'.$item->slug]) ?>" class="">
+                                                <?= Html::img($item->thumb(500, 375)) ?>
+                                            </a>
                                             <!--<span><i>$<?/*= $item->model->price */?></i> / <?/* if ($item->model->how_days): */?><?/*= $item->model->how_days*/?><?/* else: */?>Минимал<?/* endif; */?></span>-->
                                         </div>
                                         <div class="package-detail">

@@ -99,12 +99,15 @@ $config = [
         ],
         */
         'urlManager' => [
+            //'baseUrl' => '/',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             //'class'=>'frontend\components\LangUrlManager',
             //'languages' => ['ru' => 'ru-RU', 'en' => 'en-US', 'uk' => 'uk-UA'],
             'rules' => [
                 '' => 'site/index',
+                'offers/index' => 'offers/index',
+                'pages/index' => 'site/index',
                 'offshornyie-predlozheniya' => 'offers/index',
 //                [
 //                    'pattern' => 'offshornyie-predlozheniya',

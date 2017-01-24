@@ -91,7 +91,7 @@ class AController extends Controller
         $order = Order::findOne($id);
 
         if($order === null){
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
             return $this->redirect(['/admin/'.$this->module->id]);
         }
 
@@ -134,7 +134,7 @@ class AController extends Controller
         if(($model = Order::findOne($id))){
             $model->delete();
         } else {
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
         return $this->formatResponse(Yii::t('easyii/shopcart', 'Order deleted'));
     }

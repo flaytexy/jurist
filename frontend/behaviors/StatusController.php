@@ -20,7 +20,7 @@ class StatusController extends \yii\base\Behavior
             $model->update();
         }
         else{
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
 
         return $this->owner->formatResponse(Yii::t('easyii', 'Status successfully changed'));

@@ -148,7 +148,7 @@ class CategoryController extends Controller
         $model = $class::findOne($id);
 
         if($model === null){
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
         }
         elseif($model->image){
             $model->image = '';
@@ -177,7 +177,7 @@ class CategoryController extends Controller
                 $child->afterDelete();
             }
         } else {
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
         return $this->formatResponse(Yii::t('easyii', 'Category deleted'));
     }
@@ -278,7 +278,7 @@ class CategoryController extends Controller
             }
         }
         else {
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
         }
         return $this->back();
     }
@@ -304,7 +304,7 @@ class CategoryController extends Controller
             $model->trigger(\yii\db\ActiveRecord::EVENT_AFTER_UPDATE);
         }
         else{
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
 
         return $this->formatResponse(Yii::t('easyii', 'Status successfully changed'));

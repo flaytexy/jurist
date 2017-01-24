@@ -144,7 +144,7 @@ class Shopcart extends \frontend\components\API
     {
         $good = Good::findOne($good_id);
         if(!$good){
-            return ['result' => 'error', 'code' => 1, 'error' => 'Good not found'];
+            return ['result' => 'error', 'code' => 1, 'error' => 'Good Houston, we have a problem'];
         }
         if($good->order_id != $this->order->id){
             return ['result' => 'error', 'code' => 2, 'error' => 'Access denied'];
@@ -175,7 +175,7 @@ class Shopcart extends \frontend\components\API
     {
         $model = $this->order->model;
         if(!$this->order->id || $model->status != Order::STATUS_BLANK){
-            return ['result' => 'error', 'code' => self::ERROR_ORDER_NOT_FOUND, 'error' => 'Order not found'];
+            return ['result' => 'error', 'code' => self::ERROR_ORDER_NOT_FOUND, 'error' => 'Order Houston, we have a problem'];
         }
         if(!count($this->order->goods)){
             return ['result' => 'error', 'code' => self::ERROR_ORDER_EMPTY, 'error' => 'Order is empty'];

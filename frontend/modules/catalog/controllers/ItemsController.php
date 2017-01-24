@@ -140,7 +140,7 @@ class ItemsController extends Controller
         $model = Item::findOne($id);
 
         if($model === null){
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
         }
         elseif($model->image){
             $model->image = '';
@@ -159,7 +159,7 @@ class ItemsController extends Controller
         if(($model = Item::findOne($id))){
             $model->delete();
         } else {
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
         return $this->formatResponse(Yii::t('easyii/catalog', 'Item deleted'));
     }

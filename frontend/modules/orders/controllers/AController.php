@@ -60,7 +60,7 @@ class AController extends Controller
         $model = Orders::findOne($id);
 
         if($model === null){
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
             return $this->redirect(['/admin/'.$this->module->id]);
         }
 
@@ -108,7 +108,7 @@ class AController extends Controller
         $model = Orders::findOne($id);
 
         if($model === null){
-            $this->flash('error', Yii::t('easyii', 'Not found'));
+            $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
         }
         else{
             $model->status = Orders::STATUS_ANSWERED;
@@ -127,7 +127,7 @@ class AController extends Controller
         if(($model = Orders::findOne($id))){
             $model->delete();
         } else {
-            $this->error = Yii::t('easyii', 'Not found');
+            $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
         return $this->formatResponse(Yii::t('easyii/orders', 'Orders deleted'));
     }

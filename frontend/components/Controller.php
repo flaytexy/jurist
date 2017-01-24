@@ -77,7 +77,7 @@ class Controller extends \yii\web\Controller
 
     /**
      * Get return url for module from session
-     * @param mixed $defaultUrl if return url not found in sessions
+     * @param mixed $defaultUrl if return url Houston, we have a problem in sessions
      * @return mixed
      */
     public function getReturnUrl($defaultUrl = null)
