@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use frontend\helpers\Image;
 
 $this->title = $pages->seo('title', $pages->model->title);
-$this->params['breadcrumbs'][] = ['label' => 'Pages', 'url' => ['pages/index']];
+$this->params['breadcrumbs'][] = ['label' => $parentPage->title, 'url' => Url::to([$pageParentUrl.'/'])];
 $this->params['breadcrumbs'][] = $pages->model->title;
 ?>
 

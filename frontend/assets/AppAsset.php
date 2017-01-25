@@ -23,8 +23,8 @@ class AppAsset extends AssetBundle
         'css/perfect-scrollbar.css',
         'css/owl.css',
         'css/styles.css?v=9',
-        'css/responsive.css',
-        'css/color.css'
+        //'css/responsive.css',
+        //'css/color.css'
     ];
     public $js = [
         'js/bootstrap-datepicker.js',

@@ -616,15 +616,16 @@ MainAsset::register($this);
                                 <? foreach ($offers as $offer): ?>
                                     <div class="col-md-4">
                                         <div class="package">
+                                            <a href="/offers/<?= $offer->model->slug ?>">
                                             <div class="package-thumb">
-
-                                                <?= Html::img($offer->thumb(370, 259), array('class' => 'sadsa')) ?>
+                                                    <?= Html::img($offer->thumb(370, 259), array('class' => 'sadsa')) ?>
                                                 <span><i>$<?= $offer->model->price ?></i> / <i><?= $offer->model->how_days ?></i> days </span>
                                             </div>
+                                            </a>
                                             <div class="package-detail">
                                                 <span class="cate">Lite/Classic/Pro</span>
                                                 <h4><a href="/offers/<?= $offer->model->slug ?>"
-                                                       title=""><?= $offer->model->title ?></a></h4>
+                                                       title="<?= $offer->model->title ?>"><?= $offer->model->title ?></a></h4>
                                                 <ul class="location-book">
                                                     <li><i class="fa fa-map-marker"></i>
                                                         <span><?= $offer->model->title ?></span></li>
@@ -680,7 +681,7 @@ MainAsset::register($this);
                                     <div class="row">
                                         <? foreach ($banks as $item): ?>
                                             <div class="col-md-6">
-                                                <div class="offered-service">
+                                                <div class="offered-service" onclick="location.href='/banks/<?= $item->model->slug ?>'">
                                                     <?= Html::img($item->thumb(300, 190), array('class' => 'main-banks')) ?>
                                                     <div class="offered-serviceinfo">
                                                         <h4><a href="/banks/<?= $item->model->slug ?>"
@@ -735,9 +736,8 @@ MainAsset::register($this);
                             <ul>
                                 <? foreach ($licenses as $item): ?>
                                 <li>
-                                    <div class="villa-location">
-
-                                            <?= Html::img($item->thumb(226, 360), array('class' => 'main-banks')) ?>
+                                    <div class="villa-location" onclick="location.href='/licenses/<?= $item->model->slug ?>'" >
+                                        <img src="<?= $item->thumb(226, 360) ?>" class="main-banks" />
 
                                         <div class="villa-locationinfo">
                                             <span><?= $item->model->title ?></span>
@@ -804,7 +804,7 @@ MainAsset::register($this);
                 <div class="col-md-12">
                     <div class="recent-news">
                         <div class="title1">
-                            <h2>Процессинг Мерчант</h2>
+                            <h2><a href="/processing">Процессинг Мерчант</a></h2>
                             <span>Широкий спектр вариантов и решений</span>
 
                             <p>Для низкорискового бизнеса у нас имеются варианты открытия в надежных европейских банках
@@ -814,7 +814,7 @@ MainAsset::register($this);
                             <div class="remove-ext">
                                 <div class="recentnews-carousel2">
                                     <div class="recentnew-post">
-                                        <img src="/uploads/processing/processing_main.jpg" alt="Процессинг Мерчант"/>
+                                        <img src="/uploads/processing/processing_main.jpg" alt="Процессинг Мерчант" onclick="location.href='/processing'"/>
                                     </div>
                                 </div>
                             </div>
@@ -823,7 +823,7 @@ MainAsset::register($this);
                             <div class="h5">Фонды и Трасты</div>
                             <div class="recentnews-carousel">
                                 <? foreach ($fonds as $item): ?>
-                                <div class="recentnew-post">
+                                <div class="recentnew-post"  onclick="location.href='/fonds/<?= $item->model->slug ?>'" >
                                     <?= Html::img($item->thumb(470, 295), array('class' => 'main-banks')) ?>
 
                                     <div class="recentnew-detail">

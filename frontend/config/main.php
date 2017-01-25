@@ -106,8 +106,6 @@ $config = [
             //'languages' => ['ru' => 'ru-RU', 'en' => 'en-US', 'uk' => 'uk-UA'],
             'rules' => [
                 '' => 'site/index',
-                'offers/index' => 'offers/index',
-                'pages/index' => 'site/index',
                 'offshornyie-predlozheniya' => 'offers/index',
 //                [
 //                    'pattern' => 'offshornyie-predlozheniya',
@@ -123,6 +121,10 @@ $config = [
 //                        'type_id' => 2
 //                    ],
 //                ],
+                [
+                    'pattern' => 'banks',
+                    'route' => 'banks/index',
+                ],
                 [
                     'pattern' => 'fonds',
                     'route' => 'pages/index',
@@ -186,6 +188,7 @@ $config = [
                 //'news/tag/<slug:[\w-]+>' => 'news/index',
                 'news/page/<page:\d+>' => 'news/index',
                 'news/<slug:[\w-]+>' => 'news/view',
+                //'banks/index' => 'banks/index',
                 'banks/<slug:[\w-]+>' => 'banks/view',
                 //'fonds' => 'page/index',
                 //'processing/<slug:[\w-]+>' => 'processing/view',

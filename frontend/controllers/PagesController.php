@@ -19,16 +19,21 @@ class PagesController extends \yii\web\Controller
         ]);
     }
 
-    public function actionView($slug)
+    public function actionView($slug, $name = null)
     {
+        $parts = explode('/', \Yii::$app->request->getUrl());
 
         $pages = Page::get($slug);
         if(!$pages){
             throw new \yii\web\NotFoundHttpException('Page Houston, we have a problem.');
         }
 
+        $pageParent = \frontend\modules\page\models\Page::findOne(['slug'=>'page-'.$parts[1]]);
+
         return $this->render('view', [
-            'pages' => $pages
+            'pages' => $pages,
+            'parentPage' => $pageParent,
+            'pageParentUrl' => $parts[1]
         ]);
     }
 }
