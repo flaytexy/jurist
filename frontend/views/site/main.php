@@ -25,9 +25,9 @@ MainAsset::register($this);
                                     data-param7="" data-param8="" data-param9="" data-param10=""
                                     data-title="Более 30 банков">
                                     <!-- MAIN IMAGE -->
-                                    <img src="/uploads/theme_villa/slider1.jpg" alt="" data-bgposition="center center"
+                                    <img src="/uploads/theme_villa/slider1-2.jpg" alt="" data-bgposition="center center"
                                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
-                                         class="rev-slidebg" data-no-retina onclick="location.href='/banks'"/>
+                                         class="rev-slidebg" data-no-retina/>
 
                                     <!-- LAYER NR. 1 -->
                                     <div class="tp-caption s1-l1 tp-resizeme"
@@ -44,7 +44,8 @@ MainAsset::register($this);
                                          data-splitout="none"
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
-                                         style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;"  onclick="location.href='/banks'">
+                                         onclick="location.href='/banks'"
+                                         style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
                                         Официальные агенты банка
                                     </div>
 
@@ -63,6 +64,7 @@ MainAsset::register($this);
                                          data-splitout="none"
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
+                                         onclick="location.href='/banks'"
                                          style="font-size:30px;color:#fff;font-family:poppins;font-weight:700;letter-spacing:.3px;">
                                         <span>Откроем счет за 2 дня</span>
                                     </div>
@@ -82,6 +84,7 @@ MainAsset::register($this);
                                        data-splitout="none"
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
+                                       onclick="location.href='/banks'"
                                        style="font-size:16px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
                                         Широкий выбор: более 30 банков
                                     </p>
@@ -93,7 +96,7 @@ MainAsset::register($this);
                                     data-param7="" data-param8="" data-param9="" data-param10=""
                                     data-title="Банковский счет за 2 дня">
                                     <!-- MAIN IMAGE -->
-                                    <img src="/uploads/theme_villa/slider2.jpg" alt="" data-bgposition="center center"
+                                    <img src="/uploads/theme_villa/slider2-3.jpg" alt="" data-bgposition="center center"
                                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
                                          class="rev-slidebg" data-no-retina/>
 
@@ -199,7 +202,7 @@ MainAsset::register($this);
                                     data-param7="" data-param8="" data-param9="" data-param10=""
                                     data-title="Оффшор за 449 USD">
                                     <!-- MAIN IMAGE -->
-                                    <img src="/uploads/theme_villa/slider1.jpg" alt="" data-bgposition="center center"
+                                    <img src="/uploads/theme_villa/slider1-2.jpg" alt="" data-bgposition="center center"
                                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
                                          class="rev-slidebg" data-no-retina/>
 
@@ -267,7 +270,7 @@ MainAsset::register($this);
                                     data-param7="" data-param8="" data-param9="" data-param10=""
                                     data-title="Лицензия для Forex">
                                     <!-- MAIN IMAGE -->
-                                    <img src="/uploads/theme_villa/slider2.jpg" alt="" data-bgposition="center center"
+                                    <img src="/uploads/theme_villa/slider2-3.jpg" alt="" data-bgposition="center center"
                                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
                                          class="rev-slidebg" data-no-retina/>
 
@@ -442,7 +445,7 @@ MainAsset::register($this);
 
 <section>
     <div class="block grayish high-opacity">
-        <div class="fixed-bg" style="background: url(/uploads/theme_villa/parallax1.jpg);"></div>
+        <div class="fixed-bg"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -770,7 +773,7 @@ MainAsset::register($this);
 <section>
     <div class="block no-padding blackish high2-opacity">
         <div class="parallax" data-velocity="-.4"
-             style="background-image: url(/uploads/theme_villa/parallax4.jpg);"></div>
+             style="background-image: url(/uploads/theme_villa/parallax4-3.jpg);"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
