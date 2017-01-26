@@ -27,7 +27,7 @@ MainAsset::register($this);
                                     <!-- MAIN IMAGE -->
                                     <img src="/uploads/theme_villa/slider1.jpg" alt="" data-bgposition="center center"
                                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
-                                         class="rev-slidebg" data-no-retina/>
+                                         class="rev-slidebg" data-no-retina onclick="location.href='/banks'"/>
 
                                     <!-- LAYER NR. 1 -->
                                     <div class="tp-caption s1-l1 tp-resizeme"
@@ -44,7 +44,7 @@ MainAsset::register($this);
                                          data-splitout="none"
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
-                                         style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
+                                         style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;"  onclick="location.href='/banks'">
                                         Официальные агенты банка
                                     </div>
 
