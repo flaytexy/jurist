@@ -57,7 +57,7 @@ class BanksController extends \yii\web\Controller
         if(empty($popularly)){ $popularly  = new Popularly; }
         //$popularly->getInherit($news, $popularly);
         $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id;
-        $popularly->slug = 'news/'.$banks->slug;
+        $popularly->slug = 'banks/'.$banks->slug;
         $popularly->title = $banks->title;
         $popularly->item_id = $banks->model->bank_id;
         $popularly->image = $banks->image;

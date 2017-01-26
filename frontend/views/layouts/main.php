@@ -8,7 +8,7 @@ use yii\widgets\Menu;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$popularly = \frontend\models\Popularly::find()->limit(6)->all();
+$popularly = \frontend\models\Popularly::find()->limit(12)->all();
 
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
