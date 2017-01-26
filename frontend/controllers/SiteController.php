@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\Popularly;
 use frontend\modules\banks\api\Banks;
 use frontend\modules\page\api\Page;
 use Yii;
@@ -76,16 +77,23 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $page = \frontend\modules\page\api\Page::get('page-main');
-        $this->view->title = $page->seo('title', $page->model->title);
-        //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
-        $this->view->registerMetaTag([
-            'name' => 'title',
-            'content' => $page->seo('title', '')
-        ]);
-        $this->view->registerMetaTag([
-            'name' => 'description',
-            'content' => $page->seo('description', '')
-        ]);
+        if($page){
+            $this->view->title = $page->seo('title', $page->model->title);
+            //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
+            $this->view->registerMetaTag([
+                'name' => 'title',
+                'content' => $page->seo('title', '')
+            ]);
+            $this->view->registerMetaTag([
+                'name' => 'keywords',
+                'content' => $page->seo('keywords', '')
+            ]);
+            $this->view->registerMetaTag([
+                'name' => 'description',
+                'content' => $page->seo('description', '')
+            ]);
+        }
+
 
         $this->view->registerCssFile(Yii::$app->request->baseUrl . '/css/revicons/revolution.css', ['depends' => ['yii\bootstrap\BootstrapAsset']]);
         /*        $this->view->registerJsFile(

@@ -5,6 +5,10 @@
 //use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
+use yii\helpers\Html;
+use yii\helpers\Url;
+
+$popularly = \frontend\models\Popularly::find()->limit(6)->all();
 
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
@@ -131,12 +135,15 @@ use yii\widgets\Menu;
                         </div>
                         <div class="instagram-gallery">
                             <ul>
-                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram1.jpg" alt="" /></a></li>
-                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram2.jpg" alt="" /></a></li>
-                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram3.jpg" alt="" /></a></li>
-                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram4.jpg" alt="" /></a></li>
-                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram5.jpg" alt="" /></a></li>
-                                <li><a href="#" title=""><img src="/uploads/theme_villa/instagram6.jpg" alt="" /></a></li>
+                                <?php foreach ($popularly as $item) : ?>
+                                    <?php if(!empty($item->image)): ?>
+                                        <li>
+                                            <a href="<?= Url::to([$item->slug]) ?>">
+                                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 150, 150)) ?>
+                                            </a>
+                                        </li>
+                                    <? endif; ?>
+                                <? endforeach; ?>
                             </ul>
                         </div><!-- Instagram Gallery -->
                     </div><!-- Instagram -->

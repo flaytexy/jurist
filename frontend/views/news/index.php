@@ -5,7 +5,7 @@ use yii\helpers\Url;
 
 $page = Page::get('page-news');
 
-$this->title = $page->seo('title', $page->model->title);
+if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
 ?>
 
@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             <?php foreach ($news as $item) : ?>
                                 <div class="col-md-6">
                                     <div class="recentnew-post">
-                                        <a href="<?= Url::to([$typeTitle.'/'.$item->slug]) ?>" class="">
+                                        <a href="<?= Url::to(['news/'.$item->slug]) ?>" class="">
                                             <?= Html::img($item->thumb(500, 375)) ?>
                                         </a>
                                         <div class="recentnew-detail">

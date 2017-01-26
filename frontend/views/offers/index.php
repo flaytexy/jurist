@@ -9,7 +9,7 @@ use frontend\helpers\Image;
 MapsAsset::register($this);
 $page = Page::get('page-offers');
 
-$this->title = $page->seo('title', $page->model->title);
+if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
 
 ?>

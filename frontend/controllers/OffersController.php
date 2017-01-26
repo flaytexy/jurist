@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 use frontend\models\Packet;
+use frontend\models\Popularly;
 use frontend\modules\offers\api\Offers;
 //use yii\db\Query;
 
@@ -109,6 +110,18 @@ class OffersController extends \yii\web\Controller
                 }
             }
         }
+
+
+        $popularly  = Popularly::findOne(['class' => \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id]);
+        if(empty($popularly)){ $popularly  = new Popularly; }
+        //$popularly->getInherit($news, $popularly);
+        $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id;
+        $popularly->slug = 'offers/'.$offers->slug;
+        $popularly->title = $offers->title;
+        $popularly->item_id = $offers->model->offer_id;
+        $popularly->image = $offers->image;
+        $popularly->time = time();
+        $popularly->save();
 
         return $this->render('view', [
             'offers' => $offers,

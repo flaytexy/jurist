@@ -4,7 +4,7 @@ use frontend\modules\page\api\Page;
 
 $page = Page::get('page-guestbook');
 
-$this->title = $page->seo('title', $page->model->title);
+if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
 ?>
 <h1><?= $page->seo('h1', $page->title) ?></h1>

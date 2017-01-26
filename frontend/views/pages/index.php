@@ -6,7 +6,7 @@ use frontend\helpers\Image;
 
 $page = Page::get('page-'.$typeTitle);
 
-$this->title = $page->seo('title', $page->model->title);
+if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
 
 ?>

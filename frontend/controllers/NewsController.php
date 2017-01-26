@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\Popularly;
 use frontend\modules\offers\models\Offers;
 use frontend\modules\page\api\Page;
 use frontend\modules\page\api\PageObject;
@@ -109,6 +110,17 @@ class NewsController extends \yii\web\Controller
         if(!$news){
             throw new \yii\web\NotFoundHttpException('Page Houston, we have a problem.');
         }
+
+        $popularly  = Popularly::findOne(['class' => \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id]);
+        if(empty($popularly)){ $popularly  = new Popularly; }
+        //$popularly->getInherit($news, $popularly);
+        $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id;
+        $popularly->slug = 'news/'.$news->slug;
+        $popularly->title = $news->title;
+        $popularly->item_id = $news->model->page_id;
+        $popularly->image = $news->image;
+        $popularly->time = time();
+        $popularly->save();
 
         return $this->render('view', [
             'news' => $news,

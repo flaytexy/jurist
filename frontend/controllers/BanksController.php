@@ -1,5 +1,6 @@
 <?php
 namespace frontend\controllers;
+use frontend\models\Popularly;
 use frontend\modules\banks\api\Banks;
 use yii\data\Pagination;
 use yii\widgets\LinkPager;
@@ -51,6 +52,17 @@ class BanksController extends \yii\web\Controller
         $this->getView()->registerJsFile(\Yii::$app->request->BaseUrl . '/js/site.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
         $banks = Banks::get($slug);
+
+        $popularly  = Popularly::findOne(['class' => \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id]);
+        if(empty($popularly)){ $popularly  = new Popularly; }
+        //$popularly->getInherit($news, $popularly);
+        $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id;
+        $popularly->slug = 'news/'.$banks->slug;
+        $popularly->title = $banks->title;
+        $popularly->item_id = $banks->model->bank_id;
+        $popularly->image = $banks->image;
+        $popularly->time = time();
+        $popularly->save();
 
         return $this->render('view', [
             'banks' => $banks

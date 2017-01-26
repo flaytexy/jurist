@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\Popularly;
 use frontend\modules\page\api\Page;
 
 class PagesController extends \yii\web\Controller
@@ -29,6 +30,18 @@ class PagesController extends \yii\web\Controller
         }
 
         $pageParent = \frontend\modules\page\models\Page::findOne(['slug'=>'page-'.$parts[1]]);
+
+
+        $popularly  = Popularly::findOne(['class' => \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id.$parts[1]]);
+        if(empty($popularly)){ $popularly  = new Popularly; }
+        //$popularly->getInherit($news, $popularly);
+        $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id.$parts[1];
+        $popularly->slug = $parts[1].'/'.$pages->slug;
+        $popularly->title = $pages->title;
+        $popularly->item_id = $pages->model->page_id;
+        $popularly->image = $pages->image;
+        $popularly->time = time();
+        $popularly->save();
 
         return $this->render('view', [
             'pages' => $pages,

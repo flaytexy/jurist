@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 $page = Page::get('page-articles');
 
-$this->title = $page->seo('title', $page->model->title);
+if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
 
 function renderNode($node){
