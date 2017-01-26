@@ -15,13 +15,14 @@ class AppAsset extends AssetBundle
     public $css = [
         /*'css/bootstrap.css',*/
         /*'css/icons.css',*/
-        'css/font-awesome/css/font-awesome.min.css',
-        'css/flaticon.css?v=5',
-        'js/fancybox/jquery.fancybox.css',
-        'css/datepicker.css',
-        'css/select2.css',
-        'css/perfect-scrollbar.css',
-        'css/owl.css',
+        ///'css/font-awesome/css/font-awesome.min.css',
+        ///'css/flaticon.css?v=5',
+        ///'js/fancybox/jquery.fancybox.css',
+        ///'css/datepicker.css',
+        ///'css/select2.css',
+        ///'css/perfect-scrollbar.css',
+        //'css/owl.css',
+        'css/prefix.css',
         'css/styles.css?v=9',
         //'css/responsive.css',
         //'css/color.css'

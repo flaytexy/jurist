@@ -6,6 +6,7 @@ class MainAsset extends \yii\web\AssetBundle
     public $sourcePath = '@frontend/assets/main';
     public $css = [
         //'css/main.css',
+        //'css/perfect-scrollbar.css'
     ];
     public $js = [
         'js/revolution/jquery.themepunch.tools.min.js',
