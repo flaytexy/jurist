@@ -8,8 +8,23 @@ use frontend\assets\TablesAsset;
 TablesAsset::register($this);
 
 $page = Page::get('page-banks');
+if($page){
+    $this->title = $page->seo('title', $page->model->title);
+    //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
+    $this->registerMetaTag([
+        'name' => 'title',
+        'content' => $page->seo('title', '')
+    ]);
+    $this->registerMetaTag([
+        'name' => 'keywords',
+        'content' => $page->seo('keywords', '')
+    ]);
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => $page->seo('description', '')
+    ]);
+}
 
-if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
 ?>
 <div class="container">

@@ -22,9 +22,10 @@ class AppAsset extends AssetBundle
         ///'css/select2.css',
         ///'css/perfect-scrollbar.css',
         //'css/owl.css',
-        'css/opensans.css',
-        'css/prefix.min.css',
-        'css/styles.css?v=9',
+        ///'css/opensans.css',
+        'css/revolution.css',
+        'css/prefix.min.css?v=10',
+        'css/styles.css?v=10',
         //'css/responsive.css',
         //'css/color.css'
     ];

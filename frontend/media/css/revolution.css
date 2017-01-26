@@ -14,11 +14,8 @@ website:   	http://www.themepunch.com
 
 @font-face {
 	font-family: 'revicons';
-	src: url('revicons/revicons.eot?5510888');
-	src: url('revicons/revicons.eot?5510888#iefix') format('embedded-opentype'),
-	url('revicons/revicons.woff?5510888') format('woff'),
-	url('revicons/revicons.ttf?5510888') format('truetype'),
-	url('revicons/revicons.svg?5510888#revicons') format('svg');
+	src: url('../fonts/revicons/revicons.woff?5510888') format('woff'),
+	url('../fonts/revicons/revicons.ttf?5510888') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
