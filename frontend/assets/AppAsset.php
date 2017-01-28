@@ -23,29 +23,33 @@ class AppAsset extends AssetBundle
         ///'css/perfect-scrollbar.css',
         //'css/owl.css',
         ///'css/opensans.css',
+        //'css/table.css',
         'css/revolution.css',
-        'css/prefix.min.css?v=10',
-        'css/styles.css?v=10',
+        'css/prefix.css?v=12',
+        'css/styles.css?v=12',
         //'css/responsive.css',
         //'css/color.css'
     ];
     public $js = [
         'js/bootstrap-datepicker.js',
         'js/fancybox/jquery.fancybox.pack.js',
+
         'js/owl.carousel.min.js',
         'js/select2.full.js',
+
         'js/scrollupbar.js',
         'js/perfect-scrollbar.js',
         'js/perfect-scrollbar.jquery.js',
         'js/jquery.scrolly.js',
+
         'js/all.js',
-
-
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
-        'js/scripts.js'
+        'js/scripts.js?v=2'
     ];
     public $depends = [
         'yii\web\JqueryAsset',
+        'yii\jui\JuiAsset',
+        //'frontend\assets\FoundationTableAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
         'yii\web\YiiAsset',

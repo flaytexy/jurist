@@ -34,5 +34,37 @@ $(function(){
         //$('body').scrollTo('#' + $(this).attr('data-show-block'));
     });
 
+/*dasdasds a*/
+    $( "a[data-reveal-id]" ).on('click', function () {
+
+        var curModalSelector = '#' + $(this).attr('data-reveal-id');
+        var curModal = $(curModalSelector);
+
+        curModal.dialog({
+            title: "",
+            modal: true,
+            width: "auto",
+            maxHeight: "700px",
+            closeText: "X",
+            // maxWidth: 660, // This won't work
+            create: function( event, ui ) {
+                // Set maxWidth
+                $(this).css("maxWidth", "1000px");
+
+            },
+            open: function (event, ui) {
+                $('.ui-widget-overlay').addClass('custom-overlay');
+                //$(this).parent().children().children('.ui-dialog-titlebar-close').hide();
+            },
+            close: function() {
+                $('.ui-widget-overlay').removeClass('custom-overlay');
+            }
+        });
+
+        return false;
+    });
+
+
+
     console.log('Its_End_Script');
 });
