@@ -25,9 +25,9 @@ MainAsset::register($this);
                                     data-param7="" data-param8="" data-param9="" data-param10=""
                                     data-title="Более 30 банков">
                                     <!-- MAIN IMAGE -->
-                                    <img src="/uploads/theme_villa/slider1-2.jpg" alt="" data-bgposition="center center"
+                                    <img src="/uploads/theme_villa/slider1-2.jpg" alt="Открытие счетов в банках Прибалтики и Кипра" data-bgposition="center center"
                                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
-                                         class="rev-slidebg" data-no-retina/>
+                                         class="rev-slidebg" data-no-retina title="Открытие счетов в банках Прибалтики и Кипра"/>
 
                                     <!-- LAYER NR. 1 -->
                                     <div class="tp-caption s1-l1 tp-resizeme"
