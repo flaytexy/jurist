@@ -35,7 +35,19 @@ $module = $this->context->module->id;
 
 <?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
 
+<?= $form->field($model, 'location_zone_id')->dropDownList([
+    '1' => 'Азия',
+    '2' => 'Европа',
+    '3' => 'Америка',
+    '4' => 'Африка',
+    '5' => 'Островная',
+]) ?>
 
+<hr/>
+<?php if ($model->image_flag) : ?>
+    <img src="<?= Image::thumb($model->image_flag, 240) ?>">
+<?php endif;  ?>
+<?= $form->field($model, 'image_flag')->fileInput() ?>
 <hr/>
 
 <?php if ($this->context->module->settings['enableThumb']) : ?>
