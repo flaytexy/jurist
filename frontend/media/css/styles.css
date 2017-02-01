@@ -728,6 +728,102 @@ header {
     opacity: 1;
     visibility: visible;
 }
+/*================ Switcher ================*/
+/* Switcher */
+.switcher {
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Lucida Sans Unicode","Lucida Grande",sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.switcher .content {
+    -moz-user-select: none;
+    position: relative;
+}
+.switcher .text {
+    display: none;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+}
+.switcher.is-disabled {
+    opacity: 0.4;
+}
+.switcher.default {
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    line-height: 26px;
+    min-width: 80px;
+    padding: 2px;
+    transition: background-color 0.3s ease 0s;
+}
+.switcher.default input {
+    display: none;
+}
+.switcher.default .slider {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 1px #dfdfdf;
+    height: 26px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateX(0%);
+    transition: transform 0.3s ease 0s;
+    width: 50%;
+    z-index: 2;
+}
+.switcher.default .text {
+    display: inline-block;
+    width: 50%;
+}
+.switcher.default .textYes {
+    color: #fff;
+    float: left;
+}
+.switcher.default .textNo {
+    color: #9f9f9f;
+    float: right;
+}
+.switcher.default.is-active {
+    background-color: #519b20;
+}
+.switcher.default.is-active .slider {
+    transform: translateX(100%);
+}
+.switcher.short {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.switcher.short input {
+    display: none;
+}
+.switcher.short .content {
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    height: 18px;
+    padding: 0;
+    width: 18px;
+}
+.switcher.short .slider {
+    background-color: #519b20;
+    border-radius: 50%;
+    height: 12px;
+    margin: 3px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.2s ease 0s;
+    width: 12px;
+}
+.switcher.short.is-active .slider {
+    opacity: 1;
+    transform: scale(1);
+}
+
 
 /*================ Sticky Header ================*/
 header.stick {
@@ -5987,6 +6083,29 @@ ul.faq li.a blockquote {
     margin-left: 10px;
 }
 
+/* banks */
+#banks2 .switcher {
+    background: #b3b8c3 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 11px;
+    height: 20px;
+    min-width: 40px;
+    padding: 1px;
+}
+#banks2 .switcher .slider {
+    background: #f0f3f3 none repeat scroll 0 0;
+    border-radius: 10px;
+    box-shadow: none;
+    height: 18px;
+}
+#banks2 .switcher.is-active {
+    background: #27b6af none repeat scroll 0 0;
+}
+#banks2 .switcher .textNo {
+    color: #fff;
+}
 
 .reveal-modal-bg {
     position: fixed;

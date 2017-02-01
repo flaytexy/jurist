@@ -189,6 +189,7 @@ $config = [
                 'news/page/<page:\d+>' => 'news/index',
                 'news/<slug:[\w-]+>' => 'news/view',
                 //'banks/index' => 'banks/index',
+                'banks/new' => 'banks/new',
                 'banks/<slug:[\w-]+>' => 'banks/view',
                 //'fonds' => 'page/index',
                 //'processing/<slug:[\w-]+>' => 'processing/view',
