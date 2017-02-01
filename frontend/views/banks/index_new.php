@@ -106,7 +106,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             </td>
                                             <td>
                                                 <p class="f">Сайт банка</p>
-                                                <div>www.raifaiisaasddsiid.com</div>
+                                                <div>raifaiissddsiid.com</div>
                                                 <!--<div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div>-->
                                             </td>
                                             <td>
