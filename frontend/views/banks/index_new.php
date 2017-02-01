@@ -5,6 +5,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 use frontend\assets\TablesAsset;
+
 TablesAsset::register($this);
 
 use frontend\assets\SwitcherAsset;
@@ -39,8 +40,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
     <section id="banks2" class="scroll-container">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row top30">
+                <div class="col-md-4">
                     <ul class="list-inline" id="sw-list" >
                         <li>Корпоративный счет</li>
                         <li class="">
@@ -50,6 +51,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         </li>
                         <li>Личный счет</li>
                     </ul>
+
+                </div>
+                <div class="col-md-4">
                     <ul class="list-inline" id="sw-list" >
                         <li>Персональное присутствие</li>
                         <li class="">
@@ -59,12 +63,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-6">
-
-                </div>
             </div>
-            <div class="row">
+
+            <div class="row bank-new-list">
                 <div class="col-md-12" id="switchAllBanks">
+
                     <h4>Africa</h4>
                     <?php foreach ($banksList as $item) : ?>
                         <table class="table border-none <?=$item->model->type_id?>_<?=$item->model->personal?>
@@ -77,48 +80,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?>
                                     </h6>
                                     <div class="no-margin inl-block">
-                                        <div class="hide-for-small-down mar-rgh-10 left sprite-flag1 mauritius">
+                                        <div class="hide-for-small-down">
                                             <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"><?= Html::img($item->thumb(70, 48)) ?></a>
                                         </div>
-                                        <span class="left" style="margin: 2px 0 0 0"><?= $item->model->location_title ?></span>
-                                    </div>
-                                    <p class="clr-green show-for-medium-down">
-                                        <a data-reveal-id="bank_details_<?= $item->slug ?>"
-                                           class="fnt-size-15 clr-green fnt-oswald-light">Подробно<?php /*Yii::t('easyii/orders', 'Show Details') */?></a>
-                                    </p>
-
-
-                                    <div id="bank_details_<?= $item->slug ?>" class="reveal-modal" data-reveal="">
-                                        <h4 class="mar-btm-20"><?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?></h4>
-                                        <div class="row">
-                                            <div class="col-md-4 col-sm-4 columnMin">
-                                                <p class="f">﻿Личный счет</p>
-                                                <div class="green_no"></div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 columnMin">
-                                                <p class="f">Корпоративный счет</p>
-                                                <div class="green_no"></div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 columnMin">
-                                                <p class="f">﻿Открытие счета без личного присутствия</p>
-                                                <div class="green_no"></div>
-                                            </div>
+                                        <div class="top10">
+                                            <?= Html::img(\frontend\helpers\Image::thumb($item->model->image_flag, 32, 18)) ?>
+                                            <span class="left tBankLi" style="margin: 2px 0 0 0"><?= $item->model->location_title ?></span>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-4 col-sm-4 columnMin">
-                                                <p class="f">Дебетовые карты</p>
-                                                <div class="green_yes"></div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 columnMin">
-                                                <p class="f">Кредитные карты</p>
-                                                <div class="green_no"></div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 columnMin">
-                                                <p class="f">Срок</p>
-                                                <div class="green_yes"><?= $item->date ?></div>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </td>
                                 <td class="hidden-xs hidden-sm hidden-md  col-lg-8">
@@ -126,27 +94,29 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <tr>
                                             <td>
                                                 <p class="f">﻿Личный счет</p>
-                                                <div class="text-center green_yes">NO</div>
+                                                <?php if($item->model->type_id===2): ?><div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div><? else: ?><div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div><? endif; ?>
                                             </td>
                                             <td>
                                                 <p class="f">Корпоративный счет</p>
-                                                <div class="green_yes"></div>
+                                                <?php if($item->model->type_id===1): ?><div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div><? else: ?><div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div><? endif; ?>
                                             </td>
                                             <td>
-                                                <p class="f">﻿Открытие счета без личного присутствия</p>
-                                                <div class="green_no"></div>
+                                                <p class="f" title="Открытие счета без личного присутствия">﻿Cчета без присутствия</p>
+                                                <?php if($item->model->personal===1): ?><div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div><? else: ?><div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div><? endif; ?>
                                             </td>
                                             <td>
-                                                <p class="f">Кредитные карты</p>
-                                                <div class="green_no"></div>
+                                                <p class="f">Сайт банка</p>
+                                                <div>www.raifaiisaasddsiid.com</div>
+                                                <!--<div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div>-->
                                             </td>
                                             <td>
-                                                <p class="f">Кредитные карты</p>
-                                                <div class="green_yes"></div>
+                                                <p class="f">Минимальный депозит</p>
+
+                                                <!--   <div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div>-->
                                             </td>
                                             <td>
                                                 <p class="f">Срок</p>
-                                                <div class="green_no"></div>
+                                                <div class="tBankDays tBankOter"><p><?= $item->how_days ?></p></div>
                                             </td>
                                             <!--<td>
                                                 <p class="">Initial Deposit</p>
@@ -165,7 +135,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     </h6>
                                     <h6 class="text-center">$<?= $item->price ?></h6>
                                     <div class="text-center" style="height:35px;">
-                                        <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>">Детальней</a>
+                                        <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>" class="btn btn-success">Заказать</a>
                                     </div>
                                 </td>
                             </tr>
