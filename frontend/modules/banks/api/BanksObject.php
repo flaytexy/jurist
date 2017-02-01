@@ -14,6 +14,8 @@ class BanksObject extends \frontend\components\ApiObject
     public $views;
     public $time;
 
+    public $image_flag;
+    public $how_days;
     public $properties;
     public $pos;
 

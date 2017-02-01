@@ -59,6 +59,14 @@ class AController extends Controller
                     else{
                         $model->image = '';
                     }
+
+                    $model->image_flag = UploadedFile::getInstance($model, 'image_flag');
+                    if($model->image_flag && $model->validate(['image_flag'])){
+                        $model->image_flag = Image::upload($model->image_flag, 'banks');
+                    }
+                    else{
+                        $model->image_flag = '';
+                    }
                 }
 
                 if($model->save()){
@@ -102,7 +110,17 @@ class AController extends Controller
                     else{
                         $model->image = $model->oldAttributes['image'];
                     }
+
+                    $model->image_flag = UploadedFile::getInstance($model, 'image_flag');
+
+                    if($model->image_flag && $model->validate(['image_flag'])){
+                        $model->image_flag = Image::upload($model->image_flag, 'banks');
+                    }
+                    else{
+                        $model->image_flag = $model->oldAttributes['image_flag'];
+                    }
                 }
+
 
                 if($model->save()){
                     $this->flash('success', Yii::t('easyii/banks', 'Banks updated'));

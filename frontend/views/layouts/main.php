@@ -138,7 +138,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
  <!--           <li><i class="fa fa-phone"></i> +79251754417</li>-->
         </ul>
     </div><!-- Responsive Header -->
-    <div class="">
+    <div class="row">
         <?php if($this->context->id != 'site') : ?>
             <div class="pagetop-sec">
                 <div class="fixed-bg2" style="background-image: url('/uploads/theme_villa/pagetop-bg.jpg');"></div>

@@ -24,7 +24,7 @@ class Banks extends \frontend\components\ActiveRecord
     public function rules()
     {
         return [
-            [['text', 'title'], 'required'],
+            [['text', 'title', 'location_zone_id'], 'required'],
             ['pre_options', 'string', 'max' => 128],
             [['title', 'short', 'text'], 'trim'],
             ['title', 'string', 'max' => 128],
@@ -36,7 +36,14 @@ class Banks extends \frontend\components\ActiveRecord
             [['price'], 'number', 'max' => 100000000],
             ['how_days', 'integer', 'max' => 999],
             ['coordinates', 'string', 'max' => 64],
-            ['image', 'image'],
+            ['image', 'image', 'extensions' => 'png, jpg, gif'],
+
+            ['image_flag', 'image', 'extensions' => 'png, jpg, gif',
+                'minWidth' => 100, 'maxWidth' => 1200,
+                'minHeight' => 100, 'maxHeight' => 1200,
+            ],
+            ['location_zone_id', 'integer', 'max' => 1],
+
             [['views', 'time', 'status', 'type_id'], 'integer'],
             ['time', 'default', 'value' => time()],
             ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
@@ -109,6 +116,10 @@ class Banks extends \frontend\components\ActiveRecord
 
         if($this->image){
             @unlink(Yii::getAlias('@webroot').$this->image);
+        }
+
+        if($this->image_flag){
+            @unlink(Yii::getAlias('@webroot').$this->image_flag);
         }
 
         foreach($this->getPhotos()->all() as $photo){

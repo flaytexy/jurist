@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <a href="<?= Url::to(['news/'.$item->slug]) ?>" class="">
                                             <?= Html::img($item->thumb(500, 375)) ?>
                                         </a>
-                                        <div class="recentnew-detail">
+                                        <div class="recentnew-detail2">
                                             <h4>
                                                 <?= Html::a($item->title, ['news/view', 'slug' => $item->slug]) ?>
                                             </h4>

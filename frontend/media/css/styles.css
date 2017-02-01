@@ -6151,6 +6151,32 @@ ul.faq li.a blockquote {
 .tBankLi{
 
 }
+.tBankLi td {
+    width: 16%;
+}
+.tBankLi td > p {
+    min-height: 40px;
+    text-align: center;
+}
+.tBankLi td > div {
+    text-align: center;
+}
+.tBankLi .green_yes,.tBankLi .green_no  {
+    color: rgba(126, 195, 15, 0.7);
+    font-size: 31px;
+    text-align: center;
+}
+
+.bank-new-list td > h6 {
+    font-size: 18px;
+}
+.tBankDays {
+    min-height: 44px;
+}
+.tBankDays p {
+   padding: 10px;
+   font-weight: 600;
+}
 
 @media (max-width: 1200px) {
     .search-luxuriousvilla.overlape {
