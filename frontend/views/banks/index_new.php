@@ -57,7 +57,6 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 <input  value="0" class="switch" data-act-class="byPersonal" name="switchName" type="checkbox" />
                             </div>
                         </li>
-                        <li>Личный счет</li>
                     </ul>
                 </div>
                 <div class="col-md-6">
