@@ -58,10 +58,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 <?= $item->model->location_title ?>
                             </td>
                             <td>
-
+                                <?= $item->model->website ?>
                             </td>
                             <td>
-
+                                <?= $item->model->min_deposit ?>
                             </td>
                             <td>
                                 <?= $item->model->how_days ?>

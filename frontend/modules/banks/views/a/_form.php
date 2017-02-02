@@ -33,6 +33,10 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'price') ?>
 <?= $form->field($model, 'how_days') ?>
 
+<?= $form->field($model, 'website') ?>
+<?= $form->field($model, 'min_deposit') ?>
+
+
 <?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
 
 <?= $form->field($model, 'location_zone_id')->dropDownList([

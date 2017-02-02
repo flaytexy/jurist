@@ -6161,6 +6161,11 @@ ul.faq li.a blockquote {
 .tBankLi td > div {
     text-align: center;
 }
+.tBankLi td .hegg {
+    min-height: 40px;
+    text-align: center;
+    padding: 12px 0;
+}
 .tBankLi .green_yes,.tBankLi .green_no  {
     color: rgba(126, 195, 15, 0.7);
     font-size: 31px;

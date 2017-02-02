@@ -25,19 +25,15 @@ class Banks extends \frontend\components\ActiveRecord
     {
         return [
             [['text', 'title', 'location_zone_id'], 'required'],
-            ['pre_options', 'string', 'max' => 128],
+            [['pre_options','title','website','location_title'], 'string', 'max' => 128],
             [['title', 'short', 'text'], 'trim'],
-            ['title', 'string', 'max' => 128],
-            ['location_title', 'string', 'max' => 128],
-            ['pos', 'string', 'max' => 64],
+            [['pos', 'coordinates'], 'string', 'max' => 64],
             ['to_main', 'integer', 'max' => 1],
             ['personal', 'integer', 'max' => 1],
             [['price'], 'required'],
-            [['price'], 'number', 'max' => 100000000],
+            [['price', 'min_deposit'], 'number', 'max' => 100000000],
             ['how_days', 'integer', 'max' => 999],
-            ['coordinates', 'string', 'max' => 64],
             ['image', 'image', 'extensions' => 'png, jpg, gif'],
-
             ['image_flag', 'image', 'extensions' => 'png, jpg, gif',
                 'minWidth' => 100, 'maxWidth' => 1200,
                 'minHeight' => 100, 'maxHeight' => 1200,
@@ -68,7 +64,9 @@ class Banks extends \frontend\components\ActiveRecord
             'time' => Yii::t('easyii', 'Date'),
             'slug' => Yii::t('easyii', 'Slug'),
             'optionNames' => Yii::t('easyii', 'Options'),
-            'tagNames' => Yii::t('easyii', 'Tags')
+            'tagNames' => Yii::t('easyii', 'Tags'),
+            'location_title' => Yii::t('easyii/banks', 'Страна'),
+
         ];
     }
 
@@ -97,6 +95,7 @@ class Banks extends \frontend\components\ActiveRecord
     {
         if (parent::beforeSave($insert)) {
             $this->price = str_replace(",", ".", $this->price);
+            $this->min_deposit = str_replace(",", ".", $this->min_deposit);
 
             $settings = Yii::$app->getModule('admin')->activeModules['banks']->settings;
             $this->short = StringHelper::truncate($settings['enableShort'] ? $this->short : strip_tags($this->text), $settings['shortMaxLength']);

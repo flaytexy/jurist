@@ -106,12 +106,12 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             </td>
                                             <td>
                                                 <p class="f">Сайт банка</p>
-                                                <div>raifaiissddsiid.com</div>
+                                                <div class="hegg"><?= $item->model->website ?></div>
                                                 <!--<div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div>-->
                                             </td>
                                             <td>
                                                 <p class="f">Минимальный депозит</p>
-
+                                                <div class="hegg"><? if($item->model->min_deposit>0): ?><?= $item->model->min_deposit ?><? else: ?><div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div><? endif ?></div>
                                                 <!--   <div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div>-->
                                             </td>
                                             <td>
@@ -173,10 +173,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <?= $item->model->location_title ?>
                                 </td>
                                 <td>
-
+                                    <?= $item->model->website ?>
                                 </td>
                                 <td>
-
+                                    <? if($item->model->min_deposit>0): ?><?= $item->model->min_deposit ?><? endif ?>
                                 </td>
                                 <td>
                                     <?= $item->model->how_days ?>
