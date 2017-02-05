@@ -9,6 +9,7 @@ use frontend\assets\TablesAsset;
 TablesAsset::register($this);
 
 use frontend\assets\SwitcherAsset;
+
 SwitcherAsset::register($this);
 
 
@@ -41,28 +42,43 @@ $this->params['breadcrumbs'][] = $page->model->title;
     <section id="banks2" class="scroll-container">
         <div class="container">
             <div class="row top30">
-                <div class="col-md-4">
-                    <ul class="list-inline" id="sw-list" >
-                        <li>Корпоративный счет</li>
-                        <li class="">
-                            <div class="switcher">
-                                <input  value="0" class="switch" data-act-class="byScore" name="switchName" type="checkbox" />
-                            </div>
-                        </li>
-                        <li>Личный счет</li>
-                    </ul>
+                <form>
+                    <div class="col-md-4">
+                        <ul class="list-inline" id="sw-list">
+                            <li>Корпоративный счет</li>
+                            <li class="">
+                                <div class="switcher">
+                                    <input value="0" class="switch" js-filter="js-filter-type-id" name="switchName"
+                                           type="checkbox"/>
+                                </div>
+                            </li>
+                            <li>Личный счет</li>
+                        </ul>
 
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline" id="sw-list" >
-                        <li>Персональное присутствие</li>
-                        <li class="">
-                            <div class="switcher">
-                                <input  value="0" class="switch" data-act-class="byPersonal" name="switchName" type="checkbox" />
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline" id="sw-list">
+                            <li>Персональное присутствие</li>
+                            <li class="">
+                                <div class="switcher">
+                                    <input value="0" class="switch" js-filter="js-filter-personal" name="switchName2"
+                                           type="checkbox"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline" id="sw-list">
+                            <li>Минимальный депозит</li>
+                            <li class="">
+                                <div class="switcher">
+                                    <input value="0" class="switch" js-filter="js-filter-min-deposit" js-filter-run-first="0" name="switchName3"
+                                           type="checkbox"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
             </div>
 
             <div class="row bank-new-list">
@@ -70,22 +86,26 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                     <h4>Africa</h4>
                     <?php foreach ($banksList as $item) : ?>
-                        <table class="table border-none <?=$item->model->type_id?>_<?=$item->model->personal?>
-                        <? if($item->model->type_id===1): ?> byScore <? else: ?> byScoreOff <? endif; ?>
-                        <? if($item->model->personal): ?> byPersonal <? else: ?> byPersonalOff <? endif; ?>
-                        "><!--  brd-bottom-none -->
+                        <table
+                            class="table border-none <?= $item->model->type_id ?>_<?= $item->model->personal ?>_<?= $item->model->min_deposit ?>"
+                            <? if ($item->model->type_id !== 1): ?> js-filter-type-id="1" <? else: ?> js-filter-type-id="0" <? endif; ?>
+                            <? if ($item->model->personal === 1): ?> js-filter-personal="1" <? else: ?> js-filter-personal="0" <? endif; ?>
+                            <? if ($item->model->min_deposit > 0): ?> js-filter-min-deposit="1" <? else: ?> js-filter-min-deposit="0" <? endif; ?>
+                            >
                             <tr>
                                 <td class="col-md-8 col-lg-2">
                                     <h6>
                                         <?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?>
                                     </h6>
+
                                     <div class="no-margin inl-block">
                                         <div class="hide-for-small-down">
                                             <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"><?= Html::img($item->thumb(70, 48)) ?></a>
                                         </div>
                                         <div class="top10">
                                             <?= Html::img(\frontend\helpers\Image::thumb($item->model->image_flag, 32, 18)) ?>
-                                            <span class="left tBankLi" style="margin: 2px 0 0 0"><?= $item->model->location_title ?></span>
+                                            <span class="left tBankLi"
+                                                  style="margin: 2px 0 0 0"><?= $item->model->location_title ?></span>
                                         </div>
                                     </div>
                                 </td>
@@ -94,28 +114,48 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <tr>
                                             <td>
                                                 <p class="f">﻿Личный счет</p>
-                                                <?php if($item->model->type_id===2): ?><div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div><? else: ?><div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div><? endif; ?>
+                                                <?php if ($item->model->type_id === 2): ?>
+                                                    <div class="green_yes "><i class="fa fa-check fa-3"
+                                                                               aria-hidden="true"></i></div><? else: ?>
+                                                    <div class="green_no"><i class="fa fa-times fa-3"
+                                                                             aria-hidden="true"></i></div><? endif; ?>
                                             </td>
                                             <td>
                                                 <p class="f">Корпоративный счет</p>
-                                                <?php if($item->model->type_id===1): ?><div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div><? else: ?><div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div><? endif; ?>
+                                                <?php if ($item->model->type_id === 1): ?>
+                                                    <div class="green_yes "><i class="fa fa-check fa-3"
+                                                                               aria-hidden="true"></i></div><? else: ?>
+                                                    <div class="green_no"><i class="fa fa-times fa-3"
+                                                                             aria-hidden="true"></i></div><? endif; ?>
                                             </td>
                                             <td>
-                                                <p class="f" title="Открытие счета без личного присутствия">﻿Cчета без присутствия</p>
-                                                <?php if($item->model->personal===1): ?><div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div><? else: ?><div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div><? endif; ?>
+                                                <p class="f" title="Открытие счета без личного присутствия">
+                                                    Персональное присутствие </p>
+                                                <?php if ($item->model->personal === 1): ?>
+                                                    <div class="green_yes "><i class="fa fa-check fa-3"
+                                                                               aria-hidden="true"></i></div><? else: ?>
+                                                    <div class="green_no"><i class="fa fa-times fa-3"
+                                                                             aria-hidden="true"></i></div><? endif; ?>
                                             </td>
                                             <td>
                                                 <p class="f">Сайт банка</p>
+
                                                 <div class="hegg"><?= $item->model->website ?></div>
                                                 <!--<div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div>-->
                                             </td>
                                             <td>
                                                 <p class="f">Минимальный депозит</p>
-                                                <div class="hegg"><? if($item->model->min_deposit>0): ?><?= $item->model->min_deposit ?><? else: ?><div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div><? endif ?></div>
+
+                                                <div
+                                                    class="hegg"><? if ($item->model->min_deposit > 0): ?><?= $item->model->min_deposit ?><? else: ?>
+                                                        <div class="green_no"><i class="fa fa-times fa-3"
+                                                                                 aria-hidden="true"></i>
+                                                        </div><? endif ?></div>
                                                 <!--   <div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div>-->
                                             </td>
                                             <td>
                                                 <p class="f">Срок</p>
+
                                                 <div class="tBankDays tBankOter"><p><?= $item->how_days ?></p></div>
                                             </td>
                                             <!--<td>
@@ -134,8 +174,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <span>Цена</span>
                                     </h6>
                                     <h6 class="text-center">$<?= $item->price ?></h6>
+
                                     <div class="text-center" style="height:35px;">
-                                        <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>" class="btn btn-success">Заказать</a>
+                                        <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"
+                                           class="btn btn-success">Заказать</a>
                                     </div>
                                 </td>
                             </tr>
@@ -176,7 +218,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <?= $item->model->website ?>
                                 </td>
                                 <td>
-                                    <? if($item->model->min_deposit>0): ?><?= $item->model->min_deposit ?><? endif ?>
+                                    <? if ($item->model->min_deposit > 0): ?><?= $item->model->min_deposit ?><? endif ?>
                                 </td>
                                 <td>
                                     <?= $item->model->how_days ?>

@@ -28,7 +28,9 @@ use \frontend\widgets\ScriptsFooter;
         <?php $this->beginBody() ?>
         <?= $content ?>
         <?php $this->endBody() ?>
+        <?/* if (YII_ENV_PROD) : */?>
         <?= ScriptsFooter::widget([]) ?>
+       <!-- --><?/* endif */?>
     </body>
 </html>
 <?php $this->endPage() ?>

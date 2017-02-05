@@ -54,7 +54,7 @@ class Banks extends \frontend\components\ActiveRecord
     {
         return [
             'title' => Yii::t('easyii', 'Title'),
-            'type_id' => Yii::t('easyii', 'Регион'),
+            'type_id' => Yii::t('easyii', 'Тип'),
             'text' => Yii::t('easyii', 'Text'),
             'short' => Yii::t('easyii/banks', 'Short'),
             'to_main' => Yii::t('easyii/banks', 'На главную'),
@@ -66,7 +66,7 @@ class Banks extends \frontend\components\ActiveRecord
             'optionNames' => Yii::t('easyii', 'Options'),
             'tagNames' => Yii::t('easyii', 'Tags'),
             'location_title' => Yii::t('easyii/banks', 'Страна'),
-
+            'Personal' => Yii::t('easyii/banks', 'Пприсутствие'),
         ];
     }
 

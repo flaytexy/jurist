@@ -120,38 +120,11 @@ class BanksController extends \yii\web\Controller
 
         $this->getView()->registerJs(
             "
-            $('#switchAllBanks .byScore').show();
-            $('#switchAllBanks .byScoreOff').hide();
-            //$('#switchAllBanks .byPersonal').show();
-            //$('#switchAllBanks .byPersonalOff').hide();
-
-            $('#sw-list input.switch').switcher({copy: {en: {yes: '', no: ''}}})
-             .on('change', function(){
-                var checkbox = $(this);
-
-                if ( checkbox.is(':checked') ){
-                    checkbox.switcher('setDisabled', false);
-                    if(checkbox.attr('data-act-class')==='byScore'){
-                        $('#switchAllBanks .byScore').hide();
-                        $('#switchAllBanks .byScoreOff').show();
-                    }
-                    if(checkbox.attr('data-act-class')==='byPersonal'){
-                        $('#switchAllBanks .byPersonal').hide();
-                        $('#switchAllBanks .byPersonalOff').show();
-                    }
-                }else{
-                    //checkbox.switcher('setDisabled', true);
-                    if(checkbox.attr('data-act-class')==='byScore'){
-                        $('#switchAllBanks .byScore').show();
-                        $('#switchAllBanks .byScoreOff').hide();
-                    }
-                    if(checkbox.attr('data-act-class')==='byPersonal'){
-                        $('#switchAllBanks .byPersonal').show();
-                        $('#switchAllBanks .byPersonalOff').hide();
-                    }
-                }
-            });
-
+                $('#sw-list input.switch').switcher({copy: {en: {yes: '', no: ''}}});
+                reCheckJsFilter();
+                $('#sw-list input.switch').on('change', function(){
+                    reCheckJsFilter($(this));
+                });
             ",
             View::POS_READY,
             'my-switch-handler'

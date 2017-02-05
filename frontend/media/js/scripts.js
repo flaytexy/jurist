@@ -21,6 +21,58 @@ jQuery.scrollTo = function (target, offset, speed, container) {
 };
 
 
+function reCheckJsFilter (whoChange){
+
+
+
+    var switchJsPattern = ('#sw-list input.switch');
+
+    jQuery('#switchAllBanks > table').removeClass('js-filter-marker');
+    jQuery('#switchAllBanks > table').addClass('js-filter-marker');
+
+    $('#switchAllBanks  > table.js-filter-marker').hide();
+
+    if(whoChange!==undefined){
+
+        if(whoChange.attr('js-filter-run-first')=='0'){
+            whoChange.attr('js-filter-run-first', '1');
+        }
+    }
+
+    jQuery('#sw-list input.switch').each(function(){
+        checked = jQuery(this).is(':checked');
+        curFilter = jQuery(this).attr('js-filter');
+        runFirstMark = jQuery(this).attr('js-filter-run-first');
+
+
+        if(runFirstMark==='undefined'){
+            runFilter = 1;
+        }else if(runFirstMark==='0'){
+            runFilter = 0;
+        }else{
+            runFilter = 1;
+        }
+
+        checkedIndex = 0;
+        if(checked===true){
+            checkedIndex = 1;
+        }
+
+        if(runFilter) {
+            if(checked===true){
+                $('#switchAllBanks > table.js-filter-marker[' + curFilter + '='+checkedIndex+']').show();
+                $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!='+checkedIndex+']').hide();
+                $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!='+checkedIndex+']').removeClass('js-filter-marker');
+            }else{
+                $('#switchAllBanks > table.js-filter-marker[' + curFilter + '='+checkedIndex+']').show();
+                $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!='+checkedIndex+']').hide();
+                $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!='+checkedIndex+']').removeClass('js-filter-marker');
+            }
+        }
+
+    });
+}
+
 $(function(){
     $("#menu-show-block, #map-pos").on('click', 'a', function(){
         //alert($(this).attr('data-show-block'));
@@ -63,6 +115,7 @@ $(function(){
 
         return false;
     });
+
 
 
 

@@ -12,6 +12,8 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
 
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
+
+<? if (YII_ENV_PROD) : ?>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
@@ -52,6 +54,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
     ga('send', 'pageview');
 
 </script>
+<? endif ?>
 
 <div class="theme-layout" style="padding-top: 156px;">
     <header class="stick scrollup">
