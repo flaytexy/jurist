@@ -567,6 +567,46 @@ header {
     margin-right: 5px;
 }
 
+.top-bar-error {
+    float: left;
+    width: 100%;
+    background: #ffffff;
+    margin-bottom: 30px;
+}
+
+.top-bar-error .topbar-data-error > ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+
+.topbar-data-error .list-inline > li {
+    float: left;
+    color: #7dc20f ;
+    font-weight: 300;
+    padding: 1px;
+    line-height: 20px;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid #7dc20f;
+}
+
+.topbar-data-error .list-inline > li > a {
+    font-family: Georgia;
+  /*  background: #ffffff;*/
+    float: left;
+    padding: 18px 30px;
+    color: inherit;
+    text-align: center !important;
+    /* font-family: Arial;*/
+}
+.topbar-data-error .list-inline > li:hover {
+    background-color: #7dc20f;
+    color: #ffffff;
+}
+
+
 .language-select {
     float: left;
 }
@@ -588,6 +628,9 @@ header {
 
 .top30 {
     margin-top: 30px;
+}
+.bold {
+    font-weight: 600;
 }
 
 /*===== Logo Menu Sec =====*/

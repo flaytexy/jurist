@@ -26,7 +26,7 @@ class AppAsset extends AssetBundle
         //'css/table.css',
         'css/revolution.css',
         'css/prefix.css?v=12',
-        'css/styles.css?v=12',
+        'css/styles.css?v=16',
         //'css/responsive.css',
         //'css/color.css'
     ];

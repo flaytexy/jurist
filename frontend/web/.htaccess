@@ -16,6 +16,7 @@ RewriteRule ^(.*)index.(php|html?)$ /$1 [R=301,NC,L]
 RewriteRule ^offers/index$ /$1 [R=301,NC,L]
 RewriteRule ^news/index$ /news [R=301,NC,L]
 RewriteRule ^(.*)/view/(.*)$ /$1/$2 [R=301,NC,L]
+RewriteRule ^index.(.*)/$ / [R=301,NC,L]
 RewriteRule ^(.*)/index /$1 [R=301,NC,L]
 
 ##RewriteRule ^(.*)index.php(.*) http://iq-offshore.com/$1$2 [R=301,L]

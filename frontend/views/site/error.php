@@ -18,12 +18,24 @@ $this->title = $name;
             <?= nl2br(Html::encode($message)) ?>
         </div>
 
-        <p>
+        <p class="top10">
             Ошибка 404. Невозможно обработать запрос.
         </p>
-        <p>
-            Воспользуйтесь пожалуйста меню, чтобы перейти в нужный раздел.
+        <p class="bold top30">
+            Воспользуйтесь пожалуйста меню, чтобы перейти в нужный раздел:
         </p>
 
     </div>
+    <div class="top-bar-error">
+        <div class="topbar-data-error">
+            <ul class="list-inline">
+                <li><a class href="/fonds" title="Банки">Фонды</a></li>
+                <li><a href="/banks" title="Банки">Банки</a></li>
+                <li><a href="/offshornyie-predlozheniya" title="Компании">Компании</a></li>
+                <li><a href="/licenses" title="Банки">Лицензии</a></li>
+                <li><a href="/processing" title="Банки" style="line-height: 0.9">Мерчант (процессинг)<br /> Эквайринг</a></li>
+                <li><a href="/news" title="Банки">Новости</a></li>
+            </ul>
+        </div>
+    </div><!-- Top Bar -->
 </div>
