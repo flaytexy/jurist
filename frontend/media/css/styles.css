@@ -579,7 +579,9 @@ header {
     list-style: none;
     margin-bottom: 0;
 }
-
+.font-color {
+    color: #7dc20f ;
+}
 
 .topbar-data-error .list-inline > li {
     float: left;

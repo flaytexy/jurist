@@ -72,7 +72,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             <li>Минимальный депозит</li>
                             <li class="">
                                 <div class="switcher">
-                                    <input value="0" class="switch" js-filter="js-filter-min-deposit" js-filter-run-first="0" name="switchName3"
+                                    <input value="0" class="switch" js-filter="js-filter-min-deposit" js-filter-switch-only="1" name="switchName3"
                                            type="checkbox"/>
                                 </div>
                             </li>
@@ -84,7 +84,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <div class="row bank-new-list">
                 <div class="col-md-12" id="switchAllBanks">
 
-                    <h4>Africa</h4>
+                 <!--   <h4>Africa</h4>-->
                     <?php foreach ($banks as $item) : ?>
                         <table
                             class="table border-none <?= $item->model->type_id ?>_<?= $item->model->personal ?>_<?= $item->model->min_deposit ?>"
@@ -193,11 +193,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 
 <? if (true): ?>
-    <section id="pages">
+    <section id="pages" class="top30">
         <div class="block">
+
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        <h3 class="font-color">Подробнее о наших банках</h3>
                         <div class="villaeditors-picks">
                             <div class="packages style2 remove-ext2">
                                 <div class="row">

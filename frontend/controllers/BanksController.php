@@ -11,6 +11,7 @@ class BanksController extends \yii\web\Controller
 
     public function actionIndex($tag = null)
     {
+
         $type_id = \Yii::$app->request->get('type_id');
 
         $banks = Banks::items(['tags' => $tag, 'pagination' => ['pageSize' => 300]]);

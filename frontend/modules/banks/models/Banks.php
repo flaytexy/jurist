@@ -24,8 +24,8 @@ class Banks extends \frontend\components\ActiveRecord
     public function rules()
     {
         return [
-            [['text', 'title', 'location_zone_id'], 'required'],
-            [['pre_options','title','website','location_title'], 'string', 'max' => 128],
+            [['text', 'title', 'location_zone_id', 'how_days'], 'required'],
+            [['pre_options', 'title', 'website', 'location_title'], 'string', 'max' => 128],
             [['title', 'short', 'text'], 'trim'],
             [['pos', 'coordinates'], 'string', 'max' => 64],
             ['to_main', 'integer', 'max' => 1],
@@ -90,18 +90,26 @@ class Banks extends \frontend\components\ActiveRecord
     }
 
 
-
     public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {
-            $this->price = str_replace(",", ".", $this->price);
-            $this->min_deposit = str_replace(",", ".", $this->min_deposit);
+            if (!empty($this->price))
+                $this->price = str_replace(",", ".", $this->price);
+            else {
+                $this->price = '0.00';
+            }
+            if (!empty($this->min_deposit)){
+                $this->min_deposit = str_replace(",", ".", $this->min_deposit);
+            }
+            else{
+                $this->min_deposit = '0.00';
+            }
 
             $settings = Yii::$app->getModule('admin')->activeModules['banks']->settings;
             $this->short = StringHelper::truncate($settings['enableShort'] ? $this->short : strip_tags($this->text), $settings['shortMaxLength']);
 
-            if(!$insert && $this->image != $this->oldAttributes['image'] && $this->oldAttributes['image']){
-                @unlink(Yii::getAlias('@webroot').$this->oldAttributes['image']);
+            if (!$insert && $this->image != $this->oldAttributes['image'] && $this->oldAttributes['image']) {
+                @unlink(Yii::getAlias('@webroot') . $this->oldAttributes['image']);
             }
             return true;
         } else {
@@ -113,15 +121,15 @@ class Banks extends \frontend\components\ActiveRecord
     {
         parent::afterDelete();
 
-        if($this->image){
-            @unlink(Yii::getAlias('@webroot').$this->image);
+        if ($this->image) {
+            @unlink(Yii::getAlias('@webroot') . $this->image);
         }
 
-        if($this->image_flag){
-            @unlink(Yii::getAlias('@webroot').$this->image_flag);
+        if ($this->image_flag) {
+            @unlink(Yii::getAlias('@webroot') . $this->image_flag);
         }
 
-        foreach($this->getPhotos()->all() as $photo){
+        foreach ($this->getPhotos()->all() as $photo) {
             $photo->delete();
         }
     }
