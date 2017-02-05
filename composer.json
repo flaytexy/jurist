@@ -21,7 +21,8 @@
         "sunra/php-simple-html-dom-parser": "^1.5",
         "mihaildev/yii2-ckeditor": "*",
         "mihaildev/yii2-elfinder": "*",
-        "2amigos/yii2-file-upload-widget": "~1.0"
+        "2amigos/yii2-file-upload-widget": "~1.0",
+        "akavov/yii2-countries": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

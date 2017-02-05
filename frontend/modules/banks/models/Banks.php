@@ -1,6 +1,8 @@
 <?php
 namespace frontend\modules\banks\models;
 
+use akavov\countries\components\CountriesBehavior;
+use frontend\models\Country;
 use Yii;
 use common\behaviors\MySluggableBehavior;
 use frontend\behaviors\SeoBehavior;
@@ -38,7 +40,7 @@ class Banks extends \frontend\components\ActiveRecord
                 'minWidth' => 100, 'maxWidth' => 1200,
                 'minHeight' => 100, 'maxHeight' => 1200,
             ],
-            ['location_zone_id', 'integer', 'max' => 1],
+            ['location_zone_id', 'integer', 'max' => 99],
 
             [['views', 'time', 'status', 'type_id'], 'integer'],
             ['time', 'default', 'value' => time()],
@@ -46,7 +48,8 @@ class Banks extends \frontend\components\ActiveRecord
             ['slug', 'default', 'value' => null],
             ['status', 'default', 'value' => self::STATUS_ON],
             ['optionNames', 'safe'],
-            ['tagNames', 'safe']
+            ['tagNames', 'safe'],
+            ['countryValues', 'safe']
         ];
     }
 
@@ -81,7 +84,16 @@ class Banks extends \frontend\components\ActiveRecord
                 'attribute' => 'title',
                 'ensureUnique' => true
             ],
+            [
+                'class' => CountriesBehavior::className(),
+            ],
         ];
+    }
+
+    public function getCountries()
+    {
+        return $this->hasMany(Country::className(), ['country_id' => 'country_id'])
+            ->viaTable('{{%post_country_assn}}', ['post_id' => 'bank_id']);
     }
 
     public function getPhotos()

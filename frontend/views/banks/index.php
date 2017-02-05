@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     </div>
                     <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
-                            <li>Персональное присутствие</li>
+                            <li>С посещением банка</li>
                             <li class="">
                                 <div class="switcher">
                                     <input value="0" class="switch" js-filter="js-filter-personal" name="switchName2"
@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     </div>
                     <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
-                            <li>Минимальный депозит</li>
+                            <li>С минимальным депозитом</li>
                             <li class="">
                                 <div class="switcher">
                                     <input value="0" class="switch" js-filter="js-filter-min-deposit" js-filter-switch-only="1" name="switchName3"
@@ -87,20 +87,20 @@ $this->params['breadcrumbs'][] = $page->model->title;
                  <!--   <h4>Africa</h4>-->
                     <?php foreach ($banks as $item) : ?>
                         <table
-                            class="table border-none <?= $item->model->type_id ?>_<?= $item->model->personal ?>_<?= $item->model->min_deposit ?>"
+                            class="table table-bordered <?= $item->model->type_id ?>_<?= $item->model->personal ?>_<?= $item->model->min_deposit ?>"
                             <? if ($item->model->type_id !== 1): ?> js-filter-type-id="1" <? else: ?> js-filter-type-id="0" <? endif; ?>
                             <? if ($item->model->personal === 1): ?> js-filter-personal="1" <? else: ?> js-filter-personal="0" <? endif; ?>
                             <? if ($item->model->min_deposit > 0): ?> js-filter-min-deposit="1" <? else: ?> js-filter-min-deposit="0" <? endif; ?>
                             >
                             <tr>
-                                <td class="col-md-8 col-lg-2">
+                                <td class="col-md-8 col-lg-2 bg-green-price">
                                     <h6>
                                         <?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?>
                                     </h6>
 
                                     <div class="no-margin inl-block">
                                         <div class="hide-for-small-down">
-                                            <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"><?= Html::img($item->thumb(70, 48)) ?></a>
+                                            <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"><?= Html::img($item->thumb(120, 31)) ?></a>
                                         </div>
                                         <div class="top10">
                                             <?= Html::img(\frontend\helpers\Image::thumb($item->model->image_flag, 32, 18)) ?>
@@ -113,30 +113,28 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <table class="table border-none tBankLi">
                                         <tr>
                                             <td>
-                                                <p class="f">﻿Личный счет</p>
+
                                                 <?php if ($item->model->type_id === 2): ?>
+                                                    <p class="f">﻿Личный счет</p>
                                                     <div class="green_yes "><i class="fa fa-check fa-3"
-                                                                               aria-hidden="true"></i></div><? else: ?>
-                                                    <div class="green_no"><i class="fa fa-times fa-3"
-                                                                             aria-hidden="true"></i></div><? endif; ?>
-                                            </td>
-                                            <td>
-                                                <p class="f">Корпоративный счет</p>
-                                                <?php if ($item->model->type_id === 1): ?>
+                                                                               aria-hidden="true"></i></div>
+                                                <? else: ?>
+                                                    <p class="f">Корпоративный счет</p>
                                                     <div class="green_yes "><i class="fa fa-check fa-3"
-                                                                               aria-hidden="true"></i></div><? else: ?>
-                                                    <div class="green_no"><i class="fa fa-times fa-3"
-                                                                             aria-hidden="true"></i></div><? endif; ?>
+                                                                               aria-hidden="true"></i></div>
+                                                <? endif; ?>
                                             </td>
+
                                             <td>
                                                 <p class="f" title="Открытие счета без личного присутствия">
-                                                    Персональное присутствие </p>
+                                                    С посещением банка </p>
                                                 <?php if ($item->model->personal === 1): ?>
                                                     <div class="green_yes "><i class="fa fa-check fa-3"
                                                                                aria-hidden="true"></i></div><? else: ?>
                                                     <div class="green_no"><i class="fa fa-times fa-3"
                                                                              aria-hidden="true"></i></div><? endif; ?>
                                             </td>
+
                                             <td>
                                                 <p class="f">Сайт банка</p>
 
@@ -146,11 +144,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             <td>
                                                 <p class="f">Минимальный депозит</p>
 
-                                                <div
-                                                    class="hegg"><? if ($item->model->min_deposit > 0): ?><?= $item->model->min_deposit ?><? else: ?>
-                                                        <div class="green_no"><i class="fa fa-times fa-3"
-                                                                                 aria-hidden="true"></i>
-                                                        </div><? endif ?></div>
+                                                <div class="hegg"><? if ($item->model->min_deposit > 0): ?><?= $item->model->min_deposit ?><? else: ?>
+                                                        <div class="">
+                                                            0
+                                                        </div><? endif ?>
+                                                </div>
                                                 <!--   <div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div>-->
                                             </td>
                                             <td>
@@ -170,10 +168,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     </table>
                                 </td>
                                 <td class="col-md-4 col-lg-2">
-                                    <h6 class="text-center">
+                                    <div class="h6 text-center">
                                         <span>Цена</span>
-                                    </h6>
-                                    <h6 class="text-center">$<?= $item->price ?></h6>
+                                    </div>
+                                    <div class="h6 text-center cena">$<?= $item->price ?></div>
 
                                     <div class="text-center" style="height:35px;">
                                         <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"
@@ -208,7 +206,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             <div class="package">
 
                                                 <div class="package-thumb">
-                                                    <?= Html::img($item->thumb(500, 375)) ?>
+                                                    <?= Html::img($item->thumb(240, 62)) ?>
                                                     <!--<span><i>$<? /*= $item->model->price */ ?></i> / <? /* if ($item->model->how_days): */ ?><? /*= $item->model->how_days*/ ?><? /* else: */ ?>Минимал<? /* endif; */ ?></span>-->
                                                 </div>
                                                 <div class="package-detail">

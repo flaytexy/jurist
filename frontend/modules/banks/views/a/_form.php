@@ -21,7 +21,6 @@ $module = $this->context->module->id;
 ]); ?>
 <?= $form->field($model, 'title') ?>
 <hr/>
-<?= $form->field($model, 'location_title') ?>
 
 <?= $form->field($model, 'type_id')->dropDownList([
     '1' => 'Корпоративный счет',
@@ -35,19 +34,41 @@ $module = $this->context->module->id;
 
 <?= $form->field($model, 'website') ?>
 <?= $form->field($model, 'min_deposit') ?>
-
-
+<hr/>
 <?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
-
+<hr/>
 <?= $form->field($model, 'location_zone_id')->dropDownList([
-    '1' => 'Азия',
-    '2' => 'Европа',
+    '1' => 'Европа',
+    '2' => 'Азия',
     '3' => 'Америка',
     '4' => 'Африка',
     '5' => 'Островная',
 ]) ?>
 
-<hr/>
+<?= $form->field($model, 'countryValues')
+    ->widget(akavov\countries\widgets\CountriesSelectizeTextInput::className(), [
+        'customRender' => [
+            'item'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name">{escape(item.name_en)}</span></div>',
+            'option'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name">{escape(item.name_en)}</span></div>',
+        ],
+        'clientOptions' => [
+            'valueField' => 'name_en',
+            'labelField' => 'name_en',
+            'searchField' => ['name_en', 'name_uk', 'name_ru'],
+            'plugins' => ['remove_button'],
+            'closeAfterSelect' => true,
+            'maxItems' => 10,
+            'delimiter' => ',',
+            'persist' => false,
+            'preload' => true,
+            'items' => $model->countryValues,
+            'create' => false,
+        ],
+    ]); ?>
+
+<?= $form->field($model, 'location_title') ?>
+
+
 <?php if ($model->image_flag) : ?>
     <img src="<?= Image::thumb($model->image_flag, 240) ?>">
 <?php endif;  ?>
