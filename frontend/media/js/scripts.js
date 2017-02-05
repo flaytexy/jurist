@@ -64,7 +64,7 @@ function reCheckJsFilter(whoChange) {
                     $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!=' + checkedIndex + ']').removeClass('js-filter-marker');
                 } else {
                     $('#switchAllBanks > table.js-filter-marker[' + curFilter + '=' + checkedIndex + ']').show();
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '=' + checkedIndex + ']').show();
+                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!=' + checkedIndex + ']').show();
                 }
             }
             else {
