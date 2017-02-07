@@ -93,7 +93,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             <? if ($item->model->min_deposit > 0): ?> js-filter-min-deposit="1" <? else: ?> js-filter-min-deposit="0" <? endif; ?>
                             >
                             <tr>
-                                <td class="col-md-8 col-lg-2 bg-green-price">
+                                <td class="col-md-8 col-lg-2">
                                     <h6>
                                         <?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?>
                                     </h6>
@@ -167,7 +167,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         </tr>
                                     </table>
                                 </td>
-                                <td class="col-md-4 col-lg-2">
+                                <td class="col-md-4 col-lg-2 bg-green-price">
                                     <div class="h6 text-center">
                                         <span>Цена</span>
                                     </div>

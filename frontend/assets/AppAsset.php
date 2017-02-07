@@ -25,8 +25,8 @@ class AppAsset extends AssetBundle
         ///'css/opensans.css',
         //'css/table.css',
         'css/revolution.css',
-        'css/prefix.css?v=2017-02-05-8',
-        'css/styles.css?v=2017-02-05-8',
+        'css/prefix.css?v=2017-02-05-13',
+        'css/styles.css?v=2017-02-05-13',
         //'css/responsive.css',
         //'css/color.css'
     ];

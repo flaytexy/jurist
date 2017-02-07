@@ -2,7 +2,8 @@
 namespace frontend\modules\banks\models;
 
 use akavov\countries\components\CountriesBehavior;
-use frontend\models\Country;
+use frontend\behaviors\CountryAble;
+use common\models\country\Country;
 use Yii;
 use common\behaviors\MySluggableBehavior;
 use frontend\behaviors\SeoBehavior;
@@ -49,7 +50,7 @@ class Banks extends \frontend\components\ActiveRecord
             ['status', 'default', 'value' => self::STATUS_ON],
             ['optionNames', 'safe'],
             ['tagNames', 'safe'],
-            ['countryValues', 'safe']
+            ['countryNames', 'safe']
         ];
     }
 
@@ -84,23 +85,18 @@ class Banks extends \frontend\components\ActiveRecord
                 'attribute' => 'title',
                 'ensureUnique' => true
             ],
-            [
+            'countryable' => CountryAble::className(),
+/*            [
                 'class' => CountriesBehavior::className(),
-            ],
+            ],*/
         ];
     }
 
-    public function getCountries()
+/*    public function getCountries()
     {
         return $this->hasMany(Country::className(), ['country_id' => 'country_id'])
-            ->viaTable('{{%post_country_assn}}', ['post_id' => 'bank_id']);
-    }
-
-    public function getPhotos()
-    {
-        return $this->hasMany(Photo::className(), ['item_id' => 'bank_id'])->where(['class' => self::className()])->sort();
-    }
-
+            ->viaTable('{{%country_assign}}', ['item_id' => 'bank_id']);
+    }*/
 
     public function beforeSave($insert)
     {
@@ -139,10 +135,6 @@ class Banks extends \frontend\components\ActiveRecord
 
         if ($this->image_flag) {
             @unlink(Yii::getAlias('@webroot') . $this->image_flag);
-        }
-
-        foreach ($this->getPhotos()->all() as $photo) {
-            $photo->delete();
         }
     }
 }

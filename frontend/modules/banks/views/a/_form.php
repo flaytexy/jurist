@@ -45,8 +45,9 @@ $module = $this->context->module->id;
     '5' => 'Островная',
 ]) ?>
 
-<?= $form->field($model, 'countryValues')
+<?= $form->field($model, 'countryNames')
     ->widget(akavov\countries\widgets\CountriesSelectizeTextInput::className(), [
+        'countryModelNamespace' => 'common\models\country\CountryData',
         'customRender' => [
             'item'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name">{escape(item.name_en)}</span></div>',
             'option'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name">{escape(item.name_en)}</span></div>',
@@ -61,7 +62,7 @@ $module = $this->context->module->id;
             'delimiter' => ',',
             'persist' => false,
             'preload' => true,
-            'items' => $model->countryValues,
+            'items' => $model->countryNames,
             'create' => false,
         ],
     ]); ?>

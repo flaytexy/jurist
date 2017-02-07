@@ -6194,7 +6194,6 @@ ul.faq li.a blockquote {
 }
 
 #switchAllBanks > table {
-    border: 2px solid #dddddd;
     margin-bottom: -2px;
 }
 
@@ -6217,14 +6216,19 @@ ul.faq li.a blockquote {
     padding: 12px 0;
 }
 .tBankLi .green_yes,.tBankLi .green_no  {
-    color: rgba(126, 195, 15, 0.7);
+    color: rgba(150, 230, 16, 0.59);
     font-size: 31px;
     text-align: center;
 }
-.tBankLi .bg-green-price {
-    background-color: #edfdd0;
+#switchAllBanks .bg-green-price {
+    background-color: rgba(237, 253, 208, 0.62);
 }
-
+#switchAllBanks .table-bordered {
+    border: 2px solid #dddddd;
+}
+#switchAllBanks .table-bordered > tbody > tr > td {
+    border: 2px solid #dddddd;
+}
 .bank-new-list td > h6 {
     font-size: 18px;
 }
