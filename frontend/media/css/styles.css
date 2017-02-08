@@ -6198,7 +6198,7 @@ ul.faq li.a blockquote {
 }
 
 .tBankLi{
-
+    padding: 4px 2px;
 }
 .tBankLi td {
     width: 16%;
@@ -6219,6 +6219,11 @@ ul.faq li.a blockquote {
     color: rgba(150, 230, 16, 0.59);
     font-size: 31px;
     text-align: center;
+}
+.b-flag div.flag {
+    height: 30px;
+    width: 37px;
+    display: block;
 }
 #switchAllBanks .bg-green-price {
     background-color: rgba(237, 253, 208, 0.62);

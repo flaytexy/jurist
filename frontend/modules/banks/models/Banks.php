@@ -22,6 +22,8 @@ class Banks extends \frontend\components\ActiveRecord
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
+    public $regionName;
+    public $country_id;
     public $property_list;
 
     public static function tableName()
@@ -98,11 +100,11 @@ class Banks extends \frontend\components\ActiveRecord
         ];
     }
 
-/*    public function getCountries()
+    public function getCountries()
     {
         return $this->hasMany(CountryData::className(), ['country_id' => 'country_id'])
             ->viaTable('{{%country_assign}}', ['item_id' => 'bank_id']);
-    }*/
+    }
 
 /*    public function getCountries()
     {

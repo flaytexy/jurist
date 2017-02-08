@@ -9,7 +9,8 @@ use frontend\assets\TablesAsset;
 TablesAsset::register($this);
 
 use frontend\assets\SwitcherAsset;
-
+use akavov\countries\assets\CountriesAsset;
+CountriesAsset::register($this);
 SwitcherAsset::register($this);
 
 
@@ -86,6 +87,12 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                  <!--   <h4>Africa</h4>-->
                     <?php foreach ($banks as $item) : ?>
+                        <?php
+                        if($regionName != $item->model->regionName /*&&  $item->model->regionName!=false*/ ){
+                            $regionName = $item->model->regionName;
+                            echo "<br /><br />$regionName";
+                        }
+                        ?>
                         <table
                             class="table table-bordered <?= $item->model->type_id ?>_<?= $item->model->personal ?>_<?= $item->model->min_deposit ?>"
                             <? if ($item->model->type_id !== 1): ?> js-filter-type-id="1" <? else: ?> js-filter-type-id="0" <? endif; ?>
@@ -102,10 +109,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <div class="hide-for-small-down">
                                             <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"><?= Html::img($item->thumb(120, 31)) ?></a>
                                         </div>
-                                        <div class="top10">
-                                            <?= Html::img(\frontend\helpers\Image::thumb($item->model->image_flag, 32, 18)) ?>
-                                            <span class="left tBankLi"
-                                                  style="margin: 2px 0 0 0"><?= $item->model->location_title ?></span>
+                                        <div class="top10 row">
+                                            <? if ($item->model->countries[0]->alpha): ?><div class="col-xs-3"><div class="b-flag"> <div class="label flag flag-icon-background flag-icon-<?= $item->model->countries[0]->alpha ?>">&nbsp;</div></div></div><? endif ?>
+                                            <div class="col-xs-9"><div class="left tBankLi" style="margin: 2px 0 0 0"><? if ($item->model->countries[0]->name_ru): ?><?= $item->model->countries[0]->name_ru ?><? else: ?><?= $item->model->location_title ?><? endif ?></div></div>
                                         </div>
                                     </div>
                                 </td>

@@ -51,6 +51,34 @@ class Banks extends \frontend\components\API
                 ->with($with)
                 ->status(BanksModel::STATUS_ON);
 
+            $query->select('* , cr.name as regionName ');
+
+/*            $query
+                ->with('countries')
+                ->addGroupBy('bank_id');*/
+
+            $query->join(
+                'LEFT JOIN',
+                'country_assign as ca',
+                ' ca.`item_id` = `bank_id` '
+            );
+            $query->join(
+                'LEFT JOIN',
+                'country_data as cdt',
+                ' cdt.`country_id` = ca.`country_id` '
+            );
+            $query->join(
+                'LEFT JOIN',
+                'country_region_assign as cra',
+                ' cra.`region_id` = cdt.`country_id` '
+            );
+            $query->join(
+                'LEFT JOIN',
+                'country_region as cr',
+                ' cr.`id` = cra.`region_id` '
+            );
+
+
             if (!empty($options['where'])) {
                 $query->andFilterWhere($options['where']);
             }
@@ -64,11 +92,14 @@ class Banks extends \frontend\components\API
                 $query
                     ->andWhere([ 'type_id' => $options['type_id'] ]);
             }
-            if (!empty($options['orderBy'])) {
+
+            $query->orderBy(' cra.`region_id` DESC, `cdt`.`name_en` DESC ' );
+            //ex_print($query->createCommand()->rawSql);
+/*            if (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
             } else {
                 $query->sortDate();
-            }
+            }*/
 
             $this->_adp = new ActiveDataProvider([
                 'query' => $query,
@@ -77,6 +108,7 @@ class Banks extends \frontend\components\API
 
             foreach ($this->_adp->models as $model) {
                 $item = new BanksObject($model);
+
                 $item->properties = Option::find()
                     ->join(
                         'LEFT JOIN',
