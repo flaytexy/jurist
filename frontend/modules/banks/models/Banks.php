@@ -1,7 +1,9 @@
 <?php
 namespace frontend\modules\banks\models;
 
-use akavov\countries\components\CountriesBehavior;
+use common\behaviors\CountriesBehavior;
+use common\models\country\CountryAssign;
+use common\models\country\CountryData;
 use frontend\behaviors\CountryAble;
 use common\models\country\Country;
 use Yii;
@@ -12,6 +14,9 @@ use frontend\behaviors\Optionable;
 use frontend\models\Photo;
 use yii\helpers\StringHelper;
 
+/**
+ * @property string $countryNames
+ */
 class Banks extends \frontend\components\ActiveRecord
 {
     const STATUS_OFF = 0;
@@ -85,13 +90,25 @@ class Banks extends \frontend\components\ActiveRecord
                 'attribute' => 'title',
                 'ensureUnique' => true
             ],
-            'countryable' => CountryAble::className(),
+            //'countryable' => CountryAble::className(),
+            'CountriesBehavior' => CountriesBehavior::className(),
 /*            [
                 'class' => CountriesBehavior::className(),
             ],*/
         ];
     }
 
+/*    public function getCountries()
+    {
+        return $this->hasMany(CountryData::className(), ['country_id' => 'country_id'])
+            ->viaTable('{{%country_assign}}', ['item_id' => 'bank_id']);
+    }*/
+
+/*    public function getCountries()
+    {
+        return $this->hasMany(Country::className(), ['id' => 'country_id'])
+            ->viaTable('{{%country_assign}}', ['item_id' => 'bank_id']);
+    }*/
 /*    public function getCountries()
     {
         return $this->hasMany(Country::className(), ['country_id' => 'country_id'])
@@ -137,4 +154,10 @@ class Banks extends \frontend\components\ActiveRecord
             @unlink(Yii::getAlias('@webroot') . $this->image_flag);
         }
     }
+
+
+/*
+    public function getCountry() {
+        return $this->hasOne(CountryAssign::className(), ['id' => 'country_id']);
+    }*/
 }

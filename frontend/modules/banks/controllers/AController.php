@@ -89,6 +89,7 @@ class AController extends Controller
 
     public function actionEdit($id)
     {
+
         $model = Banks::findOne($id);
 
         if($model === null){
@@ -97,6 +98,8 @@ class AController extends Controller
         }
 
         if ($model->load(Yii::$app->request->post())) {
+
+
             if(Yii::$app->request->isAjax){
                 Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
                 return ActiveForm::validate($model);

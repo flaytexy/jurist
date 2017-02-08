@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\behaviors;
+namespace common\behaviors;
 
 use yii\base\Behavior;
 use yii\db\ActiveRecord;
@@ -10,7 +10,7 @@ class CountriesBehavior extends Behavior
     /**
      * @var boolean whether to return countries as array instead of string
      */
-    public $countryValuesAsArray = true;
+    public $countryNamesAsArray = true;
     /**
      * @var string the countries relation name
      */
@@ -26,7 +26,7 @@ class CountriesBehavior extends Behavior
     /**
      * @var string[]
      */
-    private $_countryValues;
+    private $_countryNames;
     /**
      * @inheritdoc
      */
@@ -43,69 +43,69 @@ class CountriesBehavior extends Behavior
      * @param boolean|null $asArray
      * @return string|string[]
      */
-    public function getCountryValues($asArray = null)
+    public function getCountryNames($asArray = null)
     {
-        if (!$this->owner->getIsNewRecord() && $this->_countryValues === null) {
-            $this->_countryValues = [];
+        if (!$this->owner->getIsNewRecord() && $this->_countryNames === null) {
+            $this->_countryNames = [];
 
             /* @var ActiveRecord $tag */
             foreach ($this->owner->{$this->countryRelation} as $country) {
-                $this->_countryValues[] = $country->getAttribute($this->countryValueAttribute);
+                $this->_countryNames[] = $country->getAttribute($this->countryValueAttribute);
             }
         }
 
         if ($asArray === null) {
-            $asArray = $this->countryValuesAsArray;
+            $asArray = $this->countryNamesAsArray;
         }
 
         if ($asArray) {
-            return $this->_countryValues === null ? [] : $this->_countryValues;
+            return $this->_countryNames === null ? [] : $this->_countryNames;
         } else {
-            return $this->_countryValues === null ? '' : implode(', ', $this->_countryValues);
+            return $this->_countryNames === null ? '' : implode(', ', $this->_countryNames);
         }
     }
     /**
      * Sets countries.
-     * @param string|string[] $values
+     * @param string|string[] $names
      */
-    public function setCountryValues($values)
+    public function setCountryNames($names)
     {
-        $this->_countryValues = $this->filterCountryValues($values);
+        $this->_countryNames = $this->filterCountryNames($names);
     }
     /**
      * Adds countries.
-     * @param string|string[] $values
+     * @param string|string[] $names
      */
-    public function addCountryValues($values)
+    public function addCountryNames($names)
     {
-        $this->_countryValues = array_unique(array_merge($this->getCountryValues(true), $this->filterCountryValues($values)));
+        $this->_countryNames = array_unique(array_merge($this->getCountryNames(true), $this->filterCountryNames($names)));
     }
     /**
      * Removes countries.
-     * @param string|string[] $values
+     * @param string|string[] $names
      */
-    public function removeCountryValues($values)
+    public function removeCountryNames($names)
     {
-        $this->_countryValues = array_diff($this->getCountryValues(true), $this->filterCountryValues($values));
+        $this->_countryNames = array_diff($this->getCountryNames(true), $this->filterCountryNames($names));
     }
     /**
      * Removes all countries.
      */
-    public function removeAllCountryValues()
+    public function removeAllCountryNames()
     {
-        $this->_countryValues = [];
+        $this->_countryNames = [];
     }
     /**
      * Returns a value indicating whether countries exists.
-     * @param string|string[] $values
+     * @param string|string[] $names
      * @return boolean
      */
-    public function hasCountryValues($values)
+    public function hasCountryNames($names)
     {
-        $countryValues = $this->getCountryValues(true);
+        $countryNames = $this->getCountryNames(true);
 
-        foreach ($this->filterCountryValues($values) as $value) {
-            if (!in_array($value, $countryValues)) {
+        foreach ($this->filterCountryNames($names) as $value) {
+            if (!in_array($value, $countryNames)) {
                 return false;
             }
         }
@@ -117,7 +117,7 @@ class CountriesBehavior extends Behavior
      */
     public function afterSave()
     {
-        if ($this->_countryValues === null) {
+        if ($this->_countryNames === null) {
             return;
         }
 
@@ -131,7 +131,7 @@ class CountriesBehavior extends Behavior
         $class = $countryRelation->modelClass;
         $rows = [];
 
-        foreach ($this->_countryValues as $value) {
+        foreach ($this->_countryNames as $value) {
             /* @var ActiveRecord $tag */
             $country = $class::findOne([$this->countryValueAttribute => $value]);
             if($country == null){
@@ -162,12 +162,12 @@ class CountriesBehavior extends Behavior
     }
     /**
      * Filters countries.
-     * @param string|string[] $values
+     * @param string|string[] $names
      * @return string[]
      */
-    public function filterCountryValues($values)
+    public function filterCountryNames($names)
     {
-        return array_unique(preg_split('/\s*,\s*/u', preg_replace('/\s+/u', ' ', is_array($values) ? implode(',', $values) : $values), -1, PREG_SPLIT_NO_EMPTY));
+        return array_unique(preg_split('/\s*,\s*/u', preg_replace('/\s+/u', ' ', is_array($names) ? implode(',', $names) : $names), -1, PREG_SPLIT_NO_EMPTY));
     }
 
 }
