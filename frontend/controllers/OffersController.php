@@ -53,7 +53,7 @@ class OffersController extends \yii\web\Controller
                 'item_id' => $offer_id,
                 'class' => \frontend\modules\offers\models\Offers::className()
             ])->all();
- //
+
         foreach ($packets as $packet) {
             $packet_id = $packet->packet_id;
             $packet->price = number_format( $packet->price, 0, '.', '');
