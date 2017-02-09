@@ -90,7 +90,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <?php
                         if($regionName != $item->model->regionName /*&&  $item->model->regionName!=false*/ ){
                             $regionName = $item->model->regionName;
-                            echo "<br /><br />$regionName";
+                            //echo "<div class='h4 top20'>$regionName</div>";
                         }
                         ?>
                         <table

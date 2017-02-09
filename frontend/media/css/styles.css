@@ -6220,6 +6220,9 @@ ul.faq li.a blockquote {
     font-size: 31px;
     text-align: center;
 }
+#switchAllBanks .no-margin.inl-block {
+    width: 177px;
+}
 .b-flag div.flag {
     height: 30px;
     width: 37px;

@@ -93,7 +93,7 @@ class Banks extends \frontend\components\API
                     ->andWhere([ 'type_id' => $options['type_id'] ]);
             }
 
-            $query->orderBy(' cra.`region_id` DESC, `cdt`.`name_en` DESC ' );
+            //$query->orderBy(' cra.`region_id` DESC, `cdt`.`name_en` DESC ' );
             //ex_print($query->createCommand()->rawSql);
 /*            if (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
