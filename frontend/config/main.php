@@ -52,7 +52,8 @@ $config = [
                     'sourceLanguage' => 'en-US',
                     'basePath' => '@common/messages',
                     'fileMap' => [
-                        //'easyii' => 'admin.php',
+                        'easyii' => 'admin.php',
+                        'easyii/*' => 'admin.php'
                     ]
                 ],
             ],
