@@ -122,6 +122,27 @@ class NewsController extends \yii\web\Controller
             $topNews[] = $obj;
         }
 
+        // Banks
+        //$topOffers = Offers::find(2)->asArray()->all();
+        $query = new \yii\db\Query;
+        $query->select('*')
+            ->from('easyii_banks as ba')
+            ->where("ba.status = '1' ")
+            ->orderBy(['views'=> SORT_DESC])
+            ->limit(2);
+        $command = $query->createCommand();
+        $topBanks = $command->queryAll();
+
+        // Offers
+        $query = new \yii\db\Query;
+        $query->select('*')
+            ->from('easyii_offers as of')
+            ->where("of.status = '1' ")
+            ->orderBy(['views'=> SORT_DESC])
+            ->limit(3);
+        $command = $query->createCommand();
+        $topOffers = $command->queryAll();
+
         // Tags
         $query = new \yii\db\Query;
         $query->select('tg.name, p.page_id, tga.tag_id')
