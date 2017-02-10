@@ -87,14 +87,12 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                  <!--   <h4>Africa</h4>-->
                     <?php foreach ($banks as $item) : ?>
-                        <?php
-                        if($regionName != $item->model->regionName /*&&  $item->model->regionName!=false*/ ){
-                            $regionName = $item->model->regionName;
-                            //echo "<div class='h4 top20'>$regionName</div>";
-                        }
-                        ?>
-                        <table
-                            class="table table-bordered <?= $item->model->type_id ?>_<?= $item->model->personal ?>_<?= $item->model->min_deposit ?>"
+                        <? if($region_name != $item->model->region_name && $item->model->region_name != 'Polar: Arctic' /*&&  $item->model->region_name!=false*/ ): ?>
+                           <?php $region_name = $item->model->region_name; ?>
+                           <div class='h4 top20 region-id-mark' id="reg_<?= $item->model->region_id ?>"><?= $region_name ?></div>
+                        <? endif ?>
+                        <table data-region-assign="reg_<?= $item->model->region_id ?>"
+                            class="table reg_<?= $item->model->region_id ?> table-bordered <?= $item->model->type_id ?>_<?= $item->model->personal ?>_<?= $item->model->min_deposit ?>"
                             <? if ($item->model->type_id !== 1): ?> js-filter-type-id="1" <? else: ?> js-filter-type-id="0" <? endif; ?>
                             <? if ($item->model->personal === 1): ?> js-filter-personal="1" <? else: ?> js-filter-personal="0" <? endif; ?>
                             <? if ($item->model->min_deposit > 0): ?> js-filter-min-deposit="1" <? else: ?> js-filter-min-deposit="0" <? endif; ?>
@@ -212,7 +210,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             <div class="package">
 
                                                 <div class="package-thumb">
-                                                    <?= Html::img($item->thumb(240, 62)) ?>
+                                                    <?= Html::img($item->thumb(240, 160)) ?>
                                                     <!--<span><i>$<? /*= $item->model->price */ ?></i> / <? /* if ($item->model->how_days): */ ?><? /*= $item->model->how_days*/ ?><? /* else: */ ?>Минимал<? /* endif; */ ?></span>-->
                                                 </div>
                                                 <div class="package-detail">

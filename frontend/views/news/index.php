@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <section class="content-zone top20">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-9">
                 <div class="recent-news">
                     <div class="remove-ext">
                         <div class="row">
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 <div class="col-md-6">
                                     <div class="recentnew-post">
                                         <a href="<?= Url::to(['news/'.$item->slug]) ?>" class="">
-                                            <?= Html::img($item->thumb(500, 375)) ?>
+                                            <?= Html::img($item->thumb(420, 314)) ?>
                                         </a>
                                         <div class="recentnew-detail2">
                                             <h4>
@@ -50,6 +50,21 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <?= Page::pages() ?>
                 </div>
                 <!-- Pagination -->
+            </div>
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <div class="widget widget-categories">
+                        <div class="title1 style2">
+                            <h2>Категории</h2>
+                            <!-- <span>We Provide Best Services</span>-->
+                        </div>
+                        <ul>
+                            <?php foreach($categories_tops as $item) : ?>
+                                <li><a href="<?= Url::to(['news/c/'.$item['slug']]) ?>"><?= $item['title'] ?></a> <span><?= $item['counter'] ?></span></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div><!-- Widget -->
+                </div><!-- Sidebar -->
             </div>
         </div>
     </div>

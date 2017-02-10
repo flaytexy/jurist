@@ -11,6 +11,20 @@ class NewsController extends \yii\web\Controller
 {
     public function actionIndex($tag = null, $type = null, $slug = null)
     {
+
+        // Categories Left Menu
+        $query = new \yii\db\Query;
+        $query->select('ept.title as parent_title, ept.*, ept2.*,
+                (SELECT count(p.page_id) as count FROM easyii_pages as p
+                    WHERE p.category_id = ept2.category_id) as counter
+            ')
+            ->from('easyii_pages_categories as ept')
+            ->join('RIGHT JOIN', 'easyii_pages_categories as ept2', 'ept2.parent_id = ept.category_id')
+            ->where("ept2.type_id = '2' and ept2.category_id != '2' ")
+            ->limit(20);
+        $command = $query->createCommand();
+        $categoriesTops = $command->queryAll();
+
         if($slug){
             $query = new \yii\db\Query;
             $query->select('category_id')
@@ -35,7 +49,8 @@ class NewsController extends \yii\web\Controller
         }
 
         return $this->render('index',[
-            'news' => $news
+            'news' => $news,
+            'categories_tops' => $categoriesTops
         ]);
     }
 

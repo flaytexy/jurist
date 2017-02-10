@@ -22,7 +22,8 @@ class Banks extends \frontend\components\ActiveRecord
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
-    public $regionName;
+    public $region_name;
+    public $region_id;
     public $country_id;
     public $property_list;
 

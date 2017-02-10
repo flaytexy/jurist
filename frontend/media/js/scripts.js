@@ -80,6 +80,14 @@ function reCheckJsFilter(whoChange) {
             }
         }
     });
+
+    jQuery('#switchAllBanks div.region-id-mark').show();
+    jQuery('#switchAllBanks div.region-id-mark').each(function () {
+        var howCountryFinalByRegion = jQuery('#switchAllBanks > table.js-filter-marker.' + $(this).attr('id'));
+        if(howCountryFinalByRegion.length == 0) {
+            $(this).hide();
+        }
+    });
 }
 
 $(function () {

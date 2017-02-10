@@ -56,7 +56,7 @@ class Banks extends \frontend\components\API
                 ->addGroupBy('bank_id');*/
 
             if (!empty($options['list'])) {
-                $query->select('* , cr.name as regionName ');
+                $query->select('* , cr.name as region_name ');
 
                 $query->join(
                     'LEFT JOIN',
