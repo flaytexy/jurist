@@ -53,7 +53,6 @@ $config = [
                     'basePath' => '@common/messages',
                     'fileMap' => [
                         'easyii' => 'admin.php',
-                        'easyii/*' => 'admin.php'
                     ]
                 ],
             ],
