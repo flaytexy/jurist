@@ -73,6 +73,47 @@ class BanksController extends \yii\web\Controller
         ]);
     }
 
+    public function actionNew($tag = null)
+    {
+
+        $type_id = \Yii::$app->request->get('type_id');
+
+        $banks = Banks::items(['tags' => $tag, 'list' => 1, 'pagination' => ['pageSize' => 300]]);
+
+        /*        $query = \frontend\modules\banks\models\Banks::find()->where(['status' => 1]);
+                $count = $query->count();
+                $pagination = new Pagination(['totalCount' => $count]);
+                $banksList = $query->offset($pagination->offset)
+                    ->limit($pagination->limit)
+                    ->all();
+                $banksPagination = LinkPager::widget([
+                    'pagination' => $pagination,
+                ]);*/
+
+        $this->getView()->registerJs(
+            "
+                $('#sw-list input.switch').switcher({copy: {en: {yes: '', no: ''}}});
+                reCheckJsFilter();
+                $('#sw-list input.switch').on('change', function(){
+                    reCheckJsFilter($(this));
+                });
+            ",
+            View::POS_READY,
+            'my-switch-handler'
+        );
+
+
+        Banks::clear();
+        $banksList = Banks::items(['tags' => $tag, 'pagination' => ['pageSize' => 6]]);
+        $banksPagination = Banks::pages();
+
+        return $this->render('index_new', [
+            'banks' => $banks,
+            'banksList' => $banksList,
+            'banksPagination' => $banksPagination,
+            'bank_type' => $type_id
+        ]);
+    }
 /*
     public function actionIndexOLD($tag = null)
     {

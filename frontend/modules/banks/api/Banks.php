@@ -56,29 +56,34 @@ class Banks extends \frontend\components\API
                 ->addGroupBy('bank_id');*/
 
             if (!empty($options['list'])) {
-                $query->select('* , cr.name as region_name ');
+
+                $query->select('easyii_banks.*, cdt.* , ca.`country_id` as ca_id, cra.*, cr.name as region_name  ');
 
                 $query->join(
                     'LEFT JOIN',
                     'country_assign as ca',
                     ' ca.`item_id` = `bank_id` '
                 );
+
                 $query->join(
                     'LEFT JOIN',
                     'country_data as cdt',
                     ' cdt.`country_id` = ca.`country_id` '
                 );
+
                 $query->join(
                     'LEFT JOIN',
                     'country_region_assign as cra',
-                    ' cra.`region_id` = cdt.`country_id` '
+                    ' cra.`country_id` = ca.`country_id` '
                 );
+
                 $query->join(
                     'LEFT JOIN',
                     'country_region as cr',
                     ' cr.`id` = cra.`region_id` '
                 );
             }
+
 
             if (!empty($options['where'])) {
                 $query->andFilterWhere($options['where']);
