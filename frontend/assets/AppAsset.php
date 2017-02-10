@@ -44,7 +44,7 @@ class AppAsset extends AssetBundle
 
         'js/all.js',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
-        'js/scripts.js?v=2017-02-05-5'
+        'js/scripts.js?v=2017-02-10-1'
     ];
     public $depends = [
         'yii\web\JqueryAsset',

@@ -11,20 +11,6 @@ class NewsController extends \yii\web\Controller
 {
     public function actionIndex($tag = null, $type = null, $slug = null)
     {
-
-        // Categories Left Menu
-        $query = new \yii\db\Query;
-        $query->select('ept.title as parent_title, ept.*, ept2.*,
-                (SELECT count(p.page_id) as count FROM easyii_pages as p
-                    WHERE p.category_id = ept2.category_id) as counter
-            ')
-            ->from('easyii_pages_categories as ept')
-            ->join('RIGHT JOIN', 'easyii_pages_categories as ept2', 'ept2.parent_id = ept.category_id')
-            ->where("ept2.type_id = '2' and ept2.category_id != '2' ")
-            ->limit(20);
-        $command = $query->createCommand();
-        $categoriesTops = $command->queryAll();
-
         if($slug){
             $query = new \yii\db\Query;
             $query->select('category_id')
@@ -48,15 +34,6 @@ class NewsController extends \yii\web\Controller
             ]);
         }
 
-        return $this->render('index',[
-            'news' => $news,
-            'categories_tops' => $categoriesTops
-        ]);
-    }
-
-    public function actionView($slug)
-    {
-
         // Banks
         //$topOffers = Offers::find(2)->asArray()->all();
         $query = new \yii\db\Query;
@@ -77,6 +54,55 @@ class NewsController extends \yii\web\Controller
             ->limit(3);
         $command = $query->createCommand();
         $topOffers = $command->queryAll();
+
+        // Tags
+        $query = new \yii\db\Query;
+        $query->select('tg.name, p.page_id, tga.tag_id')
+            ->from('easyii_tags_assign as tga')
+            ->join('LEFT JOIN', 'easyii_tags as tg', 'tga.tag_id = tg.tag_id')
+            ->join('LEFT JOIN', 'easyii_pages as p', 'p.page_id = tga.item_id')
+            ->where("tga.class LIKE '%\\Page' AND p.type_id='2' ")
+            //->orderBy(['views'=> SORT_DESC])
+            ->limit(5);
+        $command = $query->createCommand();
+        $topTags = $command->queryAll();
+
+        // Categories Left Menu
+        $query = new \yii\db\Query;
+        $query->select('ept.title as parent_title, ept.*, ept2.*,
+                (SELECT count(p.page_id) as count FROM easyii_pages as p
+                    WHERE p.category_id = ept2.category_id) as counter
+            ')
+            ->from('easyii_pages_categories as ept')
+            ->join('RIGHT JOIN', 'easyii_pages_categories as ept2', 'ept2.parent_id = ept.category_id')
+            ->where("ept2.type_id = '2' and ept2.category_id != '2' ")
+            ->limit(20);
+        $command = $query->createCommand();
+        $categoriesTops = $command->queryAll();
+
+        $topNews = [];
+        foreach(PageModel::find()
+                    ->andWhere(['type_id' => '2'])
+                    ->status(PageModel::STATUS_ON)
+                    ->sortDate()->limit(5)->all() as $item){
+            $obj = new PageObject($item);
+            $topNews[] = $obj;
+        }
+
+        return $this->render('index', [
+            'news' => $news,
+            'categories_tops' => $categoriesTops,
+            'top_banks' => $topBanks,
+            'top_offers' => $topOffers,
+            'top_news' => $topNews,
+            'top_tags' => $topTags,
+        ]);
+    }
+
+    public function actionView($slug)
+    {
+
+
 
         // News
 /*        $query = new \yii\db\Query;
