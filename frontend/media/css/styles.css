@@ -631,6 +631,14 @@ header {
 .top30 {
     margin-top: 30px;
 }
+
+.top40 {
+    margin-top: 40px;
+}
+
+.top50 {
+    margin-top: 50px;
+}
 .bold {
     font-weight: 600;
 }
@@ -1100,6 +1108,13 @@ header.sticky .logomenu-sec nav > ul > li > a {
     text-indent: initial;
 }
 
+
+
+#offers-menu-block li.h5 {
+    /*border-bottom: 1px solid rgba(192, 192, 192, 0.69);*/
+    padding: 15px 0 2px 0;
+    margin: 25px 0 2px 0;
+}
 /*================ Slider ================*/
 .s1-l1 > span {
     font-weight: 600 !important;

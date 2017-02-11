@@ -67,9 +67,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav" id="menu-show-block">
+                    <ul class="nav" id="offers-menu-block">
                         <?php foreach ($offers as $item) : ?>
-                            <li><a data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a></li>
+                            <? if($region_name != $item->model->region_name && $item->model->region_name != 'Polar: Arctic' /*&&  $item->model->region_name!=false*/ ): ?>
+                                <?php $region_name = $item->model->region_name; ?>
+                                <li  style="clear: left" class='h5 ' id="reg_<?= $item->model->region_id ?>"><?= $region_name ?></li>
+                            <? endif ?>
+                            <li style="float: left;"><a data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>

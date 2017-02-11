@@ -50,6 +50,35 @@ class Offers extends \frontend\components\API
                 ->with($with)
                 ->status(OffersModel::STATUS_ON);
 
+            if (!empty($options['list'])) {
+
+                $query->select(" ".OffersModel::tableName().".*, cdt.* , ca.`country_id` as ca_id, cra.*, cr.name as region_name  ");
+
+                $query->join(
+                    'LEFT JOIN',
+                    'country_assign as ca',
+                    " ca.`item_id` = `".OffersModel::primaryKey()[0]."` "
+                );
+
+                $query->join(
+                    'LEFT JOIN',
+                    'country_data as cdt',
+                    ' cdt.`country_id` = ca.`country_id` '
+                );
+
+                $query->join(
+                    'LEFT JOIN',
+                    'country_region_assign as cra',
+                    ' cra.`country_id` = ca.`country_id` '
+                );
+
+                $query->join(
+                    'LEFT JOIN',
+                    'country_region as cr',
+                    ' cr.`id` = cra.`region_id` '
+                );
+            }
+
             if (!empty($options['where'])) {
                 $query->andFilterWhere($options['where']);
             }
@@ -63,7 +92,11 @@ class Offers extends \frontend\components\API
                 $query
                     ->andWhere([ 'type_id' => $options['type_id'] ]);
             }
-            if (!empty($options['orderBy'])) {
+
+
+            if (!empty($options['list'])) {
+                $query->orderBy(' cra.`region_id` DESC, `cdt`.`country_id` DESC ' );
+            }elseif (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
             } else {
                 $query->sortDate();
@@ -156,5 +189,12 @@ class Offers extends \frontend\components\API
         } else {
             return null;
         }
+    }
+
+    public function api_clear(){
+        $this->_adp = false;
+        $this->_last = false;
+        $this->_items = false;
+        $this->_item = [];
     }
 }

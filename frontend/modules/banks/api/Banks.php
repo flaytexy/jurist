@@ -30,6 +30,7 @@ class Banks extends \frontend\components\API
     private $_last;
     private $_items;
     private $_item = [];
+    private $_default_model = 'BanksModel';
 
     public function api_items($options = [])
     {
@@ -57,12 +58,12 @@ class Banks extends \frontend\components\API
 
             if (!empty($options['list'])) {
 
-                $query->select('easyii_banks.*, cdt.* , ca.`country_id` as ca_id, cra.*, cr.name as region_name  ');
+                $query->select(" ".BanksModel::tableName().".*, cdt.* , ca.`country_id` as ca_id, cra.*, cr.name as region_name  ");
 
                 $query->join(
                     'LEFT JOIN',
                     'country_assign as ca',
-                    ' ca.`item_id` = `bank_id` '
+                    " ca.`item_id` = `".BanksModel::primaryKey()[0]."` "
                 );
 
                 $query->join(
@@ -102,14 +103,11 @@ class Banks extends \frontend\components\API
             //$query->groupBy('bank_id');
             if (!empty($options['list'])) {
                 $query->orderBy(' cra.`region_id` DESC, `cdt`.`country_id` DESC ' );
-            }
-
-            //ex_print($query->createCommand()->rawSql);
-/*            if (!empty($options['orderBy'])) {
+            }elseif (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
             } else {
                 $query->sortDate();
-            }*/
+            }
 
             $this->_adp = new ActiveDataProvider([
                 'query' => $query,
