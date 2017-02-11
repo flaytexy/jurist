@@ -24,7 +24,7 @@ class CountryAble extends \yii\base\Behavior
     /**
      * @var string the countries model value attribute name
      */
-    public $countryValueAttribute = 'name_en';
+    public $countryValueAttribute = 'name_ru';
     /**
      * @var string the countries model value attribute name
      */
