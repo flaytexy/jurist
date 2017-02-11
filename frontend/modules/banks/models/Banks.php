@@ -93,30 +93,21 @@ class Banks extends \frontend\components\ActiveRecord
                 'attribute' => 'title',
                 'ensureUnique' => true
             ],
-            //'countryable' => CountryAble::className(),
-            'CountriesBehavior' => CountriesBehavior::className(),
-/*            [
-                'class' => CountriesBehavior::className(),
-            ],*/
+            'countryable' => CountryAble::className(),
+            //'CountriesBehavior' => CountriesBehavior::className(),
+
         ];
     }
 
-    public function getCountries()
+    /**
+     * @return $this
+     */
+/*    public function getCountries()
     {
         return $this->hasMany(CountryData::className(), ['country_id' => 'country_id'])
-            ->viaTable('{{%country_assign}}', ['item_id' => 'bank_id']);
-    }
+            ->viaTable('{{%country_assign}}', ['item_id' => "{$this->primaryKey}"]);
+    }*/
 
-/*    public function getCountries()
-    {
-        return $this->hasMany(Country::className(), ['id' => 'country_id'])
-            ->viaTable('{{%country_assign}}', ['item_id' => 'bank_id']);
-    }*/
-/*    public function getCountries()
-    {
-        return $this->hasMany(Country::className(), ['country_id' => 'country_id'])
-            ->viaTable('{{%country_assign}}', ['item_id' => 'bank_id']);
-    }*/
 
     public function beforeSave($insert)
     {

@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
     <?php if($page->text): ?><div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
 </div>
 
-<section class="content-zone top20">
+<section class="content-zone top20" id="new-index">
     <div class="container">
         <div class="row">
             <div class="col-md-9">

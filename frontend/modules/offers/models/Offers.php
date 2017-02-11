@@ -1,6 +1,8 @@
 <?php
 namespace frontend\modules\offers\models;
 
+use common\models\country\CountryData;
+use frontend\behaviors\CountryAble;
 use Yii;
 use common\behaviors\MySluggableBehavior;
 use frontend\behaviors\SeoBehavior;
@@ -14,6 +16,9 @@ class Offers extends \frontend\components\ActiveRecord
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
+    public $region_name;
+    public $region_id;
+    public $country_id;
     public $property_list;
 
     public static function tableName()
@@ -43,7 +48,8 @@ class Offers extends \frontend\components\ActiveRecord
             ['slug', 'default', 'value' => null],
             ['status', 'default', 'value' => self::STATUS_ON],
             ['optionNames', 'safe'],
-            ['tagNames', 'safe']
+            ['tagNames', 'safe'],
+            ['countryNames', 'safe'],
         ];
     }
 
@@ -61,7 +67,8 @@ class Offers extends \frontend\components\ActiveRecord
             'time' => Yii::t('easyii', 'Date'),
             'slug' => Yii::t('easyii', 'Slug'),
             'optionNames' => Yii::t('easyii', 'Options'),
-            'tagNames' => Yii::t('easyii', 'Tags')
+            'tagNames' => Yii::t('easyii', 'Tags'),
+            'countryNames' => Yii::t('easyii', 'Страна')
         ];
     }
 
@@ -76,8 +83,19 @@ class Offers extends \frontend\components\ActiveRecord
                 'attribute' => 'title',
                 'ensureUnique' => true
             ],
+            'countryable' => CountryAble::className(),
+            //'CountriesBehavior' => CountriesBehavior::className(),
         ];
     }
+
+    /**
+     * @return $this
+     */
+/*    public function getCountries()
+    {
+        return $this->hasMany(CountryData::className(), ['country_id' => 'country_id'])
+            ->viaTable('{{%country_assign}}', ['item_id' => "{$this->primaryKey}"]);
+    }*/
 
     public function getPhotos()
     {
@@ -88,6 +106,7 @@ class Offers extends \frontend\components\ActiveRecord
 
     public function beforeSave($insert)
     {
+
         if (parent::beforeSave($insert)) {
             $this->price = str_replace(",", ".", $this->price);
 

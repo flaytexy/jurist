@@ -1,6 +1,7 @@
 <?php
 namespace frontend\behaviors;
 
+use common\models\country\CountryData;
 use Yii;
 use yii\db\ActiveRecord;
 use common\models\country\Country;
@@ -12,6 +13,32 @@ use common\models\country\CountryAssign;
  */
 class CountryAble extends \yii\base\Behavior
 {
+    /**
+     * @var boolean whether to return countries as array instead of string
+     */
+    public $countryNamesAsArray = true;
+    /**
+     * @var string the countries relation name
+     */
+    public $countryRelation = 'countries';
+    /**
+     * @var string the countries model value attribute name
+     */
+    public $countryValueAttribute = 'name_en';
+    /**
+     * @var string the countries model value attribute name
+     */
+    public $countryFlagAttribute = 'alpha';
+    /**
+     * @var string[]
+     */
+    private $_countryNames;
+
+    /**
+     * @var string PrimaryKey Column
+     */
+    private $countryPrimaryKey = 'country_id';
+
     private $_country;
     /**
      * @var ActiveRecord the owner of this behavior
@@ -27,6 +54,20 @@ class CountryAble extends \yii\base\Behavior
         ];
     }
 
+/*    public function getCountries()
+    {
+        if(isset($this->owner->primaryKey()[0]))
+            return $this->owner->hasMany(CountryData::className(), ['country_id' => 'country_id'])
+                ->viaTable('{{%country_assign}}', ['item_id' => "{$this->owner->primaryKey()[0]}"]);
+
+        return false;
+    }*/
+
+    public function getCountries(){
+        return $this->owner->hasMany(CountryData::className(), ["{$this->countryPrimaryKey}" => 'country_id'])->via('countryAssigns');
+        //return $this->getCountry();
+    }
+
     public function getCountryAssigns()
     {
         return $this->owner->hasMany(CountryAssign::className(), ['item_id' => $this->owner->primaryKey()[0]])->where(['class' => get_class($this->owner)]);
@@ -34,12 +75,40 @@ class CountryAble extends \yii\base\Behavior
 
     public function getCountry()
     {
-        return $this->owner->hasMany(Country::className(), ['id' => 'country_id'])->via('countryAssigns');
+        return $this->owner->hasMany(CountryData::className(), ["{$this->countryPrimaryKey}" => 'country_id'])->via('countryAssigns');
     }
 
-    public function getCountryNames()
+    public function getCountryNames_old()
     {
-        return implode(', ', $this->getCountryArray());
+        $countryNames = $this->getCountryArray();
+        return implode(', ', $countryNames);
+    }
+
+    /**
+     * Returns countries.
+     * @param boolean|null $asArray
+     * @return string|string[]
+     */
+    public function getCountryNames($asArray = null)
+    {
+        if (!$this->owner->getIsNewRecord() && $this->_country === null) {
+            $this->_country = [];
+
+            /* @var ActiveRecord $tag */
+            foreach ($this->owner->{$this->countryRelation} as $country) {
+                $this->_country[] = $country->getAttribute($this->countryValueAttribute);
+            }
+        }
+
+        if ($asArray === null) {
+            $asArray = $this->countryNamesAsArray;
+        }
+
+        if ($asArray) {
+            return $this->_country === null ? [] : $this->_country;
+        } else {
+            return $this->_country === null ? '' : implode(', ', $this->_country);
+        }
     }
 
     public function setCountryNames($values)
@@ -52,11 +121,14 @@ class CountryAble extends \yii\base\Behavior
         if($this->_country === null){
             $this->_country = [];
             foreach($this->owner->country as $country) {
-                $this->_country[] = $country->name;
+                $this->_country[] = $country->{$this->countryValueAttribute};
             }
         }
         return $this->_country;
     }
+
+
+
 
     public function afterSave()
     {
@@ -69,13 +141,13 @@ class CountryAble extends \yii\base\Behavior
             $modelClass = get_class($this->owner);
 
             foreach ($this->_country as $name) {
-                if (!($country = Country::findOne(['name' => $name]))) {
-                    $country = new Country(['name' => $name]);
+                if (!($country = CountryData::findOne(["{$this->countryValueAttribute}" => $name]))) {
+                    //$country = new CountryData(["{$this->countryValueAttribute}" => $name]);
                 }
                 //$country->frequency++;
                 if ($country->save()) {
                     $updatedCountry[] = $country;
-                    $countryAssigns[] = [$modelClass, $this->owner->primaryKey, $country->id];
+                    $countryAssigns[] = [$modelClass, $this->owner->primaryKey, $country->{$this->countryPrimaryKey}];
                 }
             }
 
@@ -95,10 +167,10 @@ class CountryAble extends \yii\base\Behavior
         }
 
         if (count($pks)) {
-            //Country::updateAllCounters(['frequency' => -1], ['in', 'country_id', $pks]);
+             //CountryData::updateAllCounters(['frequency' => -1], ['in', 'country_id', $pks]);
         }
-        //Country::deleteAll(['frequency' => 0]);
-        CountryAssign::deleteAll(['class' => get_class($this->owner), 'item_id' => $this->owner->primaryKey]);
+        //CountryData::deleteAll(['frequency' => 0]);
+        //CountryAssign::deleteAll(['class' => get_class($this->owner), 'item_id' => $this->owner->primaryKey]);
     }
 
     /**

@@ -30,6 +30,32 @@ $module = $this->context->module->id;
 ]) */?>
 <?= $form->field($model, 'coordinates') ?>
 
+
+<?/*= $form->field($model, 'countryNames')->widget(TagsInput::className()) */?>
+
+<?= $form->field($model, 'countryNames')
+    ->widget(\akavov\countries\widgets\CountriesSelectizeTextInput::className(), [
+        'countryModelNamespace' => 'common\models\country\CountryData',
+        'customRender' => [
+            'item'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name">{escape(item.name_en)}</span></div>',
+            'option'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name">{escape(item.name_en)}</span></div>',
+        ],
+        'clientOptions' => [
+            'valueField' => 'name_en',
+            'labelField' => 'name_en',
+            'searchField' => ['name_en'],
+            'plugins' => ['remove_button'],
+            'closeAfterSelect' => true,
+            'maxItems' => 10,
+            'delimiter' => ',',
+            'persist' => false,
+            'preload' => true,
+            'items' => $model->countryNames,
+            'create' => false,
+        ],
+    ]); ?>
+
+
 <?= $form->field($model, 'price') ?>
 <?= $form->field($model, 'how_days') ?>
 <?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
