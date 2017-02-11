@@ -64,7 +64,9 @@ class CountryAble extends \yii\base\Behavior
     }*/
 
     public function getCountries(){
-        return $this->owner->hasMany(CountryData::className(), ["{$this->countryPrimaryKey}" => 'country_id'])->via('countryAssigns');
+        //e_print(get_class($this->owner));
+        $countries = $this->owner->hasMany(CountryData::className(), ["{$this->countryPrimaryKey}" => 'country_id'])->via('countryAssigns');
+        return $countries;
         //return $this->getCountry();
     }
 
@@ -96,6 +98,7 @@ class CountryAble extends \yii\base\Behavior
 
             /* @var ActiveRecord $tag */
             foreach ($this->owner->{$this->countryRelation} as $country) {
+
                 $this->_country[] = $country->getAttribute($this->countryValueAttribute);
             }
         }
@@ -144,7 +147,7 @@ class CountryAble extends \yii\base\Behavior
                 if (!($country = CountryData::findOne(["{$this->countryValueAttribute}" => $name]))) {
                     //$country = new CountryData(["{$this->countryValueAttribute}" => $name]);
                 }
-                //$country->frequency++;
+                $country->frequency++;
                 if ($country->save()) {
                     $updatedCountry[] = $country;
                     $countryAssigns[] = [$modelClass, $this->owner->primaryKey, $country->{$this->countryPrimaryKey}];
@@ -167,10 +170,10 @@ class CountryAble extends \yii\base\Behavior
         }
 
         if (count($pks)) {
-             //CountryData::updateAllCounters(['frequency' => -1], ['in', 'country_id', $pks]);
+             CountryData::updateAllCounters(['frequency' => -1], ['in', 'country_id', $pks]);
         }
         //CountryData::deleteAll(['frequency' => 0]);
-        //CountryAssign::deleteAll(['class' => get_class($this->owner), 'item_id' => $this->owner->primaryKey]);
+        CountryAssign::deleteAll(['class' => get_class($this->owner), 'item_id' => $this->owner->primaryKey]);
     }
 
     /**

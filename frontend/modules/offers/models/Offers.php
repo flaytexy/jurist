@@ -94,7 +94,7 @@ class Offers extends \frontend\components\ActiveRecord
 /*    public function getCountries()
     {
         return $this->hasMany(CountryData::className(), ['country_id' => 'country_id'])
-            ->viaTable('{{%country_assign}}', ['item_id' => "{$this->primaryKey}"]);
+            ->viaTable('{{%country_assign}}', ['item_id' => "{$this->primaryKey()[0]}"]);
     }*/
 
     public function getPhotos()
