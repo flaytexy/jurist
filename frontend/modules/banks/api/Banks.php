@@ -81,8 +81,8 @@ class Banks extends \frontend\components\API
                 $query->join(
                     'LEFT JOIN',
                     'country_region as cr',
-                    " `cr`.`id` = `cra`.`region_id` AND `cr`.`is_unep` = '1' "
-                );
+                    " `cr`.`id` = `cra`.`region_id`  "
+                )->andWhere(" `cr`.`is_unep` = '1' ");
             }
 
 
