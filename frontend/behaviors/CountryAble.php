@@ -72,6 +72,7 @@ class CountryAble extends \yii\base\Behavior
 
     public function getCountryAssigns()
     {
+       // e_print($this->owner->primaryKey()[0]);
         return $this->owner->hasMany(CountryAssign::className(), ['item_id' => $this->owner->primaryKey()[0]])->where(['class' => get_class($this->owner)]);
     }
 
@@ -147,8 +148,9 @@ class CountryAble extends \yii\base\Behavior
                 if (!($country = CountryData::findOne(["{$this->countryValueAttribute}" => $name]))) {
                     //$country = new CountryData(["{$this->countryValueAttribute}" => $name]);
                 }
+
                 $country->frequency++;
-                if ($country->save()) {
+                if ($country->save(false)) {
                     $updatedCountry[] = $country;
                     $countryAssigns[] = [$modelClass, $this->owner->primaryKey, $country->{$this->countryPrimaryKey}];
                 }

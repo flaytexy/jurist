@@ -49,13 +49,13 @@ $module = $this->context->module->id;
     ->widget(\akavov\countries\widgets\CountriesSelectizeTextInput::className(), [
         'countryModelNamespace' => 'common\models\country\CountryData',
         'customRender' => [
-            'item'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name">{escape(item.name_en)}</span></div>',
-            'option'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name">{escape(item.name_en)}</span></div>',
+            'item'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
+            'option'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
         ],
         'clientOptions' => [
             'valueField' => 'name_en',
             'labelField' => 'name_en',
-            'searchField' => ['name_en'],
+            'searchField' => ['name_en', 'name_ru'],
             'plugins' => ['remove_button'],
             'closeAfterSelect' => true,
             'maxItems' => 10,
