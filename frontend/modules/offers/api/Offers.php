@@ -3,6 +3,7 @@ namespace frontend\modules\offers\api;
 
 use frontend\models\Option;
 use frontend\modules\offers\models\OffersProperties;
+use frontend\modules\offers\OffersModule;
 use Yii;
 use yii\data\ActiveDataProvider;
 use frontend\models\Tag;
@@ -52,12 +53,12 @@ class Offers extends \frontend\components\API
 
             if (!empty($options['list'])) {
 
-                $query->select(" ".OffersModel::tableName().".*, cdt.* , ca.`country_id` as ca_id, cra.*, cr.name as region_name  ");
+                $query->select(" ".OffersModel::tableName().".*, `ca`.`country_id` as ca_id, cdt.* , cra.*, cr.name as region_name  ");
 
                 $query->join(
                     'LEFT JOIN',
                     'country_assign as ca',
-                    " ca.`item_id` = `".OffersModel::primaryKey()[0]."` "
+                    " `ca`.`item_id` = `".OffersModel::primaryKey()[0]."` AND `ca`.`class` LIKE '".addslashes(addslashes(OffersModel::className()))."'  "
                 );
 
                 $query->join(
@@ -69,16 +70,16 @@ class Offers extends \frontend\components\API
                 $query->join(
                     'LEFT JOIN',
                     'country_region_assign as cra',
-                    ' cra.`country_id` = ca.`country_id` '
+                    ' cra.`country_id` = cdt.`country_id` '
                 );
 
                 $query->join(
                     'LEFT JOIN',
                     'country_region as cr',
-                    ' cr.`id` = cra.`region_id` '
+                    " `cr`.`id` = `cra`.`region_id` AND `cr`.`is_unep` = '1' "
                 );
             }
-
+           // ex_print($query->createCommand()->rawSql);
             if (!empty($options['where'])) {
                 $query->andFilterWhere($options['where']);
             }
@@ -95,7 +96,7 @@ class Offers extends \frontend\components\API
 
 
             if (!empty($options['list'])) {
-                $query->orderBy(' cra.`region_id` DESC, `cdt`.`country_id` DESC ' );
+                $query->orderBy(' `cr`.`sort_order` ASC, `cdt`.`country_id` DESC ' );
             }elseif (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
             } else {

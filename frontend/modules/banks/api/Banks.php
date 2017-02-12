@@ -63,7 +63,7 @@ class Banks extends \frontend\components\API
                 $query->join(
                     'LEFT JOIN',
                     'country_assign as ca',
-                    " ca.`item_id` = `".BanksModel::primaryKey()[0]."` "
+                    " `ca`.`item_id` = `".BanksModel::primaryKey()[0]."` AND `ca`.`class` LIKE '".addslashes(addslashes(BanksModel::className()))."'  "
                 );
 
                 $query->join(
@@ -81,7 +81,7 @@ class Banks extends \frontend\components\API
                 $query->join(
                     'LEFT JOIN',
                     'country_region as cr',
-                    ' cr.`id` = cra.`region_id` '
+                    " `cr`.`id` = `cra`.`region_id` AND `cr`.`is_unep` = '1' "
                 );
             }
 
@@ -102,7 +102,7 @@ class Banks extends \frontend\components\API
 
             //$query->groupBy('bank_id');
             if (!empty($options['list'])) {
-                $query->orderBy(' cra.`region_id` DESC, `cdt`.`country_id` DESC ' );
+                $query->orderBy(' `cr`.`sort_order` ASC, `cdt`.`country_id` DESC ' );
             }elseif (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
             } else {
