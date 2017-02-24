@@ -60,13 +60,14 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
     <header class="stick scrollup">
         <div class="top-bar">
             <div class="container">
+                <div class="tbar-phone" style="float: left">+79251754417</div>
                 <div class="topbar-data">
                     <ul class="top-menus">
-                        <li><a class href="/fonds" title="Банки">Фонды</a></li>
+                        <li><a class href="/fonds" title="Фонды">Фонды</a></li>
                         <li><a href="/banks" title="Банки">Банки</a></li>
                         <li><a href="/offshornyie-predlozheniya" title="Компании">Компании</a></li>
-                        <li><a href="/licenses" title="Банки">Лицензии</a></li>
-                        <li><a href="/processing" title="Банки" style="line-height: 0.9">Мерчант (процессинг)<br /> Эквайринг</a></li>
+                        <li><a href="/licenses" title="Лицензии">Лицензии</a></li>
+                        <li><a href="/processing" title="Эквайринг" style="line-height: 0.9">Мерчант (процессинг)<br /> Эквайринг</a></li>
                     </ul>
                 </div>
             </div>

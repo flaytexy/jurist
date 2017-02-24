@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                 <li class="active"><i class="fa fa-map-marker"></i>
                                                     <span><?= $item->date ?></span></li>
                                                 <li class="book-btn"><i class="fa fa-thumbs-o-up"></i>
-                                                    <?= Html::a('Детальней', ['pages/view', 'slug' => $item->slug]) ?>
+                                                    <?= Html::a('Детальней', [$typeTitle.'/'.$item->slug]) ?>
                                                 </li>
                                             </ul>
                                         </div>

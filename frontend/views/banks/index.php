@@ -210,7 +210,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             <div class="package">
 
                                                 <div class="package-thumb">
-                                                    <?= Html::img($item->thumb(240, 160)) ?>
+                                                    <?= Html::img($item->thumb(240, 120)) ?>
                                                     <!--<span><i>$<? /*= $item->model->price */ ?></i> / <? /* if ($item->model->how_days): */ ?><? /*= $item->model->how_days*/ ?><? /* else: */ ?>Минимал<? /* endif; */ ?></span>-->
                                                 </div>
                                                 <div class="package-detail">
