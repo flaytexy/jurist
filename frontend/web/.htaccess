@@ -15,6 +15,7 @@ RewriteRule ^(.*)index.(php|html?)$ /$1 [R=301,NC,L]
 
 RewriteRule ^offers/index$ /$1 [R=301,NC,L]
 RewriteRule ^news/index$ /news [R=301,NC,L]
+RewriteRule ^(.*)/page/(.*)$ /$1/page$2 [R=301,NC,L]
 RewriteRule ^news/page-articles$ /news [R=301,NC,L]
 RewriteRule ^(.*)/view/(.*)$ /$1/$2 [R=301,NC,L]
 RewriteRule ^index.(.*)/$ / [R=301,NC,L]

@@ -9,9 +9,8 @@ use yii\widgets\LinkPager;
 class BanksController extends \yii\web\Controller
 {
 
-    public function actionIndex($tag = null)
+    public function actionIndex($tag = null, $type = null, $slug = null, $page = null)
     {
-
         $type_id = \Yii::$app->request->get('type_id');
 
         $banks = Banks::items(['tags' => $tag, 'list' => 1, 'pagination' => ['pageSize' => 300]]);
@@ -40,13 +39,15 @@ class BanksController extends \yii\web\Controller
 
 
         Banks::clear();
-        $banksList = Banks::items(['tags' => $tag, 'pagination' => ['pageSize' => 6]]);
-        $banksPagination = Banks::pages();
+        $banksList = Banks::items([
+            'tags' => $tag,
+            'pagination' => ['pageSize' => 6]
+        ]);
+
 
         return $this->render('index', [
             'banks' => $banks,
             'banksList' => $banksList,
-            'banksPagination' => $banksPagination,
             'bank_type' => $type_id
         ]);
     }

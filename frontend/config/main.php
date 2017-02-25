@@ -121,10 +121,7 @@ $config = [
 //                        'type_id' => 2
 //                    ],
 //                ],
-                [
-                    'pattern' => 'banks',
-                    'route' => 'banks/index',
-                ],
+
                 [
                     'pattern' => 'fonds',
                     'route' => 'pages/index',
@@ -181,18 +178,26 @@ $config = [
                     'pattern' => '<controller:\w+>/c/<slug:[\w-]+>',
                     'route' => '<controller>/index',
                 ],
+
+                '<controller:\w+>/page<page:\d+>' => '<controller>/index',
+
 //                'licenses/<slug:[\w-]+>' => 'page/view',
 //                'fonds/<slug:[\w-]+>' => 'page/view',
 //                'processing/<slug:[\w-]+>' => 'page/view',
                 'offers/<slug:[\w-]+>' => 'offers/view',
                 //'news/tag/<slug:[\w-]+>' => 'news/index',
-                'news/page/<page:\d+>' => 'news/index',
+                //'news/page/<page:\d+>' => 'news/index',
                 'news/<slug:[\w-]+>' => 'news/view',
                 //'banks/index' => 'banks/index',
-                'banks/new' => 'banks/new',
+                //'banks/new' => 'banks/new',
+                //'banks/page<page:\d+>' => 'banks/index',
+                //'banks/page/<page:\d+>' => 'banks/index',
                 'banks/<slug:[\w-]+>' => 'banks/view',
                 //'fonds' => 'page/index',
                 //'processing/<slug:[\w-]+>' => 'processing/view',
+                //'<controller:\w+>/page/<page:\d+>' => '<controller>/index',
+
+                //'<controller:\w+>/page/<page:\d+>' => '<controller>/index',
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',

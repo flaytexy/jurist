@@ -239,7 +239,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         </div>
                         <!-- Villa Editors Picks -->
                         <div id="pagination">
-                            <div><?= $banksPagination ?></div>
+                            <div>
+                                <?= Banks::pages() ?>
+                            </div>
                         </div>
                         <!-- Pagination -->
                     </div>

@@ -182,7 +182,12 @@ class Banks extends \frontend\components\API
 
     public function api_pages()
     {
-        return $this->_adp ? LinkPager::widget(['pagination' => $this->_adp->pagination]) : '';
+        $this->_adp->pagination->pageSizeParam = false;
+
+        if($this->_adp){
+            return LinkPager::widget(['pagination' => $this->_adp->pagination]);
+        }
+        return '';
     }
 
     private function findBanks($id_slug)

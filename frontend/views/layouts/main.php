@@ -60,10 +60,10 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
     <header class="stick scrollup">
         <div class="top-bar">
             <div class="container">
-                <div class="tbar-phone" style="float: left">+79251754417</div>
                 <div class="topbar-data">
                     <ul class="top-menus">
-                        <li><a class href="/fonds" title="Фонды">Фонды</a></li>
+                        <li><a href="/fonds" title="Фонды">+7 925 175 44 17</a></li>
+                        <li><a href="/fonds" title="Фонды">Фонды</a></li>
                         <li><a href="/banks" title="Банки">Банки</a></li>
                         <li><a href="/offshornyie-predlozheniya" title="Компании">Компании</a></li>
                         <li><a href="/licenses" title="Лицензии">Лицензии</a></li>
