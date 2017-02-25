@@ -40,7 +40,7 @@ class AppAsset extends AssetBundle
         'js/scrollupbar.js',
         'js/perfect-scrollbar.js',
         'js/perfect-scrollbar.jquery.js',
-        'js/jquery.scrolly.js',
+        'js/jquery.scrolly.js', //
 
         'js/all.js',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
