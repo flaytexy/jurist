@@ -781,6 +781,27 @@ header {
     opacity: 1;
     visibility: visible;
 }
+
+
+.navbar-default22 {
+
+}
+.navbar-default22 li {
+
+}
+#logomenu-sec .navbar22  > ul li a {
+    border: 3px solid transparent;
+}
+#logomenu-sec .navbar22  > ul li a:hover {
+    border: 3px solid #7dc20f;
+}
+#logomenu-sec .navbar22  > ul li a {
+    text-align: center;
+    margin: 33px 0px 28px;
+    text-align: center;
+    padding: 10px 25px;
+
+}
 /*================ Switcher ================*/
 /* Switcher */
 .switcher {
@@ -912,7 +933,13 @@ header.sticky .logo img {
 header.sticky .logomenu-sec nav > ul > li > a {
     padding: 25px 45px 22px 0;
 }
+header.stick .top-menus li:first-child {
 
+}
+header.stick .top-menus li:first-child > a {
+    font-weight: 600;
+    background: none;
+}
 /*================ Responsive Header ================*/
 .responsive-header {
     float: left;
@@ -1994,6 +2021,7 @@ footer .title1.style2 > h2 {
     padding: 30px 20px 25px;
     text-align: center;
     width: 100%;
+    min-height: 135px;
 }
 
 .cate {
