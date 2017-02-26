@@ -6184,6 +6184,30 @@ ul.faq li.a blockquote {
     margin-left: 10px;
 }
 
+.gsc-search-box {
+    padding: 28px 3px  18px 3px !important;
+    margin: 0 !important;
+}
+.gsib_a {
+    color: green !important;
+}
+.gsc-input {
+    background: none !important;
+
+}
+.gsc-search-button {
+    height: 18px !important;
+    width: 24px !important;
+    padding: 0 !important;
+    border: none !important;
+}
+.gsc-search-button input {
+    height: 23px !important;
+    width: 23px !important;
+    background-size: cover !important;
+    background: #7DC20F !important
+}
+
 /* banks */
 #banks2 .switcher {
     background: #b3b8c3 none repeat scroll 0 0;

@@ -74,8 +74,27 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
         </div><!-- Top Bar -->
         <div class="logomenu-sec hidden-xs" id="logomenu-sec">
             <div class="container">
-                <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.png" alt=""></a></div>
-                <nav class="navbar22 navbar-default22">
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.png" alt=""></a></div>
+                    </div>
+                    <div class="col-md-5">
+                        <script>
+                            (function() {
+                                var cx = '014824414261944164439:sfk3fpa6eoq';
+                                var gcse = document.createElement('script');
+                                gcse.type = 'text/javascript';
+                                gcse.async = true;
+                                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                                var s = document.getElementsByTagName('script')[0];
+                                s.parentNode.insertBefore(gcse, s);
+                            })();
+                        </script>
+                        <gcse:search></gcse:search>
+                    </div>
+                    <div class="col-md-5">
+                        <nav class="navbar22 navbar-default22">
                             <?= Menu::widget([
                                 'options' => ['class' => 'nav navbar-nav'],
                                 'items' => [
@@ -92,7 +111,10 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                                     ['label' => 'Контакты', 'url' => ['/contact']]
                                 ],
                             ]); ?>
-                </nav>
+                        </nav>
+                    </div>
+                </div>
+
             </div>
         </div><!-- Logo Menu Sec -->
     </header><!-- Header -->

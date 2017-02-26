@@ -220,7 +220,11 @@ $config = [
                     'js' => [YII_DEBUG ? 'js/bootstrap.js' : 'js/bootstrap.min.js'],
                 ],
             ],
-        ]
+        ],
+//        'googleApi' => [
+//                'class'                 => '\skeeks\yii2\googleApi\GoogleApiComponent',
+//                'developer_key'         => 'AIzaSyDin6H0q9dw6l6ATB2MQlvz5vdsNd9HDa4',
+//        ]
     ],
     'controllerMap' => [
         'elfinder' => [

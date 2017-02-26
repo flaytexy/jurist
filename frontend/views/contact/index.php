@@ -17,6 +17,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
     <div class="row">
         <div class="col-md-8">
             <?= $page->text ?>
+            <div class="row">
+                <!--        <div style="width: 560px; height: 400px;">
+
+                        </div>-->
+                <iframe src="https://api-maps.yandex.ua/frame/v1/-/CZx5mIi3" width="560" height="600" frameborder="0"></iframe>
+
+            </div>
         </div>
         <div class="col-md-4">
             <?php if(Yii::$app->request->get(Feedback::SENT_VAR)) : ?>
