@@ -24,9 +24,9 @@ class AppAsset extends AssetBundle
         //'css/owl.css',
         ///'css/opensans.css',
         //'css/table.css',
-        'css/revolution.css?v=2017-02-25-1',
-        'css/prefix.css?v=2017-02-25-1',
-        'css/styles.css?v=2017-02-25-1',
+        'css/revolution.css?v=2017-02-25-2',
+        'css/prefix.css?v=2017-02-25-2',
+        'css/styles.css?v=2017-02-25-2',
         //'css/responsive.css',
         //'css/color.css'
     ];
@@ -44,7 +44,7 @@ class AppAsset extends AssetBundle
 
         'js/all.js',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
-        'js/scripts.js?v=2017-02-10-1'
+        'js/scripts.js?v=2017-02-10-2'
     ];
     public $depends = [
         'yii\web\JqueryAsset',

@@ -14,46 +14,110 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 
 <? if (YII_ENV_PROD) : ?>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter42375894 = new Ya.Metrika({
-                    id:42375894,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
-                });
-            } catch(e) { }
-        });
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter42375894 = new Ya.Metrika({
+                        id: 42375894,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true
+                    });
+                } catch (e) {
+                }
+            });
 
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
 
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/42375894" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/42375894" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript"> (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter43132404 = new Ya.Metrika({
+                        id: 43132404,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true
+                    });
+                } catch (e) {
+                }
+            });
+            var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks"); </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/43132404" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript> <!-- /Yandex.Metrika counter -->
 
-    ga('create', 'UA-90951237-1', 'auto');
-    ga('send', 'pageview');
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-</script>
+        ga('create', 'UA-90951237-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-92818031-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
 <? endif ?>
 
 <div class="theme-layout" style="padding-top: 156px;">
@@ -67,21 +131,24 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                         <li><a href="/banks" title="Банки">Банки</a></li>
                         <li><a href="/offshornyie-predlozheniya" title="Компании">Компании</a></li>
                         <li><a href="/licenses" title="Лицензии">Лицензии</a></li>
-                        <li><a href="/processing" title="Эквайринг" style="line-height: 0.9">Мерчант (процессинг)<br /> Эквайринг</a></li>
+                        <li><a href="/processing" title="Эквайринг" style="line-height: 0.9">Мерчант (процессинг)<br/>
+                                Эквайринг</a></li>
                     </ul>
                 </div>
             </div>
-        </div><!-- Top Bar -->
+        </div>
+        <!-- Top Bar -->
         <div class="logomenu-sec hidden-xs" id="logomenu-sec">
             <div class="container">
 
                 <div class="row">
                     <div class="col-md-2">
-                        <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.png" alt=""></a></div>
+                        <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.png" alt=""></a>
+                        </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <script>
-                            (function() {
+                            (function () {
                                 var cx = '014824414261944164439:sfk3fpa6eoq';
                                 var gcse = document.createElement('script');
                                 gcse.type = 'text/javascript';
@@ -93,7 +160,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                         </script>
                         <gcse:search></gcse:search>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <nav class="navbar22 navbar-default22">
                             <?= Menu::widget([
                                 'options' => ['class' => 'nav navbar-nav'],
@@ -116,17 +183,19 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                 </div>
 
             </div>
-        </div><!-- Logo Menu Sec -->
-    </header><!-- Header -->
+        </div>
+        <!-- Logo Menu Sec -->
+    </header>
+    <!-- Header -->
     <div class="responsive-header">
         <div class="top-bar">
-<!--            <ul class="sign-btns">
-                <li><a href="#" title=""><i class="fa fa-unlock-alt"></i> Log In</a></li>
-                <li><a href="#" title=""><i class="fa fa-plus"></i> Sign Up</a></li>
-            </ul>-->
-<!--            <ul class="language-select">
-                <li><img src="/uploads/theme_villa/lang1.jpg" alt=""></li>
-            </ul>-->
+            <!--            <ul class="sign-btns">
+                            <li><a href="#" title=""><i class="fa fa-unlock-alt"></i> Log In</a></li>
+                            <li><a href="#" title=""><i class="fa fa-plus"></i> Sign Up</a></li>
+                        </ul>-->
+            <!--            <ul class="language-select">
+                            <li><img src="/uploads/theme_villa/lang1.jpg" alt=""></li>
+                        </ul>-->
         </div>
         <div class="logomenu-bar">
             <div class="container">
@@ -158,22 +227,36 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                     ['label' => 'Контакты', 'url' => ['/contact']]
                 ],
             ]); ?>
-            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div><div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div><!-- Responsive Menu -->
+            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
+                <div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+            </div>
+            <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;">
+                <div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div>
+            </div>
+            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
+                <div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+            </div>
+            <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;">
+                <div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div>
+            </div>
+        </div>
+        <!-- Responsive Menu -->
         <ul class="topbar-contact">
-          <!--  <li class="active"><i class="fa fa-envelope-o"></i> contacts@yoursites.com</li>-->
- <!--           <li><i class="fa fa-phone"></i> +79251754417</li>-->
+            <!--  <li class="active"><i class="fa fa-envelope-o"></i> contacts@yoursites.com</li>-->
+            <!--           <li><i class="fa fa-phone"></i> +79251754417</li>-->
         </ul>
-    </div><!-- Responsive Header -->
+    </div>
+    <!-- Responsive Header -->
     <div class="row">
-        <?php if($this->context->id != 'site') : ?>
+        <?php if ($this->context->id != 'site') : ?>
             <div class="pagetop-sec">
                 <div class="fixed-bg2" style="background-image: url('/uploads/theme_villa/pagetop-bg.jpg');"></div>
                 <div class="container">
                     <div class="page-title">
                         <strong><span>
-                                <?php if(count($this->params['breadcrumbs'][0])==1): ?>
+                                <?php if (count($this->params['breadcrumbs'][0]) == 1): ?>
                                     <?= $this->params['breadcrumbs'][0] ?>
-                                <? elseif(!empty($this->params['breadcrumbs'][1])): ?>
+                                <? elseif (!empty($this->params['breadcrumbs'][1])): ?>
                                     <?= $this->params['breadcrumbs'][1] ?>
                                 <? endif; ?>
                             </span>
@@ -203,7 +286,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                         <div class="instagram-gallery">
                             <ul>
                                 <?php foreach ($popularly as $item) : ?>
-                                    <?php if(!empty($item->image)): ?>
+                                    <?php if (!empty($item->image)): ?>
                                         <li>
                                             <a href="<?= Url::to([$item->slug]) ?>">
                                                 <?= Html::img(\frontend\helpers\Image::thumb($item->image, 150, 150)) ?>
@@ -212,8 +295,10 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                                     <? endif; ?>
                                 <? endforeach; ?>
                             </ul>
-                        </div><!-- Instagram Gallery -->
-                    </div><!-- Instagram -->
+                        </div>
+                        <!-- Instagram Gallery -->
+                    </div>
+                    <!-- Instagram -->
                 </div>
             </div>
         </div>
@@ -229,11 +314,11 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                 Subscribe to newsletters
             </div>
             <div class="col-md-6">
-                <?php /*if(Yii::$app->request->get(Subscribe::SENT_VAR)) : */?>
+                <?php /*if(Yii::$app->request->get(Subscribe::SENT_VAR)) : */ ?>
                     You have successfully subscribed
-                <?php /*else : */?>
-                    <?/*= Subscribe::form() */?>
-                <?php /*endif; */?>
+                <?php /*else : */ ?>
+                    <? /*= Subscribe::form() */ ?>
+                <?php /*endif; */ ?>
             </div>
             <div class="col-md-4 text-right">
                 ©2015 noumo
@@ -253,11 +338,12 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                                 <a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a>
                             </div>
                             <p>Оптимизация налогообложения Вашей компании
-                                законным путем это то, на чем мы специализируемся.<br />
+                                законным путем это то, на чем мы специализируемся.<br/>
                                 Мы не несем ответственность за успех Вашего бизнеса,
                                 но поспособствовать получению возможности уменьшить
                                 затраты и вручить зарегистрированную новую компанию
                                 в нужной юрисдикции мы можем.</p>
+
                             <p>Чтобы получить результат стоит с чего-то начать,
                                 например написать нам в чат и мы согласуем запуск
                                 выполнения Вашего заказа.</p>
@@ -267,11 +353,11 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                 <div class="col-md-3">
                     <div class="footer-widget">
                         <div class="address-widget">
-<!--                            <ul>
-                                <li><span>Address:</span> Russia, Moscow</li>
-                                <li><span>Phone:</span> +79251754417</li>
-                                <li><span>Email:</span> <a href="/contact" title="">sendme@it-offshore.com</a></li>
-                            </ul>-->
+                            <!--                            <ul>
+                                                            <li><span>Address:</span> Russia, Moscow</li>
+                                                            <li><span>Phone:</span> +79251754417</li>
+                                                            <li><span>Email:</span> <a href="/contact" title="">sendme@it-offshore.com</a></li>
+                                                        </ul>-->
                             <a href="/contact" class="theme-btn" title="">Связаться с нами</a>
                         </div>
                     </div>
@@ -319,7 +405,8 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                                     </div>
                                 </li>
                             </ul>
-                        </div><!-- Fun Facts -->
+                        </div>
+                        <!-- Fun Facts -->
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -329,7 +416,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                         </div>
                         <div class="menu-links">
                             <ul>
-                               <!-- <li><a href="/faq" title="">Faq's</a></li>-->
+                                <!-- <li><a href="/faq" title="">Faq's</a></li>-->
                                 <li><a href="/contact" title="">Support</a></li>
                                 <li><a href="/contact" title="">Contact us</a></li>
                             </ul>
@@ -362,7 +449,8 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
             </div> */ ?>
         </div>
 
-    </div><!-- Bottom Line -->
+    </div>
+    <!-- Bottom Line -->
 </footer>
 
 <?php $this->endContent(); ?>
