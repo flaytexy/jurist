@@ -13,7 +13,9 @@ class BanksController extends \yii\web\Controller
     {
         $type_id = \Yii::$app->request->get('type_id');
 
-        $banks = Banks::items(['tags' => $tag, 'list' => 1, 'pagination' => ['pageSize' => 300]]);
+        $banks = array();
+        if($page==false || $page==='1')
+            $banks = Banks::items(['tags' => $tag, 'list' => 1, 'pagination' => ['pageSize' => 300]]);
 
         /*        $query = \frontend\modules\banks\models\Banks::find()->where(['status' => 1]);
                 $count = $query->count();
