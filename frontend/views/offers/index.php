@@ -45,9 +45,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 <?= Offers::pages() */ ?>
 
-<section>
+<section id="world-map-markers-block">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 hidden-xs">
             <article class="format-standard">
                 <figure>
                     <div id="world-map-markers" style="margin:0 auto; width: 1020px; height: 400px"></div>
@@ -62,12 +62,12 @@ $this->params['breadcrumbs'][] = $page->model->title;
     <div class="block">
         <div class="container">
             <nav id="menus" class="navbar">
-                <div class="navbar-header"><span id="category" class="visible-xs">Перечень офшоров</span>
-                    <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse"
-                            data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
-                </div>
+<!--                <div class="navbar-header"><span id="category" class="visible-xs">Перечень офшоров</span>-->
+<!--                    <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse"-->
+<!--                            data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>-->
+<!--                </div>-->
                 <!--  offers -->
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <div class="">
                     <ul class="nav" id="offers-menu-block">
                         <?php foreach ($offers as $item) : ?>
                             <? if($region_name != $item->model->region_name  /*&&  $item->model->region_name!=false*/ ): ?>

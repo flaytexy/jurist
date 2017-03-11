@@ -147,7 +147,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <script>
+        <!--                <script>
                             (function () {
                                 var cx = '014824414261944164439:sfk3fpa6eoq';
                                 var gcse = document.createElement('script');
@@ -158,7 +158,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                                 s.parentNode.insertBefore(gcse, s);
                             })();
                         </script>
-                        <gcse:search></gcse:search>
+                        <gcse:search></gcse:search>-->
                     </div>
                     <div class="col-md-6">
                         <nav class="navbar22 navbar-default22">

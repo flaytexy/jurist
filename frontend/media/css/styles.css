@@ -1142,6 +1142,14 @@ header.stick .top-menus li:first-child > a {
     padding: 15px 0 2px 0;
     margin: 25px 0 2px 0;
 }
+#offers {
+
+}
+#offers #menus .navbar-header #category {
+    position: absolute;
+    right: 48px;
+    top: 17px;
+}
 /*================ Slider ================*/
 .s1-l1 > span {
     font-weight: 600 !important;
