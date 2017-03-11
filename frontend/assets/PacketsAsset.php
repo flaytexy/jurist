@@ -8,7 +8,7 @@ class PacketsAsset extends \yii\web\AssetBundle
         'packets.css',
     ];
     public $js = [
-        'packets.js'
+        'packets.js?v=2'
     ];
     public $depends = [
         'yii\web\JqueryAsset',
