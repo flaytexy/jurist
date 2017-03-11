@@ -66,13 +66,15 @@ $(function(){
                 e.preventDefault();
                 var $this = $(this).unbind('click').addClass('disabled');
                 var tr = $this.closest('tr');
+                var packetId = $this.siblings('.packet-id').val();
                 var packetText = $this.siblings('.packet-title').val();
                 var packetDesc = $this.siblings('.packet-description').val();
                 var packetPrice = $this.siblings('.packet-price').val();
                 var packetTag = $this.siblings('input[name^=tag_name]').val();
+                console.log($this.attr('href'));
                 $.post(
                     $this.attr('href'),
-                    {description: packetDesc, title: packetText, tagNames: packetTag, price: packetPrice},
+                    {id: packetId, description: packetDesc, title: packetText, tagNames: packetTag, price: packetPrice},
                     function(response){
                         if(response.result === 'success'){
                             notify.success(response.message);

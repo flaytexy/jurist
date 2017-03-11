@@ -133,6 +133,9 @@ class AController extends Controller
 
     public function actionPackets($id)
     {
+        if(Yii::$app->request->post()){
+            return Yii::$app->runAction('/admin/packets/description/', ['id' => Yii::$app->request->post('id')]);
+        }
 
         if(!($model = Offers::findOne($id))){
             return $this->redirect(['/admin/'.$this->module->id]);

@@ -119,6 +119,11 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
 
 
 <? endif ?>
+<style>
+    .skype {
+        padding-top: 6px;
+    }
+</style>
 
 <div class="theme-layout" style="padding-top: 156px;">
     <header class="stick scrollup">
@@ -126,7 +131,20 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
             <div class="container">
                 <div class="topbar-data">
                     <ul class="top-menus">
-                        <li><a href="/fonds" title="Фонды">+7 925 175 44 17</a></li>
+                        <li><a href="/contact" title="Наш телефон">+7 925 175 44 17</a></li>
+                        <li class="skype" title="Вызов в skype: IQ Decision"><a href="skype:IQ Decision?call"><div style="background-image: url('http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png');width: 16px; height: 16px;padding-left: 18px;"></div></a></li>-->
+<!--                        <li>-->
+<!--                            <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>-->
+<!--                            <div id="SkypeButton_Call_IQ_Decision_1">-->
+<!--                                <script type="text/javascript">-->
+<!--                                    Skype.ui({-->
+<!--                                        name: "call",-->
+<!--                                        "element": "SkypeButton_Call_IQ_Decision_1",-->
+<!--                                        "participants": ["IQ Decision"]-->
+<!--                                    });-->
+<!--                                </script>-->
+<!--                            </div>-->
+<!--                        </li>-->
                         <li><a href="/fonds" title="Фонды">Фонды</a></li>
                         <li><a href="/banks" title="Банки">Банки</a></li>
                         <li><a href="/offshornyie-predlozheniya" title="Компании">Компании</a></li>
@@ -452,5 +470,19 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
     </div>
     <!-- Bottom Line -->
 </footer>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/588fad1957968e2dc9688b7f/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
 
 <?php $this->endContent(); ?>
