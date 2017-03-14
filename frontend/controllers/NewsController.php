@@ -11,7 +11,13 @@ class NewsController extends \yii\web\Controller
 {
     public function actionIndex($tag = null, $type = null, $slug = null)
     {
+        $pageName = 'page-news';
         if($slug){
+            $pageName = 'page-news-'.$slug;
+            if(!Page::get($pageName)){
+                $pageName = 'page-news';
+            }
+
             $query = new \yii\db\Query;
             $query->select('category_id')
                 ->from('easyii_pages_categories as ept')
@@ -93,6 +99,7 @@ class NewsController extends \yii\web\Controller
         return $this->render('index', [
             'news' => $news,
             'categories_tops' => $categoriesTops,
+            'page_name' => $pageName,
             'top_banks' => $topBanks,
             'top_offers' => $topOffers,
             'top_news' => $topNews,

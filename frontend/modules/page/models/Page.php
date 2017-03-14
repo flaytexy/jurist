@@ -89,6 +89,11 @@ class Page extends \frontend\components\ActiveRecord
             if(!$insert && $this->image != $this->oldAttributes['image'] && $this->oldAttributes['image']){
                 @unlink(Yii::getAlias('@webroot').$this->oldAttributes['image']);
             }
+
+            if(!empty($this->oldAttributes['slug'])){
+                $this->slug = $this->oldAttributes['slug'];
+            }
+
             return true;
         } else {
             return false;

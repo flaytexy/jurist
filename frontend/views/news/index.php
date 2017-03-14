@@ -3,7 +3,7 @@ use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$page = Page::get('page-news');
+$page = Page::get($page_name);
 
 if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
@@ -12,7 +12,6 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 <div class="container">
     <? if(!empty($page)): ?> <h1> <?=$page->seo('h1', $page->title) ?> </h1> <? endif ?>
-    <?php if($page->text): ?><div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
 </div>
 
 <section class="content-zone top20" id="new-index">
@@ -50,6 +49,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <?= Page::pages() ?>
                 </div>
                 <!-- Pagination -->
+
+                <?php if($page->text): ?><div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
             </div>
             <div class="col-md-3">
                 <div class="sidebar">
