@@ -92,6 +92,8 @@ class Page extends \frontend\components\ActiveRecord
 
             if(!empty($this->oldAttributes['slug'])){
                 $this->slug = $this->oldAttributes['slug'];
+            }elseif(!empty(Yii::$app->request->post('Page')['slug'])){
+                $this->slug = Yii::$app->request->post('Page')['slug'];
             }
 
             return true;

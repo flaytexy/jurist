@@ -163,6 +163,10 @@ class AController extends Controller
                     }
                 }
 
+//                if(!empty(Yii::$app->request->post('slug')) && empty($this->oldAttributes['slug'])){
+//                    $this->slug = Yii::$app->request->post('slug');
+//                }
+
                 if($model->save()){
                     $this->flash('success', Yii::t('easyii/page', 'Page updated'));
                 }

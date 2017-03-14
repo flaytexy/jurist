@@ -3,8 +3,21 @@ use frontend\modules\page\api\Pages;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
+$this->title = !empty($pages->seo('title', $pages->model->title)) ? $pages->seo('title', $pages->model->title) : '';
 
-$this->title = $pages->seo('title', $pages->model->title);
+$descriptionSeo = !empty($pages->seo('description')) ? $pages->seo('description') : '';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => $descriptionSeo,
+]);
+
+$keywordsSeo = !empty($pages->seo('keywords')) ? $pages->seo('keywords') : '';
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => $keywordsSeo,
+]);
+
+
 $this->params['breadcrumbs'][] = ['label' => $parentPage->title, 'url' => Url::to([$pageParentUrl.'/'])];
 $this->params['breadcrumbs'][] = $pages->model->title;
 ?>
@@ -15,6 +28,7 @@ $this->params['breadcrumbs'][] = $pages->model->title;
             <!-- 1-block -->
             <div class="row">
                 <div class="col-md-12">
+                    <h1 class="h4"><?= $pages->seo('h1', $pages->title) ?></h1>
                     <div class="packages-detail">
                         <?php if (count($pages->photos) || !empty($pages->model->image)) : ?>
                             <div class="package-video">
