@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $pages->model->title;
                         <?php endforeach; ?>
                     </p>
 
-                    <div class="small-muted">Views: <?= $pages->views ?></div>
+<!--                    <div class="small-muted">Views: --><?//= $pages->views ?><!--</div>-->
                 </div>
             </div>
         </div>

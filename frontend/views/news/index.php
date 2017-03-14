@@ -60,7 +60,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         </div>
                         <ul>
                             <?php foreach($categories_tops as $item) : ?>
-                                <li><a href="<?= Url::to(['news/c/'.$item['slug']]) ?>"><?= $item['title'] ?></a> <span><?= $item['counter'] ?></span></li>
+                                <li><a href="<?= Url::to(['news-category/'.$item['slug']]) ?>"><?= $item['title'] ?></a> <span><?= $item['counter'] ?></span></li>
                             <?php endforeach; ?>
                         </ul>
                     </div><!-- Widget -->

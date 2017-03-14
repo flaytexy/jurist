@@ -160,6 +160,31 @@ $config = [
                         'type' => 3
                     ],
                 ],
+
+                /*offshore*/
+                [
+                    'pattern' => 'offshore',
+                    'route' => 'pages/index',
+                    'defaults' => [
+                        'type' => 6,
+                        'name' => 'offshore'
+                    ],
+                ],
+                [
+                    'pattern' => '<slug:spisok-offshorov>',
+                    'route' => 'news/index',
+                    'defaults' => [
+                        'type' => 6
+                    ],
+                ],
+                [
+                    'pattern' => 'offshore/<slug:[\w-]+>',
+                    'route' => 'pages/view',
+                    'defaults' => [
+                        'type' => 6
+                    ],
+                ],
+
                 [
                     'pattern' => 'fonds/<slug:[\w-]+>',
                     'route' => 'pages/view',
@@ -175,10 +200,23 @@ $config = [
                     ],
                 ],
                 [
+                    'pattern' => 'licenses/<slug:[\w-]+>',
+                    'route' => 'pages/view',
+                    'defaults' => [
+                        'type' => 3
+                    ],
+                ],
+
+                [
+                    'pattern' => '<controller:\w+>\-category/<slug:[\w-]+>',
+                    'route' => '<controller>/index',
+                ],
+                [
                     'pattern' => '<controller:\w+>/c/<slug:[\w-]+>',
                     'route' => '<controller>/index',
                 ],
 
+                //'<alias:index|search|detail|result|hospital>' => 'site/<alias>',
                 '<controller:\w+>/page<page:\d+>' => '<controller>/index',
 
 //                'licenses/<slug:[\w-]+>' => 'page/view',

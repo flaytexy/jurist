@@ -26,4 +26,4 @@ $this->params['breadcrumbs'][] = $news->model->title;
     <?php endforeach; ?>
 </p>
 
-<div class="small-muted">Views: <?= $news->views?></div>
+<!--<div class="small-muted">Views: --><?//= $news->views?><!--</div>-->

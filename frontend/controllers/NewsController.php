@@ -26,7 +26,8 @@ class NewsController extends \yii\web\Controller
                 'pagination' => ['pageSize' => 12]
             ]);
 
-        } else {
+        }
+        else {
             $news = Page::items([
                 'where' => ['type_id' => 2, 'status' => 1],
                 'tags' => $tag,
@@ -97,6 +98,10 @@ class NewsController extends \yii\web\Controller
             'top_news' => $topNews,
             'top_tags' => $topTags,
         ]);
+    }
+
+    public function actionIndexed($tag = null, $type = null, $slug = null){
+        ex_print('asddsa');
     }
 
     public function actionView($slug)

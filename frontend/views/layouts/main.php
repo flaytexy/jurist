@@ -131,26 +131,16 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
             <div class="container">
                 <div class="topbar-data">
                     <ul class="top-menus">
-                        <li><a href="/contact" title="Наш телефон">+7 925 175 44 17</a></li>
-                        <li class="skype" title="Вызов в skype: IQ Decision"><a href="skype:IQ Decision?call"><div style="background-image: url('http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png');width: 16px; height: 16px;padding-left: 18px;"></div></a></li>-->
-<!--                        <li>-->
-<!--                            <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>-->
-<!--                            <div id="SkypeButton_Call_IQ_Decision_1">-->
-<!--                                <script type="text/javascript">-->
-<!--                                    Skype.ui({-->
-<!--                                        name: "call",-->
-<!--                                        "element": "SkypeButton_Call_IQ_Decision_1",-->
-<!--                                        "participants": ["IQ Decision"]-->
-<!--                                    });-->
-<!--                                </script>-->
-<!--                            </div>-->
-<!--                        </li>-->
                         <li><a href="/fonds" title="Фонды">Фонды</a></li>
                         <li><a href="/banks" title="Банки">Банки</a></li>
                         <li><a href="/offshornyie-predlozheniya" title="Компании">Компании</a></li>
                         <li><a href="/licenses" title="Лицензии">Лицензии</a></li>
-                        <li><a href="/processing" title="Эквайринг" style="line-height: 0.9">Мерчант (процессинг)<br/>
-                                Эквайринг</a></li>
+                        <li><a href="/offshore" title="Оффшоры">Оффшоры</a></li>
+<!--                        <li><a href="/processing" title="Эквайринг" style="line-height: 0.9">Мерчант (процессинг)<br/>-->
+<!--                                Эквайринг</a></li>-->
+                        <li><a href="tel:+79251754417" title="Наш телефон">+7 925 175 44 17</a></li>
+                        <li class="skype" title="Вызов в skype: IQ Decision"><a href="skype:IQ Decision?call"><div style="background-image: url('http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png');width: 16px; height: 16px;padding-left: 18px;"></div></a></li>
+
                     </ul>
                 </div>
             </div>
@@ -470,7 +460,11 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
     </div>
     <!-- Bottom Line -->
 </footer>
-
+<div id="stl_left" style="display: block; opacity: 1; width: 178px;" class="">
+    <div id="stl_bg">
+        <nobr id="stl_text">Вверх</nobr>
+    </div>
+</div>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

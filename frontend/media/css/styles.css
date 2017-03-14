@@ -936,7 +936,7 @@ header.sticky .logomenu-sec nav > ul > li > a {
 header.stick .top-menus li:first-child {
 
 }
-header.stick .top-menus li:first-child > a {
+header.stick .top-menus li:nth-child(6) > a {
     font-weight: 600;
     background: none;
 }
@@ -4979,6 +4979,18 @@ ul.widget-gallery > li:hover > a img {
 
 .recent-post > span > i {
     margin-right: 3px;
+}
+
+
+#stl_text {
+    background: rgba(0, 0, 0, 0) url("/images/dev_toplink.png") no-repeat scroll left 0;
+    color: #466a94;
+    display: block;
+    font-size: 12.5px;
+    font-weight: 700;
+    height: 15px;
+    margin-left: 19px;
+    padding: 0 24px;
 }
 
 /*=============== Footer ===============*/

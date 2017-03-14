@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $banks->model->title;
                         <?php endforeach; ?>
                     </p>
 
-                    <div class="small-muted">Views: <?= $banks->views ?></div>
+<!--                    <div class="small-muted">Views: --><?//= $banks->views ?><!--</div>-->
                 </div>
             </div>
         </div>

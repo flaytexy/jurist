@@ -80,33 +80,33 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                             </div>
 
                             <div class="row" style="margin-top: 60px;">
-                                <div class="col-md-8">
-                                    <div class="all-features">
-                                        <img src="/uploads/theme_villa/package-featureimg.jpg" alt="">
-
-                                        <div class="packagefeature-overlay">
-                                            <div class="packagefeature-inner">
-                                                <div class="bloglist-detail">
-                                                    <div class="title1 vertical">
-                                                        <h2>Villa Features</h2>
-                                                        <span>Provide Best Services</span>
-                                                    </div>
-                                                    <ul class="features-list">
-                                                        <li><i class="flaticon-square"></i> Water Strg : 5000/ltr</li>
-                                                        <li><i class="flaticon-volkswagen-car-side-view"></i> Parking
-                                                            Capacity : 4
-                                                        </li>
-                                                        <li><i class="flaticon-home"></i> Bedrooms : 4</li>
-                                                        <li><i class="flaticon-floor-wheel"></i> No of Floors : 2</li>
-                                                        <li><i class="flaticon-private"></i> Bathrooms : 5</li>
-                                                        <li><i class="flaticon-food"></i> No of Kitchen : 1</li>
-                                                        <li><i class="flaticon-sport"></i> Swimming Pool : 1</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                <div class="col-md-8">-->
+<!--                                    <div class="all-features">-->
+<!--                                        <img src="/uploads/theme_villa/package-featureimg.jpg" alt="">-->
+<!---->
+<!--                                        <div class="packagefeature-overlay">-->
+<!--                                            <div class="packagefeature-inner">-->
+<!--                                                <div class="bloglist-detail">-->
+<!--                                                    <div class="title1 vertical">-->
+<!--                                                        <h2>Villa Features</h2>-->
+<!--                                                        <span>Provide Best Services</span>-->
+<!--                                                    </div>-->
+<!--                                                    <ul class="features-list">-->
+<!--                                                        <li><i class="flaticon-square"></i> Water Strg : 5000/ltr</li>-->
+<!--                                                        <li><i class="flaticon-volkswagen-car-side-view"></i> Parking-->
+<!--                                                            Capacity : 4-->
+<!--                                                        </li>-->
+<!--                                                        <li><i class="flaticon-home"></i> Bedrooms : 4</li>-->
+<!--                                                        <li><i class="flaticon-floor-wheel"></i> No of Floors : 2</li>-->
+<!--                                                        <li><i class="flaticon-private"></i> Bathrooms : 5</li>-->
+<!--                                                        <li><i class="flaticon-food"></i> No of Kitchen : 1</li>-->
+<!--                                                        <li><i class="flaticon-sport"></i> Swimming Pool : 1</li>-->
+<!--                                                    </ul>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
                                 <div class="col-md-4">
                                     <div class="packageimg-gallery">
@@ -135,7 +135,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                         <?php endforeach; ?>
                     </p>
 
-                    <div class="small-muted">Views: <?= $offers->views ?></div>
+<!--                    <div class="small-muted">Views: --><?//= $offers->views ?><!--</div>-->
                 </div>
             </div>
         </div>
