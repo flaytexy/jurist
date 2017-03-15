@@ -292,6 +292,7 @@ $config = [
         ],
     ],
     'bootstrap' => [
+        'admin',
         'log',
         //'debug',
         'gii'

@@ -4,7 +4,6 @@ use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\assets\MapsAsset;
-use frontend\helpers\Image;
 
 MapsAsset::register($this);
 $page = Page::get('page-offers');
