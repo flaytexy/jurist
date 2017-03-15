@@ -15,20 +15,17 @@ SwitcherAsset::register($this);
 
 
 $page = Page::get('page-banks');
-if ($page) {
-    $this->title = $page->seo('title', $page->model->title);
-    //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
-    $this->registerMetaTag([
-        'name' => 'title',
-        'content' => $page->seo('title', '')
-    ]);
-    $this->registerMetaTag([
-        'name' => 'keywords',
-        'content' => $page->seo('keywords', '')
-    ]);
+$this->title = !empty($page->seo('title', $page->model->title)) ? $page->seo('title', $page->model->title) : '';
+if($descriptionSeo = !empty($page->seo('description')) ? $page->seo('description') : ''){
     $this->registerMetaTag([
         'name' => 'description',
-        'content' => $page->seo('description', '')
+        'content' => $descriptionSeo,
+    ]);
+}
+if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
+    $this->registerMetaTag([
+        'name' => 'keywords',
+        'content' => $keywordsSeo,
     ]);
 }
 
@@ -86,7 +83,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <div class="col-md-12" id="switchAllBanks">
 
                  <!--   <h4>Africa</h4>-->
-                    <?php foreach ($banks as $item) : ?>
+                    <?php foreach ($items as $item) : ?>
                         <? if($region_name != $item->model->region_name && $item->model->region_name != 'Polar: Arctic' /*&&  $item->model->region_name!=false*/ ): ?>
                            <?php $region_name = $item->model->region_name; ?>
                            <div class='h4 top20 region-id-mark' id="reg_<?= $item->model->region_id ?>"><?= $region_name ?></div>

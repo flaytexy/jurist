@@ -1,25 +1,26 @@
 <?php
-use frontend\modules\page\api\Pages;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
-$this->title = !empty($pages->seo('title', $pages->model->title)) ? $pages->seo('title', $pages->model->title) : '';
+$this->title = !empty($page->seo('title', $page->model->title)) ? $page->seo('title', $page->model->title) : '';
 
-$descriptionSeo = !empty($pages->seo('description')) ? $pages->seo('description') : '';
-$this->registerMetaTag([
-    'name' => 'description',
-    'content' => $descriptionSeo,
-]);
+if($descriptionSeo = !empty($page->seo('description')) ? $page->seo('description') : ''){
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => $descriptionSeo,
+    ]);
+}
+if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
+    $this->registerMetaTag([
+        'name' => 'keywords',
+        'content' => $keywordsSeo,
+    ]);
+}
 
-$keywordsSeo = !empty($pages->seo('keywords')) ? $pages->seo('keywords') : '';
-$this->registerMetaTag([
-    'name' => 'keywords',
-    'content' => $keywordsSeo,
-]);
 
 
 $this->params['breadcrumbs'][] = ['label' => $parentPage->title, 'url' => Url::to([$pageParentUrl.'/'])];
-$this->params['breadcrumbs'][] = $pages->model->title;
+$this->params['breadcrumbs'][] = $page->model->title;
 ?>
 
 <section>
@@ -28,25 +29,25 @@ $this->params['breadcrumbs'][] = $pages->model->title;
             <!-- 1-block -->
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="h4"><?= $pages->seo('h1', $pages->title) ?></h1>
+                    <h1 class="h4"><?= $page->seo('h1', $page->title) ?></h1>
                     <div class="packages-detail">
-                        <?php if (count($pages->photos) || !empty($pages->model->image)) : ?>
+                        <?php if (count($page->photos) || !empty($page->model->image)) : ?>
                             <div class="package-video">
                                 <div>
-                                    <?php if (!empty($pages->model->image)) : ?>
-                                        <?= Html::img(Image::thumb($pages->model->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
+                                    <?php if (!empty($page->model->image)) : ?>
+                                        <?= Html::img(Image::thumb($page->model->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? else: ?>
-                                        <?= Html::img(Image::thumb($pages->photos[1]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
+                                        <?= Html::img(Image::thumb($page->photos[1]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
                                 <div class="title-video alignleft">
-                                    <h1><?= $pages->seo('h1', $pages->title) ?></h1>
-                                    <span><?= $pages->seo('h1', $pages->short) ?></span>
+                                    <h1><?= $page->seo('h1', $page->title) ?></h1>
+                                    <span><?= $page->seo('h1', $page->short) ?></span>
                                 </div>
                             </div>
                         <?php endif; ?>
                         <p>
-                            <?= $pages->text ?>
+                            <?= $page->text ?>
                         </p>
                     </div>
                     <!-- Blog List Posts -->
@@ -57,13 +58,13 @@ $this->params['breadcrumbs'][] = $pages->model->title;
             <div class="row" style="margin-top: 80px;">
                 <div class="col-md-12">
                     <p>
-                        <?php foreach ($pages->tags as $tag) : ?>
+                        <?php foreach ($page->tags as $tag) : ?>
                             <a href="<?= Url::to(['/pages', 'tag' => $tag]) ?>"
                                class="label label-info"><?= $tag ?></a>
                         <?php endforeach; ?>
                     </p>
 
-<!--                    <div class="small-muted">Views: --><?//= $pages->views ?><!--</div>-->
+<!--                    <div class="small-muted">Views: --><?//= $page->views ?><!--</div>-->
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ $inputOptions = ['class' => 'form-control'];
     <a class="dashed-link collapsed" data-toggle="collapse" href="#seo-form" aria-expanded="false" aria-controls="seo-form"><?= Yii::t('easyii', 'Seo texts')?></a>
 </p>
 
-<div class="collapse" id="seo-form">
+<div class="collapse in" id="seo-form">
     <div class="form-group">
         <?= Html::activeLabel($model, 'h1', $labelOptions) ?>
         <?= Html::activeTextInput($model, 'h1', $inputOptions) ?>

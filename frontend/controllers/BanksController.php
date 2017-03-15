@@ -48,7 +48,7 @@ class BanksController extends \yii\web\Controller
 
 
         return $this->render('index', [
-            'banks' => $banks,
+            'items' => $banks,
             'banksList' => $banksList,
             'bank_type' => $type_id
         ]);
@@ -72,7 +72,7 @@ class BanksController extends \yii\web\Controller
         $popularly->save();
 
         return $this->render('view', [
-            'banks' => $banks
+            'page' => $banks
         ]);
     }
 

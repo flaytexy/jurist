@@ -2,11 +2,26 @@
 use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use frontend\helpers\Image;
 
 $page = Page::get('page-'.$typeTitle);
 
-if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
+$this->title = !empty($page->seo('title', $pages->model->title)) ? $page->seo('title', $page->model->title) : '';
+
+if($descriptionSeo = !empty($page->seo('description')) ? $page->seo('description') : ''){
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => $descriptionSeo,
+    ]);
+}
+if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
+    $this->registerMetaTag([
+        'name' => 'keywords',
+        'content' => $keywordsSeo,
+    ]);
+}
+
+
+
 $this->params['breadcrumbs'][] = $page->model->title;
 
 ?>

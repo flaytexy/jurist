@@ -1,12 +1,24 @@
 <?php
-use frontend\modules\banks\api\Banks;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
 
-$this->title = $banks->seo('title', $banks->model->title);
+$this->title = !empty($page->seo('title', $page->model->title)) ? $page->seo('title', $page->model->title) : '';
+if($descriptionSeo = !empty($page->seo('description')) ? $page->seo('description') : ''){
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => $descriptionSeo,
+    ]);
+}
+if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
+    $this->registerMetaTag([
+        'name' => 'keywords',
+        'content' => $keywordsSeo,
+    ]);
+}
+
 $this->params['breadcrumbs'][] = ['label' => 'Banks', 'url' => ['banks/index']];
-$this->params['breadcrumbs'][] = $banks->model->title;
+$this->params['breadcrumbs'][] = $page->model->title;
 ?>
 
 
@@ -18,24 +30,24 @@ $this->params['breadcrumbs'][] = $banks->model->title;
             <div class="row">
                 <div class="col-md-12">
                     <div class="packages-detail">
-                        <?php if (count($banks->photos) || !empty($banks->model->image)) : ?>
+                        <?php if (count($page->photos) || !empty($page->model->image)) : ?>
                             <div class="package-video">
                                 <div>
-                                    <?php if (!empty($banks->model->image)) : ?>
-                                        <?= Html::img(Image::thumb($banks->model->image, 1200, 310), ['width' => '100%', 'height' => '100%']) ?>
+                                    <?php if (!empty($page->model->image)) : ?>
+                                        <?= Html::img(Image::thumb($page->model->image, 1200, 310), ['width' => '100%', 'height' => '100%']) ?>
                                     <? else: ?>
-                                        <?= Html::img(Image::thumb($banks->photos[1]->image, 1200, 310), ['width' => '100%', 'height' => '100%']) ?>
+                                        <?= Html::img(Image::thumb($page->photos[1]->image, 1200, 310), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
                                 <div class="title-video alignleft">
-                                    <h1><?= $banks->seo('h1', $banks->title) ?></h1>
-                                    <span><?= $banks->seo('h1', $banks->short) ?></span>
+                                    <h1><?= $page->seo('h1', $page->title) ?></h1>
+                                    <span><?= $page->seo('h1', $page->short) ?></span>
                                 </div>
                             </div>
                         <?php endif; ?>
 
                         <p>
-                            <?= $banks->text ?>
+                            <?= $page->text ?>
                         </p>
                     </div>
                     <!-- Blog List Posts -->
@@ -46,13 +58,13 @@ $this->params['breadcrumbs'][] = $banks->model->title;
             <div class="row" style="margin-top: 80px;">
                 <div class="col-md-12">
                     <p>
-                        <?php foreach ($banks->tags as $tag) : ?>
+                        <?php foreach ($page->tags as $tag) : ?>
                             <a href="<?= Url::to(['/banks', 'tag' => $tag]) ?>"
                                class="label label-info"><?= $tag ?></a>
                         <?php endforeach; ?>
                     </p>
 
-<!--                    <div class="small-muted">Views: --><?//= $banks->views ?><!--</div>-->
+<!--                    <div class="small-muted">Views: --><?//= $page->views ?><!--</div>-->
                 </div>
             </div>
         </div>

@@ -44,7 +44,7 @@ class PagesController extends \yii\web\Controller
         $popularly->save();
 
         return $this->render('view', [
-            'pages' => $pages,
+            'page' => $pages,
             'parentPage' => $pageParent,
             'pageParentUrl' => $parts[1]
         ]);
