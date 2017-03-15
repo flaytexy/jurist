@@ -3,7 +3,7 @@ namespace frontend\assets;
 
 class FrontendAsset extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@easyii/media';
+    public $sourcePath = '@frontend/media';
     public $css = [
         'css/frontend.css',
     ];

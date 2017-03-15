@@ -902,7 +902,6 @@ header {
 /*================ Sticky Header ================*/
 header.stick {
     position: fixed;
-    top: 0;
 }
 
 header.sticky .sign-btns > li > a {
@@ -4984,7 +4983,7 @@ ul.widget-gallery > li:hover > a img {
 
 
 #stl_text {
-    background: rgba(0, 0, 0, 0) url("/images/dev_toplink.png") no-repeat scroll left 0;
+    background: rgba(0, 0, 0, 0) url("../img/dev_toplink.png") no-repeat scroll left 0;
     color: #466a94;
     display: block;
     font-size: 12.5px;

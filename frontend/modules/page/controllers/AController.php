@@ -98,6 +98,11 @@ class AController extends Controller
                         $model->image = '';
                     }
                 }
+
+//                if(!empty(Yii::$app->request->post('Page')['slug']) && empty($this->oldAttributes['slug'])){
+//                    $this->slug = Yii::$app->request->post('Page')['slug'];
+//                }
+
                 if($model->save()){
                     $this->flash('success', Yii::t('easyii/page', 'Page created'));
                     return $this->redirect(['/admin/'.$this->module->id]);
@@ -163,8 +168,8 @@ class AController extends Controller
                     }
                 }
 
-//                if(!empty(Yii::$app->request->post('slug')) && empty($this->oldAttributes['slug'])){
-//                    $this->slug = Yii::$app->request->post('slug');
+//                if(!empty(Yii::$app->request->post('Page')['slug']) && empty($this->oldAttributes['slug'])){
+//                    $this->slug = Yii::$app->request->post('Page')['slug'];
 //                }
 
                 if($model->save()){

@@ -60,17 +60,21 @@ jQuery(document).ready(function ($) {
     });
 
     //===== Sticky Header =====// 
-    var menu_height = $('header').height();
-    $(window).scroll(function () {
-	var scroll = $(window).scrollTop();
-	if (scroll >= 60) {
-	    $('.stick').addClass('sticky');
-	} else {
-	    $('.stick').removeClass('sticky');
-	}
-    });
+    //var menu_height = $('header').height();
+	var heightAdmin = $('#easyii-navbar').height();
+	$(window).scroll(function () {
+		var scroll = $(window).scrollTop();
+		if (scroll >= 60) {
+			$('.stick').addClass('sticky');
+			if (heightAdmin > 0) {
+				//$('#theme-layout-js .stick').css('padding-top', heightAdmin);
+			}
+		} else {
+			$('.stick').removeClass('sticky');
+		}
+	});
     if ($('header').hasClass('stick')) {
-	$('.theme-layout').css({'padding-top': menu_height});
+		//$('#theme-layout-js').css({'padding-top': menu_height});
     }
 
     //===== Select2 =====//

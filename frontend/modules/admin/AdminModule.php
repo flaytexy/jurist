@@ -22,6 +22,7 @@ class AdminModule extends \yii\base\Module implements BootstrapInterface
 
     public function init()
     {
+
         Yii::setAlias('easyii', '@frontend/modules/admin');
         Yii::setAlias('easyii/modules', '@frontend/modules');
         parent::init();
@@ -45,6 +46,12 @@ class AdminModule extends \yii\base\Module implements BootstrapInterface
         if (Yii::$app instanceof \yii\web\Application) {
             define('IS_ROOT', !Yii::$app->user->isGuest && Yii::$app->user->identity->isRoot());
             define('LIVE_EDIT', !Yii::$app->user->isGuest && Yii::$app->session->get('easyii_live_edit'));
+            if(!Yii::$app->user->isGuest && strpos(Yii::$app->request->pathInfo, 'admin') === false) {
+                //$app = Yii::$app;
+                //Yii::$app->on(Application::EVENT_BEFORE_REQUEST, function () use ($app) {
+                    Yii::$app->getView()->on(View::EVENT_BEGIN_BODY, [$this, 'renderToolbar']);
+                //});
+            }
         }
     }
 
@@ -64,7 +71,7 @@ class AdminModule extends \yii\base\Module implements BootstrapInterface
     public function renderToolbar()
     {
         $view = Yii::$app->getView();
-        echo $view->render('@easyii/views/layouts/frontend-toolbar.php');
+        echo $view->render('@frontend/views/layouts/frontend-toolbar.php');
     }
 
     public function getInstalled()
