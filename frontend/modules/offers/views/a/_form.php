@@ -24,21 +24,21 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'title') ?>
 <hr/>
 
-<?/*= $form->field($model, 'type_id')->dropDownList([
+<? /*= $form->field($model, 'type_id')->dropDownList([
     '1' => 'Весь мир',
     '2' => 'Европа'
-]) */?>
+]) */ ?>
 <?= $form->field($model, 'coordinates') ?>
 
 
-<?/*= $form->field($model, 'countryNames')->widget(TagsInput::className()) */?>
+<? /*= $form->field($model, 'countryNames')->widget(TagsInput::className()) */ ?>
 
 <?= $form->field($model, 'countryNames')
     ->widget(\akavov\countries\widgets\CountriesSelectizeTextInput::className(), [
         'countryModelNamespace' => 'common\models\country\CountryData',
         'customRender' => [
-            'item'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
-            'option'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
+            'item' => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
+            'option' => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
         ],
         'clientOptions' => [
             'valueField' => 'name_en',
@@ -98,26 +98,29 @@ $module = $this->context->module->id;
     'preset' => 'full',
     'clientOptions' => ElFinder::ckeditorOptions('elfinder',
         [
-        'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
-        'extraPlugins' => 'justify,embed,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog',
-        'toolbar' => [
-            ['name' => 'document', 'groups' => ['mode', 'document', 'doctools'], 'items' => ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']],
-            ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']],
-            ['name' => 'editing', 'groups' => ['find', 'selection', 'spellchecker'], 'items' => ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt']],
-            ['name' => 'forms', 'items' => ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField']],
-            '/',
-            ['name' => 'basicstyles', 'groups' => ['basicstyles', 'cleanup'], 'items' => ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat']],
-            ['name' => 'paragraph', 'groups' => ['list', 'indent', 'blocks', 'align', 'bidi'], 'items' => ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language']],
-            ['name' => 'links', 'items' => ['Link', 'Unlink', 'Anchor']],
-            ['name' => 'insert', 'items' => ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']],
-            '/',
-            ['name' => 'styles', 'items' => ['Styles', 'Format', 'Font', 'FontSize']],
-            ['name' => 'colors', 'items' => ['TextColor', 'BGColor']],
-            ['name' => 'tools', 'items' => ['Maximize', 'ShowBlocks']],
-            ['name' => 'others', 'items' => ['-']],
-            ['name' => 'about', 'items' => ['About']]
+            //'allowedContent' => true,
+            //"extraAllowedContent" => 'span;ul;li;table;td;style;*[id];*(*);*{*}', // all-style: *{*}, all-class: *(*), all-id: *[id]
+            "extraAllowedContent" => '*(*);*[id];table{*};', // all-style: *{*}, all-class: *(*), all-id: *[id]
+            'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
+            'extraPlugins' => 'justify,embed,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog',
+            'toolbar' => [
+                ['name' => 'document', 'groups' => ['mode', 'document', 'doctools'], 'items' => ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']],
+                ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']],
+                ['name' => 'editing', 'groups' => ['find', 'selection', 'spellchecker'], 'items' => ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt']],
+                ['name' => 'forms', 'items' => ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField']],
+                '/',
+                ['name' => 'basicstyles', 'groups' => ['basicstyles', 'cleanup'], 'items' => ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat']],
+                ['name' => 'paragraph', 'groups' => ['list', 'indent', 'blocks', 'align', 'bidi'], 'items' => ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language']],
+                ['name' => 'links', 'items' => ['Link', 'Unlink', 'Anchor']],
+                ['name' => 'insert', 'items' => ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']],
+                '/',
+                ['name' => 'styles', 'items' => ['Styles', 'Format', 'Font', 'FontSize']],
+                ['name' => 'colors', 'items' => ['TextColor', 'BGColor']],
+                ['name' => 'tools', 'items' => ['Maximize', 'ShowBlocks']],
+                ['name' => 'others', 'items' => ['-']],
+                ['name' => 'about', 'items' => ['About']]
+            ]
         ]
-    ]
     ),
 ]);
 ?>
@@ -125,7 +128,7 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 
 <?php if ($this->context->module->settings['enableTags']) : ?>
-<!--    --><?//= $form->field($model, 'tagNames')->widget(TagsInput::className()) ?>
+    <!--    --><? //= $form->field($model, 'tagNames')->widget(TagsInput::className()) ?>
 <?php endif; ?>
 
 <?= $form->field($model, 'tagNames')->widget(TagsInput::className(), [
@@ -174,7 +177,7 @@ echo SelectizeTextInput::widget([
 ]);
 
 
-*/?>
+*/ ?>
 
 
 <?= $form->field($model, 'optionNames')->widget(OptionsInput::className()) ?>

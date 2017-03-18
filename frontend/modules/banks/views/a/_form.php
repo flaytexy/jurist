@@ -49,8 +49,8 @@ $module = $this->context->module->id;
     ->widget(\akavov\countries\widgets\CountriesSelectizeTextInput::className(), [
         'countryModelNamespace' => 'common\models\country\CountryData',
         'customRender' => [
-            'item'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
-            'option'  => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
+            'item' => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
+            'option' => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
         ],
         'clientOptions' => [
             'valueField' => 'name_en',
@@ -72,7 +72,7 @@ $module = $this->context->module->id;
 
 <?php if ($model->image_flag) : ?>
     <img src="<?= Image::thumb($model->image_flag, 240) ?>">
-<?php endif;  ?>
+<?php endif; ?>
 <?= $form->field($model, 'image_flag')->fileInput() ?>
 <hr/>
 
@@ -89,19 +89,22 @@ $module = $this->context->module->id;
     <?= $form->field($model, 'short')->textarea() ?>
 <?php endif; ?>
 
-<?/*= $form->field($model, 'text')->widget(Redactor::className(), [
+<? /*= $form->field($model, 'text')->widget(Redactor::className(), [
     'options' => [
         'minHeight' => 400,
         'imageUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'banks']),
         'fileUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'banks']),
         'plugins' => ['fullscreen']
     ]
-]) */?>
+]) */ ?>
 
 <?= $form->field($model, 'text')->widget(CKEditor::className(), [
     'preset' => 'full',
     'clientOptions' => ElFinder::ckeditorOptions('elfinder',
         [
+            //'allowedContent' => true,
+            //"extraAllowedContent" => 'span;ul;li;table;td;style;*[id];*(*);*{*}', // all-style: *{*}, all-class: *(*), all-id: *[id]
+            "extraAllowedContent" => '*(*);*[id];table{*};', // all-style: *{*}, all-class: *(*), all-id: *[id]
             'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
             'extraPlugins' => 'justify,embed,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog',
             'toolbar' => [
@@ -135,7 +138,7 @@ $module = $this->context->module->id;
 
 <?= $form->field($model, 'optionNames')->widget(OptionsInput::className()) ?>
 
-<?php if(IS_ROOT || true) : ?>
+<?php if (IS_ROOT || true) : ?>
     <?= $form->field($model, 'slug') ?>
     <?= SeoForm::widget(['model' => $model]) ?>
 <?php endif; ?>
