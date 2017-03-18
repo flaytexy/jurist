@@ -27,6 +27,7 @@ class AppAsset extends AssetBundle
         'css/revolution.css?v=2017-02-25-2',
         'css/prefix.css?v=2017-02-25-2',
         'css/styles.css?v=2017-02-25-3',
+        'css/bootstrap-submenu.min.css',
         //'css/frontend.css',
         //'css/responsive.css',
         //'css/color.css'
@@ -42,7 +43,7 @@ class AppAsset extends AssetBundle
         'js/perfect-scrollbar.js',
         'js/perfect-scrollbar.jquery.js',
         'js/jquery.scrolly.js', //
-
+        'js/bootstrap-submenu.js',
         'js/all.js',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
         'js/scripts.js?v=2017-02-10-2',

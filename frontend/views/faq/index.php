@@ -21,8 +21,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                 <ul class="faq">
                     <?php foreach(Faq::items() as $item) : ?>
-                        <li class="q"><div><i class="fa fa-question"></i></div>&nbsp;<p><b>Question: </b><?= $item->question ?></p></li>
-                        <li class="a"><blockquote><b>Answer: </b><?= $item->answer ?></blockquote></li>
+                        <li class="q"><p><b><?=Yii::t('easyii', 'Question')?>: </b><?= $item->question ?></p></li>
+                        <li class="a"><blockquote><b><?=Yii::t('easyii', 'Answer')?>: </b><?= $item->answer ?></blockquote></li>
                     <?php endforeach; ?>
                 </ul>
             </div>

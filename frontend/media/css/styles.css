@@ -512,6 +512,7 @@ header {
     float: left;
     font-weight: 300;
     margin: 3px 0;
+    position: relative;
 }
 
 .top-menus > li > a {
@@ -1173,7 +1174,31 @@ header.stick .top-menus .skype > a > div {
     text-indent: initial;
 }
 
+#page-contact {
 
+}
+#page-contact .text-success {
+    color: #fbfbfb;
+}
+#page-contact .well-my {
+    /*border: 1px solid #ffffff;*/
+}
+#page-contact .well-my .btn-primary {
+    /*background: #787878;*/
+    background: transparent;
+    border: 1px solid #ffffff;
+}
+#page-contact .contact-zone {
+    background: #c7c7c7;
+    color: #ffffff;
+}
+#page-contact .contact-zone a {
+    color: #ffffff;
+}
+#page-contact .contact-zone table tr:hover {
+    background: #dcdcdc;
+    color: #7dc20f;
+}
 
 #offers-menu-block li.h5 {
     /*border-bottom: 1px solid rgba(192, 192, 192, 0.69);*/

@@ -130,9 +130,31 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
         <div class="top-bar">
             <div class="container">
                 <div class="topbar-data">
-                    <ul class="top-menus">
+                    <? if(false): ?>
+                    <ul class="top-menus" id="top-menus">
                         <li><a href="/fonds" title="Фонды">Фонды</a></li>
-                        <li><a href="/banks" title="Банки">Банки</a></li>
+                        <li class="dropdown">
+                            <a class=""  title="Банки" data-toggle="dropdown" data-submenu="" href="/banks">Банки<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a tabindex="0">Europe</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="" href="/banks" title="Банки">Банк1</a></li>
+                                        <li><a class="" href="/banks" title="Банки">Банк1</a></li>
+                                        <li><a class="" href="/banks" title="Банки">Банк1</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="0">Asia and the Pacific</a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a class="" href="/banks" title="Банки">Банк1</a></li>
+                                        <li><a class="" href="/banks" title="Банки">Банк1</a></li>
+                                        <li><a class="" href="/banks" title="Банки">Банк1</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
                         <li><a href="/offshornyie-predlozheniya" title="Компании">Компании</a></li>
                         <li><a href="/licenses" title="Лицензии">Лицензии</a></li>
                         <li><a href="/offshore" title="Оффшоры">Оффшоры</a></li>
@@ -140,11 +162,11 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                         <li class="contact-m">
                             <div class="row">
                                 <div class="col-md-12 tel-m"><a href="tel:+79251754417" title="Наш телефон">+7 925 175 44 17</a></div>
-<!--                                <div class="skype" title="Вызов в skype: IQ Decision">-->
-<!--                                <a href="skype:IQ Decision?call">-->
-<!--                                    <div style="background-image: url(&quot;http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png&quot;); width: 16px; height: 16px; padding-left: 18px; top: 0px; position: relative; right: -127px;"></div>-->
-<!--                                </a>-->
-<!--                                </div>-->
+                                <!--                                <div class="skype" title="Вызов в skype: IQ Decision">-->
+                                <!--                                <a href="skype:IQ Decision?call">-->
+                                <!--                                    <div style="background-image: url(&quot;http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png&quot;); width: 16px; height: 16px; padding-left: 18px; top: 0px; position: relative; right: -127px;"></div>-->
+                                <!--                                </a>-->
+                                <!--                                </div>-->
                             </div>
                             <div class="row back-m" onclick="location.href='/contact'">
                                 Связаться с нами
@@ -154,6 +176,46 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                             <a href="skype:IQ Decision?call"><div></div></a>
                         </li>
                     </ul>
+                    <? endif; ?>
+                    <?= Menu::widget([
+                        'options' => ['class' => 'top-menus', 'id' => 'top-menus'],
+                        'items' => [
+                            ['label' => 'Фонды', 'url' => ['/fonds'], 'options' => ['title' => 'Фонды']],
+                            ['label' => 'Банки', 'url' => ['/banks'],
+                                'options' => ['class' => 'menu-item-has-children', 'title' => 'Банки'],
+//                                        'items' => [
+//                                            ['label' => 'New Arrivals', 'url' => ['news/index', 'tag' => 'new'],
+//                                                'options' => ['class' => 'menu-item-has-children'],
+//                                                'items' => [
+//                                                    ['label' => 'New Arrivals', 'url' => ['news/index', 'tag' => 'new']],
+//                                                    ['label' => 'Most Popular', 'url' => ['news/index', 'tag' => 'popular']],
+//                                                ],
+//                                            ],
+//                                            ['label' => 'Most Popular', 'url' => ['news/index', 'tag' => 'popular']],
+//                                        ],
+                                //'template' => '<li class="menu-item-has-children"><a href="{url}" class="mylink">{label}</a></li>',
+                            ],
+                            ['label' => 'Компании', 'url' => ['/offshornyie-predlozheniya'], 'options' => ['title' => 'Компании']],
+                            ['label' => 'Лицензии', 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
+                            ['label' => 'Оффшоры', 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
+                            ['label' => 'Процессинг', 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
+                            ['label' => 'contact', 'url' => ['/contact'],
+                                'template' => '
+                                <li class="contact-m">
+                                    <div class="row">
+                                        <div class="col-md-12 tel-m"><a href="tel:+79251754417" title="Наш телефон">+7 925 175 44 17</a></div>
+                                    </div>
+                                    <div class="row back-m" onclick="location.href=\'/contact\'">
+                                        Связаться с нами
+                                    </div>
+                                </li>
+                                <li class="skype" title="Вызов в skype: IQ Decision">
+                                    <a href="skype:IQ Decision?call"><div></div></a>
+                                </li>'
+                            ],
+                        ],
+                    ]); ?>
+
                 </div>
             </div>
         </div>
@@ -185,16 +247,32 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                             <?= Menu::widget([
                                 'options' => ['class' => 'nav navbar-nav'],
                                 'items' => [
+                                    //['label' => 'Главная', 'url' => ['site/index'], 'template' => '<li class="22"><a href="{url}" class="mylink"><span>{label}</span></a></li>'],
                                     ['label' => 'Главная', 'url' => ['site/index']],
                                     //['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
                                     //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                                     //['label' => 'Shop', 'url' => ['shop/index']],
-                                    ['label' => 'Новости', 'url' => ['/news']],
+                                    ['label' => 'Новости',
+                                        'url' => ['/news'],
+                                        'options' => ['class' => 'menu-item-has-children'],
+//                                        'items' => [
+//                                            ['label' => 'New Arrivals', 'url' => ['news/index', 'tag' => 'new'],
+//                                                'options' => ['class' => 'menu-item-has-children'],
+//                                                'items' => [
+//                                                    ['label' => 'New Arrivals', 'url' => ['news/index', 'tag' => 'new']],
+//                                                    ['label' => 'Most Popular', 'url' => ['news/index', 'tag' => 'popular']],
+//                                                ],
+//                                            ],
+//                                            ['label' => 'Most Popular', 'url' => ['news/index', 'tag' => 'popular']],
+//                                        ],
+                                        //'template' => '<li class="menu-item-has-children"><a href="{url}" class="mylink">{label}</a></li>',
+                                    ],
                                     //['label' => 'Банки', 'url' => ['/banks']],
                                     //['label' => 'Articles', 'url' => ['articles/index']],
                                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
                                     //['label' => 'Информация', 'url' => ['/faq']],
+                                    ['label' => 'Вопросы ответы', 'url' => ['/faq']],
                                     ['label' => 'Контакты', 'url' => ['/contact']]
                                 ],
                             ]); ?>

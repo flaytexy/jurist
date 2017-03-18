@@ -5,6 +5,9 @@ var speedFaq = "500";
 jQuery(document).ready(function ($) {
     'use strict';
 
+	//$( "#menu" ).menu();
+	$('[data-submenu]').submenupicker();
+
 	$('li.q').on(actionFaq, function () {
 		$(this).next().slideToggle(speedFaq)
 			.siblings('li.a').slideUp();

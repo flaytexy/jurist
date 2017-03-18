@@ -9,12 +9,12 @@ $this->params['breadcrumbs'][] = $page->model->title;
 ?>
 
 
-<div class="container">
-    <div class="row">
+<div class="container" id="page-contact">
+    <div class="row contact-zone">
         <div class="col-md-6">
             <div class="row top10">
                 <div class="col-md-12">
-                    <h2 class="text-success"><?= $page->seo('h1', $page->title) ?></h2>
+                    <h3 class="text-success"><?= $page->seo('h1', $page->title) ?></h3>
                     <?= $page->text ?>
                 </div>
              </div>
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <div class="row top10">
                 <div class="col-md-12">
                     <?php if(Yii::$app->request->get(Feedback::SENT_VAR)) : ?>
-                        <h4 class="text-success"><i class="glyphicon glyphicon-ok"></i> Message successfully sent</h4>
+                        <h3 class="text-success"><i class="glyphicon glyphicon-ok"></i> Message successfully sent</h3>
                     <?php else : ?>
                         <h3 class="text-success"><i class="glyphicon glyphicon"></i> Свяжитесь с нами</h3>
                         <div class="well-my well-sm-my">

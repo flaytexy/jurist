@@ -44,26 +44,29 @@ class Feedback extends \frontend\components\API
 
         echo Html::beginTag('div',['class'=>'row']);
         echo Html::beginTag('div',['class'=>'col-md-4']);
-        echo $form->field($model, 'name');
+        //echo $form->field($model, 'name');
+        echo $form->field($model, 'name')->textInput(['placeholder' => Yii::t('easyii', 'Name')])->label(false);
         echo Html::endTag('div');
 
         echo Html::beginTag('div',['class'=>'col-md-4']);
-        echo $form->field($model, 'email')->input('email');
+        //echo $form->field($model, 'email')->input('email');
+        echo $form->field($model, 'name')->textInput(['placeholder' => Yii::t('easyii', 'E-mail')])->label(false);
         echo Html::endTag('div');
 
         if($settings['enablePhone']){
             echo Html::beginTag('div',['class'=>'col-md-4']);
-            echo $form->field($model, 'phone');
+            //echo $form->field($model, 'phone');
+            echo $form->field($model, 'name')->textInput(['placeholder' => Yii::t('easyii', 'Phone')])->label(false);
             echo Html::endTag('div');
         }
         if($settings['enableTitle']){
             echo Html::beginTag('div',['class'=>'col-md-4']);
-            echo $form->field($model, 'title');
+            echo $form->field($model, 'title')->textInput(['placeholder' => Yii::t('easyii', 'Title')])->label(false);
             echo Html::endTag('div');
         }
 
         echo Html::beginTag('div',['class'=>'col-md-12']);
-        echo $form->field($model, 'text')->textarea();
+        echo $form->field($model, 'text')->textarea(['placeholder' => $model->getAttributeLabel( 'text' ), 'rows'=>4 ])->label(false);
         echo Html::endTag('div');
 
         echo Html::endTag('div');
