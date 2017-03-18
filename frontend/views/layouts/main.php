@@ -136,11 +136,23 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                         <li><a href="/offshornyie-predlozheniya" title="Компании">Компании</a></li>
                         <li><a href="/licenses" title="Лицензии">Лицензии</a></li>
                         <li><a href="/offshore" title="Оффшоры">Оффшоры</a></li>
-<!--                        <li><a href="/processing" title="Эквайринг" style="line-height: 0.9">Мерчант (процессинг)<br/>-->
-<!--                                Эквайринг</a></li>-->
-                        <li><a href="tel:+79251754417" title="Наш телефон">+7 925 175 44 17</a></li>
-                        <li class="skype" title="Вызов в skype: IQ Decision"><a href="skype:IQ Decision?call"><div style="background-image: url('http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png');width: 16px; height: 16px;padding-left: 18px;"></div></a></li>
-
+                        <li><a href="/processing" title="Процессинг">Процессинг</a></li>
+                        <li class="contact-m">
+                            <div class="row">
+                                <div class="col-md-12 tel-m"><a href="tel:+79251754417" title="Наш телефон">+7 925 175 44 17</a></div>
+<!--                                <div class="skype" title="Вызов в skype: IQ Decision">-->
+<!--                                <a href="skype:IQ Decision?call">-->
+<!--                                    <div style="background-image: url(&quot;http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png&quot;); width: 16px; height: 16px; padding-left: 18px; top: 0px; position: relative; right: -127px;"></div>-->
+<!--                                </a>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="row back-m" onclick="location.href='/contact'">
+                                Связаться с нами
+                            </div>
+                        </li>
+                        <li class="skype" title="Вызов в skype: IQ Decision">
+                            <a href="skype:IQ Decision?call"><div></div></a>
+                        </li>
                     </ul>
                 </div>
             </div>

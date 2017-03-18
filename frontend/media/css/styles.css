@@ -508,9 +508,10 @@ header {
 }
 
 .top-menus > li {
-    float: left;
     color: #e4e3e3;
+    float: left;
     font-weight: 300;
+    margin: 3px 0;
 }
 
 .top-menus > li > a {
@@ -520,7 +521,7 @@ header {
 .sign-btns > li > a, .top-menus > li > a {
     background: #121212;
     float: left;
-    padding: 18px 30px;
+    padding: 18px 31px;
     color: inherit;
     text-align: center;
     /* font-family: Arial;*/
@@ -937,10 +938,46 @@ header.sticky .logomenu-sec nav > ul > li > a {
 header.stick .top-menus li:first-child {
 
 }
-header.stick .top-menus li:nth-child(6) > a {
-    font-weight: 600;
-    background: none;
+header.stick .top-menus .contact-m {
+    padding: 3px 25px;
 }
+header.stick .top-menus .contact-m .tel-m> a {
+    color: white;
+    font-size: 17px;
+    line-height: 19px;
+}
+header.stick .top-menus .contact-m > a {
+    padding: 9px 30px;
+}
+header.stick .top-menus .contact-m  .back-m {
+    border: 1px solid white; text-align: center; padding: 3px 9px; margin-top: 5px; position: relative;
+    cursor: pointer;
+}
+header.stick .top-menus .skype > a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    height: 100%;
+    margin: 0;
+    padding-left: 14px;
+    padding-right: 14px;
+    width: 22px;
+}
+header.stick .top-menus .skype > a > div {
+    background-image: url("http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 19px;
+    padding-left: 18px;
+    width: 22px;
+}
+
+/*header.stick .top-menus li:nth-child(7){*/
+    /*padding: 0 30px;*/
+/*}*/
+/*header.stick .top-menus li:nth-child(7) > a {*/
+    /*font-weight: 600;*/
+    /*background: none;*/
+/*}*/
+
 /*================ Responsive Header ================*/
 .responsive-header {
     float: left;
