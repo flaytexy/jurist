@@ -13,21 +13,25 @@ $this->params['breadcrumbs'][] = $page->model->title;
     <div class="row">
         <div class="col-md-6">
             <div class="row top10">
-                <h2 class="text-success"><?= $page->seo('h1', $page->title) ?></h2>
-                <?= $page->text ?>
+                <div class="col-md-12">
+                    <h2 class="text-success"><?= $page->seo('h1', $page->title) ?></h2>
+                    <?= $page->text ?>
+                </div>
              </div>
         </div>
 
         <div class="col-md-6">
             <div class="row top10">
-            <?php if(Yii::$app->request->get(Feedback::SENT_VAR)) : ?>
-                <h4 class="text-success"><i class="glyphicon glyphicon-ok"></i> Message successfully sent</h4>
-            <?php else : ?>
-                <h3 class="text-success"><i class="glyphicon glyphicon"></i> Свяжитесь с нами</h3>
-                <div class="well-my well-sm-my">
-                    <?= Feedback::form() ?>
+                <div class="col-md-12">
+                    <?php if(Yii::$app->request->get(Feedback::SENT_VAR)) : ?>
+                        <h4 class="text-success"><i class="glyphicon glyphicon-ok"></i> Message successfully sent</h4>
+                    <?php else : ?>
+                        <h3 class="text-success"><i class="glyphicon glyphicon"></i> Свяжитесь с нами</h3>
+                        <div class="well-my well-sm-my">
+                            <?= Feedback::form() ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
-            <?php endif; ?>
             </div>
         </div>
 

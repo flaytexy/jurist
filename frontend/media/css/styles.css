@@ -5737,9 +5737,11 @@ ul.Social-btn {
 
 .packages-detail > p {
     color: #666666;
-    float: left;
-    max-width: 84%;
-    width: 100%;
+/*    float: left;*/
+    /*width: 100%;*/
+}
+.packages-detail > ul, .packages-detail > ol {
+    /*display: inline-block;*/
 }
 
 .package-features {
