@@ -796,16 +796,18 @@ header {
 #logomenu-sec .navbar22 > ul li a {
     border: 3px solid transparent;
     height: 100%;
+    /*padding: 25px 24px;*/
+    margin: 25px 0 25px;
+    padding: 10px 24px;
+    text-align: center;
+    /*margin: 6px 0 8px;*/
+    /*padding: 4px 24px;*/
+    /*text-align: center;*/
 }
 #logomenu-sec .navbar22 > ul li a:hover {
     border: 3px solid #7dc20f;
 }
-#logomenu-sec .navbar22 > ul li a {
-    /*padding: 25px 24px;*/
-    margin: 20% 0 8px;
-    padding: 10px 24px;
-    text-align: center;
-}
+
 /*================ Switcher ================*/
 /* Switcher */
 .switcher {
@@ -1178,7 +1180,7 @@ header.stick .top-menus .skype > a > div {
 
 }
 #page-contact .text-success {
-    color: #fbfbfb;
+    color: #ffffff;
 }
 #page-contact .well-my {
     /*border: 1px solid #ffffff;*/
@@ -1189,14 +1191,21 @@ header.stick .top-menus .skype > a > div {
     border: 1px solid #ffffff;
 }
 #page-contact .contact-zone {
-    background: #c7c7c7;
-    color: #ffffff;
+    background-color: #c7c7c7;
+    background-image: url("../img/contact-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #99a5c2;
 }
 #page-contact .contact-zone a {
-    color: #ffffff;
+    /*color: #ffffff;*/
+    color: #99A5C2;
 }
 #page-contact .contact-zone table tr:hover {
-    background: #dcdcdc;
+    /*background: #dcdcdc;*/
+    color: #7dc20f;
+}
+#page-contact .contact-zone table tr:hover a {
     color: #7dc20f;
 }
 

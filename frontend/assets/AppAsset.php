@@ -26,8 +26,9 @@ class AppAsset extends AssetBundle
         //'css/table.css',
         'css/revolution.css?v=2017-02-25-2',
         'css/prefix.css?v=2017-02-25-2',
-        'css/styles.css?v=2017-02-25-3',
-        'css/bootstrap-submenu.min.css',
+        'css/bootstrap-submenu.min.css?v=2017-03-18-3',
+        'css/styles.css?v=2017-03-18-3',
+
         //'css/frontend.css',
         //'css/responsive.css',
         //'css/color.css'
