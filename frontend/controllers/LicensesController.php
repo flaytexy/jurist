@@ -4,24 +4,14 @@ namespace frontend\controllers;
 use frontend\models\Popularly;
 use frontend\modules\page\api\Page;
 
-class PagesController extends \yii\web\Controller
+class LicensesController extends \yii\web\Controller
 {
     public function actionIndex($type = null, $tag = null, $name = null, $page = null)
     {
-        $categoriesTypes = [
-            'licenses' => 3,
-            'fonds' => 4,
-            'processing' => 5,
-            'offshore' => 6
-        ];
-
-        if(empty($type) && !empty($name)){
-            $type = $categoriesTypes[$name];
-        }
-
+ex_print('test');
         $pages = Page::items([
             'where' => ['type_id' => (int)$type, 'status' => 1],
-            'pagination' => ['pageSize' => 9]
+            'pagination' => ['pageSize' => 12]
         ]);
 
         return $this->render('index',[

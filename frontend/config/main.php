@@ -121,62 +121,9 @@ $config = [
 //                        'type_id' => 2
 //                    ],
 //                ],
-
-                [
-                    'pattern' => 'fonds',
-                    'route' => 'pages/index',
-                    'defaults' => [
-                        'type' => 4,
-                        'name' => 'fonds'
-                    ],
-                ],
                 [
                     'pattern' => '/news/tag/<tag:[\w- ]+>',
                     'route' => 'news/index',
-                 /*   'defaults' => [
-                        'tag' => 4
-                    ],*/
-                ],
-                [
-                    'pattern' => 'processing',
-                    'route' => 'pages/index',
-                    'defaults' => [
-                        'type' => 5,
-                        'name' => 'processing'
-                    ],
-                ],
-                [
-                    'pattern' => 'licenses',
-                    'route' => 'pages/index',
-                    'defaults' => [
-                        'type' => 3,
-                        'name' => 'licenses'
-                    ],
-                ],
-                [
-                    'pattern' => 'licenses/page<page:\d+>',
-                    'route' => 'pages/index',
-                    'defaults' => [
-                        'type' => 3,
-                        'name' => 'licenses'
-                    ],
-                ],
-                [
-                    'pattern' => 'licenses/<slug:[\w-]+>',
-                    'route' => 'pages/view',
-                    'defaults' => [
-                        'type' => 3
-                    ],
-                ],
-
-                /*offshore*/
-                [
-                    'pattern' => 'offshore',
-                    'route' => 'pages/index',
-                    'defaults' => [
-                        'type' => 6,
-                        'name' => 'offshore'
-                    ],
                 ],
                 [
                     'pattern' => '<slug:spisok-offshorov>',
@@ -185,36 +132,6 @@ $config = [
                         'type' => 6
                     ],
                 ],
-                [
-                    'pattern' => 'offshore/<slug:[\w-]+>',
-                    'route' => 'pages/view',
-                    'defaults' => [
-                        'type' => 6
-                    ],
-                ],
-
-                [
-                    'pattern' => 'fonds/<slug:[\w-]+>',
-                    'route' => 'pages/view',
-                    'defaults' => [
-                        'type' => 4
-                    ],
-                ],
-                [
-                    'pattern' => 'processing/<slug:[\w-]+>',
-                    'route' => 'pages/view',
-                    'defaults' => [
-                        'type' => 5
-                    ],
-                ],
-                [
-                    'pattern' => 'licenses/<slug:[\w-]+>',
-                    'route' => 'pages/view',
-                    'defaults' => [
-                        'type' => 3
-                    ],
-                ],
-
                 [
                     'pattern' => '<controller:\w+>\-category/<slug:[\w-]+>',
                     'route' => '<controller>/index',
@@ -225,27 +142,13 @@ $config = [
                 ],
 
                 //'<alias:index|search|detail|result|hospital>' => 'site/<alias>',
+                '<name:(licenses|offshore|processing|fonds)>/page<page:\d+>' => 'pages/index',
+                '<name:(licenses|offshore|processing|fonds)>' => 'pages/index',
+                '<name:(licenses|offshore|processing|fonds)>/<slug:[\w-]+>' => 'pages/view',
 
-                'licenses/page<page:\d+>' => 'pages/index',
                 '<controller:\w+>/page<page:\d+>' => '<controller>/index',
 
-//                'licenses/<slug:[\w-]+>' => 'page/view',
-//                'fonds/<slug:[\w-]+>' => 'page/view',
-//                'processing/<slug:[\w-]+>' => 'page/view',
-                'offers/<slug:[\w-]+>' => 'offers/view',
-                //'news/tag/<slug:[\w-]+>' => 'news/index',
-                //'news/page/<page:\d+>' => 'news/index',
-                'news/<slug:[\w-]+>' => 'news/view',
-                //'banks/index' => 'banks/index',
-                //'banks/new' => 'banks/new',
-                //'banks/page<page:\d+>' => 'banks/index',
-                //'banks/page/<page:\d+>' => 'banks/index',
-                'banks/<slug:[\w-]+>' => 'banks/view',
-                //'fonds' => 'page/index',
-                //'processing/<slug:[\w-]+>' => 'processing/view',
-                //'<controller:\w+>/page/<page:\d+>' => '<controller>/index',
-
-                //'<controller:\w+>/page/<page:\d+>' => '<controller>/index',
+                '<name:(offers|news|banks)>/<slug:[\w-]+>' => '<name>/view',
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',
