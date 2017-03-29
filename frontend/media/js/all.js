@@ -70,7 +70,7 @@ jQuery(document).ready(function ($) {
 		if (scroll >= 60) {
 			$('.stick').addClass('sticky');
 			if (heightAdmin > 0) {
-				//$('#theme-layout-js .stick').css('padding-top', heightAdmin);
+				$('#theme-layout-js .stick').css('padding-top', heightAdmin);
 			}
 		} else {
 			$('.stick').removeClass('sticky');

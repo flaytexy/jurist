@@ -27,7 +27,7 @@ class AppAsset extends AssetBundle
         'css/revolution.css?v=2017-02-25-2',
         'css/prefix.css?v=2017-02-25-2',
         'css/bootstrap-submenu.min.css?v=2017-03-18-3',
-        'css/styles.css?v=2017-03-18-3',
+        'css/styles.css?v=2017-03-22-6',
 
         //'css/frontend.css',
         //'css/responsive.css',
@@ -45,9 +45,9 @@ class AppAsset extends AssetBundle
         'js/perfect-scrollbar.jquery.js',
         'js/jquery.scrolly.js', //
         'js/bootstrap-submenu.js',
-        'js/all.js',
+        'js/all.js?v=2017-03-21-1',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
-        'js/scripts.js?v=2017-02-10-2',
+        'js/scripts.js?v=2017-03-21-1',
         //'js/frontend.js'
     ];
     public $depends = [

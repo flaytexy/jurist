@@ -7,8 +7,12 @@ use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\ActiveForm;
 
 $popularly = \frontend\models\Popularly::find()->limit(12)->all();
+
+$phoneStr = "+7 925 470 50 02";
+
 
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
@@ -161,7 +165,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                         <li><a href="/processing" title="Процессинг">Процессинг</a></li>
                         <li class="contact-m">
                             <div class="row">
-                                <div class="col-md-12 tel-m"><a href="tel:+79251754417" title="Наш телефон">+7 925 175 44 17</a></div>
+                                <div class="col-md-12 tel-m"><a href="tel: <?php echo str_replace(' ','',$phoneStr);?>" title="Наш телефон"><?=$phoneStr?></a></div>
                                 <!--                                <div class="skype" title="Вызов в skype: IQ Decision">-->
                                 <!--                                <a href="skype:IQ Decision?call">-->
                                 <!--                                    <div style="background-image: url(&quot;http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png&quot;); width: 16px; height: 16px; padding-left: 18px; top: 0px; position: relative; right: -127px;"></div>-->
@@ -172,7 +176,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                                 Связаться с нами
                             </div>
                         </li>
-                        <li class="skype" title="Вызов в skype: IQ Decision">
+                        <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
                             <a href="skype:IQ Decision?call"><div></div></a>
                         </li>
                     </ul>
@@ -203,13 +207,13 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                                 'template' => '
                                 <li class="contact-m">
                                     <div class="row">
-                                        <div class="col-md-12 tel-m"><a href="tel:+79251754417" title="Наш телефон">+7 925 175 44 17</a></div>
+                                        <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a></div>
                                     </div>
                                     <div class="row back-m" onclick="location.href=\'/contact\'">
                                         Связаться с нами
                                     </div>
                                 </li>
-                                <li class="skype" title="Вызов в skype: IQ Decision">
+                                <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
                                     <a href="skype:IQ Decision?call"><div></div></a>
                                 </li>'
                             ],
@@ -224,11 +228,25 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-2 ">
                         <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.png" alt=""></a>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3 ">
+                        <? if (false): ?>
+                        <? $form = ActiveForm::begin([ 'action' => 'search', 'id' => 'forum_post',
+                            'method' => 'post',
+                        ]); ?>
+                        <div class="search-inp row no-padding">
+                            <div class="col-md-9 no-padding ">
+                                <?= Html::input('text','search', $search,[]) ?>
+                            </div>
+                            <div class="col-md-3 no-padding ">
+                                <?= Html::submitButton(Yii::t('easyii', 'Search'), ['class' => 'btn btn-primary submit']) ?>
+                            </div>
+                        </div>
+                        <?php ActiveForm::end(); ?>
+                        <? endif ?>
         <!--                <script>
                             (function () {
                                 var cx = '014824414261944164439:sfk3fpa6eoq';
@@ -242,7 +260,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
                         </script>
                         <gcse:search></gcse:search>-->
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-7 ">
                         <nav class="navbar22 navbar-default22">
                             <?= Menu::widget([
                                 'options' => ['class' => 'nav navbar-nav'],
@@ -298,7 +316,7 @@ $popularly = \frontend\models\Popularly::find()->limit(12)->all();
         <div class="logomenu-bar">
             <div class="container">
                 <div class="logo"><a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a></div>
-                <span class="menu-btn"><i class="fa fa-list"></i></span>
+                <span class="menu-btn">Меню&nbsp;&nbsp;<i class="fa fa-list"></i></span>
             </div>
         </div>
         <div class="responsive-menu ps-container" data-ps-id="3359a5b1-f4a3-6575-dffa-5413f2e717d2">

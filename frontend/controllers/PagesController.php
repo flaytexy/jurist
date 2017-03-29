@@ -6,12 +6,12 @@ use frontend\modules\page\api\Page;
 
 class PagesController extends \yii\web\Controller
 {
-    public function actionIndex($type = null, $tag = null, $name = null)
+    public function actionIndex($type = null, $tag = null, $name = null, $page = null)
     {
 
         $pages = Page::items([
             'where' => ['type_id' => (int)$type, 'status' => 1],
-            'pagination' => ['pageSize' => 10]
+            'pagination' => ['pageSize' => 12]
         ]);
 
         return $this->render('index',[

@@ -385,8 +385,8 @@ MainAsset::register($this);
             <div class="row">
                 <div class="col-md-12">
                     <div class="search-luxuriousvilla overlape">
-                        <h3>High level of individual approach. <span>Even with minimal budget</span></h3>
-                        <span><i class="fa fa-caret-down"></i></span>
+                        <h3>Индивидуальный подход высокого уровня<br /> <span>Даже с минимальным бюджетом</span></h3>
+                        <span class="hidden-xs hidden-sm hidden-sm-down"><i class="fa fa-caret-down"></i></span>
 
                         <div class="search-luxuriousform">
                             <div class="row">
@@ -451,7 +451,7 @@ MainAsset::register($this);
                 <div class="col-md-12">
                     <div class="spec-services">
                         <div class="title1 vertical">
-                            <h2>Special <span>New Services</span></h2>
+                            <h2>Продвинутые инструменты <span>для бизнеса</span></h2>
                             <span>Предлагаем продвинутые услуги</span>
                         </div>
                         <div class="about-services">

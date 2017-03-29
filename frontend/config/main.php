@@ -154,6 +154,14 @@ $config = [
                     ],
                 ],
                 [
+                    'pattern' => 'licenses/page<page:\d+>',
+                    'route' => 'pages/index',
+                    'defaults' => [
+                        'type' => 3,
+                        'name' => 'licenses'
+                    ],
+                ],
+                [
                     'pattern' => 'licenses/<slug:[\w-]+>',
                     'route' => 'pages/view',
                     'defaults' => [
@@ -217,6 +225,8 @@ $config = [
                 ],
 
                 //'<alias:index|search|detail|result|hospital>' => 'site/<alias>',
+
+                'licenses/page<page:\d+>' => 'pages/index',
                 '<controller:\w+>/page<page:\d+>' => '<controller>/index',
 
 //                'licenses/<slug:[\w-]+>' => 'page/view',

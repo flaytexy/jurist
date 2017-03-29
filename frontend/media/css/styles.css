@@ -122,8 +122,77 @@ section {
     height: 60px;
 }
 
+.padv-5 {
+    padding: 5px 0;
+}
+.padv-10 {
+    padding: 10px 0;
+}
+.padv-20 {
+    padding: 20px 0;
+}
 .padv-30 {
     padding: 30px 0;
+}
+.padh-5 {
+    padding: 0 5px;
+}
+.padh-10 {
+    padding: 0 10px;
+}
+.padh-20 {
+    padding: 0 20px;
+}
+.padh-30 {
+    padding: 0 30px;;
+}
+.no-padding {
+    padding: 0;
+}
+div.pagination {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+}
+.search-inp {
+
+}
+.search-inp > div {
+    margin: 25px 0;
+    padding: 10px 2px;
+}
+.search-inp input[name=search] {
+    width: 100%;
+}
+.search-inp .submit {
+    padding: 2px 16px;
+    background-color: #3b3b3b;
+    border-color: #000000;
+}
+
+.vcenter {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+
+.align-baseline {
+    vertical-align: baseline !important;
+}
+.align-top {
+    vertical-align: top !important;
+}
+.align-middle {
+    vertical-align: middle !important;
+}
+.align-bottom {
+    vertical-align: bottom !important;
+}
+.align-text-bottom {
+    vertical-align: text-bottom !important;
+}
+.align-text-top {
+    vertical-align: text-top !important;
 }
 
 .block {
@@ -198,7 +267,9 @@ ul.top-menus li > a {
 }
 
 .remove-ext > div.h5 {
-    padding: 0 100px 15px 100px;
+    /*padding: 0 100px 15px 100px;*/
+    padding: 0 10px 15px 10px;
+    text-align: center;
     font-size: 30px;
     font-weight: 700;
     color: #444444;
@@ -522,7 +593,7 @@ header {
 .sign-btns > li > a, .top-menus > li > a {
     background: #121212;
     float: left;
-    padding: 18px 31px;
+    padding: 18px 29px;
     color: inherit;
     text-align: center;
     /* font-family: Arial;*/
@@ -664,7 +735,8 @@ header {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.17);
     float: left;
     margin-top: -52px;
-    padding: 40px 40px 28px;
+    /*padding: 40px 40px 28px;*/
+    padding: 29px 36px 21px;
     /*padding: 16px 17px 16px;*/
     position: relative;
     text-align: center;
@@ -797,8 +869,8 @@ header {
     border: 3px solid transparent;
     height: 100%;
     /*padding: 25px 24px;*/
-    margin: 25px 0 25px;
-    padding: 10px 24px;
+    margin: 12px 0 12px;
+    padding: 7px 24px;
     text-align: center;
     /*margin: 6px 0 8px;*/
     /*padding: 4px 24px;*/
@@ -807,7 +879,9 @@ header {
 #logomenu-sec .navbar22 > ul li a:hover {
     border: 3px solid #7dc20f;
 }
-
+#logomenu-sec .logo {
+    position: absolute;
+}
 /*================ Switcher ================*/
 /* Switcher */
 .switcher {
@@ -908,6 +982,7 @@ header {
 /*================ Sticky Header ================*/
 header.stick {
     position: fixed;
+    top: 0;
 }
 
 header.sticky .sign-btns > li > a {
@@ -936,13 +1011,13 @@ header.sticky .logo img {
 }
 
 header.sticky .logomenu-sec nav > ul > li > a {
-    padding: 25px 45px 22px 0;
+    padding: 24px 45px 24px 0;
 }
 header.stick .top-menus li:first-child {
 
 }
 header.stick .top-menus .contact-m {
-    padding: 3px 25px;
+    padding: 3px 24px;
 }
 header.stick .top-menus .contact-m .tel-m> a {
     color: white;
@@ -1009,9 +1084,12 @@ header.stick .top-menus .skype > a > div {
 }
 
 .logomenu-bar {
+    /*padding: 30px 45px 30px 40px;*/
     float: left;
-    padding: 30px 45px 30px 40px;
+    padding: 3px 45px 6px 20px;
+    position: fixed;
     width: 100%;
+    z-index: 100;
 }
 
 .menu-btn {
@@ -1177,10 +1255,10 @@ header.stick .top-menus .skype > a > div {
 }
 
 #page-contact {
-
+    color: #000000;
 }
 #page-contact .text-success {
-    color: #ffffff;
+    color: #000000;
 }
 #page-contact .well-my {
     /*border: 1px solid #ffffff;*/
@@ -1192,14 +1270,14 @@ header.stick .top-menus .skype > a > div {
 }
 #page-contact .contact-zone {
     background-color: #c7c7c7;
-    background-image: url("../img/contact-bg.jpg");
+    background-image: url("../img/contact-bg-2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    color: #99a5c2;
+
 }
 #page-contact .contact-zone a {
     /*color: #ffffff;*/
-    color: #99A5C2;
+    color: #000000;
 }
 #page-contact .contact-zone table tr:hover {
     /*background: #dcdcdc;*/
@@ -1651,7 +1729,7 @@ button.theme-btn {
 }
 
 .title1.vertical h2 {
-    font-size: 36px;
+    font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
     text-transform: initial;
@@ -2654,7 +2732,7 @@ footer .title1.style2 > h2 {
     float: left;
     padding: 0 100px;
     width: 100%;
-    height: 325px;
+   /* height: 325px;*/
 }
 
 .recentnew-post {
@@ -2663,7 +2741,7 @@ footer .title1.style2 > h2 {
     position: relative;
     width: 100%;
     cursor: pointer;
-    min-height: 416px;
+/*    min-height: 416px;*/
 }
 
 .recentnew-post > img {
@@ -6423,10 +6501,14 @@ ul.faq li.a blockquote {
    font-weight: 600;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px), (max-device-width: 1200px) {
     .search-luxuriousvilla.overlape {
         margin-left: 0;
         width: 100%;
+    }
+
+    .top-menus > li > a {
+        padding: 18px 11px;
     }
 
     .instagram .title1 {
@@ -6439,13 +6521,34 @@ ul.faq li.a blockquote {
 
 }
 
-@media (max-width: 980px) {
+@media (max-width: 980px), (max-device-width: 980px) {
     .theme-layout {
         padding-top: 0 !important;
     }
 
+    .search-luxuriousvilla > h3 {
+        float: left;
+        font-family: initial;
+        font-size: 27px;
+        font-weight: 500;
+        line-height: 47px;
+        padding-left: 38px;
+        text-align: center;
+    }
+    .search-luxuriousvilla > h3 span {
+        content: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .search-luxuriousvilla > h3 span::before {
+        content: none;
+    }
     header {
         display: none;
+    }
+
+    .top-menus > li > a {
+        padding: 15px 9px;
     }
 
     .responsive-header {
@@ -6761,9 +6864,13 @@ ul.faq li.a blockquote {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px), (max-device-width: 767px) {
     .bloglist-sec.remove-ext3.overlape {
         margin-top: 0;
+    }
+
+    .top-menus > li > a {
+        padding: 15px 5px;
     }
 
     .per-night {
@@ -6921,7 +7028,7 @@ ul.faq li.a blockquote {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px), (max-device-width: 480px) {
     .search-luxuriousvilla.overlape {
         margin-bottom: 0;
         margin-top: 0;

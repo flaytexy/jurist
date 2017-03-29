@@ -34,9 +34,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             <div class="package-video">
                                 <div>
                                     <?php if (!empty($page->model->image)) : ?>
-                                        <?= Html::img(Image::thumb($page->model->image, 1200, 310), ['width' => '100%', 'height' => '100%']) ?>
+                                        <?= Html::img(Image::thumb($page->model->image, 1200, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? else: ?>
-                                        <?= Html::img(Image::thumb($page->photos[1]->image, 1200, 310), ['width' => '100%', 'height' => '100%']) ?>
+                                        <?= Html::img(Image::thumb($page->photos[1]->image, 1200, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
                                 <div class="title-video alignleft">

@@ -6,6 +6,9 @@ use frontend\modules\banks\api\Banks;
 use frontend\modules\page\api\Page;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\data\ActiveDataProvider;
+use yii\data\ArrayDataProvider;
+use yii\db\Query;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -16,6 +19,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\modules\offers\api\Offers;
+use yii\widgets\LinkPager;
 
 /**
  * Site controller
@@ -94,11 +98,28 @@ class SearchController extends Controller
             ]);
         }
 
+        $search = Yii::$app->request->post('search');
 
+        $query = (new Query())->select("*, MATCH (title,text) AGAINST ('".$search."' IN BOOLEAN MODE) as REL")
+            ->from('easyii_pages')
+            ->where("MATCH (title,text) AGAINST ('".$search."' IN BOOLEAN MODE) OR `text` LIKE  '%".$search."%' ")
+            ->orderBy('REL DESC');
+
+        $_adp = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+
+        ]);
+
+        $items = $_adp->getModels();
+        $_adp->pagination->pageSizeParam = false;
 
         return $this->render('search', [
-            'offers' => '',
-
+            'items' => $items,
+            'search' => $search,
+            'pages' => LinkPager::widget(['pagination' => $_adp->pagination])
         ]);
     }
 
