@@ -3,3 +3,6 @@
 *.gif
 !.gitignore
 !.htaccess
+
+!logo
+!logo/*
