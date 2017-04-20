@@ -493,10 +493,10 @@ iframe {
     width: 75px;
     height: 48px;
 }
-
+/*здесь изменено*/
 .logo_main img {
-    width: 90px;
-    height: 85px;
+    width: 100%;
+    height: 100%;
 }
 
 .service1 > span,
@@ -716,34 +716,34 @@ header {
     font-weight: 600;
 }
 
-/*===== Logo Menu Sec =====*/
+/*===== Logo Menu Sec ===== здесь изменено*/
 .logomenu-sec {
     float: left;
-    width: 100%;
+    width: 80%;
     border-bottom: 1px solid #002b36;
 }
 
 .logo {
     float: left;
 }
-
+/* здесь изменено*/
 .logo > a {
     -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.17);
     -moz-box-shadow: 0 0 12px rgba(0, 0, 0, 0.17);
     -ms-box-shadow: 0 0 12px rgba(0, 0, 0, 0.17);
     -o-box-shadow: 0 0 12px rgba(0, 0, 0, 0.17);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.17);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.0);
     float: left;
     margin-top: -52px;
-    /*padding: 40px 40px 28px;*/
-    padding: 29px 36px 21px;
+    padding: 5px 1px 5px;
+    /*padding: 29px 36px 21px;*/
     /*padding: 16px 17px 16px;*/
     position: relative;
     text-align: center;
 }
-
+/* здесь изменено
 .logo > a:before {
-    height: 12px;
+    height: 6px;
     width: 100%;
     position: absolute;
     content: "";
@@ -757,7 +757,7 @@ header {
     -o-box-shadow: 0 8px 7px rgba(0, 0, 0, 0.17);
     box-shadow: 0 8px 7px rgba(0, 0, 0, 0.17);
 }
-
+*/
 .logo img {
     max-width: 100%;
 }
@@ -1269,10 +1269,10 @@ header.stick .top-menus .skype > a > div {
     border: 1px solid #ffffff;
 }
 #page-contact .contact-zone {
-    background-color: #c7c7c7;
+    /*background-color: #c7c7c7;
     background-image: url("../img/contact-bg-2.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 
 }
 #page-contact .contact-zone a {
@@ -7504,6 +7504,12 @@ ul.faq li.a blockquote {
 .pagination > .active > a:focus, .pagination > .active > span:focus {
     background: #7dc20f;
 }
+/*здесь изменено*/
+.logo > a,
+.logo > a:before{
+    background:none;
+}
+
 
 .datepicker td.day.active {
     background: #7dc20f !important;
