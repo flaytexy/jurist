@@ -229,7 +229,7 @@ $phoneStr = "+7 925 470 50 02";
 
                 <div class="row">
                     <div class="col-md-2 ">
-                        <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.png" alt=""></a>
+                        <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.gif" alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-3 ">
