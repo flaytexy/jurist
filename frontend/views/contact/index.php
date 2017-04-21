@@ -40,10 +40,19 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <!--    <div style="width: 560px; height: 400px;">
                             <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=mmkooEZKXnOxiZqGK4JZVGNlW6ppgKdB&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
                         </div>-->
-                <iframe src="https://api-maps.yandex.ua/frame/v1/-/CZx5mIi3?lang=ru_RU" width="100%" height="600" frameborder="0"></iframe>
+                <iframe
+                    width="600"
+                    height="450"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgaKViFluRzlg1BlKF8nTaqROPaHk4dqQ
+    &q=Старый+Петровско-Разумовский+пр-д,+1%2F23с1,+Москва,+Россия,+127287" allowfullscreen>
+                </iframe>
+
+
 
             </div>
         </div>
+        <div><br></div>
     </div>
 </div>
 
