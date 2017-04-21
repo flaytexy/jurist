@@ -444,7 +444,7 @@ MainAsset::register($this);
 </section>
 
 <section>
-    <div class="block ext-toppadd">
+    <div class="block ext-toppadd-one">
         <div class="fixed-bg2" style="background-image: url(/uploads/theme_villa/parallax2.jpg);"></div>
         <div class="container">
             <div class="row">
@@ -531,7 +531,8 @@ MainAsset::register($this);
                                                     <div class="offered-serviceinfo">
                                                         <h4><a href="/banks/<?= $item->model->slug ?>"
                                                                title=""><?= $item->model->title ?></a></h4>
-                                                        <span><?= $item->model->location_title ?></span>
+                                                        <span style="font-weight: bold; font-size: large; color: white"><?= $item->model->location_title ?></span>
+                                                        <span style="font-weight: bolder; font-size: large; color: white;">$<?= $item->price ?></span>
                                                     </div>
                                                 </div>
                                             </div>

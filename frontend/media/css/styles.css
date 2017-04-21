@@ -234,8 +234,13 @@ div.pagination {
 }
 
 .block.ext-toppadd {
-    padding-top: 150px;
+    padding-top: 250px;
 }
+/*высота в популярных юрисдикциях*/
+.block.ext-toppadd-one {
+    padding-top: 50px;
+}
+
 
 .block.ext-bottompadd {
     padding-bottom: 317px;
@@ -1652,7 +1657,7 @@ button.theme-btn {
     position: relative;
     text-align: center;
     width: 100%;
-    z-index: 1;
+    z-index: -1;
 }
 
 .title1::before {
