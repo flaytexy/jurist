@@ -388,7 +388,7 @@ MainAsset::register($this);
                         <h3>Индивидуальный подход высокого уровня<br /> <span>Даже с минимальным бюджетом</span></h3>
                         <span class="hidden-xs hidden-sm hidden-sm-down"><i class="fa fa-caret-down"></i></span>
 
-                        <div class="search-luxuriousform">
+                        <!-- <div class="search-luxuriousform">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="select-box location-select">
@@ -433,168 +433,10 @@ MainAsset::register($this);
                                     </form>
                                 </div>
                             </div>
-                        </div>
+                        </div>  лишняя функция  -->
                         <!-- Search Luxurious Form -->
                     </div>
                     <!-- Search luxurious Villa -->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="block grayish high-opacity">
-        <div class="fixed-bg"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="spec-services">
-                        <div class="title1 vertical">
-                            <h2>Продвинутые инструменты <span>для бизнеса</span></h2>
-                            <span>Предлагаем продвинутые услуги</span>
-                        </div>
-                        <div class="about-services">
-                            <p>Лучшее предложение это то, после которого
-                                Вы будете нас рекомендовать партнерам или близким,
-                                а не то, где мы больше на Вас заработаем.
-                                Мы реализуем Ваши заказы по отработанным системам,
-                                заведомо известным нам из опыта, а не в теории.
-                                В динамично меняющейся среде мы ищем актуальные
-                                новые решения, а не останавливаемся, если всем
-                                известные стандартные не срабатывают.</p>
-                            <ul class="about-serlist">
-                                <li><a href="#" title="">Главное наше отличие - это поиск своих путей,
-                                        а не надежда на оппонентов</a></li>
-                                <li><a href="#" title="">Степень доверия в непростых вопросах
-                                        является определяющим фактором</a></li>
-                                <li><a href="#" title="">Полностью оправданные затраты</a></li>
-                            </ul>
-                        </div>
-                        <div class="services-list1" id="services-list1">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="service1">
-                                        <span><i class="flaticon-new-india-republic"></i></span>
-                                        <h4><a href="#services-list1" title="">Подбор подходящей юрисдикции</a></h4>
-                                        <i>Страны и их особенности</i>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="service1">
-                                        <span><i class="flaticon-new-worlwide"></i></span>
-                                        <h4><a href="#services-list1" title="">SWIFT</a></h4>
-                                        <i>Регистрация под Вашу систему</i>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="service1">
-                                        <span><i class="flaticon-new-credit-card-pay-mode"></i></span>
-                                        <h4><a href="#services-list1" title="">Брендированные карты
-                                                без привязки к банку</a></h4>
-                                        <i>Visa & MasterCard</i>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="service1">
-                                        <span><i class="flaticon-new-credit-card-2"></i></span>
-                                        <h4><a href="#services-list1" title="">Анонимные карты</a></h4>
-                                        <i>Субсчета</i>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="service1">
-                                        <span><i class="flaticon-new-coin"></i></span>
-                                        <h4><a href="#services-list1" title="">Холдинги</a></h4>
-                                        <i>Крупный бизнес</i>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="/offshornyie-predlozheniya" title="" class="theme-btn">Просмотреть все</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Special Services -->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="block no-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="customers-reviews overlape"
-                         style="background-image: url(/uploads/theme_villa/customer-reviews-bg.jpg);">
-                        <div class="customer-review">
-                            <div class="review-detail">
-                                <div class="customer-thumb">
-                                    <img src="/uploads/theme_villa/customer1.jpg" alt=""/>
-                            <!--        <img src="/uploads/theme_villa/customer-sign.png" alt=""/>-->
-                                </div>
-                                <div class="customer-reviewrating">
-                                    <p>"По рекомендации друга решил открыть счет на компанию в определенном латвийском
-                                        банке.
-                                        Я обратился в эту компанию так, как банк у них был представлен на сайте,
-                                        на что не отказывая предложили открыть в других банках.
-                                        Я стоял на своем и спустя полтора месяца, вместо обещанного одного месяца, мне
-                                        открыли счет.
-                                        Но дело не в том. Я пол года с горем пополам пользовался счетом,
-                                        давая бесконечные подтверждения по запросу банка на сомнительные по их мнению
-                                        переводы.
-                                        И вот спустя пол года доступ к моему счету заблокировали совершенно
-                                        безосновательно.
-                                        Я был вынужден обратиться за открытием нового счета пока велись разбирательства
-                                        по тому.
-                                        В этот раз у меня не было на примете определенного банка и я согласился на
-                                        предложенный мне.
-                                        Через две недели я уже пользовался новым счетом и по сей день никаких нареканий.
-                                        Ребята молодцы,
-                                        а я потерял время и так пока и не вернул деньги с латвийского банка. Зря я не
-                                        послушал с самого начала...
-                                        "</p>
-
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                    <span>Клиентский отзыв <i>Евгений</i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="customer-review">
-                            <div class="review-detail">
-                                <div class="customer-thumb">
-                                    <img src="/uploads/theme_villa/customer2.jpg" alt=""/>
-                                   <!-- <img src="/uploads/theme_villa/customer-sign2.png" alt=""/>-->
-                                </div>
-                                <div class="customer-reviewrating">
-                                    <p>"У другой компании заказала регистрацию оффшора и открытие счета.
-                                        Компанию зарегистрировали, а счет открыть не смогли. После этого обратившись к
-                                        другим я узнала, что оказывается
-                                        можно открыть счет покупая у них и компанию и так не только у них... От всей
-                                        души благодарна IQ Decision, что
-                                        вошли в положение и открыли мне счет без регистрации еще одной кмпании. "</p>
-
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <span>Клиентский отзыв <i>Светлана</i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Customers Reviews -->
                 </div>
             </div>
         </div>
@@ -620,10 +462,10 @@ MainAsset::register($this);
                                     <div class="col-md-4">
                                         <div class="package">
                                             <a href="/offers/<?= $offer->model->slug ?>">
-                                            <div class="package-thumb">
+                                                <div class="package-thumb">
                                                     <?= Html::img($offer->thumb(370, 259), array('class' => 'sadsa')) ?>
-                                                <span><i>$<?= $offer->model->price ?></i> / <i><?= $offer->model->how_days ?></i> days </span>
-                                            </div>
+                                                    <span><i>$<?= $offer->model->price ?></i> / <i><?= $offer->model->how_days ?></i> days </span>
+                                                </div>
                                             </a>
                                             <div class="package-detail">
                                                 <span class="cate">Lite/Classic/Pro</span>
@@ -738,17 +580,17 @@ MainAsset::register($this);
                         <div class="villa-locationslist">
                             <ul>
                                 <? foreach ($licenses as $item): ?>
-                                <li>
-                                    <div class="villa-location" onclick="location.href='/licenses/<?= $item->model->slug ?>'" >
-                                        <img src="<?= $item->thumb(226, 360) ?>" class="main-banks" />
+                                    <li>
+                                        <div class="villa-location" onclick="location.href='/licenses/<?= $item->model->slug ?>'" >
+                                            <img src="<?= $item->thumb(226, 360) ?>" class="main-banks" />
 
-                                        <div class="villa-locationinfo">
-                                            <span><?= $item->model->title ?></span>
-                                            <h4><a href="/licenses/<?= $item->model->slug ?>"
-                                                   title="">Licence</a></h4>
+                                            <div class="villa-locationinfo">
+                                                <span><?= $item->model->title ?></span>
+                                                <h4><a href="/licenses/<?= $item->model->slug ?>"
+                                                       title="">Licence</a></h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
                                 <? endforeach; ?>
                                 <li>
                                     <div class="villa-location">
@@ -770,35 +612,6 @@ MainAsset::register($this);
     </div>
 </section>
 
-<section>
-    <div class="block no-padding blackish high2-opacity">
-        <div class="parallax" data-velocity="-.4"
-             style="background-image: url(/uploads/theme_villa/parallax4-3.jpg);"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="single-property">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="logo2">
-                                    <span><img src="/uploads/logo/logo2.png" alt=""/></span>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <strong>Если Вы перечитали информацию на сайте и остались вопросы - напишите в чат</strong>
-                                <span>Напишите и мы секономим Ваше время</span>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="/contact" class="theme-btn" title="Написать">Написать</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Property -->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section>
     <div class="block">
@@ -826,20 +639,20 @@ MainAsset::register($this);
                             <div class="h5">Фонды и Трасты</div>
                             <div class="recentnews-carousel">
                                 <? foreach ($fonds as $item): ?>
-                                <div class="recentnew-post"  onclick="location.href='/fonds/<?= $item->model->slug ?>'" >
-                                    <?= Html::img($item->thumb(470, 295), array('class' => 'main-banks')) ?>
+                                    <div class="recentnew-post"  onclick="location.href='/fonds/<?= $item->model->slug ?>'" >
+                                        <?= Html::img($item->thumb(470, 295), array('class' => 'main-banks')) ?>
 
-                                    <div class="recentnew-detail">
-                                        <h4>
-                                            <a href="/fonds/<?= $item->model->slug ?>"
-                                               title="<?= $item->model->title ?>"><?= $item->model->title ?></a>
-                                        </h4>
-                                        <?php /*<ul class="post-meta">
+                                        <div class="recentnew-detail">
+                                            <h4>
+                                                <a href="/fonds/<?= $item->model->slug ?>"
+                                                   title="<?= $item->model->title ?>"><?= $item->model->title ?></a>
+                                            </h4>
+                                            <?php /*<ul class="post-meta">
                                             <li><i class="fa fa-calendar"></i> 26 May 2016</li>
                                             <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>
                                         </ul> */ ?>
+                                        </div>
                                     </div>
-                                </div>
                                 <? endforeach; ?>
                             </div>
                             <div>
@@ -852,12 +665,222 @@ MainAsset::register($this);
                                     <li>Простота и скорость. Открытие компании в оффшоре занимает, как правило, несколько дней (во многих европейских странах регистрация проходит также быстро и для не оффшорных компаний – при необходимости получите бесплатную консультацию специалиста тут).</li>
                                     <li>Гибкость и доступность. Купить оффшор с нами – просто и выгодно. Мы все делаем (предлагаем самое выгодное решение задач) именно под ваши потребности (вашего бизнеса). Однако, стоит честно сказать, что есть оффшоры, которые для бизнесмена из СНГ могут регистрироваться месяцами.</li>
                                     <li>Минимум требований.</li>
-                                        </ul>
+                                </ul>
                             </div>
                             <!-- Recent News Carousel -->
                         </div>
                     </div>
                     <!-- Recent News -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="block grayish high-opacity">
+        <div class="fixed-bg"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="spec-services">
+                        <div class="title1 vertical">
+                            <h2>Продвинутые инструменты <span>для бизнеса</span></h2>
+                            <span>Предлагаем продвинутые услуги</span>
+                        </div>
+                        <div class="about-services">
+                            <p>Лучшее предложение это то, после которого
+                                Вы будете нас рекомендовать партнерам или близким,
+                                а не то, где мы больше на Вас заработаем.
+                                Мы реализуем Ваши заказы по отработанным системам,
+                                заведомо известным нам из опыта, а не в теории.
+                                В динамично меняющейся среде мы ищем актуальные
+                                новые решения, а не останавливаемся, если всем
+                                известные стандартные не срабатывают.</p>
+                            <ul class="about-serlist">
+                                <li><a href="#" title="">Главное наше отличие - это поиск своих путей,
+                                        а не надежда на оппонентов</a></li>
+                                <li><a href="#" title="">Степень доверия в непростых вопросах
+                                        является определяющим фактором</a></li>
+                                <li><a href="#" title="">Полностью оправданные затраты</a></li>
+                            </ul>
+                        </div>
+                        <div class="services-list1" id="services-list1">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="service1">
+                                        <span><i class="flaticon-new-india-republic"></i></span>
+                                        <h4><a href="#services-list1" title="">Подбор подходящей юрисдикции</a></h4>
+                                        <i>Страны и их особенности</i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="service1">
+                                        <span><i class="flaticon-new-worlwide"></i></span>
+                                        <h4><a href="#services-list1" title="">SWIFT</a></h4>
+                                        <i>Регистрация под Вашу систему</i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="service1">
+                                        <span><i class="flaticon-new-credit-card-pay-mode"></i></span>
+                                        <h4><a href="#services-list1" title="">Брендированные карты
+                                                без привязки к банку</a></h4>
+                                        <i>Visa & MasterCard</i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="service1">
+                                        <span><i class="flaticon-new-credit-card-2"></i></span>
+                                        <h4><a href="#services-list1" title="">Анонимные карты</a></h4>
+                                        <i>Субсчета</i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="service1">
+                                        <span><i class="flaticon-new-coin"></i></span>
+                                        <h4><a href="#services-list1" title="">Холдинги</a></h4>
+                                        <i>Крупный бизнес</i>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="/offshornyie-predlozheniya" title="" class="theme-btn">Просмотреть все</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Special Services -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Абзацы для исправления "сливки" объектов -->
+
+<section>
+    <div class="block no-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="customers-reviews overlape"
+                         style="background-image: url(/uploads/theme_villa/customer-reviews-bg.jpg);">
+                        <div class="customer-review">
+                            <div class="review-detail">
+                                <div class="customer-thumb">
+                                    <img src="/uploads/theme_villa/customer1.jpg" alt=""/>
+                                    <!--        <img src="/uploads/theme_villa/customer-sign.png" alt=""/>-->
+                                </div>
+                                <div class="customer-reviewrating">
+                                    <p>"По рекомендации друга решил открыть счет на компанию в определенном латвийском
+                                        банке.
+                                        Я обратился в эту компанию так, как банк у них был представлен на сайте,
+                                        на что не отказывая предложили открыть в других банках.
+                                        Я стоял на своем и спустя полтора месяца, вместо обещанного одного месяца, мне
+                                        открыли счет.
+                                        Но дело не в том. Я пол года с горем пополам пользовался счетом,
+                                        давая бесконечные подтверждения по запросу банка на сомнительные по их мнению
+                                        переводы.
+                                        И вот спустя пол года доступ к моему счету заблокировали совершенно
+                                        безосновательно.
+                                        Я был вынужден обратиться за открытием нового счета пока велись разбирательства
+                                        по тому.
+                                        В этот раз у меня не было на примете определенного банка и я согласился на
+                                        предложенный мне.
+                                        Через две недели я уже пользовался новым счетом и по сей день никаких нареканий.
+                                        Ребята молодцы,
+                                        а я потерял время и так пока и не вернул деньги с латвийского банка. Зря я не
+                                        послушал с самого начала...
+                                        "</p>
+
+                                    <div class="ratings">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </div>
+                                    <span>Клиентский отзыв <i>Евгений</i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="customer-review">
+                            <div class="review-detail">
+                                <div class="customer-thumb">
+                                    <img src="/uploads/theme_villa/customer2.jpg" alt=""/>
+                                    <!-- <img src="/uploads/theme_villa/customer-sign2.png" alt=""/>-->
+                                </div>
+                                <div class="customer-reviewrating">
+                                    <p>"У другой компании заказала регистрацию оффшора и открытие счета.
+                                        Компанию зарегистрировали, а счет открыть не смогли. После этого обратившись к
+                                        другим я узнала, что оказывается
+                                        можно открыть счет покупая у них и компанию и так не только у них... От всей
+                                        души благодарна IQ Decision, что
+                                        вошли в положение и открыли мне счет без регистрации еще одной кмпании. "</p>
+
+                                    <div class="ratings">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <span>Клиентский отзыв <i>Светлана</i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Customers Reviews -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <p></p>
+</section>
+<section>
+    <div>
+        <h1></h1>
+    </div>
+    <div>
+        <h1></h1>
+    </div>
+</section>
+<section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</section>
+<section>
+    <div class="block no-padding blackish high2-opacity">
+        <div class="parallax" data-velocity="-.4"
+             style="background-image: url(/uploads/theme_villa/parallax4-3.jpg);"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="single-property">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="logo2">
+                                    <span><img src="/uploads/logo/logo2.png" alt=""/></span>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <strong>Если Вы перечитали информацию на сайте и остались вопросы - напишите в чат</strong>
+                                <span>Напишите и мы секономим Ваше время</span>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/contact" class="theme-btn" title="Написать">Написать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Property -->
                 </div>
             </div>
         </div>
