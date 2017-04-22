@@ -532,7 +532,7 @@ MainAsset::register($this);
                                                         <h4><a href="/banks/<?= $item->model->slug ?>"
                                                                title=""><?= $item->model->title ?></a></h4>
                                                         <span style="font-weight: bold; font-size: large; color: white"><?= $item->model->location_title ?></span>
-                                                        <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">$<?= $item->price ?></span>
+                                                        <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€<?= $item->price ?></span>
                                                     </div>
                                                 </div>
                                             </div>

@@ -172,7 +172,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <div class="h6 text-center">
                                         <span>Цена</span>
                                     </div>
-                                    <div class="h6 text-center cena">$<?= $item->price ?></div>
+                                    <div class="h6 text-center cena">€<?= $item->price ?></div>
 
                                     <div class="text-center" style="height:35px;">
                                         <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"
