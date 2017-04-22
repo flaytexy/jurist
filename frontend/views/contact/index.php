@@ -122,7 +122,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
     After you sign up, use the following script tag with YOUR_GOOGLE_API_KEY replaced with your actual key.
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY"></script>
 -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 <script type="text/javascript">
     // When the window has finished loading create our google map below
