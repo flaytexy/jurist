@@ -227,7 +227,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                     mail($to, $subject, $message, $header);
 
                     // Step 4
-                    header('Location: http://iq-offshore.com/contact');
+                    
 
                     ?>
 
