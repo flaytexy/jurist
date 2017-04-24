@@ -50,13 +50,13 @@ class Feedback extends \frontend\components\API
 
         echo Html::beginTag('div',['class'=>'col-md-4']);
         //echo $form->field($model, 'email')->input('email');
-        echo $form->field($model, 'name')->textInput(['placeholder' => Yii::t('easyii', 'E-mail')])->label(false);
+        echo $form->field($model, 'email')->textInput(['placeholder' => Yii::t('easyii', 'E-mail')])->label(false);
         echo Html::endTag('div');
 
         if($settings['enablePhone']){
             echo Html::beginTag('div',['class'=>'col-md-4']);
             //echo $form->field($model, 'phone');
-            echo $form->field($model, 'name')->textInput(['placeholder' => Yii::t('easyii', 'Phone')])->label(false);
+            echo $form->field($model, 'phone')->textInput(['placeholder' => Yii::t('easyii', 'Phone')])->label(false);
             echo Html::endTag('div');
         }
         if($settings['enableTitle']){

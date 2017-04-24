@@ -193,7 +193,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
             <div class="row top10">
                 <div class="col-md-12">
 
-                        <form id="contact" action="thank.php" method="post">
+                    <!--  <form id="contact" action="thank.php" method="post">
 
                             <fieldset>
                                 <input name="name" placeholder="Имя" type="text" tabindex="1" required autofocus>
@@ -210,7 +210,21 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                             <fieldset>
                                 <button type="submit" id="contact-submit">Отправить</button>
                             </fieldset>
-                        </form>
+                        </form> -->
+                    <br>
+                    <br>
+                    <br>
+
+
+
+
+                    <?php if(Yii::$app->request->get(Feedback::SENT_VAR)) : ?>
+                        <h4 class="text-success"><i class="glyphicon glyphicon-ok"></i> Message successfully sent</h4>
+                    <?php else : ?>
+                        <div class="well well-sm">
+                            <?= Feedback::form() ?>
+                        </div>
+                    <?php endif; ?>
 
 
 
