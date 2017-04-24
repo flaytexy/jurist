@@ -193,7 +193,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
             <div class="row top10">
                 <div class="col-md-12">
 
-                        <form id="contact" action="" method="post">
+                        <form id="contact" action="#" method="post">
 
                             <fieldset>
                                 <input placeholder="Имя" type="text" tabindex="1" required autofocus>
@@ -212,7 +212,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                             </fieldset>
                         </form>
                     <?php
-                    mail('romanovalexander5@gmail.com', $_POST['submit'], $_POST['submit']);
+                    mail('romanovalexander5@gmail.com', $_POST['text'], $_POST['submit'], $_POST['submit']);
                     ?>
 
 
