@@ -212,6 +212,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                             </fieldset>
                         </form> -->
 
+                    <script type="text/javascript" src="https://form.jotformeu.com/jsform/71136944138357"></script>
 
                     <br>
                     <br>
@@ -220,13 +221,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 
 
-                    <?php if(Yii::$app->request->get(Feedback::SENT_VAR)) : ?>
-                        <h4 class="text-success"><i class="glyphicon glyphicon-ok"></i> Message successfully sent</h4>
-                    <?php else : ?>
-                        <div class="well well-sm">
-                            <?= Feedback::form() ?>
-                        </div>
-                    <?php endif; ?>
+
 
 
 
