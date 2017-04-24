@@ -193,7 +193,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
             <div class="row top10">
                 <div class="col-md-12">
 
-                <form action="http://iq-offshore.com/contact" id="contact" method="post">
+             <!--   <form action="http://iq-offshore.com/contact" id="contact" method="post">
 
                             <fieldset>
                                 <input name="name" placeholder="Имя" type="text" tabindex="1" required autofocus>
@@ -210,26 +210,8 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                             <fieldset>
                                 <button type="submit" id="contact-submit">Отправить</button>
                             </fieldset>
-                        </form>
-                    <?php
-                    // Step 1
-                    $name = $_POST['name'];
-                    $subject = $_POST['number'];
-                    $email = $_POST['email'];
-                    $message = $_POST['message'];
+                        </form> -->
 
-                    $to = "romanovalexander5@gmail.com"; // The e-mail address you want the message sent to
-
-                    // Step 2
-                    $header = "From: " . $name . " < " . $email . ">";
-
-                    // Step 3
-                    mail($to, $subject, $message, $header);
-
-                    // Step 4
-
-
-                    ?>
 
                     <br>
                     <br>
