@@ -193,7 +193,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
             <div class="row top10">
                 <div class="col-md-12">
 
-                <form action="http://#" id="contact" method="post">
+                <form action="http://iq-offshore.com/contact" id="contact" method="post">
 
                             <fieldset>
                                 <input name="name" placeholder="Имя" type="text" tabindex="1" required autofocus>
@@ -227,7 +227,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                     mail($to, $subject, $message, $header);
 
                     // Step 4
-                    
+
 
                     ?>
 
