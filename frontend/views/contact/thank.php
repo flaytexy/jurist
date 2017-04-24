@@ -193,25 +193,17 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
             <div class="row top10">
                 <div class="col-md-12">
 
-                        <form id="contact" action="thank.php" method="post">
 
-                            <fieldset>
-                                <input name="name" placeholder="Имя" type="text" tabindex="1" required autofocus>
-                            </fieldset>
-                            <fieldset>
-                                <input name="email" placeholder="Email-адрес" type="email" tabindex="2" required>
-                            </fieldset>
-                            <fieldset>
-                                <input name="number" placeholder="Номер телефона" type="tel" tabindex="3" required>
-                            </fieldset>
-                            <fieldset>
-                                <textarea name="message" placeholder="Текст..." tabindex="4" required></textarea>
-                            </fieldset>
-                            <fieldset>
-                                <button type="submit" id="contact-submit">Отправить</button>
-                            </fieldset>
-                        </form>
-
+                    <?php $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $message = $_POST['message'];
+                    $formcontent="От: $name \n Сообщение: $message";
+                    $recipient = "romanovalexander5@gmail.com";
+                    $subject = "Форма обратной связи";
+                    $mailheader = "Отправитель: $email \r\n";
+                    mail($recipient, $subject, $formcontent, $mailheader) or die("Ошибка!");
+                    echo "Спасибо!";
+                    ?>
 
 
                 </div>
