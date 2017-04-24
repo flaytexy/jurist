@@ -196,16 +196,16 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         <form id="contact" action="#" method="post">
 
                             <fieldset>
-                                <input placeholder="Имя" type="text" tabindex="1" required autofocus>
+                                <input name="name" placeholder="Имя" type="text" tabindex="1" required autofocus>
                             </fieldset>
                             <fieldset>
-                                <input placeholder="Email-адрес" type="email" tabindex="2" required>
+                                <input name="email" placeholder="Email-адрес" type="email" tabindex="2" required>
                             </fieldset>
                             <fieldset>
-                                <input placeholder="Номер телефона" type="tel" tabindex="3" required>
+                                <input name="number" placeholder="Номер телефона" type="tel" tabindex="3" required>
                             </fieldset>
                             <fieldset>
-                                <textarea placeholder="Текст..." tabindex="4" required></textarea>
+                                <textarea name="text" placeholder="Текст..." tabindex="4" required></textarea>
                             </fieldset>
                             <fieldset>
                                 <button name="submit" type="submit" id="contact-submit" data-submit="...Отправление">Отправить</button>
