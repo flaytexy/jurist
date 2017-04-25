@@ -2960,9 +2960,9 @@ footer .title1.style2 > h2 {
 
 .instagram .title1 {
     margin-bottom: 0;
-    padding-bottom: 39px;
-    padding-top: 48px;
-    padding-left: 215px;
+    /*padding-bottom: 39px;*/
+    padding-top: 6px;
+    padding-left: 25px;
     text-align: left;
     width: 40%;
 }
