@@ -2978,6 +2978,12 @@ footer .title1.style2 > h2 {
 
 .title1.light > h2 {
     color: #ffffff;
+    z-index: 1 !important;
+}
+
+.title1.light {
+    color: #ffffff;
+    z-index: 1 !important;
 }
 
 .instagram .title1 > h2 {
@@ -2988,6 +2994,7 @@ footer .title1.style2 > h2 {
 .title1.light > span {
     color: #f8f8f8;
     font-weight: 300;
+    z-index: 1 !important;
 }
 
 .instagram .title1 > span {

@@ -469,12 +469,20 @@ $phoneStr = "+7 925 470 50 02";
                 <div class="col-md-3">
                     <div class="footer-widget">
                         <div class="address-widget">
-                            <!--                            <ul>
-                                                            <li><span>Address:</span> Russia, Moscow</li>
-                                                            <li><span>Phone:</span> +79251754417</li>
-                                                            <li><span>Email:</span> <a href="/contact" title="">sendme@it-offshore.com</a></li>
-                                                        </ul>-->
-                            <a href="/contact" class="theme-btn" title="">Связаться с нами</a>
+                            <p  style="color: white">
+                                <strong  style="color: #7dc20f"><i class="fa fa-map-marker"></i> Адрес</strong><br>
+                                Старый Петровско-Разумовский проезд, 1/23 стр.1, Москва, 127287
+                            </p>
+                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-phone"></i> Номер телефона</strong><br>
+                                +7 925 470 50 02</p>
+                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-clock-o"></i> Часы работы</strong><br>
+                                09:00-19:00</p>
+                            <p style="color: white">
+                                <strong style="color: #7dc20f"><i class="fa fa-envelope"></i> E-mail</strong><br>
+                                <a href="mailto:one@iq-offshore.com">one@iq-offshore.com</a></p>
+                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-skype"></i> Skype</strong><br>
+                                <a href="skype:IQ Decision?call">IQ Decision</a></p>
+                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="theme-btn" title="">Связаться с нами</a>
                         </div>
                     </div>
                 </div>
