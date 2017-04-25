@@ -187,8 +187,8 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                     <p><strong><i class="fa fa-clock-o"></i> Часы работы</strong><br>
                         09:00-19:00</p>
                     <p>
-                        <strong><i class="fa fa-envelope"></i> E-mail</strong><br>
-                        one@iq-offshore.com</p>
+                        <strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
+                        one@iq-offshore.com</a></p>
                     <p><strong><i class="fa fa-skype"></i> Skype</strong><br>
                         <a href="skype:IQ Decision?call">IQ Decision</a></p>
 
