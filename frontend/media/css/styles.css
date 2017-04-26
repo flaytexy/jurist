@@ -490,13 +490,13 @@ iframe {
 }
 
 .logo img {
-    width: 53px;
+   /* width: 53px; */
     height: 35px;
 }
 
 .logo2 img {
-    width: 75px;
-    height: 48px;
+    width: 110px;
+    height: 43px;
 }
 /*здесь изменено*/
 .logo_main img {
