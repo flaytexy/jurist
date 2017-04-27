@@ -606,6 +606,7 @@ $phoneStr = "+7 925 470 50 02";
         bottom:50%;
         top:50%;
         left:1%;
+        opacity: 0.3;
         display:none;
         background: url("http://iq-offshore.com/uploads/1/scrollup.png") no-repeat 0px 20px;
         background-size: 60px 60px;
