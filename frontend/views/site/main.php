@@ -890,12 +890,21 @@ MainAsset::register($this);
 </section>
 
 <section>
+
     <div class="block no-padding gray2">
+
         <div class="container">
+            <h2>Последние новости: </h2>
             <div class="sponsor-carousel">
+
                 <? foreach ($news as $item): ?>
-                    <div class="sponsor"><a href="/news/<?= $item->slug ?>" title="<?= $item->title ?>">
+
+                    <div class="sponsor"><a href="/news/<?= $item->slug ?>">
+
                             <?= Html::img($item->thumb(183, 90), array('class' => 'main-news')) ?>
+                            <div class="offered-serviceinfotwo">
+                            <span style="font-weight: bolder; color: white;  text-shadow: -1px 0 10px black, 0 1px 10px black, 1px 0 black, 0 -1px 10px black; "><?= $item->title ?></span>
+                                </div>
                         </a>
                     </div>
                 <? endforeach; ?>

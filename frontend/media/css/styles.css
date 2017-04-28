@@ -2485,7 +2485,7 @@ footer .title1.style2 > h2 {
 }
 
 .offered-serviceinfo {
-    padding: 30px;
+    padding: 0px;
     position: absolute;
     text-align: center;
     top: 50%;
@@ -2495,6 +2495,20 @@ footer .title1.style2 > h2 {
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 100%;
+    z-index: 1;
+}
+
+.offered-serviceinfotwo {
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 90%;
     z-index: 1;
 }
 
@@ -2509,6 +2523,16 @@ footer .title1.style2 > h2 {
 }
 
 .offered-serviceinfo > span {
+    color: #ffffff;
+    float: left;
+    font-family: georgia;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.offered-serviceinfotwo > span {
     color: #ffffff;
     float: left;
     font-family: georgia;
