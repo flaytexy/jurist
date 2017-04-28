@@ -2974,6 +2974,8 @@ footer .title1.style2 > h2 {
     position: absolute;
     right: -40px;
     top: 0;
+    display: none
+;
 }
 
 .title1.light > h2 {
