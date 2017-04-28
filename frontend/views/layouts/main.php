@@ -400,13 +400,22 @@ $phoneStr = "+7 925 470 50 02";
                             <span>Возможно, это и Вас заинтересует</span>
                         </div>
                         <div class="instagram-gallery">
+
                             <ul>
+
+
                                 <?php foreach ($popularly as $item) : ?>
 
                                     <?php if (!empty($item->image)): ?>
                                         <li>
                                             <a href="<?= Url::to([$item->slug]) ?>">
-                                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 150, 150)) ?>
+
+                                                <?= Html::img(\frontend\helpers\Image::thumb( $item->image, 150, 150), array('class' => 'main-news'))   ?>
+                                                <div class="offered-serviceinfo">
+                                                    <span style="font-weight: bolder; color: white;  text-shadow: -1px 0 10px black, 0 1px 10px black, 1px 0 black, 0 -1px 10px black; "><?= $item->title ?></span>
+
+                                                </div>
+
 
                                             </a>
 
