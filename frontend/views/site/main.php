@@ -468,13 +468,14 @@ MainAsset::register($this);
                                                 </div>
                                             </a>
                                             <div class="package-detail">
-                                                <span class="cate">Lite/Classic/Pro</span>
+                                                <a class="cate" href="/offers/<?= $offer->model->slug ?>"
+                                                      title="">Lite/Classic/Pro</a>
                                                 <h4><a href="/offers/<?= $offer->model->slug ?>"
                                                        title="<?= $offer->model->title ?>"><?= $offer->model->title ?></a></h4>
                                                 <ul class="location-book">
                                                     <li><i class="fa fa-map-marker"></i>
-                                                        <span><?= $offer->model->title ?></span></li>
-                                                    <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a
+                                                        <span>Подробнее</span></li>
+                                                    <li class="book-btn"><i class="fa fa-shopping-basket"></i><a
                                                             href="/offers/<?= $offer->model->slug ?>"
                                                             title="">Подробнее</a></li>
                                                 </ul>
