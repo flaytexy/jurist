@@ -476,7 +476,7 @@ MainAsset::register($this);
                                                         <span><?= $offer->model->title ?></span></li>
                                                     <li class="book-btn"><i class="fa fa-thumbs-o-up"></i><a
                                                             href="/offers/<?= $offer->model->slug ?>"
-                                                            title="">Купить</a></li>
+                                                            title="">Подробнее</a></li>
                                                 </ul>
                                             </div>
                                         </div>
