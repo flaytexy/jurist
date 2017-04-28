@@ -899,7 +899,7 @@ MainAsset::register($this);
 
                 <? foreach ($news as $item): ?>
 
-                    <div class="sponsor"><a href="/news/<?= $item->slug ?>">
+                    <div class="sponsor"><a style="width: 100%;border-radius: 5px; background-color: rgba(0, 0, 0, 0.9)" href="/news/<?= $item->slug ?>">
 
                             <?= Html::img($item->thumb(183, 90), array('class' => 'main-news')) ?>
                             <div class="offered-serviceinfotwo">
