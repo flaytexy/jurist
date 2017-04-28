@@ -3040,6 +3040,18 @@ footer .title1.style2 > h2 {
 
 }
 
+.instagram-gallery a::before {
+    background: #000000 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
 .instagram-gallery > ul {
     float: left;
     list-style: outside none none;
