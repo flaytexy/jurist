@@ -2215,6 +2215,13 @@ footer .title1.style2 > h2 {
     position: relative;
 }
 
+.blacklink a:link  {
+    color:#5d5d5d !important;
+}
+.blacklink a:hover  {
+    color:#7dc20f !important;
+}
+
 .location-book > li {
     background: #f9f9f9 none repeat scroll 0 0;
     -webkit-border-radius: 50px;
@@ -2273,7 +2280,7 @@ footer .title1.style2 > h2 {
 
 .location-book > li:hover > i,
 .location-book > li.active > i {
-    margin-right: 5px;
+    margin-right: 40px;
 }
 
 .location-book > li.book-btn::before {

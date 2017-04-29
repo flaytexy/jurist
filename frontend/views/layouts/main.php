@@ -404,6 +404,7 @@ $phoneStr = "+7 925 470 50 02";
                             <ul>
 
 
+
                                 <?php foreach ($popularly as $item) : ?>
 
                                     <?php if (!empty($item->image)): ?>
@@ -412,7 +413,7 @@ $phoneStr = "+7 925 470 50 02";
 
                                                 <?= Html::img(\frontend\helpers\Image::thumb( $item->image, 150, 150), array('class' => 'main-news'))   ?>
                                                 <div class="offered-serviceinfo">
-                                                    <span style="font-weight: bolder; color: white;  text-shadow: -1px 0 10px black, 0 1px 10px black, 1px 0 black, 0 -1px 10px black; "><?= $item->title ?></span>
+                                                    <span style="font-weight: bolder; color: white;  text-shadow: -5px 0 10px black, 0 5px 10px black, 5px 0 10px black, 0 -5px 10px black; "><?= $item->title ?></span>
 
                                                 </div>
 
@@ -423,6 +424,7 @@ $phoneStr = "+7 925 470 50 02";
                                     <? endif; ?>
                                 <? endforeach; ?>
                             </ul>
+
                         </div>
                         <!-- Instagram Gallery -->
                     </div>
