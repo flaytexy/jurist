@@ -473,11 +473,11 @@ MainAsset::register($this);
                                                 <h4><a href="/offers/<?= $offer->model->slug ?>"
                                                        title="<?= $offer->model->title ?>"><?= $offer->model->title ?></a></h4>
                                                 <ul class="location-book">
-                                                    <li><i class="fa fa-map-marker"></i>
-                                                        <span>Подробнее</span></li>
-                                                    <li class="book-btn"><i class="fa fa-shopping-basket"></i><a
-                                                            href="/offers/<?= $offer->model->slug ?>"
-                                                            title="">Подробнее</a></li>
+                                                    <li><i class="fa fa-info"></i>
+                                                        <span class="blacklink"><a
+                                                                href="/offers/<?= $offer->model->slug ?>"
+                                                                title="">Подробнее</a></span></li>
+                                                    <li class="book-btn"><i class="fa fa-shopping-basket"></i> <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a></li>
                                                 </ul>
                                             </div>
                                         </div>
