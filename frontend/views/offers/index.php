@@ -135,9 +135,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                 <h4><?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?></h4>
                                                 <ul class="location-book">
                                                     <li class="active"><i class="fa fa-map-marker"></i>
-                                                        <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>">Заказать</a></span></li>
-                                                    <li class="book-btn"><i class="fa fa-thumbs-o-up"></i>
-                                                        <?= Html::a('Детальней', ['offers/view', 'slug' => $item->slug]) ?>
+                                                        <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>">Подробнее</a></span></li>
+                                                    <li class="book-btn"><i class="fa fa-shopping-basket"></i>
+                                                        <?= Html::a('Подробнее', ['offers/view', 'slug' => $item->slug]) ?>
                                                     </li>
                                                 </ul>
                                             </div>

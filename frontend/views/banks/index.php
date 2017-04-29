@@ -222,8 +222,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                     <ul class="location-book">
                                                         <li class="active"><i class="fa fa-map-marker"></i>
                                                             <span><?= $item->date ?></span></li>
-                                                        <li class="book-btn"><i class="fa fa-thumbs-o-up"></i>
-                                                            <?= Html::a('Детальней',
+                                                        <li class="book-btn"><i class="fa fa-shopping-basket"></i>
+                                                            <?= Html::a('Подробнее',
                                                                 ['banks/view', 'slug' => $item->slug]) ?>
                                                         </li>
                                                     </ul>
