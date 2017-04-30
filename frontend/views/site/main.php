@@ -383,6 +383,7 @@ MainAsset::register($this);
         max-height: 60%;
     }
 </style>
+
 <section>
     <div class="block gray no-padding">
         <div class="container">
