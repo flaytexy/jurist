@@ -378,7 +378,11 @@ MainAsset::register($this);
         </div>
     </div>
 </section>
-
+<style>
+    iframe {
+        max-height: 60%;
+    }
+</style>
 <section>
     <div class="block gray no-padding">
         <div class="container">
