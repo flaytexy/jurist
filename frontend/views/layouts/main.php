@@ -604,9 +604,9 @@ $phoneStr = "+7 925 470 50 02";
 <style type="text/css">
 
     .scrollToTop{
-        width:100px;
+        width:70px;
         margin-right: -10px;
-        height:120px;
+        height:80px;
         padding:10px;
         text-align:center;
         background: whiteSmoke;
