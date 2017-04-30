@@ -57,6 +57,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 </section>
 
 
+
 <section id="offers">
     <div class="block">
         <div class="container">
@@ -73,7 +74,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 <?php $region_name = $item->model->region_name; ?>
                                 <li  style="clear: left" class='h5 ' id="reg_<?= $item->model->region_id ?>"><?= $region_name ?></li>
                             <? endif ?>
-                            <li style="float: left;"><a data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a></li>
+                            <li class="sidelines" style="float: left;"><a data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
