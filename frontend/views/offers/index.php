@@ -67,6 +67,18 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <!--                            data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>-->
 <!--                </div>-->
                 <!--  offers -->
+                <style>
+                    #offers-menu-block a {
+                       background-color: rgba(121,188,14,0.3);
+
+
+                    }
+                    #offers-menu-block a:hover {
+                        background: none ;
+
+
+                    }
+                </style>
                 <div class="">
                     <ul class="nav" id="offers-menu-block">
                         <?php foreach ($offers as $item) : ?>
@@ -74,7 +86,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 <?php $region_name = $item->model->region_name; ?>
                                 <li  style="clear: left" class='h5 ' id="reg_<?= $item->model->region_id ?>"><?= $region_name ?></li>
                             <? endif ?>
-                            <li class="sidelines" style="float: left;"><a  href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a></li>
+                            <li class="sidelines" style="margin-top: 10px; float: left;"><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
