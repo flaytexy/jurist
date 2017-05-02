@@ -16,7 +16,10 @@ $phoneStr = "+7 925 470 50 02";
 
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
-
+<script language="JavaScript">
+    document.onselectstart=function(){return false}
+    document.onmousedown=function(){return false}
+</script>
 <? if (YII_ENV_PROD) : ?>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
@@ -203,6 +206,7 @@ $phoneStr = "+7 925 470 50 02";
                             ['label' => 'Лицензии', 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
                             ['label' => 'Оффшоры', 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
                             ['label' => 'Процессинг', 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
+
                             ['label' => 'contact', 'url' => ['/contact'],
                                 'template' => '
                                 <li class="contact-m">
