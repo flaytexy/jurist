@@ -385,6 +385,7 @@ MainAsset::register($this);
 </style>
 
 <section>
+    <div class="centered">
     <div class="block gray no-padding">
         <div class="container">
             <div class="row">
@@ -446,10 +447,11 @@ MainAsset::register($this);
             </div>
         </div>
     </div>
+        </div>
 </section>
 
 <section>
-    <div class="block ext-toppadd-one">
+
         <div class="fixed-bg2" style="background-image: url(/uploads/theme_villa/parallax2.jpg);"></div>
         <div class="container">
             <div class="row">
