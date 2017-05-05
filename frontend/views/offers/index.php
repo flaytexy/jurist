@@ -461,8 +461,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
             </div>
         </div>
 
-        <div  id="juust">
-        <section class="Gio-98">
+
+        <section>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -470,31 +470,25 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <div class="packages style2 remove-ext2">
                             <div class="row">
                                 <?php foreach ($offers as $item) : ?>
-                                    <div class="box">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-                                            <line class="top" x1="0" y1="0" x2="900" y2="0"/>
-                                            <line class="left" x1="0" y1="460" x2="0" y2="-920"/>
-                                            <line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
-                                            <line class="right" x1="300" y1="0" x2="300" y2="1380"/>
-                                        </svg>
-                                        <div>
+                                    <div class="col-md-4">
+                                        <div class="package">
                                             <a href="<?= Url::to(['offers/'.$item->slug]) ?>">
-                                            <div class="">
-                                                <?= Html::img($item->thumb(500, 375)) ?>
-                                                <span style="font-size: 20px; font-weight: bold; "><i>$<?= $item->model->price ?></i> / <? if ($item->model->how_days): ?><?= $item->model->how_days?> дней<? else: ?>Минимал<? endif; ?></span>
-                                            </div>
+                                                <div class="package-thumb">
+                                                    <?= Html::img($item->thumb(500, 375)) ?>
+                                                    <span><i>$<?= $item->model->price ?></i> / <? if ($item->model->how_days): ?><?= $item->model->how_days?> дней<? else: ?>Минимал<? endif; ?></span>
+                                                </div>
                                             </a>
-                                            <div>
-<!--                                            <span class="cate">
-                                                <?php /*foreach ($item->tags as $tag) : */?>
+                                            <div class="package-detail">
+                                                <!— <span class="cate">
+<?php /*foreach ($item->tags as $tag) : */?>
                                                     <a href="<?/*= Url::to(['/offers', 'tag' => $tag]) */?>"
                                                        class="label label-info"><?/*= $tag */?></a>
-                                                <?php /*endforeach; */?>
-                                            </span>-->
-                                                <h3><?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?></h3>
+                                                    <?php /*endforeach; */?>
+</span>-->
+                                                <h4><?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?></h4>
                                                 <ul class="location-book">
-                                                    <li class="book-btn"><i class="fa fa-info"></i>
-                                                        <a href="<?= Url::to(['offers/'.$item->slug]) ?>">Подробнее</a></li>
+                                                    <li class="active"><i class="fa fa-info"></i>
+                                                        <span style="font-size: 15px; font-family: arial" class="blacklink" ><a href="<?= Url::to(['offers/'.$item->slug]) ?>">Подробнее</a></span></li>
                                                     <li class="book-btn"><i class="fa fa-shopping-basket"></i>
                                                         <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
                                                     </li>
@@ -515,6 +509,5 @@ $this->params['breadcrumbs'][] = $page->model->title;
             </div>
         </div>
             </div>
-    </div>
+
 </section>
-</div>
