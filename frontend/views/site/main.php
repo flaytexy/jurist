@@ -381,7 +381,7 @@ MainAsset::register($this);
 <style>
     iframe {
         max-height: 200px;
-        max-width: 100%;
+        max-width: 1270px;
     }
 </style>
 
