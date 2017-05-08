@@ -9,7 +9,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
-$popularly = \frontend\models\Popularly::find()->limit(12)->all();
+$popularly = \frontend\models\Popularly::find()->limit(10)->all();
 
 $phoneStr = "+7 925 470 50 02";
 
