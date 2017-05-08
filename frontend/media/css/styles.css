@@ -1313,31 +1313,27 @@ header.stick .top-menus .skype > a > div {
 
 .sidelines a {
     color: rgba(0, 0, 0, 0.64);
-}
-
-.sidelines a:hover {
-    color: #7DC20F;
-}
-
-.sidelines:before{
+    border-radius: 100px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     position: absolute;
     content: '';
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-    opacity: 0;
+    background-color:#fff;
+    transition: all 0.2s ease-in-out;
     left: 15%;
     right: 15%;
     top: 0;
     bottom: 0;
-    border-left: 3px solid #7DC20F;
-    border-right: 3px solid #7DC20F;
+
 }
 
-.sidelines:hover:before {
-    opacity: 1;
-    left: 0;
-    right: 0;
+.sidelines a:hover {
+    color: #7DC20F;
+    transform: scale(1.05, 1.05);
+    border-radius: 100px;
+    background-color:#fff !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
+
 
 #offers {
 
@@ -2277,7 +2273,7 @@ footer .title1.style2 > h2 {
 .location-book {
     display: inline-block;
     list-style: outside none none;
-    margin-bottom: -40px;
+    margin-bottom: -30px;
     padding-left: 0;
     position: relative;
 }

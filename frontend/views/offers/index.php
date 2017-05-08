@@ -68,18 +68,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <!--                            data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>-->
 <!--                </div>-->
                 <!--  offers -->
-                <style>
-                    #offers-menu-block a {
-                       background-color: rgba(121,188,14,0.3);
 
-
-                    }
-                    #offers-menu-block a:hover {
-                        background: none ;
-
-
-                    }
-                </style>
 
 
 
