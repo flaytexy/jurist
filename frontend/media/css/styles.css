@@ -511,7 +511,9 @@ iframe {
 #rc-copyright{
     display: none !important;
 }
-
+#rc-feedback-copyright {
+    display: none !important;
+}
 #rh-copy {
 
     display: none !important;
