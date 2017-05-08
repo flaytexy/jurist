@@ -380,14 +380,12 @@ MainAsset::register($this);
 </section>
 <style>
     iframe {
-        max-width: 100%;
-
-
-        top: 0;
-        left: 0;
-
-        max-height: 60%;
-
+        margin: 0;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: block;
     }
 
 </style>
@@ -401,7 +399,7 @@ MainAsset::register($this);
                         <h3>Индивидуальный подход высокого уровня<br /> <span>Даже с минимальным бюджетом</span></h3>
                         <span class="hidden-xs hidden-sm hidden-sm-down"><i class="fa fa-caret-down"></i></span>
 
-                        <iframe src="http://iq-offshore.com/uploads/index.html" width="10%" height="200px"  frameborder="1"> </iframe>
+                        <iframe src="http://iq-offshore.com/uploads/index.html" height="200px"  frameborder="1"> </iframe>
 
                         <!-- <div class="search-luxuriousform">
                             <div class="row">
