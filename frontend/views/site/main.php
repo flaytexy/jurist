@@ -379,18 +379,19 @@ MainAsset::register($this);
     </div>
 </section>
 <style>
-    .embed-container {
-        height: 100vh;
-        width: 100%;
-        padding-bottom: 50%;
+    .calendar-container {
         position: relative;
+        padding-bottom: 20%;
+        padding-left: 50%;
+        height: 0;
+        overflow: hidden;
     }
-    .embed-container iframe {
-        min-width: 100%;
-        height: 100%;
+    .calendar-container iframe {
         position: absolute;
         top: 0;
         left: 0;
+        width: 100%;
+        height: 100%;
     }
 
 </style>
@@ -403,7 +404,7 @@ MainAsset::register($this);
                     <div class="search-luxuriousvilla overlape">
                         <h3>Индивидуальный подход высокого уровня<br /> <span>Даже с минимальным бюджетом</span></h3>
                         <span class="hidden-xs hidden-sm hidden-sm-down"><i class="fa fa-caret-down"></i></span>
-                        <div class="embed-container">
+                        <div class="calendar-container">
                         <iframe src="http://iq-offshore.com/uploads/index.html"  frameborder="0"> </iframe>
 </div>
                         <!-- <div class="search-luxuriousform">
