@@ -2146,6 +2146,14 @@ footer .title1.style2 > h2 {
     float: left;
     margin-bottom: 55px;
     width: 100%;
+    border: 4px solid #e6e6e6;
+    border-radius: 10px;
+}
+
+.package:hover {
+
+    border: 4px solid #79bc0e;
+    border-radius: 10px;
 }
 
 .package-thumb {
@@ -2249,7 +2257,7 @@ footer .title1.style2 > h2 {
 .location-book {
     display: inline-block;
     list-style: outside none none;
-    margin-bottom: -50px;
+    margin-bottom: -40px;
     padding-left: 0;
     position: relative;
 }
