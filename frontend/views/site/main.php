@@ -380,8 +380,7 @@ MainAsset::register($this);
 </section>
 <style>
     iframe {
-        max-height: 200px;
-        max-width: 1270px;
+        max-height: 60%;
     }
 </style>
 
@@ -393,7 +392,7 @@ MainAsset::register($this);
                     <div class="search-luxuriousvilla overlape">
                         <h3>Индивидуальный подход высокого уровня<br /> <span>Даже с минимальным бюджетом</span></h3>
                         <span class="hidden-xs hidden-sm hidden-sm-down"><i class="fa fa-caret-down"></i></span>
-                        <iframe src="http://iq-offshore.com/uploads/index.html" width="10%" height="200px" frameborder="1"> </iframe>
+                        <iframe src="http://iq-offshore.com/uploads/index.html" width="10%" height="200px"  frameborder="1"> </iframe>
                         <!-- <div class="search-luxuriousform">
                             <div class="row">
                                 <div class="col-md-4">
