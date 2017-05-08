@@ -507,6 +507,18 @@ iframe {
     height: 100%;
 }
 
+
+#rc-copyright{
+    display: none !important;
+}
+
+#rh-copy {
+
+    display: none !important;
+}
+
+
+
 .service1 > span,
 .customer-thumb > img:first-child,
 .Social-btn > li > a,
@@ -727,7 +739,7 @@ header {
 /*===== Logo Menu Sec ===== здесь изменено*/
 .logomenu-sec {
     float: left;
-    width: 80%;
+    width: 100%;
     border-bottom: 1px solid #002b36;
 }
 
