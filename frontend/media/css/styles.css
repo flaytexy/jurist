@@ -904,6 +904,11 @@ header {
 #logomenu-sec .logo {
     position: absolute;
 }
+
+.powered-by,
+.privy-privacy-container {
+    opacity: 0; !important;
+}
 /*================ Switcher ================*/
 /* Switcher */
 .switcher {
