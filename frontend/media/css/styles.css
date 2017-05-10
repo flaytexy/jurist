@@ -907,10 +907,10 @@ header {
 
 .powered-by,
 .privy-privacy-container {
-    opacity: 0; !important;
+    opacity: 0 !important;
 }
-.powered-privacy-container  a {
-    opacity: 0; !important;
+.privy-embedded-form-216143  {
+    height: 150px !important;
 }
 /*================ Switcher ================*/
 /* Switcher */
