@@ -565,7 +565,7 @@ $phoneStr = "+7 925 470 50 02";
                             <script type='text/javascript'> var _d_site = _d_site || '411086831FF94A27DC0340B2'; </script>
                             <script src='//widget.privy.com/assets/widget.js'></script>
                             <!-- END PRIVY WIDGET CODE -->
-
+                            <div class="privy-embed-form" data-campaign="216143"></div>
 
                         </div>
                     </div>
