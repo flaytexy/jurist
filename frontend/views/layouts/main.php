@@ -18,7 +18,7 @@ $phoneStr = "+7 925 470 50 02";
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 <script language="JavaScript">
     document.onselectstart=function(){return false}
-    document.onmousedown=function(){return false}
+
 </script>
 <? if (YII_ENV_PROD) : ?>
     <!-- Yandex.Metrika counter -->
@@ -551,17 +551,22 @@ $phoneStr = "+7 925 470 50 02";
                         <!-- Fun Facts -->
                     </div>
                 </div>
+
                 <div class="col-md-2">
                     <div class="footer-widget">
                         <div class="title1 style2">
                             <h2>Быстрый переход</h2>
                         </div>
                         <div class="menu-links">
-                            <ul>
-                                <!-- <li><a href="/faq" title="">Faq's</a></li>-->
-                                <li><a href="/contact" title="">Support</a></li>
-                                <li><a href="/contact" title="">Contact us</a></li>
-                            </ul>
+
+                            <!-- This is the HTML element that, when clicked, will cause the popup to appear. -->
+
+                            <!-- BEGIN PRIVY WIDGET CODE -->
+                            <script type='text/javascript'> var _d_site = _d_site || '411086831FF94A27DC0340B2'; </script>
+                            <script src='//widget.privy.com/assets/widget.js'></script>
+                            <!-- END PRIVY WIDGET CODE -->
+
+
                         </div>
                     </div>
                 </div>
