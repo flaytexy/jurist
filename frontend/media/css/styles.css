@@ -912,6 +912,11 @@ header {
     height: 50px !important;
 
 }
+
+#rc-phone-highlight{
+    display: none !important;
+}
+
 .powered-by,
 .privy-privacy-container {
     opacity: 0 !important;
