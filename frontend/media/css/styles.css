@@ -905,6 +905,13 @@ header {
     position: absolute;
 }
 
+/*callback size*/
+.rc-inactive {
+    opacity: 0.8 !important;
+    width: 50px !important;
+    height: 50px !important;
+
+}
 .powered-by,
 .privy-privacy-container {
     opacity: 0 !important;
