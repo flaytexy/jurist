@@ -459,8 +459,8 @@ $phoneStr = "+7 925 470 50 02";
             </div>
         </div>
     </div>
-</footer>-->
-<script src="http://iq-offshore.com/uploads/target-script-min.js#anonymous"></script>
+</footer> ГЛАВНОЕ-->
+<script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>
 <footer>
     <div class="block dark">
         <div class="container">
