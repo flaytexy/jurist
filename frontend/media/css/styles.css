@@ -917,6 +917,10 @@ header {
     display: none !important;
 }
 
+.rc-flash-move{
+    display: none !important;
+    visibility: hidden !important;
+}
 .powered-by,
 .privy-privacy-container {
     opacity: 0 !important;
