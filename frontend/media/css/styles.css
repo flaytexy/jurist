@@ -1177,10 +1177,10 @@ header.stick .top-menus .skype > a > div {
 
 .btncenter {
     position: fixed;
-    top: 0;
-    right: 10px;
-    display: none;
-  /*  display: flex;*/
+    top: 9px;
+    right: 5px;
+
+    display: flex;
     align-items: center;
     justify-content:center;
     overflow: auto;
