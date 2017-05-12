@@ -364,7 +364,7 @@ $phoneStr = "+7 925 470 50 02";
                 <span  class="vmenu"><a href="/banks">Банки&nbsp;</a></span>
 </div>
             </div>
-           <div class="btncenter"><span class="menu-btn">&nbsp;<i class="fa fa-list"></i></span></div>
+          <!-- <div class="btncenter"><span class="menu-btn">&nbsp;<i class="fa fa-list"></i></span></div>-->
         </div>
         <div class="responsive-menu ps-container" data-ps-id="3359a5b1-f4a3-6575-dffa-5413f2e717d2">
             <span class="close-btn"><i class="fa fa-close"></i></span>
@@ -701,38 +701,13 @@ $phoneStr = "+7 925 470 50 02";
         //Scroll header mobile version
 
 
-        var lastScrollTop = 0;
-
-        $(window).scroll(function () {
-
-            var st = $(this).scrollTop();
-            if (st < lastScrollTop){
-                $('.logodiv ').slideDown();
-            } else {
-                $('.logodiv ').slideUp();
-            }
-            lastScrollTop = st;
-        })
+     
 
 
 
     });
 </script>
-<script>
-    var lastScrollTop = 0;
 
-    $(window).scroll(function () {
-
-        var st = $(this).scrollTop();
-        if (st < lastScrollTop){
-            $('.btncenter').slideDown();
-        } else {
-            $('.btncenter').slideUp();
-        }
-        lastScrollTop = st;
-    })
-
-</script>
 
 <!-- RedConnect -->
 <!-- RedConnect -->
