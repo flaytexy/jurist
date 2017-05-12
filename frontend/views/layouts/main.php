@@ -134,6 +134,10 @@ $phoneStr = "+7 925 470 50 02";
         .top-bar {
             display: none;
         }
+
+        .instagram .title1::before {
+            display: none;
+        }
     }
 </style>
 
