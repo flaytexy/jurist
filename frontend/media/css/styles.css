@@ -496,6 +496,13 @@ iframe {
    /* width: 53px; */
     height: 35px;
 }
+.logodiv img {
+height: 35px;
+}
+
+.logodiv  {
+    margin-left: 50%;
+}
 
 .logo2 img {
     width: 110px;
@@ -1142,8 +1149,28 @@ header.stick .top-menus .skype > a > div {
     color: #fbfbfb;
     cursor: pointer;
     float: right;
-    font-size: 15px;
+    font-size: 20px;
     /*margin-right: 20px;*/
+}
+
+.centeredmenulist {
+
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.btncenter {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    overflow: auto;
 }
 
 .responsive-menu {

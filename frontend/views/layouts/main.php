@@ -138,6 +138,8 @@ $phoneStr = "+7 925 470 50 02";
         .instagram .title1::before {
             display: none;
         }
+
+
     }
     .vmenu
      {
@@ -145,7 +147,7 @@ $phoneStr = "+7 925 470 50 02";
         cursor: pointer;
         float: right;
         font-size: 15px;
-        margin-right: 2px;
+        margin-right: 0;
         padding-top: 5px;
     }
     .vmenu a {
@@ -344,18 +346,23 @@ $phoneStr = "+7 925 470 50 02";
                         </ul>-->
         </div>
         <div class="logomenu-bar">
-            <div class="container">
-                <div class="logo"><a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a></div>
 
-                <span class="menu-btn">&nbsp;<i class="fa fa-list"></i></span>
-                <span  class="vmenu"><a href="/offshornyie-predlozheniya">Фонды&nbsp;</a></span>
+            <div class="logodiv"><a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a></div>
+
+            <div class="container">
+
+
+<div class="centeredmenulist">
+                <span  class="vmenu"><a href="/fonds">Фонды&nbsp;</a></span>
                 <span  class="vmenu">|&nbsp;</span>
-                <span  class="vmenu"><a href="/banks">Лицензии&nbsp;</a></span>
+                <span  class="vmenu"><a href="/licenses">Лицензии&nbsp;</a></span>
                 <span  class="vmenu">|&nbsp;</span>
                 <span  class="vmenu"><a href="/offshornyie-predlozheniya">Компании&nbsp;</a></span>
                 <span  class="vmenu">|&nbsp;</span>
                 <span  class="vmenu"><a href="/banks">Банки&nbsp;</a></span>
+</div>
             </div>
+           <div class="btncenter"><span class="menu-btn">&nbsp;<i class="fa fa-list"></i></span></div>
         </div>
         <div class="responsive-menu ps-container" data-ps-id="3359a5b1-f4a3-6575-dffa-5413f2e717d2">
             <span class="close-btn"><i class="fa fa-close"></i></span>
