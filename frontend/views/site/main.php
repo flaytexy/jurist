@@ -399,7 +399,7 @@ MainAsset::register($this);
         }
         .sponsor-carousel {
 
-            padding: 10px 0 0;
+            padding: 10px 0 10px;
         }
     }
 

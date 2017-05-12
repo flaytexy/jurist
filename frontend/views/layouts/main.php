@@ -144,7 +144,8 @@ $phoneStr = "+7 925 470 50 02";
         cursor: pointer;
         float: right;
         font-size: 15px;
-        margin-right: 20px;
+        margin-right: 2px;
+        padding-top: 5px;
     }
 </style>
 
