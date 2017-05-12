@@ -714,9 +714,25 @@ $phoneStr = "+7 925 470 50 02";
             lastScrollTop = st;
         })
 
+
+
     });
 </script>
+<script>
+    var lastScrollTop = 0;
 
+    $(window).scroll(function () {
+
+        var st = $(this).scrollTop();
+        if (st < lastScrollTop){
+            $('.btncenter').slideDown();
+        } else {
+            $('.btncenter').slideUp();
+        }
+        lastScrollTop = st;
+    })
+
+</script>
 
 <!-- RedConnect -->
 <!-- RedConnect -->
