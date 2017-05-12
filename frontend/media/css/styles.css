@@ -508,7 +508,8 @@ iframe {
 
     top: 0;
     left: 0;
-    display: flex;
+    display: none;
+   /* display: flex; */
     align-items: center;
     justify-content: center;
     overflow: auto;
@@ -1178,7 +1179,8 @@ header.stick .top-menus .skype > a > div {
     position: fixed;
     top: 0;
     right: 10px;
-    display: flex;
+    display: none;
+  /*  display: flex;*/
     align-items: center;
     justify-content:center;
     overflow: auto;
