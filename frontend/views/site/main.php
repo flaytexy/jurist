@@ -393,6 +393,11 @@ MainAsset::register($this);
         width: 100%;
         height: 100%;
     }
+    @media (max-width: 1000px) {
+        .calendar-container {
+            display: none;
+        }
+    }
 
 </style>
 
