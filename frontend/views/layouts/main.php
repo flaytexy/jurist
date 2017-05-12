@@ -130,6 +130,11 @@ $phoneStr = "+7 925 470 50 02";
     .skype {
         padding-top: 6px;
     }
+    @media (max-width: 1000px) {
+        .top-bar {
+            display: none;
+        }
+    }
 </style>
 
 <div class="theme-layout" id="theme-layout-js">
