@@ -1142,8 +1142,8 @@ header.stick .top-menus .skype > a > div {
     color: #fbfbfb;
     cursor: pointer;
     float: right;
-    font-size: 20px;
-    margin-right: 20px;
+    font-size: 15px;
+    /*margin-right: 20px;*/
 }
 
 .responsive-menu {

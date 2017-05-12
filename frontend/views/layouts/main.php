@@ -154,7 +154,7 @@ $phoneStr = "+7 925 470 50 02";
         float: right;
         font-size: 15px;
         margin-right: 2px;
-       
+
     }
 </style>
 
@@ -347,7 +347,11 @@ $phoneStr = "+7 925 470 50 02";
             <div class="container">
                 <div class="logo"><a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a></div>
 
-                <span class="menu-btn">&nbsp;&nbsp;<i class="fa fa-list"></i></span>
+                <span class="menu-btn">&nbsp;<i class="fa fa-list"></i></span>
+                <span  class="vmenu"><a href="/offshornyie-predlozheniya">Фонды&nbsp;</a></span>
+                <span  class="vmenu">|&nbsp;</span>
+                <span  class="vmenu"><a href="/banks">Лицензии&nbsp;</a></span>
+                <span  class="vmenu">|&nbsp;</span>
                 <span  class="vmenu"><a href="/offshornyie-predlozheniya">Компании&nbsp;</a></span>
                 <span  class="vmenu">|&nbsp;</span>
                 <span  class="vmenu"><a href="/banks">Банки&nbsp;</a></span>
