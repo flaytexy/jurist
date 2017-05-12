@@ -139,13 +139,22 @@ $phoneStr = "+7 925 470 50 02";
             display: none;
         }
     }
-    .container a {
+    .vmenu
+     {
         color: #fbfbfb;
         cursor: pointer;
         float: right;
         font-size: 15px;
         margin-right: 2px;
         padding-top: 5px;
+    }
+    .vmenu a {
+        color: #fbfbfb;
+        cursor: pointer;
+        float: right;
+        font-size: 15px;
+        margin-right: 2px;
+       
     }
 </style>
 
@@ -339,8 +348,9 @@ $phoneStr = "+7 925 470 50 02";
                 <div class="logo"><a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a></div>
 
                 <span class="menu-btn">&nbsp;&nbsp;<i class="fa fa-list"></i></span>
-                <span><a href="/offshornyie-predlozheniya">Компании&nbsp;</a></span>
-                <span><a href="/banks">Банки&nbsp;</a></span>
+                <span  class="vmenu"><a href="/offshornyie-predlozheniya">Компании&nbsp;</a></span>
+                <span  class="vmenu">|&nbsp;</span>
+                <span  class="vmenu"><a href="/banks">Банки&nbsp;</a></span>
             </div>
         </div>
         <div class="responsive-menu ps-container" data-ps-id="3359a5b1-f4a3-6575-dffa-5413f2e717d2">
