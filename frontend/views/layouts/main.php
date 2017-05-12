@@ -345,6 +345,8 @@ $phoneStr = "+7 925 470 50 02";
                             <li><img src="/uploads/theme_villa/lang1.jpg" alt=""></li>
                         </ul>-->
         </div>
+
+
         <div class="logomenu-bar">
 
             <div class="logodiv"><a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a></div>
@@ -696,6 +698,21 @@ $phoneStr = "+7 925 470 50 02";
             $('html, body').animate({scrollTop : 0},800);
             return false;
         });
+        //Scroll header mobile version
+
+
+        var lastScrollTop = 0;
+
+        $(window).scroll(function () {
+
+            var st = $(this).scrollTop();
+            if (st < lastScrollTop){
+                $('.logodiv ').slideDown();
+            } else {
+                $('.logodiv ').slideUp();
+            }
+            lastScrollTop = st;
+        })
 
     });
 </script>
