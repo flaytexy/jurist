@@ -497,11 +497,21 @@ iframe {
     height: 35px;
 }
 .logodiv img {
-height: 35px;
+    height: 35px;
+    display: block;
+    border: none;
 }
 
 .logodiv  {
-    margin-left: 50%;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
 }
 
 .logo2 img {
