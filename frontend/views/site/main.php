@@ -397,6 +397,10 @@ MainAsset::register($this);
         .calendar-container {
             display: none;
         }
+        .sponsor-carousel {
+
+            padding: 10px 0 0;
+        }
     }
 
 </style>
