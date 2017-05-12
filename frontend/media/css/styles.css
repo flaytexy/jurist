@@ -497,14 +497,14 @@ iframe {
     height: 35px;
 }
 .logodiv img {
-    height: 18px;
+    height: 15px;
     display: block;
     border: none;
 }
 
 .logodiv  {
     position: fixed;
-    top: 7px;
+    top: 9px;
     left: 0;
 
     display: flex;
