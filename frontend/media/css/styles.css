@@ -497,7 +497,7 @@ iframe {
     height: 35px;
 }
 .logodiv img {
-    height: 35px;
+    height: 20px;
     display: block;
     border: none;
 }
@@ -1159,7 +1159,7 @@ header.stick .top-menus .skype > a > div {
     color: #fbfbfb;
     cursor: pointer;
     float: right;
-    font-size: 20px;
+    font-size: 15px;
     /*margin-right: 20px;*/
 }
 
