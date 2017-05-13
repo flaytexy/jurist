@@ -409,11 +409,10 @@ MainAsset::register($this);
             top: 20px;
             left: 5px;
 transform: none;
-            position: absolute;
-            text-align: left;
+
             height:100%;
             width: 100%;
-            z-index: 1;
+
         }
         .sponsor > a img {
 
@@ -421,11 +420,7 @@ transform: none;
 
 
         }
-        .instagram-gallery > ul {
-
-            width: 120%;
-
-        }
+       
         .creative-slider{
             display: none;
         }
