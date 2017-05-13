@@ -142,6 +142,8 @@ $phoneStr = "+7 925 470 50 02";
             left: auto !important;
             right: 0 !important;
             transition: none !important;
+            width: 30px !important;
+            height: 30px !important;
         }
 
 
