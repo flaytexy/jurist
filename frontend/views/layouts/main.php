@@ -139,13 +139,17 @@ $phoneStr = "+7 925 470 50 02";
             display: none;
         }
         #rc-phone {
-            left: auto !important;
+
             bottom: 0 !important;
             top: 0 !important;
             right: 0 !important;
+            left: 5px !important;
             transition: none !important;
             width: 30px !important;
             height: 30px !important;
+        }
+        .rc-mobile #rc-phone-back {
+            margin-top: 0 !important;
         }
 
 
