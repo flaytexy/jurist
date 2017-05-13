@@ -138,6 +138,10 @@ $phoneStr = "+7 925 470 50 02";
         .instagram .title1::before {
             display: none;
         }
+        #rc-phone {
+            left: auto;
+            right: 0;
+        }
 
 
     }
