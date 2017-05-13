@@ -395,10 +395,7 @@ MainAsset::register($this);
         height: 100%;
     }
     @media (max-width: 1000px) {
-        .customers-reviews {
-            display: none;
 
-        }
 
         .calendar-container {
             display: none;
@@ -426,7 +423,7 @@ transform: none;
 
 
         }
-        .customers-reviews{
+        .customers-reviews  {
             display: none !important;
         }
         .creative-slider{
