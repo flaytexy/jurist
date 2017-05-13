@@ -401,6 +401,20 @@ MainAsset::register($this);
 
             padding: 10px 0 10px;
         }
+
+        .villa-location {
+           height: 100px;
+        }
+        .villa-locationinfo {
+            top: 20px;
+            left: 5px;
+transform: none;
+            position: absolute;
+            text-align: left;
+            height:100%;
+            width: 100%;
+            z-index: 1;
+        }
     }
 
 </style>
@@ -615,9 +629,8 @@ MainAsset::register($this);
                                             <img src="<?= $item->thumb(226, 360) ?>" class="main-banks" />
 
                                             <div class="villa-locationinfo">
-                                                <span><?= $item->model->title ?></span>
-                                                <h4><a href="/licenses/<?= $item->model->slug ?>"
-                                                       title="">Licence</a></h4>
+                                                <span style="color: #fff"><?= $item->model->title ?></span>
+
                                             </div>
                                         </div>
                                     </li>
@@ -628,7 +641,7 @@ MainAsset::register($this);
 
                                         <div class="villa-locationinfo">
                                             <span>Другие</span>
-                                            <h4><a href="#" title="">Licence</a></h4>
+
                                         </div>
                                     </div>
                                 </li>

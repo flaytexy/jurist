@@ -363,7 +363,7 @@ $phoneStr = "+7 925 470 50 02";
     <span  class="vmenu"><a href="/licenses">Лицензии&nbsp;</a></span>
     <span  class="vmenu">|&nbsp;</span>
     <span  class="vmenu"><a href="/fonds">Фонды&nbsp;</a></span>
-                   
+
 
 </div>
             </div>
