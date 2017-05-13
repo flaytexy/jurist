@@ -379,6 +379,7 @@ MainAsset::register($this);
     </div>
 </section>
 <style>
+
     .calendar-container {
         position: relative;
         padding-bottom: 20%;
@@ -394,6 +395,11 @@ MainAsset::register($this);
         height: 100%;
     }
     @media (max-width: 1000px) {
+        .customers-reviews {
+            display: none;
+
+        }
+
         .calendar-container {
             display: none;
         }
@@ -420,7 +426,9 @@ transform: none;
 
 
         }
-       
+        .customers-reviews{
+            display: none !important;
+        }
         .creative-slider{
             display: none;
         }
@@ -807,14 +815,16 @@ transform: none;
     </div>
 </section>
 <!-- Абзацы для исправления "сливки" объектов -->
-
+<!--  style="background-image: url(/uploads/theme_villa/customer-reviews-bg.jpg);" -->
 <section>
     <div class="block no-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+
                     <div class="customers-reviews overlape"
-                         style="background-image: url(/uploads/theme_villa/customer-reviews-bg.jpg);">
+                      style="background-color: rgba(0,0,0,0.5)"  >
+
                         <div class="customer-review">
                             <div class="review-detail">
                                 <div class="customer-thumb">
@@ -895,20 +905,7 @@ transform: none;
         <h1></h1>
     </div>
 </section>
-<section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-</section>
+
 <section>
     <div class="block no-padding blackish high2-opacity">
         <div class="parallax" data-velocity="-.4"
