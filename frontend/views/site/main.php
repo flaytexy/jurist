@@ -439,9 +439,9 @@ transform: none;
         .customers-reviews  {
             display: none !important;
         }
-        .creative-slider{
+    /*    .creative-slider{
             display: none;
-        }
+        } */
     }
 
 </style>
