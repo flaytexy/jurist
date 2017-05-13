@@ -140,8 +140,8 @@ $phoneStr = "+7 925 470 50 02";
         }
         #rc-phone {
             left: auto !important;
-            bottom: 50px !important;
-            top: auto !important;
+            bottom: 0 !important;
+            top: 0 !important;
             right: 0 !important;
             transition: none !important;
             width: 30px !important;
