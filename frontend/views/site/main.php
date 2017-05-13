@@ -395,6 +395,9 @@ MainAsset::register($this);
         height: 100%;
     }
     @media (max-width: 1000px) {
+
+
+
         .search-luxuriousvilla.overlape {
             display: none;
         }

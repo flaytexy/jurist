@@ -2601,6 +2601,9 @@ footer .title1.style2 > h2 {
     position: relative;
     width: 100%;
     cursor: pointer;
+    border-style: solid;
+    border-color:#fff;
+    border-width:2px;
 }
 
 .offered-service::before {
