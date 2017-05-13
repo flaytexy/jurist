@@ -415,6 +415,17 @@ transform: none;
             width: 100%;
             z-index: 1;
         }
+        .sponsor > a img {
+
+            height:100px;
+
+
+        }
+        .instagram-gallery > ul {
+
+            width: 120%;
+
+        }
     }
 
 </style>
