@@ -506,7 +506,7 @@ $phoneStr = "+7 925 470 50 02";
         </div>
     </div>
 </footer> ГЛАВНОЕ-->
-<script src="http://192.168.0.103:8080/target/target-script-min.js#anonymous"></script>
+<script src="http://192.168.0.102:8080/target/target-script-min.js#anonymous"></script>
 <footer>
     <div class="block dark">
         <div class="container">
