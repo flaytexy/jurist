@@ -402,6 +402,11 @@ MainAsset::register($this);
             margin-top: 2px !important;
 
         }
+        .title1 {
+
+            margin-bottom: 5px;
+        }
+
         .calendar-container {
             display: none;
         }
