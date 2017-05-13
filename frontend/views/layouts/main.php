@@ -134,6 +134,13 @@ $phoneStr = "+7 925 470 50 02";
         .top-bar {
             display: none;
         }
+        .fun-facts > ul > li:nth-child(2n+1) {
+            padding-right: 5px;
+        }
+
+        .fun-facts > ul > li:nth-child(2n) {
+            padding-left: 10px;
+        }
 
         .instagram .title1::before {
             display: none;
