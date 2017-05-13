@@ -426,6 +426,9 @@ transform: none;
             width: 120%;
 
         }
+        .creative-slider{
+            display: none;
+        }
     }
 
 </style>
