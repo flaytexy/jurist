@@ -139,8 +139,9 @@ $phoneStr = "+7 925 470 50 02";
             display: none;
         }
         #rc-phone {
-            left: auto;
-            right: 0;
+            left: auto !important;
+            right: 0 !important;
+            transition: none !important;
         }
 
 
