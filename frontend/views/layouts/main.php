@@ -135,11 +135,11 @@ $phoneStr = "+7 925 470 50 02";
             display: none;
         }
         .fun-facts > ul > li:nth-child(2n+1) {
-            padding-right: 5px;
+            padding-right: 50px !important;
         }
 
         .fun-facts > ul > li:nth-child(2n) {
-            padding-left: 10px;
+            padding-left: 10px !important;
         }
 
         .instagram .title1::before {
