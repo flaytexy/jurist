@@ -395,8 +395,13 @@ MainAsset::register($this);
         height: 100%;
     }
     @media (max-width: 1000px) {
+        .search-luxuriousvilla.overlape {
+            display: none;
+        }
+        .villa-locationslist > ul > li {
+            margin-top: 2px !important;
 
-
+        }
         .calendar-container {
             display: none;
         }
