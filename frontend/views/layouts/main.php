@@ -158,6 +158,9 @@ $phoneStr = "+7 925 470 50 02";
         .rc-mobile #rc-phone-back {
             margin-top: 0 !important;
         }
+        .feature-box-grid {
+            display:none;
+        }
 
 
     }
@@ -503,6 +506,139 @@ $phoneStr = "+7 925 470 50 02";
             </div>
         </div>
     </section>
+    <!--
+        You need to include this script tag on any page that has a Google Map.
+
+        The following script tag will work when opening this example locally on your computer.
+        But if you use this on a localhost server or a live website you will need to include an API key.
+        Sign up for one here (it's free for small usage):
+            https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+
+        After you sign up, use the following script tag with YOUR_GOOGLE_API_KEY replaced with your actual key.
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY"></script>
+    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
+
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 15,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(55.800312,37.565437), // New York
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
+            };
+
+            // Get the HTML DOM element that will contain your map
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            // Let's also add a marker while we're at it
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(55.800312,37.565437),
+                map: map,
+                title: 'Snazzy!'
+            });
+        }
+    </script>
+
+    <style>
+        #map {
+            width: 100%;
+            height: 360px;
+            margin-top: 60px;
+        }
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic);
+
+
+        .feature-box-grid {
+            background-color: #131313;
+            float: left;
+            overflow: hidden;
+            width: 100%;
+        }
+        .feature-box-grid .col-md-4{
+            padding: 0;
+            float: left;
+            max-width: 25%;
+            overflow: hidden;
+            width: 100%;
+        }
+        .featured-item.border-box{
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        .featured-item.border-box {
+
+            padding: 50px;
+            margin-left: -1px;
+            margin-bottom: -1px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .featured-item .icon {
+            padding: 0 0 30px 0;
+        }
+        .featured-item .icon i {
+            font-size: 36px;
+        }
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+        .featured-item .title h4 {
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-weight: normal;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        .featured-item .desc {
+            color: #7e7e7e;
+        }
+        .featured-item.border-box, .featured-item.border-box:hover, .featured-item.border-box h4, .featured-item.border-box:hover h4, .featured-item.border-box .icon i .featured-item.border-box:hover .icon i {
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        .featured-item.border-box:hover {
+
+            background: #222222;
+            color: #7e7e7e;
+        }
+        .featured-item.border-box {
+
+            padding: 10px;
+            margin-left: -1px;
+            margin-bottom: -1px;
+        }
+        .featured-item.border-box:hover {
+
+            background: #222222;
+            color: #7e7e7e;
+        }
+        .featured-item.border-box:hover .icon i{
+            color: #7DC20F;
+        }
+        .featured-item.border-box:hover h4 {
+            color: #fff;
+        }
+
+
+
+    </style>
 
 </div>
 
@@ -526,12 +662,75 @@ $phoneStr = "+7 925 470 50 02";
         </div>
     </div>
 </footer> ГЛАВНОЕ-->
-<script src="http://192.168.0.102:8080/target/target-script-min.js#anonymous"></script>
+
 <footer>
     <div class="block dark">
         <div class="container">
             <div class="row">
+
+                <section>
+
+                    <div class="feature-box-grid">
+
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="featured-item border-box text-center">
+                                <div class="icon">
+                                    <i class="flaticon-house"></i>
+                                </div>
+                                <div class="title text-uppercase">
+                                    <h4>Успешный опыт</h4>
+                                </div>
+                                <div class="desc">
+                                    регистрации в 28 странах мира.<br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="featured-item border-box text-center">
+                                <div class="icon">
+                                    <i class="flaticon-people-1"></i>
+                                </div>
+                                <div class="title text-uppercase">
+                                    <h4>Открываем счета</h4>
+                                </div>
+                                <div class="desc">
+                                    в 35 банках мира и активно расширяем список.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="featured-item border-box text-center">
+                                <div class="icon">
+                                    <i class="flaticon-people"></i>
+                                </div>
+                                <div class="title text-uppercase">
+                                    <h4>Консультации</h4>
+                                </div>
+                                <div class="desc">
+                                    в удобное для Вас время.<br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="featured-item border-box text-center">
+                                <div class="icon">
+                                    <i class="flaticon-transport"></i>
+                                </div>
+                                <div class="title text-uppercase">
+                                    <h4>Терпеливо</h4>
+                                </div>
+                                <div class="desc">
+                                    расскажем с чего начать, даже если это Ваш первый бизнес.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
                 <div class="col-md-3">
+
                     <div class="footer-widget">
                         <div class="about-widget">
                             <div class="logo">
@@ -570,50 +769,18 @@ $phoneStr = "+7 925 470 50 02";
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
                 <div class="col-md-4">
                     <div class="footer-widget">
-                        <div class="title1 style2">
-                            <h2>Факты о нас</h2>
-
-                        </div>
-                        <div class="fun-facts">
-                            <ul>
-                                <li>
-                                    <div class="fun-fact">
-                                        <span>Успешный опыт регистраций </span>
-                                        <i class="flaticon-house"></i>
-                                        в <strong>28</strong>
-                                        <span>странах мира</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="fun-fact">
-                                        <span>Отрываем счета</span>
-                                        <i class="flaticon-people-1"></i>
-                                        в <strong>35</strong>
-                                        <span>банках мира и активно расширяем список</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="fun-fact">
-                                        <span>Консультации в удобное для Вас время</span>
-                                        <i class="flaticon-people"></i>
-                                        <!--<strong>91K</strong>-->
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="fun-fact">
-                                                     <span>Мы терпеливо
-                                            расскажем с чего
-                                            начать, даже если
-                                            это Ваш первый
-                                            бизнес
-                                        </span>
-                                        <i class="flaticon-transport"></i>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <div id="map"></div>
                         <!-- Fun Facts -->
                     </div>
                 </div>
