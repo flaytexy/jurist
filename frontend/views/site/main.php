@@ -833,7 +833,7 @@ transform: none;
                 <div class="col-md-12">
 
                     <div class="customers-reviews overlape"
-                      style="background-color: rgba(0,0,0,0.5)"  >
+                      style="background-color: #131313"  >
 
                         <div class="customer-review">
                             <div class="review-detail">
