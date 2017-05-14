@@ -676,7 +676,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         <div class="col-md-4 col-sm-4">
                             <div class="featured-item border-box text-center">
                                 <div class="icon">
-                                    <i class="flaticon-house"></i>
+                                    <i class="fa fa-globe"></i>
                                 </div>
                                 <div class="title text-uppercase">
                                     <h4>Успешный опыт</h4>
@@ -689,7 +689,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         <div class="col-md-4 col-sm-4">
                             <div class="featured-item border-box text-center">
                                 <div class="icon">
-                                    <i class="flaticon-people-1"></i>
+                                    <i class="fa fa-university"></i>
                                 </div>
                                 <div class="title text-uppercase">
                                     <h4>Открываем счета</h4>
@@ -715,7 +715,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         <div class="col-md-4 col-sm-4">
                             <div class="featured-item border-box text-center">
                                 <div class="icon">
-                                    <i class="flaticon-transport"></i>
+                                    <i class="fa fa-handshake-o"></i>
                                 </div>
                                 <div class="title text-uppercase">
                                     <h4>Терпеливо</h4>
