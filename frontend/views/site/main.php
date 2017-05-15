@@ -830,16 +830,21 @@ transform: none;
 <!--  style="background-image: url(/uploads/theme_villa/customer-reviews-bg.jpg);" -->
 <style>
     @import url('https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu');
-    h1 {
+
+
+    .bdanzer-container-testimonial  h1 {
         color: white;
         font-size: 40px;
     }
-    h1,
-    h3,
-    h4{
+
+    .bdanzer-container-testimonial  h1,
+    .bdanzer-container-testimonial  h3,
+    .bdanzer-container-testimonial  h4 {
         font-family: ubuntu;
         text-transform: uppercase;
     }
+
+
     .bdanzer-card p {
         font-family: open sans;
     }
@@ -865,7 +870,7 @@ transform: none;
 </style>
 <section>
     <div class="bdanzer-container-testimonial">
-        <h1>Testimonials</h1>
+
         <div class="bdanzer-card">
             <img src="http://i.imgur.com/pzS5joE.jpg"/>
             <h3>Евгений</h3>
