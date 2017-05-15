@@ -396,7 +396,9 @@ MainAsset::register($this);
     }
     @media (max-width: 1000px) {
 
-
+.bdanzer-container-testimonial {
+    display: none;
+}
 
         .search-luxuriousvilla.overlape {
             display: none;
@@ -826,85 +828,80 @@ transform: none;
 </section>
 <!-- Абзацы для исправления "сливки" объектов -->
 <!--  style="background-image: url(/uploads/theme_villa/customer-reviews-bg.jpg);" -->
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu');
+    h1 {
+        color: white;
+        font-size: 40px;
+    }
+    h1,
+    h3,
+    h4{
+        font-family: ubuntu;
+        text-transform: uppercase;
+    }
+    p {
+        font-family: open sans;
+    }
+    .bdanzer-container-testimonial {
+        margin: auto;
+        text-align: center;
+    }
+    .bdanzer-card {
+        width: 500px;
+        background: white;
+        text-align: center;
+        margin: 1% 1%;
+        box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+        display: inline-block;
+    }
+    .bdanzer-card img {
+        border-bottom: 3px solid #7DC20F;
+        width: 500px;
+    }
+    .bdanzer-card p {
+        padding: 0 18px 20px;
+    }
+</style>
 <section>
-    <div class="block no-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div class="customers-reviews overlape"
-                      style="background-color: #131313
-                      "  >
-
-                        <div class="customer-review">
-                            <div class="review-detail">
-                                <div class="customer-thumb">
-                                    <img src="/uploads/theme_villa/customer1.jpg" alt=""/>
-                                    <!--        <img src="/uploads/theme_villa/customer-sign.png" alt=""/>-->
-                                </div>
-                                <div class="customer-reviewrating">
-                                    <p>"По рекомендации друга решил открыть счет на компанию в определенном латвийском
-                                        банке.
-                                        Я обратился в эту компанию так, как банк у них был представлен на сайте,
-                                        на что не отказывая предложили открыть в других банках.
-                                        Я стоял на своем и спустя полтора месяца, вместо обещанного одного месяца, мне
-                                        открыли счет.
-                                        Но дело не в том. Я пол года с горем пополам пользовался счетом,
-                                        давая бесконечные подтверждения по запросу банка на сомнительные по их мнению
-                                        переводы.
-                                        И вот спустя пол года доступ к моему счету заблокировали совершенно
-                                        безосновательно.
-                                        Я был вынужден обратиться за открытием нового счета пока велись разбирательства
-                                        по тому.
-                                        В этот раз у меня не было на примете определенного банка и я согласился на
-                                        предложенный мне.
-                                        Через две недели я уже пользовался новым счетом и по сей день никаких нареканий.
-                                        Ребята молодцы,
-                                        а я потерял время и так пока и не вернул деньги с латвийского банка. Зря я не
-                                        послушал с самого начала...
-                                        "</p>
-
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                    <span>Клиентский отзыв <i>Евгений</i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="customer-review">
-                            <div class="review-detail">
-                                <div class="customer-thumb">
-                                    <img src="/uploads/theme_villa/customer2.jpg" alt=""/>
-                                    <!-- <img src="/uploads/theme_villa/customer-sign2.png" alt=""/>-->
-                                </div>
-                                <div class="customer-reviewrating">
-                                    <p>"У другой компании заказала регистрацию оффшора и открытие счета.
-                                        Компанию зарегистрировали, а счет открыть не смогли. После этого обратившись к
-                                        другим я узнала, что оказывается
-                                        можно открыть счет покупая у них и компанию и так не только у них... От всей
-                                        души благодарна IQ Decision, что
-                                        вошли в положение и открыли мне счет без регистрации еще одной кмпании. "</p>
-
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <span>Клиентский отзыв <i>Светлана</i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Customers Reviews -->
-                </div>
-            </div>
+    <div class="bdanzer-container-testimonial">
+        <h1>Testimonials</h1>
+        <div class="bdanzer-card">
+            <img src="http://i.imgur.com/pzS5joE.jpg"/>
+            <h3>Евгений</h3>
+            <h4>justeugenyi@mail.ru</h4>
+            <p>"Решил открыть счет на компанию в латвийском банке. Я обратился в компанию, так как банк у них был представлен на сайте, на что, не отказывая, предложили открыть в других банках.
+                Я стоял на своем и спустя полтора месяца, вместо обещанного одного месяца, мне
+                открыли счет.
+                Но дело не в том. Я полгода с горем пополам пользовался счетом,
+                давая бесконечные подтверждения по запросу банка на сомнительные по их мнению
+                переводы.
+                И вот спустя полгода доступ к моему счету заблокировали совершенно
+                безосновательно.
+                Я был вынужден обратиться за открытием нового счета, пока велись разбирательства
+                по тому.
+                В этот раз у меня не было на примете определенного банка и я согласился на
+                предложенный мне.
+                Через две недели я уже пользовался новым счетом и по сей день никаких нареканий.
+                Ребята молодцы, а я потерял время и так пока и не вернул деньги с латвийского банка. Зря я не
+                послушал с самого начала..."
+                </p>
         </div>
+
+
+
+        <div class="bdanzer-card">
+            <img src="http://i.imgur.com/IM7Q2xK.jpg"/>
+            <h3>Светлана</h3>
+            <h4>pantyhose@gmail.com</h4>
+            <p>"У другой компании заказала регистрацию оффшора и открытие счета.
+                Компанию зарегистрировали, а счет открыть не смогли. После этого, обратившись к
+                другим, я узнала, что, оказывается,
+                можно открыть счет, покупая у них и компанию, и так не только у них... От всей
+                души благодарна IQ Decision, что
+                вошли в положение и открыли мне счет без регистрации еще одной компании."</p>
+        </div>
+
     </div>
     <p></p>
 </section>
