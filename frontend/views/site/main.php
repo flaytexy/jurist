@@ -830,13 +830,13 @@ transform: none;
 <!--  style="background-image: url(/uploads/theme_villa/customer-reviews-bg.jpg);" -->
 <style>
     @import url('https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu');
-    .bdanzer-card h1 {
+    h1 {
         color: white;
         font-size: 40px;
     }
-    .bdanzer-card h1,
-    .bdanzer-card h3,
-    .bdanzer-card h4{
+    h1,
+    h3,
+    h4{
         font-family: ubuntu;
         text-transform: uppercase;
     }
