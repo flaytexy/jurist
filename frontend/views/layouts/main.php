@@ -907,16 +907,27 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 // site preloader -- also uncomment the div in the header and the css style for #preloader
         $(window).load(function(){
-            var script = document.createElement('script');
-            script.src = '//widget.privy.com/assets/widget.js';
-            script.type = 'text/javascript';
-            document.head.appendChild(script);
+
             $('#rhlpscrtg').fadeOut('slow',function(){$(this).show();});
             $("#status").fadeOut();
             $('#preloader').delay(1000).fadeOut('slow',function(){$(this).remove();});
 
         });
-
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.src = '//widget.privy.com/assets/widget.js';
+            script.type = 'text/javascript';
+            document.head.appendChild(script);
+        }, 2500);
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.src = 'https://web.redhelper.ru/service/main.js?c=romanovalexander5';
+            script.type = 'text/javascript';
+            script.id = 'rhlpscrtg';
+            script.charset = 'utf-8';
+            script.async = 'async';
+            document.head.appendChild(script);
+        }, 2000);
 
 
     });
@@ -927,8 +938,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 <!-- RedConnect -->
 <!-- RedConnect -->
-<script id="rhlpscrtg" type="text/javascript" charset="utf-8" async="async"
-        src="https://web.redhelper.ru/service/main.js?c=romanovalexander5"></script>
+
 <div style="display: none"><a class="rc-copyright"
                               href="http://redconnect.ru">Сервис обратного звонка RedConnect</a></div>
 <!--/RedConnect -->
