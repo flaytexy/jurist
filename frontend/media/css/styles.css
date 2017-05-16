@@ -945,7 +945,7 @@ header {
     height: 150px !important;
 }
 /*================ Switcher ================*/
-/* Switcher */
+/* Switcher
 .switcher {
     cursor: pointer;
     display: inline-block;
@@ -1039,7 +1039,7 @@ header {
     opacity: 1;
     transform: scale(1);
 }
-
+*/
 
 /*================ Sticky Header ================*/
 header.stick {
@@ -6587,7 +6587,7 @@ ul.faq li.a blockquote {
     background: #7DC20F !important
 }
 
-/* banks */
+/* banks
 #banks2 .switcher {
     background: #b3b8c3 none repeat scroll 0 0;
     border: medium none;
@@ -6609,7 +6609,7 @@ ul.faq li.a blockquote {
 }
 #banks2 .switcher .textNo {
     color: #fff;
-}
+} */
 
 .reveal-modal-bg {
     position: fixed;

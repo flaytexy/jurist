@@ -54,12 +54,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         </ul>
 
                     </div>
+
                     <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
                             <li>С посещением банка</li>
                             <li class="">
                                 <div class="switcher">
-                                    <input value="0" class="switch" js-filter="js-filter-personal" name="switchName2"
+                                    <input  value="0" class="switch" js-filter="js-filter-personal" name="switchName2"
                                            type="checkbox"/>
                                 </div>
                             </li>
@@ -220,9 +221,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                     <h4><?= Html::a($item->title,
                                                             ['banks/view', 'slug' => $item->slug]) ?></h4>
                                                     <ul class="location-book">
-                                                          <li class="active"><i class="fa fa-info"></i>
-                                                                <span style="font-size: 15px;  font-family: arial"  class="blacklink" ><?= Html::a('Подробнее',
-                                                                        ['banks/view', 'slug' => $item->slug]) ?></span></li>
+                                                          <li class="book-btn"><i class="fa fa-info"></i>
+                                                               <?= Html::a('Подробнее',
+                                                                        ['banks/view', 'slug' => $item->slug]) ?></li>
                                                         <li class="book-btn"><i class="fa fa-shopping-basket"></i>
                                                             <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
                                                         </li>

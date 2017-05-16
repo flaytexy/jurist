@@ -16,6 +16,14 @@ $phoneStr = "+7 925 470 50 02";
 
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
+<div class="js"><div id="preloader"></div></div>
+<style>
+    .js div#preloader { position: fixed; left: 0; top: 0; z-index: 999999; width: 100%; height: 100%; overflow: visible; background: #fff url('http://opengraphicdesign.com/wp-content/uploads/2009/01/loader64.gif') no-repeat center center; }
+
+</style>
+<script>
+
+</script>
 <script language="JavaScript">
     document.onselectstart=function(){return false}
 
@@ -796,9 +804,15 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
                             <!-- BEGIN PRIVY WIDGET CODE -->
                             <script type='text/javascript'> var _d_site = _d_site || '411086831FF94A27DC0340B2'; </script>
-                            <script src='//widget.privy.com/assets/widget.js'></script>
+
                             <!-- END PRIVY WIDGET CODE -->
                             <div class="privy-embed-form" data-campaign="216143"></div>
+                            <script>
+                                $(window).load(function() {
+
+                                };
+
+                            </script>
 
                         </div>
                     </div>
@@ -891,11 +905,23 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         //Scroll header mobile version
 
 
+// site preloader -- also uncomment the div in the header and the css style for #preloader
+        $(window).load(function(){
+            var script = document.createElement('script');
+            script.src = '//widget.privy.com/assets/widget.js';
+            script.type = 'text/javascript';
+            document.head.appendChild(script);
+            $('#rhlpscrtg').fadeOut('slow',function(){$(this).show();});
+            $("#status").fadeOut();
+            $('#preloader').delay(1000).fadeOut('slow',function(){$(this).remove();});
 
+        });
 
 
 
     });
+
+
 </script>
 
 

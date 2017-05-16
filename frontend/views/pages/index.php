@@ -57,10 +57,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         </span>-->
                                             <h4><?= Html::a($item->title, Url::to([$typeTitle.'/'.$item->slug])) ?></h4>
                                             <ul class="location-book">
-                                                <li class="active"><i class="fa fa-map-marker"></i>
-                                                    <span><?= $item->date ?></span></li>
-                                                <li class="book-btn"><i class="fa fa-thumbs-o-up"></i>
-                                                    <?= Html::a('Детальней', [$typeTitle.'/'.$item->slug]) ?>
+                                                <li class="book-btn"><i class="fa fa-info"></i>
+                                                    <?= Html::a('Подробнее',
+                                                        ['banks/view', 'slug' => $item->slug]) ?></li>
+                                                <li class="book-btn"><i class="fa fa-shopping-basket"></i>
+                                                    <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
                                                 </li>
                                             </ul>
                                         </div>

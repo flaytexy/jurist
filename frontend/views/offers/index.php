@@ -146,8 +146,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
 </span>-->
                                                 <h4><?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?></h4>
                                                 <ul class="location-book">
-                                                    <li class="active"><i class="fa fa-info"></i>
-                                                        <span style="font-size: 15px; font-family: arial" class="blacklink" ><a href="<?= Url::to(['offers/'.$item->slug]) ?>">Подробнее</a></span></li>
+                                                    <li class="book-btn"><i class="fa fa-info"></i>
+                                                       <a href="<?= Url::to(['offers/'.$item->slug]) ?>">Подробнее</a></li>
                                                     <li class="book-btn"><i class="fa fa-shopping-basket"></i>
                                                         <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
                                                     </li>
