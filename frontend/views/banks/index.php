@@ -173,11 +173,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <div class="h6 text-center">
                                         <span>Цена</span>
                                     </div>
-                                    <div class="h6 text-center cena">€<?= $item->price ?></div>
+                                    <div style="font-weight: bolder; font-size: large; font-family: Verdana;" class="h6 text-center cena">€<?= $item->price ?></div>
 
                                     <div class="text-center" style="height:35px;">
-                                        <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"
-                                           class="btn btn-success">Заказать</a>
+
+                                        <a class="btn btn-success" href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
+                                    <!--    <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"
+                                           class="btn btn-success">Заказать</a>-->
                                     </div>
                                 </td>
                             </tr>
