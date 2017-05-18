@@ -15,19 +15,145 @@ $phoneStr = "+7 925 470 50 02";
 
 
 ?>
+
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
-<div class="js"><div id="preloader"></div></div>
+<div class="js"><div id="preloader" class="preloader">
+            <div class="spin"></div>
+
+            <div class="textpreloader">
+                <span class="logopreloader">IQ</span>
+                <span class="motto">Decision</span>
+            </div>
+        </div></div>
 <style>
-    .js div#preloader { position: fixed; left: 0; top: 0; z-index: 999999; width: 100%; height: 100%; overflow: visible; background: #fff url('http://i.imgur.com/dE5eT3S.gif') no-repeat center center; }
+    .js div#preloader { position: fixed;  z-index: 999999; width: 100%; height: 100%; overflow: visible; background: rgb(255, 255, 255)  no-repeat center center; }
+    .textpreloader {
+        color: #000;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        width: 112px;
+        top: 25%;
+        left: 50%;
+        margin-top: 25px;
+        margin-left: -55px;
+        position: relative;
 
+    }
+
+
+    .logopreloader {
+        display: block;
+        letter-spacing: 1px;
+        font-size: 32px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #000;
+        font-family: 'Cinzel';
+    }
+
+    .motto {
+        display: block;
+        padding-top: 10px;
+        font-family: 'Cinzel';
+        font-size: 15px;
+        letter-spacing: 3px;
+    }
+    .spin {
+        width: 150px;
+        height: 150px;
+        top: 25%;
+        left: 50%;
+        margin-left: -75px;
+        border: 3px solid transparent;
+        border-radius: 50%;
+        border-top-color: #000;
+        position: absolute;
+        animation: spin 1500ms infinite linear;
+    }
+
+    .spin:before {
+        top: 3px;
+        left: 3px;
+        right: 3px;
+        bottom: 3px;
+        border: 3px solid transparent;
+        border-top-color: #000;
+        animation: antispin 700ms infinite linear;
+        content: "";
+        position: absolute;
+        border-radius: 60%;
+    }
+
+    @keyframes spin { 100% {transform:rotate(360deg);} }
+    @keyframes antispin {
+        from {transform: rotate}
+        to {transform: rotate(-360deg);}
+    }
+
+  /*  .preloader {
+        margin: 300px auto;
+        width: 70px;
+        height: 30px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .preloader > div {
+        background-color: #7dc20f;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        display: inline-block;
+
+        -webkit-animation: stretchdelay 0.7s infinite ease-in-out;
+        animation: stretchdelay 0.7s infinite ease-in-out;
+    }
+
+    .preloader .circ2 {
+        -webkit-animation-delay: -0.6s;
+        animation-delay: -0.6s;
+    }
+
+    .preloader .circ3 {
+        -webkit-animation-delay: -0.5s;
+        animation-delay: -0.5s;
+    }
+
+    .preloader .circ4 {
+        -webkit-animation-delay: -0.4s;
+        animation-delay: -0.4s;
+    }
+
+    .preloader .circ5 {
+        -webkit-animation-delay: -0.3s;
+        animation-delay: -0.3s;
+    }
+
+    @-webkit-keyframes stretchdelay {
+        0%, 40%, 100% { -webkit-transform: translateY(-10px) }
+        20% { -webkit-transform: translateY(-20px) }
+    }
+
+    @keyframes stretchdelay {
+        0%, 40%, 100% {
+            transform: translateY(-10px);
+            -webkit-transform: translateY(-10px);
+        } 20% {
+              transform: translateY(-20px);
+              -webkit-transform: translateY(-20px);
+          }
+    }*/
 </style>
-<script>
-
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
 <script language="JavaScript">
     document.onselectstart=function(){return false}
 
 </script>
+
 <? if (YII_ENV_PROD) : ?>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
@@ -851,7 +977,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         <nobr id="stl_text">Вверх</nobr>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 
 
 <a href="#" class="scrollToTop"></a>
