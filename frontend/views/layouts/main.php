@@ -18,7 +18,7 @@ $phoneStr = "+7 925 470 50 02";
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 <div class="js"><div id="preloader"></div></div>
 <style>
-    .js div#preloader { position: fixed; left: 0; top: 0; z-index: 999999; width: 100%; height: 100%; overflow: visible; background: #fff url('http://i.imgur.com/dE5eT3S.gif') no-repeat center center; }
+    .js div#preloader { position: fixed; left: 0; top: 0; z-index: 999999; width: 100%; height: 100%; overflow: visible; background: #fff url('http://i.imgur.com/EwdUy5f.gif') no-repeat center center; }
 
 </style>
 <script>
