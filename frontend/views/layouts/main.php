@@ -17,7 +17,7 @@ $phoneStr = "+7 925 470 50 02";
 ?>
 
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
-<div class="js"><div id="preloader" class="preloader">
+<div id="js" class="js"><div id="preloader" class="preloader">
             <div class="spin"></div>
 
             <div class="textpreloader">
@@ -26,7 +26,7 @@ $phoneStr = "+7 925 470 50 02";
             </div>
         </div></div>
 <style>
-    .js div#preloader { position: fixed;  z-index: 999999; width: 100%; height: 100%; overflow: visible; background: rgb(255, 255, 255)  no-repeat center center; }
+    .js #preloader { position: fixed; top: 0; left: 0;  z-index: 999999; width: 100%; height: 100%; overflow: visible; background: rgb(255, 255, 255); }
     .textpreloader {
         color: #000;
         display: inline-block;
@@ -1036,7 +1036,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
             $('#rhlpscrtg').fadeOut('slow',function(){$(this).show();});
             $("#status").fadeOut();
-            $('#preloader').delay(1000).fadeOut('slow',function(){$(this).remove();});
+            $('#js').delay(1000).fadeOut('slow',function(){$(this).remove();});
 
         });
         setTimeout(function() {
