@@ -17,7 +17,6 @@ $phoneStr = "+7 925 470 50 02";
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 <div class="js"><div id="preloader">
-
        <div class="preloader">
             <div class="circ1"></div>
             <div class="circ2"></div>
@@ -33,42 +32,7 @@ $phoneStr = "+7 925 470 50 02";
         text-align: center;
         font-size: 10px;
     }
-    .preloader span{
-        text-align: center;
 
-    }
-    .textpreload {
-        color: #000;
-        display: inline-block;
-        position: relative;
-        text-align: center;
-        width: 112px;
-        top: 25%;
-        left: 50%;
-        margin-top: 43px;
-        margin-left: -48px;
-        position: relative;
-
-    }
-
-
-    .logopreload {
-        display: block;
-        letter-spacing: 10px;
-        font-size: 32px;
-        padding-bottom: 5px;
-        border-bottom: 1px solid #000;
-        font-family: 'Cinzel';
-    }
-
-    .motto {
-        display: block;
-        padding-top: 10px;
-        font-family: 'Cinzel';
-        font-size: 15px;
-        letter-spacing: 3px;
-        margin-bottom: 100px;
-    }
     .preloader > div {
         background-color: #72c2a1;
         height: 10px;
