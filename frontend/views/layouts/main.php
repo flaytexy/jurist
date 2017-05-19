@@ -16,10 +16,105 @@ $phoneStr = "+7 925 470 50 02";
 
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
-<div class="js"><div id="preloader"></div></div>
-<style>
-    .js div#preloader { position: fixed; left: 0; top: 0; z-index: 999999; width: 100%; height: 100%; overflow: visible; background: #fff url('http://i.imgur.com/EwdUy5f.gif') no-repeat center center; }
+<div class="js"><div id="preloader">
 
+       <div class="preloader">
+            <div class="circ1"></div>
+            <div class="circ2"></div>
+            <div class="circ3"></div>
+            <div class="circ4"></div>
+        </div></div></div>
+<style>
+    .js div#preloader { position: fixed; left: 0; top: 0; z-index: 999999; width: 100%; height: 100%; overflow: visible; background: #fff url('') no-repeat center center; }
+    .preloader {
+        margin: 300px auto;
+        width: 70px;
+        height: 30px;
+        text-align: center;
+        font-size: 10px;
+    }
+    .preloader span{
+        text-align: center;
+
+    }
+    .textpreload {
+        color: #000;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        width: 112px;
+        top: 25%;
+        left: 50%;
+        margin-top: 43px;
+        margin-left: -48px;
+        position: relative;
+
+    }
+
+
+    .logopreload {
+        display: block;
+        letter-spacing: 10px;
+        font-size: 32px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #000;
+        font-family: 'Cinzel';
+    }
+
+    .motto {
+        display: block;
+        padding-top: 10px;
+        font-family: 'Cinzel';
+        font-size: 15px;
+        letter-spacing: 3px;
+        margin-bottom: 100px;
+    }
+    .preloader > div {
+        background-color: #72c2a1;
+        height: 10px;
+
+        width: 10px;
+        border-radius: 50%;
+        display: inline-block;
+
+        -webkit-animation: stretchdelay 0.7s infinite ease-in-out;
+        animation: stretchdelay 0.7s infinite ease-in-out;
+    }
+
+    .preloader .circ2 {
+        -webkit-animation-delay: -0.6s;
+        animation-delay: -0.6s;
+    }
+
+    .preloader .circ3 {
+        -webkit-animation-delay: -0.5s;
+        animation-delay: -0.5s;
+    }
+
+    .preloader .circ4 {
+        -webkit-animation-delay: -0.4s;
+        animation-delay: -0.4s;
+    }
+
+    .preloader .circ5 {
+        -webkit-animation-delay: -0.3s;
+        animation-delay: -0.3s;
+    }
+
+    @-webkit-keyframes stretchdelay {
+        0%, 40%, 100% { -webkit-transform: translateY(-10px) }
+        20% { -webkit-transform: translateY(-20px) }
+    }
+
+    @keyframes stretchdelay {
+        0%, 40%, 100% {
+            transform: translateY(-10px);
+            -webkit-transform: translateY(-10px);
+        } 20% {
+              transform: translateY(-20px);
+              -webkit-transform: translateY(-20px);
+          }
+    }
 </style>
 <script>
 
