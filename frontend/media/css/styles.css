@@ -7234,7 +7234,15 @@ ul.faq li.a blockquote {
         width: 150px !important;
     }
 }
-
+@media (max-width: 766px), (max-device-width: 766px) {
+    .package-video {
+        display: none !important;
+    }
+    .packages-detail img{
+        width:100% !important;
+        padding-right: 50px !important;
+    }
+}
 @media (max-width: 480px), (max-device-width: 480px) {
     .search-luxuriousvilla.overlape {
         margin-bottom: 0;
