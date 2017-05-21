@@ -71,7 +71,8 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                                         <tr>
                                             <td>Заказ</td>
                                             <?php foreach ($packets as $packet) : ?>
-                                                <td><a class="btn btn-success bb">Заказать</a></td>
+                                                <td> <a class="btn btn-success bb" href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a></td>
+
                                             <?php endforeach; ?>
                                         </tr>
                                     </table>
