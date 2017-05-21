@@ -266,6 +266,7 @@ ul.top-menus li > a {
 
 .tp-caption {
     cursor: pointer;
+    padding: 50px !important;
 }
 
 .remove-ext {
