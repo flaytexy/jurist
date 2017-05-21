@@ -112,7 +112,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         </div>
     </div>
 </section>
-
+<!--
 <div style="display:none">
     <div class="container-fluid" id="succes_packet">
         <form id="succes_packet_form" name="succes_packet_form" class="succes_packet_form" action="/admin/orders/send" method="post" enctype="multipart/form-data">
@@ -158,3 +158,4 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         </form>
     </div>
 </div>
+-->
