@@ -16,6 +16,7 @@ $phoneStr = "+7 925 470 50 02";
 
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
+<script src="//load.sumome.com/" data-sumo-site-id="3e9ad4ed5127b8e285ee649aa55e8340bf5eb21a370f52999a717953ee42fd89" async="async"></script>
 <div class="js"><div id="preloader">
        <div class="preloader">
             <div class="circ1"></div>
@@ -24,6 +25,19 @@ $phoneStr = "+7 925 470 50 02";
             <div class="circ4"></div>
         </div></div></div>
 <style>
+    .powered-by-sumo {
+        display: none !important;
+    }
+    iframe#sumome-jquery-iframe{
+        display: none !important;
+    }
+    div#sumome-modal-mask{
+        display: none !important;
+    }
+    a[title="Sumo"]{
+       visibility: hidden !important;
+        opacity: 0 !important;
+    }
     .js div#preloader { position: fixed; left: 0; top: 0; z-index: 999999; width: 100%; height: 100%; overflow: visible; background: #fff url('') no-repeat center center; }
     .preloader {
         margin: 300px auto;
