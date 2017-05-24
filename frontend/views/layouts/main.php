@@ -17,7 +17,8 @@ $phoneStr = "+7 925 470 50 02";
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 <script src="//load.sumome.com/" data-sumo-site-id="3e9ad4ed5127b8e285ee649aa55e8340bf5eb21a370f52999a717953ee42fd89" async="async"></script>
-<div class="js"><div id="preloader">
+<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+<div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
        <div class="preloader">
             <div class="circ1"></div>
             <div class="circ2"></div>
@@ -25,6 +26,43 @@ $phoneStr = "+7 925 470 50 02";
             <div class="circ4"></div>
         </div></div></div>
 <style>
+
+
+    .hr-text {
+        line-height: 1em;
+        position: relative;
+        outline: 0;
+        border: 0;
+        color: black;
+        text-align: center;
+        height: 1.5em;
+        opacity: 1;
+top: 250px;
+
+
+    }
+    .hr-text:before {
+        content: '';
+        background: -webkit-linear-gradient(left, transparent, #72c2a1, transparent);
+        background: linear-gradient(to right, transparent, #72c2a1, transparent);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+    }
+    .hr-text:after {
+        content: attr(data-content);
+        position: relative;
+        display: inline-block;
+        color: black;
+        padding: 0 .5em;
+        line-height: 1.5em;
+        color: #72c2a1;
+        background-color: #fcfcfa;
+        font-size: 20px;
+        font-family: 'Cabin', sans-serif;
+    }
     .powered-by-sumo {
         display: none !important;
     }
