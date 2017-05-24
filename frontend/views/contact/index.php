@@ -115,7 +115,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
         display: none !important;
 
     }
-
+[title="Обратная связь"] {
+    width: 290px !important;
+}
 
 </style>
 
@@ -221,7 +223,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         </form> -->
 
                     <script type="text/javascript" src="https://form.jotformeu.com/jsform/71136944138357"></script>
-                    <script src="http://192.168.0.103:8080/target/target-script-min.js#anonymous"></script>
+                   
                     <br>
                     <br>
                     <br>
