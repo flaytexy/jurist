@@ -59,7 +59,7 @@ top: 250px;
         padding: 0 .5em;
         line-height: 1.5em;
         color: #72c2a1;
-        background-color: #fcfcfa;
+        background-color: #ffffff;
         font-size: 20px;
         font-family: 'Cabin', sans-serif;
     }
