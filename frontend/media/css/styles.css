@@ -37,9 +37,6 @@ body {
 
 }
 
-.packages-detail img {
-    box-shadow: 0 0 10px;
-}
 
 body, p, ul li,
 ol li {
@@ -7569,9 +7566,7 @@ ul.faq li.a blockquote {
         line-height: 25px;
         max-width: 100%;
     }
-    .packages-detail img {
-        box-shadow: 0 0 10px;
-    }
+ 
 
     .packagefeature-overlay {
         padding: 35px 0 0;
