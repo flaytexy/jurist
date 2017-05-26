@@ -973,7 +973,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     src="http://code.jquery.com/jquery-3.2.1.js"
     integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://gist.githubusercontent.com/khashira/376a7deca1e1a8a1505c09c6149d3807/raw/b45d607f3d38704fd53510c307506b3fc39f95a2/animation.js"></script>
+
 
 <a href="#" class="scrollToTop"></a>
 
