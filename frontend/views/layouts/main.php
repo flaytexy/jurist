@@ -137,10 +137,10 @@ top: 250px;
     }
 </style>
 <script>
-    $(window).scroll(function(i){
+    $(window).scroll(function(i) {
         var scrollVar = $(window).scrollTop();
-        $('.scroll-fade').css({'opacity':(3.14*scrollVar/100)});
-    })
+        $(".scroll-fade").css({ opacity: 3.14 * scrollVar / 100 });
+    });
 </script>
 <style>
 
