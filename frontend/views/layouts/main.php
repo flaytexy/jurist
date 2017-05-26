@@ -23,13 +23,13 @@ $phoneStr = "+7 925 470 50 02";
 
 
 <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-<div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
+<!--<div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
        <div class="preloader">
             <div class="circ1"></div>
             <div class="circ2"></div>
             <div class="circ3"></div>
             <div class="circ4"></div>
-        </div></div></div>
+        </div></div></div>-->
 <style>
 
 
@@ -972,6 +972,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         <nobr id="stl_text">Вверх</nobr>
     </div>
 </div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
@@ -1012,6 +1013,11 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         $(".scroll-fade").css({ opacity: 3.14 * scrollVar / 100 });
     });
 </script>
+<script>
+
+</script>
+
+
 <script>
     $(document).ready(function(){
 
