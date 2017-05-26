@@ -34,11 +34,14 @@ $phoneStr = "+7 925 470 50 02";
 
 <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
 <style>
+    .underlined {
+        border-bottom: 2px solid #ef8b80;
+    }
     .packages-detail p,
     .packages-detail ol,
     .packages-detail li {
         font-family: Merriweather !important;
-        
+
         color: #333;
     }
     .pseudo-first-letter::first-letter {
