@@ -7,36 +7,7 @@ $this->title = $offers->seo('title', $offers->model->title);
 $this->params['breadcrumbs'][] = ['label' => 'Компании', 'url' => ['offers/index']];
 $this->params['breadcrumbs'][] = $offers->model->title;
 ?>
-<style>
-    .tiiitle {
-        position: relative;
-        -webkit-perspective: 400;
-        perspective: 400;
-        padding-left: 17px;
-        font-family: Arial;
-        font-weight: bold;
-        font-size: 52px;
-        text-transform: uppercase;
-        color: #000000;
-    }
-    .tiiitle:before {
-        content: '';
-        display: block;
-        position: absolute;
-        height: 100%;
-        width: 6px;
-        background: #7ec211;
-        top: 0;
-        left: 0;
-        opacity: 1;
 
-    }
-    .tiiitle .title-word {
-        opacity: 1;
-
-    }
-
-</style>
 <section>
     <div class="block">
         <div class="container">
