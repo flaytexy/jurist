@@ -34,7 +34,6 @@ $phoneStr = "+7 925 470 50 02";
 
 <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
 <style>
-
     .rectangle-list{
         max-width: 50%;
     }
@@ -64,7 +63,7 @@ $phoneStr = "+7 925 470 50 02";
         background: #fa8072;
         height: 2em;
         width: 2em;
-        line-height: 2em; 
+        line-height: 2em;
         text-align: center;
         font-weight: bold;
     }
@@ -98,6 +97,7 @@ $phoneStr = "+7 925 470 50 02";
     .rectangle-list ol ol {
         margin: 0 0 0 2em; /* Add some left margin for inner lists */
     }
+
     .underlined {
         border-bottom: 2px solid #ef8b80;
     }
