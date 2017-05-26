@@ -31,7 +31,15 @@ $phoneStr = "+7 925 470 50 02";
             <div class="circ4"></div>
         </div></div></div>-->
 <style>
-
+    .pseudo-first-letter::first-letter {
+        margin-top: 0.65rem;
+        margin-right: 1rem;
+        float: left;
+        color: #06a8f9;
+        font-size: 7rem;
+        font-weight: 700;
+        line-height: 7rem;
+    }
     .blockk {
         height: 5em;
         line-height: 5em;
