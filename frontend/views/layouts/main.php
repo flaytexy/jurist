@@ -64,7 +64,7 @@ $phoneStr = "+7 925 470 50 02";
         background: #fa8072;
         height: 2em;
         width: 2em;
-        line-height: 2em;
+        line-height: 2em; 
         text-align: center;
         font-weight: bold;
     }
