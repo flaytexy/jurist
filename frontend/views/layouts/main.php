@@ -131,6 +131,10 @@ top: 250px;
               -webkit-transform: translateY(-20px);
           }
     }
+    .wrapper {
+        width: 100%;
+        text-align: center;
+    }
 </style>
 <script>
     $(window).scroll(function(i){
@@ -139,10 +143,7 @@ top: 250px;
     })
 </script>
 <style>
-    .wrapper {
-        width: 100%;
-        text-align: center;
-    }
+
 </style>
 <script>
 
