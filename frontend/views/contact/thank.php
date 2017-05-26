@@ -217,22 +217,3 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     </div>
 </div>
 <div id="map"></div>
-
-<!-- Здесь копия кода, отвечающий за отображение шапки статьи -->
-<div class="package-video">
-    <div>
-        <?php if (!empty($offers->model->image)) : ?>
-            <?= Html::img(Image::thumb($offers->model->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
-        <? else: ?>
-            <?= Html::img(Image::thumb($offers->photos[0]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
-        <? endif ?>
-    </div>
-
-    <!-- <i class="fa fa-play-circle"></i>-->
-    <strong class="per-night"><span>$</span><?= $offers->price; ?> <i>Дней: <?= $offers->model->how_days; ?></i></strong>
-    <a href="#order-zone" class="book-btn2" title="">Заказать</a>
-    <!--<iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>-->
-    <!--   <div class="title-video alignleft">
-                                    <h1><?= $offers->seo('h1', $offers->title) ?></h1>
-                                    <span><?= $offers->seo('h1', $offers->short) ?></span>
-                                </div>-->

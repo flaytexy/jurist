@@ -30,7 +30,9 @@ $phoneStr = "+7 925 470 50 02";
             <div class="circ3"></div>
             <div class="circ4"></div>
         </div></div></div>-->
+<script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
 
+<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
 <style>
     @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
     .rwd-table {
@@ -80,7 +82,9 @@ $phoneStr = "+7 925 470 50 02";
         }
     }
 
-
+    .packages-detail img {
+        box-shadow: 0 0 10px;
+    }
 
 
     .rwd-table {
@@ -171,13 +175,13 @@ $phoneStr = "+7 925 470 50 02";
     .underlined {
         border-bottom: 2px solid #ef8b80;
     }
-  /*  .packages-detail p,
+    .packages-detail p,
     .packages-detail ol,
     .packages-detail li {
         font-family: Merriweather !important;
 
         color: #333;
-    } */
+    }
     .pseudo-first-letter::first-letter {
         margin-top: 0.65rem;
         margin-right: 1rem;

@@ -9,33 +9,6 @@ body {
     overflow-x: hidden;
 }
 
-.tiiitle {
-    position: relative;
-    -webkit-perspective: 400;
-    perspective: 400;
-    padding-left: 17px;
-    font-family: Arial;
-    font-weight: bold;
-    font-size: 52px;
-    text-transform: uppercase;
-    color: #000000;
-}
-.tiiitle:before {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 6px;
-    background: #7ec211;
-    top: 0;
-    left: 0;
-    opacity: 1;
-
-}
-.tiiitle .title-word {
-    opacity: 1;
-
-}
 
 
 body, p, ul li,
@@ -7566,7 +7539,6 @@ ul.faq li.a blockquote {
         line-height: 25px;
         max-width: 100%;
     }
-
 
     .packagefeature-overlay {
         padding: 35px 0 0;
