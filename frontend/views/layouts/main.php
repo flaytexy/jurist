@@ -30,7 +30,17 @@ $phoneStr = "+7 925 470 50 02";
             <div class="circ3"></div>
             <div class="circ4"></div>
         </div></div></div>-->
+<script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
 <style>
+    .packages-detail p,
+    .packages-detail ol,
+    .packages-detail li {
+        font-family: Merriweather !important;
+        
+        color: #333;
+    }
     .pseudo-first-letter::first-letter {
         margin-top: 0.65rem;
         margin-right: 1rem;
