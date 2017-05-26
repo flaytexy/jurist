@@ -18,6 +18,10 @@ $phoneStr = "+7 925 470 50 02";
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 
 <script src="//load.sumome.com/" data-sumo-site-id="3e9ad4ed5127b8e285ee649aa55e8340bf5eb21a370f52999a717953ee42fd89" async="async"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
 <!--<div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
        <div class="preloader">
@@ -968,7 +972,6 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         <nobr id="stl_text">Вверх</nobr>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 
