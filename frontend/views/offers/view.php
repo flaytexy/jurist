@@ -7,18 +7,7 @@ $this->title = $offers->seo('title', $offers->model->title);
 $this->params['breadcrumbs'][] = ['label' => 'Компании', 'url' => ['offers/index']];
 $this->params['breadcrumbs'][] = $offers->model->title;
 ?>
-<script>
-    $(window).scroll(function(i){
-        var scrollVar = $(window).scrollTop();
-        $('.scroll-fade').css({'opacity':(3.14*scrollVar/100)});
-    })
-</script>
-<style>
-    .wrapper {
-        width: 100%;
-        text-align: center;
-    }
-</style>
+
 <section>
     <div class="block">
         <div class="container">

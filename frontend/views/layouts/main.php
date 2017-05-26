@@ -133,6 +133,18 @@ top: 250px;
     }
 </style>
 <script>
+    $(window).scroll(function(i){
+        var scrollVar = $(window).scrollTop();
+        $('.scroll-fade').css({'opacity':(3.14*scrollVar/100)});
+    })
+</script>
+<style>
+    .wrapper {
+        width: 100%;
+        text-align: center;
+    }
+</style>
+<script>
 
 </script>
 <script language="JavaScript">
