@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         position: absolute;
         height: 100%;
         width: 6px;
-        background: #ff1212;
+        background: #7ec211;
         top: 0;
         left: 0;
         opacity: 1;
@@ -49,27 +49,11 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                             <div class="title-word"><span>$</span><?= $offers->price; ?></div>
                             <div class="title-word">Дней: <?= $offers->model->how_days; ?></div>
                         </div>
-                        <!--
-                        <?php if (count($offers->photos) || !empty($offers->model->image)) : ?>
-                            <div class="package-video">
-                                <div>
-                                    <?php if (!empty($offers->model->image)) : ?>
-                                        <?= Html::img(Image::thumb($offers->model->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
-                                    <? else: ?>
-                                        <?= Html::img(Image::thumb($offers->photos[0]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
-                                    <? endif ?>
-                                </div>
 
-                               <!-- <i class="fa fa-play-circle"></i>-->
-                                <strong class="per-night"><span>$</span><?= $offers->price; ?> <i>Дней: <?= $offers->model->how_days; ?></i></strong>
-                                <a href="#order-zone" class="book-btn2" title="">Заказать</a>
-                                <!--<iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>-->
-                             <!--   <div class="title-video alignleft">
-                                    <h1><?= $offers->seo('h1', $offers->title) ?></h1>
-                                    <span><?= $offers->seo('h1', $offers->short) ?></span>
-                                </div>-->
+                        <?php if (count($offers->photos) || !empty($offers->model->image)) : ?>
+
                             </div>
-                        <?php endif; ?> -->
+                        <?php endif; ?>
 
                         <p>
                             <?= $offers->text ?>
