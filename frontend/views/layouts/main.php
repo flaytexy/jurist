@@ -178,7 +178,7 @@ $phoneStr = "+7 925 470 50 02";
     .packages-detail p,
     .packages-detail ol,
     .packages-detail li {
-        font-family: Merriweather !important;
+        font-family: Merriweather !important; 
 
         color: #333;
     }
