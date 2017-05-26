@@ -16,173 +16,16 @@ $phoneStr = "+7 925 470 50 02";
 
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
-
 <script src="//load.sumome.com/" data-sumo-site-id="3e9ad4ed5127b8e285ee649aa55e8340bf5eb21a370f52999a717953ee42fd89" async="async"></script>
-
-
-
-
 <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-<!--<div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
+<div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
        <div class="preloader">
             <div class="circ1"></div>
             <div class="circ2"></div>
             <div class="circ3"></div>
             <div class="circ4"></div>
-        </div></div></div>-->
-
+        </div></div></div>
 <style>
-    @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
-    .rwd-table {
-        margin: 1em 0;
-        min-width: 300px;
-    }
-    .rwd-table tr {
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-    }
-    .rwd-table th {
-        display: none;
-    }
-    .rwd-table td {
-        display: block;
-    }
-    .rwd-table td:first-child {
-        padding-top: .5em;
-    }
-    .rwd-table td:last-child {
-        padding-bottom: .5em;
-    }
-    .rwd-table td:before {
-        content: attr(data-th) ": ";
-        font-weight: bold;
-        width: 6.5em;
-        display: inline-block;
-    }
-    @media (min-width: 480px) {
-        .rwd-table td:before {
-            display: none;
-        }
-    }
-    .rwd-table th, .rwd-table td {
-        text-align: left;
-    }
-    @media (min-width: 480px) {
-        .rwd-table th, .rwd-table td {
-            display: table-cell;
-            padding: .25em .5em;
-        }
-        .rwd-table th:first-child, .rwd-table td:first-child {
-            padding-left: 0;
-        }
-        .rwd-table th:last-child, .rwd-table td:last-child {
-            padding-right: 0;
-        }
-    }
-
-
-
-
-    .rwd-table {
-        background: #34495E;
-        color: #fff;
-        border-radius: .4em;
-        overflow: hidden;
-    }
-    .rwd-table tr {
-        border-color: #46637f;
-    }
-    .rwd-table th, .rwd-table td {
-        margin: .5em 1em;
-    }
-    @media (min-width: 480px) {
-        .rwd-table th, .rwd-table td {
-            padding: 1em !important;
-        }
-    }
-    .rwd-table th, .rwd-table td:before {
-        color: #dd5;
-    }
-
-    .rectangle-list{
-        max-width: 50%;
-    }
-    .rectangle-list a{
-        position: relative;
-        display: block;
-        padding: .4em .4em .4em .8em;
-        *padding: .4em;
-        margin: .5em 0 .5em 2.5em;
-        background: #ddd;
-        color: #444;
-        text-decoration: none;
-        transition: all .3s ease-out;
-    }
-
-    .rectangle-list a:hover{
-        background: #eee;
-    }
-
-    .rectangle-list a:before{
-        content: counter(li);
-        counter-increment: li;
-        position: absolute;
-        left: -2.5em;
-        top: 50%;
-        margin-top: -1em;
-        background: #fa8072;
-        height: 2em;
-        width: 2em;
-        line-height: 2em;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .rectangle-list a:after{
-        position: absolute;
-        content: '';
-        border: .5em solid transparent;
-        left: -1em;
-        top: 50%;
-        margin-top: -.5em;
-        transition: all .3s ease-out;
-    }
-
-    .rectangle-list a:hover:after{
-        left: -.5em;
-        border-left-color: #fa8072;
-    }
-
-
-    .rectangle-list ol {
-        counter-reset: li; /* Initiate a counter */
-        list-style: none; /* Remove default numbering */
-        *list-style: decimal; /* Keep using default numbering for IE6/7 */
-        font: 15px 'trebuchet MS', 'lucida sans';
-        padding: 0;
-        margin-bottom: 4em;
-        text-shadow: 0 1px 0 rgba(255,255,255,.5);
-    }
-
-    .rectangle-list ol ol {
-        margin: 0 0 0 2em; /* Add some left margin for inner lists */
-    }
-
-    .underlined {
-        border-bottom: 2px solid #ef8b80;
-    }
-
-    .pseudo-first-letter::first-letter {
-        margin-top: 0.65rem;
-        margin-right: 1rem;
-        float: left;
-        padding: 12px 24px;
-        color: #ffffff;
-        background-color: #7ec211;
-        font-size: 7rem;
-        font-weight: 700;
-        line-height: 7rem;
-    }
 
 
     .hr-text {
@@ -288,11 +131,6 @@ top: 250px;
               -webkit-transform: translateY(-20px);
           }
     }
-
-</style>
-
-<style>
-
 </style>
 <script>
 
@@ -1124,11 +962,8 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         <nobr id="stl_text">Вверх</nobr>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src='https://code.jquery.com/jquery-1.10.1.min.js'></script>
-
-<script src="https://gist.githubusercontent.com/khashira/376a7deca1e1a8a1505c09c6149d3807/raw/a3fe655b6112afc043de06e5e03891f5687ef1e7/animation.js"></script>
 
 <a href="#" class="scrollToTop"></a>
 
@@ -1160,15 +995,6 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     }
 
 </style>
-<!--Анимация возникновения-->
-<script>
-    $(window).scroll(function(i) {
-        var scrollVar = $(window).scrollTop();
-        $(".scroll-fade").css({ opacity: 3.14 * scrollVar / 100 });
-    });
-</script>
-
-
 
 <script>
     $(document).ready(function(){

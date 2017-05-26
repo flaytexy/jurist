@@ -119,6 +119,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
     width: 290px !important;
 }
 
+
+    .formFooter-heightMask {
+        display: none;
+    }
+    .formFooter {
+        display: none;
+    }
 </style>
 
 <!--
