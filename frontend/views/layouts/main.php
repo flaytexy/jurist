@@ -23,13 +23,13 @@ $phoneStr = "+7 925 470 50 02";
 
 
 <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-<!--<div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
+<div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
        <div class="preloader">
             <div class="circ1"></div>
             <div class="circ2"></div>
             <div class="circ3"></div>
             <div class="circ4"></div>
-        </div></div></div>-->
+        </div></div></div>
 <style>
 
 
@@ -1005,6 +1005,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     }
 
 </style>
+<!--Анимация возникновения-->
 <script>
     $(window).scroll(function(i) {
         var scrollVar = $(window).scrollTop();
