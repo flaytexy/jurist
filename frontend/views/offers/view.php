@@ -7,7 +7,36 @@ $this->title = $offers->seo('title', $offers->model->title);
 $this->params['breadcrumbs'][] = ['label' => 'Компании', 'url' => ['offers/index']];
 $this->params['breadcrumbs'][] = $offers->model->title;
 ?>
+<style>
+    .tiiitle {
+        position: relative;
+        -webkit-perspective: 400;
+        perspective: 400;
+        padding-left: 17px;
+        font-family: Arial;
+        font-weight: bold;
+        font-size: 52px;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    .tiiitle:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 6px;
+        background: #7ec211;
+        top: 0;
+        left: 0;
+        opacity: 1;
 
+    }
+    .tiiitle .title-word {
+        opacity: 1;
+
+    }
+
+</style>
 <section>
     <div class="block">
         <div class="container">
@@ -15,24 +44,14 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             <div class="row">
                 <div class="col-md-12">
                     <div class="packages-detail">
-                        <?php if (count($offers->photos) || !empty($offers->model->image)) : ?>
-                            <div class="package-video">
-                                <div>
-                                    <?php if (!empty($offers->model->image)) : ?>
-                                        <?= Html::img(Image::thumb($offers->model->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
-                                    <? else: ?>
-                                        <?= Html::img(Image::thumb($offers->photos[0]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
-                                    <? endif ?>
-                                </div>
+                        <div class="tiiitle">
+                            <div class="title-word"><?= $offers->seo('h1', $offers->title) ?></div>
+                            <div class="title-word"><span>$</span><?= $offers->price; ?></div>
+                            <div class="title-word">Дней: <?= $offers->model->how_days; ?></div>
+                        </div>
 
-                               <!-- <i class="fa fa-play-circle"></i>-->
-                                <strong class="per-night"><span>$</span><?= $offers->price; ?> <i>Дней: <?= $offers->model->how_days; ?></i></strong>
-                                <a href="#order-zone" class="book-btn2" title="">Заказать</a>
-                                <!--<iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>-->
-                                <div class="title-video alignleft">
-                                    <h1><?= $offers->seo('h1', $offers->title) ?></h1>
-                                    <span><?= $offers->seo('h1', $offers->short) ?></span>
-                                </div>
+                        <?php if (count($offers->photos) || !empty($offers->model->image)) : ?>
+
                             </div>
                         <?php endif; ?>
 
