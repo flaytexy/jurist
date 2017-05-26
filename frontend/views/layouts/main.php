@@ -80,9 +80,7 @@ $phoneStr = "+7 925 470 50 02";
         }
     }
 
-    .packages-detail img {
-        box-shadow: 0 0 10px;
-    }
+
 
 
     .rwd-table {
