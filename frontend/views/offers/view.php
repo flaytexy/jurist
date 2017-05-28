@@ -44,8 +44,12 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         -webkit-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         box-shadow:  0 4px 16px rgba(0,0,0,.5);
-        margin-left: 105px;
-        margin-right: 105px;
+      /*  margin-left: 105px;
+        margin-right: 105px;*/
+    }
+    .package-video {
+        width: 104.5% !important;
+        margin-left: -2.2%;
     }
     .packages-detail {
         padding-bottom: 17px;
@@ -58,8 +62,8 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         text-transform: uppercase;
         color: white;
         margin-bottom: 20px;
-        margin-left: -2.7%;
-        margin-right: -2.7%;
+        margin-left: -2.3%;
+        margin-right: -2.3%;
 
     }
     @media (max-width: 999px) {
@@ -78,8 +82,8 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         font-family: 'Roboto Condensed', sans-serif;
         text-transform: uppercase;
         color: white;
-        margin-left: -2.7%;
-        margin-right: -2.7%;
+        margin-left: -2.3%;
+        margin-right: -2.3%;
         margin-bottom: 20px;
 
     }
@@ -107,14 +111,14 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     }
     ol.simlist > li{
         position: relative;
-        margin-bottom: 1.5em;
+        margin-bottom:  0.5em;
         padding: 1.5em;
         background-color: #eaeaea;
     }
     ol.simlist > li:before {
         position: absolute;
-        top: -0.6em;
-        left: -1.1em;
+        top: 0em;
+        left: -1.393em;
         width: 1.8em;
         height: 1.2em;
 box-shadow: 0 4px 6px rgba(0,0,0,.5);
@@ -144,14 +148,14 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
     }
     ul.simlist > li{
         position: relative;
-        margin-bottom: 1.5em;
+        margin-bottom:  0.5em;
         padding: 1.5em;
         background-color: #eaeaea;
     }
     ul.simlist > li:before {
         position: absolute;
-        top: -0.6em;
-        left: -1.1em;
+        top: 0em;
+        left: -1.393em;
         width: 1.8em;
         height: 1.2em;
         box-shadow: 0 4px 6px rgba(0,0,0,.5);
@@ -177,9 +181,9 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
         height: 320px;
         border-top: 1px solid #dbe6ee;
         margin-top: -3%;
-        margin-left: -2.8%;
+        margin-left: -2.233%;
         padding:5px;
-        width: 105.5%;
+        width: 104.6%;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         animation: float 5s infinite;
     }
@@ -293,19 +297,31 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
                 <div class="col-md-12">
                     <div class="packages-detail">
                         <?php if (count($offers->photos) || !empty($offers->model->image)) : ?>
-                            <div class="offertitle">
-                                <h2><?= $offers->seo('h1', $offers->title) ?></h2>
-                                <h3><span>$</span><?= $offers->price; ?></h3>
-                               <h3><?= $offers->model->how_days;  ?> дн. </h3>
-                            </div>
 
+                        <div class="package-video">
+                            <div>
+                                <?php if (!empty($offers->model->image)) : ?>
+                                    <?= Html::img(Image::thumb($offers->model->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
+                                <? else: ?>
+                                    <?= Html::img(Image::thumb($offers->photos[0]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
+                                <? endif ?>
+                            </div>
+                            <!-- <i class="fa fa-play-circle"></i>-->
+                            <strong class="per-night"><span>$</span><?= $offers->price; ?> <i>Дней: <?= $offers->model->how_days; ?></i></strong>
+                            <a href="#order-zone" class="book-btn2" title="">Заказать</a>
+                            <!--<iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>-->
+                            <div class="title-video alignleft">
+                                <h1><?= $offers->seo('h1', $offers->title) ?></h1>
+                                <span><?= $offers->seo('h1', $offers->short) ?></span>
+                            </div>
+                        </div>
                         <?php endif; ?>
 
                         <p>
                             <?= $offers->text ?>
                         </p>
 
-                        <script type="text/javascript"> /*       /*   <div class="package-features" id="order-zone">
+                        <script type="text/javascript"> /*          <div class="package-features" id="order-zone">
                             <!-- 2-block -->
                             <div class="row">
                                 <div class="col-md-12">
