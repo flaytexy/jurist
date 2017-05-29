@@ -287,15 +287,132 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
     .packages-detail td.text-right {
         text-align: right;
     }
+    .vertical-menu {
+        width: 200px;
+    }
+
+    .vertical-menu a {
+        background-color: #eee;
+        color: black;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+    }
+
+    .vertical-menu a:hover {
+        background-color: #ccc;
+    }
+
+    .vertical-menu a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    #toggle {
+        display: block;
+        width: 28px;
+        height: 30px;
+        margin: 30px auto 10px;
+    }
+
+    #toggle span:after,
+    #toggle span:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -9px;
+    }
+    #toggle span:after{
+        top: 9px;
+    }
+    #toggle span {
+        position: relative;
+        display: block;
+    }
+
+    #toggle span,
+    #toggle span:after,
+    #toggle span:before {
+        width: 100%;
+        height: 5px;
+        background-color: #888;
+        transition: all 0.3s;
+        backface-visibility: hidden;
+        border-radius: 2px;
+    }
+
+    /* on activation */
+    #toggle.on span {
+        background-color: transparent;
+    }
+    #toggle.on span:before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    #toggle.on span:after {
+        transform: rotate(-45deg) translate(7px, -8px);
+    }
+    #toggle.on + #menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* menu appearance
+    #menu {
+        position: relative;
+        color: #999;
+        width: 200px;
+
+        margin: auto;
+        font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+        text-align: center;
+        border-radius: 4px;
+        background: white;
+        box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s;
+    }
+    #menu:after {
+        position: absolute;
+        top: -15px;
+        left: 95px;
+        content: "";
+        display: block;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 20px solid white;
+    }
+    #menu ul, li, li a {
+        list-style: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    #menu li a {
+        padding: 5px;
+        color: #888;
+        text-decoration: none;
+        transition: all .2s;
+    }
+    #menu li a:hover,
+    #menu li a:focus {
+        background: #1ABC9C;
+        color: #fff;
+    } */
 </style>
 
 <section>
     <div class="block">
+
         <div class="container">
+
             <!-- 1-block -->
             <div class="row">
+
                 <div class="col-md-12">
                     <div class="packages-detail">
+
                         <?php if (count($offers->photos) || !empty($offers->model->image)) : ?>
 
                         <div class="package-video">
@@ -440,3 +557,47 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
     </div>
 </div>
 -->
+<script>
+ /*   var theToggle = document.getElementById('toggle');
+
+    // based on Todd Motto functions
+    // https://toddmotto.com/labs/reusable-js/
+
+    // hasClass
+    function hasClass(elem, className) {
+        return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+    }
+    // addClass
+    function addClass(elem, className) {
+        if (!hasClass(elem, className)) {
+            elem.className += ' ' + className;
+        }
+    }
+    // removeClass
+    function removeClass(elem, className) {
+        var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+        if (hasClass(elem, className)) {
+            while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+                newClass = newClass.replace(' ' + className + ' ', ' ');
+            }
+            elem.className = newClass.replace(/^\s+|\s+$/g, '');
+        }
+    }
+    // toggleClass
+    function toggleClass(elem, className) {
+        var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+        if (hasClass(elem, className)) {
+            while (newClass.indexOf(" " + className + " ") >= 0 ) {
+                newClass = newClass.replace( " " + className + " " , " " );
+            }
+            elem.className = newClass.replace(/^\s+|\s+$/g, '');
+        } else {
+            elem.className += ' ' + className;
+        }
+    }
+
+    theToggle.onclick = function() {
+        toggleClass(this, 'on');
+        return false;
+    } */
+</script>

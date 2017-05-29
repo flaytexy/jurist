@@ -7240,8 +7240,9 @@ ul.faq li.a blockquote {
         display: none !important;
     }
     .packages-detail img{
-        width:100% !important;
-        padding-right: 50px !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: auto !important;
     }
 }
 @media (max-width: 480px), (max-device-width: 480px) {

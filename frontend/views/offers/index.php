@@ -57,7 +57,46 @@ $this->params['breadcrumbs'][] = $page->model->title;
 </section>
 
 <!-- НОВЫЙ СПИСОК -->
+<style>
+    #myInput {
+        background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+        background-position: 10px 12px; /* Position the search icon */
+        background-repeat: no-repeat; /* Do not repeat the icon image */
+        width: 100%; /* Full-width */
+        font-size: 16px; /* Increase font-size */
+        padding: 12px 20px 12px 40px; /* Add some padding */
+        border: 1px solid #ddd; /* Add a grey border */
+        margin-bottom: 12px; /* Add some space below the input */
+    }
 
+    #myUL {
+        /* Remove default list styling */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #myUL li a {
+        border: 1px solid #ddd; /* Add a border to all links */
+        margin-top: -1px; /* Prevent double borders */
+        background-color: #f6f6f6; /* Grey background color */
+        padding: 12px; /* Add some padding */
+        text-decoration: none; /* Remove default text underline */
+        font-size: 18px; /* Increase the font-size */
+        color: black; /* Add a black text color */
+        display: block; /* Make it into a block element to fill the whole list */
+    }
+
+    #myUL li a.header {
+        background-color: rgba(0, 0, 0, 0.68); /* Add a darker background color for headers */
+        cursor: default; /* Change cursor style */
+        color: aliceblue;
+    }
+
+    #myUL li a:hover:not(.header) {
+        background-color: #eee; /* Add a hover effect to all links, except for headers */
+    }
+</style>
 
 <section id="offers">
     <div class="block">
@@ -69,19 +108,28 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <!--                </div>-->
                 <!--  offers -->
 
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск юрисдикции..">
 
+                <ul id="myUL">
+                    <?php foreach ($offers as $item) : ?>
+                        <? if($region_name != $item->model->region_name  /*&&  $item->model->region_name!=false*/ ): ?>
+                            <?php $region_name = $item->model->region_name; ?>
+
+
+
+
+                            <li  id="reg_<?= $item->model->region_id ?>"><a href="#" class="header"><?= $region_name ?></a></li>
+                        <? endif ?>
+                    <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a></li>
+
+                    <?php endforeach; ?>
+                </ul>
 
 
 
                 <div class="">
                     <ul class="nav" id="offers-menu-block">
-                        <?php foreach ($offers as $item) : ?>
-                            <? if($region_name != $item->model->region_name  /*&&  $item->model->region_name!=false*/ ): ?>
-                                <?php $region_name = $item->model->region_name; ?>
-                                <li  style="clear: left" class='h5 ' id="reg_<?= $item->model->region_id ?>"><?= $region_name ?></li>
-                            <? endif ?>
-                            <li class="sidelines" style="margin-top: 10px; float: left;"><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a></li>
-                        <?php endforeach; ?>
+
                     </ul>
                 </div>
             </nav>
@@ -171,3 +219,23 @@ $this->params['breadcrumbs'][] = $page->model->title;
             </div>
 
 </section>
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('li');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>
