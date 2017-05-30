@@ -249,6 +249,7 @@ top: 250px;
     .skype {
         padding-top: 6px;
     }
+
     @media (max-width: 1000px) {
         .top-bar {
             display: none;

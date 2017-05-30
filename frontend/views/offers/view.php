@@ -7,8 +7,11 @@ $this->title = $offers->seo('title', $offers->model->title);
 $this->params['breadcrumbs'][] = ['label' => 'Компании', 'url' => ['offers/index']];
 $this->params['breadcrumbs'][] = $offers->model->title;
 ?>
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       xmlns="http://www.w3.org/1999/html">
+
 <style>
     .offertitle {
         position: relative;
@@ -400,17 +403,217 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
         background: #1ABC9C;
         color: #fff;
     } */
+    .wrap {
+        overflow: hidden;
+    }
+
+    .carousel {
+        display: flex;
+        left: -100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        transform: translateX(100%);
+    }
+    @media (min-width: 30em) {
+        .carousel {
+            left: -50%;
+            transform: translateX(50%);
+        }
+    }
+    @media (min-width: 40em) {
+        .carousel {
+            left: -33.33333%;
+            transform: translateX(33.33333%);
+        }
+    }
+
+    .carousel.is-reversing {
+        transform: translateX(-100%);
+    }
+    @media (min-width: 30em) {
+        .carousel.is-reversing {
+            transform: translateX(-50%);
+        }
+    }
+    @media (min-width: 40em) {
+        .carousel.is-reversing {
+            transform: translateX(-33.33333%);
+        }
+    }
+
+    .carousel.is-set {
+        transform: none;
+        transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .carousel-seat {
+        background: #ddd;
+        flex: 1 0 100%;
+        order: 2;
+    }
+    .carousel-seat:nth-child(even) {
+        background: #d5d5d5;
+    }
+    @media (min-width: 30em) {
+        .carousel-seat {
+            flex-basis: 50%;
+        }
+    }
+    @media (min-width: 40em) {
+        .carousel-seat {
+            flex-basis: 33.33333%;
+        }
+    }
+
+    .carousel-seat.is-ref {
+        order: 1;
+    }
+
+    h2 {
+        color: #aaa;
+        font-size: 7em;
+        font-weight: normal;
+        margin: 0;
+        padding: 0.6em 0;
+        text-align: center;
+    }
+
+    .controls {
+        padding: 2em;
+        text-align: center;
+    }
+    .controls button {
+        background: #aaa;
+        border: 0;
+        border-radius: 0.25em;
+        color: #eee;
+        padding: 0.5em 1em;
+    }
+    .controls button:hover, .controls button:focus {
+        background: magenta;
+    }
+    .vertical-menu {
+        width: 200px; /* Set a width if you like */
+        position: absolute;
+        left: 10px;
+        -webkit-box-shadow:  0 4px 16px rgba(0,0,0,.5);
+        -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
+        box-shadow:  0 4px 16px rgba(0,0,0,.5);
+    }
+
+    .vertical-menu a {
+        background-color: #eee; /* Grey background color */
+        color: black; /* Black text color */
+        display: block; /* Make the links appear below each other */
+        padding: 12px; /* Add some padding */
+        text-decoration: none; /* Remove underline from links */
+    }
+
+    .vertical-menu a:hover {
+        background-color: #ccc; /* Dark grey background on mouse-over */
+    }
+
+    .vertical-menu a.active {
+        background-color: #4CAF50; /* Add a green color to the "active/current" link */
+        color: white;
+    }
+
+    /****************/
+    /*	 BX-SLIDER 	*/
+    /****************/
+    section.client {
+        padding-top: 1em;
+        text-align: center;
+        background-color: #7ec211;
+
+    }
+   .slide a {
+        font-family: Arial;
+        font-size: large;
+        color: #ffffff;
+    }
+    section.client .section-title {
+        margin-bottom: 6em;
+    }
+    .bx-controls {
+        position: relative;
+    }
+    .bx-wrapper .bx-pager {
+        text-align: center;
+        padding-top: 3px;
+    }
+    .bx-wrapper .bx-pager .bx-pager-item, .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+        display: inline-block;
+        *zoom: 1;
+        *display: inline;
+    }
+    .bx-wrapper .bx-pager.bx-default-pager a {
+        background: #ffffff;
+        text-indent: -9999px;
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        outline: 0;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+    @media (max-width: 1586px) {
+        .vertical-menu {
+            display: none !important;
+        }
+    }
+    @media (max-width: 766px) {
+       section.client {
+            margin-bottom: 10px;
+        }
+    }
 </style>
 
 <section>
     <div class="block">
-
+        <div class="vertical-menu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+        </div>
         <div class="container">
 
             <!-- 1-block -->
             <div class="row">
 
                 <div class="col-md-12">
+                    <section class="client">
+                        <div class="container">
+                            <div class="row">
+                                <div class="carousel-client">
+                                    <div class="slide"><h3><a href="#">Текст</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 2</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 3</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 4</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 5</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 6</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 2</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 3</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 4</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 5</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 6</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 2</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 3</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 4</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 5</a></h3></div>
+                                    <div class="slide"><h3><a href="#">Текст 6</a></h3></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <div class="packages-detail">
 
                         <?php if (count($offers->photos) || !empty($offers->model->image)) : ?>
@@ -507,7 +710,8 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
 <!--                    <div class="small-muted">Views: --><?//= $offers->views ?><!--</div>-->
                 </div>
             </div>
-        </div>
+        </div
+>
     </div>
 </section>
 <!--
@@ -557,6 +761,8 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
     </div>
 </div>
 -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script>
 <script>
  /*   var theToggle = document.getElementById('toggle');
 
@@ -600,4 +806,11 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
         toggleClass(this, 'on');
         return false;
     } */
+ $('.carousel-client').bxSlider({
+     auto: true,
+     slideWidth: 234,
+     minSlides: 2,
+     maxSlides: 5,
+     controls: false
+ });
 </script>
