@@ -13,34 +13,6 @@ $this->params['breadcrumbs'][] = $offers->model->title;
       xmlns="http://www.w3.org/1999/html">
 
 <style>
-    .offertitle {
-        position: relative;
-
-        padding-left: 17px;
-        padding-top: 17px;
-        font-weight: bold;
-        font-size: 52px;
-
-    }
-    .offertitle h2,
-    .offertitle h3 {
-
-
-        padding-left: 17px;
-        font-family: Arial;
-
-    }
-    .offertitle:before {
-        content: '';
-        display: block;
-        position: absolute;
-        height: 100%;
-        width: 10px;
-        background: #7ec211;
-        top: 0;
-        left: 0;
-        opacity: 1;
-    }
     .packages-detail {
         padding-left: 25px !important;
         padding-right: 25px !important;
@@ -105,11 +77,9 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     ol.simlist {
         list-style-type: none;
         list-style-type: decimal !ie; /*IE 7- hack*/
-
         margin: 0;
         margin-left: 1em;
         padding: 0;
-
         counter-reset: li-counter;
     }
     ol.simlist > li{
@@ -124,7 +94,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         left: -1.393em;
         width: 1.8em;
         height: 1.2em;
-box-shadow: 0 4px 6px rgba(0,0,0,.5);
+        box-shadow: 0 4px 6px rgba(0,0,0,.5);
         font-size: 2em;
         line-height: 1.2;
         font-weight: bold;
@@ -290,74 +260,7 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
     .packages-detail td.text-right {
         text-align: right;
     }
-    .vertical-menu {
-        width: 200px;
-    }
 
-    .vertical-menu a {
-        background-color: #eee;
-        color: black;
-        display: block;
-        padding: 12px;
-        text-decoration: none;
-    }
-
-    .vertical-menu a:hover {
-        background-color: #ccc;
-    }
-
-    .vertical-menu a.active {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    #toggle {
-        display: block;
-        width: 28px;
-        height: 30px;
-        margin: 30px auto 10px;
-    }
-
-    #toggle span:after,
-    #toggle span:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: -9px;
-    }
-    #toggle span:after{
-        top: 9px;
-    }
-    #toggle span {
-        position: relative;
-        display: block;
-    }
-
-    #toggle span,
-    #toggle span:after,
-    #toggle span:before {
-        width: 100%;
-        height: 5px;
-        background-color: #888;
-        transition: all 0.3s;
-        backface-visibility: hidden;
-        border-radius: 2px;
-    }
-
-    /* on activation */
-    #toggle.on span {
-        background-color: transparent;
-    }
-    #toggle.on span:before {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    #toggle.on span:after {
-        transform: rotate(-45deg) translate(7px, -8px);
-    }
-    #toggle.on + #menu {
-        opacity: 1;
-        visibility: visible;
-    }
 
     /* menu appearance
     #menu {
@@ -403,107 +306,20 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
         background: #1ABC9C;
         color: #fff;
     } */
-    .wrap {
-        overflow: hidden;
-    }
 
-    .carousel {
-        display: flex;
-        left: -100%;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        transform: translateX(100%);
-    }
-    @media (min-width: 30em) {
-        .carousel {
-            left: -50%;
-            transform: translateX(50%);
-        }
-    }
-    @media (min-width: 40em) {
-        .carousel {
-            left: -33.33333%;
-            transform: translateX(33.33333%);
-        }
-    }
-
-    .carousel.is-reversing {
-        transform: translateX(-100%);
-    }
-    @media (min-width: 30em) {
-        .carousel.is-reversing {
-            transform: translateX(-50%);
-        }
-    }
-    @media (min-width: 40em) {
-        .carousel.is-reversing {
-            transform: translateX(-33.33333%);
-        }
-    }
-
-    .carousel.is-set {
-        transform: none;
-        transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    .carousel-seat {
-        background: #ddd;
-        flex: 1 0 100%;
-        order: 2;
-    }
-    .carousel-seat:nth-child(even) {
-        background: #d5d5d5;
-    }
-    @media (min-width: 30em) {
-        .carousel-seat {
-            flex-basis: 50%;
-        }
-    }
-    @media (min-width: 40em) {
-        .carousel-seat {
-            flex-basis: 33.33333%;
-        }
-    }
-
-    .carousel-seat.is-ref {
-        order: 1;
-    }
-
-    h2 {
-        color: #aaa;
-        font-size: 7em;
-        font-weight: normal;
-        margin: 0;
-        padding: 0.6em 0;
-        text-align: center;
-    }
-
-    .controls {
-        padding: 2em;
-        text-align: center;
-    }
-    .controls button {
-        background: #aaa;
-        border: 0;
-        border-radius: 0.25em;
-        color: #eee;
-        padding: 0.5em 1em;
-    }
-    .controls button:hover, .controls button:focus {
-        background: magenta;
-    }
-    .vertical-menu {
+    .vertical-menu,
+    .vertical-menu2 {
         width: 200px; /* Set a width if you like */
         position: absolute;
-        left: 10px;
         -webkit-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         box-shadow:  0 4px 16px rgba(0,0,0,.5);
     }
-
-    .vertical-menu a {
+    .vertical-menu2 {
+        right: 0;
+    }
+    .vertical-menu a,
+    .vertical-menu2 a {
         background-color: #eee; /* Grey background color */
         color: black; /* Black text color */
         display: block; /* Make the links appear below each other */
@@ -511,12 +327,14 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
         text-decoration: none; /* Remove underline from links */
     }
 
-    .vertical-menu a:hover {
+    .vertical-menu a:hover,
+    .vertical-menu2 a:hover {
         background-color: #ccc; /* Dark grey background on mouse-over */
     }
 
-    .vertical-menu a.active {
-        background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    .vertical-menu a.active,
+    .vertical-menu2 a.active {
+        background-color: #3a3a3a; /* Add a green color to the "active/current" link */
         color: white;
     }
 
@@ -562,7 +380,7 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
         border-radius: 5px;
     }
     @media (max-width: 1586px) {
-        .vertical-menu {
+        .vertical-menu, .vertical-menu2 {
             display: none !important;
         }
     }
@@ -576,11 +394,16 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
 <section>
     <div class="block">
         <div class="vertical-menu">
-            <a href="#" class="active">Home</a>
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            <a href="#">Link 4</a>
+            <a href="#" class="active">Юрисдикции</a>
+            <?php foreach ($offersList as $itemList) : ?>
+            <a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?></a>
+            <?php endforeach; ?>
+        </div>
+        <div class="vertical-menu2">
+            <a href="#" class="active">Юрисдикции</a>
+            <?php foreach ($offersList as $itemList) : ?>
+                <a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?></a>
+            <?php endforeach; ?>
         </div>
         <div class="container">
 
@@ -593,7 +416,7 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
                             <div class="row">
                                 <div class="carousel-client">
                                     <?php foreach ($offersList as $itemList) : ?>
-                                        <div class="slide"><h3><a href="#"><?=$itemList->title?></a></h3></div>
+                                        <div class="slide"><h3><a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?></a></h3></div>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
