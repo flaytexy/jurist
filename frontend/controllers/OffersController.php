@@ -123,10 +123,18 @@ class OffersController extends \yii\web\Controller
         $popularly->time = time();
         $popularly->save();
 
+
+        $type_id = \Yii::$app->request->get('type_id');
+        if(empty($type_id))
+            $type_id = 1;
+
+        $offersList = Offers::items(['list' => 1, 'type_id' => (int)$type_id]);
+
         return $this->render('view', [
             'offers' => $offers,
             'packets' => $packets,
-            'options' => $options
+            'options' => $options,
+            'offersList' => $offersList
         ]);
     }
 }

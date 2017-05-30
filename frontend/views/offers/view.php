@@ -592,24 +592,9 @@ box-shadow: 0 4px 6px rgba(0,0,0,.5);
                         <div class="container">
                             <div class="row">
                                 <div class="carousel-client">
-                                    <div class="slide"><h3><a href="#">Текст</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 2</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 3</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 4</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 5</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 6</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 2</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 3</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 4</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 5</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 6</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 2</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 3</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 4</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 5</a></h3></div>
-                                    <div class="slide"><h3><a href="#">Текст 6</a></h3></div>
+                                    <?php foreach ($offersList as $itemList) : ?>
+                                        <div class="slide"><h3><a href="#"><?=$itemList->title?></a></h3></div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>
