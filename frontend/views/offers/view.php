@@ -306,20 +306,22 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         background: #1ABC9C;
         color: #fff;
     } */
-
-    .vertical-menu,
-    .vertical-menu2 {
-        width: 200px; /* Set a width if you like */
+    .sidesidebar, .sidesidebar2 {
         position: absolute;
+    }
+    .sidesidebar2 {
+        right:0;
+    }
+    .vertical-menu {
+        width: 200px; /* Set a width if you like */
+        position: relative;
+        margin-bottom: 50px;
         -webkit-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         box-shadow:  0 4px 16px rgba(0,0,0,.5);
     }
-    .vertical-menu2 {
-        right: 0;
-    }
-    .vertical-menu a,
-    .vertical-menu2 a {
+
+    .vertical-menu a {
         background-color: #eee; /* Grey background color */
         color: black; /* Black text color */
         display: block; /* Make the links appear below each other */
@@ -327,13 +329,11 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         text-decoration: none; /* Remove underline from links */
     }
 
-    .vertical-menu a:hover,
-    .vertical-menu2 a:hover {
+    .vertical-menu a:hover {
         background-color: #ccc; /* Dark grey background on mouse-over */
     }
 
-    .vertical-menu a.active,
-    .vertical-menu2 a.active {
+    .vertical-menu a.active   {
         background-color: #3a3a3a; /* Add a green color to the "active/current" link */
         color: white;
     }
@@ -380,7 +380,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         border-radius: 5px;
     }
     @media (max-width: 1586px) {
-        .vertical-menu, .vertical-menu2 {
+        .sidesidebar, .sidesidebar2 {
             display: none !important;
         }
     }
@@ -389,21 +389,38 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             margin-bottom: 10px;
         }
     }
+
 </style>
 
 <section>
     <div class="block">
+        <div class="sidesidebar">
         <div class="vertical-menu">
-            <a href="#" class="active">Юрисдикции</a>
-            <?php foreach ($offersList as $itemList) : ?>
-            <a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?></a>
-            <?php endforeach; ?>
-        </div>
-        <div class="vertical-menu2">
             <a href="#" class="active">Юрисдикции</a>
             <?php foreach ($offersList as $itemList) : ?>
                 <a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?></a>
             <?php endforeach; ?>
+        </div>
+        <div class="vertical-menu">
+            <a href="#" class="active">Популярные юрисдикции</a>
+            <?php foreach($top_offers as $item) : ?>
+                <a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?></a>
+            <?php endforeach; ?>
+        </div>
+        </div>
+        <div class="sidesidebar2">
+            <div class="vertical-menu">
+                <a href="#" class="active">Популярные новости</a>
+                <?php foreach($top_news as $item) : ?>
+                <a href="<?= Url::to(['news/'.$item->slug]) ?>"><?= $item->title ?></a>
+                    <?php endforeach; ?>
+            </div>
+            <div class="vertical-menu">
+                <a href="#" class="active">Популярные банки</a>
+                <?php foreach($top_banks as $item) : ?>
+                   <a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a>
+                <?php endforeach; ?>
+            </div>
         </div>
         <div class="container">
 
@@ -518,10 +535,12 @@ $this->params['breadcrumbs'][] = $offers->model->title;
 <!--                    <div class="small-muted">Views: --><?//= $offers->views ?><!--</div>-->
                 </div>
             </div>
-        </div
->
+        </div>
+
     </div>
+
 </section>
+
 <!--
 <div style="display:none">
     <div class="container-fluid" id="succes_packet">
