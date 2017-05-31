@@ -19,6 +19,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         -webkit-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         box-shadow:  0 4px 16px rgba(0,0,0,.5);
+        background-color: #fff;
       /*  margin-left: 105px;
         margin-right: 105px;*/
     }
@@ -311,11 +312,20 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     }
     .sidesidebar2 {
         right:0;
+        width: 260px;
+
     }
     .vertical-menu {
         width: 200px; /* Set a width if you like */
         position: relative;
         margin-bottom: 50px;
+        -webkit-box-shadow:  0 4px 16px rgba(0,0,0,.5);
+        -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
+        box-shadow:  0 4px 16px rgba(0,0,0,.5);
+    }
+    .vertical-menu-widget {
+        width: 280px; /* Set a width if you like */
+        position: relative;
         -webkit-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         box-shadow:  0 4px 16px rgba(0,0,0,.5);
@@ -336,6 +346,11 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     .vertical-menu a.active   {
         background-color: #3a3a3a; /* Add a green color to the "active/current" link */
         color: white;
+    }
+    .widget {
+        -webkit-box-shadow:  0 4px 16px rgba(0,0,0,.5);
+        -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
+        box-shadow:  0 4px 16px rgba(0,0,0,.5);
     }
 
     /****************/
@@ -390,6 +405,188 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         }
     }
 
+
+
+
+    #pricing-table {
+        margin: 50px auto;
+        text-align: center;
+        width: 50%; /* total computed width = 222 x 3 + 226 */
+    }
+
+    #pricing-table .plan {
+        font: 12px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
+        text-shadow: 0 1px rgba(255,255,255,.8);
+        background: #fff;
+        border: 1px solid #ddd;
+        color: #333;
+        padding: 20px;
+        width: 180px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */
+        float: left;
+        position: relative;
+    }
+
+    #pricing-table #most-popular {
+        z-index: 2;
+        top: -13px;
+        border-width: 3px;
+        padding: 30px 20px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        -moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+        -webkit-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+        box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+    }
+
+    #pricing-table .plan:nth-child(1) {
+        -moz-border-radius: 5px 0 0 5px;
+        -webkit-border-radius: 5px 0 0 5px;
+        border-radius: 5px 0 0 5px;
+    }
+
+    #pricing-table .plan:nth-child(4) {
+        -moz-border-radius: 0 5px 5px 0;
+        -webkit-border-radius: 0 5px 5px 0;
+        border-radius: 0 5px 5px 0;
+    }
+
+    /* --------------- */
+
+    #pricing-table h3 {
+        font-size: 20px;
+        font-weight: normal;
+        padding: 20px;
+        margin: -20px -20px 5px -20px;
+        background-color: #eee;
+        background-image: -moz-linear-gradient(#fff,#eee);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+        background-image: -webkit-linear-gradient(#fff, #eee);
+        background-image: -o-linear-gradient(#fff, #eee);
+        background-image: -ms-linear-gradient(#fff, #eee);
+        background-image: linear-gradient(#fff, #eee);
+    }
+
+    #pricing-table #most-popular h3 {
+        background-color: #ddd;
+        background-image: -moz-linear-gradient(#eee,#ddd);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));
+        background-image: -webkit-linear-gradient(#eee, #ddd);
+        background-image: -o-linear-gradient(#eee, #ddd);
+        background-image: -ms-linear-gradient(#eee, #ddd);
+        background-image: linear-gradient(#eee, #ddd);
+        margin-top: -30px;
+        padding-top: 30px;
+        -moz-border-radius: 5px 5px 0 0;
+        -webkit-border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0;
+    }
+
+    #pricing-table .plan:nth-child(1) h3 {
+        -moz-border-radius: 5px 0 0 0;
+        -webkit-border-radius: 5px 0 0 0;
+        border-radius: 5px 0 0 0;
+    }
+
+    #pricing-table .plan:nth-child(4) h3 {
+        -moz-border-radius: 0 5px 0 0;
+        -webkit-border-radius: 0 5px 0 0;
+        border-radius: 0 5px 0 0;
+    }
+
+    #pricing-table  p {
+        font-family: arial !important;
+        display: block;
+        font: bold 25px/100px Georgia, Serif;
+        color: #777;
+        background: #fff;
+        border: 5px solid #fff;
+        height: 100px;
+        width: 100px;
+        margin: 10px auto 5px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+        border-radius: 100px;
+        -moz-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
+        -webkit-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
+        box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
+    }
+
+    /* --------------- */
+
+    #pricing-table ul {
+        margin: 20px 0 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #pricing-table li {
+        border-top: 1px solid #ddd;
+        padding: 10px 0;
+    }
+
+    /* --------------- */
+
+    #pricing-table .signup {
+        position: relative;
+        padding: 8px 20px;
+        margin: 20px 0 0 0;
+        color: #fff;
+        font: bold 14px Arial, Helvetica;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        background-color: #72ce3f;
+        background-image: -moz-linear-gradient(#72ce3f, #62bc30);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#72ce3f), to(#62bc30));
+        background-image: -webkit-linear-gradient(#72ce3f, #62bc30);
+        background-image: -o-linear-gradient(#72ce3f, #62bc30);
+        background-image: -ms-linear-gradient(#72ce3f, #62bc30);
+        background-image: linear-gradient(#72ce3f, #62bc30);
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        text-shadow: 0 1px 0 rgba(0,0,0,.3);
+        -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
+        -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .5), 0 2px 0 rgba(0, 0, 0, .7);
+    }
+
+    #pricing-table .signup:hover {
+        background-color: #62bc30;
+        background-image: -moz-linear-gradient(#62bc30, #72ce3f);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#62bc30), to(#72ce3f));
+        background-image: -webkit-linear-gradient(#62bc30, #72ce3f);
+        background-image: -o-linear-gradient(#62bc30, #72ce3f);
+        background-image: -ms-linear-gradient(#62bc30, #72ce3f);
+        background-image: linear-gradient(#62bc30, #72ce3f);
+    }
+
+    #pricing-table .signup:active, #pricing-table .signup:focus {
+        background: #62bc30;
+        top: 2px;
+        -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;
+        -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;
+    }
+
+    /* --------------- */
+
+    .clear:before, .clear:after {
+        content:"";
+        display:table
+    }
+
+    .clear:after {
+        clear:both
+    }
+
+    .clear {
+        zoom:1
+    }
+
+
+
 </style>
 
 <section>
@@ -401,26 +598,59 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                 <a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?></a>
             <?php endforeach; ?>
         </div>
-        <div class="vertical-menu">
-            <a href="#" class="active">Популярные юрисдикции</a>
-            <?php foreach($top_offers as $item) : ?>
-                <a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?></a>
-            <?php endforeach; ?>
+        <div class="vertical-menu-widget">
+            <div class="widget recent-posts-widget">
+                <div class="title1 style2">
+                    <h2>Интересные статьи</h2>
+                    <span>Популярные новости</span>
+                </div>
+                <div class="recent-posts">
+                    <?php foreach($top_news as $item) : ?>
+                        <div class="recent-post">
+                            <?= Html::img(\frontend\helpers\Image::thumb($item->image, 90, 90)) ?>
+                            <h4><a href="<?= Url::to(['news/'.$item->slug]) ?>"><?= $item->title ?></a></h4>
+                            <span><i class="fa fa-calendar"></i> <?= $item->date ?></span>
+                        </div>
+                    <?php endforeach; ?>
+
+                </div>
+            </div><!-- Widget -->
         </div>
         </div>
         <div class="sidesidebar2">
-            <div class="vertical-menu">
-                <a href="#" class="active">Популярные новости</a>
-                <?php foreach($top_news as $item) : ?>
-                <a href="<?= Url::to(['news/'.$item->slug]) ?>"><?= $item->title ?></a>
+
+                <div class="widget villa-photos-widget">
+                    <div class="title1 style2">
+                        <h2>Хорошие предложения</h2>
+                        <span>Интересные страны для бизнеса</span>
+                    </div>
+                    <ul class="widget-gallery">
+                        <?php foreach($top_offers as $item) : ?>
+                            <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
+                                    <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                                </a>
+                                <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span></li>
+                        <?php endforeach; ?>
+
+                    </ul>
+                </div><!-- Widget -->
+
+            <!-- Widget2 -->
+            <div class="widget villa-photos-widget">
+                <div class="title1 style2">
+                    <h2>Банки</h2>
+                    <span>Лучшие банковские условия</span>
+                </div>
+                <ul class="widget-gallery">
+                    <?php foreach($top_banks as $item) : ?>
+                        <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
+                                <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                            </a>
+                            <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
                     <?php endforeach; ?>
-            </div>
-            <div class="vertical-menu">
-                <a href="#" class="active">Популярные банки</a>
-                <?php foreach($top_banks as $item) : ?>
-                   <a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a>
-                <?php endforeach; ?>
-            </div>
+
+                </ul>
+            </div><!-- Widget2 -->
         </div>
         <div class="container">
 
