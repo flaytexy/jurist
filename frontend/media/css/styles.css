@@ -1098,12 +1098,13 @@ header.stick .top-menus .contact-m  .back-m {
 header.stick .top-menus .skype > a {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     height: 100%;
-    margin: -10px;
+    margin: -15px;
     padding-left: 14px;
     padding-right: 14px;
-    width: 22px;
+    width: 150%;
+    text-align: center;
 }
-header.stick .top-menus .skype > a > div {
+/*header.stick .top-menus .skype > a > div {
     background-image: url("http://i.imgur.com/KYlbWw7.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -1112,7 +1113,7 @@ header.stick .top-menus .skype > a > div {
     width: 96px;
 }
 
-/*header.stick .top-menus li:nth-child(7){*/
+header.stick .top-menus li:nth-child(7){*/
     /*padding: 0 30px;*/
 /*}*/
 /*header.stick .top-menus li:nth-child(7) > a {*/

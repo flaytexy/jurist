@@ -389,7 +389,7 @@ top: 250px;
                                     </div>
                                 </li>
                                 <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
-                                    <a href="skype:IQ Decision?call"><div></div></a>
+                                    <a href="skype:IQ Decision?call"><i class="fa fa-skype" aria-hidden="true"></i><br><b style="font-size: 12px">IQ Decision</b></a>
                                 </li>'
                             ],
                         ],
