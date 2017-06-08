@@ -51,7 +51,7 @@ class OffersController extends \yii\web\Controller
         foreach(PageModel::find()
                     ->andWhere(['type_id' => '2'])
                     ->status(PageModel::STATUS_ON)
-                    ->sortDate()->limit(5)->all() as $item){
+                    ->sortDate()->limit(4)->all() as $item){
             $obj = new PageObject($item);
             $topNews[] = $obj;
         }
@@ -63,7 +63,7 @@ class OffersController extends \yii\web\Controller
             ->from('easyii_banks as ba')
             ->where("ba.status = '1' ")
             ->orderBy(['views'=> SORT_DESC])
-            ->limit(5);
+            ->limit(3);
         $command = $query->createCommand();
         $topBanks = $command->queryAll();
 
@@ -73,7 +73,7 @@ class OffersController extends \yii\web\Controller
             ->from('easyii_offers as of')
             ->where("of.status = '1' ")
             ->orderBy(['views'=> SORT_DESC])
-            ->limit(5);
+            ->limit(4);
         $command = $query->createCommand();
         $topOffers = $command->queryAll();
 

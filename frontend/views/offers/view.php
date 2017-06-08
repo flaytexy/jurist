@@ -13,6 +13,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
       xmlns="http://www.w3.org/1999/html">
 
 <style>
+
     .packages-detail {
         padding-left: 25px !important;
         padding-right: 25px !important;
@@ -314,6 +315,13 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     .sidesidebar2 {
         right:0;
         width: 260px;
+
+    }
+    .sidesidebar2 h2,
+    .sidesidebar2 span,
+    .sidesidebar h2,
+    .sidesidebar span {
+        padding: 5px;
 
     }
     .vertical-menu {
