@@ -919,12 +919,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
                             <!-- END PRIVY WIDGET CODE -->
                             <div class="privy-embed-form" data-campaign="216143"></div>
-                            <script>
-                                $(window).load(function() {
 
-                                };
-
-                            </script>
 
                         </div>
                     </div>
@@ -1024,7 +1019,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
             $("#status").fadeOut();
             $('#preloader').delay(1000).fadeOut('slow',function(){$(this).remove();});
 
-        }); */
+        });  */
         setTimeout(function() {
             var script = document.createElement('script');
             script.src = '//widget.privy.com/assets/widget.js';
@@ -1057,7 +1052,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 
 
-<!--Start of Tawk.to Script
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -1069,7 +1064,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         s0.parentNode.insertBefore(s1,s0);
     })();
 </script>
-End of Tawk.to Script-->
+<!--End of Tawk.to Script-->
 
 
 <script type="text/javascript">
