@@ -324,6 +324,10 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         padding: 5px;
 
     }
+    .widget-gallery [href="/banks/sent-lusia"] {
+        display: none;
+    }
+
     .vertical-menu {
         width: 200px; /* Set a width if you like */
         position: relative;

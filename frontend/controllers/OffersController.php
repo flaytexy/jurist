@@ -63,7 +63,7 @@ class OffersController extends \yii\web\Controller
             ->from('easyii_banks as ba')
             ->where("ba.status = '1' ")
             ->orderBy(['views'=> SORT_DESC])
-            ->limit(3);
+            ->limit(4);
         $command = $query->createCommand();
         $topBanks = $command->queryAll();
 
