@@ -20,6 +20,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         box-shadow:  0 4px 16px rgba(0,0,0,.5);
         background-color: #fff;
+        display: inline-block;
       /*  margin-left: 105px;
         margin-right: 105px;*/
     }
