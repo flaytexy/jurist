@@ -184,7 +184,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             <a href="<?= Url::to(['offers/'.$item->slug]) ?>">
                                                 <div class="package-thumb">
                                                     <?= Html::img($item->thumb(500, 375)) ?>
-                                                    <span><i>$<?= $item->model->price ?></i> / <? if ($item->model->how_days): ?><?= $item->model->how_days?> дней<? else: ?>Минимал<? endif; ?></span>
+                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $item->model->price ?></i><b> / <? if ($item->model->how_days): ?>Дней: <?= $item->model->how_days?><? else: ?>Минимал<? endif; ?></b></span>
                                                 </div>
                                             </a>
                                             <div class="package-detail">

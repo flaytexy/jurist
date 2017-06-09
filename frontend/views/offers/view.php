@@ -695,7 +695,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                                 <? endif ?>
                             </div>
                             <!-- <i class="fa fa-play-circle"></i>-->
-                            <strong class="per-night"><span>$</span><?= $offers->price; ?> <i>Дней: <?= $offers->model->how_days; ?></i></strong>
+                            <strong class="per-night" style="font-family: Arial"><span>€</span><?= $offers->price; ?> <i>Дней: <?= $offers->model->how_days; ?></i></strong>
                             <a href="#order-zone" class="book-btn2" title="">Заказать</a>
                             <!--<iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>-->
                             <div class="title-video alignleft">
