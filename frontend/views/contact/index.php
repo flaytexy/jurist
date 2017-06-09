@@ -116,7 +116,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
     }
 [title="Обратная связь"] {
-    width: 290px !important;
+    width: 590px !important;
 }
 
 
