@@ -535,7 +535,7 @@ transform: none;
                                             <a href="/offers/<?= $offer->model->slug ?>">
                                                 <div class="package-thumb">
                                                     <?= Html::img($offer->thumb(370, 259), array('class' => 'sadsa')) ?>
-                                                    <span><i>$<?= $offer->model->price ?></i> / <i><?= $offer->model->how_days ?></i> days </span>
+                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $offer->model->price ?></i> <b> / Дней: <i><?= $offer->model->how_days ?></i></b>  </span>
                                                 </div>
                                             </a>
                                             <div class="package-detail">
