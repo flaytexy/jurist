@@ -109,12 +109,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         padding: 50px;
     }
 
-    /*тестовое для формы*/
-    .element.style {
 
-        display: none !important;
-
-    }
 [title="Обратная связь"] {
     width: 790px !important;
 }
