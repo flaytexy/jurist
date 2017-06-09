@@ -885,7 +885,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                                 <a href="mailto:one@iq-offshore.com">one@iq-offshore.com</a></p>
                             <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-skype"></i> Skype</strong><br>
                                 <a href="skype:IQ Decision?call">IQ Decision</a></p>
-                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=10, height=70, align=left' ) )" class="theme-btn" title="">Связаться с нами</a>
+                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=left' ) )" class="theme-btn" title="">Связаться с нами</a>
                         </div>
                     </div>
                 </div>
