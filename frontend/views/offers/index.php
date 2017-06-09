@@ -156,8 +156,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             </ul>
 
                             <div class="btn abtn">
-                                <?= Html::a('Подробнее', ['offers/view', 'slug' => $item->slug], ['class'=>'btn btn-default']) ?>
+
+                             <a id="autoclicking" href="<?= Url::to(['offers/view', 'slug' => $item->slug]) ?>"><button>Подробнее</button></a>
                             </div>
+                            <!--['class'=>'btn btn-default']-->
 
                         </div>
                     </div>
@@ -219,6 +221,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             </div>
 
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     function myFunction() {
         // Declare variables

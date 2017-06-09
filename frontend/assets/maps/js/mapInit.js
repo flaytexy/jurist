@@ -160,7 +160,7 @@ $(function () {
             $('#menu-show-block-zone').show();
             $('#menu-show-block-zone .block-zone').hide();
             $('#' + myMarker[label].weburl).show();
-            $.scrollTo('#' + myMarker[label].weburl, -250);
+            $('button:visible').click();
         }
         /*onMarkerOver: function (event, code, region) {
          console.log('sdadas22');
