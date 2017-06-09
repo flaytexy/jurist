@@ -1065,15 +1065,4 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     })();
 </script>
 <!--End of Tawk.to Script-->
-
-
-<script type="text/javascript">
-    $(function(){
-        var f=$('#71136944138357')
-        f.load(function(){
-            f.contents().find('div.formFooter').hide();
-        })
-    })
-</script>
-
 <?php $this->endContent(); ?>
