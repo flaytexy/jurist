@@ -407,7 +407,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         -webkit-border-radius: 5px;
         border-radius: 5px;
     }
-    @media (max-width: 1586px) {
+    @media (max-width: 1698px) {
         .sidesidebar, .sidesidebar2 {
             display: none !important;
         }
