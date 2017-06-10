@@ -424,7 +424,8 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     #pricing-table {
         margin: 50px auto;
         text-align: center;
-        width: 50%; /* total computed width = 222 x 3 + 226 */
+        width: 100%; /* total computed width = 222 x 3 + 226 */
+        padding-left: 18%;
     }
 
     #pricing-table .plan {
