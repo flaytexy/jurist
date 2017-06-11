@@ -366,7 +366,8 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     }
 
     .widget-gallery span {
-        top: 50% !important;
+        bottom: 10px !important;
+        top: unset !important;
     }
     .widget-gallery li:before {
        content: "";
@@ -375,7 +376,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
        height: 100%;
        background: rgba(0,0,0,0.5);
    }
-    
+
 
 
     /****************/
