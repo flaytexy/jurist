@@ -349,13 +349,18 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         display: block; /* Make the links appear below each other */
         padding: 12px; /* Add some padding */
         text-decoration: none; /* Remove underline from links */
+        text-align: center;
+    }
+    .vertical-menu a:not(.active)  {
+        padding-bottom: 50px;
+        border: 1px solid #3a3a3a;
     }
 
     .vertical-menu a:hover {
         background-color: #ccc; /* Dark grey background on mouse-over */
     }
 
-    .vertical-menu a.active   {
+    .vertical-menu .active   {
         background-color: #3a3a3a; /* Add a green color to the "active/current" link */
         color: white;
     }
