@@ -22,8 +22,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         box-shadow:  0 4px 16px rgba(0,0,0,.5);
         background-color: #fff;
         display: inline-block;
-      /*  margin-left: 105px;
-        margin-right: 105px;*/
+
     }
     .package-video {
         width: 104.5% !important;
@@ -407,10 +406,35 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         -webkit-border-radius: 5px;
         border-radius: 5px;
     }
-    @media (max-width: 1698px) {
-        .sidesidebar, .sidesidebar2 {
-            display: none !important;
+.client {
+    width: 104.5% !important;
+    margin-left: -2.2%;
+}
+    @media (max-width: 1800px) {
+
+        .packages-detail {
+            max-width: 80%;
+            margin: auto;
+            margin-left: 105px;
+
         }
+        .bx-wrapper {
+            max-width: 950px !important;
+        }
+
+    }
+    @media (max-width: 1488px) {
+            .sidesidebar, .sidesidebar2 {
+                display: none !important;
+            }
+        .packages-detail {
+            margin: 0 !important;
+            max-width: none;
+        }
+        .bx-wrapper {
+            max-width: 1170px !important;
+        }
+
     }
     @media (max-width: 766px) {
        section.client {
@@ -672,19 +696,19 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             <div class="row">
 
                 <div class="col-md-12">
-                    <section class="client">
-                        <div class="container">
-                            <div class="row">
-                                <div class="carousel-client">
-                                    <?php foreach ($offersList as $itemList) : ?>
-                                        <div class="slide"><h3><a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?></a></h3></div>
-                                    <?php endforeach; ?>
+
+                    <div class="packages-detail">
+                        <section class="client">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="carousel-client">
+                                        <?php foreach ($offersList as $itemList) : ?>
+                                            <div class="slide"><h3><a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?></a></h3></div>
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                    <div class="packages-detail">
-
+                        </section>
                         <?php if (count($offers->photos) || !empty($offers->model->image)) : ?>
 
                         <div class="package-video">
