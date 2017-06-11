@@ -350,7 +350,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         padding: 12px; /* Add some padding */
         text-decoration: none; /* Remove underline from links */
     }
-    
+
     .vertical-menu a:hover {
         background-color: #ccc; /* Dark grey background on mouse-over */
     }
@@ -364,6 +364,20 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         box-shadow:  0 4px 16px rgba(0,0,0,.5);
     }
+
+    .widget-gallery span {
+        top: 50% !important;
+    }
+    .widget-gallery li:before {
+       content: "";
+       position:absolute;
+       width: 100%;
+       height: 100%;
+       background: rgba(0,0,0,0.5);
+   }
+    .widget-gallery li {
+   
+
 
     /****************/
     /*	 BX-SLIDER 	*/
