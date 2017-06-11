@@ -375,8 +375,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
        height: 100%;
        background: rgba(0,0,0,0.5);
    }
-    .widget-gallery li {
-   
+    
 
 
     /****************/
