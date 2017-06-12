@@ -717,7 +717,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                                 <div class="row">
                                     <div class="carousel-client">
                                         <?php foreach ($offersList as $itemList) : ?>
-                                            <div class="slide"><h3><a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?></a></h3></div>
+                                            <div class="slide"><h3><a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?><br><b>€<?= $itemList->model->price ?></b></a></h3></div>
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
