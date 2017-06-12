@@ -120,7 +120,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                             <li  id="reg_<?= $item->model->region_id ?>"><a href="#" class="header"><?= $region_name ?></a></li>
                         <? endif ?>
-                    <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?></a></li>
+                    <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?> / <b>€<?= $item->model->price ?> / Дней: <?= $item->model->how_days?></b></a></li>
 
                     <?php endforeach; ?>
                 </ul>
