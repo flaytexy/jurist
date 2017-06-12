@@ -681,7 +681,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                             <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
                                     <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
                                 </a>
-                                <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span></li>
+                                <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $itemList->model->price ?> / Дней: <?= $itemList->model->how_days?></b></a></span></li>
                         <?php endforeach; ?>
 
                     </ul>
