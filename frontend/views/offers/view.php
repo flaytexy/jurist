@@ -647,7 +647,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         <div class="vertical-menu">
             <a href="#" class="active">Юрисдикции</a>
             <?php foreach ($offersList as $itemList) : ?>
-                <a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?></a>
+                <a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?> <b>€<?= $itemList->model->price ?></b></a>
             <?php endforeach; ?>
         </div>
         <div class="vertical-menu-widget">
