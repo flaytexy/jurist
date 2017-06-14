@@ -374,10 +374,13 @@ $this->params['breadcrumbs'][] = $offers->model->title;
        position:absolute;
        width: 100%;
        height: 100%;
-       background: rgba(0,0,0,0.5);
+       background: rgb(0,0,0);
+        opacity: 0.6;
    }
 
-
+    #dottedbord img {
+        border: 5px dotted;
+    }
 
     /****************/
     /*	 BX-SLIDER 	*/
@@ -693,7 +696,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                     <h2>Банки</h2>
                     <span>Лучшие банковские условия</span>
                 </div>
-                <ul class="widget-gallery">
+                <ul class="widget-gallery" id="dottedbord">
                     <?php foreach($top_banks as $item) : ?>
                         <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
                                 <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
