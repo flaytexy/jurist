@@ -30,14 +30,14 @@ svg {
     padding: 3px;
     color: white;
     cursor: pointer;
-    line-height: 10px;
+    line-height: 30px;
     text-align: center;
     box-sizing: content-box;
 }
 
 .jvectormap-zoomin, .jvectormap-zoomout {
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 30px;
 }
 
 .jvectormap-zoomin {
@@ -45,7 +45,7 @@ svg {
 }
 
 .jvectormap-zoomout {
-    top: 30px;
+    top: 60px;
 }
 
 .jvectormap-goback {
