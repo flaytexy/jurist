@@ -141,7 +141,7 @@ $config = [
                     'route' => '<controller>/index',
                 ],
 
-                //'<alias:index|search|detail|result|hospital>' => 'site/<alias>',
+                //'<alias:index|search|detail|result|hospital>' => 'site/<alias>', ////
                 '<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'pages/index',
                 '<name:(licenses|offshore|processing|fonds|sale)>' => 'pages/index',
                 '<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'pages/view',
