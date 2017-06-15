@@ -129,13 +129,18 @@ class SiteController extends Controller
             'where' => ['type_id' => 4, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 2]
         ]);
+        $sale = Page::items([
+            'where' => ['type_id' => 7, 'to_main' => 1, 'status' => 1],
+            'pagination' => ['pageSize' => 10]
+        ]);
 
         return $this->render('main', [
             'offers' => $offers,
             'news' => $news,
             'licenses' => $licenses,
             'fonds' => $fonds,
-            'banks' => $banks
+            'banks' => $banks,
+            'sale' => $sale
         ]);
     }
 

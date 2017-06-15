@@ -12,7 +12,8 @@ class PagesController extends \yii\web\Controller
             'licenses' => 3,
             'fonds' => 4,
             'processing' => 5,
-            'offshore' => 6
+            'offshore' => 6,
+            'sale' => 7
         ];
 
         if(empty($type) && !empty($name)){

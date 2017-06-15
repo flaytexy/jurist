@@ -337,6 +337,7 @@ top: 250px;
                         <li><a href="/licenses" title="Лицензии">Лицензии</a></li>
                         <li><a href="/offshore" title="Оффшоры">Оффшоры</a></li>
                         <li><a href="/processing" title="Процессинг">Процессинг</a></li>
+                        <li><a href="/sale" title="Продается">Продается</a></li>
                         <li class="contact-m">
                             <div class="row">
                                 <div class="col-md-12 tel-m"><a href="tel: <?php echo str_replace(' ','',$phoneStr);?>" title="Наш телефон"><?=$phoneStr?></a></div>
@@ -377,6 +378,7 @@ top: 250px;
                             ['label' => 'Лицензии', 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
                             ['label' => 'Оффшоры', 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
                             ['label' => 'Процессинг', 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
+                            ['label' => 'Продается', 'url' => ['/sale'], 'options' => ['title' => 'Продается']],
 
                             ['label' => 'contact', 'url' => ['/contact'],
                                 'template' => '

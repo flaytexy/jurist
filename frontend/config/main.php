@@ -142,9 +142,9 @@ $config = [
                 ],
 
                 //'<alias:index|search|detail|result|hospital>' => 'site/<alias>',
-                '<name:(licenses|offshore|processing|fonds)>/page<page:\d+>' => 'pages/index',
-                '<name:(licenses|offshore|processing|fonds)>' => 'pages/index',
-                '<name:(licenses|offshore|processing|fonds)>/<slug:[\w-]+>' => 'pages/view',
+                '<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'pages/index',
+                '<name:(licenses|offshore|processing|fonds|sale)>' => 'pages/index',
+                '<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'pages/view',
 
                 '<controller:\w+>/page<page:\d+>' => '<controller>/index',
 
