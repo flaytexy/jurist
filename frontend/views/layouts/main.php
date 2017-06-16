@@ -380,16 +380,16 @@ top: 250px;
                             ['label' => 'Процессинг', 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
                             ['label' => 'Продается', 'url' => ['/sale'], 'options' => ['title' => 'Продается']],
 
-                            ['label' => 'contact', 'url' => ['/contact'],
+                           ['label' => 'contact', 'url' => ['/contact'],
                                 'template' => '
                                 <li class="contact-m">
-                                    <div class="row">
+                                <!--    <div class="row">
                                         <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a></div>
                                     </div>
                                     <div class="row back-m" onclick="location.href=\'/contact\'">
                                         Связаться с нами
                                     </div>
-                                </li>
+                                </li>-->
                                 <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
                                     <a href="skype:IQ Decision?call"><i class="fa fa-skype" aria-hidden="true"></i><br><b style="font-size: 12px">IQ Decision</b></a>
                                 </li>'
@@ -468,7 +468,15 @@ top: 250px;
                                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
                                     //['label' => 'Информация', 'url' => ['/faq']],
                                     ['label' => 'Вопросы ответы', 'url' => ['/faq']],
-                                    ['label' => 'Контакты', 'url' => ['/contact']]
+                                    ['label' => 'Контакты', 'url' => ['/contact']],
+                                    ['label' => 'contact', 'url' => ['/contact'],
+                                        'template' => '
+                                <li class="contact-m">
+                                    <div class="row">
+                                        <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a></div>
+                                    </div>
+                                </li>'
+                                    ],
                                 ],
                             ]); ?>
                         </nav>

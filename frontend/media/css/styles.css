@@ -1081,7 +1081,7 @@ header.stick .top-menus li:first-child {
 
 }
 header.stick .top-menus .contact-m {
-    padding: 3px 24px;
+  /*  padding: 3px 24px; */
 }
 header.stick .top-menus .contact-m .tel-m> a {
     color: white;
