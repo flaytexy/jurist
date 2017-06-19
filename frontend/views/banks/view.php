@@ -39,6 +39,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <?= Html::img(Image::thumb($page->photos[1]->image, 1200, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
+                                <strong class="per-night" style="font-family: Arial"><span>€</span><?= $page->price; ?> <i>Дней: <?= $page->model->how_days; ?></i></strong>
+                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title="">Заказать</a>
                                 <div class="title-video alignleft">
                                     <h1><?= $page->seo('h1', $page->title) ?></h1>
                                     <span><?= $page->seo('h1', $page->short) ?></span>

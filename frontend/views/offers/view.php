@@ -738,7 +738,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                             </div>
                             <!-- <i class="fa fa-play-circle"></i>-->
                             <strong class="per-night" style="font-family: Arial"><span>€</span><?= $offers->price; ?> <i>Дней: <?= $offers->model->how_days; ?></i></strong>
-                            <a href="#order-zone" class="book-btn2" title="">Заказать</a>
+                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title="">Заказать</a>
                             <!--<iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>-->
                             <div class="title-video alignleft">
                                 <h1><?= $offers->seo('h1', $offers->title) ?></h1>
