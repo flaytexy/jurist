@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 ?>
 
 <div class="container">
-    <h1><?= $page->seo('h1', $page->title) ?></h1>
+    <!--<h1></*?= $page->seo('h1', $page->title) ?*/></h1>-->
     <?php if($page->text): ?><div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
 </div>
 
