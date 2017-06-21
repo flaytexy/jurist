@@ -23,14 +23,27 @@ if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
 
 
 $this->params['breadcrumbs'][] = $page->model->title;
+$this->params['seo'][] = $page->seo('keywords');
 
 ?>
 
-<div class="container">
-    <!--<h1></*?= $page->seo('h1', $page->title) ?*/></h1>-->
+<div class="container" id="h1text">
+    <h1><?= $page->seo('h1', $page->title) ?></h1>
     <?php if($page->text): ?><div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
 </div>
+<style>
+    #h1text{
+        margin: auto;
+        text-align: center !important;
 
+    }
+
+    #h1text h1{
+        font-family: unset !important;
+        font-size: 30px;
+        border-bottom: 2px solid;
+    }
+</style>
 <section id="pages" class="content-zone top20">
     <div class="container">
         <div class="row">
