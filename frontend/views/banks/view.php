@@ -712,7 +712,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
     .ribbon {
         font: bold 15px Sans-Serif;
-        color: #333;
+        color: #ffffff;
         text-align: center;
         text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
         -webkit-transform: rotate(-45deg);
@@ -724,14 +724,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         left: -30px;
         top: 13px;
         width: 120px;
-        background: rgb(255,255,255);
-        background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(204,204,204,1) 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(204,204,204,1)));
-        background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
-        background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
-        background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
-        background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
-        color: #6a6340;
+        background: #7dc20f;
         -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
         -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
         box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
