@@ -714,7 +714,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         font: bold 15px Sans-Serif;
         color: #ffffff;
         text-align: center;
-        text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+      /*  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px; */
         -webkit-transform: rotate(-45deg);
         -moz-transform:    rotate(-45deg);
         -ms-transform:     rotate(-45deg);
