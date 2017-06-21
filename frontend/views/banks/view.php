@@ -209,6 +209,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
         counter-increment: li-counter;
     }
 
+    .simlist li {
+        color: black;
+        font-size: 20px;
+    }
+
     .packages-detail .table-fill {
         background: white;
         border-radius:3px;

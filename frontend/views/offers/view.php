@@ -148,6 +148,10 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         content: '\f00c';
         counter-increment: li-counter;
     }
+    .simlist li {
+        color: black;
+        font-size: 20px;
+    }
 
     .packages-detail .table-fill {
         background: white;
