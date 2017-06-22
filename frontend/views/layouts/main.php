@@ -536,7 +536,7 @@ top: 250px;
                     ['label' => 'Компании', 'url' => ['/offshornyie-predlozheniya']],
                     ['label' => 'Лицензии', 'url' => ['/licenses']],
                     ['label' => 'Мерчант', 'url' => ['/processing']],
-                    ['label' => 'Продается', 'url' => ['/sale']],
+                    ['label' => 'Продается готовое', 'url' => ['/sale']],
                     //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                     //['label' => 'Shop', 'url' => ['shop/index']],
                     ['label' => 'Новости', 'url' => ['/news']],
