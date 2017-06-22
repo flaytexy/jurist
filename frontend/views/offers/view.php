@@ -13,7 +13,9 @@ $this->params['breadcrumbs'][] = $offers->model->title;
       xmlns="http://www.w3.org/1999/html">
 
 <style>
-
+    .title-video h1 {
+        color: white !important;
+    }
     .packages-detail {
         padding-left: 25px !important;
         padding-right: 25px !important;
