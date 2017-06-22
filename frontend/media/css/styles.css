@@ -5971,6 +5971,9 @@ ul.Social-btn {
 .title-video > h1 > span {
     color: #fff;
 }
+.title-video > h1 {
+    color: #fff;
+}
 
 .package-video::before {
     background: #000000 none repeat scroll 0 0;
