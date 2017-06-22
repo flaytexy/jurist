@@ -73,8 +73,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
     </div>
 </section>
 <style>
-    .title-video {
-        color: white;
+    .title-video h1 {
+        color: white !important;
     }
     .packages-detail {
         padding-left: 25px !important;
