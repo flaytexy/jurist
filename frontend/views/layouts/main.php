@@ -467,7 +467,6 @@ top: 250px;
                                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
                                     //['label' => 'Информация', 'url' => ['/faq']],
-                                    ['label' => 'Продается', 'url' => ['/sale']],
                                     ['label' => 'Вопросы ответы', 'url' => ['/faq']],
                                     ['label' => 'Контакты', 'url' => ['/contact']],
                                     ['label' => 'contact', 'url' => ['/contact'],
