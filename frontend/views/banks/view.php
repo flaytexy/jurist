@@ -25,6 +25,15 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 <section>
     <div class="block">
+        <div class="sidesidebar">
+            <div class="vertical-menu">
+                <a href="#" class="active">Банки</a>
+                <?php foreach ($banksPist as $itemList) : ?>
+                    <a href="<?= Url::to(['banks/'.$itemList->slug]) ?>"><?=$itemList->title?> <b>€<?= $itemList->model->price ?></b></a>
+                <?php endforeach; ?>
+            </div>
+
+        </div>
         <div class="container">
             <!-- 1-block -->
             <div class="row">

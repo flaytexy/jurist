@@ -56,6 +56,8 @@ class BanksController extends \yii\web\Controller
 
     public function actionView($slug)
     {
+
+
         $this->getView()->registerJsFile(\Yii::$app->request->BaseUrl . '/js/site.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
         $banks = Banks::get($slug);
@@ -71,8 +73,15 @@ class BanksController extends \yii\web\Controller
         $popularly->time = time();
         $popularly->save();
 
+        $type_id = \Yii::$app->request->get('type_id');
+        if(empty($type_id))
+            $type_id = 1;
+
+        $banksPist = Banks::items(['list' => 1, 'type_id' => (int)$type_id]);
+
         return $this->render('view', [
-            'page' => $banks
+            'page' => $banks,
+            'banksPist' => $banksPist
         ]);
     }
 
