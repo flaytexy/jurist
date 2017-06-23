@@ -91,6 +91,17 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <div class="row">
                 <div class="col-md-12">
                     <div class="packages-detail">
+                        <section class="client">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="carousel-client">
+                                        <?php foreach ($banksPist as $itemList) : ?>
+                                            <div class="slide"><h3><a href="<?= Url::to(['banks/'.$itemList->slug]) ?>"><?=$itemList->title?><br><b>€<?= $itemList->model->price ?></b></a></h3></div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                         <?php if (count($page->photos) || !empty($page->model->image)) : ?>
                             <div class="package-video">
                                 <div>
@@ -861,3 +872,14 @@ $this->params['breadcrumbs'][] = $page->model->title;
         </form>
     </div>
 </div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script>
+<script>
+    $('.carousel-client').bxSlider({
+        auto: true,
+        slideWidth: 234,
+        minSlides: 2,
+        maxSlides: 5,
+        controls: false
+    });
+</script>
