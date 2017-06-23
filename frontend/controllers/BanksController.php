@@ -5,7 +5,8 @@ use frontend\modules\banks\api\Banks;
 use yii\data\Pagination;
 use yii\web\View;
 use yii\widgets\LinkPager;
-
+use frontend\modules\page\models\Page as PageModel;
+use frontend\modules\page\api\PageObject;
 class BanksController extends \yii\web\Controller
 {
 
@@ -57,6 +58,46 @@ class BanksController extends \yii\web\Controller
     public function actionView($slug)
     {
 
+        $topNews = [];
+        foreach(PageModel::find()
+                    ->andWhere(['type_id' => '2'])
+                    ->status(PageModel::STATUS_ON)
+                    ->sortDate()->limit(5)->all() as $item){
+            $obj = new PageObject($item);
+            $topNews[] = $obj;
+        }
+
+        // Banks
+        //$topOffers = Offers::find(2)->asArray()->all();
+        $query = new \yii\db\Query;
+        $query->select('*')
+            ->from('easyii_banks as ba')
+            ->where("ba.status = '1' ")
+            ->orderBy(['views'=> SORT_DESC])
+            ->limit(2);
+        $command = $query->createCommand();
+        $topBanks = $command->queryAll();
+
+        // Offers
+        $query = new \yii\db\Query;
+        $query->select('*')
+            ->from('easyii_offers as of')
+            ->where("of.status = '1' ")
+            ->orderBy(['views'=> SORT_DESC])
+            ->limit(3);
+        $command = $query->createCommand();
+        $topOffers = $command->queryAll();
+
+        // Categories Left Menu
+        $query = new \yii\db\Query;
+        $query->select('ept.title as parent_title, ept.*, ept2.*,
+                (SELECT count(p.page_id) as count FROM easyii_pages as p
+                    WHERE p.category_id = ept2.category_id) as counter
+            ')
+            ->from('easyii_pages_categories as ept')
+            ->join('RIGHT JOIN', 'easyii_pages_categories as ept2', 'ept2.parent_id = ept.category_id')
+            ->where("ept2.type_id = '2' and ept2.category_id != '2' ")
+            ->limit(20);
 
         $this->getView()->registerJsFile(\Yii::$app->request->BaseUrl . '/js/site.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
@@ -81,7 +122,10 @@ class BanksController extends \yii\web\Controller
 
         return $this->render('view', [
             'page' => $banks,
-            'banksPist' => $banksPist
+            'banksPist' => $banksPist,
+            'top_banks' => $topBanks,
+            'top_offers' => $topOffers,
+            'top_news' => $topNews
         ]);
     }
 
