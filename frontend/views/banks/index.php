@@ -38,6 +38,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
     </div>
 <style>
     .package-thumb > span {
+        font-family: Arial, Arial, Helvetica, Tahoma, sans-serif;
         -webkit-transform: translateY(-240%) translateX(-40%);
         -moz-transform: translateY(-240%) translateX(-40%);
         -ms-transform: translateY(-240%) translateX(-40%);
@@ -219,7 +220,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                                                 <div class="package-thumb">
                                                     <?= Html::img($item->thumb(240, 120)) ?>
-                                                    <span><? if ($item->model->countries[0]->name_ru): ?><?= $item->model->countries[0]->name_ru ?><? else: ?><?= $item->model->location_title ?><?  endif;  ?></span>
+                                                    <span><b><? if ($item->model->countries[0]->name_ru): ?><?= $item->model->countries[0]->name_ru ?><? else: ?><?= $item->model->location_title ?><?  endif;  ?></b></span>
                                                 </div>
                                                 <div class="package-detail">
                                                     <!--                                            <span class="cate">
