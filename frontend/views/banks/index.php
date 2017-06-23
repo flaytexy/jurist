@@ -36,7 +36,15 @@ $this->params['breadcrumbs'][] = $page->model->title;
         <?php if ($page->text): ?>
             <div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
     </div>
-
+<style>
+    .package-thumb > span {
+        -webkit-transform: translateY(-240%) translateX(-40%);
+        -moz-transform: translateY(-240%) translateX(-40%);
+        -ms-transform: translateY(-240%) translateX(-40%);
+        -o-transform: translateY(-240%) translateX(-40%);
+        transform: translateY(-240%) translateX(-40%);
+    }
+</style>
     <section id="banks2" class="scroll-container">
         <div class="container">
             <div class="row top30">
@@ -211,7 +219,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                                                 <div class="package-thumb">
                                                     <?= Html::img($item->thumb(240, 120)) ?>
-                                                    <!--<span><i>$<? /*= $item->model->price */ ?></i> / <? /* if ($item->model->how_days): */ ?><? /*= $item->model->how_days*/ ?><? /* else: */ ?>Минимал<? /* endif; */ ?></span>-->
+                                                    <span><? if ($item->model->countries[0]->name_ru): ?><?= $item->model->countries[0]->name_ru ?><? else: ?><?= $item->model->location_title ?><?  endif;  ?></span>
                                                 </div>
                                                 <div class="package-detail">
                                                     <!--                                            <span class="cate">
