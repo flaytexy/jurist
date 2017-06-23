@@ -518,7 +518,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
     }
 
     #dottedbord img {
-        border: 5px dotted;
+        border: 3px solid;
+        border-color: #2e2e2e;
     }
 
     /****************/
