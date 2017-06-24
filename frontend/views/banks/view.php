@@ -147,6 +147,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <style>
     .title-video h1 {
         color: white !important;
+        font-size: 14px !important;
     }
     .packages-detail {
         padding-left: 25px !important;
