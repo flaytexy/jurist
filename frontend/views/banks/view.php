@@ -80,17 +80,17 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             <img src="/uploads/thumbs/bos-817b19a95b-8ffb468a6f6f9b0c2fe0db063e28f0c3 copy 1.jpg" alt="">                            </a>
                         <span><a href="/banks/bos-bank">BOS Bank</a></span> </li>
                     <li><a href="/banks/unicredit-bank">
-                            <img height="200" width="300" src="/uploads/thumbs/bankunicr-9e4e0a8a91-80ee532e1694a82cf90524de4ef8ff41.jpg" alt="">                            </a>
+                            <img src="/uploads/thumbs/unicredit-bank3-60b634a9c9-8d07f1d34deefa3f1b85fed308aba442 copy 1.jpg" alt="">                            </a>
                         <span><a href="/banks/unicredit-bank">UniCredit Bank</a></span> </li>
                     <li><a href="/banks/csob">
-                            <img height="200" width="300" src="/uploads/thumbs/cso-961be587b1-f419f0159bf6840e597ba21c7925f28e.jpg" alt="">                            </a>
+                            <img src="/uploads/thumbs/cso-961be587b1-1189b7f6a3891cf871616f07bd337feb copy 1.jpg" alt="">                            </a>
                         <span><a href="/banks/csob">CSOB</a></span> </li>
-                    <?php foreach($top_banks as $item) : ?>
-                        <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+
+                       <!-- <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
+                                </*?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
                             </a>
-                            <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
-                    <?php endforeach; ?>
+                            <span><a href="</*?= Url::to(['banks/'.$item['slug']]) ?>"></*?= $item['title'] ?></a></span> </li>-->
+                    
 
                 </ul>
             </div><!-- Widget2 -->
