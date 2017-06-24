@@ -77,13 +77,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 </div>
                 <ul class="widget-gallery" id="dottedbord">
                     <li><a href="/banks/bos-bank">
-                            <img src="/uploads/thumbs/bos-90a0789aea-5b5688b4103340b0c445c4d0d18a5809.jpg" alt="">                            </a>
+                            <img height="200" width="300" src="/uploads/thumbs/bos-90a0789aea-5b5688b4103340b0c445c4d0d18a5809.jpg" alt="">                            </a>
                         <span><a href="/banks/bos-bank">BOS Bank</a></span> </li>
                     <li><a href="/banks/unicredit-bank">
-                            <img src="/uploads/thumbs/bankunicr-9e4e0a8a91-80ee532e1694a82cf90524de4ef8ff41.jpg" alt="">                            </a>
+                            <img height="200" width="300" src="/uploads/thumbs/bankunicr-9e4e0a8a91-80ee532e1694a82cf90524de4ef8ff41.jpg" alt="">                            </a>
                         <span><a href="/banks/unicredit-bank">UniCredit Bank</a></span> </li>
                     <li><a href="/banks/csob">
-                            <img src="/uploads/thumbs/cso-961be587b1-f419f0159bf6840e597ba21c7925f28e.jpg" alt="">                            </a>
+                            <img height="200" width="300" src="/uploads/thumbs/cso-961be587b1-f419f0159bf6840e597ba21c7925f28e.jpg" alt="">                            </a>
                         <span><a href="/banks/csob">CSOB</a></span> </li>
                     <?php foreach($top_banks as $item) : ?>
                         <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
