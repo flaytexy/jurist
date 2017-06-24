@@ -38,6 +38,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
     </div>
 <style>
     .package-thumb > span {
+        font-size: 14px;
         font-family: Arial, Arial, Helvetica, Tahoma, sans-serif;
         -webkit-transform: translateY(-240%) translateX(-40%);
         -moz-transform: translateY(-240%) translateX(-40%);
