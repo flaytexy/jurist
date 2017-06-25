@@ -89,12 +89,58 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     </div>
                 </form>
             </div>
+<style>
+    #tpb {
+        position: absolute;
+        top: 284px;
+        left: -281px;
+        transform: rotate(-90deg);
+    }
+    #tpb h3
+    {
+        font-size: .8em;
+        font-weight: bold;
+        position: relative;
+        margin: -26px 0 0 0;
+        float: right;
+        color: #222;
+        padding: 10px 250px;
+        text-shadow: 0 1px rgba(255,255,255,.8);
+        background: rgb(255,255,255);
+        background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(204,204,204,1) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(204,204,204,1)));
+        background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
+        background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
+        background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
+        background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
+        -moz-box-shadow: 0 2px 2px #ccc;
+        -webkit-box-shadow: 0 2px 2px #ccc;
+        box-shadow: 0 2px 2px #ccc;
+    }
 
+    #tpb h3:before, #tpb h3:after{
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-color: transparent;
+    }
+/*  #tpb h3:before{
+        left: -6px;
+        top: 0;
+        border-color: transparent #555 #555 transparent;
+        border-style: solid;
+    }*/
+
+</style>
             <div class="row bank-new-list">
                 <div class="col-md-12" id="switchAllBanks">
-                    <table data-region-assign="reg_3" class="table reg_3 table-bordered 1_0_0.00 js-filter-marker" js-filter-type-id="0" js-filter-personal="0" js-filter-min-deposit="0" style="display: table;">
+                 <table data-region-assign="reg_3" class="table reg_3 table-bordered 1_0_0.00 js-filter-marker" js-filter-type-id="0" js-filter-personal="0" js-filter-min-deposit="0" style="display: table;">
+
+
                         <tbody><tr>
+
                             <td class="col-md-8 col-lg-2">
+                                <div id="tpb"> <h3>TOP BANKS</h3></div>
                                 <h6>
                                     <a href="/banks/ceska-sporitelna-bank">Ceska Sporitelna Bank</a>                                    </h6>
 
