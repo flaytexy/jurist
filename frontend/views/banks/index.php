@@ -92,30 +92,29 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <style>
     #tpb {
         position: absolute;
-        top: 284px;
+        top: 295px;
         left: -281px;
         transform: rotate(-90deg);
     }
     #tpb h3
     {
-        font-size: .8em;
+        font-size: 1em;
         font-weight: bold;
         position: relative;
-        margin: -26px 0 0 0;
+        margin: -35px 0 0 0;
         float: right;
         color: #222;
         padding: 10px 250px;
         text-shadow: 0 1px rgba(255,255,255,.8);
-        background: rgb(255,255,255);
-        background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(204,204,204,1) 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(204,204,204,1)));
-        background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
-        background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
-        background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
-        background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(204,204,204,1) 100%);
-        -moz-box-shadow: 0 2px 2px #ccc;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,7dc20f+100&0+0,1+100 */
+        background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(125,194,15,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(125,194,15,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(125,194,15,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#7dc20f',GradientType=1 ); /* IE6-9 */
+
+      /*  -moz-box-shadow: 0 2px 2px #ccc;
         -webkit-box-shadow: 0 2px 2px #ccc;
-        box-shadow: 0 2px 2px #ccc;
+        box-shadow: 0 2px 2px #ccc;*/
     }
 
     #tpb h3:before, #tpb h3:after{
