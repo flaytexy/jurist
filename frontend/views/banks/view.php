@@ -90,7 +90,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 </*?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
                             </a>
                             <span><a href="</*?= Url::to(['banks/'.$item['slug']]) ?>"></*?= $item['title'] ?></a></span> </li>-->
-                    
+
 
                 </ul>
             </div><!-- Widget2 -->

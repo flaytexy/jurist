@@ -92,7 +92,6 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
             <div class="row bank-new-list">
                 <div class="col-md-12" id="switchAllBanks">
-                    <div class="h4 top20 region-id-mark" id="reg_3" style="display: block;">Top Banks</div>
                     <table data-region-assign="reg_3" class="table reg_3 table-bordered 1_0_0.00 js-filter-marker" js-filter-type-id="0" js-filter-personal="0" js-filter-min-deposit="0" style="display: table;">
                         <tbody><tr>
                             <td class="col-md-8 col-lg-2">
