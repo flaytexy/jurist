@@ -303,7 +303,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         border-collapse: collapse;
         height: 320px;
         border-top: 1px solid #dbe6ee;
-        margin-top: -3%;
+        margin-top: -2%;
         margin-left: -2.233%;
         padding:5px;
         width: 104.6%;
