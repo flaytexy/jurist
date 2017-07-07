@@ -40,7 +40,7 @@ $this->params['seo'][] = $page->seo('keywords');
         border-bottom: 2px solid;
     }
 
-   
+
 </style>
 <section id="pages" class="content-zone top20">
     <div class="container">

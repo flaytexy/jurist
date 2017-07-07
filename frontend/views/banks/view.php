@@ -230,7 +230,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
     ol.simlist > li{
         position: relative;
         margin-bottom:  0.5em;
-        padding: 1.5em;
+        padding: 0.7em;
         background-color: #eaeaea;
     }
     ol.simlist > li:before {
@@ -267,7 +267,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
     ul.simlist > li{
         position: relative;
         margin-bottom:  0.5em;
-        padding: 1.5em;
+        padding: 0.7em;
         background-color: #eaeaea;
     }
     ul.simlist > li:before {
