@@ -176,7 +176,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
     }
     .titlebg {
         background: rgba(157, 187, 63, 0.85);
-        padding: 3.5% 0 2.5% 0;
+        padding: 0.5% 0 0.5% 0;
         font-size: 20px;
         font-family: 'Roboto Condensed', sans-serif;
         text-transform: uppercase;

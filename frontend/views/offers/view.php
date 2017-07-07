@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
 
     .titlebg {
         background: rgb(125, 194, 15);
-        padding: 3.5% 0 2.5% 0;
+        padding: 0.5% 0 0.5% 0;
         font-size: 20px;
         font-family: 'Roboto Condensed', sans-serif;
         text-transform: uppercase;
