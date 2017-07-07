@@ -152,7 +152,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     }
     .simlist li {
         color: black;
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .packages-detail .table-fill {
