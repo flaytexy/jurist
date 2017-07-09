@@ -232,7 +232,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
 
     .packages-detail td {
         background:#FFFFFF;
-        padding:20px;
+        padding:10px;
         text-align:left;
         vertical-align:middle;
         font-weight:300;
