@@ -695,9 +695,9 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
             position:absolute !important;
             top: 20px !important;
             margin:auto !important;
-
+            left: 8.9px;
         }
-      
+
         .gsc-search-button {
             display: none;
         }
