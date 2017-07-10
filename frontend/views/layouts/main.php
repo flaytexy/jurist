@@ -426,7 +426,7 @@ top: 250px;
                         </div>
                         <?php ActiveForm::end(); ?>
                         <? endif ?>
-                      <!-- <script>
+                      <script>
                             (function () {
                                 var cx = '014824414261944164439:sfk3fpa6eoq';
                                 var gcse = document.createElement('script');
@@ -440,7 +440,7 @@ top: 250px;
                             })();
                         </script>
                         <gcse:search></gcse:search>
-                        <i class="fa fa-search" aria-hidden="true"></i>-->
+                        <i class="fa fa-search" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-7 ">
                         <nav class="navbar22 navbar-default22">
