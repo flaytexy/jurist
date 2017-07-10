@@ -435,9 +435,12 @@ top: 250px;
                                 gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
                                 var s = document.getElementsByTagName('script')[0];
                                 s.parentNode.insertBefore(gcse, s);
+                                var x = document.getElementsByClassName('gsc-search-button');
+                                x.replaceWith( "<h2>New heading</h2>" );
                             })();
                         </script>
                         <gcse:search></gcse:search>
+                        <i class="fa fa-search" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-7 ">
                         <nav class="navbar22 navbar-default22">
@@ -688,6 +691,16 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     </script>
 
     <style>
+        .row .fa  {
+            position:absolute !important;
+            top: 20px !important;
+            margin:auto !important;
+
+        }
+      
+        .gsc-search-button {
+            display: none;
+        }
         #map {
             width: 100%;
             height: 360px;
@@ -977,7 +990,9 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 
 <style type="text/css">
-
+    input[type="submit"] {
+        font-family: FontAwesome;
+    }
     .scrollToTop{
         width:70px;
         margin-right: -10px;
@@ -1003,7 +1018,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     }
 
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
 
@@ -1050,6 +1065,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 
     });
+
 
 
 </script>
