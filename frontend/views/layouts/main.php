@@ -249,7 +249,9 @@ top: 250px;
     .skype {
         padding-top: 6px;
     }
-
+    .gsc-adBlock {
+        display: none;
+    }
     @media (max-width: 1000px) {
         .top-bar {
             display: none;
@@ -424,7 +426,7 @@ top: 250px;
                         </div>
                         <?php ActiveForm::end(); ?>
                         <? endif ?>
-        <!--                <script>
+                       <script>
                             (function () {
                                 var cx = '014824414261944164439:sfk3fpa6eoq';
                                 var gcse = document.createElement('script');
@@ -435,7 +437,7 @@ top: 250px;
                                 s.parentNode.insertBefore(gcse, s);
                             })();
                         </script>
-                        <gcse:search></gcse:search>-->
+                        <gcse:search></gcse:search>
                     </div>
                     <div class="col-md-7 ">
                         <nav class="navbar22 navbar-default22">
