@@ -691,7 +691,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     </script>
 
     <style>
-        .row .fa  {
+       header .row .fa  {
             position:absolute !important;
             top: 20px !important;
             margin:auto !important;
