@@ -438,8 +438,7 @@ top: 250px;
                                 gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
                                 var s = document.getElementsByTagName('script')[0];
                                 s.parentNode.insertBefore(gcse, s);
-                                var x = document.getElementsByClassName('gsc-search-button');
-                                x.replaceWith( "<h2>New heading</h2>" );
+
                             })();
                         </script>
                         <gcse:search></gcse:search>
@@ -532,6 +531,18 @@ top: 250px;
         </div>
         <div class="responsive-menu ps-container" data-ps-id="3359a5b1-f4a3-6575-dffa-5413f2e717d2">
             <span class="close-btn"><i class="fa fa-close"></i></span>
+            <script>
+                (function () {
+                    var cx = '014824414261944164439:sfk3fpa6eoq';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+            </script>
+            <gcse:search></gcse:search>
             <?= Menu::widget([
                 'options' => ['class' => 'nav navbar-nav'],
                 'items' => [
@@ -554,6 +565,7 @@ top: 250px;
                     ['label' => 'Контакты', 'url' => ['/contact']]
                 ],
             ]); ?>
+
             <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
                 <div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
             </div>
