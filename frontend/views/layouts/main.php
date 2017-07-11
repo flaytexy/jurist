@@ -246,6 +246,9 @@ top: 250px;
 
 <? endif ?>
 <style>
+#rc-phone {
+    left: 20px !important;
+}
     .skype {
         padding-top: 6px;
     }
