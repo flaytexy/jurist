@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 $this->title = $news->seo('title', $news->model->title);
-$this->params['breadcrumbs'][] = ['label' => 'News', 'url' => ['/news']];
+$this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/news']];
 $this->params['breadcrumbs'][] = $news->model->title;
 ?>
 
