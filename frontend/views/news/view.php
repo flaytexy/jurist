@@ -22,9 +22,9 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                     <div class="blogpost-detail">
                                         <ul class="post-meta style2">
                                             <li><i class="fa fa-calendar"></i> <?= $news->date ?></li>
-                                            <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>
+                                        <!--    <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>-->
                                             <li><i class="fa fa-comment"></i><a href="#" title=""><?= $news->views?> Views</a></li>
-                                            <li><i class="fa fa-comment"></i><a href="#" title="">03 Comments</a></li>
+                                         <!--   <li><i class="fa fa-comment"></i><a href="#" title="">03 Comments</a></li>-->
                                         </ul>
 
 

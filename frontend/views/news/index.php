@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             </h4>
                                             <ul class="post-meta">
                                                 <li><i class="fa fa-calendar"></i> <?= $item->date ?></li>
-                                                <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>
+                                               <!--<li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>-->
                                             </ul>
                                         </div>
                                     </div>
