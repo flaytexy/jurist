@@ -4695,7 +4695,9 @@ footer .title1.style2 > h2 {
 }
 
 .blog-post2 > img {
-    width: 100%;
+   /* width: 100%; */
+    max-width: 100%;
+    height: auto;
 }
 
 .blog-post2 .blogpost-detail {
