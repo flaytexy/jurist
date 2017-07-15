@@ -246,6 +246,20 @@ top: 250px;
 
 <? endif ?>
 <style>
+    .lenta {
+        position: absolute;
+        top: 40px;
+        background: #a90329;
+        background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
+        background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+        background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
+        height: 26px;
+        padding-top: 3px;
+        color: white;
+        box-shadow: 0px 1px 1px 0px #0a0000;
+        left: 8px;
+    }
 #rc-phone {
     right: 50% !important;
 }
@@ -480,7 +494,7 @@ top: 250px;
                                         'template' => '
                                 <li class="contact-m">
                                     <div class="row">
-                                        <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a></div>
+                                        <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a><p class="lenta">Бесплатная консультация!</p></div>
                                     </div>
                                 </li>'
                                     ],
