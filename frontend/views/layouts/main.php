@@ -259,6 +259,7 @@ top: 250px;
         color: white;
         box-shadow: 0px 1px 1px 0px #0a0000;
         left: 8px;
+        white-space: nowrap;
     }
 #rc-phone {
     right: 50% !important;
