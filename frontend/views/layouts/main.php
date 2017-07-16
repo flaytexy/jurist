@@ -261,6 +261,9 @@ top: 250px;
         left: 8px;
         white-space: nowrap;
     }
+    #logomenu-sec .navbar22 > ul li .tel-m a:hover {
+        border: 3px solid #a90329;
+    }
 #rc-phone {
     right: 50% !important;
 }
