@@ -4720,6 +4720,13 @@ footer .title1.style2 > h2 {
     margin-right: 50px;
 }
 
+
+/*NEWS FONT FOR DELETE PADDING */
+.recent-news h4 {
+    font-size: 17.7px;
+}
+/*END OF NEWS FONT FOR DELETE PADDING*/
+
 .post-meta.style2 > li:last-child {
     margin-right: 0;
 }
