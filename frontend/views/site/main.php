@@ -596,19 +596,108 @@ transform: none;
                             <div class="col-md-7">
                                 <div class="we-offers">
                                     <div class="row">
-                                        <? foreach ($banks as $item): ?>
+                                        <div class="col-md-6">
+                                            <div class="offered-service" onclick="location.href='/banks/fio'">
+                                                <img class="main-banks" src="/uploads/thumbs/fiobanka1-1c2825cc96-c21c2573ddfd3d521286cffdd8a7f314.jpg" alt="">                                                    <div class="offered-serviceinfo">
+                                                    <h4><a href="/banks/fio" title="">FIO</a></h4>
+                                                    <span style="font-weight: bold; font-size: large; color: white">Чехия</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1900</span>
+                                                    <h4>Корпоративный счет</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="offered-service" onclick="location.href='/banks/bos-bank'">
+                                                <img class="main-banks" src="/uploads/thumbs/bos-90a0789aea-6bfeabe44541d9a377881c3542936ebd.jpg" alt="">                                                    <div class="offered-serviceinfo">
+                                                    <h4><a href="/banks/bos-bank" title="">BOS Bank</a></h4>
+                                                    <span style="font-weight: bold; font-size: large; color: white">Польша</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€700</span>
+                                                    <h4>Корпоративный счет</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="offered-service" onclick="location.href='/banks/lihtenshteyn'">
+                                                <img class="main-banks" src="/uploads/thumbs/bankalpinum-a7a8f324b9-93fb67177d3f8829dd1ea589a0a4fccc.jpg" alt="">                                                    <div class="offered-serviceinfo">
+                                                    <h4><a href="/banks/lihtenshteyn" title="">Alpinum</a></h4>
+                                                    <span style="font-weight: bold; font-size: large; color: white">Лихтенштейн</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1750</span>
+                                                    <h4>Корпоративный счет</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="offered-service" onclick="location.href='/banks/latvijas-pasta-banka'">
+                                                <img class="main-banks" src="/uploads/thumbs/latvijas-pasta-banka7-de3aa97e63-1f9c19c01c4c681221f860488ee8174d.jpg" alt="">                                                    <div class="offered-serviceinfo">
+                                                    <h4><a href="/banks/latvijas-pasta-banka" title="">Latvijas pasta banka</a></h4>
+                                                    <span style="font-weight: bold; font-size: large; color: white">Латвия</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€300</span>
+                                                    <h4>Корпоративный счет</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="offered-service" onclick="location.href='/banks/csob'">
+                                                <img class="main-banks" src="/uploads/thumbs/cso-961be587b1-6be08afb13b46eb1b3b28754911f7af2.jpg" alt="">                                                    <div class="offered-serviceinfo">
+                                                    <h4><a href="/banks/csob" title="">CSOB</a></h4>
+                                                    <span style="font-weight: bold; font-size: large; color: white">Чехия</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1800</span>
+                                                    <h4>Корпоративный счет</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="offered-service" onclick="location.href='/banks/unicredit-bank'">
+                                                <img class="main-banks" src="/uploads/thumbs/bankunicr-9e4e0a8a91-66bd388ffb0d5e4eac73ab5e018ab7d0.jpg" alt="">                                                    <div class="offered-serviceinfo">
+                                                    <h4><a href="/banks/unicredit-bank" title="">UniCredit Bank</a></h4>
+                                                    <span style="font-weight: bold; font-size: large; color: white">Чехия</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1700</span>
+                                                    <h4>Корпоративный счет</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="offered-service" onclick="location.href='/banks/cim'">
+                                                <img class="main-banks" src="/uploads/thumbs/cimbank-b91b2de9c0-04cadc2e4d8863670f28cc93d0fd4c85.jpg" alt="">                                                    <div class="offered-serviceinfo">
+                                                    <h4><a href="/banks/cim" title="">C.I.M.</a></h4>
+                                                    <span style="font-weight: bold; font-size: large; color: white">Швейцария</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1200</span>
+                                                    <h4>Корпоративный счет</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-md-6">
+                                            <div class="offered-service">
+                                                <img src="/uploads/theme_villa/offered-service6.jpg" alt="">
+
+                                                <div class="offered-serviceinfo">
+                                                    <h4><a href="/banks" title="">Другие банки</a></h4>
+                                                    <!--<span>banks</span>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div class="we-offers">
+                                    <div class="row">
+                                        </*? foreach ($banks as $item): ?>
                                             <div class="col-md-6">
                                                 <div class="offered-service" onclick="location.href='/banks/<?= $item->model->slug ?>'">
-                                                    <?= Html::img($item->thumb(300, 190), array('class' => 'main-banks')) ?>
+                                                    </*?= Html::img($item->thumb(300, 190), array('class' => 'main-banks')) ?>
                                                     <div class="offered-serviceinfo">
-                                                        <h4><a href="/banks/<?= $item->model->slug ?>"
-                                                               title=""><?= $item->model->title ?></a></h4>
+                                                        <h4><a href="/banks/</*?= $item->model->slug ?>"
+                                                               title=""></*?= $item->model->title ?></a></h4>
                                                         <span style="font-weight: bold; font-size: large; color: white"><?= $item->model->location_title ?></span>
                                                         <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€<?= $item->price ?></span>
                                                     </div>
                                                 </div>
                                             </div>
-                                        <? endforeach; ?>
+                                        </*? endforeach; ?>
 
                                         <div class="col-md-6">
                                             <div class="offered-service">
@@ -621,7 +710,7 @@ transform: none;
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <!-- We Offers -->
                             </div>
                         </div>
