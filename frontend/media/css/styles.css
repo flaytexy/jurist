@@ -6119,7 +6119,8 @@ ul.Social-btn {
 }
 
 .packages-detail > p {
-    color: #666666;
+    /*color: #666666;*/
+    color: #000;
 /*    float: left;*/
     /*width: 100%;*/
 }
