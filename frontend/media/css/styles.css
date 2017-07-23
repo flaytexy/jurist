@@ -4839,8 +4839,8 @@ footer .title1.style2 > h2 {
 }
 
 .blogpost-detail > p, .blogpost-detail .text-con p {
-    color: #666666;
-
+   /* color: #666666;*/
+    color: #000000;
     /*    line-height: 28px;*/
     width: 100%;
 }
