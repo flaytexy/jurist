@@ -55,7 +55,8 @@ p {
 
 ul li,
 ol li {
-    color: #666666;
+   /* color: #666666;*/
+    color: #000;
     /*    list-style-position: inside;*/
 }
 
