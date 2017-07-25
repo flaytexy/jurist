@@ -1077,7 +1077,7 @@ transform: none;
 </section>
 <style>
     .ticker__viewport {
-      border-bottom: solid #7ec211;
+      border-bottom: solid #c21b00;
         color: #fff !important;
         overflow: hidden;
         padding: 10px 0;
@@ -1128,7 +1128,7 @@ transform: none;
     function animateTicker(){
         $ticker.animate({
             marginLeft: -viewportWidth
-        }, 30000, "linear", function() {
+        }, 50000, "linear", function() {
             $ticker.css('margin-left', '0');
             animateTicker();
         });
