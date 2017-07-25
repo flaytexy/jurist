@@ -454,6 +454,25 @@ transform: none;
             <div class="row">
                 <div class="col-md-12">
                     <div class="search-luxuriousvilla overlape">
+
+
+
+
+                        <div class="ticker pure-g-r">
+
+                            <div class="pure-u-3-4">
+                                <ul class="lines">
+
+                                    <li>Самый лояльный банк в Европе сейчас - BOS банк</li>
+                                    <li>Самая дешевая компания - Belize</li>
+                                    <li>Самый правильный совет специалиста - индивидуальный и у нас бесплатный</li>
+                                    <li>Самая престижная юрисдикция - Швейцария</li>
+                                   <!--<li>Sherlock Holmes: Directed by M. Night Shyamalan</li>-->
+
+                                </ul>
+                            </div>
+                        </div>
+
                         <!--<h3>Индивидуальный подход высокого уровня<br /> <span>Даже с минимальным бюджетом</span></h3>
                         <span class="hidden-xs hidden-sm hidden-sm-down"><i class="fa fa-caret-down"></i></span>
                         <div class="calendar-container">-->

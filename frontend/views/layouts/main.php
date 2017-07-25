@@ -18,6 +18,8 @@ $phoneStr = "+7 925 470 50 02";
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 <script src="//load.sumome.com/" data-sumo-site-id="3e9ad4ed5127b8e285ee649aa55e8340bf5eb21a370f52999a717953ee42fd89" async="async"></script>
 <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <!-- <div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
        <div class="preloader">
             <div class="circ1"></div>
@@ -224,7 +226,6 @@ top: 250px;
 
     </script>
 
-
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -272,6 +273,84 @@ top: 250px;
     }
     .gsc-adBlock {
         display: none;
+    }
+
+    .clearfix:before, .ticker:before, .clearfix:after, .ticker:after {
+        content: " ";
+        display: table;
+    }
+
+    .clearfix:after, .ticker:after {
+        clear: both;
+    }
+
+    .clearfix, .ticker {
+        *zoom: 1;
+    }
+
+    .ticker {
+
+         text-align: center;
+        width: 100% !important;
+        /*margin-top: 9.6%;*/
+        border-bottom: solid #7dc20f;
+        line-height: 18px;
+        color: #7dc20f !important;
+        box-shadow: 0 10px 18px -11px #555;
+    }
+    @media (min-width: 980px) {
+        .ticker {
+            width: 980px;
+        }
+    }
+    .ticker .prefix {
+        margin: 5px;
+        padding: 10px;
+    }
+    @media (min-width: 980px) {
+        .ticker .prefix {
+            margin-right: 0;
+            height: 40px;
+        }
+    }
+    .ticker .prefix h1 {
+        margin: 0;
+        letter-spacing: 2px;
+        font-size: 24px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #f2f2f2;
+    }
+    @media (min-width: 768px) and (max-width: 979px) {
+        .ticker .prefix h1 {
+            font-size: 16px;
+        }
+    }
+    .ticker .lines {
+        overflow: hidden;
+        margin: 5px;
+        padding: 10px;
+       /* background-color: #ffffff;*/
+    }
+    @media (min-width: 980px) {
+        .ticker .lines {
+            margin-left: 0;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 979px) {
+        .ticker .lines {
+            height: 38px;
+        }
+    }
+    .ticker .lines li {
+        color: #ffffff !important;
+        list-style: none;
+        line-height: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -1px;
+        text-transform: uppercase;
     }
     @media (max-width: 1000px) {
         .top-bar {
@@ -512,8 +591,10 @@ top: 250px;
         </div>
         <!-- Logo Menu Sec -->
     </header>
+
     <!-- Header -->
     <div class="responsive-header">
+
         <div class="top-bar">
             <!--            <ul class="sign-btns">
                             <li><a href="#" title=""><i class="fa fa-unlock-alt"></i> Log In</a></li>
@@ -1124,6 +1205,72 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         s1.setAttribute('crossorigin','*');
         s0.parentNode.insertBefore(s1,s0);
     })();
+    // List Ticker by Alex Fish
+    // www.alexefish.com
+
+    (function($){
+        $.fn.list_ticker = function(options){
+
+            var defaults = {
+                speed:4000,
+                effect:'slide',
+                run_once:false,
+                random:false
+            };
+
+            var options = $.extend(defaults, options);
+
+            return this.each(function(){
+
+                var obj = $(this);
+                var list = obj.children();
+                var count = list.length - 1;
+
+                list.not(':first').hide();
+
+                var interval = setInterval(function(){
+
+                    list = obj.children();
+                    list.not(':first').hide();
+
+                    var first_li = list.eq(0)
+                    var second_li = options.random ? list.eq(Math.floor(Math.random()*list.length)) : list.eq(1)
+
+                    if(first_li.get(0) === second_li.get(0) && options.random){
+                        second_li = list.eq(Math.floor(Math.random()*list.length));
+                    }
+
+                    if(options.effect == 'slide'){
+                        first_li.slideUp();
+                        second_li.slideDown(function(){
+                            first_li.remove().appendTo(obj);
+
+                        });
+                    } else if(options.effect == 'fade'){
+                        first_li.fadeOut(function(){
+                            obj.css('height',second_li.height());
+                            second_li.fadeIn();
+                            first_li.remove().appendTo(obj);
+                        });
+                    }
+
+                    count--;
+
+                    if(count == 0 && options.run_once){
+                        clearInterval(interval);
+                    }
+
+                }, options.speed)
+            });
+        };
+    })(jQuery);
+
+    // Options
+
+    $('.lines').list_ticker({
+        speed: 4000,
+        effect: "slide"
+    });
 </script>
 <!--End of Tawk.to Script-->
 <?php $this->endContent(); ?>
