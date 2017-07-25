@@ -462,11 +462,11 @@ transform: none;
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
                                 <li class="ticker__item" data-ticker="item">Самый лояльный банк в Европе сейчас - BOS банк</li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item">Самая дешевая компания - Belize</li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item">Самый правильный совет специалиста - индивидуальный и у нас бесплатный</li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                             </ul>
                         </div>
                         <!--<h3>Индивидуальный подход высокого уровня<br /> <span>Даже с минимальным бюджетом</span></h3>
@@ -1094,7 +1094,7 @@ transform: none;
         font-weight: 700;
         letter-spacing: -1px;
         text-transform: uppercase;
-      
+
     }
     .ticker__list {
         list-style-type: none;
