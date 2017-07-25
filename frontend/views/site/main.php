@@ -742,6 +742,11 @@ transform: none;
         padding: 16px 0 45px !important;
 
     }
+    .sponsor-carousel {
+
+        padding: 0px 0 0px !important;
+
+    }
 </style>
 <section>
     <div class="block" id="block1">
@@ -1018,16 +1023,9 @@ transform: none;
         </div>
 
     </div>
-    <p></p>
+
 </section>
-<section>
-    <div>
-        <h1></h1>
-    </div>
-    <div>
-        <h1></h1>
-    </div>
-</section>
+
 
 <section>
     <div class="block no-padding blackish high2-opacity">
