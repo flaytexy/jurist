@@ -737,15 +737,7 @@ transform: none;
     </div>
 </section>
 <style>
-    #block1 {
-        padding: 0px 0 30px !important;
-    }
-    #block2 {
-        padding: 38px 0 30px !important;
-    }
-    .block {
-        padding: 0px 0 30px !important;
-    }
+  
 </style>
 <section>
     <div class="block" id="block1">
