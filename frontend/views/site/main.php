@@ -736,9 +736,16 @@ transform: none;
         </div>
     </div>
 </section>
-
+<style>
+    #block1 {
+        padding: 0px 0 30px;
+    }
+    #block2 {
+        padding: 38px 0 30px;
+    }
+</style>
 <section>
-    <div class="block">
+    <div class="block" id="block1">
         <div class="fixed-bg2" style="background-image: url(/uploads/theme_villa/parallax3.jpg);"></div>
         <div class="container">
             <div class="row">
@@ -790,7 +797,7 @@ transform: none;
 
 
 <section>
-    <div class="block">
+    <div class="block" id="block2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
