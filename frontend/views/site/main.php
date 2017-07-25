@@ -737,7 +737,11 @@ transform: none;
     </div>
 </section>
 <style>
-  
+    .villa-arrangements {
+
+        padding: 16px 0 45px !important;
+
+    }
 </style>
 <section>
     <div class="block" id="block1">
