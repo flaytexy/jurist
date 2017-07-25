@@ -458,21 +458,14 @@ transform: none;
 
 
 
-                        <div class="ticker pure-g-r">
-
-                            <div class="pure-u-3-4">
-                                <ul class="lines">
-
-                                    <li>Самый лояльный банк в Европе сейчас - BOS банк</li>
-                                    <li>Самая дешевая компания - Belize</li>
-                                    <li>Самый правильный совет специалиста - индивидуальный и у нас бесплатный</li>
-                                    <li>Самая престижная юрисдикция - Швейцария</li>
-                                   <!--<li>Sherlock Holmes: Directed by M. Night Shyamalan</li>-->
-
-                                </ul>
-                            </div>
+                        <!-- WIP -->
+                        <div class="ticker__viewport">
+                            <ul class="ticker__list" data-ticker="list">
+                                <li class="ticker__item" data-ticker="item"> Самый лояльный банк в Европе сейчас - BOS банк </li>
+                                <li class="ticker__item" data-ticker="item"> Самая дешевая компания - Belize </li>
+                                <li class="ticker__item" data-ticker="item">Самый правильный совет специалиста - индивидуальный и у нас бесплатный </li>
+                            </ul>
                         </div>
-
                         <!--<h3>Индивидуальный подход высокого уровня<br /> <span>Даже с минимальным бюджетом</span></h3>
                         <span class="hidden-xs hidden-sm hidden-sm-down"><i class="fa fa-caret-down"></i></span>
                         <div class="calendar-container">-->
@@ -1082,3 +1075,76 @@ transform: none;
         </div>
     </div>
 </section>
+<style>
+    .ticker__viewport {
+      border-bottom: solid #7ec211;
+        color: #fff !important;
+        overflow: hidden;
+        padding: 10px 0;
+    }
+    .ticker__viewport li {
+        color: #ffffff !important;
+        list-style: none;
+        line-height: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+
+    }
+    .ticker__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .ticker__item {
+        display: inline-block;
+        white-space: nowrap;
+        padding-right: 40px;
+    }
+
+</style>
+<script type="text/javascript">
+    var $ticker = $('[data-ticker="list"]'),
+        tickerItem = '[data-ticker="item"]'
+    itemCount = $(tickerItem).length,
+        viewportWidth = 0;
+
+    function setupViewport(){
+        $ticker.find(tickerItem).clone().prependTo('[data-ticker="list"]');
+
+        for (i = 0; i < itemCount; i ++){
+            var itemWidth = $(tickerItem).eq(i).outerWidth();
+            viewportWidth = viewportWidth + itemWidth;
+        }
+
+        $ticker.css('width', viewportWidth);
+    }
+
+    function animateTicker(){
+        $ticker.animate({
+            marginLeft: -viewportWidth
+        }, 30000, "linear", function() {
+            $ticker.css('margin-left', '0');
+            animateTicker();
+        });
+    }
+
+    function initializeTicker(){
+        setupViewport();
+        animateTicker();
+
+        $ticker.on('mouseenter', function(){
+            $(this).stop(true);
+        }).on('mouseout', function(){
+            animateTicker();
+        });
+    }
+
+    initializeTicker();
+
+</script>
