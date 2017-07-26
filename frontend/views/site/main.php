@@ -626,7 +626,7 @@ transform: none;
                                                 <img class="main-banks" src="/uploads/thumbs/bos-90a0789aea-6bfeabe44541d9a377881c3542936ebd.jpg" alt="">                                                    <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/bos-bank" title="">BOS Bank</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Польша</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€700</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1750</span>
                                                     <h4>Корпоративный счет</h4>
                                                 </div>
                                             </div>
@@ -646,7 +646,7 @@ transform: none;
                                                 <img class="main-banks" src="/uploads/thumbs/latvijas-pasta-banka7-de3aa97e63-1f9c19c01c4c681221f860488ee8174d.jpg" alt="">                                                    <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/latvijas-pasta-banka" title="">Latvijas pasta banka</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Латвия</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€300</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€500</span>
                                                     <h4>Корпоративный счет</h4>
                                                 </div>
                                             </div>
@@ -737,6 +737,9 @@ transform: none;
     </div>
 </section>
 <style>
+    .title1 {
+        margin-bottom: 10px !important;
+    }
     .villa-arrangements {
 
         padding: 16px 0 45px !important;
