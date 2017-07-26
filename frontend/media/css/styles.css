@@ -218,6 +218,9 @@ div.pagination {
     position: relative;
     width: 100%;
 }
+#block1 {
+    margin-top: -80px;
+}
 
 .block.less-spacing {
     padding: 60px 0
@@ -1791,7 +1794,7 @@ button.theme-btn {
     z-index: -1;
 }
 
-.title1::before {
+/*.title1::before {
     background: #f1ffd8 none repeat scroll 0 0;
     content: "";
     height: 187px;
@@ -1805,7 +1808,7 @@ button.theme-btn {
     transform: translateX(-50%);
     width: 44px;
     z-index: -1;
-}
+}*/
 
 .title1 > h2 {
     font-size: 30px;
