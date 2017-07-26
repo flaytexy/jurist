@@ -1099,7 +1099,7 @@ transform: none;
         font-family: "Montserrat", sans-serif;
         font-size: 16px;
         font-weight: 700;
-        letter-spacing: -1px;
+       /* letter-spacing: -1px;*/
         text-transform: uppercase;
 
     }
