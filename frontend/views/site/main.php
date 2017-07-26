@@ -472,7 +472,7 @@ transform: none;
                         <!--<h3>Индивидуальный подход высокого уровня<br /> <span>Даже с минимальным бюджетом</span></h3>
                         <span class="hidden-xs hidden-sm hidden-sm-down"><i class="fa fa-caret-down"></i></span>
                         <div class="calendar-container">-->
-                        <iframe src="http://iq-offshore.com/uploads/index.html" style="display: block; border: 0px none; width: 100%; max-width: 100%; height: 210px; top: 24px; margin: 0px auto; float: none;" frameborder="0"> </iframe>
+                        <iframe src="http://iq-offshore.com/uploads/index.html" style="display: block; border: 0px none; width: 100%; max-width: 100%; height: 250px; top: 24px; margin: 0px auto; float: none;" frameborder="0"> </iframe>
 </div>
                         <!-- <div class="search-luxuriousform">
                             <div class="row">
@@ -1097,7 +1097,7 @@ transform: none;
         list-style: none;
         line-height: 20px;
         font-family: "Montserrat", sans-serif;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: 700;
         letter-spacing: -1px;
         text-transform: uppercase;
