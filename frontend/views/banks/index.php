@@ -53,43 +53,56 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <form>
                     <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
-                            <li>Корпоративный счет</li>
-                            <li class="">
+                            <li class="listcenter">Только личный счет?</li><br>
+                           <li>Нет</li> <li class="">
                                 <div class="switcher">
                                     <input value="0" class="switch" js-filter="js-filter-type-id" name="switchName"
                                            type="checkbox"/>
                                 </div>
                             </li>
-                            <li>Личный счет</li>
+                            <li>Да</li>
                         </ul>
 
                     </div>
 
                     <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
-                            <li>С посещением банка</li>
-                            <li class="">
+                            <li  class="listcenter">С посещением банка?</li><br>
+                        <li>Нет</li>    <li class="">
                                 <div class="switcher">
                                     <input  value="0" class="switch" js-filter="js-filter-personal" name="switchName2"
                                            type="checkbox"/>
                                 </div>
-                            </li>
+                            </li> <li>Да</li>
                         </ul>
                     </div>
                     <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
-                            <li>С минимальным депозитом</li>
-                            <li class="">
+                            <li  class="listcenter">С минимальным депозитом?</li><br>
+                          <li>Нет</li>  <li class="">
                                 <div class="switcher">
                                     <input value="0" class="switch" js-filter="js-filter-min-deposit" js-filter-switch-only="1" name="switchName3"
                                            type="checkbox"/>
                                 </div>
-                            </li>
+                            </li><li>Да</li>
                         </ul>
                     </div>
                 </form>
             </div>
 <style>
+
+    .listcenter {
+        font-size: 20px;
+
+        position: relative;
+        right: 40px;
+    }
+
+    @media (max-width: 800px) {
+        .listcenter {
+            right: 0;
+        }
+    }
     #tpb {
         position: absolute;
         top: 295px;
