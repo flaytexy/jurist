@@ -1036,22 +1036,18 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         <li><a href="viber://add?number=+79254705002"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Viber-Icon.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
                         <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
                         <li><img src="http://downdetector.com/i/logo/threema.png" height="42" width="42" alt="В целях безопасности клиентов"></li>
-
+                        <li><a href="#"><img src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+                        <li><a href="skype:IQ Decision?call"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Skype_t.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
                     </ul>
                 </aside>
 
 <style>
     /*СОЦИАЛЬНЫЕ ИКОНЫ СБОКУ*/
-    @import url(http://weloveiconfonts.com/api/?family=entypo);
 
-    /* entypo */
-    [class*="entypo-"]:before {
-        font-family: "entypo", sans-serif;
-    }
-    a {
+    #sticky-social  a {
         text-decoration: none;
     }
-    ul {
+    #sticky-social ul {
         list-style: none;
         margin: 0;
         padding: 0;
