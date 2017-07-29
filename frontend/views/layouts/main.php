@@ -247,7 +247,7 @@ top: 250px;
 
 <? endif ?>
 <style>
-    
+
     .lenta {
         position: absolute;
         top: 40px;
@@ -1031,9 +1031,60 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                 </div>
 
 
+                <aside id="sticky-social">
+                    <ul>
+                        <li><a href="viber://add?number=+79254705002"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Viber-Icon.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+                        <li><img src="http://downdetector.com/i/logo/threema.png" height="42" width="42" alt="В целях безопасности клиентов"></li>
 
+                    </ul>
+                </aside>
 
+<style>
+    /*СОЦИАЛЬНЫЕ ИКОНЫ СБОКУ*/
+    @import url(http://weloveiconfonts.com/api/?family=entypo);
 
+    /* entypo */
+    [class*="entypo-"]:before {
+        font-family: "entypo", sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #sticky-social {
+        left: 0;
+        position: fixed;
+        top: 150px;
+    }
+  /*  #sticky-social a {
+        background: #333;
+        color: #fff;
+        display: block;
+        height: 35px;
+        font: 16px "Open Sans", sans-serif;
+        line-height: 35px;
+        position: relative;
+        text-align: center;
+        width: 35px;
+    }
+    #sticky-social a span {
+        line-height: 35px;
+        left: -120px;
+        position: absolute;
+        text-align:center;
+        width:120px;
+    }*/
+    #sticky-social a:hover span {
+        left: 100%;
+    }
+
+</style>
 
 
 
