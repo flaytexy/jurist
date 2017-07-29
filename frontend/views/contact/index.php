@@ -140,7 +140,13 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 <script type="text/javascript">
     // When the window has finished loading create our google map below
     google.maps.event.addDomListener(window, 'load', init);
-
+    var locations = [
+        ['Bondi Beach', -33.890542, 151.274856, 4],
+        ['Coogee Beach', -33.923036, 151.259052, 5],
+        ['Cronulla Beach', -34.028249, 151.157507, 3],
+        ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+        ['Maroubra Beach', -33.950198, 151.259302, 1]
+    ];
     function init() {
         // Basic options for a simple Google Map
         // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
@@ -191,7 +197,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         Бульвар Дружбы Народов 10, оф. 18, Киев
                     </p>
                     <p><strong><i class="fa fa-phone"></i> Номер телефона</strong><br>
-                        +7 925 470 50 02</p>
+                        +7 925 470 50 02 <br> +38 067 193-11-17</p>
                     <p><strong><i class="fa fa-clock-o"></i> Часы работы</strong><br>
                         09:00-19:00</p>
                     <p>

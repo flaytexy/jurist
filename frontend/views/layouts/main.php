@@ -247,6 +247,7 @@ top: 250px;
 
 <? endif ?>
 <style>
+    
     .lenta {
         position: absolute;
         top: 40px;
@@ -577,7 +578,7 @@ top: 250px;
                                         'template' => '
                                 <li class="contact-m">
                                     <div class="row">
-                                        <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a><p class="lenta">Бесплатная консультация!</p></div>
+                                        <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a><a href="tel: +380671931117" title="Наш телефон">+38 067 193-11-17</a><p class="lenta">Бесплатная консультация!</p></div>
                                     </div>
                                 </li>'
                                     ],
