@@ -302,14 +302,14 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <tbody><tr>
                             <td class="col-md-8 col-lg-2">
                                 <h6>
-                                    <a href="/banks/bos-bank">BOS Bank</a>                                    </h6>
+                                    <a href="/banks/fio">FIO</a>                                    </h6>
 
                                 <div class="no-margin inl-block">
                                     <div class="hide-for-small-down">
-                                        <a href="/banks/bos-bank"><img src="/uploads/thumbs/bos-90a0789aea-8fa08be0f58a96367dbe76163462dd88.jpg" alt=""></a>
+                                        <a href="/banks/fio"><img src="/uploads/thumbs/fiobanka1-1c2825cc96-218dda3752e0e989d1ff2e55f9d7a9d3.jpg" alt=""></a>
                                     </div>
                                     <div class="top10 row">
-                                        <div class="col-xs-3"><div class="b-flag"> <div class="label flag flag-icon-background flag-icon-pl">&nbsp;</div></div></div>                                            <div class="col-xs-9"><div class="left tBankLi" style="margin: 2px 0 0 0">Польша</div></div>
+                                        <div class="col-xs-3"><div class="b-flag"> <div class="label flag flag-icon-background flag-icon-cz">&nbsp;</div></div></div>                                            <div class="col-xs-9"><div class="left tBankLi" style="margin: 2px 0 0 0">Чехия</div></div>
                                     </div>
                                 </div>
                             </td>
@@ -330,7 +330,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <td>
                                             <p class="f">Сайт банка</p>
 
-                                            <div class="hegg">www.bosbank.pl</div>
+                                            <div class="hegg">www.fio.cz</div>
                                             <!--<div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div>-->
                                         </td>
                                         <td>
@@ -344,7 +344,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <td>
                                             <p class="f">Срок</p>
 
-                                            <div class="tBankDays tBankOter"><p>14</p></div>
+                                            <div class="tBankDays tBankOter"><p>3</p></div>
                                         </td>
                                         <!--<td>
                                             <p class="">Initial Deposit</p>
@@ -361,12 +361,12 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 <div class="h6 text-center">
                                     <span>Цена</span>
                                 </div>
-                                <div style="font-weight: bolder; font-size: large; font-family: Verdana;" class="h6 text-center cena">€700</div>
+                                <div style="font-weight: bolder; font-size: large; font-family: Verdana;" class="h6 text-center cena">€900</div>
 
                                 <div class="text-center" style="height:35px;">
 
                                     <a class="btn btn-success" href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
-                                    <!--    <a href="/banks/bos-bank"
+                                    <!--    <a href="/banks/fio"
                                            class="btn btn-success">Заказать</a>-->
                                 </div>
                             </td>

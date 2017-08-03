@@ -194,10 +194,10 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                     </p>
                     <p>
                         <strong><i class="fa fa-map-marker"></i> Адрес 2</strong><br>
-                        Бульвар Дружбы Народов 10, оф. 18, Киев
+                        Бульвар Дружбы Народов 10, оф. 18, Киев, 01103
                     </p>
                     <p><strong><i class="fa fa-phone"></i> Номер телефона</strong><br>
-                        +7 925 470 50 02 <br> +38 067 193-11-17</p>
+                        +7 925 470 50 02 <br> +38 067 193 11 17</p>
                     <p><strong><i class="fa fa-clock-o"></i> Часы работы</strong><br>
                         09:00-19:00</p>
                     <p>
