@@ -955,7 +955,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                                     <h4>Открываем счета</h4>
                                 </div>
                                 <div class="desc">
-                                    в 35 банках мира и активно расширяем список.
+                                    в 48 банках мира и активно расширяем список.
                                 </div>
                             </div>
                         </div>
@@ -1016,8 +1016,12 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                                 <strong  style="color: #7dc20f"><i class="fa fa-map-marker"></i> Адрес</strong><br>
                                 Старый Петровско-Разумовский проезд, 1/23 стр.1, Москва, 127287
                             </p>
+                            <p style="color: white">
+                                <strong style="color: #7dc20f"><i class="fa fa-map-marker"></i> Адрес 2</strong><br>
+                                Бульвар Дружбы Народов 10, оф. 18, Киев, 01103
+                            </p>
                             <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-phone"></i> Номер телефона</strong><br>
-                                +7 925 470 50 02</p>
+                                +7 925 470 50 02 <br> +38 067 193 11 17</p>
                             <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-clock-o"></i> Часы работы</strong><br>
                                 09:00-19:00</p>
                             <p style="color: white">
