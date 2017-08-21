@@ -1052,6 +1052,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         left: 0;
         position: fixed;
         top: 370px;
+        opacity: 0.6;
       /*  transform: rotate(-90deg);*/
     }
     #sticky-social  a {
@@ -1195,7 +1196,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         opacity: 0.3;
         display:none;
         background: url("http://iq-offshore.com/uploads/1/scrollup.png") no-repeat 0px 20px;
-        background-size: 60px 60px;
+        background-size: 30px 30px;
         z-index: 2;
     }
     .scrollToTop:hover{
