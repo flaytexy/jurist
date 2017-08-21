@@ -494,7 +494,7 @@ top: 250px;
                                     </div>
                                 </li>-->
                                 <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
-                                    <a href="skype:IQ Decision?call"><i class="fa fa-skype" aria-hidden="true"></i><br><b style="font-size: 12px">IQ Decision</b></a>
+                                    <a href="skype:iq.decision@gmail.com?call"><i class="fa fa-skype" aria-hidden="true"></i><br><b style="font-size: 12px">IQ Decision</b></a>
                                 </li>'
                             ],
                         ],
@@ -1044,10 +1044,16 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         <li><a href="skype:IQ Decision?call"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Skype_t.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
                     </ul>
                 </aside>
+                <input name="" width="32" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"   value="Click me" id="clicky"/>
 
 <style>
     /*СОЦИАЛЬНЫЕ ИКОНЫ СБОКУ*/
-
+    #clicky {
+        left: 0;
+        position: fixed;
+        top: 370px;
+      /*  transform: rotate(-90deg);*/
+    }
     #sticky-social  a {
         text-decoration: none;
     }
@@ -1085,7 +1091,20 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     }
 
 </style>
+<script type="text/javascript">
+    $("#clicky").click(function(){
+        if($("#sticky-social").is(':visible'))
+        {
+            $("#sticky-social").animate({ width: 'hide' });
+        }
+        else
+        {
+            $("#sticky-social").animate({ width: 'show' });
 
+        }
+    });
+
+</script>
 
 
 
@@ -1171,7 +1190,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         text-decoration: none;
         position:fixed;
         bottom:50%;
-        top:50%;
+        top:70%;
         left:1%;
         opacity: 0.3;
         display:none;

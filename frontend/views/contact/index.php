@@ -204,7 +204,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         <strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
                         one@iq-offshore.com</a></p>
                     <p><strong><i class="fa fa-skype"></i> Skype</strong><br>
-                        <a href="skype:IQ Decision?call">IQ Decision</a></p>
+                        <a href="skype:iq.decision@gmail.com?call">IQ Decision</a></p>
 
 
                 </div>
