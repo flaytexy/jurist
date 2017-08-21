@@ -1179,7 +1179,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     @media (max-width: 1000px) {
         .scrollToTop{
             left: 40% !important;
-            top: 80% !important;
+            top: 70% !important;
         }
 
     }
