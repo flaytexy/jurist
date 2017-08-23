@@ -469,7 +469,7 @@ transform: none;
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item">Самый правильный совет специалиста - индивидуальный и у нас бесплатный</li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item">ВНИМАНИ! Списки бенефициаров в Шотландии теперь открыты!</li>
+                                <li class="ticker__item" data-ticker="item">ВНИМАНИЕ! Списки бенефициаров в Шотландии теперь открыты!</li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                             </ul>
                         </div>
