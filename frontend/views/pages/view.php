@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 </ul>
             </div><!-- Widget -->
 
-            <!-- Widget2 -->
+            <!-- Widget2
             <div class="widget villa-photos-widget">
                 <div class="title1 style2">
                     <h2>Банки</h2>
@@ -78,7 +78,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <?php endforeach; ?>
 
                 </ul>
-            </div><!-- Widget2 -->
+            </div> Widget2 -->
         </div>
         <div class="container">
             <!-- 1-block -->
@@ -482,7 +482,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 }
 
                 #dottedbord img {
-                    border: 5px dotted;
+                    border: 3px solid;
+                    border-color: #2e2e2e;
                 }
 
                 /****************/
