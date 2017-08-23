@@ -1178,7 +1178,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 <style type="text/css">
     @media (max-width: 1000px) {
         .scrollToTop{
-            left: 40% !important;
+            left: 5% !important;
             top: 85% !important;
         }
 
@@ -1251,12 +1251,12 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 
 
-<!-- RedConnect -->
+<!-- RedConnect
 <script id="rhlpscrtg" type="text/javascript" charset="utf-8" async="async"
         src="https://web.redhelper.ru/service/main.js?c=romanovalexander5"></script>
 <div style="display: none"><a class="rc-copyright"
                               href="http://redconnect.ru">Сервис обратного звонка RedConnect</a></div>
-<!--/RedConnect -->
+RedConnect -->
 
 <!-- BEGIN PRIVY WIDGET CODE -->
 <script type='text/javascript'> var _d_site = _d_site || '411086831FF94A27DC0340B2'; </script>
@@ -1279,4 +1279,5 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 </script>
 <!--End of Tawk.to Script-->
+<script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({ formId: "72341635329355", buttonText: "Позвонить?", base: "https://form.jotformeu.com/", background: "#7dc20f", fontColor: "#FFFFFF", buttonSide: "bottom", buttonAlign: "center", type: 1, width: 550, height: 450 }); </script>
 <?php $this->endContent(); ?>
