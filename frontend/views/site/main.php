@@ -461,6 +461,8 @@ transform: none;
                         <!-- WIP -->
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
+                                <li class="ticker__item" data-ticker="item">Открываем счета на Forex и Gambling!</li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item">Самый лояльный банк в Европе сейчас - BOS банк</li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item">Самая дешевая компания - Belize</li>
@@ -1140,7 +1142,7 @@ transform: none;
     function animateTicker(){
         $ticker.animate({
             marginLeft: -viewportWidth
-        }, 50000, "linear", function() {
+        }, 40000, "linear", function() {
             $ticker.css('margin-left', '0');
             animateTicker();
         });
