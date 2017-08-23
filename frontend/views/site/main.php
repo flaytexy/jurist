@@ -85,7 +85,7 @@ MainAsset::register($this);
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
                                        onclick="location.href='/banks'"
-                                       style="font-size:16px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
+                                       style="font-size:26px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
                                         Широкий выбор: более 30 банков
                                     </p>
                                 </li>
@@ -171,7 +171,7 @@ MainAsset::register($this);
                                        data-splitout="none"
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
-                                       style="font-size:18px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
+                                       style="font-size:26px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
                                         Законное нулевое налогообложение
                                     </i>
 
@@ -259,7 +259,7 @@ MainAsset::register($this);
                                        data-splitout="none"
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
-                                       style="font-size:16px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
+                                       style="font-size:26px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
                                         24 часа
                                     </p>
                                 </li>
@@ -345,7 +345,7 @@ MainAsset::register($this);
                                        data-splitout="none"
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
-                                       style="font-size:18px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
+                                       style="font-size:26px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
                                         Компания <span>+</span> Лицензия <span>+</span> Счет
                                     </i>
 
