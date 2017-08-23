@@ -469,7 +469,7 @@ transform: none;
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item">Самый правильный совет специалиста - индивидуальный и у нас бесплатный</li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item">ВНИМАНИЕ, списки бенефициаров в Шотландии теперь открыты!</li>
+                                <li class="ticker__item" data-ticker="item">ВНИМАНИ! Списки бенефициаров в Шотландии теперь открыты!</li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                             </ul>
                         </div>
@@ -1101,7 +1101,7 @@ transform: none;
         list-style: none;
         line-height: 20px;
         font-family: "Montserrat", sans-serif;
-        font-size: 16px;
+        font-size: 13px;
         font-weight: 700;
        /* letter-spacing: -1px;*/
         text-transform: uppercase;
