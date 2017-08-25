@@ -446,6 +446,80 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             </td>
                         </tr>
                         </tbody></table>
+                    <table data-region-assign="reg_3" class="table reg_3 table-bordered 1_1_0.00 js-filter-marker" js-filter-type-id="0" js-filter-personal="0" js-filter-min-deposit="0" style="display: table;">
+                        <tbody><tr>
+                            <td class="col-md-8 col-lg-2">
+                                <h6>
+                                    <a href="/banks/ameriabank"><span class="easyiicms-edit" data-edit="/admin/banks/a/edit/69">Ameriabank<a href="/admin/banks/a/edit/69" class="easyiicms-goedit" style="width: 118px; height: 19px;" target="_blank"></a></span></a>                                    </h6>
+
+                                <div class="no-margin inl-block">
+                                    <div class="hide-for-small-down">
+                                        <a href="/banks/ameriabank"><img src="/uploads/thumbs/ameriabank-0c906c09bb-98043c6daf24634c2a7893446db895a1.jpg" alt=""></a>
+                                    </div>
+                                    <div class="top10 row">
+                                        <div class="col-xs-3"><div class="b-flag"> <div class="label flag flag-icon-background flag-icon-am">&nbsp;</div></div></div>                                            <div class="col-xs-9"><div class="left tBankLi" style="margin: 2px 0 0 0">Армения</div></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="hidden-xs hidden-sm hidden-md  col-lg-8">
+                                <table class="table border-none tBankLi">
+                                    <tbody><tr>
+                                        <td>
+
+                                            <p class="f">Корпоративный счет</p>
+                                            <div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div>
+                                        </td>
+
+                                        <td>
+                                            <p class="f" title="Открытие счета без личного присутствия">
+                                                С посещением банка </p>
+                                            <div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div>                                            </td>
+
+                                        <td>
+                                            <p class="f">Сайт банка</p>
+
+                                            <div class="hegg">www.ameriabank.am</div>
+                                            <!--<div class="green_no"><i class="fa fa-times fa-3" aria-hidden="true"></i></div>-->
+                                        </td>
+                                        <td>
+                                            <p class="f">Минимальный депозит</p>
+
+                                            <div class="hegg">                                                        <div class="">
+                                                    0
+                                                </div>                                                </div>
+                                            <!--   <div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div>-->
+                                        </td>
+                                        <td>
+                                            <p class="f">Срок</p>
+
+                                            <div class="tBankDays tBankOter"><p>14</p></div>
+                                        </td>
+                                        <!--<td>
+                                            <p class="">Initial Deposit</p>
+                                            <p class="">USD 0</p>
+                                        </td>
+                                        <td>
+                                            <p class=""> Min. Balance</p>
+                                            <p class="">USD 0</p>
+                                        </td>-->
+                                    </tr>
+                                    </tbody></table>
+                            </td>
+                            <td class="col-md-4 col-lg-2 bg-green-price">
+                                <div class="h6 text-center">
+                                    <span>Цена</span>
+                                </div>
+                                <div style="font-weight: bolder; font-size: large; font-family: Verdana;" class="h6 text-center cena">€2200</div>
+
+                                <div class="text-center" style="height:35px;">
+
+                                    <a class="btn btn-success" href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
+                                    <!--    <a href="/banks/ameriabank"
+                                           class="btn btn-success">Заказать</a>-->
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody></table>
                  <!--   <h4>Africa</h4>-->
                     <?php foreach ($items as $item) : ?>
                         <? if($region_name != $item->model->region_name && $item->model->region_name != 'Polar: Arctic' /*&&  $item->model->region_name!=false*/ ): ?>
