@@ -1041,7 +1041,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
                         <li><img src="http://downdetector.com/i/logo/threema.png" height="42" width="42" alt="В целях безопасности клиентов"></li>
                         <li><a href="#"><img src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
-                        <li><a href="skype:IQ Decision?call"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Skype_t.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+                        <li><a href="skype:iq.decision@gmail.com?call"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Skype_t.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
                     </ul>
                 </aside>
                 <input name="" width="32" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"   value="Click me" id="clicky"/>

@@ -8,6 +8,10 @@ if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
 $this->params['breadcrumbs'][] = $page->model->title;
 ?>
 <style type="text/css">
+    #listsocial {
+        display: flex;
+        list-style: none;
+    }
     /* Set a size for our map container, the Google Map will take up 100% of this container */
     #map {
         width: 100%;
@@ -205,7 +209,13 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         one@iq-offshore.com</a></p>
                     <p><strong><i class="fa fa-skype"></i> Skype</strong><br>
                         <a href="skype:iq.decision@gmail.com?call">IQ Decision</a></p>
-
+<p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Мессенджеры (на номер +7 925 175-44-17)</strong></p>
+                    <ul id="listsocial">
+                        <li><a href="viber://add?number=+79254705002"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Viber-Icon.png" height="42" width="42" alt="+7 925 175-44-17"></a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png" height="42" width="42" alt="+7 925 175-44-17"></a></li>
+                        <li><img src="http://downdetector.com/i/logo/threema.png" height="42" width="42" alt="+7 925 175-44-17"></li>
+                        <li><a href="#"><img src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png" height="42" width="42" alt="+7 925 175-44-17"></a></li>
+                    </ul>
 
                 </div>
              </div>
