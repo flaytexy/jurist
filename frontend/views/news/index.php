@@ -96,19 +96,19 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                         </ul>
                     </div><!-- Widget2 -->
-                    <div class="widget tags-widget">
+                 <!--   <div class="widget tags-widget">
                         <div class="title1 style2">
                             <h2>Облако тегов</h2>
-                            <!--<span>We Provide Best Services</span>-->
+                            <span>We Provide Best Services</span>
                         </div>
                         <div class="tags">
                             <ul class="cate-list">
-                                <?php foreach($top_tags as $item) : ?>
-                                    <li><a href="<?= Url::to(['news/tag/'.$item['name']]) ?>" class="label label-info"><?= $item['name'] ?></a></li>
-                                <?php endforeach; ?>
+                                </*?php foreach($top_tags as $item) : ?>
+                                    <li><a href="</?= Url::to(['news/tag/'.$item['name']]) ?>" class="label label-info"></?= $item['name'] ?></a></li>
+                                </?php endforeach; ?*/>
                             </ul>
                         </div>
-                    </div><!-- Widget -->
+                    </div>--><!-- Widget -->
                     <div class="widget recent-posts-widget">
                         <div class="title1 style2">
                             <h2>Интересные статьи</h2>
@@ -131,3 +131,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
     </div>
 
 </section>
+<style>
+    @media (max-width: 1024px) {
+        .sidebar {
+            display: none !important;
+
+        }
+    }
+</style>
