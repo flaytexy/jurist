@@ -209,7 +209,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         one@iq-offshore.com</a></p>
                     <p><strong><i class="fa fa-skype"></i> Skype</strong><br>
                         <a href="skype:iq.decision@gmail.com?call">IQ Decision</a></p>
-<p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Мессенджеры (на номер +7 925 175-44-17)</strong></p>
+<p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Мессенджеры (на номер +7 925 470-50-02)</strong></p>
                     <ul id="listsocial">
                         <li><a href="viber://add?number=+79254705002"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Viber-Icon.png" height="42" width="42" alt="+7 925 175-44-17"></a></li>
                         <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png" height="42" width="42" alt="+7 925 175-44-17"></a></li>
