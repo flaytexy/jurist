@@ -1049,11 +1049,12 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 <style>
     /*СОЦИАЛЬНЫЕ ИКОНЫ СБОКУ*/
     #clicky {
-        left: 0;
+        bottom: 50px;
         position: fixed;
-        top: 370px;
+        left: 0;
         opacity: 0.6;
-      /*  transform: rotate(-90deg);*/
+        z-index: 3;
+
     }
     #sticky-social  a {
         text-decoration: none;
@@ -1062,12 +1063,16 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         list-style: none;
         margin: 0;
         padding: 0;
+        display: flex;
     }
 
     #sticky-social {
         left: 0;
         position: fixed;
-        top: 150px;
+      /*  top: 150px;*/
+        bottom: 0;
+        z-index: 3;
+
     }
   /*  #sticky-social a {
         background: #333;
@@ -1178,8 +1183,8 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 <style type="text/css">
     @media (max-width: 1000px) {
         .scrollToTop{
-            left: 5% !important;
-            top: 85% !important;
+            left: 0 !important;
+            bottom 100px !important;
         }
 
     }
@@ -1279,5 +1284,5 @@ RedConnect -->
 
 </script>
 <!--End of Tawk.to Script-->
-<script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({ formId: "72341635329355", buttonText: "Позвонить?", base: "https://form.jotformeu.com/", background: "#7dc20f", fontColor: "#FFFFFF", buttonSide: "bottom", buttonAlign: "center", type: 1, width: 550, height: 450 }); </script>
+<script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({ formId: "72341635329355", buttonText: "Позвонить?", base: "https://form.jotformeu.com/", background: "#7dc20f", fontColor: "#FFFFFF", buttonSide: "left", buttonAlign: "center", type: 1, width: 550, height: 450 }); </script>
 <?php $this->endContent(); ?>
