@@ -109,20 +109,20 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                             <?php endforeach; ?>
 
                                         </ul>
-                                    </div><!-- Widget2 -->
+                                    </div><!-- Widget2
                                     <div class="widget tags-widget">
                                         <div class="title1 style2">
                                             <h2>Облако тегов</h2>
-                                            <!--<span>We Provide Best Services</span>-->
+                                            <!--<span>We Provide Best Services</span>
                                         </div>
                                         <div class="tags">
                                             <ul class="cate-list">
-                                                <?php foreach($top_tags as $item) : ?>
-                                                    <li><a href="<?= Url::to(['news/tag/'.$item['name']]) ?>" class="label label-info"><?= $item['name'] ?></a></li>
-                                                <?php endforeach; ?>
+                                                </?php foreach($top_tags as $item) : ?>
+                                                    <li><a href="</?= Url::to(['news/tag/'.$item['name']]) ?>" class="label label-info"></?= $item['name'] ?></a></li>
+                                                </?php endforeach; ?>
                                             </ul>
                                         </div>
-                                    </div><!-- Widget -->
+                                    </div> Widget -->
                                     <div class="widget recent-posts-widget">
                                         <div class="title1 style2">
                                             <h2>Интересные статьи</h2>
@@ -148,7 +148,14 @@ $this->params['breadcrumbs'][] = $news->model->title;
         </div>
     </div>
 </section>
+<style>
+    @media (max-width: 1024px) {
+        .sidebar {
+            display: none !important;
 
+        }
+    }
+</style>
 
 <?php /*if(false) : */?><!--
 <h1><?/*= $news->seo('h1', $news->title) */?></h1>
@@ -173,3 +180,4 @@ $this->params['breadcrumbs'][] = $news->model->title;
 
 <div class="small-muted">Views: <?/*= $news->views*/?></div>
 --><?php /*endif; */?>
+
