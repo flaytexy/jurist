@@ -1284,5 +1284,6 @@ RedConnect -->
 
 </script>
 <!--End of Tawk.to Script-->
+<script data-cfasync="false" type="text/javascript" data-bablic="59a272ad6bcdf56686e6d8ee" data-bablic-m="[0,'ru','ru',1,[],0,0,0,0,0,0,0,0,[],'iq-offshore.com/',[],['_v',2]]" src="//cdn2.bablic.com/js/bablic.3.9.js"></script>
 <script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({ formId: "72341635329355", buttonText: "Позвонить?", base: "https://form.jotformeu.com/", background: "#7dc20f", fontColor: "#FFFFFF", buttonSide: "left", buttonAlign: "center", type: 1, width: 550, height: 450 }); </script>
 <?php $this->endContent(); ?>
