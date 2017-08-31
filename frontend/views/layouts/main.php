@@ -457,6 +457,7 @@ top: 250px;
                         <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
                             <a href="skype:IQ Decision?call"><div></div></a>
                         </li>
+
                     </ul>
                     <? endif; ?>
                     <?= Menu::widget([
@@ -495,11 +496,12 @@ top: 250px;
                                 </li>-->
                                 <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
                                     <a href="skype:iq.decision@gmail.com?call"><i class="fa fa-skype" aria-hidden="true"></i><br><b style="font-size: 12px">IQ Decision</b></a>
-                                </li>'
+                                </li>
+                                '
                             ],
                         ],
                     ]); ?>
-
+                    <?= app\widgets\LangWidget::widget();?>
                 </div>
             </div>
         </div>
@@ -548,7 +550,7 @@ top: 250px;
                                 'options' => ['class' => 'nav navbar-nav'],
                                 'items' => [
                                     //['label' => 'Главная', 'url' => ['site/index'], 'template' => '<li class="22"><a href="{url}" class="mylink"><span>{label}</span></a></li>'],
-                                    ['label' => 'Главная', 'url' => ['site/index']],
+                                    ['label' =>  Yii::t('main','main'), 'url' => ['site/index']],
                                     //['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
                                     //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                                     //['label' => 'Shop', 'url' => ['shop/index']],
@@ -923,6 +925,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     </div>
 </footer> ГЛАВНОЕ-->
 
+
 <footer>
     <div class="block dark">
         <div class="container">
@@ -1168,6 +1171,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
     </div>
     <!-- Bottom Line -->
+
 </footer>
 <div id="stl_left" style="display: block; opacity: 1; width: 178px;" class="">
     <div id="stl_bg">
@@ -1284,6 +1288,6 @@ RedConnect -->
 
 </script>
 <!--End of Tawk.to Script-->
-<script data-cfasync="false" type="text/javascript" data-bablic="59a272ad6bcdf56686e6d8ee" data-bablic-m="[0,'ru','ru',1,[],0,0,0,0,0,0,0,0,[],'iq-offshore.com/',[],['_v',2]]" src="//cdn2.bablic.com/js/bablic.3.9.js"></script>
+
 <script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({ formId: "72341635329355", buttonText: "Позвонить?", base: "https://form.jotformeu.com/", background: "#7dc20f", fontColor: "#FFFFFF", buttonSide: "left", buttonAlign: "center", type: 1, width: 550, height: 450 }); </script>
 <?php $this->endContent(); ?>

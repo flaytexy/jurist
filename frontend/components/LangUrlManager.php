@@ -1,15 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vitaliy
- * Date: 27.12.2016
- * Time: 15:00
- */
-
-namespace frontend\components;
+namespace app\components;
 
 use yii\web\UrlManager;
-use frontend\models\Lang;
+use app\models\Lang;
 
 class LangUrlManager extends UrlManager
 {

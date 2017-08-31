@@ -1,16 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vitaliy
- * Date: 27.12.2016
- * Time: 15:02
- */
-
-namespace frontend\components;
+namespace app\components;
 
 use Yii;
 use yii\web\Request;
-use frontend\models\Lang;
+use app\models\Lang;
 
 class LangRequest extends Request
 {
