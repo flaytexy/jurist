@@ -9,11 +9,9 @@ $params = array_merge(
 
 $config = [
     'id' => 'app-frontend',
-    //'language' => 'en-US',
-    'language'=> 'ru-RU',
-    //'language' => 'en',
-    //'language' => 'uk-UA',
+    'language'=> 'ru-RU', // en-US
     'sourceLanguage' => 'ru-RU',
+
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [
         '@runtime' => '@frontend/runtime'
@@ -58,7 +56,8 @@ $config = [
             ],
         ],
         'request' => [
-            'csrfParam' => '_csrf-frontend',
+            'class' => 'frontend\components\LangRequest',
+            'csrfParam' => '_csrf-frontend'
         ],
         /*        'user' => [
                     'identityClass' => 'common\models\User',
@@ -102,7 +101,7 @@ $config = [
             //'baseUrl' => '/',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            //'class'=>'frontend\components\LangUrlManager',
+            'class'=>'frontend\components\LangUrlManager',
             //'languages' => ['ru' => 'ru-RU', 'en' => 'en-US', 'uk' => 'uk-UA'],
             'rules' => [
                 '' => 'site/index',

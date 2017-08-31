@@ -407,6 +407,9 @@ top: 250px;
 </style>
 
 <div class="theme-layout" id="theme-layout-js">
+
+
+
     <header class="stick scrollup">
         <div class="top-bar">
             <div class="container">
@@ -509,10 +512,13 @@ top: 250px;
 
                 <div class="row">
                     <div class="col-md-2 ">
+
+
                         <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.gif" alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-3 ">
+
                         <? if (false): ?>
                         <? $form = ActiveForm::begin([ 'action' => 'search', 'id' => 'forum_post',
                             'method' => 'post',
@@ -543,6 +549,7 @@ top: 250px;
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-7 ">
+                        <ul><?= frontend\widgets\WLang::widget();?></ul>
                         <nav class="navbar22 navbar-default22">
                             <?= Menu::widget([
                                 'options' => ['class' => 'nav navbar-nav'],
