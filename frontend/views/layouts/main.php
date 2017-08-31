@@ -12,6 +12,7 @@ use yii\widgets\ActiveForm;
 $popularly = \frontend\models\Popularly::find()->limit(7)->all();
 
 $phoneStr = "+7 925 470 50 02";
+$addeng =  Yii::t('main','free');
 
 
 ?>
@@ -463,8 +464,8 @@ top: 250px;
                     <?= Menu::widget([
                         'options' => ['class' => 'top-menus', 'id' => 'top-menus'],
                         'items' => [
-                            ['label' => 'Фонды', 'url' => ['/fonds'], 'options' => ['title' => 'Фонды']],
-                            ['label' => 'Банки', 'url' => ['/banks'],
+                            ['label' => Yii::t('main','funds'), 'url' => ['/fonds'], 'options' => ['title' => 'Фонды']],
+                            ['label' => Yii::t('main','banks'), 'url' => ['/banks'],
                                 'options' => ['class' => 'menu-item-has-children', 'title' => 'Банки'],
 //                                        'items' => [
 //                                            ['label' => 'New Arrivals', 'url' => ['news/index', 'tag' => 'new'],
@@ -478,11 +479,11 @@ top: 250px;
 //                                        ],
                                 //'template' => '<li class="menu-item-has-children"><a href="{url}" class="mylink">{label}</a></li>',
                             ],
-                            ['label' => 'Компании', 'url' => ['/offshornyie-predlozheniya'], 'options' => ['title' => 'Компании']],
-                            ['label' => 'Лицензии', 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
-                            ['label' => 'Оффшоры', 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
-                            ['label' => 'Процессинг', 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
-                            ['label' => 'Продается', 'url' => ['/sale'], 'options' => ['title' => 'Продается']],
+                            ['label' => Yii::t('main','companies'), 'url' => ['/offshornyie-predlozheniya'], 'options' => ['title' => 'Компании']],
+                            ['label' => Yii::t('main','licenses'), 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
+                            ['label' => Yii::t('main','offshores'), 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
+                            ['label' => Yii::t('main','processing'), 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
+                            ['label' => Yii::t('main','sells'), 'url' => ['/sale'], 'options' => ['title' => 'Продается']],
 
                            ['label' => 'contact', 'url' => ['/contact'],
                                 'template' => '
@@ -554,7 +555,7 @@ top: 250px;
                                     //['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
                                     //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                                     //['label' => 'Shop', 'url' => ['shop/index']],
-                                    ['label' => 'Новости',
+                                    ['label' => Yii::t('main','news'),
                                         'url' => ['/news'],
                                         'options' => ['class' => 'menu-item-has-children'],
 //                                        'items' => [
@@ -574,13 +575,13 @@ top: 250px;
                                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
                                     //['label' => 'Информация', 'url' => ['/faq']],
-                                    ['label' => 'Вопросы ответы', 'url' => ['/faq']],
-                                    ['label' => 'Контакты', 'url' => ['/contact']],
+                                    ['label' =>  Yii::t('main','faq'), 'url' => ['/faq']],
+                                    ['label' =>  Yii::t('main','contact'), 'url' => ['/contact']],
                                     ['label' => 'contact', 'url' => ['/contact'],
                                         'template' => '
                                 <li class="contact-m">
                                     <div class="row">
-                                        <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a><a href="tel: +380671931117" title="Наш телефон">+38 067 193 11 17</a><p class="lenta">Бесплатная консультация!</p></div>
+                                        <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a><a href="tel: +380671931117" title="Наш телефон">+38 067 193 11 17</a><p class="lenta">'.$addeng.'</p></div>
                                     </div>
                                 </li>'
                                     ],
