@@ -194,11 +194,11 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
                     <p>
                         <strong><i class="fa fa-map-marker"></i> Адрес</strong><br>
-                        <?= Yii::t('main','addressinfo1')?>
+                        Старый Петровско-Разумовский проезд, 1/23 стр.1, Москва, 127287
                     </p>
                     <p>
                         <strong><i class="fa fa-map-marker"></i> Адрес 2</strong><br>
-                        <?= Yii::t('main','addressinfo2')?>
+                        Бульвар Дружбы Народов 10, оф. 18, Киев, 01103
                     </p>
                     <p><strong><i class="fa fa-phone"></i> Номер телефона</strong><br>
                         +7 925 470 50 02 <br> +38 067 193 11 17</p>

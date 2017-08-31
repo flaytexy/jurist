@@ -35,16 +35,12 @@ $config = [
             'thousandSeparator' => ' ',
             'currencyCode' => 'USD',
         ],
-        'language'=>'ru-RU',
         'i18n' => [ // ��� ��������� ���������������
             'translations' => [
-                '*' => [
+                'frontend*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@frontend/web/lang',
-                    'sourceLanguage' => 'en',
-                    'fileMap' => [
-                        'main' => 'main.php',
-                    ],
+                    'sourceLanguage' => 'en-US',
+                    'basePath' => '@common/messages',
                 ],
                 'backend*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
@@ -63,7 +59,6 @@ $config = [
         ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
-            'class' => 'app\components\LangRequest'
         ],
         /*        'user' => [
                     'identityClass' => 'common\models\User',
@@ -107,12 +102,10 @@ $config = [
             //'baseUrl' => '/',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'class'=>'app\components\LangUrlManager',
             //'class'=>'frontend\components\LangUrlManager',
             //'languages' => ['ru' => 'ru-RU', 'en' => 'en-US', 'uk' => 'uk-UA'],
             'rules' => [
                 '' => 'site/index',
-                '<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
                 'offshornyie-predlozheniya' => 'offers/index',
 //                [
 //                    'pattern' => 'offshornyie-predlozheniya',
@@ -179,7 +172,6 @@ $config = [
                 ],
             ],
         ],
-
 //        'googleApi' => [
 //                'class'                 => '\skeeks\yii2\googleApi\GoogleApiComponent',
 //                'developer_key'         => 'AIzaSyDin6H0q9dw6l6ATB2MQlvz5vdsNd9HDa4',

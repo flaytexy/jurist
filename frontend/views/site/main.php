@@ -640,7 +640,7 @@ transform: none;
                                                 <img class="main-banks" src="/uploads/thumbs/bankalpinum-a7a8f324b9-93fb67177d3f8829dd1ea589a0a4fccc.jpg" alt="">                                                    <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/lihtenshteyn" title="">Alpinum</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Лихтенштейн</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1500</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1750</span>
                                                     <h4>Корпоративный счет</h4>
                                                 </div>
                                             </div>
