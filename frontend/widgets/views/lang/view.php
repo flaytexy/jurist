@@ -3,7 +3,7 @@ use yii\helpers\Html;
 ?>
 <style>
     #lang {
-        position: fixed;
+        position: absolute;
         display: inline-block;
         color: white;
         right: 0;
