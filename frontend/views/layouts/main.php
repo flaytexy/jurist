@@ -1000,16 +1000,10 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                             <div class="logo">
                                 <a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a>
                             </div>
-                            <p>Оптимизация налогообложения Вашей компании
-                                законным путем это то, на чем мы специализируемся.<br/>
-                                Мы не несем ответственность за успех Вашего бизнеса,
-                                но поспособствовать получению возможности уменьшить
-                                затраты и вручить зарегистрированную новую компанию
-                                в нужной юрисдикции мы можем.</p>
+                            <p><?= Yii::t('main','text1')?><br/>
+                                <?= Yii::t('main','text2')?></p>
 
-                            <p>Чтобы получить результат стоит с чего-то начать,
-                                например написать нам в чат и мы согласуем запуск
-                                выполнения Вашего заказа.</p>
+                            <p><?= Yii::t('main','text3')?></p>
                         </div>
                     </div>
                 </div>
@@ -1017,16 +1011,16 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                     <div class="footer-widget">
                         <div class="address-widget">
                             <p  style="color: white">
-                                <strong  style="color: #7dc20f"><i class="fa fa-map-marker"></i> Адрес</strong><br>
+                                <strong  style="color: #7dc20f"><i class="fa fa-map-marker"></i> <?= Yii::t('main','address')?></strong><br>
                                 Старый Петровско-Разумовский проезд, 1/23 стр.1, Москва, 127287
                             </p>
                             <p style="color: white">
-                                <strong style="color: #7dc20f"><i class="fa fa-map-marker"></i> Адрес 2</strong><br>
+                                <strong style="color: #7dc20f"><i class="fa fa-map-marker"></i> <?= Yii::t('main','address')?> 2</strong><br>
                                 Бульвар Дружбы Народов 10, оф. 18, Киев, 01103
                             </p>
-                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-phone"></i> Номер телефона</strong><br>
+                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-phone"></i> <?= Yii::t('main','number')?></strong><br>
                                 +7 925 470 50 02 <br> +38 067 193 11 17</p>
-                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-clock-o"></i> Часы работы</strong><br>
+                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-clock-o"></i><?= Yii::t('main','worktime')?></strong><br>
                                 09:00-19:00</p>
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i class="fa fa-envelope"></i> E-mail</strong><br>
@@ -1151,10 +1145,10 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         <div class="bottom-menu">
             <div class="container">
                 <ul class="footer-links">
-                    <li><a href="/" title="">Главная</a></li>
-                    <li><a href="/news" title="">Новости</a></li>
-                    <li><a href="/contact" title="">Информация</a></li>
-                    <li><a href="/contact" title="">Контакты</a></li>
+                    <li><a href="/" title=""><?= Yii::t('main','main')?></a></li>
+                    <li><a href="/news" title=""><?= Yii::t('main','news')?></a></li>
+                    <li><a href="/contact" title=""><?= Yii::t('main','contact')?></a></li>
+
                 </ul>
                 <ul class="Social-btn">
                     <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
