@@ -1012,11 +1012,11 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         <div class="address-widget">
                             <p  style="color: white">
                                 <strong  style="color: #7dc20f"><i class="fa fa-map-marker"></i> <?= Yii::t('main','address')?></strong><br>
-                                Старый Петровско-Разумовский проезд, 1/23 стр.1, Москва, 127287
+                                <?= Yii::t('main','addressinfo1')?>
                             </p>
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i class="fa fa-map-marker"></i> <?= Yii::t('main','address')?> 2</strong><br>
-                                Бульвар Дружбы Народов 10, оф. 18, Киев, 01103
+                                <?= Yii::t('main','addressinfo2')?>
                             </p>
                             <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-phone"></i> <?= Yii::t('main','number')?></strong><br>
                                 +7 925 470 50 02 <br> +38 067 193 11 17</p>
