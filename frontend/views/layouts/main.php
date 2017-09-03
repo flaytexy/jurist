@@ -13,7 +13,7 @@ $popularly = \frontend\models\Popularly::find()->limit(7)->all();
 
 $phoneStr = "+7 925 470 50 02";
 
-
+$addeng =  Yii::t('easyii','free');
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 <script src="//load.sumome.com/" data-sumo-site-id="3e9ad4ed5127b8e285ee649aa55e8340bf5eb21a370f52999a717953ee42fd89" async="async"></script>
@@ -465,8 +465,8 @@ top: 250px;
                     <?= Menu::widget([
                         'options' => ['class' => 'top-menus', 'id' => 'top-menus'],
                         'items' => [
-                            ['label' => 'Фонды', 'url' => ['/fonds'], 'options' => ['title' => 'Фонды']],
-                            ['label' => 'Банки', 'url' => ['/banks'],
+                            ['label' => Yii::t('easyii','funds'), 'url' => ['/fonds'], 'options' => ['title' => 'Фонды']],
+                            ['label' => Yii::t('easyii','banks'), 'url' => ['/banks'],
                                 'options' => ['class' => 'menu-item-has-children', 'title' => 'Банки'],
 //                                        'items' => [
 //                                            ['label' => 'New Arrivals', 'url' => ['news/index', 'tag' => 'new'],
@@ -480,13 +480,13 @@ top: 250px;
 //                                        ],
                                 //'template' => '<li class="menu-item-has-children"><a href="{url}" class="mylink">{label}</a></li>',
                             ],
-                            ['label' => 'Компании', 'url' => ['/offshornyie-predlozheniya'], 'options' => ['title' => 'Компании']],
-                            ['label' => 'Лицензии', 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
-                            ['label' => 'Оффшоры', 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
-                            ['label' => 'Процессинг', 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
-                            ['label' => 'Продается', 'url' => ['/sale'], 'options' => ['title' => 'Продается']],
+                            ['label' => Yii::t('easyii','companies'), 'url' => ['/offshornyie-predlozheniya'], 'options' => ['title' => 'Компании']],
+                            ['label' => Yii::t('easyii','licenses'), 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
+                            ['label' => Yii::t('easyii','offshores'), 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
+                            ['label' => Yii::t('easyii','processing'), 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
+                            ['label' => Yii::t('easyii','sells'), 'url' => ['/sale'], 'options' => ['title' => 'Продается']],
 
-                           ['label' => 'contact', 'url' => ['/contact'],
+                            ['label' => 'contact', 'url' => ['/contact'],
                                 'template' => '
                                 <li class="contact-m">
                                 <!--    <div class="row">
@@ -502,7 +502,7 @@ top: 250px;
                             ],
                         ],
                     ]); ?>
-
+                    <?= frontend\widgets\WLang::widget();?>
                 </div>
             </div>
         </div>
@@ -549,17 +549,16 @@ top: 250px;
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-7 ">
-                        <ul><?= frontend\widgets\WLang::widget();?></ul>
                         <nav class="navbar22 navbar-default22">
                             <?= Menu::widget([
                                 'options' => ['class' => 'nav navbar-nav'],
                                 'items' => [
                                     //['label' => 'Главная', 'url' => ['site/index'], 'template' => '<li class="22"><a href="{url}" class="mylink"><span>{label}</span></a></li>'],
-                                    ['label' => 'Главная', 'url' => ['site/index']],
+                                    ['label' =>  Yii::t('easyii','main'), 'url' => ['site/index']],
                                     //['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
                                     //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                                     //['label' => 'Shop', 'url' => ['shop/index']],
-                                    ['label' => 'Новости',
+                                    ['label' => Yii::t('easyii','news'),
                                         'url' => ['/news'],
                                         'options' => ['class' => 'menu-item-has-children'],
 //                                        'items' => [
@@ -579,13 +578,13 @@ top: 250px;
                                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
                                     //['label' => 'Информация', 'url' => ['/faq']],
-                                    ['label' => 'Вопросы ответы', 'url' => ['/faq']],
-                                    ['label' => 'Контакты', 'url' => ['/contact']],
+                                    ['label' =>  Yii::t('easyii','faq'), 'url' => ['/faq']],
+                                    ['label' =>  Yii::t('easyii','contact'), 'url' => ['/contact']],
                                     ['label' => 'contact', 'url' => ['/contact'],
                                         'template' => '
                                 <li class="contact-m">
                                     <div class="row">
-                                        <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a><a href="tel: +380671931117" title="Наш телефон">+38 067 193 11 17</a><p class="lenta">Бесплатная консультация!</p></div>
+                                        <div class="col-md-12 tel-m"><a href="tel: '. str_replace(' ','',$phoneStr).'" title="Наш телефон">'.$phoneStr.'</a><a href="tel: +380671931117" title="Наш телефон">+38 067 193 11 17</a><p class="lenta">'.$addeng.' </p></div>
                                     </div>
                                 </li>'
                                     ],
@@ -1003,16 +1002,10 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                             <div class="logo">
                                 <a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a>
                             </div>
-                            <p>Оптимизация налогообложения Вашей компании
-                                законным путем это то, на чем мы специализируемся.<br/>
-                                Мы не несем ответственность за успех Вашего бизнеса,
-                                но поспособствовать получению возможности уменьшить
-                                затраты и вручить зарегистрированную новую компанию
-                                в нужной юрисдикции мы можем.</p>
+                            <p><?= Yii::t('easyii','text1')?><br/>
+                                <?= Yii::t('easyii','text2')?></p>
 
-                            <p>Чтобы получить результат стоит с чего-то начать,
-                                например написать нам в чат и мы согласуем запуск
-                                выполнения Вашего заказа.</p>
+                            <p><?= Yii::t('easyii','text3')?></p>
                         </div>
                     </div>
                 </div>
@@ -1020,16 +1013,16 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                     <div class="footer-widget">
                         <div class="address-widget">
                             <p  style="color: white">
-                                <strong  style="color: #7dc20f"><i class="fa fa-map-marker"></i> Адрес</strong><br>
-                                Старый Петровско-Разумовский проезд, 1/23 стр.1, Москва, 127287
+                                <strong  style="color: #7dc20f"><i class="fa fa-map-marker"></i> <?= Yii::t('easyii','address')?></strong><br>
+                                <?= Yii::t('easyii','addressinfo1')?>
                             </p>
                             <p style="color: white">
-                                <strong style="color: #7dc20f"><i class="fa fa-map-marker"></i> Адрес 2</strong><br>
-                                Бульвар Дружбы Народов 10, оф. 18, Киев, 01103
+                                <strong style="color: #7dc20f"><i class="fa fa-map-marker"></i> <?= Yii::t('easyii','address')?> 2</strong><br>
+                                <?= Yii::t('easyii','addressinfo2')?>
                             </p>
-                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-phone"></i> Номер телефона</strong><br>
+                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-phone"></i> <?= Yii::t('easyii','number')?></strong><br>
                                 +7 925 470 50 02 <br> +38 067 193 11 17</p>
-                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-clock-o"></i> Часы работы</strong><br>
+                            <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-clock-o"></i><?= Yii::t('easyii','worktime')?></strong><br>
                                 09:00-19:00</p>
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i class="fa fa-envelope"></i> E-mail</strong><br>
@@ -1154,10 +1147,10 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         <div class="bottom-menu">
             <div class="container">
                 <ul class="footer-links">
-                    <li><a href="/" title="">Главная</a></li>
-                    <li><a href="/news" title="">Новости</a></li>
-                    <li><a href="/contact" title="">Информация</a></li>
-                    <li><a href="/contact" title="">Контакты</a></li>
+                    <li><a href="/" title=""><?= Yii::t('easyii','main')?></a></li>
+                    <li><a href="/news" title=""><?= Yii::t('easyii','news')?></a></li>
+                    <li><a href="/contact" title=""><?= Yii::t('easyii','contact')?></a></li>
+
                 </ul>
                 <ul class="Social-btn">
                     <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
@@ -1291,6 +1284,6 @@ RedConnect -->
 
 </script>
 <!--End of Tawk.to Script-->
-<script data-cfasync="false" type="text/javascript" data-bablic="59a272ad6bcdf56686e6d8ee" data-bablic-m="[0,'ru','ru',1,[],0,0,0,0,0,0,0,0,[],'iq-offshore.com/',[],['_v',2]]" src="//cdn2.bablic.com/js/bablic.3.9.js"></script>
+
 <script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({ formId: "72341635329355", buttonText: "Позвонить?", base: "https://form.jotformeu.com/", background: "#7dc20f", fontColor: "#FFFFFF", buttonSide: "left", buttonAlign: "center", type: 1, width: 550, height: 450 }); </script>
 <?php $this->endContent(); ?>

@@ -1,8 +1,9 @@
 <?php
 return [
-    'Answer' => 'Answer',
+     'Answer' => 'Answer',
     'Question' => 'Question',
     'Search' => 'Search',
+    'Test' => 'TEST',
     'Control Panel' => 'Панель управления',
     'Welcome' => 'Welcome',
     'Welcome to control panel, choose which section you want to manage in left menu.' => 'Добро пожаловать в панель управления, выберите в левом меню раздел, который хотите редактировать.',

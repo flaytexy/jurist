@@ -193,14 +193,14 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 
                     <p>
-                        <strong><i class="fa fa-map-marker"></i> Адрес</strong><br>
-                        Старый Петровско-Разумовский проезд, 1/23 стр.1, Москва, 127287
+                        <strong><i class="fa fa-map-marker"></i> <?= Yii::t('easyii','address')?></strong><br>
+                        <?= Yii::t('easyii','addressinfo1')?>
                     </p>
                     <p>
-                        <strong><i class="fa fa-map-marker"></i> Адрес 2</strong><br>
-                        Бульвар Дружбы Народов 10, оф. 18, Киев, 01103
+                        <strong><i class="fa fa-map-marker"></i> <?= Yii::t('easyii','address')?> 2</strong><br>
+                        <?= Yii::t('easyii','addressinfo2')?>
                     </p>
-                    <p><strong><i class="fa fa-phone"></i> Номер телефона</strong><br>
+                    <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number')?></strong><br>
                         +7 925 470 50 02 <br> +38 067 193 11 17</p>
                     <p><strong><i class="fa fa-clock-o"></i> Часы работы</strong><br>
                         09:00-19:00</p>
@@ -209,7 +209,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         one@iq-offshore.com</a></p>
                     <p><strong><i class="fa fa-skype"></i> Skype</strong><br>
                         <a href="skype:iq.decision@gmail.com?call">IQ Decision</a></p>
-<p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Мессенджеры (на номер +7 925 470-50-02)</strong></p>
+<p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Messengers (+7 925 470-50-02)</strong></p>
                     <ul id="listsocial">
                         <li><a href="viber://add?number=+79254705002"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Viber-Icon.png" height="42" width="42" alt="+7 925 175-44-17"></a></li>
                         <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png" height="42" width="42" alt="+7 925 175-44-17"></a></li>

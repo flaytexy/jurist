@@ -447,7 +447,6 @@ transform: none;
     }
 
 </style>
-
 <section>
     <div class="block gray no-padding">
         <div class="container">
