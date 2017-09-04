@@ -1276,7 +1276,7 @@ RedConnect -->
         s1.setAttribute('crossorigin','*');
         s0.parentNode.insertBefore(s1,s0);
     })();
-    // List Ticker by Alex Fish
+    // List Ticker by Alex Fish test
     // www.alexefish.com
 
 </script>
