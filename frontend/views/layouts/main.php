@@ -18,7 +18,15 @@ $addeng =  Yii::t('easyii','free');
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 <script src="//load.sumome.com/" data-sumo-site-id="3e9ad4ed5127b8e285ee649aa55e8340bf5eb21a370f52999a717953ee42fd89" async="async"></script>
 <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<link rel='stylesheet prefetch' href='https://googledrive.com/host/0B1RR6fhjI2QROGt0MTFoVkhMdUk/fonts.css'>
+<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
+
+<link rel="stylesheet" href="http://iq-offshore.com/uploads/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 
 <!-- <div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
        <div class="preloader">
@@ -725,8 +733,9 @@ top: 250px;
                 <div class="col-md-12">
                     <div class="instagram">
                         <div class="title1 light">
-                            <h2>Последнее просмотренное нашими посетителями:</h2>
-                            <span>Возможно, это и Вас заинтересует</span>
+                            <h2> <?= Yii::t('easyii','lastviews')?></h2>
+                            <span> <?= Yii::t('easyii','maybe')?></span>
+
                         </div>
                         <div class="instagram-gallery">
 
@@ -945,10 +954,10 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                                     <i class="fa fa-globe"></i>
                                 </div>
                                 <div class="title text-uppercase">
-                                    <h4>Успешный опыт</h4>
+                                    <h4><?= Yii::t('easyii','successful')?></h4>
                                 </div>
                                 <div class="desc">
-                                    регистрации в 28 странах мира.<br><br>
+                                    <?= Yii::t('easyii','reg28')?><br><br>
                                 </div>
                             </div>
                         </div>
@@ -958,10 +967,10 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                                     <i class="fa fa-university"></i>
                                 </div>
                                 <div class="title text-uppercase">
-                                    <h4>Открываем счета</h4>
+                                    <h4><?= Yii::t('easyii','openaccounts')?></h4>
                                 </div>
                                 <div class="desc">
-                                    в 48 банках мира и активно расширяем список.
+                                    <?= Yii::t('easyii','48banks')?>
                                 </div>
                             </div>
                         </div>
@@ -971,10 +980,10 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                                     <i class="flaticon-people"></i>
                                 </div>
                                 <div class="title text-uppercase">
-                                    <h4>Консультации</h4>
+                                    <h4><?= Yii::t('easyii','consult')?></h4>
                                 </div>
                                 <div class="desc">
-                                    в удобное для Вас время.<br><br>
+                                    <?= Yii::t('easyii','goodtime')?><br><br>
                                 </div>
                             </div>
                         </div>
@@ -984,10 +993,10 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                                     <i class="fa fa-handshake-o"></i>
                                 </div>
                                 <div class="title text-uppercase">
-                                    <h4>Терпеливо</h4>
+                                    <h4><?= Yii::t('easyii','terpelivo')?></h4>
                                 </div>
                                 <div class="desc">
-                                    расскажем с чего начать, даже если это Ваш первый бизнес.
+                                    <?= Yii::t('easyii','talkyou')?>
                                 </div>
                             </div>
                         </div>
@@ -1097,20 +1106,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     }
 
 </style>
-<script type="text/javascript">
-    $("#clicky").click(function(){
-        if($("#sticky-social").is(':visible'))
-        {
-            $("#sticky-social").animate({ width: 'hide' });
-        }
-        else
-        {
-            $("#sticky-social").animate({ width: 'show' });
 
-        }
-    });
-
-</script>
 
 
 
@@ -1169,12 +1165,13 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     </div>
     <!-- Bottom Line -->
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div id="stl_left" style="display: block; opacity: 1; width: 178px;" class="">
     <div id="stl_bg">
         <nobr id="stl_text">Вверх</nobr>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 
 
 <a href="#" class="scrollToTop"></a>
@@ -1216,7 +1213,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
     }
 
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script>
     $(document).ready(function(){
 
@@ -1245,7 +1242,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
             $('#preloader').delay(1000).fadeOut('slow',function(){$(this).remove();});
 
         });  */
-     
+
 
 
     });
@@ -1285,5 +1282,62 @@ RedConnect -->
 </script>
 <!--End of Tawk.to Script-->
 
+<script src='http://iq-offshore.com/uploads/slick.js'></script>
+
+<script src="http://iq-offshore.com/uploads/index.js"></script>
+<script type="text/javascript">
+    var $ticker = $('[data-ticker="list"]'),
+        tickerItem = '[data-ticker="item"]'
+    itemCount = $(tickerItem).length,
+        viewportWidth = 0;
+
+    function setupViewport(){
+        $ticker.find(tickerItem).clone().prependTo('[data-ticker="list"]');
+
+        for (i = 0; i < itemCount; i ++){
+            var itemWidth = $(tickerItem).eq(i).outerWidth();
+            viewportWidth = viewportWidth + itemWidth;
+        }
+
+        $ticker.css('width', viewportWidth);
+    }
+
+    function animateTicker(){
+        $ticker.animate({
+            marginLeft: -viewportWidth
+        }, 40000, "linear", function() {
+            $ticker.css('margin-left', '0');
+            animateTicker();
+        });
+    }
+
+    function initializeTicker(){
+        setupViewport();
+        animateTicker();
+
+        $ticker.on('mouseenter', function(){
+            $(this).stop(true);
+        }).on('mouseout', function(){
+            animateTicker();
+        });
+    }
+
+    initializeTicker();
+
+</script>
+<script type="text/javascript">
+    $("#clicky").click(function(){
+        if($("#sticky-social").is(':visible'))
+        {
+            $("#sticky-social").animate({ width: 'hide' });
+        }
+        else
+        {
+            $("#sticky-social").animate({ width: 'show' });
+
+        }
+    });
+
+</script>
 <script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({ formId: "72341635329355", buttonText: "Позвонить?", base: "https://form.jotformeu.com/", background: "#7dc20f", fontColor: "#FFFFFF", buttonSide: "left", buttonAlign: "center", type: 1, width: 550, height: 450 }); </script>
 <?php $this->endContent(); ?>

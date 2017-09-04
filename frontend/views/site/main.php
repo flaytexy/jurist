@@ -46,7 +46,7 @@ MainAsset::register($this);
                                          data-elementdelay="0.05"
                                          onclick="location.href='/banks'"
                                          style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
-                                        Официальные агенты банка
+                                        <?= Yii::t('easyii','officialagents')?>
                                     </div>
 
                                     <!-- LAYER NR. 2 -->
@@ -66,7 +66,7 @@ MainAsset::register($this);
                                          data-elementdelay="0.05"
                                          onclick="location.href='/banks'"
                                          style="font-size:30px;color:#fff;font-family:poppins;font-weight:700;letter-spacing:.3px;">
-                                        <span>Откроем счет за 2 дня</span>
+                                        <span><?= Yii::t('easyii','openaccount2days')?></span>
                                     </div>
 
                                     <!-- LAYER NR. 3 -->
@@ -86,7 +86,7 @@ MainAsset::register($this);
                                        data-elementdelay="0.05"
                                        onclick="location.href='/banks'"
                                        style="font-size:26px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
-                                        Широкий выбор: более 30 банков
+                                        <?= Yii::t('easyii','widechoose30banks')?>
                                     </p>
                                 </li>
                                 <li data-index="rs-2" data-transition="random" data-slotamount="default"
@@ -134,7 +134,7 @@ MainAsset::register($this);
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:36px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.2px;">
-                                        От прямых регистраторов
+                                        <?= Yii::t('easyii','directregistars')?>
                                     </div>
 
                                     <!-- LAYER NR. 2 -->
@@ -153,7 +153,7 @@ MainAsset::register($this);
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:45px;color:#fff;font-family:poppins;font-weight:600;letter-spacing:8px;">
-                                        Компания в Европе за 1 день
+                                        <?= Yii::t('easyii','europecompany1day')?>
                                     </div>
 
                                     <!-- LAYER NR. 3 -->
@@ -172,7 +172,7 @@ MainAsset::register($this);
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
                                        style="font-size:26px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
-                                        Законное нулевое налогообложение
+                                        <?= Yii::t('easyii','zerotax')?>
                                     </i>
 
                                     <!-- LAYER NR. 4 -->
@@ -222,7 +222,7 @@ MainAsset::register($this);
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
-                                        От прямых регистраторов
+                                        <?= Yii::t('easyii','directregistars')?>
                                     </div>
 
                                     <!-- LAYER NR. 2 -->
@@ -241,7 +241,7 @@ MainAsset::register($this);
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:30px;color:#fff;font-family:poppins;font-weight:700;letter-spacing:.3px;">
-                                        <span>Оффшор за 449 USD</span>
+                                        <span> <?= Yii::t('easyii','offshore449usd')?></span>
                                     </div>
 
                                     <!-- LAYER NR. 3 -->
@@ -260,7 +260,7 @@ MainAsset::register($this);
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
                                        style="font-size:26px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
-                                        24 часа
+                                        <?= Yii::t('easyii','24hours')?>
                                     </p>
                                 </li>
                                 <li data-index="rs-4" data-transition="random" data-slotamount="default"
@@ -308,7 +308,7 @@ MainAsset::register($this);
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:36px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.2px;">
-                                        По выгодной цене
+                                        <?= Yii::t('easyii','bargain')?>
                                     </div>
 
                                     <!-- LAYER NR. 2 -->
@@ -327,7 +327,7 @@ MainAsset::register($this);
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          style="font-size:45px;color:#fff;font-family:poppins;font-weight:600;letter-spacing:8px;">
-                                        Лицензия для Forex
+                                        <?= Yii::t('easyii','forexlicense')?>
                                     </div>
 
                                     <!-- LAYER NR. 3 -->
@@ -346,7 +346,7 @@ MainAsset::register($this);
                                        data-responsive_offset="on"
                                        data-elementdelay="0.05"
                                        style="font-size:26px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
-                                        Компания <span>+</span> Лицензия <span>+</span> Счет
+                                        <?= Yii::t('easyii','clb')?>
                                     </i>
 
                                     <!-- LAYER NR. 4 -->
@@ -460,22 +460,119 @@ transform: none;
                         <!-- WIP -->
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
-                                <li class="ticker__item" data-ticker="item">Открываем счета на Forex и Gambling!</li>
+                                <li class="ticker__item" data-ticker="item"><?= Yii::t('easyii','1')?></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item">Самый лояльный банк в Европе сейчас - BOS банк</li>
+                                <li class="ticker__item" data-ticker="item"><?= Yii::t('easyii','2')?></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item">Самая дешевая компания - Belize</li>
+                                <li class="ticker__item" data-ticker="item"><?= Yii::t('easyii','3')?></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item">Самый правильный совет специалиста - индивидуальный и у нас бесплатный</li>
+                                <li class="ticker__item" data-ticker="item"><?= Yii::t('easyii','4')?></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item">ВНИМАНИЕ! Списки бенефициаров в Шотландии теперь открыты!</li>
+                                <li class="ticker__item" data-ticker="item"><?= Yii::t('easyii','5')?></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                             </ul>
                         </div>
                         <!--<h3>Индивидуальный подход высокого уровня<br /> <span>Даже с минимальным бюджетом</span></h3>
                         <span class="hidden-xs hidden-sm hidden-sm-down"><i class="fa fa-caret-down"></i></span>
                         <div class="calendar-container">-->
-                        <iframe src="http://iq-offshore.com/uploads/index.html" style="display: block; border: 0px none; width: 100%; max-width: 100%; height: 250px; top: 24px; margin: 0px auto; float: none;" frameborder="0"> </iframe>
+                        <!--<iframe src="http://iq-offshore.com/uploads/index.html" style="display: block; border: 0px none; width: 100%; max-width: 100%; height: 250px; top: 24px; margin: 0px auto; float: none;" frameborder="0"> </iframe>-->
+                        <div>
+                            <div class="Modern-Slider">
+                                <!-- Item -->
+                                <div class="item">
+                                    <div class="img-fill">
+                                        <!--<img src="http://i.imgur.com/8mwd9AL.jpg?1" alt="">-->
+                                        <div class="info">
+                                            <div>
+                                                <h3><?= Yii::t('easyii','50')?>:</h3>
+                                                <h5><?= Yii::t('easyii','51')?> <b> <?= Yii::t('easyii','52')?></b><br>
+                                                    <?= Yii::t('easyii','53')?> <b><?= Yii::t('easyii','54')?></b></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // Item -->
+                                <!-- Item -->
+                                <div class="item">
+                                    <div class="img-fill">
+                                        <!--<img src="http://i.imgur.com/roZuL8V.jpg?1" alt="">-->
+                                        <div class="info">
+                                            <div>
+                                                <h3><?= Yii::t('easyii','55')?></h3>
+                                                <h5><?= Yii::t('easyii','56')?> <b>2599 EUR</b> </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // Item -->
+                                <!-- Item -->
+                                <div class="item">
+                                    <div class="img-fill">
+                                        <!-- <img src="http://i.imgur.com/qa0GO9l.jpg?1" alt="">-->
+                                        <div class="info">
+                                            <div>
+                                                <h3><?= Yii::t('easyii','58')?></h3>
+                                                <h5><?= Yii::t('easyii','59')?><b>999 EUR</b> </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // Item -->
+                                <!-- Item -->
+                                <div class="item">
+                                    <div class="img-fill">
+                                        <!--  <img src="http://i.imgur.com/eeM6ZCe.jpg?1" alt="">-->
+                                        <div class="info">
+                                            <div>
+                                                <h3><?= Yii::t('easyii','61')?></h3>
+                                                <h5><?= Yii::t('easyii','62')?> <b> 3600 EUR</b></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // Item -->
+                                <!-- Item -->
+                                <div class="item">
+                                    <div class="img-fill">
+                                        <!-- <img src="http://i.imgur.com/KpikY6V.jpg?1" alt="">-->
+                                        <div class="info">
+                                            <div>
+                                                <h3><?= Yii::t('easyii','64')?></h3>
+                                                <h5><?= Yii::t('easyii','65')?> <b>2999 EUR</b><br>
+                                                    <?= Yii::t('easyii','67')?> <b>2499 EUR</b></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // Item -->
+                                <!-- Item -->
+                                <div class="item">
+                                    <div class="img-fill">
+                                        <!-- <img src="http://i.imgur.com/se0oBNb.jpg?1" alt="">-->
+                                        <div class="info">
+                                            <div>
+                                                <h3><?= Yii::t('easyii','69')?></h3>
+                                                <h5><?= Yii::t('easyii','79')?><b>3700 EUR</b></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // Item -->
+                                <!-- Item -->
+                                <div class="item">
+                                    <div class="img-fill">
+                                        <!-- <img src="http://i.imgur.com/1B21u8G.jpg?1" alt="">-->
+                                        <div class="info">
+                                            <div>
+                                                <h3><?= Yii::t('easyii','72')?><b>6500 EUR</b></h3>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // Item -->
+                            </div>
+                        </div>
 </div>
                         <!-- <div class="search-luxuriousform">
                             <div class="row">
@@ -540,10 +637,10 @@ transform: none;
                 <div class="col-md-12">
                     <div class="villaeditors-picks">
                         <div class="title1">
-                            <h2>Популярные юрисдикции</h2>
-                            <span>Все юрисдикции</span>
+                            <h2><?= Yii::t('easyii','6')?></h2>
+                            <span><?= Yii::t('easyii','7')?></span>
 
-                            <p>Решения мы предлагаем не только стандартные - мы можем гибко подойти к вопросу и реализовать согласно Вашим пожеланиям</p>
+                            <p><?= Yii::t('easyii','8')?></p>
                         </div>
                         <div class="packages remove-ext2">
                             <div class="row">
@@ -565,8 +662,8 @@ transform: none;
                                                     <li class="book-btn"><i class="fa fa-info"></i>
                                                         <a
                                                                 href="/offers/<?= $offer->model->slug ?>"
-                                                                title="">Подробнее</a></li>
-                                                    <li class="book-btn"><i class="fa fa-shopping-basket"></i> <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a></li>
+                                                                title=""><?= Yii::t('easyii','9')?></a></li>
+                                                    <li class="book-btn"><i class="fa fa-shopping-basket"></i> <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii','10')?></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -593,22 +690,16 @@ transform: none;
                             <div class="col-md-5">
                                 <div class="villa-arrangementsinfo">
                                     <div class="title1">
-                                        <h2>Рекомендуемые банки</h2>
-                                        <span>Мы проконсультируем по интересующему именно Вас банку,
-            а не только по представленным на сайте</span>
+                                        <h2><?= Yii::t('easyii','11')?></h2>
+                                        <span><?= Yii::t('easyii','12')?></span>
                                     </div>
-                                    <p>Для каждого банка характерны свои особенности.
-                                        Мы поможем понять, какой самый лучший для Вас.
-                                        Даже самый лучший Ваш друг (партнер) может ввести Вас в заблуждение
-                                        искренне того не желая потому, как даже то, что было всего
-                                        несколько месяцев назад уже может таковым не являться
-                                        на быстро меняющемся рынке банковского сектора.</p>
+                                    <p><?= Yii::t('easyii','13')?></p>
                                     <ul class="about-serlist style2">
-                                        <li>Рассчетные счета.</li>
-                                        <li>Мерчант счета.</li>
-                                        <li>Личные счета.</li>
+                                        <li><?= Yii::t('easyii','14')?></li>
+                                        <li><?= Yii::t('easyii','15')?></li>
+                                        <li><?= Yii::t('easyii','16')?></li>
                                     </ul>
-                                    <a href="/banks" class="theme-btn" title="Банки">Детально</a>
+                                    <a href="/banks" class="theme-btn" title="Банки"><?= Yii::t('easyii','detail')?></a>
                                 </div>
                             </div>
                             <div class="col-md-7">
@@ -762,14 +853,10 @@ transform: none;
                 <div class="col-md-12">
                     <div class="villa-locations">
                         <div class="title1">
-                            <h2>Лицензии</h2>
-                            <span>Мы будем сопровождать Вас, пока не вручим готовую лицензию</span>
+                            <h2><?= Yii::t('easyii','17')?></h2>
+                            <span><?= Yii::t('easyii','18')?></span>
 
-                            <p>Подскажем какая именно лицензия нужна. Расскажем что необходимо и доступно обьясним
-                                поэтапно все моменты.
-                                Процес получения занимает 1-2, а то и 3 месяца. От слаженной нашей с Вами работы также
-                                зависит,
-                                как быстро лицензия будет готова.</p>
+                            <p><?= Yii::t('easyii','19')?></p>
                         </div>
                         <div class="villa-locationslist">
                             <ul>
@@ -790,7 +877,7 @@ transform: none;
                                         <?= Html::img($item->thumbFile("/uploads/licenses/license (5).jpg", 226, 360), array('class' => 'main-banks')) ?>
 
                                         <div class="villa-locationinfo">
-                                            <span>Другие</span>
+                                            <span><?= Yii::t('easyii','20')?></span>
 
                                         </div>
                                     </div>
@@ -813,12 +900,10 @@ transform: none;
                 <div class="col-md-12">
                     <div class="recent-news">
                         <div class="title1">
-                            <h2><a href="/processing">Процессинг Мерчант</a></h2>
-                            <span>Широкий спектр вариантов и решений</span>
+                            <h2><a href="/processing"><?= Yii::t('easyii','21')?></a></h2>
+                            <span><?= Yii::t('easyii','22')?></span>
 
-                            <p>Для низкорискового бизнеса у нас имеются варианты открытия в надежных европейских банках
-                                с минимальными комиссиями.
-                                Даже с High Risck мы работаем, если для нас понятна Ваша деятельность.</p>
+                            <p><?= Yii::t('easyii','23')?></p>
 
                             <div class="remove-ext">
                                 <div class="recentnews-carousel2">
@@ -829,7 +914,7 @@ transform: none;
                             </div>
                         </div>
                         <div class="remove-ext">
-                            <div class="h5">Фонды и Трасты</div>
+                            <div class="h5"><?= Yii::t('easyii','24')?></div>
                             <div class="recentnews-carousel">
                                 <? foreach ($fonds as $item): ?>
                                     <div class="recentnew-post"  onclick="location.href='/fonds/<?= $item->model->slug ?>'" >
@@ -849,15 +934,15 @@ transform: none;
                                 <? endforeach; ?>
                             </div>
                             <div>
-                                <p>Оффшоры (низконалоговые юрисдикции) - ключевой инструмент, позволяющий легально и в рамках закона экономить свои деньги. Многие наши партнеры уже экономят. Позвоните нам и получите бесплатную консультацию с целью получить максимальную выгоду в рамках ведения своего бизнеса.</p>
+                                <p><?= Yii::t('easyii','25')?></p>
                                 <p class="text-center">
-                                    <span class="h5">Немного о выгодах оффшоров</span>
+                                    <span class="h5"><?= Yii::t('easyii','26')?></span>
                                 </p>
                                 <ul>
-                                    <li>Конфиденциальность. Оффшоры помогают сохранить коммерческую тайну, а также сведения об их владельцах (в некоторых оффшорах открытые реестры бенефициаров).</li>
-                                    <li>Простота и скорость. Открытие компании в оффшоре занимает, как правило, несколько дней (во многих европейских странах регистрация проходит также быстро и для не оффшорных компаний – при необходимости получите бесплатную консультацию специалиста тут).</li>
-                                    <li>Гибкость и доступность. Купить оффшор с нами – просто и выгодно. Мы все делаем (предлагаем самое выгодное решение задач) именно под ваши потребности (вашего бизнеса). Однако, стоит честно сказать, что есть оффшоры, которые для бизнесмена из СНГ могут регистрироваться месяцами.</li>
-                                    <li>Минимум требований.</li>
+                                    <li><?= Yii::t('easyii','27')?></li>
+                                    <li><?= Yii::t('easyii','28')?></li>
+                                    <li><?= Yii::t('easyii','29')?></li>
+                                    <li><?= Yii::t('easyii','30')?></li>
                                 </ul>
                             </div>
                             <!-- Recent News Carousel -->
@@ -877,24 +962,15 @@ transform: none;
                 <div class="col-md-12">
                     <div class="spec-services">
                         <div class="title1 vertical">
-                            <h2>Продвинутые инструменты <span>для бизнеса</span></h2>
-                            <span>Предлагаем продвинутые услуги</span>
+                            <h2><?= Yii::t('easyii','31')?> <span><?= Yii::t('easyii','32')?></span></h2>
+                            <span><?= Yii::t('easyii','33')?></span>
                         </div>
                         <div class="about-services">
-                            <p>Лучшее предложение это то, после которого
-                                Вы будете нас рекомендовать партнерам или близким,
-                                а не то, где мы больше на Вас заработаем.
-                                Мы реализуем Ваши заказы по отработанным системам,
-                                заведомо известным нам из опыта, а не в теории.
-                                В динамично меняющейся среде мы ищем актуальные
-                                новые решения, а не останавливаемся, если всем
-                                известные стандартные не срабатывают.</p>
+                            <p><?= Yii::t('easyii','34')?></p>
                             <ul class="about-serlist">
-                                <li><a href="#" title="">Главное наше отличие - это поиск своих путей,
-                                        а не надежда на оппонентов</a></li>
-                                <li><a href="#" title="">Степень доверия в непростых вопросах
-                                        является определяющим фактором</a></li>
-                                <li><a href="#" title="">Полностью оправданные затраты</a></li>
+                                <li><a href="#" title=""><?= Yii::t('easyii','35')?></a></li>
+                                <li><a href="#" title=""><?= Yii::t('easyii','36')?></a></li>
+                                <li><a href="#" title=""><?= Yii::t('easyii','37')?></a></li>
                             </ul>
                         </div>
                         <div class="services-list1" id="services-list1">
@@ -902,41 +978,40 @@ transform: none;
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-new-india-republic"></i></span>
-                                        <h4><a href="#services-list1" title="">Подбор подходящей юрисдикции</a></h4>
-                                        <i>Страны и их особенности</i>
+                                        <h4><a href="#services-list1" title=""><?= Yii::t('easyii','38')?></a></h4>
+                                        <i><?= Yii::t('easyii','39')?></i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-new-worlwide"></i></span>
                                         <h4><a href="#services-list1" title="">SWIFT</a></h4>
-                                        <i>Регистрация под Вашу систему</i>
+                                        <i><?= Yii::t('easyii','40')?></i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-new-credit-card-pay-mode"></i></span>
-                                        <h4><a href="#services-list1" title="">Брендированные карты
-                                                без привязки к банку</a></h4>
+                                        <h4><a href="#services-list1" title=""><?= Yii::t('easyii','41')?></a></h4>
                                         <i>Visa & MasterCard</i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-new-credit-card-2"></i></span>
-                                        <h4><a href="#services-list1" title="">Анонимные карты</a></h4>
-                                        <i>Субсчета</i>
+                                        <h4><a href="#services-list1" title=""><?= Yii::t('easyii','42')?></a></h4>
+                                        <i><?= Yii::t('easyii','43')?></i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-new-coin"></i></span>
-                                        <h4><a href="#services-list1" title="">Холдинги</a></h4>
-                                        <i>Крупный бизнес</i>
+                                        <h4><a href="#services-list1" title=""><?= Yii::t('easyii','44')?></a></h4>
+                                        <i><?= Yii::t('easyii','45')?></i>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="/offshornyie-predlozheniya" title="" class="theme-btn">Просмотреть все</a>
+                                    <a href="/offshornyie-predlozheniya" title="" class="theme-btn"><?= Yii::t('easyii','46')?></a>
                                 </div>
                             </div>
                         </div>
@@ -1048,11 +1123,11 @@ transform: none;
                                 </div>
                             </div>
                             <div class="col-md-5">
-                                <strong>Если Вы перечитали информацию на сайте и остались вопросы - напишите в чат</strong>
-                                <span>Напишите и мы секономим Ваше время</span>
+                                <strong><?= Yii::t('easyii','47')?></strong>
+                                <span><?= Yii::t('easyii','48')?></span>
                             </div>
                             <div class="col-md-3">
-                                <a href="/contact" class="theme-btn" title="Написать">Написать</a>
+                                <a href="/contact" class="theme-btn" title="Написать"><?= Yii::t('easyii','write')?></a>
                             </div>
                         </div>
                     </div>
@@ -1068,7 +1143,7 @@ transform: none;
     <div class="block no-padding gray2">
 
         <div class="container">
-            <h2>Последние новости: </h2>
+            <h2><?= Yii::t('easyii','49')?></h2>
             <div class="sponsor-carousel">
 
                 <? foreach ($news as $item): ?>
@@ -1121,43 +1196,3 @@ transform: none;
     }
 
 </style>
-<script type="text/javascript">
-    var $ticker = $('[data-ticker="list"]'),
-        tickerItem = '[data-ticker="item"]'
-    itemCount = $(tickerItem).length,
-        viewportWidth = 0;
-
-    function setupViewport(){
-        $ticker.find(tickerItem).clone().prependTo('[data-ticker="list"]');
-
-        for (i = 0; i < itemCount; i ++){
-            var itemWidth = $(tickerItem).eq(i).outerWidth();
-            viewportWidth = viewportWidth + itemWidth;
-        }
-
-        $ticker.css('width', viewportWidth);
-    }
-
-    function animateTicker(){
-        $ticker.animate({
-            marginLeft: -viewportWidth
-        }, 40000, "linear", function() {
-            $ticker.css('margin-left', '0');
-            animateTicker();
-        });
-    }
-
-    function initializeTicker(){
-        setupViewport();
-        animateTicker();
-
-        $ticker.on('mouseenter', function(){
-            $(this).stop(true);
-        }).on('mouseout', function(){
-            animateTicker();
-        });
-    }
-
-    initializeTicker();
-
-</script>
