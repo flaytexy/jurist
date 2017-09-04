@@ -552,7 +552,7 @@ transform: none;
                                         <div class="info">
                                             <div>
                                                 <h3><?= Yii::t('easyii','69')?></h3>
-                                                <h5><?= Yii::t('easyii','79')?><b>3700 EUR</b></h5>
+                                                <h5><?= Yii::t('easyii','70')?><b>3700 EUR</b></h5>
                                             </div>
                                         </div>
                                     </div>
