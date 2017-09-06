@@ -13,9 +13,10 @@ use yii\helpers\Html;
         display: none;
         position: absolute;
         background-color: #f9f9f9;
-        min-width: 10px;
+        width: 42px;
+        height: 23px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        padding: 12px 16px;
+        padding: 4px 5px;
         z-index: 5;
         list-style: none;
         right: 0;
@@ -38,3 +39,4 @@ use yii\helpers\Html;
         <?php endforeach;?>
     </ul>
 </div>
+

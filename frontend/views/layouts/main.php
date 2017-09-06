@@ -36,6 +36,25 @@ $addeng =  Yii::t('easyii','free');
             <div class="circ4"></div>
         </div></div></div> -->
 <style>
+    .Rus {
+        color: transparent;
+        background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png);
+        background-size: 30px 15px;
+        background-repeat: no-repeat;
+        background-position: right top;
+
+    }
+    .Eng {
+        color: transparent;
+        background-image: url(https://qph.ec.quoracdn.net/main-qimg-45ee634d5a033b5bbb11d231864cc6c3);
+        background-size: 30px 15px;
+        background-repeat: no-repeat;
+        background-position: right top;
+    }
+    .Eng a,
+    .Rus a {
+        color: transparent;
+    }
 
 
     .hr-text {
@@ -1276,7 +1295,7 @@ RedConnect -->
         s1.setAttribute('crossorigin','*');
         s0.parentNode.insertBefore(s1,s0);
     })();
-    // List Ticker by Alex Fish test
+    // List Ticker by Alex Fish
     // www.alexefish.com
 
 </script>
@@ -1338,6 +1357,12 @@ RedConnect -->
         }
     });
 
+</script>
+<script>
+    $( "b:contains('Русский')").addClass('Rus');
+    $( "b:contains('English')").addClass('Eng');
+    $( "li:contains('English')").addClass('Eng');
+    $( "li:contains('Русский')").addClass('Rus');
 </script>
 <script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({ formId: "72341635329355", buttonText: "Позвонить?", base: "https://form.jotformeu.com/", background: "#7dc20f", fontColor: "#FFFFFF", buttonSide: "left", buttonAlign: "center", type: 1, width: 550, height: 450 }); </script>
 <?php $this->endContent(); ?>
