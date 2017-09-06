@@ -33,15 +33,27 @@ use yii\helpers\Html;
 </style>
 
 <div id="lang" style="float: right;">
-    <span id="current-lang">
-       <b> <?= $current->name;?></b> <span class="show-more-lang">▼</span>
+     <span id="current-lang">
+         <?php foreach ($langs as $lang):?>
+      <b> <?= Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl()) ?></b>
+          <?php endforeach;?>
+   </span>
+ <!--  <ul id="langs">
+       </?php foreach ($langs as $lang):?>
+           <li class="item-lang">
+               </?= Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl()) ?>
+           </li>
+       </?php endforeach;?>
+   </ul>-->
+   <!-- <span id="current-lang">
+       <b> </?= $current->name;?></b> <span class="show-more-lang">▼</span>
     </span>
-    <ul id="langs">
-        <?php foreach ($langs as $lang):?>
+  <!--  <ul id="langs">
+        </?php foreach ($langs as $lang):?>
             <li class="item-lang">
-                <?= Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl()) ?>
+                </?= Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl()) ?>
             </li>
-        <?php endforeach;?>
-    </ul>
+        </?php endforeach;?>
+    </ul>-->
 </div>
 
