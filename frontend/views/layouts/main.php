@@ -650,13 +650,13 @@ top: 250px;
 
 <div class="centeredmenulist">
 
-    <span  class="vmenu"><a href="/banks">Банки&nbsp;</a></span>
+    <span  class="vmenu"><a href="/banks"><?= Yii::t('easyii','banks')?>&nbsp;</a></span>
     <span  class="vmenu">|&nbsp;</span>
-    <span  class="vmenu"><a href="/offshornyie-predlozheniya">Компании&nbsp;</a></span>
+    <span  class="vmenu"><a href="/offshornyie-predlozheniya"><?= Yii::t('easyii','companies')?>&nbsp;</a></span>
     <span  class="vmenu">|&nbsp;</span>
-    <span  class="vmenu"><a href="/licenses">Лицензии&nbsp;</a></span>
+    <span  class="vmenu"><a href="/licenses"><?= Yii::t('easyii','licenses')?>&nbsp;</a></span>
     <span  class="vmenu">|&nbsp;</span>
-    <span  class="vmenu"><a href="/fonds">Фонды&nbsp;</a></span>
+    <span  class="vmenu"><a href="/fonds"><?= Yii::t('easyii','funds')?>&nbsp;</a></span>
 
 
 </div>
@@ -681,23 +681,23 @@ top: 250px;
             <?= Menu::widget([
                 'options' => ['class' => 'nav navbar-nav'],
                 'items' => [
-                    ['label' => 'Главная', 'url' => ['site/index']],
+                    ['label' => Yii::t('easyii','main'), 'url' => ['site/index']],
 
 
-                    ['label' => 'Фонды', 'url' => ['/fonds']],
-                    ['label' => 'Банки', 'url' => ['/banks']],
-                    ['label' => 'Компании', 'url' => ['/offshornyie-predlozheniya']],
-                    ['label' => 'Лицензии', 'url' => ['/licenses']],
-                    ['label' => 'Мерчант', 'url' => ['/processing']],
-                    ['label' => 'Продается готовое', 'url' => ['/sale']],
+                    ['label' =>  Yii::t('easyii','funds'), 'url' => ['/fonds']],
+                    ['label' =>  Yii::t('easyii','banks'), 'url' => ['/banks']],
+                    ['label' =>  Yii::t('easyii','companies'), 'url' => ['/offshornyie-predlozheniya']],
+                    ['label' =>  Yii::t('easyii','licenses'), 'url' => ['/licenses']],
+                    ['label' =>  Yii::t('easyii','processing'), 'url' => ['/processing']],
+                    ['label' =>  Yii::t('easyii','sells'), 'url' => ['/sale']],
                     //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
                     //['label' => 'Shop', 'url' => ['shop/index']],
-                    ['label' => 'Новости', 'url' => ['/news']],
+                    ['label' =>  Yii::t('easyii','news'), 'url' => ['/news']],
                     //['label' => 'Articles', 'url' => ['articles/index']],
                     //['label' => 'Gallery', 'url' => ['gallery/index']],
                     //['label' => 'Guestbook', 'url' => ['guestbook/index']],
                     //['label' => 'Информация', 'url' => ['/faq']],
-                    ['label' => 'Контакты', 'url' => ['/contact']],
+                    ['label' =>  Yii::t('easyii','contact'), 'url' => ['/contact']],
                 ],
             ]); ?>
             <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
