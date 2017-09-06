@@ -2,6 +2,11 @@
 use yii\helpers\Html;
 ?>
 <style>
+    @media (max-width: 1000px) {
+        #lang {
+            position: static !important;
+        }
+    }
     #lang {
         position: absolute;
         display: inline-block;
