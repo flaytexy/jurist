@@ -14,6 +14,7 @@ return [
     'offshores' => 'Offshores',
     'processing' => 'Processing',
     'sells' => 'Sells',
+    'contactus' => 'Contact us',
     //============================================ FOOTERS
     'address' => 'Address',
     'number' => 'Phone number',
@@ -125,6 +126,9 @@ return [
     '73' => '6500 EUR',
     //=================
     '74' => 'Call today?',
+    //=================
+    'otherbanks' => 'Other banks',
+    'days' => 'Days',
 
 
 

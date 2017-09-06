@@ -650,7 +650,7 @@ transform: none;
                                             <a href="/offers/<?= $offer->model->slug ?>">
                                                 <div class="package-thumb">
                                                     <?= Html::img($offer->thumb(370, 259), array('class' => 'sadsa')) ?>
-                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $offer->model->price ?></i> <b> / Дней: <?= $offer->model->how_days ?></b>  </span>
+                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $offer->model->price ?></i> <b> / <?= Yii::t('easyii','days')?>: <?= $offer->model->how_days ?></b>  </span>
                                                 </div>
                                             </a>
                                             <div class="package-detail">
@@ -785,7 +785,7 @@ transform: none;
                                                 <img src="/uploads/theme_villa/offered-service6.jpg" alt="">
 
                                                 <div class="offered-serviceinfo">
-                                                    <h4><a href="/banks" title="">Другие банки</a></h4>
+                                                    <h4><a href="/banks" title=""><?= Yii::t('easyii','otherbanks')?></a></h4>
                                                     <!--<span>banks</span>-->
                                                 </div>
                                             </div>

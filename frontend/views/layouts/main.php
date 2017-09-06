@@ -1058,7 +1058,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                                 <a href="mailto:one@iq-offshore.com">one@iq-offshore.com</a></p>
                             <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-skype"></i> Skype</strong><br>
                                 <a href="skype:IQ Decision?call">IQ Decision</a></p>
-                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=left' ) )" class="theme-btn" title="">Связаться с нами</a>
+                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=left' ) )" class="theme-btn" title=""><?= Yii::t('easyii','contactus')?></a>
                         </div>
                     </div>
                 </div>
@@ -1365,5 +1365,5 @@ RedConnect -->
     $( "li:contains('English')").addClass('Eng');
     $( "li:contains('Русский')").addClass('Rus');
 </script>
-<script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({ formId: "72341635329355", buttonText: "Позвонить?", base: "https://form.jotformeu.com/", background: "#7dc20f", fontColor: "#FFFFFF", buttonSide: "left", buttonAlign: "center", type: 1, width: 550, height: 450 }); </script>
+<script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({ formId: "72341635329355", buttonText: "<?= Yii::t('easyii','74')?>", base: "https://form.jotformeu.com/", background: "#7dc20f", fontColor: "#FFFFFF", buttonSide: "left", buttonAlign: "center", type: 1, width: 550, height: 450 }); </script>
 <?php $this->endContent(); ?>
