@@ -35,7 +35,7 @@ return [
     'terpelivo' => 'Patiently',
     'talkyou' => 'tell you where to start, even if this is your first business.',
     //============================================ MAIN SLIDER
-    'officialagents' => 'Official bank agents',
+    'officialagents' => 'Official banks agent',
     'openaccount2days' => 'We will open bank account in 2 days',
     'widechoose30banks' => 'Wide choose: more than 30 banks',
     'directregistars' => 'From direct registrars',
