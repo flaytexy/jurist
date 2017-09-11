@@ -644,8 +644,9 @@ transform: none;
                                 <div class="package-thumb">
                                     <?= Html::img($item->thumb(370, 259), array('class' => 'sadsa')) ?>
                                     <div id="newsinfo">
-                                        <b><i class="fa fa-calendar"></i> <?= $item->date ?></b>
-                                        <!-- <i class="fa fa-comment"></i>--><b>Прочитали <?= $item->views * 3 ?> человек</b>
+                                        <i class="fa fa-calendar"></i><b> <?= $item->date ?></b> /
+                                          <i class="fa fa-eye" aria-hidden="true"><b></i> <?= $item->views * 3 ?> человек</b>
+                                    
                                     </div>
                                 </div>
                             </a>
@@ -878,9 +879,10 @@ transform: none;
         top: 0;
         background: #2b2b2b;
         color: white;
-        width: 150px;
+        width: 290px;
         padding-top: 5px;
-        border-radius: 10px;
+        padding-bottom: 5px;
+        border-radius: 0px 0px 15px 0px;
         text-align: center;
         -webkit-transition-duration: 0.4s; /* Safari */
         transition-duration: 0.4s;
