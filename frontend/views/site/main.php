@@ -642,24 +642,28 @@ transform: none;
                         <div class="package">
                             <a href="/news/<?= $item->slug ?>">
                                 <div class="package-thumb">
+                                    <div class="image">
                                     <?= Html::img($item->thumb(370, 259), array('class' => 'sadsa')) ?>
+                                    </div>
                                     <div id="newsinfo">
                                         <i class="fa fa-calendar"></i><b> <?= $item->date ?></b> /
                                           <i class="fa fa-eye" aria-hidden="true"><b></i> <?= $item->views * 3 ?> человек</b>
-                                    
+
+                                    </div>
+                                    <div class="package-centered">
+<div id="centered-package">
+                                        <h4><a href="/news/<?= $item->slug ?>"><?= $item->title ?></a></h4><br>
+
+                                       <!-- <ul class="location-book">
+                                            <li class="book-btn">
+                                                <a href="/news/</?= $item->slug ?>" title=""></?= Yii::t('easyii','75')?></a></li>
+
+                                        </ul>-->
+    </div>
                                     </div>
                                 </div>
                             </a>
-                            <div class="package-detail">
 
-                                <h4><a href="/news/<?= $item->slug ?>"><?= $item->title ?></a></h4>
-
-                                <ul class="location-book">
-                                    <li class="book-btn">
-                                        <a href="/news/<?= $item->slug ?>" title=""><?= Yii::t('easyii','75')?></a></li>
-
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 <? endforeach; ?>
@@ -874,6 +878,36 @@ transform: none;
     </div>
 </section>
 <style>
+    .package-thumb a {
+color: white;
+    }
+    .image:after{
+        content:'\A';
+        position:absolute;
+        width:100%; height:100%;
+        top:0;
+        left:0;
+        background:rgba(0,0,0,0.6);
+        opacity:1;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+    }
+    .package:hover .image:after {
+        background:rgba(0,0,0,0.8);
+    }
+    .package-centered {
+
+
+    }
+    #centered-package {
+        text-align: center;
+
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     #newsinfo {
         position:absolute;
         top: 0;
