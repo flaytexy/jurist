@@ -628,7 +628,7 @@ transform: none;
         </div>
     </div>
 </section>
-<section>
+<section id="paddinglist">
 
     <div class="block no-padding gray2">
 
@@ -869,6 +869,9 @@ transform: none;
     </div>
 </section>
 <style>
+   #paddinglist .package-detail{
+        padding: 18px 20px 25px !important;
+    }
     .title1 {
         margin-bottom: 10px !important;
     }
