@@ -112,7 +112,7 @@ class SiteController extends Controller
 
         $news = Page::items([
             'where' => ['type_id' => 2, 'to_main' => 1, 'status' => 1],
-            'pagination' => ['pageSize' => 6]
+            'pagination' => ['pageSize' => 3]
         ]);
 
         $licenses = Page::items([
