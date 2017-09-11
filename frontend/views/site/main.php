@@ -628,7 +628,45 @@ transform: none;
         </div>
     </div>
 </section>
+<section>
 
+    <div class="block no-padding gray2">
+
+        <div class="container">
+            <h2 style="text-align: center;"><?= Yii::t('easyii','49')?></h2>
+
+
+
+                <? foreach ($news as $item): ?>
+                    <div class="col-md-4">
+                        <div class="package">
+                            <a href="/news/<?= $item->slug ?>">
+                                <div class="package-thumb">
+                                    <?= Html::img($item->thumb(370, 259), array('class' => 'sadsa')) ?>
+
+                                </div>
+                            </a>
+                            <div class="package-detail">
+
+                                <h4><a href="/news/<?= $item->slug ?>"><?= $item->title ?></a></h4>
+                                <ul class="location-book">
+                                    <li class="book-btn">
+                                        <a href="/news/<?= $item->slug ?>" title=""><?= Yii::t('easyii','75')?></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <? endforeach; ?>
+
+
+
+
+        </div>
+        <!-- Sponsor Carousel -->
+    </div>
+    </div>
+</section>
 <section>
     <div class="block ext-toppadd-one">
         <div class="fixed-bg2" style="background-image: url(/uploads/theme_villa/parallax2.jpg);"></div>
@@ -796,13 +834,13 @@ transform: none;
                                     <div class="row">
                                         </*? foreach ($banks as $item): ?>
                                             <div class="col-md-6">
-                                                <div class="offered-service" onclick="location.href='/banks/<?= $item->model->slug ?>'">
+                                                <div class="offered-service" onclick="location.href='/banks/</?= $item->model->slug ?>'">
                                                     </*?= Html::img($item->thumb(300, 190), array('class' => 'main-banks')) ?>
                                                     <div class="offered-serviceinfo">
                                                         <h4><a href="/banks/</*?= $item->model->slug ?>"
                                                                title=""></*?= $item->model->title ?></a></h4>
-                                                        <span style="font-weight: bold; font-size: large; color: white"><?= $item->model->location_title ?></span>
-                                                        <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€<?= $item->price ?></span>
+                                                        <span style="font-weight: bold; font-size: large; color: white"></?= $item->model->location_title ?></span>
+                                                        <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€</?= $item->price ?></span>
                                                     </div>
                                                 </div>
                                             </div>

@@ -126,6 +126,7 @@ return [
     '73' => '6500 EUR',
     //=================
     '74' => 'Call today?',
+    '75' => 'Read',
     //=================
     'otherbanks' => 'Other banks',
     'days' => 'Days',
