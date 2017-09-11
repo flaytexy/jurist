@@ -643,12 +643,16 @@ transform: none;
                             <a href="/news/<?= $item->slug ?>">
                                 <div class="package-thumb">
                                     <?= Html::img($item->thumb(370, 259), array('class' => 'sadsa')) ?>
-
+                                    <div id="newsinfo">
+                                        <b><i class="fa fa-calendar"></i> <?= $item->date ?></b>
+                                        <!-- <i class="fa fa-comment"></i>--><b>Прочитали <?= $item->views * 3 ?> человек</b>
+                                    </div>
                                 </div>
                             </a>
                             <div class="package-detail">
 
                                 <h4><a href="/news/<?= $item->slug ?>"><?= $item->title ?></a></h4>
+
                                 <ul class="location-book">
                                     <li class="book-btn">
                                         <a href="/news/<?= $item->slug ?>" title=""><?= Yii::t('easyii','75')?></a></li>
@@ -869,6 +873,22 @@ transform: none;
     </div>
 </section>
 <style>
+    #newsinfo {
+        position:absolute;
+        top: 0;
+        background: #2b2b2b;
+        color: white;
+        width: 150px;
+        padding-top: 5px;
+        border-radius: 10px;
+        text-align: center;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+    }
+    .package:hover #newsinfo{
+        background:#7bbe0e;
+
+    }
    #paddinglist .package-detail{
         padding: 18px 20px 25px !important;
     }
