@@ -1237,10 +1237,10 @@ color: white;
                 </? endforeach; ?>
                 </div>
             </div>
-             Sponsor Carousel -->
+             Sponsor Carousel
         </div>
     </div>
-</section>
+</section> -->
 <style>
     .ticker__viewport {
       border-bottom: solid #c21b00;
