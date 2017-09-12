@@ -1096,7 +1096,7 @@ color: white;
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-new-credit-card-2"></i></span>
-                                        <h4><a href="#services-list1" title=""><?= Yii::t('easyii','42')?></a></h4>
+                                        <h4><a href="http://iq-offshore.com/news/otkryt-anonimnyj-bankovskij-debitnyj-scet-predoplaty" title=""><?= Yii::t('easyii','42')?></a></h4>
                                         <i><?= Yii::t('easyii','43')?></i>
                                     </div>
                                 </div>
