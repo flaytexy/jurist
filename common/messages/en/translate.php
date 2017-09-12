@@ -130,6 +130,18 @@ return [
     //=================
     'otherbanks' => 'Other banks',
     'days' => 'Days',
+    //REVIEWS
+    'eugenereview' => 'I decided to open a corporate account in a Latvian bank. I applied to the company, because the bank had them on the site, and they offered to open it in other banks without refusing it.
+                But that\'s not the point. I spent half a year with grief in half using the account, giving endless confirmation at the request of the bank for doubtful translations in their opinion.
+                And here after half a year access to my account was blocked.
+                I was forced to apply for the opening of a new account while the proceedings were ongoing.
+                This time I did not have on the example of a certain bank and I agreed to the offered to me.
+                In two weeks I already used a new account and to this day no complaints.
+               Guys fellows, and I lost time and so until I returned the money from the Latvian bank. In vain I did not listen from the very beginning...',
+    'svetlanareview' => 'In another company I ordered an offshore registration and an account opening.
+               The company was registered, but they could not open the account. After this, turning to others, I learned that it turns out that you can open an account by buying from them and the company, and so not only from them ... I am heartily grateful to IQ Decision that they entered the position and opened an account without registering another company.',
+    'eugene' => 'Eugeny',
+    'svetlana' => 'Svetlana'
 
 
 
