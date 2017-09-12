@@ -1215,29 +1215,29 @@ color: white;
         </div>
     </div>
 </section>
-
+<!--
 <section>
 
     <div class="block no-padding gray2">
 
         <div class="container">
-            <h2><?= Yii::t('easyii','49')?></h2>
+            <h2></?= Yii::t('easyii','49')?></h2>
             <div class="sponsor-carousel">
 
-                <? foreach ($news as $item): ?>
+                </? foreach ($news as $item): ?>
 
-                    <div class="sponsor"><a style="width: 100%;border-radius: 5px; background-color: rgba(0, 0, 0, 0.9)" href="/news/<?= $item->slug ?>">
+                    <div class="sponsor"><a style="width: 100%;border-radius: 5px; background-color: rgba(0, 0, 0, 0.9)" href="/news/</?= $item->slug ?>">
 
-                            <?= Html::img($item->thumb(183, 90), array('class' => 'main-news')) ?>
+                            </?= Html::img($item->thumb(183, 90), array('class' => 'main-news')) ?>
                             <div class="offered-serviceinfotwo">
-                            <span style="font-weight: bolder; color: white;  text-shadow: -1px 0 10px black, 0 1px 10px black, 1px 0 black, 0 -1px 10px black; "><?= $item->title ?></span>
+                            <span style="font-weight: bolder; color: white;  text-shadow: -1px 0 10px black, 0 1px 10px black, 1px 0 black, 0 -1px 10px black; "></?= $item->title ?></span>
                                 </div>
                         </a>
                     </div>
-                <? endforeach; ?>
+                </? endforeach; ?>
                 </div>
             </div>
-            <!-- Sponsor Carousel -->
+             Sponsor Carousel -->
         </div>
     </div>
 </section>
