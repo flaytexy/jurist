@@ -647,7 +647,7 @@ transform: none;
                                     </div>
                                     <div id="newsinfo">
                                         <i class="fa fa-calendar"></i><b> <?= $item->date ?></b> /
-                                          <i class="fa fa-eye" aria-hidden="true"><b></i> <?= $item->views * 3 ?> человек</b>
+                                          <i class="fa fa-eye" aria-hidden="true"><b></i> <?= $item->views * 3 ?>  <?= Yii::t('easyii','viewed')?></b>
 
                                     </div>
                                     <div class="package-centered">
@@ -663,10 +663,10 @@ transform: none;
                                     </div>
                                 </div>
                             </a>
-
                         </div>
                     </div>
                 <? endforeach; ?>
+            <div class='containerrr'>  <div class="button-container"><div class='button -green center'><b> <?= Yii::t('easyii','othernews')?></b></div></div></div>
 
 
 
@@ -878,6 +878,79 @@ transform: none;
     </div>
 </section>
 <style>
+    .containerrr {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+
+    }
+    .button-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .button.-green {
+        color: #FFFFFF;
+        background: #2b2b2b;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+    }
+     .button.-green:hover  {
+
+        background: #7dc20f;
+
+    }
+
+    .button {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        margin: 10px;
+        padding: 12px 12px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transition: all 60ms ease-in-out;
+        transition: all 60ms ease-in-out;
+        text-align: center;
+        white-space: nowrap;
+        text-decoration: none !important;
+        /*text-transform: none;
+        text-transform: capitalize;*/
+        color: #fff;
+        border: 0 none;
+        border-radius: 4px;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1.3;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-flex: 0;
+       /* -ms-flex: 0 0 160px;
+        flex: 0 0 160px;*/
+        box-shadow: 2px 5px 10px rgba(22, 22, 22, 0.1);
+    }
     .package-thumb a {
 color: white;
     }

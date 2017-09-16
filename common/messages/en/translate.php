@@ -130,6 +130,8 @@ return [
     //=================
     'otherbanks' => 'Other banks',
     'days' => 'Days',
+    'othernews' => 'See more news',
+    'viewed' => ' viewed',
     //REVIEWS
     'eugenereview' => 'I decided to open a corporate account in a Latvian bank. I applied to the company, because the bank had them on the site, and they offered to open it in other banks without refusing it.
                 But that\'s not the point. I spent half a year with grief in half using the account, giving endless confirmation at the request of the bank for doubtful translations in their opinion.
