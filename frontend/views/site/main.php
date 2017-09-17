@@ -666,7 +666,7 @@ transform: none;
                         </div>
                     </div>
                 <? endforeach; ?>
-            <div class='containerrr'>  <div class="button-container"><div class='button -green center'><b> <?= Yii::t('easyii','othernews')?></b></div></div></div>
+            <div class='containerrr'>  <div class="button-container"><div class='button -green center'><b><a href="/news/"><?= Yii::t('easyii','othernews')?></a> </b></div></div></div>
 
 
 
@@ -905,6 +905,9 @@ transform: none;
         background: #2b2b2b;
         -webkit-transition-duration: 0.4s; /* Safari */
         transition-duration: 0.4s;
+    }
+    .button.-green a {
+        color: #FFFFFF;
     }
      .button.-green:hover  {
 
