@@ -102,9 +102,9 @@ return [
     //MODERN-SLIDER
     '50' => 'Quickly',
     '51' => 'Scottish  LP + CSOB:',
-    '52' => '4 day and 3300 EUR',
+    '52' => '1 week',
     '53' => 'Scottish LP + FIO:',
-    '54' => '4 day and 3300 EUR',
+    '54' => '1 week',
     '55' => 'Avoiding automatic information exchange:',
     '56' => 'Ireland LP + New Zealand financial institution:',
     '57' => '2599 EUR',
