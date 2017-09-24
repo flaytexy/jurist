@@ -816,7 +816,7 @@ transform: none;
 
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/dsk-bank'">
-                                                <img class="main-banks" src="/uploads/thumbs/dsk-bank-516529dc64-fed04500481f0c11f16b3ce5564c359c.jpg" alt="">                                                    <div class="offered-serviceinfo">
+                                                <img class="main-banks" style="width:300px;height:190px;" src="/uploads/thumbs/dsk-bank-516529dc64-fed04500481f0c11f16b3ce5564c359c.jpg" alt="">                                                    <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/dsk-bank" title="">DSK Bank</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Болгария</span>
                                                     <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1180</span>
