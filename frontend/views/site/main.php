@@ -460,15 +460,15 @@ transform: none;
                         <!-- WIP -->
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
-                                <li class="ticker__item" data-ticker="item"><?= Yii::t('easyii','1')?></li>
+                                <li class="ticker__item" data-ticker="item"><a href="http://iq-offshore.com/banks"><?= Yii::t('easyii','1')?></a></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item"><?= Yii::t('easyii','2')?></li>
+                                <li class="ticker__item" data-ticker="item"><a href="http://iq-offshore.com/banks/bos-bank"><?= Yii::t('easyii','2')?></a></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item"><?= Yii::t('easyii','3')?></li>
+                                <li class="ticker__item" data-ticker="item"><a href="http://iq-offshore.com/offers/beliz"><?= Yii::t('easyii','3')?></a></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item"><?= Yii::t('easyii','4')?></li>
+                                <li class="ticker__item" data-ticker="item"><a href="http://iq-offshore.com/contact"><?= Yii::t('easyii','4')?></a></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item"><?= Yii::t('easyii','5')?></li>
+                                <li class="ticker__item" data-ticker="item"><a href="http://iq-offshore.com/news/partnerstva-sotlandii-otkrytie-spiskov-beneficiarov"><?= Yii::t('easyii','5')?></a></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li>
                             </ul>
                         </div>
@@ -819,7 +819,7 @@ transform: none;
                                                 <img class="main-banks" style="width:300px;height:190px;" src="/uploads/thumbs/dsk-bank-516529dc64-fed04500481f0c11f16b3ce5564c359c.jpg" alt="">                                                    <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/dsk-bank" title="">DSK Bank</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Болгария</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1180</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€2800</span>
                                                     <h4>Корпоративный счет</h4>
                                                 </div>
                                             </div>
@@ -1334,6 +1334,9 @@ color: white;
        /* letter-spacing: -1px;*/
         text-transform: uppercase;
 
+    }
+    .ticker__viewport a {
+        color: #ffffff !important;
     }
     .ticker__list {
         list-style-type: none;
