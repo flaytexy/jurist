@@ -1066,7 +1066,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
                 <aside id="sticky-social">
                     <ul>
-                        <li><a href="viber://add?number=+79254705002"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Viber-Icon.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+                        <li><a href="viber://add?number=+79254705002"><img src="https://images-na.ssl-images-amazon.com/images/I/51-aTeYbibL.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
                         <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
                         <li><img src="http://downdetector.com/i/logo/threema.png" height="42" width="42" alt="В целях безопасности клиентов"></li>
                         <li><a href="#"><img src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png" height="42" width="42" alt="В целях безопасности клиентов"></a></li>
