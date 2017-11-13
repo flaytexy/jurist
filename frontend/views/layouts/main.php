@@ -24,9 +24,8 @@ $addlang = frontend\widgets\WLang::widget();
 
 <!--<link rel='stylesheet prefetch' href='https://googledrive.com/host/0B1RR6fhjI2QROGt0MTFoVkhMdUk/fonts.css'>-->
 <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
-
-<link rel="stylesheet" href="/uploads/style.css?v=2017-11-13-v1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/uploads/style.css?v=2017-11-13-v1">
 
 
 <!-- <div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
@@ -1312,7 +1311,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src='/uploads/slick.js?v=2017-11-13-v1'></script>
-<script src="/uploads/index.js?v=2017-11-13-v1"></script>
+<script src="/uploads/newin.js?v=2017-11-13-v1"></script>
 
 <script>
     $(document).ready(function () {
