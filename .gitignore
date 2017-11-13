@@ -36,3 +36,9 @@ phpunit.phar
 /frontend/system/
 
 ##*_oldx/*
+
+frontend/runtime/cache/*
+frontend/runtime/debug/*
+frontend/runtime/log/*
+frontend/runtime/mail/*
+frontend/runtime/URI/*
