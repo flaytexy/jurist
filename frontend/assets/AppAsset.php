@@ -37,6 +37,9 @@ class AppAsset extends AssetBundle
         'js/bootstrap-datepicker.js',
         'js/fancybox/jquery.fancybox.pack.js',
 
+        '/uploads/slick.js?v=2017-11-13-v2',
+        '/uploads/newin.js?v=2017-11-13-v2',
+
         'js/owl.carousel.min.js',
         'js/select2.full.js',
 
@@ -47,7 +50,8 @@ class AppAsset extends AssetBundle
         'js/bootstrap-submenu.js',
         'js/all.js?v=2017-03-21-1',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
-        'js/scripts.js?v=2017-03-21-1',
+        'js/scripts.js?v=2017-11-14-v2',
+        '//widget.privy.com/assets/widget.js'
         //'js/frontend.js'
     ];
     public $depends = [

@@ -904,39 +904,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
                 // How you would like to style the map.
                 // This is where you would paste any style found on Snazzy Maps.
-                styles: [{
-                    "featureType": "administrative",
-                    "elementType": "labels.text.fill",
-                    "stylers": [{"color": "#444444"}]
-                }, {
-                    "featureType": "landscape",
-                    "elementType": "all",
-                    "stylers": [{"color": "#f2f2f2"}]
-                }, {
-                    "featureType": "poi",
-                    "elementType": "all",
-                    "stylers": [{"visibility": "off"}]
-                }, {
-                    "featureType": "road",
-                    "elementType": "all",
-                    "stylers": [{"saturation": -100}, {"lightness": 45}]
-                }, {
-                    "featureType": "road.highway",
-                    "elementType": "all",
-                    "stylers": [{"visibility": "simplified"}]
-                }, {
-                    "featureType": "road.arterial",
-                    "elementType": "labels.icon",
-                    "stylers": [{"visibility": "off"}]
-                }, {
-                    "featureType": "transit",
-                    "elementType": "all",
-                    "stylers": [{"visibility": "off"}]
-                }, {
-                    "featureType": "water",
-                    "elementType": "all",
-                    "stylers": [{"color": "#4f595d"}, {"visibility": "on"}]
-                }]
+                styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
             };
 
             // Get the HTML DOM element that will contain your map
@@ -1341,12 +1309,136 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 </div>
 <a href="#" class="scrollToTop"></a>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='/uploads/slick.js?v=2017-11-13-v1'></script>
+<script src="/uploads/newin.js?v=2017-11-13-v1"></script>
+
+<script>
+    $(document).ready(function () {
+
+        //Check to see if the window is top if not then display button
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 500) {
+                $('.scrollToTop').fadeIn();
+            } else {
+                $('.scrollToTop').fadeOut();
+            }
+        });
+
+        //Click event to scroll to top
+        $('.scrollToTop').click(function () {
+            $('html, body').animate({scrollTop: 0}, 800);
+            return false;
+        });
+        //Scroll header mobile version
+
+
+// site preloader -- also uncomment the div in the header and the css style for #preloader
+        /*   $(window).load(function(){
+
+               $('#rhlpscrtg').fadeOut('slow',function(){$(this).show();});
+               $("#status").fadeOut();
+               $('#preloader').delay(1000).fadeOut('slow',function(){$(this).remove();});
+
+           });  */
+
+
+    });
+
+
+</script>
+
+
+<script type="text/javascript">
+    var $ticker = $('[data-ticker="list"]'),
+        tickerItem = '[data-ticker="item"]'
+    itemCount = $(tickerItem).length,
+        viewportWidth = 0;
+
+    function setupViewport() {
+        $ticker.find(tickerItem).clone().prependTo('[data-ticker="list"]');
+
+        for (i = 0; i < itemCount; i++) {
+            var itemWidth = $(tickerItem).eq(i).outerWidth();
+            viewportWidth = viewportWidth + itemWidth;
+        }
+
+        $ticker.css('width', viewportWidth);
+    }
+
+    function animateTicker() {
+        $ticker.animate({
+            marginLeft: -viewportWidth
+        }, 40000, "linear", function () {
+            $ticker.css('margin-left', '0');
+            animateTicker();
+        });
+    }
+
+    function initializeTicker() {
+        setupViewport();
+        animateTicker();
+
+        $ticker.on('mouseenter', function () {
+            $(this).stop(true);
+        }).on('mouseout', function () {
+            animateTicker();
+        });
+    }
+
+    initializeTicker();
+
+</script>
+<script type="text/javascript">
+    $("#clicky").click(function () {
+        if ($("#sticky-social").is(':visible')) {
+            $("#sticky-social").animate({width: 'hide'});
+        }
+        else {
+            $("#sticky-social").animate({width: 'show'});
+
+        }
+    });
+
+</script>
+<script>
+    $("b:contains('Русский')").addClass('Rus');
+    $("b:contains('English')").addClass('Eng');
+    $("li:contains('English')").addClass('Eng');
+    $("li:contains('Русский')").addClass('Rus');
+</script>
+
+<!-- RedConnect
+<script id="rhlpscrtg" type="text/javascript" charset="utf-8" async="async"
+        src="https://web.redhelper.ru/service/main.js?c=romanovalexander5"></script>
+<div style="display: none"><a class="rc-copyright"
+                              href="http://redconnect.ru">Сервис обратного звонка RedConnect</a></div>
+RedConnect -->
+
 <!-- BEGIN PRIVY WIDGET CODE -->
 <script type='text/javascript'> var _d_site = _d_site || '411086831FF94A27DC0340B2'; </script>
+<script src='//widget.privy.com/assets/widget.js'></script>
 <!-- END PRIVY WIDGET CODE -->
 
-<script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript" async="async">
-    new JotformFeedback({
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/588fad1957968e2dc9688b7f/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+    // List Ticker by Alex Fish
+    // www.alexefish.com
+
+</script>
+<!--End of Tawk.to Script-->
+
+
+<script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript"> new JotformFeedback({
         formId: "72341635329355",
         buttonText: "<?= Yii::t('easyii', '74')?>",
         base: "https://form.jotformeu.com/",
@@ -1357,7 +1449,5 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         type: 1,
         width: 550,
         height: 450
-    });
-</script>
-
+    }); </script>
 <?php $this->endContent(); ?>

@@ -90,7 +90,91 @@ function reCheckJsFilter(whoChange) {
     });
 }
 
+
+var $ticker = $('[data-ticker="list"]'),
+    tickerItem = '[data-ticker="item"]'
+itemCount = $(tickerItem).length,
+    viewportWidth = 0;
+
+function setupViewport() {
+    $ticker.find(tickerItem).clone().prependTo('[data-ticker="list"]');
+
+    for (i = 0; i < itemCount; i++) {
+        var itemWidth = $(tickerItem).eq(i).outerWidth();
+        viewportWidth = viewportWidth + itemWidth;
+    }
+
+    $ticker.css('width', viewportWidth);
+}
+
+function animateTicker() {
+    $ticker.animate({
+        marginLeft: -viewportWidth
+    }, 40000, "linear", function () {
+        $ticker.css('margin-left', '0');
+        animateTicker();
+    });
+}
+
+function initializeTicker() {
+    setupViewport();
+    animateTicker();
+
+    $ticker.on('mouseenter', function () {
+        $(this).stop(true);
+    }).on('mouseout', function () {
+        animateTicker();
+    });
+}
+
+initializeTicker();
+
+$("#clicky").click(function () {
+    if ($("#sticky-social").is(':visible')) {
+        $("#sticky-social").animate({width: 'hide'});
+    }
+    else {
+        $("#sticky-social").animate({width: 'show'});
+
+    }
+});
+
+
+$("b:contains('Русский')").addClass('Rus');
+$("b:contains('English')").addClass('Eng');
+$("li:contains('English')").addClass('Eng');
+$("li:contains('Русский')").addClass('Rus');
+
+
 $(function () {
+
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 500) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function () {
+        $('html, body').animate({scrollTop: 0}, 800);
+        return false;
+    });
+    //Scroll header mobile version
+
+
+// site preloader -- also uncomment the div in the header and the css style for #preloader
+    /*   $(window).load(function(){
+
+           $('#rhlpscrtg').fadeOut('slow',function(){$(this).show();});
+           $("#status").fadeOut();
+           $('#preloader').delay(1000).fadeOut('slow',function(){$(this).remove();});
+
+       });  */
+
+
     $("#menu-show-block, #map-pos").on('click', 'a', function () {
         //alert($(this).attr('data-show-block'));
         //$('#show-one-el').hide();
@@ -136,3 +220,19 @@ $(function () {
 
     console.log('Its_End_Script');
 });
+
+
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+(function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/588fad1957968e2dc9688b7f/default';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+})();
+// List Ticker by Alex Fish
+// www.alexefish.com
+
+
+console.log('FINISH_ALL_SCRIPTS');
