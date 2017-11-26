@@ -91,10 +91,6 @@ function reCheckJsFilter(whoChange) {
 }
 
 
-var $ticker = $('[data-ticker="list"]'),
-    tickerItem = '[data-ticker="item"]'
-itemCount = $(tickerItem).length,
-    viewportWidth = 0;
 
 function setupViewport() {
     $ticker.find(tickerItem).clone().prependTo('[data-ticker="list"]');
@@ -127,26 +123,47 @@ function initializeTicker() {
     });
 }
 
-initializeTicker();
-
-$("#clicky").click(function () {
-    if ($("#sticky-social").is(':visible')) {
-        $("#sticky-social").animate({width: 'hide'});
-    }
-    else {
-        $("#sticky-social").animate({width: 'show'});
-
-    }
-});
-
-
-$("b:contains('Русский')").addClass('Rus');
-$("b:contains('English')").addClass('Eng');
-$("li:contains('English')").addClass('Eng');
-$("li:contains('Русский')").addClass('Rus');
+var $ticker = $('[data-ticker="list"]'),
+    tickerItem = '[data-ticker="item"]'
+itemCount = $(tickerItem).length,
+    viewportWidth = 0;
 
 
 $(function () {
+
+    $(".Modern-Slider").slick({
+        autoplay: true,
+        autoplaySpeed: 10000,
+        speed: 600,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        pauseOnHover: false,
+        dots: true,
+        pauseOnDotsHover: true,
+        cssEase: 'linear',
+        // fade:true,
+        draggable: false,
+        prevArrow: '<button class="PrevArrow"></button>',
+        nextArrow: '<button class="NextArrow"></button>'
+    });
+
+    $("#clicky").click(function () {
+        if ($("#sticky-social").is(':visible')) {
+            $("#sticky-social").animate({width: 'hide'});
+        }
+        else {
+            $("#sticky-social").animate({width: 'show'});
+
+        }
+    });
+
+
+    $("b:contains('Русский')").addClass('Rus');
+    $("b:contains('English')").addClass('Eng');
+    $("li:contains('English')").addClass('Eng');
+    $("li:contains('Русский')").addClass('Rus');
+
+
 
     //Check to see if the window is top if not then display button
     $(window).scroll(function () {
@@ -216,6 +233,11 @@ $(function () {
 
         return false;
     });
+
+
+
+
+    initializeTicker();
 
 
     console.log('Its_End_Script');

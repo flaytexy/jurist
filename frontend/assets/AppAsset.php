@@ -34,11 +34,9 @@ class AppAsset extends AssetBundle
         //'css/color.css'
     ];
     public $js = [
+        //'https://code.jquery.com/jquery-migrate-3.0.1.min.js',
         'js/bootstrap-datepicker.js',
         'js/fancybox/jquery.fancybox.pack.js',
-
-        '/uploads/slick.js?v=2017-11-13-v2',
-        '/uploads/newin.js?v=2017-11-13-v2',
 
         'js/owl.carousel.min.js',
         'js/select2.full.js',
@@ -48,10 +46,16 @@ class AppAsset extends AssetBundle
         'js/perfect-scrollbar.jquery.js',
         'js/jquery.scrolly.js', //
         'js/bootstrap-submenu.js',
-        'js/all.js?v=2017-03-21-1',
+
+        '/uploads/slick.js?v=2017-11-13-v4',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
-        'js/scripts.js?v=2017-11-14-v2',
+        //'/uploads/newin.js?v=2017-11-13-v3',
+
+        'js/all.js?v=2017-03-21-1',
+        'js/scripts.js?v=2017-11-14-v13',
+
         '//widget.privy.com/assets/widget.js'
+
         //'js/frontend.js'
     ];
     public $depends = [

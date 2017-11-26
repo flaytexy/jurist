@@ -64,29 +64,34 @@ return [
     '10' => 'Order',
     '11' => 'Recommended banks',
     '12' => 'We will advise you on the bank that interests you.',
-    '13' => 'Each bank has its own characteristics. We will help you to understand what is best for you.',
+    '13' => 'Each bank has its own characteristics. We will choose the most suitable option for you. It does not always make sense to ask advice from friends and business partners, because they may not follow changes and trends in the banking sector. Expert consultation is more likely to help make a quick and effective decision on the choice of the bank. Please contact us and our specialists will provide you with professional assistance in this matter!',
     '14' => 'Current accounts.',
     '15' => 'Merchant accounts.',
     '16' => 'Personal accounts.',
     'detail' => 'Detail',
     '17' => 'Licenses',
     '18' => 'We will accompany you until we hand over the license',
-    '19' => 'Let\'s tell you which license is needed. We will tell you what is needed and can be explained step by step in all the moments. The receipt process is 1-2 or 3 months.',
+    '19' => 'Let\'s tell you which license you need, taking into account all the wishes. We will help you to invest in the budget and terms. Step by step we will explain how and what to do.
+Do not forget: the process of obtaining a license takes up to 3 months (and sometimes longer), so our well-coordinated work is the shortest way to your success!',
     '20' => 'Other',
     '21' => 'Processing and Merchant',
     '22' => 'A wide range of options and solutions',
-    '23' => 'For low-risk businesses, we have options for opening in reliable European banks with minimal commissions. Even with High Risck we work, if our activity is clear for us.',
+    '23' => 'We offer effective solutions for high-risk, middle risk and low-risk business. A wide range of opportunities to open merchant accounts in reliable European, Asian and island banks with minimal commissions. Please, contact us and we will find the right one for you!',
     '24' => 'Funds and Trusts',
-    '25' => 'Offshore (low-tax jurisdictions) is a key tool that allows you to legally and within the limits of the law save your money. Many of our partners already save. Call us and get a free consultation to get the most out of your business.',
-    '26' => 'A little about the benefits of offshore',
-    '27' => 'Confidentiality',
-    '28' => 'Simple and quickly.',
-    '29' => 'Flexibility and accessibility.',
-    '30' => 'Minimum requirements.',
+    '25' => 'Offshore (low-tax jurisdictions) is a key tool that allows you to legally save your money. Many of our partners have already assessed all the benefits of tax optimization through registration and management of offshore companies. Get a free consultation and start saving today!',
+    '26' => 'A little about the benefits of offshore:',
+    '27' => 'Confidentiality. Most of the offshore zones guarantee the preservation of trade secrets and non-disclosure of data on the founders of business.',
+    '28' => 'Simplicity and speed. Offshore registration, as a rule, takes only a few days and can take place without the participation of the beneficiary.',
+    '29' => 'Flexibility and accessibility. Buy offshore offshore is simple and profitable for us. We offer a wide range of jurisdictions and types of companies (LLC, Ltd, LLP, etc.). On all questions you can contact our specialists.',
+    '30' => 'Minimum requirements. You do not have to collect the necessary documents for months, the requirements for a package of documents for the registration of an offshore company are, as a rule, minimal.',
     '31' => 'Advanced Tools',
     '32' => 'for business',
     '33' => 'We offer advanced services',
-    '34' => 'The best offer is then, after which you will recommend us to partners or relatives, and not where we will earn more from you.__nl__We realize your orders on the fulfilled systems, known to us from experience, and not in theory.',
+    '34' => 'We are convinced: the best reward for the work is not the profit, but the satisfied customer. We rely on reputation and strive to ensure that every customer recommends us to friends and family.
+
+In the course of implementing any - even the most complex - project, we are guided exclusively by the experience gained previously. Our credo is practice, not theory. In a dynamically changing market environment, we look for and always find topical solutions - we do not stop if the standard does not work.
+
+Did not find the information you need? Contact our specialists for online support.',
     '35' => 'Our main difference is the search for our own ways, not the hope of our opponents',
     '36' => 'The degree of trust in complex issues is the determining factor',
     '37' => 'Fully justified costs',
@@ -144,16 +149,22 @@ return [
     'days' => 'Days',
     'othernews' => 'See more news',
     'viewed' => ' viewed',
+    '89' => 'Official agents of the bank',
+    '90' => 'Open the account for 2 days',
+    '91' => 'Wide choice: more than 30 banks',
+    '92' => 'From direct registrars',
+    '93' => 'Company in Europe for 1 day',
+    '94' => 'Legal zero taxation',
+    '95' => 'Offshore for 449 USD',
+    '96' => '24 hours',
+    '97' => 'At a bargain price',
+    '98' => 'License for Forex',
+    '99' => 'Company',
+    '100' => 'License',
+    '101' => 'Account',
     //REVIEWS
-    'eugenereview' => 'I decided to open a corporate account in a Latvian bank. I applied to the company, because the bank had them on the site, and they offered to open it in other banks without refusing it.
-                But that\'s not the point. I spent half a year with grief in half using the account, giving endless confirmation at the request of the bank for doubtful translations in their opinion.
-                And here after half a year access to my account was blocked.
-                I was forced to apply for the opening of a new account while the proceedings were ongoing.
-                This time I did not have on the example of a certain bank and I agreed to the offered to me.
-                In two weeks I already used a new account and to this day no complaints.
-               Guys fellows, and I lost time and so until I returned the money from the Latvian bank. In vain I did not listen from the very beginning...',
-    'svetlanareview' => 'In another company I ordered an offshore registration and an account opening.
-               The company was registered, but they could not open the account. After this, turning to others, I learned that it turns out that you can open an account by buying from them and the company, and so not only from them ... I am heartily grateful to IQ Decision that they entered the position and opened an account without registering another company.',
+    'eugenereview' => 'I decided to open an account with a company in a Latvian bank. Turned to IQ-Offshore, tk. he was introduced to them on the site. The guys did not refuse, but delicately tried to persuade me to choose another bank. But I stood my ground. Instead of the promised month, the account was opened to me in one and a half. But it\'s not about that. For half a year, I grudgingly used the account, giving endless confirmation at the bank\'s request for doubtful, in their opinion, translations. And here after half a year access to my account was blocked completely groundless. While the proceedings were under way, I was forced again to apply to IQ Decision for opening a new account. This time I did not have a certain bank in mind, and I agreed to the one offered to me. After 2 weeks I already used a new account, and to this day I have no complaints. Guys fellows, and I lost time: the Latvian bank still has not returned my money. In vain I did not listen from the beginning ...',
+    'svetlanareview' => 'Initially ordered the registration of an offshore company and the opening of an account with another company. The firm was registered, but the account could not be opened. Later I learned that you can buy a ready offshore company with an open account in IQ Decision ... I sincerely thank the guys for coming into the position and opening an account without registering another company.',
     'eugene' => 'Eugeny',
     'svetlana' => 'Svetlana'
 

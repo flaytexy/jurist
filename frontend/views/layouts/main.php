@@ -17,504 +17,19 @@ $addeng = Yii::t('easyii', 'free');
 $addlang = frontend\widgets\WLang::widget();
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
-<script src="//load.sumome.com/" data-sumo-site-id="3e9ad4ed5127b8e285ee649aa55e8340bf5eb21a370f52999a717953ee42fd89"
-        async="async"></script>
+
 <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-<!--<link rel='stylesheet prefetch' href='https://googledrive.com/host/0B1RR6fhjI2QROGt0MTFoVkhMdUk/fonts.css'>-->
 <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/uploads/style.css?v=2017-11-13-v1">
-
-
-<!-- <div class="js"><div id="preloader"><hr class="hr-text" data-content="IQ Decision">
-       <div class="preloader">
-            <div class="circ1"></div>
-            <div class="circ2"></div>
-            <div class="circ3"></div>
-            <div class="circ4"></div>
-        </div></div></div> -->
-<style>
-    .Rus {
-        color: transparent;
-        background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png);
-        background-size: 30px 15px;
-        background-repeat: no-repeat;
-        background-position: right top;
-
-    }
-
-    .Eng {
-        color: transparent;
-        background-image: url(https://qph.ec.quoracdn.net/main-qimg-45ee634d5a033b5bbb11d231864cc6c3);
-        background-size: 30px 15px;
-        background-repeat: no-repeat;
-        background-position: right top;
-    }
-
-    .Eng a,
-    .Rus a {
-        color: transparent;
-    }
-
-    .hr-text {
-        line-height: 1em;
-        position: relative;
-        outline: 0;
-        border: 0;
-        color: black;
-        text-align: center;
-        height: 1.5em;
-        opacity: 1;
-        top: 250px;
-
-    }
-
-    .hr-text:before {
-        content: '';
-        background: -webkit-linear-gradient(left, transparent, #72c2a1, transparent);
-        background: linear-gradient(to right, transparent, #72c2a1, transparent);
-        position: absolute;
-        left: 0;
-        top: 50%;
-        width: 100%;
-        height: 1px;
-    }
-
-    .hr-text:after {
-        content: attr(data-content);
-        position: relative;
-        display: inline-block;
-        color: black;
-        padding: 0 .5em;
-        line-height: 1.5em;
-        color: #72c2a1;
-        background-color: #ffffff;
-        font-size: 20px;
-        font-family: 'Cabin', sans-serif;
-    }
-
-    .powered-by-sumo {
-        display: none !important;
-    }
-
-    iframe#sumome-jquery-iframe {
-        display: none !important;
-    }
-
-    div#sumome-modal-mask {
-        display: none !important;
-    }
-
-    a[title="Sumo"] {
-        visibility: hidden !important;
-        opacity: 0 !important;
-    }
-
-    .js div#preloader {
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: 999999;
-        width: 100%;
-        height: 100%;
-        overflow: visible;
-        background: #fff url() no-repeat center center;
-    }
-
-    .preloader {
-        margin: 300px auto;
-        width: 70px;
-        height: 30px;
-        text-align: center;
-        font-size: 10px;
-    }
-
-    .preloader > div {
-        background-color: #72c2a1;
-        height: 10px;
-
-        width: 10px;
-        border-radius: 50%;
-        display: inline-block;
-
-        -webkit-animation: stretchdelay 0.7s infinite ease-in-out;
-        animation: stretchdelay 0.7s infinite ease-in-out;
-    }
-
-    .preloader .circ2 {
-        -webkit-animation-delay: -0.6s;
-        animation-delay: -0.6s;
-    }
-
-    .preloader .circ3 {
-        -webkit-animation-delay: -0.5s;
-        animation-delay: -0.5s;
-    }
-
-    .preloader .circ4 {
-        -webkit-animation-delay: -0.4s;
-        animation-delay: -0.4s;
-    }
-
-    .preloader .circ5 {
-        -webkit-animation-delay: -0.3s;
-        animation-delay: -0.3s;
-    }
-
-    @-webkit-keyframes stretchdelay {
-        0%, 40%, 100% {
-            -webkit-transform: translateY(-10px)
-        }
-        20% {
-            -webkit-transform: translateY(-20px)
-        }
-    }
-
-    @keyframes stretchdelay {
-        0%, 40%, 100% {
-            transform: translateY(-10px);
-            -webkit-transform: translateY(-10px);
-        }
-        20% {
-            transform: translateY(-20px);
-            -webkit-transform: translateY(-20px);
-        }
-    }
-
-    @media (max-width: 1000px) {
-        .scrollToTop {
-            left: 0 !important;
-            bottom 100px !important;
-        }
-
-    }
-
-    input[type="submit"] {
-        font-family: FontAwesome;
-    }
-
-    .scrollToTop {
-        width: 70px;
-        margin-right: -10px;
-        height: 120px;
-        padding: 10px;
-        text-align: center;
-        background: whiteSmoke;
-        font-weight: bold;
-        color: #444;
-        text-decoration: none;
-        position: fixed;
-        bottom: 50%;
-        top: 70%;
-        left: 1%;
-        opacity: 0.3;
-        display: none;
-        background: url("http://iq-offshore.com/uploads/1/scrollup.png") no-repeat 0px 20px;
-        background-size: 30px 30px;
-        z-index: 2;
-    }
-
-    .scrollToTop:hover {
-        text-decoration: none;
-    }
-</style>
-<script>
-
-</script>
+<link rel="stylesheet" href="/uploads/style.css?v=2017-11-14-v1">
 <script language="JavaScript">
     document.onselectstart = function () {
         return false
     }
-
 </script>
-<? if (YII_ENV_PROD) : ?>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function (d, w, c) {
-            (w[c] = w[c] || []).push(function () {
-                try {
-                    w.yaCounter42375894 = new Ya.Metrika({
-                        id: 42375894,
-                        clickmap: true,
-                        trackLinks: true,
-                        accurateTrackBounce: true,
-                        webvisor: true
-                    });
-                } catch (e) {
-                }
-            });
-
-            var n = d.getElementsByTagName("script")[0],
-                s = d.createElement("script"),
-                f = function () {
-                    n.parentNode.insertBefore(s, n);
-                };
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else {
-                f();
-            }
-        })(document, window, "yandex_metrika_callbacks");
-    </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/42375894" style="position:absolute; left:-9999px;" alt=""/></div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
-
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript"> (function (d, w, c) {
-            (w[c] = w[c] || []).push(function () {
-                try {
-                    w.yaCounter43132404 = new Ya.Metrika({
-                        id: 43132404,
-                        clickmap: true,
-                        trackLinks: true,
-                        accurateTrackBounce: true
-                    });
-                } catch (e) {
-                }
-            });
-            var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
-                n.parentNode.insertBefore(s, n);
-            };
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = "https://mc.yandex.ru/metrika/watch.js";
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else {
-                f();
-            }
-        })(document, window, "yandex_metrika_callbacks"); </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/43132404" style="position:absolute; left:-9999px;" alt=""/></div>
-    </noscript> <!-- /Yandex.Metrika counter -->
-
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-90951237-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-92818031-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-
-
-<? endif ?>
-<style>
-
-    .lenta {
-        position: absolute;
-        top: 40px;
-        background: #a90329;
-        background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
-        background: -webkit-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%);
-        background: linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a90329', endColorstr='#6d0019', GradientType=0);
-        height: 26px;
-        padding-top: 3px;
-        color: white;
-        box-shadow: 0px 1px 1px 0px #0a0000;
-        left: 8px;
-        white-space: nowrap;
-    }
-
-    #logomenu-sec .navbar22 > ul li .tel-m a:hover {
-        border: 3px solid #a90329;
-    }
-
-    #rc-phone {
-        right: 50% !important;
-    }
-
-    .skype {
-        padding-top: 6px;
-    }
-
-    .gsc-adBlock {
-        display: none;
-    }
-
-    .clearfix:before, .ticker:before, .clearfix:after, .ticker:after {
-        content: " ";
-        display: table;
-    }
-
-    .clearfix:after, .ticker:after {
-        clear: both;
-    }
-
-    .clearfix, .ticker {
-        *zoom: 1;
-    }
-
-    .ticker {
-
-        text-align: center;
-        width: 100% !important;
-        /*margin-top: 9.6%;*/
-        border-bottom: solid #7dc20f;
-        line-height: 18px;
-        color: #7dc20f !important;
-        box-shadow: 0 10px 18px -11px #555;
-    }
-
-    @media (min-width: 980px) {
-        .ticker {
-            width: 980px;
-        }
-    }
-
-    .ticker .prefix {
-        margin: 5px;
-        padding: 10px;
-    }
-
-    @media (min-width: 980px) {
-        .ticker .prefix {
-            margin-right: 0;
-            height: 40px;
-        }
-    }
-
-    .ticker .prefix h1 {
-        margin: 0;
-        letter-spacing: 2px;
-        font-size: 24px;
-        text-align: center;
-        text-transform: uppercase;
-        color: #f2f2f2;
-    }
-
-    @media (min-width: 768px) and (max-width: 979px) {
-        .ticker .prefix h1 {
-            font-size: 16px;
-        }
-    }
-
-    .ticker .lines {
-        overflow: hidden;
-        margin: 5px;
-        padding: 10px;
-        /* background-color: #ffffff;*/
-    }
-
-    @media (min-width: 980px) {
-        .ticker .lines {
-            margin-left: 0;
-        }
-    }
-
-    @media (min-width: 768px) and (max-width: 979px) {
-        .ticker .lines {
-            height: 38px;
-        }
-    }
-
-    .ticker .lines li {
-        color: #ffffff !important;
-        list-style: none;
-        line-height: 20px;
-        font-family: "Montserrat", sans-serif;
-        font-size: 24px;
-        font-weight: 700;
-        letter-spacing: -1px;
-        text-transform: uppercase;
-    }
-
-    @media (max-width: 1000px) {
-        .top-bar {
-            display: none;
-        }
-
-        .fun-facts > ul > li:nth-child(2n+1) {
-            padding-right: 50px !important;
-        }
-
-        .fun-facts > ul > li:nth-child(2n) {
-            padding-left: 10px !important;
-        }
-
-        .instagram .title1::before {
-            display: none;
-        }
-
-        #rc-phone {
-
-            bottom: 0 !important;
-            top: 0 !important;
-            right: 0 !important;
-            left: 5px !important;
-            transition: none !important;
-            width: 30px !important;
-            height: 30px !important;
-        }
-
-        .rc-mobile #rc-phone-back {
-            margin-top: 0 !important;
-        }
-
-        .feature-box-grid {
-            display: none;
-        }
-
-    }
-
-    .vmenu {
-        color: #fbfbfb;
-        cursor: pointer;
-        float: right;
-        font-size: 15px;
-        margin-right: 0;
-        padding-top: 5px;
-    }
-
-    .vmenu a {
-        color: #fbfbfb;
-        cursor: pointer;
-        float: right;
-        font-size: 15px;
-        margin-right: 2px;
-
-    }
-</style>
 
 <div class="theme-layout" id="theme-layout-js">
-
-
     <header class="stick scrollup">
         <div class="top-bar">
             <div class="container">
@@ -555,11 +70,6 @@ $addlang = frontend\widgets\WLang::widget();
                                     <div class="col-md-12 tel-m"><a
                                                 href="tel: <?php echo str_replace(' ', '', $phoneStr); ?>"
                                                 title="Наш телефон"><?= $phoneStr ?></a></div>
-                                    <!--                                <div class="skype" title="Вызов в skype: IQ Decision">-->
-                                    <!--                                <a href="skype:IQ Decision?call">-->
-                                    <!--                                    <div style="background-image: url(&quot;http://www.skypeassets.com/i/scom/images/skype-buttons/callbutton_16px.png&quot;); width: 16px; height: 16px; padding-left: 18px; top: 0px; position: relative; right: -127px;"></div>-->
-                                    <!--                                </a>-->
-                                    <!--                                </div>-->
                                 </div>
                                 <div class="row back-m" onclick="location.href='/contact'">
                                     Связаться с нами
@@ -619,11 +129,8 @@ $addlang = frontend\widgets\WLang::widget();
         <!-- Top Bar -->
         <div class="logomenu-sec hidden-xs" id="logomenu-sec">
             <div class="container">
-
                 <div class="row">
                     <div class="col-md-2 ">
-
-
                         <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.gif" alt=""></a>
                         </div>
                     </div>
@@ -886,7 +393,7 @@ $addlang = frontend\widgets\WLang::widget();
             <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY"></script>
     -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=
-AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
+AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU"></script>
 
     <script type="text/javascript">
         // When the window has finished loading create our google map below
@@ -904,39 +411,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
                 // How you would like to style the map.
                 // This is where you would paste any style found on Snazzy Maps.
-                styles: [{
-                    "featureType": "administrative",
-                    "elementType": "labels.text.fill",
-                    "stylers": [{"color": "#444444"}]
-                }, {
-                    "featureType": "landscape",
-                    "elementType": "all",
-                    "stylers": [{"color": "#f2f2f2"}]
-                }, {
-                    "featureType": "poi",
-                    "elementType": "all",
-                    "stylers": [{"visibility": "off"}]
-                }, {
-                    "featureType": "road",
-                    "elementType": "all",
-                    "stylers": [{"saturation": -100}, {"lightness": 45}]
-                }, {
-                    "featureType": "road.highway",
-                    "elementType": "all",
-                    "stylers": [{"visibility": "simplified"}]
-                }, {
-                    "featureType": "road.arterial",
-                    "elementType": "labels.icon",
-                    "stylers": [{"visibility": "off"}]
-                }, {
-                    "featureType": "transit",
-                    "elementType": "all",
-                    "stylers": [{"visibility": "off"}]
-                }, {
-                    "featureType": "water",
-                    "elementType": "all",
-                    "stylers": [{"color": "#4f595d"}, {"visibility": "on"}]
-                }]
+                styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
             };
 
             // Get the HTML DOM element that will contain your map
@@ -954,150 +429,13 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
             });
         }
     </script>
-
-    <style>
-        header .row .fa {
-            position: absolute !important;
-            top: 20px !important;
-            margin: auto !important;
-            left: 8.9px;
-        }
-
-        .gsc-search-button {
-            display: none;
-        }
-
-        #map {
-            width: 100%;
-            height: 360px;
-            margin-top: 60px;
-        }
-
-        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic);
-
-        .feature-box-grid {
-            background-color: #131313;
-            float: left;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .feature-box-grid .col-md-4 {
-            padding: 0;
-            float: left;
-            max-width: 25%;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .featured-item.border-box {
-            -webkit-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-        }
-
-        .featured-item.border-box {
-
-            padding: 50px;
-            margin-left: -1px;
-            margin-bottom: -1px;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .featured-item .icon {
-            padding: 0 0 30px 0;
-        }
-
-        .featured-item .icon i {
-            font-size: 36px;
-        }
-
-        .text-uppercase {
-            text-transform: uppercase;
-        }
-
-        .featured-item .title h4 {
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            font-weight: normal;
-            -webkit-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-        }
-
-        .featured-item .desc {
-            color: #7e7e7e;
-        }
-
-        .featured-item.border-box, .featured-item.border-box:hover, .featured-item.border-box h4, .featured-item.border-box:hover h4, .featured-item.border-box .icon i .featured-item.border-box:hover .icon i {
-            -webkit-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-        }
-
-        .featured-item.border-box:hover {
-
-            background: #222222;
-            color: #7e7e7e;
-        }
-
-        .featured-item.border-box {
-
-            padding: 10px;
-            margin-left: -1px;
-            margin-bottom: -1px;
-        }
-
-        .featured-item.border-box:hover {
-
-            background: #222222;
-            color: #7e7e7e;
-        }
-
-        .featured-item.border-box:hover .icon i {
-            color: #7DC20F;
-        }
-
-        .featured-item.border-box:hover h4 {
-            color: #fff;
-        }
-
-
-    </style>
-
 </div>
-
-
-<!--<footer>
-    <div class="container footer-content">
-        <div class="row">
-            <div class="col-md-2">
-                Subscribe to newsletters
-            </div>
-            <div class="col-md-6">
-                <?php /*if(Yii::$app->request->get(Subscribe::SENT_VAR)) : */ ?>
-                    You have successfully subscribed
-                <?php /*else : */ ?>
-                    <? /*= Subscribe::form() */ ?>
-                <?php /*endif; */ ?>
-            </div>
-            <div class="col-md-4 text-right">
-                ©2015 noumo
-            </div>
-        </div>
-    </div>
-</footer> ГЛАВНОЕ-->
-
 <footer>
     <div class="block dark">
         <div class="container">
             <div class="row">
-
                 <section>
-
                     <div class="feature-box-grid">
-
-
                         <div class="col-md-4 col-sm-4">
                             <div class="featured-item border-box text-center">
                                 <div class="icon">
@@ -1151,11 +489,8 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                             </div>
                         </div>
                     </div>
-
                 </section>
-
                 <div class="col-md-3">
-
                     <div class="footer-widget">
                         <div class="about-widget">
                             <div class="logo">
@@ -1200,8 +535,6 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         </div>
                     </div>
                 </div>
-
-
                 <aside id="sticky-social">
                     <ul>
                         <li><a href="viber://add?number=+79254705002"><img
@@ -1222,67 +555,9 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                 </aside>
                 <input name="" width="32" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"
                        value="Click me" id="clicky"/>
-
-                <style>
-                    /*СОЦИАЛЬНЫЕ ИКОНЫ СБОКУ*/
-                    #clicky {
-                        bottom: 50px;
-                        position: fixed;
-                        left: 0;
-                        opacity: 0.6;
-                        z-index: 3;
-
-                    }
-
-                    #sticky-social a {
-                        text-decoration: none;
-                    }
-
-                    #sticky-social ul {
-                        list-style: none;
-                        margin: 0;
-                        padding: 0;
-                        display: flex;
-                    }
-
-                    #sticky-social {
-                        left: 0;
-                        position: fixed;
-                        /*  top: 150px;*/
-                        bottom: 0;
-                        z-index: 3;
-
-                    }
-
-                    /*  #sticky-social a {
-                          background: #333;
-                          color: #fff;
-                          display: block;
-                          height: 35px;
-                          font: 16px "Open Sans", sans-serif;
-                          line-height: 35px;
-                          position: relative;
-                          text-align: center;
-                          width: 35px;
-                      }
-                      #sticky-social a span {
-                          line-height: 35px;
-                          left: -120px;
-                          position: absolute;
-                          text-align:center;
-                          width:120px;
-                      }*/
-                    #sticky-social a:hover span {
-                        left: 100%;
-                    }
-
-                </style>
-
-
                 <div class="col-md-4">
                     <div class="footer-widget">
                         <div id="map"></div>
-                        <!-- Fun Facts -->
                     </div>
                 </div>
 
@@ -1292,16 +567,8 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                             <h2>Быстрый переход</h2>
                         </div>
                         <div class="menu-links">
-
-                            <!-- This is the HTML element that, when clicked, will cause the popup to appear. -->
-
-                            <!-- BEGIN PRIVY WIDGET CODE -->
                             <script type='text/javascript'> var _d_site = _d_site || '411086831FF94A27DC0340B2'; </script>
-
-                            <!-- END PRIVY WIDGET CODE -->
                             <div class="privy-embed-form" data-campaign="216143"></div>
-
-
                         </div>
                     </div>
                 </div>
@@ -1315,7 +582,6 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                     <li><a href="/" title=""><?= Yii::t('easyii', 'main') ?></a></li>
                     <li><a href="/news" title=""><?= Yii::t('easyii', 'news') ?></a></li>
                     <li><a href="/contact" title=""><?= Yii::t('easyii', 'contact') ?></a></li>
-
                 </ul>
                 <ul class="Social-btn">
                     <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
@@ -1330,7 +596,6 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                 <p><span>Copyright 2016.</span> Created by <a title="Cyber Brain - Web Studio">Cyber Brain </a></p>
             </div> */ ?>
         </div>
-
     </div>
     <!-- Bottom Line -->
 </footer>
@@ -1341,11 +606,13 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 </div>
 <a href="#" class="scrollToTop"></a>
 
+
+
 <!-- BEGIN PRIVY WIDGET CODE -->
 <script type='text/javascript'> var _d_site = _d_site || '411086831FF94A27DC0340B2'; </script>
 <!-- END PRIVY WIDGET CODE -->
 
-<script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript" async="async">
+<script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript">
     new JotformFeedback({
         formId: "72341635329355",
         buttonText: "<?= Yii::t('easyii', '74')?>",

@@ -161,8 +161,12 @@ $config = [
             //'linkAssets' => true,
             'bundles' => [
                 'yii\web\JqueryAsset' => [
-                    //'js' => [YII_DEBUG ? 'jquery.js' : 'https://code.jquery.com/jquery-2.2.4.min.js'],
-                    'js' => [YII_DEBUG ? 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' : 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'],
+                    //'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js']
+                    //'js' => [YII_DEBUG ? 'https://code.jquery.com/jquery-2.2.4.js' : 'https://code.jquery.com/jquery-2.2.4.min.js']
+                    'js' => [
+                            YII_DEBUG ? 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js' : 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',
+                        YII_DEBUG ? 'https://code.jquery.com/jquery-migrate-3.0.1.js' : 'https://code.jquery.com/jquery-migrate-3.0.1.min.js',
+                        ]
                 ],
                 'yii\bootstrap\BootstrapAsset' => [
                     'css' => [YII_DEBUG ? 'css/bootstrap.css' : 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'],
