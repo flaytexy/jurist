@@ -22,7 +22,7 @@ $addlang = frontend\widgets\WLang::widget();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/uploads/style.css?v=2017-11-14-v1">
+<link rel="stylesheet" href="/uploads/style.css?v=2017-11-26-v1">
 <script language="JavaScript">
     document.onselectstart = function () {
         return false
@@ -30,7 +30,7 @@ $addlang = frontend\widgets\WLang::widget();
 </script>
 
 <div class="theme-layout" id="theme-layout-js">
-    <header class="stick scrollup">
+    <header class="stick scrollup visible-md-block visible-lg">
         <div class="top-bar">
             <div class="container">
                 <div class="topbar-data">
@@ -134,8 +134,7 @@ $addlang = frontend\widgets\WLang::widget();
                         <div class="logo logo_main"><a href="/" title=""><img src="/uploads/logo/logo_main.gif" alt=""></a>
                         </div>
                     </div>
-                    <div class="col-md-3 ">
-
+                    <div class="col-md-3" id="searchBlock">
                         <? if (false): ?>
                             <? $form = ActiveForm::begin(['action' => 'search', 'id' => 'forum_post',
                                 'method' => 'post',
@@ -159,11 +158,9 @@ $addlang = frontend\widgets\WLang::widget();
                                 gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
                                 var s = document.getElementsByTagName('script')[0];
                                 s.parentNode.insertBefore(gcse, s);
-
                             })();
                         </script>
                         <gcse:search></gcse:search>
-                        <i class="fa fa-search" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-7 ">
                         <nav class="navbar22 navbar-default22">

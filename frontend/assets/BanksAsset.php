@@ -1,7 +1,7 @@
 <?php
 namespace frontend\assets;
 
-class MainAsset extends \yii\web\AssetBundle
+class BanksAsset extends \yii\web\AssetBundle
 {
     //public $sourcePath = '@frontend/assets/banks';
     public $css = [
