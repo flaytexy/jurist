@@ -18,11 +18,11 @@ $addlang = frontend\widgets\WLang::widget();
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 
-<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/uploads/style.css?v=2017-11-26-v1">
+<!--<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">-->
+<!--<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<!--<link rel="stylesheet" href="/uploads/style.css?v=2017-11-26-v1">-->
 <script language="JavaScript">
     document.onselectstart = function () {
         return false
@@ -165,7 +165,7 @@ $addlang = frontend\widgets\WLang::widget();
                     <div class="col-md-7 ">
                         <nav class="navbar22 navbar-default22">
                             <?= Menu::widget([
-                                'options' => ['class' => 'nav navbar-nav'],
+                                'options' => ['class' => 'inline'],
                                 'items' => [
                                     //['label' => 'Главная', 'url' => ['site/index'], 'template' => '<li class="22"><a href="{url}" class="mylink"><span>{label}</span></a></li>'],
                                     ['label' => Yii::t('easyii', 'main'), 'url' => ['site/index']],
@@ -378,115 +378,75 @@ $addlang = frontend\widgets\WLang::widget();
             </div>
         </div>
     </section>
-    <!--
-        You need to include this script tag on any page that has a Google Map.
-
-        The following script tag will work when opening this example locally on your computer.
-        But if you use this on a localhost server or a live website you will need to include an API key.
-        Sign up for one here (it's free for small usage):
-            https://developers.google.com/maps/documentation/javascript/tutorial#api_key
-
-        After you sign up, use the following script tag with YOUR_GOOGLE_API_KEY replaced with your actual key.
-            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY"></script>
-    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=
-AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU"></script>
-
-    <script type="text/javascript">
-        // When the window has finished loading create our google map below
-        google.maps.event.addDomListener(window, 'load', init);
-
-        function init() {
-            // Basic options for a simple Google Map
-            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-            var mapOptions = {
-                // How zoomed in you want the map to start at (always required)
-                zoom: 15,
-
-                // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(55.800312, 37.565437), // New York
-
-                // How you would like to style the map.
-                // This is where you would paste any style found on Snazzy Maps.
-                styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
-            };
-
-            // Get the HTML DOM element that will contain your map
-            // We are using a div with id="map" seen below in the <body>
-            var mapElement = document.getElementById('map');
-
-            // Create the Google Map using our element and options defined above
-            var map = new google.maps.Map(mapElement, mapOptions);
-
-            // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(55.800312, 37.565437),
-                map: map,
-                title: 'Snazzy!'
-            });
-        }
-    </script>
 </div>
 <footer>
     <div class="block dark">
         <div class="container">
+
+
+
+
             <div class="row">
-                <section>
-                    <div class="feature-box-grid">
-                        <div class="col-md-4 col-sm-4">
-                            <div class="featured-item border-box text-center">
-                                <div class="icon">
-                                    <i class="fa fa-globe"></i>
+                <div class="col-md-12">
+                    <section>
+                        <div class="feature-box-grid">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="featured-item border-box text-center">
+                                    <div class="icon">
+                                        <i class="fa fa-globe"></i>
+                                    </div>
+                                    <div class="title text-uppercase">
+                                        <h4><?= Yii::t('easyii', 'successful') ?></h4>
+                                    </div>
+                                    <div class="desc">
+                                        <?= Yii::t('easyii', 'reg28') ?><br><br>
+                                    </div>
                                 </div>
-                                <div class="title text-uppercase">
-                                    <h4><?= Yii::t('easyii', 'successful') ?></h4>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="featured-item border-box text-center">
+                                    <div class="icon">
+                                        <i class="fa fa-university"></i>
+                                    </div>
+                                    <div class="title text-uppercase">
+                                        <h4><?= Yii::t('easyii', 'openaccounts') ?></h4>
+                                    </div>
+                                    <div class="desc">
+                                        <?= Yii::t('easyii', '48banks') ?>
+                                    </div>
                                 </div>
-                                <div class="desc">
-                                    <?= Yii::t('easyii', 'reg28') ?><br><br>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="featured-item border-box text-center">
+                                    <div class="icon">
+                                        <i class="flaticon-people"></i>
+                                    </div>
+                                    <div class="title text-uppercase">
+                                        <h4><?= Yii::t('easyii', 'consult') ?></h4>
+                                    </div>
+                                    <div class="desc">
+                                        <?= Yii::t('easyii', 'goodtime') ?><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="featured-item border-box text-center">
+                                    <div class="icon">
+                                        <i class="fa fa-handshake-o"></i>
+                                    </div>
+                                    <div class="title text-uppercase">
+                                        <h4><?= Yii::t('easyii', 'terpelivo') ?></h4>
+                                    </div>
+                                    <div class="desc">
+                                        <?= Yii::t('easyii', 'talkyou') ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="featured-item border-box text-center">
-                                <div class="icon">
-                                    <i class="fa fa-university"></i>
-                                </div>
-                                <div class="title text-uppercase">
-                                    <h4><?= Yii::t('easyii', 'openaccounts') ?></h4>
-                                </div>
-                                <div class="desc">
-                                    <?= Yii::t('easyii', '48banks') ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="featured-item border-box text-center">
-                                <div class="icon">
-                                    <i class="flaticon-people"></i>
-                                </div>
-                                <div class="title text-uppercase">
-                                    <h4><?= Yii::t('easyii', 'consult') ?></h4>
-                                </div>
-                                <div class="desc">
-                                    <?= Yii::t('easyii', 'goodtime') ?><br><br>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="featured-item border-box text-center">
-                                <div class="icon">
-                                    <i class="fa fa-handshake-o"></i>
-                                </div>
-                                <div class="title text-uppercase">
-                                    <h4><?= Yii::t('easyii', 'terpelivo') ?></h4>
-                                </div>
-                                <div class="desc">
-                                    <?= Yii::t('easyii', 'talkyou') ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-3">
                     <div class="footer-widget">
                         <div class="about-widget">
@@ -531,33 +491,15 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU"></script>
                                class="theme-btn" title=""><?= Yii::t('easyii', 'contactus') ?></a>
                         </div>
                     </div>
-                </div>
-                <aside id="sticky-social">
-                    <ul>
-                        <li><a href="viber://add?number=+79254705002"><img
-                                        src="https://images-na.ssl-images-amazon.com/images/I/51-aTeYbibL.png"
-                                        height="42" width="42" alt="В целях безопасности клиентов"></a></li>
-                        <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img
-                                        src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png"
-                                        height="42" width="42" alt="В целях безопасности клиентов"></a></li>
-                        <li><img src="http://downdetector.com/i/logo/threema.png" height="42" width="42"
-                                 alt="В целях безопасности клиентов"></li>
-                        <li><a href="#"><img
-                                        src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png"
-                                        height="42" width="42" alt="В целях безопасности клиентов"></a></li>
-                        <li><a href="skype:iq.decision@gmail.com?call"><img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Skype_t.png"
-                                        height="42" width="42" alt="В целях безопасности клиентов"></a></li>
-                    </ul>
-                </aside>
-                <input name="" width="32" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"
-                       value="Click me" id="clicky"/>
-                <div class="col-md-4">
-                    <div class="footer-widget">
-                        <div id="map"></div>
-                    </div>
+
                 </div>
 
+                <div class="col-md-4">
+                    <div class="footer-widget">
+                        <div id="map" style="height: 450px;width: 100%"></div>
+                    </div>
+
+                </div>
                 <div class="col-md-2">
                     <div class="footer-widget">
                         <div class="title1 style2">
@@ -569,8 +511,13 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU"></script>
                         </div>
                     </div>
                 </div>
+
+
             </div>
+
+
         </div>
+
     </div>
     <div class="bottom-line">
         <div class="bottom-menu">
@@ -596,6 +543,28 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU"></script>
     </div>
     <!-- Bottom Line -->
 </footer>
+
+<aside id="sticky-social">
+<ul style="list-style: none;">
+    <li><a href="viber://add?number=+79254705002"><img
+                    src="https://images-na.ssl-images-amazon.com/images/I/51-aTeYbibL.png"
+                    height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+    <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img
+                    src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png"
+                    height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+    <li><img src="http://downdetector.com/i/logo/threema.png" height="42" width="42"
+             alt="В целях безопасности клиентов"></li>
+    <li><a href="#"><img
+                    src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png"
+                    height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+    <li><a href="skype:iq.decision@gmail.com?call"><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Skype_t.png"
+                    height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+</ul>
+</aside>
+<input name="" width="32" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"
+       value="Click me" id="clicky" style="position: relative; left: 45px; "/>
+
 <div id="stl_left" style="display: block; opacity: 1; width: 178px;" class="">
     <div id="stl_bg">
         <nobr id="stl_text">Вверх</nobr>
@@ -604,12 +573,35 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU"></script>
 <a href="#" class="scrollToTop"></a>
 
 
-
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCx7frTGNIsc02DBI9SqcY-mEB_nOYyOXM" >-->
+<!--</script>-->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0&callback=initMap"
+        type="text/javascript"></script>
 <!-- BEGIN PRIVY WIDGET CODE -->
-<script type='text/javascript'> var _d_site = _d_site || '411086831FF94A27DC0340B2'; </script>
+<script type='text/javascript'>
+    var _d_site = _d_site || '411086831FF94A27DC0340B2';
+    //google.maps.event.addDomListener(window, 'load', initMap);
+
+    function initMap() {
+        var mapOptions = {
+            zoom: 15,
+            center: new google.maps.LatLng(55.800312, 37.565437), // New York
+            //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
+        };
+
+        var mapElement = document.getElementById('map');
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(55.800312, 37.565437),
+            map: map,
+            title: 'Snazzy!'
+        });
+    }
+</script>
 <!-- END PRIVY WIDGET CODE -->
 
-<script src="https://form.jotformeu.com/static/feedback2.js" type="text/javascript">
+<script  src="//form.jotformeu.com/static/feedback2.js">
     new JotformFeedback({
         formId: "72341635329355",
         buttonText: "<?= Yii::t('easyii', '74')?>",
@@ -623,5 +615,19 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU"></script>
         height: 450
     });
 </script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='//embed.tawk.to/5a295e135d3202175d9b6ea0/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
 
 <?php $this->endContent(); ?>

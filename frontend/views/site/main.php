@@ -8,6 +8,7 @@ MainAsset::register($this);
 
 ?>
 
+<? if(true): ?>
 <section>
     <div class="block no-padding">
         <div class="row">
@@ -101,7 +102,7 @@ MainAsset::register($this);
                                          class="rev-slidebg" data-no-retina/>
 
                                     <!-- LAYER NR. 5 -->
-											<span class="tp-caption s2-l5 tp-resizeme"
+									<span class="tp-caption s2-l5 tp-resizeme"
                                                   data-x="585" data-hoffset=""
                                                   data-y="130" data-voffset=""
                                                   data-width="['auto','auto','auto','auto']"
@@ -225,7 +226,7 @@ MainAsset::register($this);
                                          data-responsive_offset="on"
                                          data-elementdelay="0.05"
                                          onclick="location.href='http://iq-offshore.com/offers/beliz'"
-                                        
+
                                          style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
                                         <?= Yii::t('easyii','92')?>
                                     </div>
@@ -296,7 +297,7 @@ MainAsset::register($this);
                                                   data-splitout="none"
                                                   data-responsive_offset="on"
                                                   data-elementdelay="0.05"
-                                                  
+
                                                   style="height:274px;width:193px;">
 											</span>
 
@@ -389,6 +390,7 @@ MainAsset::register($this);
         </div>
     </div>
 </section>
+<? endif; ?>
 <style>
 
     .calendar-container {
@@ -669,7 +671,7 @@ transform: none;
             <h2 style="text-align: center;"><?= Yii::t('easyii','49')?></h2>
 
 
-
+            <div class="row">
                 <? foreach ($news as $item): ?>
                     <div class="col-md-4">
                         <div class="package">
@@ -699,6 +701,7 @@ transform: none;
                         </div>
                     </div>
                 <? endforeach; ?>
+            </div>
             <div class='containerrr'>  <div class="button-container"><div class='button -green center'><b><a href="/news/"><?= Yii::t('easyii','othernews')?></a> </b></div></div></div>
 
 

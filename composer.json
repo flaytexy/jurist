@@ -24,7 +24,9 @@
         "2amigos/yii2-file-upload-widget": "~1.0",
         "akavov/yii2-countries": "*",
         "mirocow/yii2-yandex-maps": "dev-master",
-        "skeeks/yii2-google-api": "dev-master"
+        "skeeks/yii2-google-api": "dev-master",
+        "mirocow/yii2-minify-view": "^1.2",
+        "fxp/composer-asset-plugin": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
