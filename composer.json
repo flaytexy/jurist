@@ -26,7 +26,9 @@
         "mirocow/yii2-yandex-maps": "dev-master",
         "skeeks/yii2-google-api": "dev-master",
         "mirocow/yii2-minify-view": "^1.2",
-        "fxp/composer-asset-plugin": "dev-master"
+        "fxp/composer-asset-plugin": "^1.4",
+        "rmrevin/yii2-minify-view": "~1.2.1",
+        "mrclay/minify": "~2.1.7"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
