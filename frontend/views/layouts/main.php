@@ -545,25 +545,29 @@ $addlang = frontend\widgets\WLang::widget();
 </footer>
 
 <aside id="sticky-social">
-<ul style="list-style: none;">
+<ul class="list-social">
     <li><a href="viber://add?number=+79254705002"><img
                     src="https://images-na.ssl-images-amazon.com/images/I/51-aTeYbibL.png"
-                    height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+                    height="38" width="38" alt="В целях безопасности клиентов"></a></li>
     <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img
                     src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png"
-                    height="42" width="42" alt="В целях безопасности клиентов"></a></li>
-    <li><img src="http://downdetector.com/i/logo/threema.png" height="42" width="42"
+                    height="38" width="38" alt="В целях безопасности клиентов"></a></li>
+    <li><img src="http://downdetector.com/i/logo/threema.png" height="32" width="32"
              alt="В целях безопасности клиентов"></li>
     <li><a href="#"><img
                     src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png"
-                    height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+                    height="38" width="38" alt="В целях безопасности клиентов"></a></li>
     <li><a href="skype:iq.decision@gmail.com?call"><img
                     src="https://upload.wikimedia.org/wikipedia/commons/0/05/Skype_t.png"
-                    height="42" width="42" alt="В целях безопасности клиентов"></a></li>
+                    height="38" width="38" alt="В целях безопасности клиентов"></a></li>
+    <li>
+        <input name="" width="30" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"
+               value="Click me" id="clicky" />
+    </li>
 </ul>
+
 </aside>
-<input name="" width="32" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"
-       value="Click me" id="clicky" style="position: relative; left: 45px; "/>
+
 
 <div id="stl_left" style="display: block; opacity: 1; width: 178px;" class="">
     <div id="stl_bg">
@@ -622,7 +626,7 @@ $addlang = frontend\widgets\WLang::widget();
     (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
         s1.async=true;
-        s1.src='//embed.tawk.to/5a295e135d3202175d9b6ea0/default';
+        s1.src='https://embed.tawk.to/5a295e135d3202175d9b6ea0/default';
         s1.charset='UTF-8';
         s1.setAttribute('crossorigin','*');
         s0.parentNode.insertBefore(s1,s0);

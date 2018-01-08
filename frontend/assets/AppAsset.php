@@ -34,7 +34,7 @@ class AppAsset extends AssetBundle
 
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css',
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css',
-        'css/styles.css?v=2017-12-10-v1',
+        'css/styles.css?v=2017-12-12-v13',
 
 //<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
 //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">

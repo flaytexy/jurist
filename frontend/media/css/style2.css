@@ -181,6 +181,14 @@
 
 .Modern-Slider {background:#000;}
 
+
+.adBlock {
+  display: none !important;
+}
+.hide-sticky-social {
+  position: relative;
+  left: 45px;
+}
 /* ==== Slider Image Transition === 
 @-webkit-keyframes Slick-FastSwipeIn{
     0%{-webkit-transform:rotate3d(0,1,0,150deg) scale(0)  perspective(400px);transform:rotate3d(0,1,0,150deg) scale(0)  perspective(400px);} 

@@ -6925,20 +6925,33 @@ ul.faq li.a blockquote {
 @keyframes ProgressDots{from{width:0px;}to{width:100%;}}
 
 #clicky {
-    bottom: 50px;
-    position: fixed;
-    left: 0;
+    /*bottom: 50px;*/
+    /*position: fixed;*/
+    /*left: 0;*/
     opacity: 0.6;
     z-index: 3;
 }
 #sticky-social {
     left: 0;
     position: fixed;
-    top: 150px;
     bottom: 0;
     z-index: 3;
 }
-
+#sticky-social > ul.list-social {
+    margin-left: -2px;
+    padding: 0;
+    margin-bottom: 33px;
+}
+#sticky-social > ul.list-social > li {
+     list-style: none;
+     padding-right: 0;
+     padding-left: 0;
+}
+#sticky-social > ul.list-social > li > a > img {
+    height: 30px ;
+    width: 30px;
+    display: block;
+}
 
 .lenta {
     position: absolute;
@@ -6967,7 +6980,9 @@ ul.faq li.a blockquote {
 .gsc-adBlock {
     display: none;
 }
-
+#adBlock {
+    display: none !important;
+}
 .clearfix:before, .ticker:before, .clearfix:after, .ticker:after {
     content: " ";
     display: table;

@@ -39,6 +39,8 @@ RewriteRule ^(.*)/index /$1 [R=301,NC,L]
 RewriteRule ^sitemap\.xml$ /uploads/seo/sitemap\.xml [L]
 RewriteRule ^robots\.txt /uploads/seo/robots\.txt [L]
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\.rar
+#RewriteCond %{REQUEST_URI} !\.zip
 RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule ^(.*)index.php(.*) http://iq-offshore.com/$1 [L,R=301]
 RewriteRule . /
