@@ -152,6 +152,7 @@ $addlang = frontend\widgets\WLang::widget();
                             </div>
                             <?php ActiveForm::end(); ?>
                         <? endif ?>
+
                         <gcse:search></gcse:search>
                     </div>
                     <div class="col-md-7 ">
@@ -569,10 +570,9 @@ $addlang = frontend\widgets\WLang::widget();
 <a href="#" class="scrollToTop"></a>
 
 <?php if (!YII_DEBUG): ?>
-<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCx7frTGNIsc02DBI9SqcY-mEB_nOYyOXM" >-->
-<!--</script>-->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0&callback=initMap"
-        type="text/javascript"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0&callback=initMap" type="text/javascript">
+</script>
 <!-- BEGIN PRIVY WIDGET CODE -->
 <script type='text/javascript'>
     var _d_site = _d_site || '411086831FF94A27DC0340B2';
@@ -597,23 +597,27 @@ $addlang = frontend\widgets\WLang::widget();
 </script>
 <!-- END PRIVY WIDGET CODE -->
 
-<script  src="//form.jotformeu.com/static/feedback2.js">
-    new JotformFeedback({
-        formId: "72341635329355",
-        buttonText: "<?= Yii::t('easyii', '74')?>",
-        base: "https://form.jotformeu.com/",
-        background: "#7dc20f",
-        fontColor: "#FFFFFF",
-        buttonSide: "left",
-        buttonAlign: "center",
-        type: 1,
-        width: 550,
-        height: 450
+<script src="https://cdn.jotfor.ms/static/feedback2.js">
+</script>
+<script type='text/javascript'>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        new JotformFeedback({
+            formId: "72341635329355",
+            buttonText: "<?= Yii::t('easyii', '74')?>",
+            base: "https://form.jotformeu.com/",
+            background: "#7dc20f",
+            fontColor: "#FFFFFF",
+            buttonSide: "left",
+            buttonAlign: "center",
+            type: 1,
+            width: 550,
+            height: 450
+        });
     });
 </script>
 
 <!--Start of Tawk.to Script-->
-<script type="text/javascript">
+<script async defer  type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
