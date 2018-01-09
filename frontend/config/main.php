@@ -208,6 +208,7 @@ $config = [
             'excludeFiles' => [
                 //'jquery.js', // exclude this file from minification
                 'app-[^.].js', // you may use regexp
+                'ckeditor',
             ]
         ],
 

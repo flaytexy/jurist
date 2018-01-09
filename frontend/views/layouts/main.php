@@ -598,8 +598,6 @@ $addlang = frontend\widgets\WLang::widget();
 <!-- END PRIVY WIDGET CODE -->
 
 <script src="https://cdn.jotfor.ms/static/feedback2.js">
-</script>
-<script type='text/javascript'>
     document.addEventListener("DOMContentLoaded", function(event) {
         new JotformFeedback({
             formId: "72341635329355",

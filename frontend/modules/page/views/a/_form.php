@@ -62,7 +62,7 @@ $module = $this->context->module->id;
             //"extraAllowedContent" => 'span;ul;li;table;td;style;*[id];*(*);*{*}', // all-style: *{*}, all-class: *(*), all-id: *[id]
             "extraAllowedContent" => '*(*);*[id];table{*};', // all-style: *{*}, all-class: *(*), all-id: *[id]
             'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
-            'extraPlugins' => 'justify,embed,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog,liststyle',
+            'extraPlugins' => 'justify/*,embed*/,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog,liststyle',
             'toolbar' => [
                 ['name' => 'document', 'groups' => ['mode', 'document', 'doctools'], 'items' => ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']],
                 ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']],
