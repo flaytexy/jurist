@@ -21,17 +21,15 @@
         "sunra/php-simple-html-dom-parser": "^1.5",
         "mihaildev/yii2-ckeditor": "*",
         "mihaildev/yii2-elfinder": "*",
-        "2amigos/yii2-file-upload-widget": "~1.0",
+        "2amigos/yii2-file-upload-widget": "^1.0",
         "akavov/yii2-countries": "*",
         "mirocow/yii2-yandex-maps": "dev-master",
-        "skeeks/yii2-google-api": "dev-master",
-        "mirocow/yii2-minify-view": "^1.2",
+        "skeeks/yii2-google-api": "*",
         "fxp/composer-asset-plugin": "^1.4",
-        "rmrevin/yii2-minify-view": "~1.2.1",
-        "mrclay/minify": "~2.1.7"
+        "rmrevin/yii2-minify-view": "^1.15"
     },
     "require-dev": {
-        "yiisoft/yii2-codeception": "*",
+        "codeception/codeception": "^2.0.0",
         "yiisoft/yii2-jui": "~2.0.0",
         "yiisoft/yii2-debug": "~2.0.0",
         "yiisoft/yii2-gii": "~2.0.0",
@@ -46,12 +44,16 @@
         "2amigos/yii2-ckeditor-widget" : "2.0"
     },
     "config": {
-        "process-timeout": 1800
-    },
-    "extra": {
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            },
+            "vcs-driver-options": {
+                "github-no-api": true
+            },
+            "pattern-skip-version": "(-build|-patch)"
         }
     },
     "scripts": {

@@ -25,12 +25,14 @@ class AppAsset extends AssetBundle
         ///'css/opensans.css',
         //'css/table.css',
         'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css',
-        'css/revolution.css?v=2017-02-25-2',
-        'css/prefix.min.css?v=2017-02-25-2',
-        'css/bootstrap-submenu.min.css?v=2017-03-18-3',
+
         'https://fonts.googleapis.com/css?family=Cabin',
         'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css',
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
+
+        'css/revolution.css?v=2017-02-25-2',
+        'css/prefix.min.css?v=2017-02-25-2',
+        'css/bootstrap-submenu.min.css?v=2017-03-18-3',
 
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css',
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css',
@@ -75,6 +77,8 @@ class AppAsset extends AssetBundle
         //'//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
         //'js/scriptsnew.js?v=2017-12-08-v6',
+
+
 
         '//widget.privy.com/assets/widget.js'
 

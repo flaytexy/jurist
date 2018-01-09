@@ -15,6 +15,9 @@ $phoneStr = "+7 925 470 50 02";
 
 $addeng = Yii::t('easyii', 'free');
 $addlang = frontend\widgets\WLang::widget();
+
+
+
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 
@@ -149,17 +152,6 @@ $addlang = frontend\widgets\WLang::widget();
                             </div>
                             <?php ActiveForm::end(); ?>
                         <? endif ?>
-                        <script>
-                            (function () {
-                                var cx = '014824414261944164439:sfk3fpa6eoq';
-                                var gcse = document.createElement('script');
-                                gcse.type = 'text/javascript';
-                                gcse.async = true;
-                                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                                var s = document.getElementsByTagName('script')[0];
-                                s.parentNode.insertBefore(gcse, s);
-                            })();
-                        </script>
                         <gcse:search></gcse:search>
                     </div>
                     <div class="col-md-7 ">
@@ -576,7 +568,7 @@ $addlang = frontend\widgets\WLang::widget();
 </div>
 <a href="#" class="scrollToTop"></a>
 
-
+<?php if (!YII_DEBUG): ?>
 <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCx7frTGNIsc02DBI9SqcY-mEB_nOYyOXM" >-->
 <!--</script>-->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0&callback=initMap"
@@ -633,5 +625,6 @@ $addlang = frontend\widgets\WLang::widget();
     })();
 </script>
 <!--End of Tawk.to Script-->
+<?php endif; ?>
 
 <?php $this->endContent(); ?>
