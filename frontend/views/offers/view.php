@@ -33,18 +33,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     .packages-detail {
         padding-bottom: 17px;
     }
-    .titlebg {
-        background: rgba(157, 187, 63, 0.85);
-        padding: 3.5% 0 2.5% 0;
-        font-size: 20px;
-        font-family: 'Roboto Condensed', sans-serif;
-        text-transform: uppercase;
-        color: white;
-        margin-bottom: 20px;
-        margin-left: -2.3%;
-        margin-right: -2.3%;
 
-    }
     @media (max-width: 999px) {
         .packages-detail {
             box-shadow: none;
@@ -52,121 +41,6 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             margin: 0 !important;
 
         }
-    }
-
-    .titlebg {
-        background: rgb(125, 194, 15);
-        padding: 0.5% 0 0.5% 0;
-        font-size: 20px;
-        font-family: 'Roboto Condensed', sans-serif;
-        text-transform: uppercase;
-        color: white;
-        margin-left: -2.3%;
-        margin-right: -2.3%;
-        margin-bottom: 20px;
-
-    }
- .firstl:first-letter {
-     margin-top: 0.65rem;
-     margin-right: 1rem;
-     float: left;
-     padding: 12px 24px;
-     color: #ffffff;
-     background-color: #7ec211;
-     font-size: 7rem;
-     font-weight: 700;
-     line-height: 7rem;
- }
-
-    ol.simlist {
-        list-style-type: none;
-        list-style-type: decimal !ie; /*IE 7- hack*/
-        margin: 0;
-        margin-left: 1em;
-        padding: 0;
-        counter-reset: li-counter;
-    }
-    ol.simlist > li{
-        position: relative;
-        margin-bottom:  0.5em;
-        padding: 0.7em;
-        background-color: #eaeaea;
-    }
-    ol.simlist > li:before {
-        position: absolute;
-        top: 0em;
-        left: -1.393em;
-        width: 1.8em;
-        height: 1.2em;
-        box-shadow: 0 4px 6px rgba(0,0,0,.5);
-        font-size: 1em;
-        line-height: 1.4;
-        font-weight: bold;
-        text-align: center;
-        color: #ffffff;
-        background-color: #7ec211;
-
-
-        z-index: 1;
-        overflow: hidden;
-
-        content: counter(li-counter);
-        counter-increment: li-counter;
-    }
-    ul.simlist {
-        list-style-type: none;
-        list-style-type: decimal !ie; /*IE 7- hack*/
-
-        margin: 0;
-        margin-left: 1em;
-        padding: 0;
-
-        counter-reset: li-counter;
-    }
-    ul.simlist > li{
-        position: relative;
-        margin-bottom:  0.5em;
-        padding: 0.7em;
-        background-color: #eaeaea;
-    }
-    ul.simlist > li:before {
-        position: absolute;
-        top: 0em;
-        left: -1.393em;
-        width: 1.8em;
-        height: 1.2em;
-        box-shadow: 0 4px 6px rgba(0,0,0,.5);
-        font-size: 1em;
-        line-height: 1.2;
-        font-weight: bold;
-        text-align: center;
-        color: #ffffff;
-        background-color: #7ec211;
-
-
-        z-index: 1;
-        overflow: hidden;
-        font-family: FontAwesome;
-        content: '\f00c';
-        counter-increment: li-counter;
-    }
-    .simlist li {
-        color: black;
-        font-size: 17px;
-    }
-
-    .packages-detail .table-fill {
-        background: white;
-        border-radius:3px;
-        border-collapse: collapse;
-        height: 320px;
-        border-top: 1px solid #dbe6ee;
-        margin-top: -2%;
-        margin-left: -2.233%;
-        padding:5px;
-        width: 104.6%;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        animation: float 5s infinite;
     }
 
     .packages-detail th {
@@ -193,7 +67,6 @@ $this->params['breadcrumbs'][] = $offers->model->title;
 
     .packages-detail tr {
         border-top: 1px solid #C1C3D1;
-        border-bottom-: 1px solid #C1C3D1;
         color:#666B85;
         font-size:16px;
         font-weight:normal;
@@ -242,78 +115,8 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     }
 
     .packages-detail td:last-child {
-        border-right: 0px;
+        border-right: 0;
     }
-
-    .packages-detail th.text-left {
-        text-align: left;
-    }
-
-    .packages-detail th.text-center {
-        text-align: center;
-    }
-
-    .packages-detail th.text-right {
-        text-align: right;
-    }
-
-    .packages-detail td.text-left {
-        text-align: left;
-    }
-
-    .packages-detail td.text-center {
-        text-align: center;
-    }
-
-    .packages-detail td.text-right {
-        text-align: right;
-    }
-
-
-    /* menu appearance
-    #menu {
-        position: relative;
-        color: #999;
-        width: 200px;
-
-        margin: auto;
-        font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
-        text-align: center;
-        border-radius: 4px;
-        background: white;
-        box-shadow: 0 1px 8px rgba(0,0,0,0.05);
-
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity .4s;
-    }
-    #menu:after {
-        position: absolute;
-        top: -15px;
-        left: 95px;
-        content: "";
-        display: block;
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-        border-bottom: 20px solid white;
-    }
-    #menu ul, li, li a {
-        list-style: none;
-        display: block;
-        margin: 0;
-        padding: 0;
-    }
-    #menu li a {
-        padding: 5px;
-        color: #888;
-        text-decoration: none;
-        transition: all .2s;
-    }
-    #menu li a:hover,
-    #menu li a:focus {
-        background: #1ABC9C;
-        color: #fff;
-    } */
     .sidesidebar, .sidesidebar2 {
         position: absolute;
     }
@@ -399,19 +202,9 @@ $this->params['breadcrumbs'][] = $offers->model->title;
 
     }
    .slide a {
-        font-family: Arial;
+        font-family: Arial, sans-serif;
         font-size: large;
         color: #ffffff;
-    }
-    section.client .section-title {
-        margin-bottom: 6em;
-    }
-    .bx-controls {
-        position: relative;
-    }
-    .bx-wrapper .bx-pager {
-        text-align: center;
-        padding-top: 3px;
     }
     .bx-wrapper .bx-pager .bx-pager-item, .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
         display: inline-block;
@@ -442,9 +235,6 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             margin-left: 105px;
 
         }
-        .bx-wrapper {
-            max-width: 950px !important;
-        }
 
     }
     @media (max-width: 1488px) {
@@ -455,9 +245,6 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             margin: 0 !important;
             max-width: none;
         }
-        .bx-wrapper {
-            max-width: 1170px !important;
-        }
 
     }
     @media (max-width: 766px) {
@@ -467,51 +254,6 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     }
 
 
-
-
-    #pricing-table {
-        margin: 50px auto;
-        text-align: center;
-        width: 100%; /* total computed width = 222 x 3 + 226 */
-        padding-left: 18%;
-    }
-
-    #pricing-table .plan {
-        font: 12px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
-        text-shadow: 0 1px rgba(255,255,255,.8);
-        background: #fff;
-        border: 1px solid #ddd;
-        color: #333;
-        padding: 20px;
-        width: 180px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */
-        float: left;
-        position: relative;
-    }
-
-    #pricing-table #most-popular {
-        z-index: 2;
-        top: -13px;
-        border-width: 3px;
-        padding: 30px 20px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        -moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
-        -webkit-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
-        box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
-    }
-
-    #pricing-table .plan:nth-child(1) {
-        -moz-border-radius: 5px 0 0 5px;
-        -webkit-border-radius: 5px 0 0 5px;
-        border-radius: 5px 0 0 5px;
-    }
-
-    #pricing-table .plan:nth-child(4) {
-        -moz-border-radius: 0 5px 5px 0;
-        -webkit-border-radius: 0 5px 5px 0;
-        border-radius: 0 5px 5px 0;
-    }
 
     /* --------------- */
 
@@ -557,7 +299,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
     }
 
     #pricing-table  p {
-        font-family: arial !important;
+        font-family: Arial, sans-serif !important;
         display: block;
         font: bold 25px/100px Georgia, Serif;
         color: #777;
@@ -631,24 +373,6 @@ $this->params['breadcrumbs'][] = $offers->model->title;
         -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;
         box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;
     }
-
-    /* --------------- */
-
-    .clear:before, .clear:after {
-        content:"";
-        display:table
-    }
-
-    .clear:after {
-        clear:both
-    }
-
-    .clear {
-        zoom:1
-    }
-
-
-
 </style>
 
 <section>
@@ -746,7 +470,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                             <!-- <i class="fa fa-play-circle"></i>-->
                             <strong class="per-night" style="font-family: Arial"><span>€</span><?= $offers->price; ?> <i>Дней: <?= $offers->model->how_days; ?></i></strong>
                             <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title="">Заказать</a>
-                            <!--<iframe src="https://www.youtube.com/embed/dVTsZZh54Do"></iframe>-->
+
                             <div class="title-video alignleft">
                                 <h1><?= $offers->seo('h1', $offers->title) ?></h1>
                                 <span><?= $offers->seo('h1', $offers->short) ?></span>
@@ -758,57 +482,6 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                             <?= $offers->text ?>
                         </p>
 
-                        <script type="text/javascript"> /*          <div class="package-features" id="order-zone">
-                            <!-- 2-block -->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <table class="table">
-                                        <tr>
-                                            <td>Пакеты</td>
-                                            <?php foreach ($packets as $packet) : ?>
-                                                <td><?= $packet->title ?></td>
-                                            <?php endforeach; ?>
-                                        </tr>
-                                        <?php foreach ($options as $option) : ?>
-                                            <tr>
-                                                <td>
-                                                    <?= $option['title'] ?>
-                                                </td>
-                                                <?php foreach ($option['child'] as $opt) : ?>
-                                                    <td><? if ($opt) : ?><i class="fa fa-check"
-                                                                            aria-hidden="true"></i><? endif; ?></td>
-                                                <?php endforeach; ?>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                        <tr>
-                                            <td>Цены</td>
-                                            <?php foreach ($packets as $packet) : ?>
-                                                <td><span>$<?= $packet->price?></span></td>
-                                            <?php endforeach; ?>
-                                        </tr>
-                                        <tr>
-                                            <td>Заказ</td>
-                                            <?php foreach ($packets as $packet) : ?>
-                                                <td> <a class="btn btn-success bb" href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a></td>
-
-                                            <?php endforeach; ?>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div class="row" style="margin-top: 60px;">
-                                <div class="col-md-4">
-                                    <div class="packageimg-gallery">
-                                        <?php if (count($offers->photos)) : ?>
-                                            <?php foreach ($offers->photos as $photo) : ?>
-                                                <div class="packageimg-gallerythumb"><?= $photo->box(555, 483) ?></div>
-                                            <?php endforeach; ?>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */  </script>
                     </div>
                     <!-- Blog List Posts -->
                 </div>
@@ -823,8 +496,6 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                                class="label label-info"><?= $tag ?></a>
                         <?php endforeach; ?>
                     </p>
-
-<!--                    <div class="small-muted">Views: --><?//= $offers->views ?><!--</div>-->
                 </div>
             </div>
         </div>
@@ -833,98 +504,9 @@ $this->params['breadcrumbs'][] = $offers->model->title;
 
 </section>
 
-<!--
-<div style="display:none">
-    <div class="container-fluid" id="succes_packet">
-        <form id="succes_packet_form" name="succes_packet_form" class="succes_packet_form" action="/admin/orders/send" method="post" enctype="multipart/form-data">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="row-fluid">
-                        <div class="form-group">
-                            <label for="firstName">ИМЯ</label>
-                            <input name="Feedback[name]" class="form-control" type="text">
-                        </div>
-                    </div>
-                    <div class="row-fluid">
-                        <div class="form-group">
-                            <label for="email">Е-МЕЙЛ</label>
-                            <input name="Feedback[email]" class="form-control" type="email">
-                        </div>
-                    </div>
-                    <div class="row-fluid">
-                        <div class="form-group">
-                            <label for="password">ТЕЛЕФОН</label>
-                            <input name="Feedback[phone]" class="form-control" type="text">
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="col-md-6">
-                    <div class="row-fluid">
-                        <div class="form-group">
-                            <label for="password">ВАШ КОММЕНТАРИЙ</label><br/>
-                            <textarea name="Feedback[comment]" class="form-control" rows="7"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" style="text-align: center;">
-                    <hr>
-                    <input id="top-save-button" type="submit" name="save" value="Подтвердить" class="btn btn-success regbutton" />
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
--->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script>
 <script>
- /*   var theToggle = document.getElementById('toggle');
-
-    // based on Todd Motto functions
-    // https://toddmotto.com/labs/reusable-js/
-
-    // hasClass
-    function hasClass(elem, className) {
-        return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-    }
-    // addClass
-    function addClass(elem, className) {
-        if (!hasClass(elem, className)) {
-            elem.className += ' ' + className;
-        }
-    }
-    // removeClass
-    function removeClass(elem, className) {
-        var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
-        if (hasClass(elem, className)) {
-            while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-                newClass = newClass.replace(' ' + className + ' ', ' ');
-            }
-            elem.className = newClass.replace(/^\s+|\s+$/g, '');
-        }
-    }
-    // toggleClass
-    function toggleClass(elem, className) {
-        var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
-        if (hasClass(elem, className)) {
-            while (newClass.indexOf(" " + className + " ") >= 0 ) {
-                newClass = newClass.replace( " " + className + " " , " " );
-            }
-            elem.className = newClass.replace(/^\s+|\s+$/g, '');
-        } else {
-            elem.className += ' ' + className;
-        }
-    }
-
-    theToggle.onclick = function() {
-        toggleClass(this, 'on');
-        return false;
-    } */
  $('.carousel-client').bxSlider({
      auto: true,
      slideWidth: 234,

@@ -42,3 +42,5 @@ frontend/runtime/debug/*
 frontend/runtime/log/*
 frontend/runtime/mail/*
 frontend/runtime/URI/*
+
+frontend/web/minify/*

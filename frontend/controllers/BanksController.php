@@ -1,5 +1,7 @@
 <?php
+
 namespace frontend\controllers;
+
 use frontend\models\Popularly;
 use frontend\modules\banks\api\Banks;
 use yii\data\Pagination;
@@ -7,16 +9,22 @@ use yii\web\View;
 use yii\widgets\LinkPager;
 use frontend\modules\page\models\Page as PageModel;
 use frontend\modules\page\api\PageObject;
+
 class BanksController extends \yii\web\Controller
 {
 
     public function actionIndex($tag = null, $type = null, $slug = null, $page = null)
     {
+        ////e_print('mark_1');
         $type_id = \Yii::$app->request->get('type_id');
 
         $banks = array();
-        if($page==false || $page==='1')
+        if ($page == false || $page === '1') {
+            ////e_print('$banks');
             $banks = Banks::items(['tags' => $tag, 'list' => 1, 'pagination' => ['pageSize' => 300]]);
+            ////e_print('$banks_end');
+        }
+
 
         /*        $query = \frontend\modules\banks\models\Banks::find()->where(['status' => 1]);
                 $count = $query->count();
@@ -40,29 +48,34 @@ class BanksController extends \yii\web\Controller
             'my-switch-handler'
         );
 
-
+        //e_print('clear');
         Banks::clear();
+        //e_print('$banksList');
         $banksList = Banks::items([
             'tags' => $tag,
             'pagination' => ['pageSize' => 6]
         ]);
+        //e_print('$banksList_end');
 
-
-        return $this->render('index', [
+        //e_print('$render');
+        $render = $this->render('index', [
             'items' => $banks,
             'banksList' => $banksList,
             'bank_type' => $type_id
         ]);
+        //e_print('$render_end');
+
+        return $render;
     }
 
     public function actionView($slug)
     {
 
         $topNews = [];
-        foreach(PageModel::find()
-                    ->andWhere(['type_id' => '2'])
-                    ->status(PageModel::STATUS_ON)
-                    ->sortDate()->limit(5)->all() as $item){
+        foreach (PageModel::find()
+                     ->andWhere(['type_id' => '2'])
+                     ->status(PageModel::STATUS_ON)
+                     ->sortDate()->limit(5)->all() as $item) {
             $obj = new PageObject($item);
             $topNews[] = $obj;
         }
@@ -73,7 +86,7 @@ class BanksController extends \yii\web\Controller
         $query->select('*')
             ->from('easyii_banks as ba')
             ->where("ba.status = '1' ")
-            ->orderBy(['views'=> SORT_DESC])
+            ->orderBy(['views' => SORT_DESC])
             ->limit(3);
         $command = $query->createCommand();
         $topBanks = $command->queryAll();
@@ -83,7 +96,7 @@ class BanksController extends \yii\web\Controller
         $query->select('*')
             ->from('easyii_offers as of')
             ->where("of.status = '1' ")
-            ->orderBy(['views'=> SORT_DESC])
+            ->orderBy(['views' => SORT_DESC])
             ->limit(3);
         $command = $query->createCommand();
         $topOffers = $command->queryAll();
@@ -103,11 +116,13 @@ class BanksController extends \yii\web\Controller
 
         $banks = Banks::get($slug);
 
-        $popularly  = Popularly::findOne(['class' => \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id]);
-        if(empty($popularly)){ $popularly  = new Popularly; }
+        $popularly = Popularly::findOne(['class' => \Yii::$app->controller->id . '\\' . \Yii::$app->controller->action->id]);
+        if (empty($popularly)) {
+            $popularly = new Popularly;
+        }
         //$popularly->getInherit($news, $popularly);
-        $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id;
-        $popularly->slug = 'banks/'.$banks->slug;
+        $popularly->class = \Yii::$app->controller->id . '\\' . \Yii::$app->controller->action->id;
+        $popularly->slug = 'banks/' . $banks->slug;
         $popularly->title = $banks->title;
         $popularly->item_id = $banks->model->bank_id;
         $popularly->image = $banks->image;
@@ -115,7 +130,7 @@ class BanksController extends \yii\web\Controller
         $popularly->save();
 
         $type_id = \Yii::$app->request->get('type_id');
-        if(empty($type_id))
+        if (empty($type_id))
             $type_id = 1;
 
         $banksPist = Banks::items(['list' => 1, 'type_id' => (int)$type_id]);
@@ -170,43 +185,43 @@ class BanksController extends \yii\web\Controller
             'bank_type' => $type_id
         ]);
     }
-/*
-    public function actionIndexOLD($tag = null)
-    {
-        $type_id = \Yii::$app->request->get('type_id');
+    /*
+        public function actionIndexOLD($tag = null)
+        {
+            $type_id = \Yii::$app->request->get('type_id');
 
-        $banks = Banks::items(['tags' => $tag, 'type_id' => (int)$type_id,
-            'pagination' => ['pageSize' => 300]]);
+            $banks = Banks::items(['tags' => $tag, 'type_id' => (int)$type_id,
+                'pagination' => ['pageSize' => 300]]);
 
-//        $query = \frontend\modules\banks\models\Banks::find()->where(['status' => 1]);
-//        $count = $query->count();
-//        $pagination = new Pagination(['totalCount' => $count]);
-//        $banksList = $query->offset($pagination->offset)
-//            ->limit($pagination->limit)
-//            ->all();
-//        $banksPagination = LinkPager::widget([
-//            'pagination' => $pagination,
-//        ]);
+    //        $query = \frontend\modules\banks\models\Banks::find()->where(['status' => 1]);
+    //        $count = $query->count();
+    //        $pagination = new Pagination(['totalCount' => $count]);
+    //        $banksList = $query->offset($pagination->offset)
+    //            ->limit($pagination->limit)
+    //            ->all();
+    //        $banksPagination = LinkPager::widget([
+    //            'pagination' => $pagination,
+    //        ]);
 
-        $banksList = Banks::items(['tags' => $tag, 'type_id' => (int)$type_id,
-            'pagination' => ['pageSize' => 9]]);
-        $banksPagination = Banks::pages();
+            $banksList = Banks::items(['tags' => $tag, 'type_id' => (int)$type_id,
+                'pagination' => ['pageSize' => 9]]);
+            $banksPagination = Banks::pages();
 
-        $markers = array();
-        foreach($banks as $bank){
-            $data = array();
-            $data['latLng'] = explode(';', $bank->model->coordinates);
-            $data['name'] = $bank->title;
-            $data['weburl'] = 'b_' . $bank->model->bank_id;
-            $markers[] = $data;
-        }
+            $markers = array();
+            foreach($banks as $bank){
+                $data = array();
+                $data['latLng'] = explode(';', $bank->model->coordinates);
+                $data['name'] = $bank->title;
+                $data['weburl'] = 'b_' . $bank->model->bank_id;
+                $markers[] = $data;
+            }
 
-        return $this->render('index', [
-            'markers' => json_encode($markers),
-            'banks' => $banks,
-            'banksList' => $banksList,
-            'banksPagination' => $banksPagination,
-            'bank_type' => $type_id
-        ]);
-    }*/
+            return $this->render('index', [
+                'markers' => json_encode($markers),
+                'banks' => $banks,
+                'banksList' => $banksList,
+                'banksPagination' => $banksPagination,
+                'bank_type' => $type_id
+            ]);
+        }*/
 }

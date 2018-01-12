@@ -24,30 +24,32 @@ class AppAsset extends AssetBundle
         //'css/owl.css',
         ///'css/opensans.css',
         //'css/table.css',
-        'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css',
+        //'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css',
 
         'https://fonts.googleapis.com/css?family=Cabin',
         'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css',
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
 
-        'css/revolution.css?v=2017-02-25-2',
+        'css/normalize.min.css',
+
+
         'css/prefix.min.css?v=2017-02-25-2',
         'css/bootstrap-submenu.min.css?v=2017-03-18-3',
 
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css',
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css',
-        'css/styles.css?v=2017-12-12-v13',
+        'css/styles.css?v=2018-01-09-v01',
 
-//<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-//<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-//<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
-//<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-//<link rel="stylesheet" href="/uploads/style.css?v=2017-11-26-v1">
+        //<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+        //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        //<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
+        //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        //<link rel="stylesheet" href="/uploads/style.css?v=2017-11-26-v1">
+
         //'https://fonts.googleapis.com/css?family=Cabin',
         //'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css',
         //'http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css',
         //'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
-        //'css/style2.css?v=2017-11-26-v1',
 
         //'css/frontend.css',
         //'css/responsive.css',
@@ -67,12 +69,12 @@ class AppAsset extends AssetBundle
         'js/jquery.scrolly.js', //
         'js/bootstrap-submenu.js',
 
-        '/uploads/slick.js?v=2017-12-10-v8',
+        'js/slick.js?v=2018-01-09-v01',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
         //'/uploads/newin.js?v=2017-11-13-v3',
 
-        'js/all.js?v=2017-03-21-1',
-        'js/scripts.js?v=2017-12-08-v8',
+        'js/all.js?v=2018-01-09-v01',
+        'js/scripts.js?v=2018-01-09-v07',
         //'//code.jquery.com/jquery-2.2.4.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
@@ -80,7 +82,7 @@ class AppAsset extends AssetBundle
 
 
 
-        '//widget.privy.com/assets/widget.js'
+        //'//widget.privy.com/assets/widget.js',
 
         //'js/frontend.js'
     ];

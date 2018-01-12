@@ -1,8 +1,8 @@
 <?php
+
 namespace frontend\modules\banks\api;
 
 use frontend\models\Option;
-use frontend\modules\banks\models\BanksProperties;
 use Yii;
 use yii\data\ActiveDataProvider;
 use frontend\models\Tag;
@@ -15,6 +15,8 @@ use frontend\modules\banks\models\Banks as BanksModel;
 /**
  * Banks module API
  * @package frontend\modules\banks\api
+ *
+ * @property \frontend\modules\banks\models\Banks $model
  *
  * @method static BanksObject get(mixed $id_slug) Get banks object by id or slug
  * @method static array items(array $options = []) Get list of banks as BanksObject objects
@@ -34,36 +36,41 @@ class Banks extends \frontend\components\API
 
     public function api_items($options = [])
     {
-        //dsadas
-        if (!$this->_items) {
+        //e_print('api_items_start');
+
+        $key = md5(serialize($options)).'44';
+        $cache = Yii::$app->cache;
+        //e_print('get0');
+        $this->_items = $cache->get($key.'_items');
+        //e_print('get_items');
+        $this->_adp = $cache->get($key.'_adp');
+        //e_print('get_adp');
+        //e_print('start_print');
+        //e_print(isset($this->_items[0]),'_items_is_true');
+        //e_print( !empty($this->_adp),'_adp_is_true');
+        //e_print('end_print');
+
+        if (!($this->_items && $this->_adp)) {
+            //e_print('SET');
             $this->_items = [];
 
-/*            $subQuery = (new Query())
-                ->select(['GROUP_CONCAT(op.title SEPARATOR ":: " )'])
-                ->from('easyii_banks_properties_relations as opr')
-                ->join('INNER JOIN', 'easyii_banks_properties as op', 'op.property_id = opr.property_id')
-                ->where('opr.bank_id=easyii_banks.bank_id');*/
-
-            $with = ['seo'];
+            $with = ['seo']; //['seo', 'properties'];
             if (Yii::$app->getModule('admin')->activeModules['banks']->settings['enableTags']) {
                 $with[] = 'tags';
             }
+
             $query = BanksModel::find()
                 ->with($with)
                 ->status(BanksModel::STATUS_ON);
 
-/*            $query
-                ->with('countries')
-                ->addGroupBy('bank_id');*/
-
             if (!empty($options['list'])) {
 
-                $query->select(" ".BanksModel::tableName().".*, cdt.* , ca.`country_id` as ca_id, cra.*, cr.name as region_name  ");
+                $query->select(" " . BanksModel::tableName() . ".*, cdt.* , ca.`country_id` as ca_id, cra.*, cr.name as region_name  ");
 
                 $query->join(
                     'LEFT JOIN',
                     'country_assign as ca',
-                    " `ca`.`item_id` = `".BanksModel::primaryKey()[0]."` AND `ca`.`class` LIKE '".addslashes(addslashes(BanksModel::className()))."'  "
+                    " `ca`.`item_id` = `" . BanksModel::primaryKey()[0] . "` AND `ca`.`class` LIKE '" . addslashes(addslashes(BanksModel::className())) . "'  "
                 );
 
                 $query->join(
@@ -85,25 +92,26 @@ class Banks extends \frontend\components\API
                 )->andWhere(" `cr`.`is_unep` = '1' ");
             }
 
-
             if (!empty($options['where'])) {
                 $query->andFilterWhere($options['where']);
             }
+
             if (!empty($options['tags'])) {
                 $query
                     ->innerJoinWith('tags', false)
                     ->andWhere([Tag::tableName() . '.name' => (new BanksModel)->filterTagValues($options['tags'])])
                     ->addGroupBy('bank_id');
             }
+
             if (!empty($options['type_id'])) {
                 $query
-                    ->andWhere([ 'type_id' => $options['type_id'] ]);
+                    ->andWhere(['type_id' => $options['type_id']]);
             }
 
             //$query->groupBy('bank_id');
             if (!empty($options['list'])) {
-                $query->orderBy(' `cr`.`sort_order` ASC, `cdt`.`country_id` DESC ' );
-            }elseif (!empty($options['orderBy'])) {
+                $query->orderBy(' `cr`.`sort_order` ASC, `cdt`.`country_id` DESC ');
+            } elseif (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
             } else {
                 $query->sortDate();
@@ -114,23 +122,26 @@ class Banks extends \frontend\components\API
                 'pagination' => !empty($options['pagination']) ? $options['pagination'] : []
             ]);
 
+            /**
+             * @var BanksModel $model
+             */
             foreach ($this->_adp->models as $model) {
                 $item = new BanksObject($model);
-
-                $item->properties = Option::find()
-                    ->join(
-                        'LEFT JOIN',
-                        'easyii_options_assign as oa',
-                        ' oa.`option_id` = `easyii_options`.`option_id`'
-                    )
-                    ->andWhere([
-                        'item_id'  => (int)$model->bank_id,
-                        'class'  => \frontend\modules\banks\models\Banks::className()
-                    ])->all();
-
+                //$item->countries = isset($countries[$model->bank_id]) ? $countries[$model->bank_id] : $model->countries;
                 $this->_items[] = $item;
             }
+
+            $cache->set($key.'_adp', $this->_adp, 40);
+            $cache->set($key.'_items', $this->_items, 40);
+
+            //e_print('SET END');
+        } else {
+             ////e_print($options, '$options');
+             ////e_print($this->_items, '$dataGet');
+             //ex_print('GET');
         }
+
+        //ex_print('api_items_end');
 
         return $this->_items;
     }
@@ -184,7 +195,7 @@ class Banks extends \frontend\components\API
     {
         $this->_adp->pagination->pageSizeParam = false;
 
-        if($this->_adp){
+        if ($this->_adp) {
             return LinkPager::widget(['pagination' => $this->_adp->pagination]);
         }
         return '';
@@ -204,7 +215,8 @@ class Banks extends \frontend\components\API
         }
     }
 
-    public function api_clear(){
+    public function api_clear()
+    {
         $this->_adp = false;
         $this->_last = false;
         $this->_items = false;

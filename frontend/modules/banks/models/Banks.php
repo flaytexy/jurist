@@ -6,6 +6,8 @@ use common\models\country\CountryAssign;
 use common\models\country\CountryData;
 use frontend\behaviors\CountryAble;
 use common\models\country\Country;
+use frontend\models\Option;
+use frontend\models\OptionAssign;
 use Yii;
 use common\behaviors\MySluggableBehavior;
 use frontend\behaviors\SeoBehavior;
@@ -16,6 +18,11 @@ use yii\helpers\StringHelper;
 
 /**
  * @property string $countryNames
+ *
+ * @property $countries
+ * @property $properties
+ * @property $country
+ * @property $bank_id
  */
 class Banks extends \frontend\components\ActiveRecord
 {
@@ -149,9 +156,45 @@ class Banks extends \frontend\components\ActiveRecord
         }
     }
 
+//    public function geProperties()
+//    {
+//        return $this->hasMany('ModelA', array('id' => 'aid1'))->viaTable('tbl_b', array('aid2' => 'id'));
+//    }
+//    public function relations()
+//    {
+//        return array(
+//            'issues'=>array(self::HAS_ONE, 'Issue', 'issue_id'),
+//        );
+//    }
 
-/*
-    public function getCountry() {
-        return $this->hasOne(CountryAssign::className(), ['id' => 'country_id']);
-    }*/
+    public function getProperties()
+    {
+        return $this->hasMany(Option::className(), ['option_id' => 'option_id'])
+            ->viaTable(OptionAssign::tableName(), ['item_id' => 'bank_id'], function ($query) {
+                /* @var $query \yii\db\ActiveQuery */
+                $query->andWhere([OptionAssign::tableName() .'.class' => Banks::className()]);
+            });
+    }
+
+    /*
+        public function getTranslation()
+        {
+            return $this->hasOne(self::getModelClassName(), ['content_id' => 'id'])
+                //->andOnCondition([ContentTranslation::tableName() . '.language' => Yii::$app->language])
+                ->where([
+                    ContentTranslation::tableName() . '.status' => Content::STATUS_PUBLISHED,
+                    ContentTranslation::tableName() . '.language' => Yii::$app->language
+                ]);
+        }
+
+
+         public function getItems()
+        {
+            return $this->hasMany(Item::className(), ['id' => 'item_id'])
+                ->viaTable('order_item', ['order_id' => 'id']);
+        }
+
+        public function getCountry() {
+            return $this->hasOne(CountryAssign::className(), ['id' => 'country_id']);
+        }*/
 }

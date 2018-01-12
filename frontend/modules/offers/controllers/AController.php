@@ -15,26 +15,15 @@ use frontend\behaviors\StatusController;
 
 class AController extends Controller
 {
-    public function behaviors()
-    {
-        return [
-            [
-                'class' => SortableDateController::className(),
-                'model' => Offers::className(),
-            ],
-            [
-                'class' => StatusController::className(),
-                'model' => Offers::className()
-            ]
-        ];
-    }
+
 
     public function actionIndex()
     {
+
         $data = new ActiveDataProvider([
             'query' => Offers::find()->sortDate(),
         ]);
-
+        //ex_print('saddsa2222');
         return $this->render('index', [
             'data' => $data
         ]);

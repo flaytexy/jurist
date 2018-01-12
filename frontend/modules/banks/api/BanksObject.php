@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\modules\banks\api;
 
 use Yii;
@@ -7,6 +8,14 @@ use frontend\models\Photo;
 use frontend\modules\banks\models\Banks as BanksModel;
 use yii\helpers\Url;
 
+/**
+ * Class BanksObject
+ * @package frontend\modules\banks\api
+ *
+ * @property \frontend\modules\banks\models\Banks $model
+ * @property $countries;
+ * @property $properties;
+ */
 class BanksObject extends \frontend\components\ApiObject
 {
     public $slug;
@@ -17,56 +26,87 @@ class BanksObject extends \frontend\components\ApiObject
     public $image_flag;
     public $how_days;
     public $properties;
+    public $countries;
     public $pos;
 
     private $_photos;
 
-    public function __construct($model){
+    /**
+     * BanksObject constructor.
+     * @param \frontend\modules\banks\models\Banks $model
+     */
+    public function __construct($model)
+    {
         parent::__construct($model);
     }
 
-    public function getTitle(){
+    public function getTitle()
+    {
         return LIVE_EDIT ? API::liveEdit($this->model->title, $this->editLink) : $this->model->title;
     }
 
-    public function getShort(){
+    public function getShort()
+    {
         return LIVE_EDIT ? API::liveEdit($this->model->short, $this->editLink) : $this->model->short;
     }
 
-    public function getText(){
+    public function getText()
+    {
         return LIVE_EDIT ? API::liveEdit($this->model->text, $this->editLink, 'div') : $this->model->text;
     }
 
-    public function getTags(){
+    public function getTags()
+    {
         return $this->model->tagsArray;
     }
 
-    public function getOptions(){
+    public function getOptions()
+    {
         return $this->model->optionsArray;
     }
 
-    public function getPrice(){
-        $price = number_format( $this->model->price, 0, '.', '');
+    public function getPrice()
+    {
+        $price = number_format($this->model->price, 0, '.', '');
         return $price;
     }
 
-    public function getDate(){
+    public function getDate()
+    {
         return Yii::$app->formatter->asDate($this->time);
     }
 
     public function getPhotos()
     {
-        if(!$this->_photos){
+        if (!$this->_photos) {
             $this->_photos = [];
 
-            foreach(Photo::find()->where(['class' => BanksModel::className(), 'item_id' => $this->id])->sort()->all() as $model){
+            foreach (Photo::find()->where(['class' => BanksModel::className(), 'item_id' => $this->id])->sort()->all() as $model) {
                 $this->_photos[] = new PhotoObject($model);
             }
         }
         return $this->_photos;
     }
 
-    public function  getEditLink(){
+    public function getEditLink()
+    {
         return Url::to(['/admin/banks/a/edit/', 'id' => $this->id]);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCountries()
+    {
+        //return $this->countries;
+        return $this->model->countries;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProperties()
+    {
+        return $this->model->properties;
     }
 }

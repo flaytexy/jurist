@@ -33,6 +33,20 @@ $config = [
             'thousandSeparator' => ' ',
             'currencyCode' => 'USD',
         ],
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+            'cachePath' => '@frontend/runtime/cache',
+        ],
+//        'cache' => [
+//            'class' => 'yii\caching\MemCache',
+//            'servers' => [
+//                [
+//                    'host' => 'localhost',
+//                    'port' => 11211,
+//                ],
+//            ],
+//            'useMemcached' => true,
+//        ],
         'i18n' => [ // ��� ��������� ���������������
             'translations' => [
                 'frontend*' => [
@@ -197,7 +211,7 @@ $config = [
             'minifyCss' => true, // minificate css
             'concatJs' => true, // concatenate js
             'minifyJs' => true, // minificate js
-            'minifyOutput' => true, // minificate result html page
+            'minifyOutput' => false, // minificate result html page
             'webPath' => '@web', // path alias to web base
             'basePath' => '@webroot', // path alias to web base
             'minifyPath' => '@webroot/minify', // path alias to save minify result

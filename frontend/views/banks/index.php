@@ -4,15 +4,13 @@ use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-use frontend\assets\TablesAsset;
+\frontend\assets\BanksAsset::register($this);
 
-TablesAsset::register($this);
 
-use frontend\assets\SwitcherAsset;
-use akavov\countries\assets\CountriesAsset;
-CountriesAsset::register($this);
-SwitcherAsset::register($this);
-
+/**
+ * @var  \yii\web\View $this
+ * @propperty  $page \frontend\modules\page\api\Page
+ */
 
 $page = Page::get('page-banks');
 $this->title = !empty($page->seo('title', $page->model->title)) ? $page->seo('title', $page->model->title) : '';
@@ -30,23 +28,72 @@ if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
 }
 
 $this->params['breadcrumbs'][] = $page->model->title;
+
+//e_print('BEGIN_WIEV');
 ?>
+
+    <style>
+        .package-thumb > span {
+            font-size: 14px;
+            font-family: Arial, Arial, Helvetica, Tahoma, sans-serif;
+            -webkit-transform: translateY(-240%) translateX(-40%);
+            -moz-transform: translateY(-240%) translateX(-40%);
+            -ms-transform: translateY(-240%) translateX(-40%);
+            -o-transform: translateY(-240%) translateX(-40%);
+            transform: translateY(-240%) translateX(-40%);
+        }
+
+        .listcenter {
+            font-size: 20px;
+
+            position: relative;
+            right: 40px;
+        }
+
+        @media (max-width: 800px) {
+            .listcenter {
+                right: 0;
+            }
+        }
+        #tpb {
+            position: absolute;
+            top: 295px;
+            left: -281px;
+            transform: rotate(-90deg);
+        }
+        #tpb h3
+        {
+            font-size: 1em;
+            font-weight: bold;
+            position: relative;
+            margin: -35px 0 0 0;
+            float: right;
+            color: #222;
+            padding: 10px 250px;
+            text-shadow: 0 1px rgba(255,255,255,.8);
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,7dc20f+100&0+0,1+100 */
+            background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(125,194,15,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(125,194,15,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(125,194,15,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#7dc20f',GradientType=1 ); /* IE6-9 */
+        }
+        #tpb h3:before, #tpb h3:after{
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-color: transparent;
+        }
+    </style>
+
+<?php /*if ($this->beginCache(md5(serialize(Yii::$app->request->get())), ['duration' => 700])) : */?>
+
     <div class="container">
         <h1><?= $page->seo('h1', $page->title) ?></h1>
         <?php if ($page->text): ?>
             <div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
     </div>
-<style>
-    .package-thumb > span {
-        font-size: 14px;
-        font-family: Arial, Arial, Helvetica, Tahoma, sans-serif;
-        -webkit-transform: translateY(-240%) translateX(-40%);
-        -moz-transform: translateY(-240%) translateX(-40%);
-        -ms-transform: translateY(-240%) translateX(-40%);
-        -o-transform: translateY(-240%) translateX(-40%);
-        transform: translateY(-240%) translateX(-40%);
-    }
-</style>
+
+
     <section id="banks2" class="scroll-container">
         <div class="container">
             <div class="row top30">
@@ -54,7 +101,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
                             <li class="listcenter">Только личный счет?</li><br>
-                           <li>Нет</li> <li class="">
+                            <li>Нет</li> <li class="">
                                 <div class="switcher">
                                     <input value="0" class="switch" js-filter="js-filter-type-id" name="switchName"
                                            type="checkbox"/>
@@ -68,10 +115,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
                             <li  class="listcenter">С посещением банка?</li><br>
-                        <li>Нет</li>    <li class="">
+                            <li>Нет</li>    <li class="">
                                 <div class="switcher">
                                     <input  value="0" class="switch" js-filter="js-filter-personal" name="switchName2"
-                                           type="checkbox"/>
+                                            type="checkbox"/>
                                 </div>
                             </li> <li>Да</li>
                         </ul>
@@ -79,7 +126,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
                             <li  class="listcenter">С минимальным депозитом?</li><br>
-                          <li>Нет</li>  <li class="">
+                            <li>Нет</li>  <li class="">
                                 <div class="switcher">
                                     <input value="0" class="switch" js-filter="js-filter-min-deposit" js-filter-switch-only="1" name="switchName3"
                                            type="checkbox"/>
@@ -89,64 +136,14 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     </div>
                 </form>
             </div>
-<style>
+            <style>
 
-    .listcenter {
-        font-size: 20px;
 
-        position: relative;
-        right: 40px;
-    }
 
-    @media (max-width: 800px) {
-        .listcenter {
-            right: 0;
-        }
-    }
-    #tpb {
-        position: absolute;
-        top: 295px;
-        left: -281px;
-        transform: rotate(-90deg);
-    }
-    #tpb h3
-    {
-        font-size: 1em;
-        font-weight: bold;
-        position: relative;
-        margin: -35px 0 0 0;
-        float: right;
-        color: #222;
-        padding: 10px 250px;
-        text-shadow: 0 1px rgba(255,255,255,.8);
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,7dc20f+100&0+0,1+100 */
-        background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(125,194,15,1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(125,194,15,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(125,194,15,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#7dc20f',GradientType=1 ); /* IE6-9 */
-
-      /*  -moz-box-shadow: 0 2px 2px #ccc;
-        -webkit-box-shadow: 0 2px 2px #ccc;
-        box-shadow: 0 2px 2px #ccc;*/
-    }
-
-    #tpb h3:before, #tpb h3:after{
-        content: '';
-        position: absolute;
-        border-style: solid;
-        border-color: transparent;
-    }
-/*  #tpb h3:before{
-        left: -6px;
-        top: 0;
-        border-color: transparent #555 #555 transparent;
-        border-style: solid;
-    }*/
-
-</style>
+            </style>
             <div class="row bank-new-list">
                 <div class="col-md-12" id="switchAllBanks">
-                 <table data-region-assign="reg_3" class="table reg_3 table-bordered 1_0_0.00 js-filter-marker" js-filter-type-id="0" js-filter-personal="0" js-filter-min-deposit="0" style="display: table;">
+                    <table data-region-assign="reg_3" class="table reg_3 table-bordered 1_0_0.00 js-filter-marker" js-filter-type-id="0" js-filter-personal="0" js-filter-min-deposit="0" style="display: table;">
 
 
                         <tbody><tr>
@@ -520,18 +517,18 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             </td>
                         </tr>
                         </tbody></table>
-                 <!--   <h4>Africa</h4>-->
+                    <!--   <h4>Africa</h4>-->
                     <?php foreach ($items as $item) : ?>
                         <? if($region_name != $item->model->region_name && $item->model->region_name != 'Polar: Arctic' /*&&  $item->model->region_name!=false*/ ): ?>
-                           <?php $region_name = $item->model->region_name; ?>
-                           <div class='h4 top20 region-id-mark' id="reg_<?= $item->model->region_id ?>"><?= $region_name ?></div>
+                            <?php $region_name = $item->model->region_name; ?>
+                            <div class='h4 top20 region-id-mark' id="reg_<?= $item->model->region_id ?>"><?= $region_name ?></div>
                         <? endif ?>
                         <table data-region-assign="reg_<?= $item->model->region_id ?>"
-                            class="table reg_<?= $item->model->region_id ?> table-bordered <?= $item->model->type_id ?>_<?= $item->model->personal ?>_<?= $item->model->min_deposit ?>"
+                               class="table reg_<?= $item->model->region_id ?> table-bordered <?= $item->model->type_id ?>_<?= $item->model->personal ?>_<?= $item->model->min_deposit ?>"
                             <? if ($item->model->type_id !== 1): ?> js-filter-type-id="1" <? else: ?> js-filter-type-id="0" <? endif; ?>
                             <? if ($item->model->personal === 1): ?> js-filter-personal="1" <? else: ?> js-filter-personal="0" <? endif; ?>
                             <? if ($item->model->min_deposit > 0): ?> js-filter-min-deposit="1" <? else: ?> js-filter-min-deposit="0" <? endif; ?>
-                            >
+                        >
                             <tr>
                                 <td class="col-md-8 col-lg-2">
                                     <h6>
@@ -615,7 +612,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <div class="text-center" style="height:35px;">
 
                                         <a class="btn btn-success" href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
-                                    <!--    <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"
+                                        <!--    <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"
                                            class="btn btn-success">Заказать</a>-->
                                     </div>
                                 </td>
@@ -628,62 +625,60 @@ $this->params['breadcrumbs'][] = $page->model->title;
         </div>
     </section>
 
-
-
-
-<? if (true): ?>
-    <section id="pages" class="top30">
-        <div class="block">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="font-color">Подробнее о наших банках</h3>
-                        <div class="villaeditors-picks">
-                            <div class="packages style2 remove-ext2">
-                                <div class="row">
-                                    <?php foreach ($banksList as $item) : ?>
-                                        <div class="col-md-4">
-                                            <div class="package">
-
-                                                <div class="package-thumb">
-                                                    <?= Html::img($item->thumb(240, 120)) ?>
-                                                    <span><b><? if ($item->model->countries[0]->name_ru): ?><?= $item->model->countries[0]->name_ru ?><? else: ?><?= $item->model->location_title ?><?  endif;  ?></b></span>
-                                                </div>
-                                                <div class="package-detail">
-                                                    <!--                                            <span class="cate">
+    <?php if (true): ?>
+        <section id="pages" class="top30">
+            <div class="block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="font-color">Подробнее о наших банках</h3>
+                            <div class="villaeditors-picks">
+                                <div class="packages style2 remove-ext2">
+                                    <div class="row">
+                                        <?php foreach ($banksList as $item) : ?>
+                                            <div class="col-md-4">
+                                                <div class="package">
+                                                    <div class="package-thumb">
+                                                        <?= Html::img($item->thumb(240, 120)) ?>
+                                                        <span><b><? if ($item->model->countries[0]->name_ru): ?><?= $item->countries[0]->name_ru ?><? else: ?><?= $item->model->location_title ?><? endif; ?></b></span>
+                                                    </div>
+                                                    <div class="package-detail">
+                                                        <!--                                            <span class="cate">
                                                 <?php /*foreach ($item->tags as $tag) : */ ?>
                                                     <a href="<? /*= Url::to(['/pages', 'tag' => $tag]) */ ?>"
                                                        class="label label-info"><? /*= $tag */ ?></a>
                                                 <?php /*endforeach; */ ?>
                                             </span>-->
-                                                    <h4><?= Html::a($item->title,
-                                                            ['banks/view', 'slug' => $item->slug]) ?></h4>
-                                                    <ul class="location-book">
-                                                          <li class="book-btn"><i class="fa fa-info"></i>
-                                                               <?= Html::a('Подробнее',
-                                                                        ['banks/view', 'slug' => $item->slug]) ?></li>
-                                                        <li class="book-btn"><i class="fa fa-shopping-basket"></i>
-                                                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
-                                                        </li>
-                                                    </ul>
+                                                        <h4><?= Html::a($item->title,
+                                                                ['banks/view', 'slug' => $item->slug]) ?></h4>
+                                                        <ul class="location-book">
+                                                            <li class="book-btn"><i class="fa fa-info"></i>
+                                                                <?= Html::a('Подробнее',
+                                                                    ['banks/view', 'slug' => $item->slug]) ?></li>
+                                                            <li class="book-btn"><i class="fa fa-shopping-basket"></i>
+                                                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    <?php endforeach; ?>
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Villa Editors Picks -->
-                        <div id="pagination">
-                            <div>
-                                <?= Banks::pages() ?>
+                            <!-- Villa Editors Picks -->
+                            <div id="pagination">
+                                <div>
+                                    <?= Banks::pages() ?>
+                                </div>
                             </div>
+                            <!-- Pagination -->
                         </div>
-                        <!-- Pagination -->
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-<? endif; ?>
+        </section>
+    <?php endif; ?>
+
+<?php //$this->endCache(); ?>
+<?php //endif; ?>

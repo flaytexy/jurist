@@ -1,95 +1,19 @@
-jQuery.scrollTo = function (target, offset, speed, container) {
+function initMap() {
+    var mapOptions = {
+        zoom: 15,
+        center: new google.maps.LatLng(55.800312, 37.565437), // New York
+        //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
+    };
 
-    if (isNaN(target)) {
+    var mapElement = document.getElementById('map');
+    var map = new google.maps.Map(mapElement, mapOptions);
 
-        if (!(target instanceof jQuery))
-            target = $(target);
-
-        target = parseInt(target.offset().top);
-    }
-
-    container = container || "html, body";
-    if (!(container instanceof jQuery))
-        container = $(container);
-
-    speed = speed || 500;
-    offset = offset || 0;
-
-    container.animate({
-        scrollTop: target + offset
-    }, speed);
-};
-
-
-function reCheckJsFilter(whoChange) {
-
-    var switchJsPattern = ('#sw-list input.switch');
-
-    jQuery('#switchAllBanks > table').removeClass('js-filter-marker');
-    jQuery('#switchAllBanks > table').addClass('js-filter-marker');
-
-    $('#switchAllBanks  > table.js-filter-marker').hide();
-
-    if (whoChange !== undefined) {
-        if (whoChange.attr('js-filter-run-first') == '0') {
-            whoChange.attr('js-filter-run-first', '1');
-        }
-    }
-
-    jQuery('#sw-list input.switch').each(function () {
-        checked = jQuery(this).is(':checked');
-        curFilter = jQuery(this).attr('js-filter');
-        runFirstMark = jQuery(this).attr('js-filter-run-first');
-        switchOnlyValue = jQuery(this).attr('js-filter-switch-only');
-
-
-        if (runFirstMark === 'undefined') {
-            runFilter = 1;
-        } else if (runFirstMark === '0') {
-            runFilter = 0;
-        } else {
-            runFilter = 1;
-        }
-
-        checkedIndex = 0;
-        if (checked === true) {
-            checkedIndex = 1;
-        }
-
-        if (runFilter) {
-            if (switchOnlyValue !== undefined) {
-                if (parseInt(switchOnlyValue) === parseInt(checkedIndex)) {
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '=' + checkedIndex + ']').show();
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!=' + checkedIndex + ']').hide();
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!=' + checkedIndex + ']').removeClass('js-filter-marker');
-                } else {
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '=' + checkedIndex + ']').show();
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!=' + checkedIndex + ']').show();
-                }
-            }
-            else {
-                if (checked === true) {
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '=' + checkedIndex + ']').show();
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!=' + checkedIndex + ']').hide();
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!=' + checkedIndex + ']').removeClass('js-filter-marker');
-                } else {
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '=' + checkedIndex + ']').show();
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!=' + checkedIndex + ']').hide();
-                    $('#switchAllBanks > table.js-filter-marker[' + curFilter + '!=' + checkedIndex + ']').removeClass('js-filter-marker');
-                }
-            }
-        }
-    });
-
-    jQuery('#switchAllBanks div.region-id-mark').show();
-    jQuery('#switchAllBanks div.region-id-mark').each(function () {
-        var howCountryFinalByRegion = jQuery('#switchAllBanks > table.js-filter-marker.' + $(this).attr('id'));
-        if(howCountryFinalByRegion.length == 0) {
-            $(this).hide();
-        }
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(55.800312, 37.565437),
+        map: map,
+        title: 'Snazzy!'
     });
 }
-
 
 
 function setupViewport() {
@@ -123,46 +47,50 @@ function initializeTicker() {
     });
 }
 
+
+jQuery.scrollTo = function (target, offset, speed, container) {
+
+    if (isNaN(target)) {
+
+        if (!(target instanceof jQuery))
+            target = $(target);
+
+        target = parseInt(target.offset().top);
+    }
+
+    container = container || "html, body";
+    if (!(container instanceof jQuery))
+        container = $(container);
+
+    speed = speed || 500;
+    offset = offset || 0;
+
+    container.animate({
+        scrollTop: target + offset
+    }, speed);
+};
+
 var $ticker = $('[data-ticker="list"]'),
-    tickerItem = '[data-ticker="item"]'
-itemCount = $(tickerItem).length,
+    tickerItem = '[data-ticker="item"]',
+    itemCount = $(tickerItem).length,
     viewportWidth = 0;
 
 
 $(function () {
-
-    $(".Modern-Slider").slick({
-        autoplay: true,
-        autoplaySpeed: 10000,
-        speed: 600,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        pauseOnHover: false,
-        dots: true,
-        pauseOnDotsHover: true,
-        cssEase: 'linear',
-        // fade:true,
-        draggable: false,
-        prevArrow: '<button class="PrevArrow"></button>',
-        nextArrow: '<button class="NextArrow"></button>'
-    });
-
     $("#clicky").click(function () {
-        if ($("#sticky-social").is(':visible')) {
-            $("#sticky-social").animate({width: 'hide'});
+        var ssocial = $("#sticky-social");
+        if (ssocial.is(':visible')) {
+            ssocial.animate({width: 'hide'});
         }
         else {
-            $("#sticky-social").animate({width: 'show'});
-
+            ssocial.animate({width: 'show'});
         }
     });
-
 
     $("b:contains('Русский')").addClass('Rus');
     $("b:contains('English')").addClass('Eng');
     $("li:contains('English')").addClass('Eng');
     $("li:contains('Русский')").addClass('Rus');
-
 
 
     //Check to see if the window is top if not then display button
@@ -235,22 +163,70 @@ $(function () {
     });
 
 
-
-
     initializeTicker();
 
+    console.log('Its_End_Script READY');
+});
 
+$(window).load(function () {
+
+    // executes when complete page is fully loaded, including all frames, objects and images
     (function () {
         var cx = '014824414261944164439:sfk3fpa6eoq';
         var gcse = document.createElement('script');
         gcse.type = 'text/javascript';
         gcse.async = true;
+        //gcse.class = 'gsc-search-button gsc-search-button-v2 fa fa-search';
         gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(gcse, s);
+        $('.gsc-search-box td.gsc-search-button').addClass("fa fa-search");
+        $('#adBlock').hide();
+        $('td.gsc-search-button input').attr('type', 'button').attr('src', '');
+        console.log("cse.google.com/cse.js loaded.");
     })();
 
-    console.log('Its_End_Script');
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5a295e135d3202175d9b6ea0/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+
+    // Подпишитесь
+    $.getScript("//widget.privy.com/assets/widget.js", function () {
+        console.log("widget.privy.com loaded. (subscribe - top left)");
+    });
+
+    $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0&callback=initMap", function () {
+        console.log("GoogleMaps loaded. (maps.googleapis.com bottom-right)");
+        initMap();
+    });
+
+    // // 'Позвонить? // не работает главный слайдер )) когда сюда перемещаем
+    // $.getScript("https://cdn.jotfor.ms/static/feedback2.js", function () {
+    //     document.addEventListener("DOMContentLoaded", function(event) {
+    //         new JotformFeedback({
+    //             formId: "72341635329355",
+    //             buttonText: "Позвонить?",
+    //             base: "https://form.jotformeu.com/",
+    //             background: "#7dc20f",
+    //             fontColor: "#FFFFFF",
+    //             buttonSide: "left",
+    //             buttonAlign: "center",
+    //             type: 1,
+    //             width: 550,
+    //             height: 450
+    //         });
+    //     });
+    //
+    //     console.log("feedback2.js loaded. (callPhone - left)");
+    // });
+
+    console.log('Its_End_Script LOAD');
 });
 
 

@@ -5,7 +5,8 @@ class MainAsset extends \yii\web\AssetBundle
 {
     public $sourcePath = '@frontend/assets/main';
     public $css = [
-        //'css/main.css',
+        'css/main.css',
+        'css/revolution.css?v=2017-02-25-2',
         //'css/perfect-scrollbar.css'
     ];
     public $js = [
@@ -21,7 +22,7 @@ class MainAsset extends \yii\web\AssetBundle
         'js/revolution/revolution.extension.slideanims.min.js',
         'js/revolution/revolution.extension.video.min.js',
         'js/revolution/revolution.initialize.js?v=2017-01-24',
-        'js/main.js?v=2017-01-24'
+        'js/main.js?v=2018-01-11'
     ];
     public $depends = [
         'yii\web\JqueryAsset',
