@@ -9,6 +9,7 @@ class BanksAsset extends \yii\web\AssetBundle
 
     public $css = [
         //'css/frontend.css',
+        'css/banks.css',
     ];
     public $js = [
         'js/banks.js',
@@ -16,6 +17,7 @@ class BanksAsset extends \yii\web\AssetBundle
     public $depends = [
         'frontend\assets\TablesAsset',
         'akavov\countries\assets\CountriesAsset',
-        'frontend\assets\SwitcherAsset'
+        'frontend\assets\SwitcherAsset',
+        'frontend\assets\AppAsset',
     ];
 }

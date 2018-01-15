@@ -189,6 +189,11 @@ $config = [
 //                        YII_DEBUG ? 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
 //                        ],
 //                ],
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [
+                        YII_DEBUG ? 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' : 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+                        ],
+                ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [
                         YII_DEBUG ? 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js' : 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js',
@@ -222,6 +227,7 @@ $config = [
             'excludeFiles' => [
                 //'jquery.js', // exclude this file from minification
                 'app-[^.].js', // you may use regexp
+                //'styles.css',
                 'ckeditor',
             ]
         ],
