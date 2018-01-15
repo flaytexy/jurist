@@ -182,7 +182,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                         <strong><i class="fa fa-envelope"></i> E-mail</strong><br>
                         one@iq-offshore.com</p>
                     <p><strong><i class="fa fa-skype"></i> Skype</strong><br>
-                        <a href="skype:IQ Decision?call">IQ Decision</a></p>
+                        <a href="skype:live:asmofad?call">IQ Decision</a></p>
 
 
                 </div>

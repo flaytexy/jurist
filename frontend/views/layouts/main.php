@@ -56,7 +56,7 @@ $addeng = Yii::t('easyii', 'free');
                                 'template' => '
                                 <!--<li class="contact-m">-->
                                 <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
-                                    <a href="skype:IQ Decision?call"><i class="fa fa-skype" aria-hidden="true"></i><br><b style="font-size: 12px">IQ Decision</b></a>
+                                    <a href="skype:live:asmofad?call"><i class="fa fa-skype" aria-hidden="true"></i><br><b style="font-size: 12px">IQ Decision</b></a>
                                 </li>'
                             ],
                         ],
@@ -372,7 +372,7 @@ $addeng = Yii::t('easyii', 'free');
                                 <a href="mailto:one@iq-offshore.com">one@iq-offshore.com</a></p>
                             <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-skype"></i>
                                     Skype</strong><br>
-                                <a href="skype:IQ Decision?call">IQ Decision</a></p>
+                                <a href="skype:live:asmofad?call">IQ Decision</a></p>
                             <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=left' ) )"
                                class="theme-btn" title=""><?= Yii::t('easyii', 'contactus') ?></a>
                         </div>
@@ -432,7 +432,7 @@ $addeng = Yii::t('easyii', 'free');
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
     <li><a href="#"><img src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png"
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
-    <li><a href="skype:IQ Decision?call"><img src="/images/icons/skype-icon.png"
+    <li><a href="skype:live:asmofad?call"><img src="/images/icons/skype-icon.png"
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
     <li>
         <input name="" width="30" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"

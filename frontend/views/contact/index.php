@@ -203,7 +203,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                     <p><strong><i class="fa fa-clock-o"></i> Часы работы</strong><br>09:00-19:00</p>
                     <p><strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
                         one@iq-offshore.com</a></p>
-                    <p><strong><i class="fa fa-skype"></i> Skype</strong><br><a href="skype:IQ Decision?call">IQ Decision</a></p>
+                    <p><strong><i class="fa fa-skype"></i> Skype</strong><br><a href="skype:live:asmofad?call">IQ Decision</a></p>
                     <p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Messengers (+7 925 470-50-02)</strong></p>
                     <ul id="listsocial">
                         <li><a href="viber://add?number=+79254705002"><img src="/images/icons/viber-icon.png" height="42" width="42" alt="pricing-table"></a></li>
