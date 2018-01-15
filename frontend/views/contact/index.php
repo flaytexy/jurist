@@ -190,8 +190,6 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         <div class="col-md-6">
             <div class="row top10">
                 <div class="col-md-12 otstup">
-
-
                     <p>
                         <strong><i class="fa fa-map-marker"></i> <?= Yii::t('easyii','address')?></strong><br>
                         <?= Yii::t('easyii','addressinfo1')?>
@@ -202,21 +200,16 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                     </p>
                     <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number')?></strong><br>
                         +7 925 470 50 02 <br> +38 067 193 11 17</p>
-                    <p><strong><i class="fa fa-clock-o"></i> Часы работы</strong><br>
-                        09:00-19:00</p>
-                    <p>
-                        <strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
+                    <p><strong><i class="fa fa-clock-o"></i> Часы работы</strong><br>09:00-19:00</p>
+                    <p><strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
                         one@iq-offshore.com</a></p>
-                    <p><strong><i class="fa fa-skype"></i> Skype</strong><br>
-                        <a href="skype:iq.decision@gmail.com?call">IQ Decision</a></p>
-<p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Messengers (+7 925 470-50-02)</strong></p>
+                    <p><strong><i class="fa fa-skype"></i> Skype</strong><br><a href="skype:IQ Decision?call">IQ Decision</a></p>
+                    <p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Messengers (+7 925 470-50-02)</strong></p>
                     <ul id="listsocial">
-                        <li><a href="viber://add?number=+79254705002"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Viber-Icon.png" height="42" width="42" alt="pricing-table"></a></li>
+                        <li><a href="viber://add?number=+79254705002"><img src="/images/icons/viber-icon.png" height="42" width="42" alt="pricing-table"></a></li>
                         <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png" height="42" width="42" alt="pricing-table"></a></li>
-                        <li><img src="http://downdetector.com/i/logo/threema.png" height="42" width="42" alt="pricing-table"></li>
                         <li><a href="#"><img src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png" height="42" width="42" alt="pricing-table"></a></li>
                     </ul>
-
                 </div>
              </div>
         </div>
@@ -224,49 +217,14 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
         <div class="col-md-6">
             <div class="row top10">
                 <div class="col-md-12">
-
-             <!--   <form action="http://iq-offshore.com/contact" id="contact" method="post">
-
-                            <fieldset>
-                                <input name="name" placeholder="Имя" type="text" tabindex="1" required autofocus>
-                            </fieldset>
-                            <fieldset>
-                                <input name="email" placeholder="Email-адрес" type="email" tabindex="2" required>
-                            </fieldset>
-                            <fieldset>
-                                <input name="number" placeholder="Номер телефона" type="tel" tabindex="3" required>
-                            </fieldset>
-                            <fieldset>
-                                <textarea name="message" placeholder="Текст..." tabindex="4" required></textarea>
-                            </fieldset>
-                            <fieldset>
-                                <button type="submit" id="contact-submit">Отправить</button>
-                            </fieldset>
-                        </form> -->
-
                     <script type="text/javascript" src="https://form.jotformeu.com/jsform/71136944138357"></script>
-                   
                     <br>
                     <br>
                     <br>
-
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>
-
-
-
-
-
     </div>
 </div>
-
 
 <div id="map"></div>

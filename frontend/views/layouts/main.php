@@ -56,7 +56,7 @@ $addeng = Yii::t('easyii', 'free');
                                 'template' => '
                                 <!--<li class="contact-m">-->
                                 <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
-                                    <a href="skype:iq.decision@gmail.com?call"><i class="fa fa-skype" aria-hidden="true"></i><br><b style="font-size: 12px">IQ Decision</b></a>
+                                    <a href="skype:IQ Decision?call"><i class="fa fa-skype" aria-hidden="true"></i><br><b style="font-size: 12px">IQ Decision</b></a>
                                 </li>'
                             ],
                         ],
@@ -426,18 +426,14 @@ $addeng = Yii::t('easyii', 'free');
 <ul class="list-social">
     <li><a href="viber://add?number=+79254705002"><img
                     src="https://images-na.ssl-images-amazon.com/images/I/51-aTeYbibL.png"
-                    height="38" width="38" alt="В целях безопасности клиентов"></a></li>
+                    height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
     <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img
                     src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png"
-                    height="38" width="38" alt="В целях безопасности клиентов"></a></li>
-    <li><img src="http://downdetector.com/i/logo/threema.png" height="32" width="32"
-             alt="В целях безопасности клиентов"></li>
-    <li><a href="#"><img
-                    src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png"
-                    height="38" width="38" alt="В целях безопасности клиентов"></a></li>
-    <li><a href="skype:iq.decision@gmail.com?call"><img
-                    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Skype_t.png"
-                    height="38" width="38" alt="В целях безопасности клиентов"></a></li>
+                    height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
+    <li><a href="#"><img src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png"
+                    height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
+    <li><a href="skype:IQ Decision?call"><img src="/images/icons/skype-icon.png"
+                    height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
     <li>
         <input name="" width="30" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"
                value="Click me" id="clicky" />

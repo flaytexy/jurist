@@ -23,27 +23,6 @@ $this->params['breadcrumbs'][] = $page->model->title;
     var mapType = "<?= $mapType; ?>";
 </script>
 
-<?php /*foreach($offers as $item) : ?>
-    <div class="row">
-        <div class="col-md-2">
-            <?= Html::img($item->thumb(160, 120)) ?>
-        </div>
-        <div class="col-md-10">
-            <?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?>
-            <div class="small-muted"><?= $item->date ?></div>
-            <p><?= $item->short ?></p>
-            <p>
-                <?php foreach($item->tags as $tag) : ?>
-                    <a href="<?= Url::to(['/offers', 'tag' => $tag]) ?>" class="label label-info"><?= $tag ?></a>
-                <?php endforeach; ?>
-            </p>
-        </div>
-    </div>
-    <br>
-<?php endforeach; ?>
-
-<?= Offers::pages() */ ?>
-
 <section id="world-map-markers-block">
     <div class="row">
         <div class="col-md-12 hidden-xs">
@@ -188,12 +167,6 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                 </div>
                                             </a>
                                             <div class="package-detail">
-                                                <!-- <span class="cate">
-<?php /*foreach ($item->tags as $tag) : */?>
-                                                    <a href="<?/*= Url::to(['/offers', 'tag' => $tag]) */?>"
-                                                       class="label label-info"><?/*= $tag */?></a>
-                                                    <?php /*endforeach; */?>
-</span>-->
                                                 <h4><?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?></h4>
                                                 <ul class="location-book">
                                                     <li class="book-btn"><i class="fa fa-info"></i>
