@@ -146,7 +146,7 @@ $config = [
                     ],
                 ],
                 [
-                    'pattern' => '<controller:\w+>\-category/<slug:[\w-]+>',
+                    'pattern' => '<controller:\w+>-category/<slug:[\w-]+>',
                     'route' => '<controller>/index',
                 ],
                 [
