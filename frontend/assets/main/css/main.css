@@ -537,31 +537,6 @@
     padding: 0;
 }
 
-#clicky {
-    opacity: 0.6;
-    z-index: 3;
-}
-#sticky-social {
-    left: 0;
-    position: fixed;
-    bottom: 0;
-    z-index: 3;
-}
-#sticky-social > ul.list-social {
-    margin-left: -2px;
-    padding: 0;
-    margin-bottom: 33px;
-}
-#sticky-social > ul.list-social > li {
-    list-style: none;
-    padding-right: 0;
-    padding-left: 0;
-}
-#sticky-social > ul.list-social > li > a > img {
-    height: 30px ;
-    width: 30px;
-    display: block;
-}
 
 /*=============== Villa Arrangements ===============*/
 .villa-arrangements {
@@ -712,104 +687,6 @@
 
 .we-offers > .row > div {
     padding: 0;
-}
-
-.offered-service {
-    float: left;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    cursor: pointer;
-    border-style: solid;
-    border-color:#fff;
-    border-width:2px;
-}
-
-.offered-service::before {
-    background: #000000 none repeat scroll 0 0;
-    bottom: 0;
-    content: "";
-    left: 0;
-    opacity: 0.6;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-}
-
-.offered-service > img {
-    width: 100%;
-    -webkit-transition: all .8s linear;
-    -moz-transition: all .8s linear;
-    -ms-transition: all .8s linear;
-    -o-transition: all .8s linear;
-    transition: all .8s linear;
-}
-
-.offered-service:hover > img {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
-.offered-serviceinfo {
-    padding: 0;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 100%;
-    z-index: 1;
-}
-
-.offered-serviceinfotwo {
-    padding: 10px;
-    position: absolute;
-    text-align: center;
-    top: 40%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 90%;
-    z-index: 1;
-}
-
-.offered-serviceinfo > h4 {
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.offered-serviceinfo > h4 > a {
-    color: inherit;
-}
-
-.offered-serviceinfo > span {
-    color: #ffffff;
-    float: left;
-    font-family: Georgia, serif;
-    font-size: 12px;
-    font-weight: 500;
-    margin-top: 8px;
-    width: 100%;
-}
-
-.offered-serviceinfotwo > span {
-    color: #ffffff;
-    float: left;
-    font-family: Georgia, serif;
-    font-size: 12px;
-    font-weight: 500;
-    margin-top: 8px;
-    width: 100%;
 }
 
 .villa-arrangements.style2 {

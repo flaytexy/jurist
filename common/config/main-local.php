@@ -8,6 +8,13 @@ return [
             'password' => 'Ti3bapktOc',
             'charset' => 'utf8',
         ],
+//                'db' => [
+//            'class' => 'yii\db\Connection',
+//            'dsn' => 'mysql:host=localhost;dbname=iq_betta',
+//            'username' => 'iq_bettau',
+//            'password' => 'mJaeShBIOn',
+//            'charset' => 'utf8',
+//        ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
