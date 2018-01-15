@@ -8,7 +8,6 @@ class LicensesController extends \yii\web\Controller
 {
     public function actionIndex($type = null, $tag = null, $name = null, $page = null)
     {
-ex_print('test');
         $pages = Page::items([
             'where' => ['type_id' => (int)$type, 'status' => 1],
             'pagination' => ['pageSize' => 12]

@@ -154,8 +154,6 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <div class="villaeditors-picks offers-list">
                         <div class="packages style2 remove-ext2">
                             <div class="row">
-
-
                                 <?php foreach ($offers as $item) : ?>
                                     <div class="col-md-4">
                                         <div class="package">

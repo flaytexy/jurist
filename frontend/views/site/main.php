@@ -841,7 +841,7 @@ MainAsset::register($this);
                                     </li>
                                 <? endforeach; ?>
                                 <li>
-                                    <div class="villa-location">
+                                    <div class="villa-location" onclick="location.href='/licenses'">
                                         <?= Html::img($item->thumbFile("/uploads/licenses/license (5).jpg", 226, 360), array('class' => 'main-banks')) ?>
 
                                         <div class="villa-locationinfo">
