@@ -190,9 +190,21 @@ $config = [
 //                        ],
 //                ],
                 'yii\bootstrap\BootstrapAsset' => [
-                    'css' => [
-                        YII_DEBUG ? 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' : 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
-                        ],
+                    'css' => [],
+//                    'css' => [
+//                        YII_DEBUG ? 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' : 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+//                        ],
+                ],
+                'yii\jui\JuiAsset' => [
+                    'css' => [],
+//                    'css' => [
+//                        YII_DEBUG ? 'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css' : 'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css'
+//                        //YII_DEBUG ? 'https://code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css' : 'https://code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css'
+//                    ],
+                    'js' => [
+                        YII_DEBUG ? 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' : 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js'
+                        //YII_DEBUG ? 'https://code.jquery.com/ui/1.7.2/jquery-ui.min.js' : 'https://code.jquery.com/ui/1.7.2/jquery-ui.min.js'
+                    ],
                 ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [

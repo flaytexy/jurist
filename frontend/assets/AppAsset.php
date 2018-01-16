@@ -14,6 +14,9 @@ class AppAsset extends AssetBundle
     public $sourcePath = '@frontend/media';
     public $css = [
         /*'css/bootstrap.css',*/
+        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+        'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css',
+
         /*'css/icons.css',*/
         ///'css/font-awesome/css/font-awesome.min.css',
         ///'css/flaticon.css?v=5',
@@ -36,7 +39,7 @@ class AppAsset extends AssetBundle
 
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css',
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css',
-
+        'css/flaticon.css',
         'css/styles.css?v=2018-01-09-v01',
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
 

@@ -424,8 +424,7 @@ $addeng = Yii::t('easyii', 'free');
 
 <aside id="sticky-social">
 <ul class="list-social">
-    <li><a href="viber://add?number=+79254705002"><img
-                    src="https://images-na.ssl-images-amazon.com/images/I/51-aTeYbibL.png"
+    <li><a href="viber://add?number=+79254705002"><img src="/images/icons/viber-icon.png"
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
     <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img
                     src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png"

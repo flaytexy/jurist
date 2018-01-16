@@ -418,7 +418,7 @@ MainAsset::register($this);
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
                                                                                aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item"><a
-                                            href="http://iq-offshore.com/banks/bos-bank"><?= Yii::t('easyii', '2') ?></a>
+                                            href="http://iq-offshore.com/banks/mkb-bank"><?= Yii::t('easyii', '2') ?></a>
                                 </li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
                                                                                aria-hidden="true"></i></li>
@@ -433,6 +433,15 @@ MainAsset::register($this);
                                                                                aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item"><a
                                             href="http://iq-offshore.com/news/partnerstva-sotlandii-otkrytie-spiskov-beneficiarov"><?= Yii::t('easyii', '5') ?></a>
+                                </li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
+                                                                               aria-hidden="true"></i></li>
+                                <li class="ticker__item" data-ticker="item"><a
+                                            href="http://iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.1') ?></a>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
+                                                                               aria-hidden="true"></i></li>
+                                <li class="ticker__item" data-ticker="item"><a
+                                            href="http://iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.2') ?></a>
                                 </li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
                                                                                aria-hidden="true"></i></li>
