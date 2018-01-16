@@ -19,6 +19,7 @@
 /*@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,300,600,700);
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic);*/
 /*@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');*/
+/*@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic);*/
 /*=============== General Styling ===============*/
 
 html,
@@ -4565,6 +4566,7 @@ footer {
 .about-widget {
     float: left;
     width: 100%;
+    margin-top: 52px;
 }
 
 .about-widget ul > li {
@@ -4727,6 +4729,98 @@ ul.Social-btn {
     right: -255px;
     top: 0;
 }
+
+header .row .fa  {
+    position:absolute !important;
+    top: 20px !important;
+    margin:auto !important;
+    left: 8.9px;
+}
+
+.gsc-search-button {
+    display: none;
+}
+#map {
+    width: 100%;
+    height: 360px;
+    margin-top: 60px;
+}
+
+
+
+.feature-box-grid {
+    background-color: #131313;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+}
+.feature-box-grid .col-md-4{
+    padding: 0;
+    float: left;
+    max-width: 25%;
+    overflow: hidden;
+    width: 100%;
+}
+.featured-item.border-box{
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.featured-item.border-box {
+
+    padding: 50px;
+    margin-left: -1px;
+    margin-bottom: -1px;
+}
+.text-center {
+    text-align: center;
+}
+.featured-item .icon {
+    padding: 0 0 30px 0;
+}
+.featured-item .icon i {
+    font-size: 36px;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+.featured-item .title h4 {
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: normal;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.featured-item .desc {
+    color: #7e7e7e;
+}
+.featured-item.border-box, .featured-item.border-box:hover, .featured-item.border-box h4, .featured-item.border-box:hover h4, .featured-item.border-box .icon i .featured-item.border-box:hover .icon i {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.featured-item.border-box:hover {
+
+    background: #222222;
+    color: #7e7e7e;
+}
+.featured-item.border-box {
+
+    padding: 10px;
+    margin-left: -1px;
+    margin-bottom: -1px;
+}
+.featured-item.border-box:hover {
+
+    background: #222222;
+    color: #7e7e7e;
+}
+.featured-item.border-box:hover .icon i{
+    color: #7DC20F;
+}
+.featured-item.border-box:hover h4 {
+    color: #fff;
+}
+
+
 
 .Social-btn > li > a {
     background: #dcdcdc none repeat scroll 0 0;
