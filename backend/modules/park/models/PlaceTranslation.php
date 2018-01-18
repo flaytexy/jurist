@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\park\models;
+namespace backend\modules\park\models;
 
 use yii\db\ActiveRecord;
 
 /**
  * Class PlaceTranslation
- * @package app\modules\park\models
+ * @package backend\modules\park\models
  *
  * @property int $id
  * @property int $place_id

@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @var \app\modules\reserve\models\form\DriverForm $driver_model
+ * @var \backend\modules\reserve\models\form\DriverForm $driver_model
  */
 
-use app\modules\reserve\widgets\Reserve;
+use backend\modules\reserve\widgets\Reserve;
 use yii\helpers\Url;
-use app\modules\currency\models\Currency;
-use app\modules\attachment\models\Attachment;
+use backend\modules\currency\models\Currency;
+use backend\modules\attachment\models\Attachment;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 
@@ -32,7 +32,7 @@ use yii\helpers\Html;
                         <div class="countdown-time">
                             <ul class="clearfix" id="js-countDown">
                                 <?php
-                                    $reserve_start_in = \app\modules\reserve\models\Reserve::secondsToTime(strtotime($reserve_data['date_in'] . ' ' . $reserve_data['time_in']) - time());
+                                    $reserve_start_in = \backend\modules\reserve\models\Reserve::secondsToTime(strtotime($reserve_data['date_in'] . ' ' . $reserve_data['time_in']) - time());
                                 ?>
 
                                 <li class="item"><i class="day"><?= $reserve_start_in['d']; ?></i><span> <?= Yii::t('app', '{d, plural, =0{дней} one{день} few{дня} many{дней} other{день}}', ['d' => $reserve_start_in['d']]); ?></span></li>

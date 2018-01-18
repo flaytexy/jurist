@@ -2,8 +2,8 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\park\models\City|array $models
- * @var \app\modules\park\models\City $model
+ * @var \backend\modules\park\models\City|array $models
+ * @var \backend\modules\park\models\City $model
  * @var \yii\data\Pagination $pages
  */
 

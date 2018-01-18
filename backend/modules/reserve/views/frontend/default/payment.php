@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @var \app\modules\reserve\models\form\DriverForm $driver_model
+ * @var \backend\modules\reserve\models\form\DriverForm $driver_model
  */
 
-use app\modules\reserve\widgets\Reserve;
+use backend\modules\reserve\widgets\Reserve;
 use yii\helpers\Url;
-use app\modules\currency\models\Currency;
-use app\modules\attachment\models\Attachment;
+use backend\modules\currency\models\Currency;
+use backend\modules\attachment\models\Attachment;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
-use app\modules\park\models\Car;
+use backend\modules\park\models\Car;
 
 $total_price = 0;
 $total_service_price = 0;

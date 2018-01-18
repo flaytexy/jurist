@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\user\forms\frontend;
+namespace backend\modules\user\forms\frontend;
 
-use app\modules\user\models\User;
+use backend\modules\user\models\User;
 use yii\base\InvalidParamException;
 use yii\base\Model;
 

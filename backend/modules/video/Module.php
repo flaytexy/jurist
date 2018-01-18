@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\video;
+namespace backend\modules\video;
 
 use Yii;
 

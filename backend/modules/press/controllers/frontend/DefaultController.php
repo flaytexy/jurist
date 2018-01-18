@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\press\controllers\frontend;
+namespace backend\modules\press\controllers\frontend;
 
 use Yii;
-use app\modules\press\models\Press;
+use backend\modules\press\models\Press;
 use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\news;
+namespace backend\modules\news;
 
 use Yii;
 

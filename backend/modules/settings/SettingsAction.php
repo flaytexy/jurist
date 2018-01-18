@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\settings;
+namespace backend\modules\settings;
 
 use Yii;
 use yii\base\Action;

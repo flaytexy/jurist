@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\press\models;
+namespace backend\modules\press\models;
 
-use app\models\Content;
+use backend\models\Content;
 use yii\helpers\Url;
 
 /**
  * Class press
- * @package app\modules\press\models
+ * @package backend\modules\press\models
  *
  * @property int $id
  * @property string $thumbnail

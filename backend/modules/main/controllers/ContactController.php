@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\main\controllers;
+namespace backend\modules\main\controllers;
 
-use app\modules\main\models\form\ContactForm;
+use backend\modules\main\models\form\ContactForm;
 use yii\web\Controller;
 use Yii;
 
@@ -22,7 +22,7 @@ class ContactController extends Controller
     {
         $model = new ContactForm();
         if ($user = Yii::$app->user->identity) {
-            /** @var \app\modules\user\models\User $user */
+            /** @var \backend\modules\user\models\User $user */
             $model->name = $user->username;
             $model->email = $user->email;
         }

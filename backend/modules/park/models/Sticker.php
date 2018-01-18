@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\park\models;
+namespace backend\modules\park\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -9,7 +9,7 @@ use yii\helpers\Url;
 
 /**
  * Class Sticker
- * @package app\modules\park\models
+ * @package backend\modules\park\models
  *
  * @property int $id
  * @property string $color

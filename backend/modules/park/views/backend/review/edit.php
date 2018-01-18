@@ -2,17 +2,17 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\page\models\Review $model
- * @var \app\modules\page\models\ReviewTranslation|array $translation_models
+ * @var \backend\modules\page\models\Review $model
+ * @var \backend\modules\page\models\ReviewTranslation|array $translation_models
  */
 
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use app\modules\page\models\Review;
+use backend\modules\page\models\Review;
 use vova07\imperavi\Widget as Redactor;
-use app\models\Language;
-use app\modules\attachment\models\Attachment;
+use backend\models\Language;
+use backend\modules\attachment\models\Attachment;
 use kartik\date\DatePicker;
 
 ?>

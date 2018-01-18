@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\page\models;
+namespace backend\modules\page\models;
 
 use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 
 /**
  * Class UsefulTranslation
- * @package app\modules\page\models
+ * @package backend\modules\page\models
  *
  * @property int $id
  * @property int $useful_id

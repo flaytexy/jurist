@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\user\controllers\backend;
+namespace backend\modules\user\controllers\backend;
 
-use app\modules\user\forms\backend\search\UserSearch;
-use app\modules\user\models\backend\User;
+use backend\modules\user\forms\backend\search\UserSearch;
+use backend\modules\user\models\backend\User;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\web\Controller;

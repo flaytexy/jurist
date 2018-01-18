@@ -1,23 +1,23 @@
 <?php
 
-namespace app\modules\main\controllers;
+namespace backend\modules\main\controllers;
 
-use app\modules\currency\models\Currency;
-use app\modules\page\models\PageTranslation;
-use app\modules\page\models\Review;
-use app\modules\page\models\ReviewTranslation;
-use app\modules\page\models\Service;
-use app\modules\page\models\ServiceTranslation;
-use app\modules\page\models\Slider;
-use app\modules\page\models\SliderTranslation;
-use app\modules\page\models\Useful;
-use app\modules\page\models\UsefulTranslation;
-use app\modules\park\models\Car;
-use app\modules\park\models\CarTranslation;
-use app\modules\park\models\Category;
-use app\modules\park\models\CategoryTranslation;
+use backend\modules\currency\models\Currency;
+use backend\modules\page\models\PageTranslation;
+use backend\modules\page\models\Review;
+use backend\modules\page\models\ReviewTranslation;
+use backend\modules\page\models\Service;
+use backend\modules\page\models\ServiceTranslation;
+use backend\modules\page\models\Slider;
+use backend\modules\page\models\SliderTranslation;
+use backend\modules\page\models\Useful;
+use backend\modules\page\models\UsefulTranslation;
+use backend\modules\park\models\Car;
+use backend\modules\park\models\CarTranslation;
+use backend\modules\park\models\Category;
+use backend\modules\park\models\CategoryTranslation;
 use Yii;
-use app\modules\page\models\Page;
+use backend\modules\page\models\Page;
 use yii\data\Pagination;
 use yii\web\Controller;
 

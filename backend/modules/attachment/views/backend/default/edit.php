@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @var \app\modules\attachment\models\Attachment $model
+ * @var \backend\modules\attachment\models\Attachment $model
  */
 
 use yii\helpers\Url;
-use app\models\Language;
+use backend\models\Language;
 
 ?>
 

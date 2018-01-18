@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Url;
-use app\modules\menu\models\MenuItem;
+use backend\modules\menu\models\MenuItem;
 
 /* @var $this yii\web\View */
 /* @var $name string */

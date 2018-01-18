@@ -2,14 +2,14 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\video\models\Video|array $models
- * @var \app\modules\video\models\Video $model
+ * @var \backend\modules\video\models\Video|array $models
+ * @var \backend\modules\video\models\Video $model
  * @var \yii\data\Pagination $pages
  */
 
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 use yii\widgets\Pjax;
 
 ?>

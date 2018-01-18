@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\park\models;
+namespace backend\modules\park\models;
 
 use yii\db\ActiveRecord;
 
 /**
  * Class CategoryTranslation
- * @package app\modules\park\models
+ * @package backend\modules\park\models
  *
  * @property int $id
  * @property int $category_id

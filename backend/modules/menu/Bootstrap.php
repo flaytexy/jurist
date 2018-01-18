@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\menu;
+namespace backend\modules\menu;
 
 use yii\base\BootstrapInterface;
 
@@ -11,7 +11,7 @@ class Bootstrap implements BootstrapInterface
         $app->i18n->translations['modules/menu/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'forceTranslation' => true,
-            'basePath' => '@app/modules/menu/messages',
+            'basePath' => '@backend/modules/menu/messages',
             'fileMap' => [
                 'modules/menu/module' => 'module.php',
             ],

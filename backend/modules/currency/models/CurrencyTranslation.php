@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\currency\models;
+namespace backend\modules\currency\models;
 
 use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 
 /**
  * Class CurrencyTranslation
- * @package app\modules\currency\models
+ * @package backend\modules\currency\models
  *
  * @property int $id
  * @property int $currency_id

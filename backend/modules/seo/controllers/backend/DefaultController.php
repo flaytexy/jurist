@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\seo\controllers\backend;
+namespace backend\modules\seo\controllers\backend;
 
-use app\modules\seo\models\Seo;
+use backend\modules\seo\models\Seo;
 use Yii;
 use yii\data\Pagination;
 use yii\helpers\Url;

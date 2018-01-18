@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\park\models;
+namespace backend\modules\park\models;
 
 use Yii;
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
@@ -11,7 +11,7 @@ use yii\helpers\Url;
 
 /**
  * Class Car
- * @package app\modules\park\models
+ * @package backend\modules\park\models
  *
  * @property int $id
  * @property int $show_in_homepage

@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\park\controllers\backend;
+namespace backend\modules\park\controllers\backend;
 
-use app\models\Language;
-use app\modules\park\models\CarPrices;
-use app\modules\park\models\City;
-use app\modules\park\models\CityTranslation;
+use backend\models\Language;
+use backend\modules\park\models\CarPrices;
+use backend\modules\park\models\City;
+use backend\modules\park\models\CityTranslation;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Inflector;

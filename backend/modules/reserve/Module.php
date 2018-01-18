@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\reserve;
+namespace backend\modules\reserve;
 
 use Yii;
 

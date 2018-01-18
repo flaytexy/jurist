@@ -2,8 +2,8 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\album\models\Album|array $models
- * @var \app\modules\album\models\Album $model
+ * @var \backend\modules\album\models\Album|array $models
+ * @var \backend\modules\album\models\Album $model
  * @var \yii\data\Pagination $pages
  */
 
@@ -47,7 +47,7 @@ use yii\widgets\LinkPager;
                         <div class="item-col fixed pull-left item-col-title">
                             <div class="item-heading">Заголовок</div>
                             <div style="width: auto; margin-right: 10px">
-                                <img src="<?= \app\modules\attachment\models\Attachment::getImage($model->thumbnail, [60,60]) ?>" />
+                                <img src="<?= \backend\modules\attachment\models\Attachment::getImage($model->thumbnail, [60,60]) ?>" />
                             </div>
                             <div>
                                 <a href="<?= $model->getEditLink(); ?>">

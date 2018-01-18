@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\currency\controllers\backend;
+namespace backend\modules\currency\controllers\backend;
 
-use app\modules\currency\models\Currency;
+use backend\modules\currency\models\Currency;
 use Yii;
 use yii\web\Controller;
 

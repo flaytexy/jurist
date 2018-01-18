@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\currency\controllers\backend;
+namespace backend\modules\currency\controllers\backend;
 
-use app\models\Language;
-use app\modules\currency\models\Currency;
-use app\modules\currency\models\CurrencyTranslation;
+use backend\models\Language;
+use backend\modules\currency\models\Currency;
+use backend\modules\currency\models\CurrencyTranslation;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Inflector;

@@ -1,4 +1,7 @@
 <?php
+
 return [
-    'adminEmail' => 'admin@example.com',
+    'adminEmail' => 'akvamiris@gmail.com',
+    'supportEmail' => 'akvamiris@gmail.com',
+    'sitePrefix' => 'KUZNIETSOV'
 ];

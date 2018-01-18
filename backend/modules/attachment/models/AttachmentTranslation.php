@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\attachment\models;
+namespace backend\modules\attachment\models;
 
 use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 
 /**
  * Class AttachmentTranslation
- * @package app\modules\attachment\models
+ * @package backend\modules\attachment\models
  *
  * @property int $id
  * @property int $attachment_id

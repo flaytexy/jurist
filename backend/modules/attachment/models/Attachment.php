@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\attachment\models;
+namespace backend\modules\attachment\models;
 
 use Imagine\Image\Box;
 use Imagine\Image\ImageInterface;
@@ -14,7 +14,7 @@ use yii\web\UploadedFile;
 
 /**
  * Class Attachment
- * @package app\modules\attachment\models
+ * @package backend\modules\attachment\models
  *
  * @property int $id
  * @property string $name
@@ -261,7 +261,7 @@ class Attachment extends ActiveRecord
         $saveFile = FileHelper::normalizePath(Yii::getAlias(self::UPLOAD_PATH)) . DIRECTORY_SEPARATOR . $this->name;
         //Image::resizeByMaxLength($saveFile, self::$_imageMaxLength, ['quality' => 80], FileHelper::normalizePath(Yii::getAlias('@webroot/uploadsnew2')) . DIRECTORY_SEPARATOR. $model_file_name);
 
-        \app\components\Image::resizeByMaxLength($saveFile, self::$_imageMaxLength, ['quality' => self::$_imageQuality]);
+        \common\components\Image::resizeByMaxLength($saveFile, self::$_imageMaxLength, ['quality' => self::$_imageQuality]);
         //Image::resizeByMaxLength($saveFile, self::$_imageMaxLength);
 
     }

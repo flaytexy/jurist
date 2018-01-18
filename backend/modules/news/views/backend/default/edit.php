@@ -2,13 +2,13 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\page\models\Page $model
- * @var \app\modules\page\models\PageTranslation|array $translation_models
+ * @var \backend\modules\page\models\Page $model
+ * @var \backend\modules\page\models\PageTranslation|array $translation_models
  */
 
-use app\models\Language;
-use app\modules\attachment\models\Attachment;
-use app\modules\page\models\Page;
+use backend\models\Language;
+use backend\modules\attachment\models\Attachment;
+use backend\modules\page\models\Page;
 use kartik\date\DatePicker;
 use vova07\imperavi\Widget as Redactor;
 use yii\helpers\Html;

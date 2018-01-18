@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\album\models;
+namespace backend\modules\album\models;
 
-use app\models\Content;
+use backend\models\Content;
 use yii\helpers\Url;
 
 /**
  * Class Album
- * @package app\modules\album\models
+ * @package backend\modules\album\models
  *
  * @property int $id
  * @property string $thumbnail

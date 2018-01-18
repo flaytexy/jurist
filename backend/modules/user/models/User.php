@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\user\models;
+namespace backend\modules\user\models;
 
-use app\modules\user\models\query\UserQuery;
-use app\modules\user\Module;
+use backend\modules\user\models\query\UserQuery;
+use backend\modules\user\Module;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;

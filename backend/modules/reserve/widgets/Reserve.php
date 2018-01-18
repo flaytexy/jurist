@@ -1,10 +1,10 @@
 <?php
-namespace app\modules\reserve\widgets;
+namespace backend\modules\reserve\widgets;
 
-use app\modules\park\models\Place;
-use app\modules\park\models\PlaceTranslation;
+use backend\modules\park\models\Place;
+use backend\modules\park\models\PlaceTranslation;
 use Yii;
-use app\modules\park\models\City;
+use backend\modules\park\models\City;
 use yii\base\Widget;
 
 class Reserve extends Widget

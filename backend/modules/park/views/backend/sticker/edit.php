@@ -2,12 +2,12 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\park\models\Sticker $model
- * @var \app\modules\park\models\StickerTranslation|array $translation_models
+ * @var \backend\modules\park\models\Sticker $model
+ * @var \backend\modules\park\models\StickerTranslation|array $translation_models
  */
 
-use app\models\Language;
-use app\modules\page\models\Page;
+use backend\models\Language;
+use backend\modules\page\models\Page;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\color\ColorInput;

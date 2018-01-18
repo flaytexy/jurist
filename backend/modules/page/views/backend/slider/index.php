@@ -2,8 +2,8 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\page\models\Page|array $models
- * @var \app\modules\page\models\Page $model
+ * @var \backend\modules\page\models\Page|array $models
+ * @var \backend\modules\page\models\Page $model
  * @var \yii\data\Pagination $pages
  */
 

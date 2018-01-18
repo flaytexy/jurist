@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\admin\rbac;
+namespace backend\modules\admin\rbac;
 
 class Rbac
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\currency\models;
+namespace backend\modules\currency\models;
 
-use app\modules\park\models\Car;
+use backend\modules\park\models\Car;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
@@ -11,7 +11,7 @@ use yii\web\Cookie;
 
 /**
  * Class Currency
- * @package app\modules\currency\models
+ * @package backend\modules\currency\models
  *
  * @property int $id
  * @property string $thumbnail

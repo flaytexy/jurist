@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\user\widgets\backend\grid;
+namespace backend\modules\user\widgets\backend\grid;
 
 use yii\grid\DataColumn;
 use yii\helpers\Html;

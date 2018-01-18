@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\video\controllers\backend;
+namespace backend\modules\video\controllers\backend;
 
-use app\models\ContentImage;
-use app\models\Language;
-use app\modules\attachment\models\Attachment;
-use app\modules\video\models\Video;
-use app\modules\video\models\VideoTranslation;
+use backend\models\ContentImage;
+use backend\models\Language;
+use backend\modules\attachment\models\Attachment;
+use backend\modules\video\models\Video;
+use backend\modules\video\models\VideoTranslation;
 use Yii;
 use yii\base\Model;
 use yii\db\Expression;

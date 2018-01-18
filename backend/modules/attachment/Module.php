@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\attachment;
+namespace backend\modules\attachment;
 
 use Yii;
 

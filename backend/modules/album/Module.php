@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\album;
+namespace backend\modules\album;
 
 use Yii;
 

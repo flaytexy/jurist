@@ -1,10 +1,10 @@
 <?php
 
-use app\modules\currency\models\Currency;
+use backend\modules\currency\models\Currency;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 
 ?>
 <section class="news_open_page container car_page review_page">

@@ -1,74 +1,57 @@
 <?php
 use backend\assets\AppAsset;
-use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-
-/* @var $this \yii\web\View */
-/* @var $content string */
-
 AppAsset::register($this);
 ?>
-<?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
-</head>
-<body>
-    <?php $this->beginBody() ?>
-    <div class="wrap">
-        <?php
-            NavBar::begin([
-                'brandLabel' => 'Shop admin',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
-            ]);
-            $menuItems = [
-                ['label' => 'Website', 'url' => '/'],
-                ['label' => 'Categories', 'url' => ['/category/index']],
-                ['label' => 'Products', 'url' => ['/product/index']],
-                ['label' => 'Orders', 'url' => ['/order/index']]
-            ];
-            if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-            } else {
-                $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ];
-            }
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => $menuItems,
-            ]);
-            NavBar::end();
-        ?>
+<?php $this->beginContent('@backend/views/layouts/layout.php'); ?>
 
-        <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= $content ?>
-        </div>
+<div class="texture"></div>
+<div class="theme_btn">
+    <label>
+        <input type="checkbox"/>
+    </label>
+</div>
+
+<section class="header">
+    <div class="logo_mob"><img src="/img/intro/logo.png"/></div>
+    <ul class="nav">
+        <li><a href="/">home</a>
+            <div class="bottom_line"></div>
+            <div class="bottom_point"></div>
+        </li>
+        <li class="active"><a href="/about">about</a>
+            <div class="bottom_line"></div>
+            <div class="bottom_point"></div>
+        </li>
+        <li><a href="/news">news</a>
+            <div class="bottom_line"></div>
+            <div class="bottom_point"></div>
+        </li>
+        <li><a href="/photo">photo</a>
+            <div class="bottom_line"></div>
+            <div class="bottom_point"></div>
+        </li>
+        <li><a href="/video">video</a>
+            <div class="bottom_line"></div>
+            <div class="bottom_point"></div>
+        </li>
+        <li><a href="/press">press</a>
+            <div class="bottom_line"></div>
+            <div class="bottom_point"></div>
+        </li>
+        <li><a href="/contacts">contacts</a>
+            <div class="bottom_line"></div>
+            <div class="bottom_point"></div>
+        </li>
+    </ul>
+    <div class="social">
+        <a class="social_icons" href="<?= Yii::$app->settings->get('twitter') ?>"></a>
+        <a class="social_icons" href="<?= Yii::$app->settings->get('facebook') ?>"></a>
+        <a class="social_icons" href="<?= Yii::$app->settings->get('telegram') ?>"></a>
     </div>
+    <button class="hamburger hamburger--collapse" type="button"><span class="hamburger-box"><span
+                class="hamburger-inner"></span></span></button>
+</section>
 
-    <footer class="footer">
-        <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
-        </div>
-    </footer>
+<?= $content ?>
 
-    <?php $this->endBody() ?>
-</body>
-</html>
-<?php $this->endPage() ?>
+<?php $this->endContent(); ?>

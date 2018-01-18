@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\park\models;
+namespace backend\modules\park\models;
 
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 use yii\db\ActiveRecord;
 
 class CarImage extends ActiveRecord

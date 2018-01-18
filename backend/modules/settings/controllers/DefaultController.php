@@ -6,11 +6,11 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace app\modules\settings\controllers;
+namespace backend\modules\settings\controllers;
 
 use Yii;
-use app\modules\settings\models\Setting;
-use app\modules\settings\models\SettingSearch;
+use backend\modules\settings\models\Setting;
+use backend\modules\settings\models\SettingSearch;
 use pheme\grid\actions\ToggleAction;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -54,7 +54,7 @@ class DefaultController extends Controller
         return [
             'toggle' => [
                 'class' => ToggleAction::className(),
-                'modelClass' => 'app\modules\settings\models\Setting',
+                'modelClass' => 'backend\modules\settings\models\Setting',
                 //'setFlash' => true,
             ]
         ];

@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\page\controllers\backend;
+namespace backend\modules\page\controllers\backend;
 
-use app\models\Language;
-use app\modules\page\models\Service;
-use app\modules\page\models\ServiceTranslation;
+use backend\models\Language;
+use backend\modules\page\models\Service;
+use backend\modules\page\models\ServiceTranslation;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Url;

@@ -2,18 +2,18 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\page\models\Page $model
- * @var \app\modules\page\models\PageTranslation|array $translation_models
+ * @var \backend\modules\page\models\Page $model
+ * @var \backend\modules\page\models\PageTranslation|array $translation_models
  */
 
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use app\modules\page\models\Page;
+use backend\modules\page\models\Page;
 use vova07\imperavi\Widget as Redactor;
-use app\models\Image;
-use app\models\Language;
-use app\modules\attachment\models\Attachment;
+use backend\models\Image;
+use backend\models\Language;
+use backend\modules\attachment\models\Attachment;
 
 ?>
 
@@ -101,7 +101,7 @@ use app\modules\attachment\models\Attachment;
             <?=
             $form->field($model, 'brand_id')
                 ->dropDownList(
-                    \app\modules\park\models\Brand::getDropdownList(), [
+                    \backend\modules\park\models\Brand::getDropdownList(), [
                         'class' => 'form-control boxed',
                         'prompt' => '- Выбрать -',
                     ]

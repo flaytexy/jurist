@@ -2,7 +2,7 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\user\forms\LoginForm $model
+ * @var \backend\modules\user\forms\LoginForm $model
  */
 
 use yii\helpers\Url;

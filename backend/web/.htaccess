@@ -1,8 +1,28 @@
-    RewriteEngine on
+AddDefaultCharset UTF-8
 
-    # если это папка или файл, открываем его
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
 
-    # в противном случае перенаправляем на index.php
-    RewriteRule . index.php
+RewriteRule ^sitemap\.xml$ /uploads/seo/sitemap\.xml [L]
+RewriteRule ^robots\.txt /uploads/seo/robots\.txt [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\.rar
+#RewriteCond %{REQUEST_URI} !\.zip
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /
+
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf)$">
+  Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+<FilesMatch ".(pl|php|cgi|spl|scgi|fcgi)$">
+  Header unset Cache-Control
+</FilesMatch>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    ExpiresByType image/gif "access plus 2 months"
+    ExpiresByType image/jpeg "access plus 2 months"
+</IfModule>

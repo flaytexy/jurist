@@ -3,11 +3,11 @@
 use yii\captcha\Captcha;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use app\modules\user\Module;
+use backend\modules\user\Module;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \app\modules\user\forms\frontend\SignupForm */
+/* @var $model \backend\modules\user\forms\frontend\SignupForm */
 
 $this->title = Module::t('module', 'TITLE_SIGNUP');
 $this->params['breadcrumbs'][] = $this->title;

@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\album\controllers\frontend;
+namespace backend\modules\album\controllers\frontend;
 
 use Yii;
-use app\modules\album\models\Album;
+use backend\modules\album\models\Album;
 use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

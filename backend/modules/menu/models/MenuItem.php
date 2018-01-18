@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\menu\models;
+namespace backend\modules\menu\models;
 
 use Yii;
 use yii\db\ActiveRecord;
 
 /**
  * Class MenuItem
- * @package app\modules\menu\models
+ * @package backend\modules\menu\models
  *
  * @property int $id
  * @property int $menu_id

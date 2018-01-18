@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\park\controllers\backend;
+namespace backend\modules\park\controllers\backend;
 
-use app\modules\park\models\Review;
+use backend\modules\park\models\Review;
 use Yii;
 use yii\data\Pagination;
 use yii\helpers\Url;

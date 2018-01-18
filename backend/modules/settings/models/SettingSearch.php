@@ -5,14 +5,14 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace app\modules\settings\models;
+namespace backend\modules\settings\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * SettingSearch represents the model behind the search form about `app\modules\settings\models\Setting`.
+ * SettingSearch represents the model behind the search form about `backend\modules\settings\models\Setting`.
  *
  * @author Aris Karageorgos <aris@phe.me>
  */

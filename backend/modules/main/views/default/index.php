@@ -2,13 +2,13 @@
 
 /* @var $this yii\web\View */
 
-//use app\modules\attachment\models\Attachment;
-//use app\modules\currency\models\Currency;
-//use app\modules\park\models\Category;
-//use app\modules\park\models\Car;
+//use backend\modules\attachment\models\Attachment;
+//use backend\modules\currency\models\Currency;
+//use backend\modules\park\models\Category;
+//use backend\modules\park\models\Car;
 //use yii\helpers\Url;
 //use yii\widgets\Pjax;
-//use app\modules\reserve\widgets\Reserve;
+//use backend\modules\reserve\widgets\Reserve;
 
 ?>
 

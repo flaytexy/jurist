@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\user\controllers\backend;
+namespace backend\modules\user\controllers\backend;
 
-use app\modules\user\forms\LoginForm;
+use backend\modules\user\forms\LoginForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -11,7 +11,7 @@ use yii\web\Controller;
 class UserController extends Controller
 {
     /**
-     * @var \app\modules\user\Module
+     * @var \backend\modules\user\Module
      */
     public $module;
 
@@ -39,7 +39,7 @@ class UserController extends Controller
 
     public function actionLogin()
     {
-        $this->layout = '@app/views/layouts/empty';
+        $this->layout = '@backend/views/layouts/empty';
 
         if (!Yii::$app->user->isGuest) {
             return $this->redirect(['/admin/default/index']);

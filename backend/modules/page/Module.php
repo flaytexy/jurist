@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\page;
+namespace backend\modules\page;
 
 use Yii;
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\news\models;
+namespace backend\modules\news\models;
 
-use app\models\ContentTranslation;
+use backend\models\ContentTranslation;
 
 /**
  * Class NewsTranslation
- * @package app\modules\news\models
+ * @package backend\modules\news\models
  *
  * @property int $id
  * @property int $content_id

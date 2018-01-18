@@ -1,11 +1,11 @@
 <?php
 
-use app\modules\user\Module;
+use backend\modules\user\Module;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model \app\modules\user\models\backend\User */
+/* @var $model \backend\modules\user\models\backend\User */
 
 $this->title = $model->username;
 $this->params['breadcrumbs'][] = ['label' => Module::t('module', 'ADMIN_USERS'), 'url' => ['index']];

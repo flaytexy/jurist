@@ -2,10 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use app\modules\user\Module;
+use backend\modules\user\Module;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\user\models\User */
+/* @var $model backend\modules\user\models\User */
 
 $this->title = Module::t('module', 'TITLE_PROFILE');
 $this->params['breadcrumbs'][] = $this->title;

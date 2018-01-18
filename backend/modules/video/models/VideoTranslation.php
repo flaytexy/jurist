@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\video\models;
+namespace backend\modules\video\models;
 
-use app\models\ContentTranslation;
+use backend\models\ContentTranslation;
 
 /**
  * Class VideoTranslation
- * @package app\modules\video\models
+ * @package backend\modules\video\models
  *
  * @property int $id
  * @property int $content_id

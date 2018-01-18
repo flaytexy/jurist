@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\news\models;
+namespace backend\modules\news\models;
 
-use app\models\Content;
+use backend\models\Content;
 
 /**
  * Class News
- * @package app\modules\news\models
+ * @package backend\modules\news\models
  *
  * @property int $id
  * @property string $thumbnail

@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\user\models\backend;
+namespace backend\modules\user\models\backend;
 
-use app\modules\user\Module;
+use backend\modules\user\Module;
 use yii\helpers\ArrayHelper;
 
-class User extends \app\modules\user\models\User
+class User extends \backend\modules\user\models\User
 {
     const SCENARIO_ADMIN_CREATE = 'adminCreate';
     const SCENARIO_ADMIN_UPDATE = 'adminUpdate';

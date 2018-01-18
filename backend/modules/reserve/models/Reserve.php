@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\reserve\models;
+namespace backend\modules\reserve\models;
 
-use app\modules\park\models\Service;
+use backend\modules\park\models\Service;
 use yii\db\ActiveRecord;
 
 class Reserve extends ActiveRecord

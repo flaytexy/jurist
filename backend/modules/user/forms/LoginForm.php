@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\user\forms;
+namespace backend\modules\user\forms;
 
-use app\modules\user\models\User;
-use app\modules\user\Module;
+use backend\modules\user\models\User;
+use backend\modules\user\Module;
 use Yii;
 use yii\base\Model;
 

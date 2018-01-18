@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\page\controllers\frontend;
+namespace backend\modules\page\controllers\frontend;
 
 use Yii;
-use app\modules\page\models\Page;
+use backend\modules\page\models\Page;
 use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

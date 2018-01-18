@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\page\controllers\backend;
+namespace backend\modules\page\controllers\backend;
 
-use app\models\Language;
-use app\modules\page\models\Useful;
-use app\modules\page\models\UsefulTranslation;
+use backend\models\Language;
+use backend\modules\page\models\Useful;
+use backend\modules\page\models\UsefulTranslation;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Url;

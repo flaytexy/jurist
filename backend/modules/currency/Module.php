@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\currency;
+namespace backend\modules\currency;
 
 use Yii;
 

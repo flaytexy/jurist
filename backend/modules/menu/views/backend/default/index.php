@@ -2,15 +2,15 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\menu\models\Menu|array $menus
- * @var \app\modules\menu\models\Menu $menu
+ * @var \backend\modules\menu\models\Menu|array $menus
+ * @var \backend\modules\menu\models\Menu $menu
  */
 
 use yii\helpers\Url;
 use yii\helpers\Html;
-use app\models\Language;
+use backend\models\Language;
 use yii\widgets\ActiveForm;
-use app\modules\menu\Module;
+use backend\modules\menu\Module;
 use yii\helpers\ArrayHelper;
 
 ?>

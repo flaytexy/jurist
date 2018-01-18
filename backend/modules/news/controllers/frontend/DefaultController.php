@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\news\controllers\frontend;
+namespace backend\modules\news\controllers\frontend;
 
 use Yii;
-use app\modules\news\models\News;
+use backend\modules\news\models\News;
 use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\park\controllers\frontend;
+namespace backend\modules\park\controllers\frontend;
 
-use app\modules\park\models\Car;
-use app\modules\park\models\CarPrices;
-use app\modules\park\models\Category;
-use app\modules\park\models\City;
+use backend\modules\park\models\Car;
+use backend\modules\park\models\CarPrices;
+use backend\modules\park\models\Category;
+use backend\modules\park\models\City;
 use Yii;
 use yii\data\Pagination;
 use yii\db\ActiveQuery;

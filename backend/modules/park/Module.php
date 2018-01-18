@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\park;
+namespace backend\modules\park;
 
 use Yii;
 

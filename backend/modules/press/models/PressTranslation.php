@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\press\models;
+namespace backend\modules\press\models;
 
-use app\models\ContentTranslation;
+use backend\models\ContentTranslation;
 
 /**
  * Class PressTranslation
- * @package app\modules\press\models
+ * @package backend\modules\press\models
  *
  * @property int $id
  * @property int $content_id

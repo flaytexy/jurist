@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\menu\controllers\backend;
+namespace backend\modules\menu\controllers\backend;
 
-use app\modules\menu\models\MenuItem;
-use app\modules\menu\models\MenuItemTranslation;
+use backend\modules\menu\models\MenuItem;
+use backend\modules\menu\models\MenuItemTranslation;
 use Yii;
-use app\modules\menu\models\Menu;
+use backend\modules\menu\models\Menu;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 

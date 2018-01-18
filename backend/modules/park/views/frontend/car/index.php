@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @var \app\modules\park\models\Car $model
- * @var \app\modules\park\models\City $city
- * @var \app\modules\park\models\Review $reviews
+ * @var \backend\modules\park\models\Car $model
+ * @var \backend\modules\park\models\City $city
+ * @var \backend\modules\park\models\Review $reviews
  * @var \yii\data\Pagination $reviews_pages
- * @var \app\modules\park\models\Review $review_model
+ * @var \backend\modules\park\models\Review $review_model
  */
 
-use app\modules\currency\models\Currency;
+use backend\modules\currency\models\Currency;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 
 ?>
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\user\forms\frontend;
+namespace backend\modules\user\forms\frontend;
 
-use app\modules\user\models\User;
-use app\modules\user\Module;
+use backend\modules\user\models\User;
+use backend\modules\user\Module;
 use yii\base\Model;
 use yii\db\ActiveQuery;
 

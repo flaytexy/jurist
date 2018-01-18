@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\user;
+namespace backend\modules\user;
 
 use Yii;
 

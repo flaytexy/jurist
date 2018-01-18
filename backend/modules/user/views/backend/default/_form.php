@@ -1,13 +1,13 @@
 <?php
 
-use app\modules\user\Module;
-use app\modules\user\models\backend\User;
+use backend\modules\user\Module;
+use backend\modules\user\models\backend\User;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model \app\modules\user\models\backend\User */
+/* @var $model \backend\modules\user\models\backend\User */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 

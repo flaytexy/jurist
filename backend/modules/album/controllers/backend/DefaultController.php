@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\album\controllers\backend;
+namespace backend\modules\album\controllers\backend;
 
-use app\models\ContentImage;
-use app\models\Language;
-use app\modules\attachment\models\Attachment;
-use app\modules\album\models\Album;
-use app\modules\album\models\AlbumTranslation;
+use backend\models\ContentImage;
+use backend\models\Language;
+use backend\modules\attachment\models\Attachment;
+use backend\modules\album\models\Album;
+use backend\modules\album\models\AlbumTranslation;
 use Yii;
 use yii\base\Model;
 use yii\db\Expression;

@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @var \app\modules\attachment\models\Attachment|array $models
- * @var \app\modules\attachment\models\Attachment $model
+ * @var \backend\modules\attachment\models\Attachment|array $models
+ * @var \backend\modules\attachment\models\Attachment $model
  */
 
 ?>

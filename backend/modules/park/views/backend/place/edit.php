@@ -2,15 +2,15 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\park\models\Place $model
- * @var \app\modules\park\models\PlaceTranslation|array $translation_models
+ * @var \backend\modules\park\models\Place $model
+ * @var \backend\modules\park\models\PlaceTranslation|array $translation_models
  */
 
-use app\models\Language;
-use app\modules\page\models\Page;
+use backend\models\Language;
+use backend\modules\page\models\Page;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use app\modules\park\models\PlaceTranslation;
+use backend\modules\park\models\PlaceTranslation;
 
 ?>
 
@@ -79,9 +79,9 @@ use app\modules\park\models\PlaceTranslation;
 
                 $cities = [];
                 /**
-                 * @var \app\modules\park\models\City $city
+                 * @var \backend\modules\park\models\City $city
                  */
-                foreach (\app\modules\park\models\City::find()->with('translations')->all() as $city) {
+                foreach (\backend\modules\park\models\City::find()->with('translations')->all() as $city) {
                     $cities[$city['id']] = $city->getTitle();
                 }
 

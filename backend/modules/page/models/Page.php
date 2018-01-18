@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\page\models;
+namespace backend\modules\page\models;
 
-use app\models\Content;
+use backend\models\Content;
 use yii\helpers\Url;
 
 /**
  * Class Page
- * @package app\modules\page\models
+ * @package backend\modules\page\models
  *
  * @property int $id
  * @property int $thumbnail

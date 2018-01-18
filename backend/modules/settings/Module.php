@@ -6,7 +6,7 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace app\modules\settings;
+namespace backend\modules\settings;
 
 use Yii;
 
@@ -18,7 +18,7 @@ class Module extends \yii\base\Module
     /**
      * @var string The controller namespace to use
      */
-    public $controllerNamespace = 'app\modules\settings\controllers';
+    public $controllerNamespace = 'backend\modules\settings\controllers';
 
     /**
      *
@@ -48,7 +48,7 @@ class Module extends \yii\base\Module
         Yii::$app->i18n->translations['extensions/settings/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => $this->sourceLanguage,
-            'basePath' => 'app/modules/settings/messages',
+            'basePath' => 'backend/modules/settings/messages',
             'fileMap' => [
                 'extensions/settings/settings' => 'settings.php',
             ],

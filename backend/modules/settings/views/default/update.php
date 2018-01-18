@@ -6,11 +6,11 @@
  */
 
 use yii\helpers\Html;
-use app\modules\settings\Module;
+use backend\modules\settings\Module;
 
 /**
  * @var yii\web\View $this
- * @var app\modules\settings\models\Setting $model
+ * @var backend\modules\settings\models\Setting $model
  */
 
 $this->title = Module::t(

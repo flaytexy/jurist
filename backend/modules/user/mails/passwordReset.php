@@ -1,9 +1,9 @@
 <?php
 
-use app\modules\main\Module;
+use backend\modules\main\Module;
 
 /* @var $this yii\web\View */
-/* @var $user app\modules\user\models\User */
+/* @var $user backend\modules\user\models\User */
 
 $resetLink = Yii::$app->urlManager->createAbsoluteUrl(['user/default/password-reset', 'token' => $user->password_reset_token]);
 ?>

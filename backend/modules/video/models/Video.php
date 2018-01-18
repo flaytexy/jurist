@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\video\models;
+namespace backend\modules\video\models;
 
-use app\models\Content;
+use backend\models\Content;
 use yii\helpers\Url;
 
 /**
  * Class Video
- * @package app\modules\video\models
+ * @package backend\modules\video\models
  *
  * @property int $id
  * @property string $thumbnail

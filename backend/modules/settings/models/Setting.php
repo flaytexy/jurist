@@ -5,12 +5,12 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace app\modules\settings\models;
+namespace backend\modules\settings\models;
 
 use Yii;
 use yii\helpers\Json;
 use yii\base\DynamicModel;
-use app\modules\settings\Module;
+use backend\modules\settings\Module;
 use yii\base\InvalidParamException;
 
 /**

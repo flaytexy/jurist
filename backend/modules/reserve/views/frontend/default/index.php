@@ -1,9 +1,9 @@
 <?php
 
-use app\modules\reserve\widgets\Reserve;
+use backend\modules\reserve\widgets\Reserve;
 use yii\helpers\Url;
-use app\modules\currency\models\Currency;
-use app\modules\attachment\models\Attachment;
+use backend\modules\currency\models\Currency;
+use backend\modules\attachment\models\Attachment;
 
 ?>
 

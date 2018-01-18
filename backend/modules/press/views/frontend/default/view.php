@@ -2,12 +2,12 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\press\models\Press $model
- * @var \app\modules\press\models\Press $next
+ * @var \backend\modules\press\models\Press $model
+ * @var \backend\modules\press\models\Press $next
  */
 
 use yii\helpers\Url;
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 
 ?>
 

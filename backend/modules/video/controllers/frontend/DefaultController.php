@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\video\controllers\frontend;
+namespace backend\modules\video\controllers\frontend;
 
 use Yii;
-use app\modules\video\models\Video;
+use backend\modules\video\models\Video;
 use yii\data\Pagination;
 use yii\db\ActiveQuery;
 use yii\web\Controller;

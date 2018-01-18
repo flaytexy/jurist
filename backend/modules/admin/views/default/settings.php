@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @var \app\models\Settings|array $models
- * @var \app\models\Settings $model
+ * @var \backend\models\Settings|array $models
+ * @var \backend\models\Settings $model
  */
 
 use yii\helpers\Url;
@@ -10,7 +10,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\date\DatePicker;
 use vova07\imperavi\Widget as Redactor;
-use app\models\Language;
+use backend\models\Language;
 use kartik\datetime\DateTimePicker;
 
 $this->title = 'Основные настройки - Datarius Cryptobank';

@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\attachment\controllers\backend;
+namespace backend\modules\attachment\controllers\backend;
 
-use app\models\Language;
-use app\modules\attachment\models\Attachment;
-use app\modules\attachment\models\AttachmentTranslation;
+use backend\models\Language;
+use backend\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\AttachmentTranslation;
 use Imagine\Image\Box;
 use Yii;
 use yii\base\ErrorException;
@@ -12,7 +12,7 @@ use yii\base\Model;
 use yii\helpers\FileHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use app\components\Image;
+use common\components\Image;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

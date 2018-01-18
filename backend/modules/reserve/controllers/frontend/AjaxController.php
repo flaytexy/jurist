@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\reserve\controllers\frontend;
+namespace backend\modules\reserve\controllers\frontend;
 
-use app\modules\park\models\City;
-use app\modules\park\models\CityTranslation;
-use app\modules\park\models\Place;
-use app\modules\park\models\PlaceTranslation;
-use app\modules\park\models\Service;
-use app\modules\reserve\models\Reserve;
+use backend\modules\park\models\City;
+use backend\modules\park\models\CityTranslation;
+use backend\modules\park\models\Place;
+use backend\modules\park\models\PlaceTranslation;
+use backend\modules\park\models\Service;
+use backend\modules\reserve\models\Reserve;
 use Yii;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;

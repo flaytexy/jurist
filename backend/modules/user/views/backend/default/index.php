@@ -1,18 +1,18 @@
 <?php
 
-use app\widgets\grid\ActionColumn;
-use app\widgets\grid\LinkColumn;
-use app\widgets\grid\SetColumn;
-use app\modules\user\Module;
-use app\modules\user\models\backend\User;
-use app\modules\user\widgets\backend\grid\RoleColumn;
+use backend\widgets\grid\ActionColumn;
+use backend\widgets\grid\LinkColumn;
+use backend\widgets\grid\SetColumn;
+use backend\modules\user\Module;
+use backend\modules\user\models\backend\User;
+use backend\modules\user\widgets\backend\grid\RoleColumn;
 use kartik\date\DatePicker;
 use yii\helpers\ArrayHelper;
 use yii\grid\GridView;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $searchModel \app\modules\user\forms\backend\search\UserSearch */
+/* @var $searchModel \backend\modules\user\forms\backend\search\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Module::t('module', 'ADMIN_USERS');

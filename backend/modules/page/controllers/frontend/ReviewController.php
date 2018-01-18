@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\page\controllers\frontend;
+namespace backend\modules\page\controllers\frontend;
 
-use app\models\Language;
-use app\modules\page\models\ReviewTranslation;
+use backend\models\Language;
+use backend\modules\page\models\ReviewTranslation;
 use Yii;
-use app\modules\page\models\Review;
+use backend\modules\page\models\Review;
 use yii\base\Model;
 use yii\data\Pagination;
 use yii\web\Controller;

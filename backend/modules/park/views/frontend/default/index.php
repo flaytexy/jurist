@@ -2,15 +2,15 @@
 
 /**
  * @var \yii\web\View $this
- * @var app\modules\park\models\Category $category
+ * @var backend\modules\park\models\Category $category
  */
 
-use app\modules\attachment\models\Attachment;
-use app\modules\currency\models\Currency;
-use app\modules\park\models\Category;
+use backend\modules\attachment\models\Attachment;
+use backend\modules\currency\models\Currency;
+use backend\modules\park\models\Category;
 use yii\helpers\Url;
-use app\modules\reserve\widgets\Reserve;
-use app\models\CarAttribute;
+use backend\modules\reserve\widgets\Reserve;
+use backend\models\CarAttribute;
 
 ?>
 <section class="reserve_1 container park_auto_page">

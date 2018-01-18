@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\user\controllers\console;
+namespace backend\modules\user\controllers\console;
 
-use app\modules\user\models\User;
+use backend\modules\user\models\User;
 use yii\base\Model;
 use yii\console\Controller;
 use yii\console\Exception;

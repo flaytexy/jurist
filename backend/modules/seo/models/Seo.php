@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\seo\models;
+namespace backend\modules\seo\models;
 
 use yii\db\ActiveRecord;
 

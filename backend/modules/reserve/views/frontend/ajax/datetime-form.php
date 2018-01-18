@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Url;
-use app\modules\attachment\models\Attachment;
-use app\modules\currency\models\Currency;
+use backend\modules\attachment\models\Attachment;
+use backend\modules\currency\models\Currency;
 
 ?>
 <div id="service-popup" class="popup">

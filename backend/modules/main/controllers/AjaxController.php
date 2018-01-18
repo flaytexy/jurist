@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\main\controllers;
+namespace backend\modules\main\controllers;
 
-use app\modules\currency\models\Currency;
+use backend\modules\currency\models\Currency;
 use Yii;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;

@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\user\controllers\console;
+namespace backend\modules\user\controllers\console;
 
-use app\modules\user\models\User;
+use backend\modules\user\models\User;
 use Yii;
 use yii\console\Controller;
 use yii\helpers\Console;
@@ -13,7 +13,7 @@ use yii\helpers\Console;
 class CronController extends Controller
 {
     /**
-     * @var \app\modules\user\Module
+     * @var \backend\modules\user\Module
      */
     public $module;
 

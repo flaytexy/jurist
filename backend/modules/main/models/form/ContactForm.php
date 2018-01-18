@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\main\models\form;
+namespace backend\modules\main\models\form;
 
 use Yii;
 use yii\base\Model;
-use app\modules\main\Module;
+use backend\modules\main\Module;
 
 /**
  * ContactForm is the model behind the contact form.

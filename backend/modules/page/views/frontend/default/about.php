@@ -2,12 +2,12 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\page\models\page $model
- * @var \app\modules\page\models\page $next
+ * @var \backend\modules\page\models\page $model
+ * @var \backend\modules\page\models\page $next
  */
 
 use yii\helpers\Url;
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 
 ?>
 

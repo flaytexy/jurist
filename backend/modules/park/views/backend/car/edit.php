@@ -2,20 +2,20 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\park\models\Car $model
- * @var \app\modules\park\models\CarTranslation|array $translation_models
+ * @var \backend\modules\park\models\Car $model
+ * @var \backend\modules\park\models\CarTranslation|array $translation_models
  * @var Attribute $attribute
- * @var \app\modules\park\models\CarPrices|array  $prices
+ * @var \backend\modules\park\models\CarPrices|array  $prices
  */
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use app\modules\page\models\Page;
-use app\models\Language;
-use app\modules\park\models\Attribute;
+use backend\modules\page\models\Page;
+use backend\models\Language;
+use backend\modules\park\models\Attribute;
 use yii\helpers\ArrayHelper;
-use app\modules\attachment\models\Attachment;
-use app\modules\park\models\Car;
+use backend\modules\attachment\models\Attachment;
+use backend\modules\park\models\Car;
 
 ?>
 
@@ -93,7 +93,7 @@ use app\modules\park\models\Car;
 
             <?=
             $form->field($model, 'sticker_id', ['options' => ['class' => 'form-group']])->dropDownList(
-                \app\modules\park\models\Sticker::getDropdownList(),
+                \backend\modules\park\models\Sticker::getDropdownList(),
                 [
                     'class' => 'form-control boxed',
                     'prompt' => '- Выбрать -',
@@ -113,7 +113,7 @@ use app\modules\park\models\Car;
             <div class="card-block">
 
                 <div class="file-input">
-                    <div id="image-manager-preview"><?= $model->thumbnail ? Html::img(\app\modules\attachment\models\Attachment::getImage($model->thumbnail)) : ''; ?></div>
+                    <div id="image-manager-preview"><?= $model->thumbnail ? Html::img(\backend\modules\attachment\models\Attachment::getImage($model->thumbnail)) : ''; ?></div>
 
                     <a href="#" id="image-manager-set"<?= $model->thumbnail ? ' class="hidden"' : ''; ?>>Задать миниатюру</a>
                     <a href="#" id="image-manager-reset"<?= !$model->thumbnail ? ' class="hidden"' : ''; ?>>Удалить миниатюру</a>
@@ -185,7 +185,7 @@ use app\modules\park\models\Car;
                 <div class="row">
                     <?=
                         $form->field($model, 'brand_id', ['options' => ['class' => 'form-group col-sm-4']])->dropDownList(
-                            \app\modules\park\models\Brand::getDropdownList(),
+                            \backend\modules\park\models\Brand::getDropdownList(),
                             [
                                 'class' => 'form-control boxed',
                                 'prompt' => '- Выбрать -',
@@ -194,7 +194,7 @@ use app\modules\park\models\Car;
                     ?>
                     <?=
                         $form->field($model, 'model_id', ['options' => ['class' => 'form-group col-sm-4']])->dropDownList(
-                            $model->brand_id ? \app\modules\park\models\Model::getDropdownList($model->brand_id) : [],
+                            $model->brand_id ? \backend\modules\park\models\Model::getDropdownList($model->brand_id) : [],
                             [
                                 'class' => 'form-control boxed',
                                 'prompt' => '- Выбрать -',
@@ -224,7 +224,7 @@ use app\modules\park\models\Car;
 
                     <?=
                     $form->field($model, 'category_id', ['options' => ['class' => 'form-group col-sm-4']])->dropDownList(
-                        \app\modules\park\models\Category::getDropdownList(),
+                        \backend\modules\park\models\Category::getDropdownList(),
                         [
                             'class' => 'form-control boxed',
                             'prompt' => '- Выбрать -',

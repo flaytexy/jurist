@@ -1,6 +1,6 @@
 <?php
 
-use app\modules\reserve\widgets\Reserve;
+use backend\modules\reserve\widgets\Reserve;
 
 ?>
 <div id="service-popup" class="popup">

@@ -7,12 +7,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use app\modules\settings\Module;
-use \app\modules\settings\models\Setting;
+use backend\modules\settings\Module;
+use \backend\modules\settings\models\Setting;
 
 /**
  * @var yii\web\View $this
- * @var app\modules\settings\models\Setting $model
+ * @var backend\modules\settings\models\Setting $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>

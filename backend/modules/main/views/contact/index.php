@@ -1,12 +1,12 @@
 <?php
 
-use app\modules\main\Module;
+use backend\modules\main\Module;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \app\modules\main\models\form\ContactForm */
+/* @var $model \backend\modules\main\models\form\ContactForm */
 
 $this->title = Module::t('module', 'TITLE_CONTACT');
 $this->params['breadcrumbs'][] = $this->title;

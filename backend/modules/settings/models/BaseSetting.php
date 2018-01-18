@@ -5,7 +5,7 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace app\modules\settings\models;
+namespace backend\modules\settings\models;
 
 use Yii;
 use yii\helpers\Json;

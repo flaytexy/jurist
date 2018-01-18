@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\user\controllers\frontend;
+namespace backend\modules\user\controllers\frontend;
 
-use app\modules\user\forms\frontend\EmailConfirmForm;
-use app\modules\user\forms\LoginForm;
-use app\modules\user\forms\frontend\PasswordResetForm;
-use app\modules\user\forms\frontend\PasswordResetRequestForm;
-use app\modules\user\forms\frontend\SignupForm;
-use app\modules\user\Module;
+use backend\modules\user\forms\frontend\EmailConfirmForm;
+use backend\modules\user\forms\LoginForm;
+use backend\modules\user\forms\frontend\PasswordResetForm;
+use backend\modules\user\forms\frontend\PasswordResetRequestForm;
+use backend\modules\user\forms\frontend\SignupForm;
+use backend\modules\user\Module;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\filters\AccessControl;
@@ -18,7 +18,7 @@ use yii\web\Controller;
 class DefaultController extends Controller
 {
     /**
-     * @var \app\modules\user\Module
+     * @var \backend\modules\user\Module
      */
     public $module;
 

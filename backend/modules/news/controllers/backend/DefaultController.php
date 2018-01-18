@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\news\controllers\backend;
+namespace backend\modules\news\controllers\backend;
 
-use app\controllers\ContentAdminController;
-use app\models\ContentImage;
-use app\models\Language;
-use app\modules\attachment\models\Attachment;
-use app\modules\news\models\News;
-use app\modules\news\models\NewsTranslation;
+use backend\controllers\ContentAdminController;
+use backend\models\ContentImage;
+use backend\models\Language;
+use backend\modules\attachment\models\Attachment;
+use backend\modules\news\models\News;
+use backend\modules\news\models\NewsTranslation;
 use Yii;
 use yii\base\Model;
 use yii\db\ActiveRecord;
@@ -27,7 +27,7 @@ class DefaultController extends ContentAdminController
     {
         return [
             'deleteImage' => [
-                'class' => 'app\action\DeleteImageAction',
+                'class' => 'backend\action\DeleteImageAction',
                 'modelClass' => News::className(),
                 'canDelete' => function ($model) {
                     /* @var $model \yii\db\ActiveRecord */
@@ -52,7 +52,7 @@ class DefaultController extends ContentAdminController
                 },
             ],
             'cropImage' => [
-                'class' => 'app\action\CropImageAction',
+                'class' => 'backend\action\CropImageAction',
                 'modelClass' => News::className(),
                 'redirectUrl' => function ($model) {
                     /* @var $model News */

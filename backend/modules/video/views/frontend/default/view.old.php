@@ -2,12 +2,12 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\video\models\Video $model
- * @var \app\modules\video\models\Video $next
+ * @var \backend\modules\video\models\Video $model
+ * @var \backend\modules\video\models\Video $next
  */
 
 use yii\helpers\Url;
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 
 ?>
 <section class="video_open_page container">

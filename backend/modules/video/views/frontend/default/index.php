@@ -1,8 +1,8 @@
 <?php
 /**
  * @var \yii\web\View $this
- * @var \app\modules\video\models\Video|array $models
- * @var \app\modules\video\models\Video $model
+ * @var \backend\modules\video\models\Video|array $models
+ * @var \backend\modules\video\models\Video $model
  * @var \yii\data\Pagination $pages
  */
 

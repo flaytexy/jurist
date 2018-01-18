@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\album\models;
+namespace backend\modules\album\models;
 
-use app\models\ContentTranslation;
+use backend\models\ContentTranslation;
 
 /**
  * Class AlbumTranslation
- * @package app\modules\album\models
+ * @package backend\modules\album\models
  *
  * @property int $id
  * @property int $content_id

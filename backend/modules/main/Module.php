@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\main;
+namespace backend\modules\main;
 
 use Yii;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'app\modules\main\controllers';
+    public $controllerNamespace = 'backend\modules\main\controllers';
 
     public static function t($category, $message, $params = [], $language = null)
     {

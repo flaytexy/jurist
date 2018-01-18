@@ -1,28 +1,28 @@
 <?php
 
-namespace app\modules\park\controllers\backend;
+namespace backend\modules\park\controllers\backend;
 
-use app\modules\attachment\models\Attachment;
-use app\modules\park\models\Attribute;
-use app\modules\park\models\AttributeTranslation;
-use app\modules\park\models\AttributeValue;
-use app\modules\park\models\AttributeValueTranslation;
-use app\modules\park\models\Brand;
-use app\modules\park\models\BrandTranslation;
-use app\modules\park\models\CarImage;
-use app\modules\park\models\CarPrices;
-use app\modules\park\models\CarTranslation;
-use app\modules\park\models\Category;
-use app\modules\park\models\CategoryTranslation;
-use app\modules\park\models\City;
-use app\modules\park\models\CityTranslation;
-use app\modules\park\models\ModelTranslation;
+use backend\modules\attachment\models\Attachment;
+use backend\modules\park\models\Attribute;
+use backend\modules\park\models\AttributeTranslation;
+use backend\modules\park\models\AttributeValue;
+use backend\modules\park\models\AttributeValueTranslation;
+use backend\modules\park\models\Brand;
+use backend\modules\park\models\BrandTranslation;
+use backend\modules\park\models\CarImage;
+use backend\modules\park\models\CarPrices;
+use backend\modules\park\models\CarTranslation;
+use backend\modules\park\models\Category;
+use backend\modules\park\models\CategoryTranslation;
+use backend\modules\park\models\City;
+use backend\modules\park\models\CityTranslation;
+use backend\modules\park\models\ModelTranslation;
 use GuzzleHttp\Exception\BadResponseException;
 use Yii;
-use app\models\Language;
-use app\modules\park\models\Car;
+use backend\models\Language;
+use backend\modules\park\models\Car;
 use yii\base\Model;
-use app\modules\park\models\Model as CarModel;
+use backend\modules\park\models\Model as CarModel;
 use yii\data\Pagination;
 use yii\db\Expression;
 use yii\helpers\Inflector;

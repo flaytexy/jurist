@@ -6,7 +6,7 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace app\modules\settings\components;
+namespace backend\modules\settings\components;
 
 use yii\base\Component;
 use yii\caching\Cache;
@@ -21,11 +21,11 @@ class Settings extends Component
     /**
      * @var string settings model. Make sure your settings model calls clearCache in the afterSave callback
      */
-    public $modelClass = 'app\modules\settings\models\BaseSetting';
+    public $modelClass = 'backend\modules\settings\models\BaseSetting';
 
     /**
      * Model to for storing and retrieving settings
-     * @var \app\modules\settings\models\BaseSetting
+     * @var \backend\modules\settings\models\BaseSetting
      */
     protected $model;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\page\models;
+namespace backend\modules\page\models;
 
-use app\models\ContentTranslation;
+use backend\models\ContentTranslation;
 use yii\behaviors\TimestampBehavior;
 
 /**
  * Class PageTranslation
- * @package app\modules\page\models
+ * @package backend\modules\page\models
  *
  * @property int $id
  * @property int $content_id

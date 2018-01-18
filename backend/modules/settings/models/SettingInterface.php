@@ -5,11 +5,11 @@
  * @license MIT http://opensource.org/licenses/MIT
  */
 
-namespace app\modules\settings\models;
+namespace backend\modules\settings\models;
 
 /**
  * Interface SettingInterface
- * @package app\modules\settings\models
+ * @package backend\modules\settings\models
  *
  * @author Aris Karageorgos <aris@phe.me>
  */

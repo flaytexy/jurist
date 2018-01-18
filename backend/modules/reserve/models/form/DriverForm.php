@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\reserve\models\form;
+namespace backend\modules\reserve\models\form;
 
 use Yii;
 use yii\base\Model;
-use app\modules\main\Module;
+use backend\modules\main\Module;
 use yii\web\UploadedFile;
 
 class DriverForm extends Model

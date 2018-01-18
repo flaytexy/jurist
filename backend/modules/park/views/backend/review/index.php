@@ -2,8 +2,8 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\page\models\Review|array $models
- * @var \app\modules\page\models\Review $model
+ * @var \backend\modules\page\models\Review|array $models
+ * @var \backend\modules\page\models\Review $model
  * @var \yii\data\Pagination $pages
  */
 
@@ -46,7 +46,7 @@ use yii\widgets\LinkPager;
                             <div>
                                 <a href="<?= Url::to(['/admin/park/review/edit', 'id' => $model->id]); ?>">
                                     <h4 class="item-title"><?= $model->name; ?> (<?= Yii::$app->formatter->asDatetime($model->created_at, 'php:d.m.Y H:i'); ?>)</h4>
-                                    <?= $model->status == \app\modules\park\models\Review::STATUS_PUBLISHED ? 'опубликован' : 'черновик'; ?>
+                                    <?= $model->status == \backend\modules\park\models\Review::STATUS_PUBLISHED ? 'опубликован' : 'черновик'; ?>
                                 </a>
                             </div>
                         </div>

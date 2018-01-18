@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\user\forms\frontend;
+namespace backend\modules\user\forms\frontend;
 
-use app\modules\user\models\User;
-use app\modules\user\Module;
+use backend\modules\user\models\User;
+use backend\modules\user\Module;
 use yii\base\Model;
 use Yii;
 
@@ -79,7 +79,7 @@ class PasswordResetRequestForm extends Model
         if ($user = $this->getUser()) {
             $user->generatePasswordResetToken();
             if ($user->save()) {
-                return Yii::$app->mailer->compose(['text' => '@app/modules/user/mails/passwordReset'], ['user' => $user])
+                return Yii::$app->mailer->compose(['text' => '@backend/modules/user/mails/passwordReset'], ['user' => $user])
                     ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
                     ->setTo($this->email)
                     ->setSubject('Password reset for ' . Yii::$app->name)

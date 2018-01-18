@@ -2,11 +2,11 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\news\models\News $model
- * @var \app\modules\news\models\News $next
+ * @var \backend\modules\news\models\News $model
+ * @var \backend\modules\news\models\News $next
  */
 
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 use yii\helpers\Url;
 
 ?>

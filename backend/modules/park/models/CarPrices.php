@@ -1,15 +1,15 @@
 <?php
 
-namespace app\modules\park\models;
+namespace backend\modules\park\models;
 
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\helpers\Url;
 
 /**
  * Class CarPrices
- * @package app\modules\park\models
+ * @package backend\modules\park\models
  *
  * @property int $id
  * @property int $car_id

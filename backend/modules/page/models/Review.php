@@ -1,15 +1,15 @@
 <?php
 
-namespace app\modules\page\models;
+namespace backend\modules\page\models;
 
 use Yii;
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 use yii\db\ActiveRecord;
 use yii\helpers\Url;
 
 /**
  * Class Review
- * @package app\modules\page\models
+ * @package backend\modules\page\models
  *
  * @var int $id
  * @var int $thumbnail

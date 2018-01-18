@@ -1,9 +1,9 @@
 <?php
 
-namespace app\modules\user\forms\frontend;
+namespace backend\modules\user\forms\frontend;
 
-use app\modules\user\models\User;
-use app\modules\user\Module;
+use backend\modules\user\models\User;
+use backend\modules\user\Module;
 use yii\base\Model;
 use Yii;
 
@@ -84,7 +84,7 @@ class SignupForm extends Model
             $user->generateEmailConfirmToken();
 
             if ($user->save()) {
-                Yii::$app->mailer->compose(['text' => '@app/modules/user/mails/emailConfirm'], ['user' => $user])
+                Yii::$app->mailer->compose(['text' => '@backend/modules/user/mails/emailConfirm'], ['user' => $user])
                     ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name])
                     ->setTo($this->email)
                     ->setSubject('Email confirmation for ' . Yii::$app->name)

@@ -1,11 +1,11 @@
 <?php
 
 use yii\bootstrap\ActiveForm;
-use app\modules\user\Module;
+use backend\modules\user\Module;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model \app\modules\user\forms\frontend\PasswordChangeForm */
+/* @var $model \backend\modules\user\forms\frontend\PasswordChangeForm */
 
 $this->title = Module::t('module', 'TITLE_PASSWORD_CHANGE');
 $this->params['breadcrumbs'][] = ['label' => Module::t('module', 'TITLE_PROFILE'), 'url' => ['index']];

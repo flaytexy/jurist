@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\seo\components;
+namespace backend\modules\seo\components;
 
-use app\components\ArrayHelper;
+use common\components\ArrayHelper;
 use yii\base\Object;
 use yii\helpers\Json;
 use yii\web\UrlRuleInterface;
-use app\modules\seo\models\Seo;
+use backend\modules\seo\models\Seo;
 
 class SeoUrlRule extends Object implements UrlRuleInterface
 {

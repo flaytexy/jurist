@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\park\controllers\backend;
+namespace backend\modules\park\controllers\backend;
 
-use app\models\Language;
-use app\modules\park\models\Service;
-use app\modules\park\models\ServiceTranslation;
+use backend\models\Language;
+use backend\modules\park\models\Service;
+use backend\modules\park\models\ServiceTranslation;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Inflector;

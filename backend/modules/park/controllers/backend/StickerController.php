@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\park\controllers\backend;
+namespace backend\modules\park\controllers\backend;
 
-use app\models\Language;
-use app\modules\park\models\CarPrices;
-use app\modules\park\models\Sticker;
-use app\modules\park\models\StickerTranslation;
+use backend\models\Language;
+use backend\modules\park\models\CarPrices;
+use backend\modules\park\models\Sticker;
+use backend\modules\park\models\StickerTranslation;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Inflector;

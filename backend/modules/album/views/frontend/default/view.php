@@ -2,12 +2,12 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\album\models\Album $model
- * @var \app\modules\album\models\Album $next
+ * @var \backend\modules\album\models\Album $model
+ * @var \backend\modules\album\models\Album $next
  */
 
 use yii\helpers\Url;
-use app\modules\attachment\models\Attachment;
+use backend\modules\attachment\models\Attachment;
 
 $secImages = $model['images'];
 $firstImage = array_shift($secImages);

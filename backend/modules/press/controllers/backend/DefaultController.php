@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\press\controllers\backend;
+namespace backend\modules\press\controllers\backend;
 
-use app\controllers\ContentAdminController;
-use app\models\ContentImage;
-use app\models\Language;
-use app\modules\attachment\models\Attachment;
-use app\modules\press\models\Press;
-use app\modules\press\models\PressTranslation;
+use backend\controllers\ContentAdminController;
+use backend\models\ContentImage;
+use backend\models\Language;
+use backend\modules\attachment\models\Attachment;
+use backend\modules\press\models\Press;
+use backend\modules\press\models\PressTranslation;
 use Yii;
 use yii\base\Model;
 use yii\db\Expression;

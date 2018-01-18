@@ -2,8 +2,8 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\news\models\News|array $models
- * @var \app\modules\news\models\News $model
+ * @var \backend\modules\news\models\News|array $models
+ * @var \backend\modules\news\models\News $model
  * @var \yii\data\Pagination $pages
  */
 

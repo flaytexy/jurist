@@ -7,14 +7,14 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use app\modules\settings\Module;
-use app\modules\settings\models\Setting;
+use backend\modules\settings\Module;
+use backend\modules\settings\models\Setting;
 use yii\helpers\ArrayHelper;
 use yii\widgets\Pjax;
 
 /**
  * @var yii\web\View $this
- * @var app\modules\settings\models\SettingSearch $searchModel
+ * @var backend\modules\settings\models\SettingSearch $searchModel
  * @var yii\data\ActiveDataProvider $dataProvider
  */
 

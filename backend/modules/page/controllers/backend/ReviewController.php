@@ -1,12 +1,12 @@
 <?php
 
-namespace app\modules\page\controllers\backend;
+namespace backend\modules\page\controllers\backend;
 
-use app\models\Language;
-use app\modules\page\models\Page;
-use app\modules\page\models\PageTranslation;
-use app\modules\page\models\Review;
-use app\modules\page\models\ReviewTranslation;
+use backend\models\Language;
+use backend\modules\page\models\Page;
+use backend\modules\page\models\PageTranslation;
+use backend\modules\page\models\Review;
+use backend\modules\page\models\ReviewTranslation;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Inflector;

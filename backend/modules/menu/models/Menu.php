@@ -1,13 +1,13 @@
 <?php
 
-namespace app\modules\menu\models;
+namespace backend\modules\menu\models;
 
 use yii\db\ActiveRecord;
-use app\modules\menu\Module;
+use backend\modules\menu\Module;
 
 /**
  * Class Menu
- * @package app\modules\menu\models
+ * @package backend\modules\menu\models
  *
  * @property int $id
  * @property string $name

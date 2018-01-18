@@ -2,8 +2,8 @@
 
 /**
  * @var \yii\web\View $this
- * @var \app\modules\park\models\Car|array $models
- * @var \app\modules\park\models\Car $model
+ * @var \backend\modules\park\models\Car|array $models
+ * @var \backend\modules\park\models\Car $model
  * @var \yii\data\Pagination $pages
  */
 

@@ -1,5 +1,5 @@
 <?php
-namespace app\modules\seo\components;
+namespace backend\modules\seo\components;
 
 use Yii;
 use yii\base\Object;
@@ -68,7 +68,7 @@ class Seo extends Object
             $where['view'] = $this->_view();
             $where['action_params'] = $this->_action_params();
 
-            $this->_page = \app\modules\seo\models\Seo::find()
+            $this->_page = \backend\modules\seo\models\Seo::find()
                 ->where($where)
                 ->limit(1)
                 ->asArray()
@@ -94,7 +94,7 @@ class Seo extends Object
             Yii::$app->controller->module->module->id !== 'admin' &&
             Yii::$app->controller->module->id !== 'admin'
         ) {
-            $page = new \app\modules\seo\models\Seo;
+            $page = new \backend\modules\seo\models\Seo;
             $page->view = $this->_view();
             $page->action_params = $this->_action_params();
             $page->save();
@@ -167,7 +167,7 @@ class Seo extends Object
         }
         unset($action_params['seo_add']);
         $action_params = array_filter($action_params);
-        $action_params = \app\components\ArrayHelper::strval($action_params);
+        $action_params = \common\components\ArrayHelper::strval($action_params);
         $action_params = Json::encode($action_params);
         return $action_params;
     }

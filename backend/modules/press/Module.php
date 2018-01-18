@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\press;
+namespace backend\modules\press;
 
 use Yii;
 

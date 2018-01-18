@@ -7,11 +7,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use app\modules\settings\Module;
+use backend\modules\settings\Module;
 
 /**
  * @var yii\web\View $this
- * @var app\modules\settings\models\SettingSearch $model
+ * @var backend\modules\settings\models\SettingSearch $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>
