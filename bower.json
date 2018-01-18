@@ -1,0 +1,8 @@
+{
+  "name": "app-name",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery-migrate": "1.4.1"
+  },
+  "private": true
+}

@@ -14,8 +14,8 @@ class AppAsset extends AssetBundle
     public $sourcePath = '@frontend/media';
     public $css = [
         /*'css/bootstrap.css',*/
-        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-        'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css',
+        //'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+        //'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css',
 
         /*'css/icons.css',*/
         ///'css/font-awesome/css/font-awesome.min.css',
@@ -28,33 +28,36 @@ class AppAsset extends AssetBundle
         ///'css/opensans.css',
         //'css/table.css',
 
-
         //'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css',
         //'https://fonts.googleapis.com/css?family=Cabin',
 
-        'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css',
         //'css/normalize.min.css',
-        //'css/prefix.min.css?v=2017-02-25-2',
+
         //'css/bootstrap-submenu.min.css?v=2017-03-18-3',
 
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css',
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css',
-        'css/flaticon.css',
-        'css/styles.css?v=2018-01-09-v01',
+
+        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+        //'css/bootstrap.css', //*last
+        'css/jquery-ui.smoothness.1.12.1.css', //*last
+        'css/flaticon.css', //*last
+        //'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', //*last
+        'css/animate.3.2.3.css', //*last
+        //'css/font-awesome/css/font-awesome.min.css', //*last
+        //'css/prefix.min.css?v=2017-02-25-2',
+        'css/prefix2.css?v=2018-01-18-v01', //*last
+        'css/styles.css?v=2018-01-09-v01', //*last
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
 
+        //'css/style_all.css', //new!!!!
 
-        //<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-        //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        //<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
-        //<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        //<link rel="stylesheet" href="/uploads/style.css?v=2017-11-26-v1">
 
         //'https://fonts.googleapis.com/css?family=Cabin',
         //'https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css',
         //'http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css',
-        //'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
 
+        //'css/font-awesome/css/font-awesome.min.css',
         //'css/frontend.css',
         //'css/responsive.css',
         //'css/color.css'
@@ -73,7 +76,7 @@ class AppAsset extends AssetBundle
         'js/jquery.scrolly.js', //
         'js/bootstrap-submenu.js',
 
-        'js/slick.js?v=2018-01-09-v01',
+        'js/slick.1.8.0.js?v=2018-01-18-v01',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
         //'/uploads/newin.js?v=2017-11-13-v3',
 
@@ -95,7 +98,7 @@ class AppAsset extends AssetBundle
         'yii\jui\JuiAsset',
         //'frontend\assets\FoundationTableAsset',
         //'yii\bootstrap\BootstrapAsset',
-        'yii\bootstrap\BootstrapPluginAsset',
+        //'yii\bootstrap\BootstrapPluginAsset',
         'yii\web\YiiAsset',
     ];
 }

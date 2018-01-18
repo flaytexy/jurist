@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "npm": "^5.4.1",
+    "graceful-fs": "^4.1.11",
+    "grunt-cli": "^1.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "^3.3.2",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-csso": "^3.0.0",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
+    "pump": "^1.0.2",
+    "gulp-useref": "^3.1.4",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-if": "^2.0.2",
+    "browser-sync": "^2.23.5",
+    "gulp-sourcemaps": "^2.6.3"
+  }
+}

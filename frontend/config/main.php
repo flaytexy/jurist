@@ -179,7 +179,7 @@ $config = [
                     //'js' => [YII_DEBUG ? 'https://code.jquery.com/jquery-2.2.4.js' : 'https://code.jquery.com/jquery-2.2.4.min.js']
                     'js' => [
                         YII_DEBUG ? 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js' : 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',
-                        YII_DEBUG ? 'https://code.jquery.com/jquery-migrate-1.4.1.js' : 'https://code.jquery.com/jquery-migrate-1.4.1.min.js',
+                        //YII_DEBUG ? 'https://code.jquery.com/jquery-migrate-1.4.1.js' : 'https://code.jquery.com/jquery-migrate-1.4.1.min.js',
                         YII_DEBUG ? 'https://code.jquery.com/jquery-migrate-3.0.1.js' : 'https://code.jquery.com/jquery-migrate-3.0.1.min.js'
                     ]
                 ],
@@ -190,10 +190,12 @@ $config = [
 //                        ],
 //                ],
                 'yii\bootstrap\BootstrapAsset' => [
-                    'css' => [],
-//                    'css' => [
-//                        YII_DEBUG ? 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' : 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
-//                        ],
+                    //'css' => [],
+                    'css' => [
+                        //YII_DEBUG ? 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' : 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+                        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+                        'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css',
+                        ],
                 ],
                 'yii\jui\JuiAsset' => [
                     'css' => [],
@@ -202,14 +204,14 @@ $config = [
 //                        //YII_DEBUG ? 'https://code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css' : 'https://code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css'
 //                    ],
                     'js' => [
-                        YII_DEBUG ? 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js' : 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js'
+                        YII_DEBUG ? 'https://code.jquery.com/ui/1.12.1/jquery-ui.js' : 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js'
                         //YII_DEBUG ? 'https://code.jquery.com/ui/1.7.2/jquery-ui.min.js' : 'https://code.jquery.com/ui/1.7.2/jquery-ui.min.js'
                     ],
                 ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [
-                        YII_DEBUG ? 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js' : 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js',
-                        YII_DEBUG ? 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js' : 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js'
+                        YII_DEBUG ? 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.js' : 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js',
+                        YII_DEBUG ? 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js' : 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js'
                     ],
                 ],
             ],
@@ -240,6 +242,7 @@ $config = [
                 //'jquery.js', // exclude this file from minification
                 'app-[^.].js', // you may use regexp
                 //'styles.css',
+                'style_all.css',
                 'ckeditor',
             ]
         ],

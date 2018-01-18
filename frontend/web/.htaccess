@@ -1,5 +1,10 @@
 AddDefaultCharset UTF-8
 
+Order allow,deny
+allow from all
+Deny from 82.146.41, 82.146.40
+
+
 Options +FollowSymLinks
 ##IndexIgnore */*
 RewriteEngine On

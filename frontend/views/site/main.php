@@ -447,8 +447,8 @@ MainAsset::register($this);
                                                                                aria-hidden="true"></i></li>
                             </ul>
                         </div>
-                        <div>
-                            <div class="Modern-Slider" id="Modern-Slider">
+
+                        <div class="Modern-Slider" id="Modern-Slider" style="display: none">
                                 <!-- Item -->
                                 <div class="item">
                                     <div class="img-fill">
@@ -574,7 +574,7 @@ MainAsset::register($this);
                                 </div>
                                 Item -->
                             </div>
-                        </div>
+
                     </div>
                     <!-- Search Luxurious Form -->
                 </div>

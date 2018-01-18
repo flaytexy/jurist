@@ -1,0 +1,97 @@
+var gulp = require('gulp');
+var server = require('gulp-server-livereload');
+var sass = require('gulp-sass');
+var prefix = require('gulp-autoprefixer');
+var csso = require('gulp-csso');
+var useref = require('gulp-useref');
+var gulpif = require('gulp-if');
+var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
+var ftp = require('vinyl-ftp');
+var notify = require('gulp-notify');
+var clean = require('gulp-dest-clean');
+    pug = require('gulp-pug');
+	  plumber = require('gulp-plumber');
+	  browserSync = require('browser-sync').create();
+var sourcemaps = require('gulp-sourcemaps');
+
+
+//PUG
+gulp.task('pug', function() {
+  return gulp.src(['app/pug/*.pug'])
+    .pipe(plumber())
+    .pipe(pug({pretty: true}))
+    .pipe(gulp.dest('dist/'))
+    .pipe(browserSync.stream())
+});
+
+//SERVER
+gulp.task('serv', function() {
+  gulp.src('dist')
+    .pipe(server({
+      livereload: true,
+      defaultFile: 'index.html',
+      open: true
+    }));
+});
+
+//STYLES
+gulp.task('styles', function () {
+  return gulp.src('app/sass/**/*.sass')
+    //.pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(prefix({
+		browsers: ['last 15 versions'],
+		cascade: false
+	}))
+    //.pipe(csso({restructure: false}))
+    //.pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('../web/css'));
+});
+
+//IMAGES
+gulp.task('images', function () {
+    return gulp.src('app/img/**/*')
+        .pipe(clean('dist/img'))
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'));
+});
+
+//BUILD
+gulp.task('build', ['images'] ,function () {
+    return gulp.src('dist/*.html')
+        .pipe(useref())
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.css', csso({restructure: false})))
+        .pipe(gulp.dest('dist'));
+});
+//ftp
+gulp.task('send', ['build', 'images'], function() {
+    var conn = ftp.create( {
+        host:     '31.170.166.69',
+        user:     'user',
+        password: 'password',
+        parallel: 21
+    } );
+
+    /* list all files you wish to ftp in the glob variable */
+    var globs = [
+        'dist/**/*',
+        '!node_modules/**' // if you wish to exclude directories, start the item with an !
+    ];
+
+    return gulp.src( globs, { base: '.', buffer: false } )
+        .pipe( conn.newer( '/public_html/' ) ) // only upload newer files
+        .pipe( conn.dest( '/public_html/' ) )
+        .pipe(notify("Dev site updated!"));
+
+});
+
+//watchers
+gulp.task('watch', function () {
+	gulp.watch('app/sass/**/*.sass', ['styles']);
+    gulp.watch('app/pug/*.pug', ['pug']);
+});
+
+gulp.task('default', ['watch']); //'serv',
