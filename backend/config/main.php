@@ -33,7 +33,7 @@ return [
 //        'session' => [
 //            'class' => 'yii\web\Session'
 //        ],
-        'db' => $db,
+        //'db' => $db,
         'urlManager' => [
             'class' => 'yii\web\UrlManager', //@todo lang url manager
             'enablePrettyUrl' => true,
