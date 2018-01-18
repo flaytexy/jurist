@@ -48,9 +48,13 @@ gulp.task('css', function () {
         'frontend/media/css/animate.3.2.3.css',
         'frontend/media/css/prefix2.css',
         'frontend/media/css/styles.css'
-    ])//.pipe(minifyCSS())
-      .pipe(concat('style_all.css'))
-      .pipe(gulp.dest('frontend/media/css'))
+    ])
+    .pipe(concat('style_all.css'))
+    .pipe(gulp.dest('frontend/media/css'))
+    .pipe(minifyCSS())
+    .pipe(concat('style_all.min.css'))
+    .pipe(gulp.dest('frontend/media/css'))
+    .pipe(gulp.dest('frontend/web/css'))
 });
 
 

@@ -4692,7 +4692,7 @@ section {
 }
 
 .padh-30 {
-    padding: 0 30px;;
+    padding: 0 30px;
 }
 
 .no-padding {
@@ -4854,7 +4854,6 @@ ul.top-menus li > a {
     float: left;
     width: 100%;
     margin-bottom: -50px;
-. villa-arrangementsinfo . title1
 }
 
 .overlape {
@@ -7173,7 +7172,7 @@ ul.simlist > li:before {
 }
 
 .packages-detail th {
-    color:#D5DDE5;;
+    color:#D5DDE5;
     background:#1b1e24;
     border-bottom:4px solid #9ea7af;
     border-right: 1px solid #343a45;
@@ -7196,7 +7195,7 @@ ul.simlist > li:before {
 
 .packages-detail tr {
     border-top: 1px solid #C1C3D1;
-    border-bottom-: 1px solid #C1C3D1;
+    /*border-bottom-: 1px solid #C1C3D1;*/
     color:#666B85;
     font-size:16px;
     font-weight:normal;

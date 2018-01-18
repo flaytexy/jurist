@@ -38,19 +38,19 @@ class AppAsset extends AssetBundle
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css',
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css',
 
-        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-        //'css/bootstrap.css', //*last
-        'css/jquery-ui.smoothness.1.12.1.css', //*last
-        'css/flaticon.css', //*last
-        //'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', //*last
-        'css/animate.3.2.3.css', //*last
-        //'css/font-awesome/css/font-awesome.min.css', //*last
-        //'css/prefix.min.css?v=2017-02-25-2',
-        'css/prefix2.css?v=2018-01-18-v01', //*last
-        'css/styles.css?v=2018-01-09-v01', //*last
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
+//        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+//        //'css/bootstrap.css', //*last
+//        'css/jquery-ui.smoothness.1.12.1.css', //*last
+//        'css/flaticon.css', //*last
+//        //'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', //*last
+//        'css/animate.3.2.3.css', //*last
+//        //'css/font-awesome/css/font-awesome.min.css', //*last
+//        //'css/prefix.min.css?v=2017-02-25-2',
+//        'css/prefix2.css?v=2018-01-18-v01', //*last
+//        'css/styles.css?v=2018-01-09-v01', //*last
+//        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
 
-        //'css/style_all.css', //new!!!!
+        'css/style_all.min.css', //new!!!!
 
 
         //'https://fonts.googleapis.com/css?family=Cabin',
@@ -76,7 +76,7 @@ class AppAsset extends AssetBundle
         'js/jquery.scrolly.js', //
         'js/bootstrap-submenu.js',
 
-        'js/slick.1.8.0.js?v=2018-01-18-v01',
+        'js/slick.1.8.0.js',
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
         //'/uploads/newin.js?v=2017-11-13-v3',
 

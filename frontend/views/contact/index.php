@@ -206,9 +206,9 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
                     <p><strong><i class="fa fa-skype"></i> Skype</strong><br><a href="skype:live:asmofad?call">IQ Decision</a></p>
                     <p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Messengers (+7 925 470-50-02)</strong></p>
                     <ul id="listsocial">
-                        <li><a href="viber://add?number=+79254705002"><img src="/images/icons/viber-icon.png" height="42" width="42" alt="pricing-table"></a></li>
-                        <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png" height="42" width="42" alt="pricing-table"></a></li>
-                        <li><a href="#"><img src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png" height="42" width="42" alt="pricing-table"></a></li>
+                        <li><a href="viber://add?number=+79254705002"><img src="/images/icons/viber-icon-small.png" height="42" width="42" alt="pricing-table"></a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img src="/images/icons/WhatsApp-icon-small.png" height="42" width="42" alt="pricing-table"></a></li>
+                        <li><a href="#"><img src="/images/icons/telegram-logo-small.png" height="42" width="42" alt="pricing-table"></a></li>
                     </ul>
                 </div>
              </div>

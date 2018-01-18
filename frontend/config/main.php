@@ -243,7 +243,9 @@ $config = [
                 'app-[^.].js', // you may use regexp
                 //'styles.css',
                 'style_all.css',
+                'style_all.min.css',
                 'ckeditor',
+                'ooo.css'
             ]
         ],
 

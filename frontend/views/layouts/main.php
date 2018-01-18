@@ -3,6 +3,10 @@
 //use frontend\modules\shopcart\api\Shopcart;
 //use frontend\modules\subscribe\api\Subscribe;
 //use yii\helpers\Url;
+
+/**
+ * @var $this \yii\web\View
+ */
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
 use yii\helpers\Html;
@@ -14,6 +18,7 @@ $popularly = \frontend\models\Popularly::find()->limit(7)->all();
 $phoneStr = "+7 925 470 50 02";
 
 $addeng = Yii::t('easyii', 'free');
+
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 
@@ -235,7 +240,6 @@ $addeng = Yii::t('easyii', 'free');
             </div><!-- Page Top Sec -->
         <?php endif; ?>
     </div>
-
     <?= $content ?>
     <div class="push"></div>
 
@@ -424,12 +428,12 @@ $addeng = Yii::t('easyii', 'free');
 
 <aside id="sticky-social">
 <ul class="list-social">
-    <li><a href="viber://add?number=+79254705002"><img src="/images/icons/viber-icon.png"
+    <li><a href="viber://add?number=+79254705002"><img src="/images/icons/viber-icon-small.png"
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
     <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img
-                    src="http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png"
+                    src="/images/icons/WhatsApp-icon-small.png"
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
-    <li><a href="#"><img src="https://seeklogo.com/images/T/telegram-logo-AD3D08A014-seeklogo.com.png"
+    <li><a href="#"><img src="/images/icons/telegram-logo-small.png"
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
     <li><a href="skype:live:asmofad?call"><img src="/images/icons/skype-icon.png"
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
@@ -438,10 +442,7 @@ $addeng = Yii::t('easyii', 'free');
                value="Click me" id="clicky" />
     </li>
 </ul>
-
 </aside>
-
-
 <div id="stl_left" style="display: block; opacity: 1; width: 178px;" class="">
     <div id="stl_bg">
         <nobr id="stl_text">Вверх</nobr>
@@ -454,15 +455,9 @@ $addeng = Yii::t('easyii', 'free');
         var _d_site = _d_site || '411086831FF94A27DC0340B2';
     </script>
 <?php endif; ?>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112429010-1"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-112429010-1');
+    //var target = document.querySelector("body");
+    //target.innerHTML += "<link rel='stylesheet' type='text/css' href='/css/style_all.min.css' />";
 </script>
-
 
 <?php $this->endContent(); ?>

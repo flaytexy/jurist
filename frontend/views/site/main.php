@@ -3,6 +3,7 @@
 
 use yii\helpers\Html;
 use frontend\assets\MainAsset;
+use frontend\helpers\Image;
 
 MainAsset::register($this);
 
@@ -713,9 +714,10 @@ MainAsset::register($this);
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/fio'">
-                                                <img class="main-banks"
-                                                     src="/uploads/thumbs/fiobanka1-1c2825cc96-c21c2573ddfd3d521286cffdd8a7f314.jpg"
-                                                     alt="">
+                                                <?= Html::img(
+                                                    Image::thumb("/uploads/thumbs/fiobanka1-1c2825cc96-c21c2573ddfd3d521286cffdd8a7f314.jpg", 296, 187),
+                                                    ['class' => 'main-banks']
+                                                ); ?>
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/fio" title="">FIO</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Чехия</span>
@@ -726,7 +728,10 @@ MainAsset::register($this);
                                         </div>
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/mkb-bank'">
-                                                <img class="main-banks" src="/uploads/thumbs/mkb_bank.jpg" alt="">
+                                                <?= Html::img(
+                                                    Image::thumb("/uploads/thumbs/mkb_bank.jpg", 296, 187),
+                                                    ['class' => 'main-banks']
+                                                ); ?>
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/mkb-bank" title="">MKB Bank</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Венгрия</span>
@@ -736,10 +741,11 @@ MainAsset::register($this);
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="offered-service"
-                                                 onclick="location.href='/banks/universal-capital-bank'">
-                                                <img class="main-banks" src="/uploads/thumbs/universal_capital_bank.png"
-                                                     alt="">
+                                            <div class="offered-service" onclick="location.href='/banks/universal-capital-bank'">
+                                                <?= Html::img(
+                                                    Image::thumb("/uploads/thumbs/universal_capital_bank.png", 296, 187),
+                                                    ['class' => 'main-banks']
+                                                ); ?>
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/universal-capital-bank" title="">Universal
                                                             Bank</a></h4>
@@ -750,9 +756,11 @@ MainAsset::register($this);
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="offered-service"
-                                                 onclick="location.href='/banks/unicredit-bank-serbia'">
-                                                <img class="main-banks" src="/uploads/thumbs/unicredit_bank.jpg" alt="">
+                                            <div class="offered-service" onclick="location.href='/banks/unicredit-bank-serbia'">
+                                                <?= Html::img(
+                                                    Image::thumb('/uploads/thumbs/unicredit_bank.jpg', 296, 187),
+                                                    ['class' => 'main-banks']
+                                                ); ?>
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/unicredit-bank-serbia" title="">Unicredit
                                                             Bank</a></h4>
@@ -764,9 +772,10 @@ MainAsset::register($this);
                                         </div>
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/lihtenshteyn'">
-                                                <img class="main-banks"
-                                                     src="/uploads/thumbs/bankalpinum-a7a8f324b9-93fb67177d3f8829dd1ea589a0a4fccc.jpg"
-                                                     alt="">
+                                                <?= Html::img(
+                                                    Image::thumb('/uploads/thumbs/bankalpinum-a7a8f324b9-93fb67177d3f8829dd1ea589a0a4fccc.jpg', 296, 187),
+                                                    ['class' => 'main-banks']
+                                                ); ?>
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/lihtenshteyn" title="">Alpinum</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Лихтенштейн</span>
@@ -777,7 +786,11 @@ MainAsset::register($this);
                                         </div>
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/cim'">
-                                                <img class="main-banks" src="/uploads/thumbs/cim_bank.jpg" alt="">
+                                                <?= Html::img(
+                                                    Image::thumb('/uploads/thumbs/cim_bank.jpg', 296, 187),
+                                                    ['class' => 'main-banks']
+                                                ); ?>
+
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/cim" title="">C.I.M Bank</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Швейцария</span>
@@ -788,7 +801,10 @@ MainAsset::register($this);
                                         </div>
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/ameriabank'">
-                                                <img class="main-banks" src="/uploads/thumbs/ameria_bank.jpg" alt="">
+                                                <?= Html::img(
+                                                    Image::thumb('/uploads/thumbs/ameria_bank.jpg', 296, 187),
+                                                    ['class' => 'main-banks']
+                                                ); ?>
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/ameriabank" title="">Ameria Bank</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Армения</span>
@@ -800,8 +816,10 @@ MainAsset::register($this);
 
                                         <div class="col-md-6">
                                             <div class="offered-service">
-                                                <img src="/uploads/theme_villa/offered-service6.jpg" alt="">
-
+                                                <?= Html::img(
+                                                    Image::thumb('/uploads/theme_villa/offered-service6.jpg', 296, 187),
+                                                    ['class' => 'main-banks']
+                                                ); ?>
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="/banks"
                                                            title=""><?= Yii::t('easyii', 'otherbanks') ?></a></h4>
@@ -885,8 +903,10 @@ MainAsset::register($this);
                             <div class="remove-ext">
                                 <div class="recentnews-carousel2">
                                     <div class="recentnew-post">
-                                        <img src="/uploads/processing/processing_main.jpg" alt="Процессинг Мерчант"
-                                             onclick="location.href='/processing'"/>
+                                        <?= Html::img(
+                                            Image::thumb('/uploads/processing/processing_main.jpg', 660, 372),
+                                            ['alt' => 'Процессинг Мерчант', 'onclick' => "location.href='/processing'", 'class' => 'recimg']
+                                        ); ?>
                                     </div>
                                 </div>
                             </div>
@@ -1005,7 +1025,7 @@ MainAsset::register($this);
     <div class="bdanzer-container-testimonial">
 
         <div class="bdanzer-card">
-            <img src="http://i.imgur.com/pzS5joE.jpg"/>
+            <img src="/uploads/main/man1-2.jpg"/>
             <h3><?= Yii::t('easyii', 'eugene') ?></h3>
             <h4>justeugenyi@mail.ru</h4>
             <p>"<?= Yii::t('easyii', 'eugenereview') ?>"
@@ -1014,7 +1034,7 @@ MainAsset::register($this);
 
 
         <div class="bdanzer-card">
-            <img src="http://i.imgur.com/IM7Q2xK.jpg"/>
+            <img src="/uploads/main/woman1-2.jpg"/>
             <h3><?= Yii::t('easyii', 'svetlana') ?></h3>
             <h4>pantyhose@gmail.com</h4>
             <p>"<?= Yii::t('easyii', 'svetlanareview') ?>"</p>
