@@ -88,14 +88,16 @@ class PagesController extends \yii\web\Controller
             throw new \yii\web\NotFoundHttpException('Page Houston, we have a problem.');
         }
 
-        $pageParent = \frontend\modules\page\models\Page::findOne(['slug'=>'page-'.$parts[1]]);
+        $prefixSlug = strlen($parts[1])<3 ? $parts[2] : $parts[1];
 
-
-        $popularly  = Popularly::findOne(['class' => \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id.$parts[1]]);
+        $popularly  = Popularly::findOne(['class' => \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id.$prefixSlug]);
         if(empty($popularly)){ $popularly  = new Popularly; }
         //$popularly->getInherit($news, $popularly);
-        $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id.$parts[1];
-        $popularly->slug = $parts[1].'/'.$pages->slug;
+
+
+        $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id.'\\'.$prefixSlug;
+        $popularly->slug = $prefixSlug.'/'.$pages->slug;
+
         $popularly->title = $pages->title;
         $popularly->item_id = $pages->model->page_id;
         $popularly->image = $pages->image;
@@ -104,8 +106,8 @@ class PagesController extends \yii\web\Controller
 
         return $this->render('view', [
             'page' => $pages,
-            'parentPage' => $pageParent,
-            'pageParentUrl' => $parts[1],
+            'parentPage' => \frontend\modules\page\models\Page::findOne(['slug'=>'page-'.$prefixSlug]),
+            'pageParentUrl' => $prefixSlug,
 
             'top_banks' => $topBanks,
             'top_offers' => $topOffers,

@@ -17,9 +17,10 @@ if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
     ]);
 }
 
+if(!empty($parentPage->title)){
+    $this->params['breadcrumbs'][] = ['label' => $parentPage->title, 'url' => Url::to([$pageParentUrl.'/'])];
+}
 
-
-$this->params['breadcrumbs'][] = ['label' => $parentPage->title, 'url' => Url::to([$pageParentUrl.'/'])];
 $this->params['breadcrumbs'][] = $page->model->title;
 ?>
 <style>

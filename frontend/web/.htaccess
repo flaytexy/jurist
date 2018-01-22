@@ -22,6 +22,9 @@ RewriteRule ^offers/index$ /$1 [R=301,NC,L]
 RewriteRule ^news/index$ /news [R=301,NC,L]
 RewriteRule ^news/c/(.*)$ /news-category/$1 [R=301,NC,L]
 
+RewriteRule ^ru/ru/(.*)$ /ru/$1 [R=301,NC,L]
+
+
 ##RewriteCond %{THE_REQUEST} \s(.*)\?page=([^&\s]+)&(.*)\s [NC]
 ##RewriteRule ^ %1/page%2?%3 [R=301,L]
 ##RewriteRule ^(.*)/page([0-9]+)$ /$1/page/$2 [QSA,L]

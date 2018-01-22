@@ -25,9 +25,26 @@ use \frontend\widgets\ScriptsFooter;
         <?php $this->head() ?>
     </head>
     <body>
+        <?php if (YII_DEBUG): ?>
+        <script type='text/javascript'>
+            var _DEBUG_MODE = true;
+        </script>
+        <?php endif; ?>
+
         <?php $this->beginBody() ?>
         <?= $content ?>
         <?php $this->endBody() ?>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112429010-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-112429010-1');
+        </script>
+
+        <!-- My scripts loading -->
         <?/* if (YII_ENV_PROD) : */?>
         <?= ScriptsFooter::widget([]) ?>
        <!-- --><?/* endif */?>

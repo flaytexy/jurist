@@ -23,7 +23,7 @@ class Popularly extends ActiveRecord
     {
         if (parent::beforeSave($insert)) {
             //$this->price = str_replace(",", ".", $this->price);
-
+            $this->slug = str_replace(['ru/', 'en/'], "", $this->slug);
 
             return true;
         } else {

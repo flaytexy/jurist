@@ -13,7 +13,11 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
-$popularly = \frontend\models\Popularly::find()->limit(7)->all();
+$popularly = \frontend\models\Popularly::find()
+    ->groupBy(['slug'])
+    ->orderBy(['time' => SORT_DESC])
+    ->limit(6)
+    ->all();
 
 $phoneStr = "+7 925 470 50 02";
 
@@ -427,7 +431,7 @@ $addeng = Yii::t('easyii', 'free');
 </footer>
 
 <aside id="sticky-social">
-<ul class="list-social">
+<ul class="list-social" id="sticky-zone">
     <li><a href="viber://add?number=+79254705002"><img src="/images/icons/viber-icon-small.png"
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
     <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img
@@ -437,11 +441,11 @@ $addeng = Yii::t('easyii', 'free');
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
     <li><a href="skype:live:asmofad?call"><img src="/images/icons/skype-icon.png"
                     height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
-    <li>
-        <input name="" width="30" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"
-               value="Click me" id="clicky" />
-    </li>
 </ul>
+<div>
+    <input name="" width="30" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"
+           value="Click me" id="clicky" />
+</div>
 </aside>
 <div id="stl_left" style="display: block; opacity: 1; width: 178px;" class="">
     <div id="stl_bg">
@@ -450,11 +454,11 @@ $addeng = Yii::t('easyii', 'free');
 </div>
 <a href="#" class="scrollToTop"></a>
 
-<?php if (!YII_DEBUG): ?>
-    <script type='text/javascript'>
-        var _d_site = _d_site || '411086831FF94A27DC0340B2';
-    </script>
-<?php endif; ?>
+<?php //if (!YII_DEBUG): ?>
+<!--    <script type='text/javascript'>-->
+<!--        var _d_site = _d_site || '411086831FF94A27DC0340B2';-->
+<!--    </script>-->
+<?php //endif; ?>
 <script>
     //var target = document.querySelector("body");
     //target.innerHTML += "<link rel='stylesheet' type='text/css' href='/css/style_all.min.css' />";

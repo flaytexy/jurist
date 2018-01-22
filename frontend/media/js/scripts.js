@@ -78,7 +78,7 @@ var $ticker = $('[data-ticker="list"]'),
 
 $(function () {
     $("#clicky").click(function () {
-        var ssocial = $("#sticky-social");
+        var ssocial = $("#sticky-zone");
         if (ssocial.is(':visible')) {
             ssocial.animate({width: 'hide'});
         }
@@ -170,6 +170,23 @@ $(function () {
 
 $(window).load(function () {
 
+    if(typeof(_DEBUG_MODE)=='undefined' || _DEBUG_MODE == false){
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5a295e135d3202175d9b6ea0/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    }
+
+    // Подпишитесь
+    $.getScript("//widget.privy.com/assets/widget.js", function () {
+        console.log("widget.privy.com loaded. (subscribe - top left)");
+    });
+
     // executes when complete page is fully loaded, including all frames, objects and images
     (function () {
         var cx = '014824414261944164439:sfk3fpa6eoq';
@@ -186,20 +203,6 @@ $(window).load(function () {
         console.log("cse.google.com/cse.js loaded.");
     })();
 
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/5a295e135d3202175d9b6ea0/default';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
-
-    // Подпишитесь
-    $.getScript("//widget.privy.com/assets/widget.js", function () {
-        console.log("widget.privy.com loaded. (subscribe - top left)");
-    });
 
     $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0&callback=initMap", function () {
         console.log("GoogleMaps loaded. (maps.googleapis.com bottom-right)");

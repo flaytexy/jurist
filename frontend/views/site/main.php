@@ -27,7 +27,7 @@ MainAsset::register($this);
                                         data-param7="" data-param8="" data-param9="" data-param10=""
                                         data-title="Более 30 банков">
                                         <!-- MAIN IMAGE -->
-                                        <img src="/uploads/theme_villa/slider1-2.jpg"
+                                        <img src="/uploads/theme_villa/slider1-2-2.jpg"
                                              alt="Открытие счетов в банках Прибалтики и Кипра"
                                              data-bgposition="center center"
                                              data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
@@ -213,7 +213,7 @@ MainAsset::register($this);
                                         data-param7="" data-param8="" data-param9="" data-param10=""
                                         data-title="Оффшор за 449 USD">
                                         <!-- MAIN IMAGE -->
-                                        <img src="/uploads/theme_villa/slider1-2.jpg" alt=""
+                                        <img src="/uploads/theme_villa/slider1-2-2.jpg" alt=""
                                              data-bgposition="center center"
                                              data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="45"
                                              class="rev-slidebg" data-no-retina/>
@@ -644,7 +644,7 @@ MainAsset::register($this);
                                         <div class="package">
                                             <a href="/offers/<?= $offer->model->slug ?>">
                                                 <div class="package-thumb">
-                                                    <?= Html::img($offer->thumb(370, 259), array('class' => 'sadsa')) ?>
+                                                    <?= Html::img($offer->thumb(330, 231), array('class' => 'sadsa')) ?>
                                                     <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $offer->model->price ?></i> <b> / <?= Yii::t('easyii', 'days') ?>
                                                             : <?= $offer->model->how_days ?></b>  </span>
                                                 </div>
@@ -1034,7 +1034,7 @@ MainAsset::register($this);
 
 
         <div class="bdanzer-card">
-            <img src="/uploads/main/woman1-2.jpg"/>
+            <img src="/uploads/main/woman1-2-3.jpg"/>
             <h3><?= Yii::t('easyii', 'svetlana') ?></h3>
             <h4>pantyhose@gmail.com</h4>
             <p>"<?= Yii::t('easyii', 'svetlanareview') ?>"</p>
@@ -1056,7 +1056,7 @@ MainAsset::register($this);
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="logo2">
-                                    <span><img src="/uploads/logo/logo2.png" alt=""/></span>
+                                    <span><img src="/uploads/logo/logo2-small.png" alt=""/></span>
                                 </div>
                             </div>
                             <div class="col-md-5">
