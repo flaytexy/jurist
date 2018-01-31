@@ -584,7 +584,7 @@ MainAsset::register($this);
         </div>
     </div>
 </section>
-<section id="paddinglist">
+<section id="paddinglist" class="top20">
     <div class="block no-padding gray2">
         <div class="container">
             <h2 style="text-align: center;"><?= Yii::t('easyii', '49') ?></h2>
@@ -1023,30 +1023,31 @@ MainAsset::register($this);
     </div>
 </section>
 
-<section>
-    <div class="bdanzer-container-testimonial">
+<section class="top20">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-5">
+                <div class="bdanzer-card">
+                    <?= Html::img(Image::thumb('/uploads/main/man1-2.jpg', 450, 230)); ?>
+                    <h3><?= Yii::t('easyii', 'eugene') ?></h3>
+                    <h4>justeugenyi@mail.ru</h4>
+                    <div><p>"<?= Yii::t('easyii', 'eugenereview') ?>"</p></div>
+                </div>
+            </div>
 
-        <div class="bdanzer-card">
-            <?= Html::img(Image::thumb('/uploads/main/man1-2.jpg', 450, 230)); ?>
-            <h3><?= Yii::t('easyii', 'eugene') ?></h3>
-            <h4>justeugenyi@mail.ru</h4>
-            <p>"<?= Yii::t('easyii', 'eugenereview') ?>"
-            </p>
+            <div class="col-md-5">
+                <div class="bdanzer-card">
+                    <?= Html::img(Image::thumb('/uploads/main/woman1-2-3.jpg', 450, 230)); ?>
+                    <h3><?= Yii::t('easyii', 'svetlana') ?></h3>
+                    <h4>pantyhose@gmail.com</h4>
+                    <div><p>"<?= Yii::t('easyii', 'svetlanareview') ?>"</p></div>
+                </div>
+            </div>
         </div>
-
-
-        <div class="bdanzer-card">
-            <?= Html::img(Image::thumb('/uploads/main/woman1-2-3.jpg', 450, 230)); ?>
-            <h3><?= Yii::t('easyii', 'svetlana') ?></h3>
-            <h4>pantyhose@gmail.com</h4>
-            <p>"<?= Yii::t('easyii', 'svetlanareview') ?>"</p>
-        </div>
-
     </div>
-
 </section>
 
-
+<? if(false): ?>
 <section>
     <div class="block no-padding blackish high2-opacity">
         <div class="parallax" data-velocity="-.4"
@@ -1077,3 +1078,4 @@ MainAsset::register($this);
         </div>
     </div>
 </section>
+<? endif; ?>

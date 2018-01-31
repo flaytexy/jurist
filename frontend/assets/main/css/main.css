@@ -258,12 +258,8 @@
 .bdanzer-container-testimonial h1,
 .bdanzer-container-testimonial h3,
 .bdanzer-container-testimonial h4 {
-    font-family: ubuntu;
+    font-family: ubuntu, sans-serif;
     text-transform: uppercase;
-}
-
-.bdanzer-card p {
-    font-family: open sans;
 }
 
 .bdanzer-container-testimonial {
@@ -272,19 +268,21 @@
 }
 
 .bdanzer-card {
-    width: 500px;
     background: white;
     text-align: center;
-    margin: 1% 1%;
+    margin: 10px -7px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
-    display: inline-block;
 }
 
 .bdanzer-card img {
     border-bottom: 3px solid #7DC20F;
-    width: 500px;
+    width: 100%;
+    height: auto;
 }
 
+.bdanzer-card > div {
+    min-height: 340px;
+}
 .bdanzer-card p {
     padding: 0 18px 20px;
 }

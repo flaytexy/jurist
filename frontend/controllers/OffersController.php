@@ -19,7 +19,7 @@ class OffersController extends \yii\web\Controller
         if(empty($type_id))
             $type_id = 1;
 
-        $offers = Offers::items(['tags' => $tag, 'list' => 1, 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 300]]);
+        $offers = Offers::items(['tags' => $tag, 'list' => 1, 'orderBy'=>'title', 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 300]]);
 
         $markers = array();
         foreach($offers as $offer){

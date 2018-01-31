@@ -96,7 +96,8 @@ class Offers extends \frontend\components\API
 
 
             if (!empty($options['list'])) {
-                $query->orderBy(' `cr`.`sort_order` ASC, `cdt`.`country_id` DESC ' );
+                //$query->orderBy(' `cr`.`sort_order` ASC, `cdt`.`country_id` DESC, title ASC ' );
+                $query->orderBy('`cr`.`sort_order`, title' );
             }elseif (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
             } else {

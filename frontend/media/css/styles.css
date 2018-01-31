@@ -1609,7 +1609,7 @@ button.theme-btn {
 
 /*===== Vertical Title =====*/
 .title1.vertical {
-    bottom: 20px;
+    bottom: -67px;
     left: 0;
     margin-bottom: 0;
     position: absolute;
@@ -1677,7 +1677,7 @@ footer .title1.style2 > h2 {
 /*=============== Special Services ===============*/
 .spec-services {
     float: left;
-    padding: 35px 0 105px 140px;
+    padding: 35px 0 15px 140px;
     position: relative;
     width: 100%;
 }

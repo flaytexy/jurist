@@ -65,7 +65,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         color: black; /* Add a black text color */
         display: block; /* Make it into a block element to fill the whole list */
     }
-    #myUL li a > b {
+    #myUL li a > b, #myUL li a > span {
         font-size: 15px;
     }
 
@@ -90,7 +90,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <?php foreach ($offers as $item) : ?><? if($region_name != $item->model->region_name  /*&&  $item->model->region_name!=false*/ ): ?>
                     <?php $region_name = $item->model->region_name; ?>
                     <li  id="reg_<?= $item->model->region_id ?>"><a href="#" class="header"><?= $region_name ?></a></li><? endif ?>
-                    <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?> / <b>€<?= $item->model->price ?> / Дней: <?= $item->model->how_days?></b></a></li>
+                    <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?> / <span>€<?= $item->model->price ?> / Дней: <?= $item->model->how_days?></span></a></li>
                     <?php endforeach; ?>
                 </ul>
 
