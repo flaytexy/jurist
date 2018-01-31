@@ -22,9 +22,16 @@ use \frontend\widgets\ScriptsFooter;
 
         <meta http-equiv="content-language" content="ru">
         <meta name="google-site-verification" content="heki76RWc6-gZB7LnqLlp8rGAjdhIMdErxKGACtbnCg" />
+        <meta name="google-site-verification" content="p0JwcN9qcVgsUEaLl-fXCCGOx-A4JxOG0mQpVRzgRMA" />
+
         <?php $this->head() ?>
     </head>
     <body>
+        <style>
+            #privy-container {
+                display: none;
+            }
+        </style>
         <?php if (YII_DEBUG): ?>
         <script type='text/javascript'>
             var _DEBUG_MODE = true;
@@ -43,6 +50,8 @@ use \frontend\widgets\ScriptsFooter;
             gtag('js', new Date());
             gtag('config', 'UA-112429010-1');
         </script>
+
+        <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47424991 = new Ya.Metrika2({ id:47424991, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47424991" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 
         <!-- My scripts loading -->
         <?/* if (YII_ENV_PROD) : */?>

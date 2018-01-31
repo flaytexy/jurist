@@ -626,7 +626,7 @@ MainAsset::register($this);
 </section>
 <section>
     <div class="block ext-toppadd-one">
-        <div class="fixed-bg2" style="background-image: url(/uploads/theme_villa/parallax2.jpg);"></div>
+        <div class="fixed-bg2" style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax2.jpg', 900, 420) ?>');"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -644,7 +644,7 @@ MainAsset::register($this);
                                         <div class="package">
                                             <a href="/offers/<?= $offer->model->slug ?>">
                                                 <div class="package-thumb">
-                                                    <?= Html::img($offer->thumb(330, 231), array('class' => 'sadsa')) ?>
+                                                    <?= Html::img($offer->thumb(280, 200), array('class' => 'sadsa')) ?>
                                                     <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $offer->model->price ?></i> <b> / <?= Yii::t('easyii', 'days') ?>
                                                             : <?= $offer->model->how_days ?></b>  </span>
                                                 </div>
@@ -715,7 +715,7 @@ MainAsset::register($this);
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/fio'">
                                                 <?= Html::img(
-                                                    Image::thumb("/uploads/thumbs/fiobanka1-1c2825cc96-c21c2573ddfd3d521286cffdd8a7f314.jpg", 296, 187),
+                                                    Image::thumb("/uploads/banks_main/fiobanka1.jpg", 296, 187),
                                                     ['class' => 'main-banks']
                                                 ); ?>
                                                 <div class="offered-serviceinfo">
@@ -729,7 +729,7 @@ MainAsset::register($this);
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/mkb-bank'">
                                                 <?= Html::img(
-                                                    Image::thumb("/uploads/thumbs/mkb_bank.jpg", 296, 187),
+                                                    Image::thumb("/uploads/banks_main/mkb_bank.jpg", 296, 187),
                                                     ['class' => 'main-banks']
                                                 ); ?>
                                                 <div class="offered-serviceinfo">
@@ -743,7 +743,7 @@ MainAsset::register($this);
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/universal-capital-bank'">
                                                 <?= Html::img(
-                                                    Image::thumb("/uploads/thumbs/universal_capital_bank.png", 296, 187),
+                                                    Image::thumb("/uploads/banks_main/universal_capital_bank.png", 296, 187),
                                                     ['class' => 'main-banks']
                                                 ); ?>
                                                 <div class="offered-serviceinfo">
@@ -758,7 +758,7 @@ MainAsset::register($this);
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/unicredit-bank-serbia'">
                                                 <?= Html::img(
-                                                    Image::thumb('/uploads/thumbs/unicredit_bank.jpg', 296, 187),
+                                                    Image::thumb('/uploads/banks_main/unicredit_bank.jpg', 296, 187),
                                                     ['class' => 'main-banks']
                                                 ); ?>
                                                 <div class="offered-serviceinfo">
@@ -773,7 +773,7 @@ MainAsset::register($this);
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/lihtenshteyn'">
                                                 <?= Html::img(
-                                                    Image::thumb('/uploads/thumbs/bankalpinum-a7a8f324b9-93fb67177d3f8829dd1ea589a0a4fccc.jpg', 296, 187),
+                                                    Image::thumb('/uploads/banks_main/bankalpinum.jpg', 296, 187),
                                                     ['class' => 'main-banks']
                                                 ); ?>
                                                 <div class="offered-serviceinfo">
@@ -787,7 +787,7 @@ MainAsset::register($this);
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/cim'">
                                                 <?= Html::img(
-                                                    Image::thumb('/uploads/thumbs/cim_bank.jpg', 296, 187),
+                                                    Image::thumb('/uploads/banks_main/cim_bank.jpg', 296, 187),
                                                     ['class' => 'main-banks']
                                                 ); ?>
 
@@ -802,7 +802,7 @@ MainAsset::register($this);
                                         <div class="col-md-6">
                                             <div class="offered-service" onclick="location.href='/banks/ameriabank'">
                                                 <?= Html::img(
-                                                    Image::thumb('/uploads/thumbs/ameria_bank.jpg', 296, 187),
+                                                    Image::thumb('/uploads/banks_main/ameria_bank.jpg', 296, 187),
                                                     ['class' => 'main-banks']
                                                 ); ?>
                                                 <div class="offered-serviceinfo">
@@ -839,9 +839,10 @@ MainAsset::register($this);
     </div>
 </section>
 
+<?php if (false): ?>
 <section>
     <div class="block" id="block1">
-        <div class="fixed-bg2" style="background-image: url(/uploads/theme_villa/parallax3.jpg);"></div>
+        <div class="fixed-bg2" style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax3.jpg', 900, 420) ?>');"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -858,7 +859,7 @@ MainAsset::register($this);
                                     <li>
                                         <div class="villa-location"
                                              onclick="location.href='/licenses/<?= $item->model->slug ?>'">
-                                            <img src="<?= $item->thumb(226, 360) ?>" class="main-banks"/>
+                                            <img src="<?= $item->thumb(200, 330) ?>" class="main-banks"/>
 
                                             <div class="villa-locationinfo">
                                                 <span style="color: #fff"><?= $item->model->title ?></span>
@@ -869,7 +870,8 @@ MainAsset::register($this);
                                 <? endforeach; ?>
                                 <li>
                                     <div class="villa-location" onclick="location.href='/licenses'">
-                                        <?= Html::img($item->thumbFile("/uploads/licenses/license (5).jpg", 226, 360), array('class' => 'main-banks')) ?>
+
+                                        <?= Html::img(Image::thumb("/uploads/licenses/license (5).jpg", 200, 330), array('class' => 'main-banks')) ?>
 
                                         <div class="villa-locationinfo">
                                             <span><?= Yii::t('easyii', '20') ?></span>
@@ -886,7 +888,7 @@ MainAsset::register($this);
         </div>
     </div>
 </section>
-
+<? endif; ?>
 
 <section>
     <div class="block" id="block2">
@@ -917,7 +919,7 @@ MainAsset::register($this);
                                 <? foreach ($fonds as $item): ?>
                                     <div class="recentnew-post"
                                          onclick="location.href='/fonds/<?= $item->model->slug ?>'">
-                                        <?= Html::img($item->thumb(470, 295), array('class' => 'main-banks')) ?>
+                                        <?= Html::img($item->thumb(315, 200), array('class' => 'main-banks')) ?>
 
                                         <div class="recentnew-detail">
                                             <h4>
@@ -1025,7 +1027,7 @@ MainAsset::register($this);
     <div class="bdanzer-container-testimonial">
 
         <div class="bdanzer-card">
-            <img src="/uploads/main/man1-2.jpg"/>
+            <?= Html::img(Image::thumb('/uploads/main/man1-2.jpg', 450, 230)); ?>
             <h3><?= Yii::t('easyii', 'eugene') ?></h3>
             <h4>justeugenyi@mail.ru</h4>
             <p>"<?= Yii::t('easyii', 'eugenereview') ?>"
@@ -1034,7 +1036,7 @@ MainAsset::register($this);
 
 
         <div class="bdanzer-card">
-            <img src="/uploads/main/woman1-2-3.jpg"/>
+            <?= Html::img(Image::thumb('/uploads/main/woman1-2-3.jpg', 450, 230)); ?>
             <h3><?= Yii::t('easyii', 'svetlana') ?></h3>
             <h4>pantyhose@gmail.com</h4>
             <p>"<?= Yii::t('easyii', 'svetlanareview') ?>"</p>
@@ -1048,7 +1050,7 @@ MainAsset::register($this);
 <section>
     <div class="block no-padding blackish high2-opacity">
         <div class="parallax" data-velocity="-.4"
-             style="background-image: url(/uploads/theme_villa/parallax4-3.jpg);"></div>
+             style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax4-3.jpg', 900, 420) ?>');"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

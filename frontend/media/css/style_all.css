@@ -7387,20 +7387,19 @@ ul.simlist > li:before {
     /*    min-height: 416px;*/
 }
 
-.recentnew-post > img {
+.recentnew-post img {
     width: 100%;
+    height: auto;
 }
 
-#new-index .recentnew-post {
-    min-height: 432px;
-}
+
 
 #new-index .recentnew-post .post-meta {
     margin-top: -2px;
 }
 
-#new-index .recentnew-detail2 > h4 {
-    min-height: 40px;
+.recentnew-detail2 {
+    min-height: 85px;
 }
 
 .recentnew-detail {
@@ -7460,6 +7459,20 @@ ul.simlist > li:before {
 
 .post-meta > li > i {
     margin-right: 5px;
+}
+
+#new-index .recentnew-post {
+    min-height: 375px;
+}
+@media (max-width: 960px), (max-device-width: 960px) {
+    #new-index .recentnew-post {
+        min-height: 350px;
+    }
+}
+@media (max-width: 767px), (max-device-width: 767px) {
+    #new-index .recentnew-post {
+        min-height: 310px;
+    }
 }
 
 /*=============== Instagram ===============*/
@@ -8280,7 +8293,7 @@ ul.simlist > li:before {
 /*=============== Page Top Sec ===============*/
 .pagetop-sec {
     float: left;
-    padding: 182px 0 25px;
+    padding: 55px 0 25px;
     position: relative;
     text-align: center;
     width: 100%;
@@ -8290,7 +8303,6 @@ ul.simlist > li:before {
 .page-title {
     background: rgba(0, 0, 0, 0.9) none repeat scroll 0 0;
     display: inline-block;
-    max-width: 570px;
     padding: 40px 30px 35px;
     width: 100%;
 }
@@ -10284,8 +10296,9 @@ input.gsc-search-button-v2 {
     background: none !important;
     color: #7DC20F !important;
     position: absolute;
-    top: 13px;
-    right: 40px;
+    top: -4px;
+    left: -4px;
+    display: inline;
 }
 
 input.gsc-search-button-v2:hover {

@@ -114,4 +114,12 @@ class Page extends \frontend\components\ActiveRecord
             $photo->delete();
         }
     }
+
+    public function getDate(){
+        return date('Y-m-d', $this->time);
+    }
+
+    public function getDatetime(){
+        return date('Y-m-d H:i:s', $this->time);
+    }
 }

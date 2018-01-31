@@ -2,13 +2,21 @@
 use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use frontend\helpers\Image;
 
 $this->title = $news->seo('title', $news->model->title);
 $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/news']];
 $this->params['breadcrumbs'][] = $news->model->title;
 ?>
 
+<style>
+    @media (max-width: 1024px) {
+        .sidebar {
+            display: none !important;
 
+        }
+    }
+</style>
 <section>
     <div class="block">
         <div class="container">
@@ -18,7 +26,7 @@ $this->params['breadcrumbs'][] = $news->model->title;
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="blog-post2">
-                                    <?= Html::img($news->thumb(650, 400)) ?>
+                                    <?= Html::img($news->thumb(640, 480)) ?>
                                     <div class="blogpost-detail">
                                         <ul class="post-meta style2">
                                             <li><i class="fa fa-calendar"></i> <?= $news->date ?></li>
@@ -54,7 +62,7 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                             <h2 class="title2"><span><?php echo count($news->photos);?></span> Photos</h2>
                                                 <ul class="list-inline">
                                                     <?php foreach($news->photos as $photo) : ?>
-                                                    <li><?= $photo->box(150, 120) ?></li>
+                                                    <li><?= $photo->box(160, 120) ?></li>
                                                     <?php endforeach;?>
                                                 </ul>
                                         </div>
@@ -86,7 +94,7 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                         <ul class="widget-gallery">
                                             <?php foreach($top_offers as $item) : ?>
                                                 <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
-                                                        <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                                                        <?= Html::img(Image::thumb($item['image'], 240, 180)) ?>
                                                     </a>
                                                     <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span></li>
                                             <?php endforeach; ?>
@@ -103,7 +111,7 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                         <ul class="widget-gallery">
                                             <?php foreach($top_banks as $item) : ?>
                                                 <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                                        <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                                                        <?= Html::img(Image::thumb($item['image'], 240, 180)) ?>
                                                     </a>
                                                     <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
                                             <?php endforeach; ?>
@@ -131,7 +139,7 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                         <div class="recent-posts">
                                         <?php foreach($top_news as $item) : ?>
                                             <div class="recent-post">
-                                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 90, 90)) ?>
+                                                <?= Html::img(Image::thumb($item->image, 90, 90)) ?>
                                                 <h4><a href="<?= Url::to(['news/'.$item->slug]) ?>"><?= $item->title ?></a></h4>
                                                 <span><i class="fa fa-calendar"></i> <?= $item->date ?></span>
                                             </div>
@@ -148,36 +156,4 @@ $this->params['breadcrumbs'][] = $news->model->title;
         </div>
     </div>
 </section>
-<style>
-    @media (max-width: 1024px) {
-        .sidebar {
-            display: none !important;
-
-        }
-    }
-</style>
-
-<?php /*if(false) : */?><!--
-<h1><?/*= $news->seo('h1', $news->title) */?></h1>
-
-<?/*= $news->text */?>
-
-<?php /*if(count($news->photos)) : */?>
-    <div>
-        <h4>Photos</h4>
-        <?php /*foreach($news->photos as $photo) : */?>
-            <?/*= $photo->box(100, 100) */?>
-        <?php /*endforeach;*/?>
-        <?php /*News::plugin() */?>
-    </div>
-    <br/>
-<?php /*endif; */?>
-<p>
-    <?php /*foreach($news->tags as $tag) : */?>
-        <a href="<?/*= Url::to(['/news', 'tag' => $tag]) */?>" class="label label-info"><?/*= $tag */?></a>
-    <?php /*endforeach; */?>
-</p>
-
-<div class="small-muted">Views: <?/*= $news->views*/?></div>
---><?php /*endif; */?>
 

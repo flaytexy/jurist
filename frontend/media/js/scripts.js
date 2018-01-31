@@ -1,3 +1,12 @@
+(function($) {
+    $.fn.onEnter = function(func) {
+        this.bind('keypress', function(e) {
+            if (e.keyCode == 13) func.apply(this, [e]);
+        });
+        return this;
+    };
+})(jQuery);
+
 function initMap() {
     var mapOptions = {
         zoom: 15,
@@ -14,7 +23,6 @@ function initMap() {
         title: 'Snazzy!'
     });
 }
-
 
 function setupViewport() {
     $ticker.find(tickerItem).clone().prependTo('[data-ticker="list"]');
@@ -70,13 +78,44 @@ jQuery.scrollTo = function (target, offset, speed, container) {
     }, speed);
 };
 
+
+
 var $ticker = $('[data-ticker="list"]'),
     tickerItem = '[data-ticker="item"]',
     itemCount = $(tickerItem).length,
     viewportWidth = 0;
 
 
-$(function () {
+
+function sHide() {
+    $('#adBlock').hide();
+    $('.gsc-adBlock').hide();
+}
+
+$('#searchBlock')
+    .on('keypress', '.gsib_a', function (e) {
+        console.log('sea keypress');
+        setTimeout(function(){ sHide(); }, 10);
+        setTimeout(function(){ sHide(); }, 100);
+        setTimeout(function(){ sHide(); }, 300);
+        setTimeout(function(){ sHide(); }, 600);
+        setTimeout(function(){ sHide(); }, 1000);
+        setTimeout(function(){ sHide(); }, 3000);
+    })
+    .on('click', '.gsc-search-button', function (e) {
+        console.log('sea click');
+        setTimeout(function(){ sHide(); }, 10);
+        setTimeout(function(){ sHide(); }, 100);
+        setTimeout(function(){ sHide(); }, 300);
+        setTimeout(function(){ sHide(); }, 600);
+        setTimeout(function(){ sHide(); }, 1000);
+    });
+
+
+$(function (e) {
+
+
+
     $("#clicky").click(function () {
         var ssocial = $("#sticky-zone");
         if (ssocial.is(':visible')) {
@@ -165,10 +204,37 @@ $(function () {
 
     initializeTicker();
 
+
     console.log('Its_End_Script READY');
 });
 
+var _d_site = _d_site || '411086831FF94A27DC0340B2';
+
 $(window).load(function () {
+
+
+    // executes when complete page is fully loaded, including all frames, objects and images
+    (function () {
+        var cx = '014824414261944164439:sfk3fpa6eoq';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        //gcse.class = 'gsc-search-button gsc-search-button-v2 fa fa-search';
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        //gcse.src = '/js/google-async-ads.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+
+        console.log("cse.google.com/cse.js loaded.");
+    })();
+
+    setTimeout(function(){
+        $('.gsc-search-box td.gsc-search-button').addClass("fa fa-search");
+        $('td.gsc-search-button input').attr('type', 'button').attr('src', '');
+    }, 1000);
+
+
+
 
     if(typeof(_DEBUG_MODE)=='undefined' || _DEBUG_MODE == false){
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
@@ -182,32 +248,22 @@ $(window).load(function () {
         })();
     }
 
-    // Подпишитесь
-    $.getScript("//widget.privy.com/assets/widget.js", function () {
-        console.log("widget.privy.com loaded. (subscribe - top left)");
+    $(window).scroll(function() {
+        // // Подпишитесь
+        // $.getScript("//widget.privy.com/assets/widget.js", function () {
+        //     $('#privy-container').hide();
+        //     setTimeout(function(){
+        //         //$('#privy-container').show();
+        //     }, 1000);
+        //     console.log("widget.privy.com loaded. (subscribe - top left)");
+        // });
+
+        $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0&callback=initMap", function () {
+            console.log("GoogleMaps loaded. (maps.googleapis.com bottom-right)");
+            initMap();
+        });
     });
 
-    // executes when complete page is fully loaded, including all frames, objects and images
-    (function () {
-        var cx = '014824414261944164439:sfk3fpa6eoq';
-        var gcse = document.createElement('script');
-        gcse.type = 'text/javascript';
-        gcse.async = true;
-        //gcse.class = 'gsc-search-button gsc-search-button-v2 fa fa-search';
-        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(gcse, s);
-        $('.gsc-search-box td.gsc-search-button').addClass("fa fa-search");
-        $('#adBlock').hide();
-        $('td.gsc-search-button input').attr('type', 'button').attr('src', '');
-        console.log("cse.google.com/cse.js loaded.");
-    })();
-
-
-    $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0&callback=initMap", function () {
-        console.log("GoogleMaps loaded. (maps.googleapis.com bottom-right)");
-        initMap();
-    });
 
     // // 'Позвонить? // не работает главный слайдер )) когда сюда перемещаем
     // $.getScript("https://cdn.jotfor.ms/static/feedback2.js", function () {

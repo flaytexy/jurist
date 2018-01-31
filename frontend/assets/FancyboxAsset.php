@@ -6,7 +6,7 @@ class FancyboxAsset extends \yii\web\AssetBundle
     public $sourcePath = '@bower/fancybox/source';
 
     public $css = [
-        'jquery.fancybox.css',
+        //'jquery.fancybox.css',
     ];
     public $js = [
         'jquery.fancybox.pack.js'

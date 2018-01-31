@@ -4,14 +4,13 @@ namespace frontend\modules\offers\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use frontend\behaviors\SortableDateController;
 use yii\widgets\ActiveForm;
 use yii\web\UploadedFile;
 
 use frontend\components\Controller;
 use frontend\modules\offers\models\Offers;
 use frontend\helpers\Image;
-use frontend\behaviors\StatusController;
+
 
 class AController extends Controller
 {
@@ -21,7 +20,10 @@ class AController extends Controller
     {
 
         $data = new ActiveDataProvider([
-            'query' => Offers::find()->sortDate(),
+            'query' => Offers::find()->orderBy(['title' => SORT_ASC]),
+            'pagination' => [
+                'pageSize' => 100,
+            ],
         ]);
         //ex_print('saddsa2222');
         return $this->render('index', [

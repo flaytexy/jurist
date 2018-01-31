@@ -19,6 +19,7 @@ $module = $this->context->module->id;
                 <?php endif; ?>
                 <th><?= Yii::t('easyii', 'Title') ?></th>
                 <th width="120"><?= Yii::t('easyii', 'Views') ?></th>
+                <th width="100"><?= Yii::t('easyii', 'Date') ?></th>
                 <th width="100"><?= Yii::t('easyii', 'Status') ?></th>
                 <th width="120"></th>
             </tr>
@@ -31,6 +32,7 @@ $module = $this->context->module->id;
                 <?php endif; ?>
                 <td><a href="<?= Url::to(['/admin/'.$module.'/a/edit/', 'id' => $item->primaryKey]) ?>"><?= $item->title ?></a></td>
                 <td><?= $item->views ?></td>
+                <td><?= $item->date ?></td>
                 <td class="status">
                     <?= Html::checkbox('', $item->status == Page::STATUS_ON, [
                         'class' => 'switch',

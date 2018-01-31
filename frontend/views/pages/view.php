@@ -402,7 +402,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <!-- 1-block -->
             <div class="row">
                 <div class="col-md-12">
-                    <!--<h1 class="h4"></*?= $page->seo('h1', $page->title) ?*/></h1>-->
+
                     <div class="packages-detail">
                         <?php if (count($page->photos) || !empty($page->model->image)) : ?>
                             <div class="package-video">

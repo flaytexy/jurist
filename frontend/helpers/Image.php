@@ -25,26 +25,31 @@ class Image
         return Upload::getLink($fileName);
     }
 
-    static function thumb($filename, $width = null, $height = null, $crop = true)
+    static function thumb($filename, $width = null, $height = null, $crop = true, $quality = 80)
     {
         if($filename && is_file(($filename = Yii::getAlias('@webroot') . $filename)))
         {
             $info = pathinfo($filename);
-            $thumbName = $info['filename'] . '-' . md5( filemtime($filename) . (int)$width . (int)$height . (int)$crop ) . '.' . $info['extension'];
+            //$thumbName = $info['filename'] . '-' . md5( filemtime($filename) . (int)$width . (int)$height . (int)$crop . (int)$quality ) . '.' . $info['extension'];
+            $thumbName = $info['filename'] . '-' . (int)$width . 'x' . (int)$height. '-' .(int)$quality . '-' . md5( filemtime($filename) . (int)$width . (int)$height . (int)$crop . (int)$quality ) . '.' . $info['extension'];
             $thumbFile = Yii::getAlias('@webroot') . DIRECTORY_SEPARATOR . Upload::$UPLOADS_DIR . DIRECTORY_SEPARATOR . 'thumbs' . DIRECTORY_SEPARATOR . $thumbName;
             $thumbWebFile = '/' . Upload::$UPLOADS_DIR . '/thumbs/' . $thumbName;
             if(file_exists($thumbFile)){
                 return $thumbWebFile;
             }
-            elseif(FileHelper::createDirectory(dirname($thumbFile), 0777) && self::copyResizedImage($filename, $thumbFile, $width, $height, $crop)){
+            elseif(FileHelper::createDirectory(dirname($thumbFile), 0777) && self::copyResizedImage($filename, $thumbFile, $width, $height, $crop, $quality)){
                 return $thumbWebFile;
             }
         }
         return '';
     }
 
-    static function copyResizedImage($inputFile, $outputFile, $width, $height = null, $crop = true)
+    static function copyResizedImage($inputFile, $outputFile, $width, $height = null, $crop = true, $quality = 80)
     {
+        if($quality==false){
+            $quality = 80;
+        }
+
         if (extension_loaded('gd'))
         {
             $image = new GD($inputFile);
@@ -58,7 +63,7 @@ class Image
             } else {
                 $image->resize($width);
             }
-            return $image->save($outputFile);
+            return $image->save($outputFile, $quality);
         }
         elseif(extension_loaded('imagick'))
         {

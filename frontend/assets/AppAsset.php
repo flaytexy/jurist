@@ -50,7 +50,7 @@ class AppAsset extends AssetBundle
 //        'css/styles.css?v=2018-01-09-v01', //*last
 //        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
 
-        'css/style_all.min.css', //new!!!!
+        'css/style_all.min.css?v=2018-02-31-v01', //new!!!!
 
 
         //'https://fonts.googleapis.com/css?family=Cabin',

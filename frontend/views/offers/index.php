@@ -65,6 +65,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
         color: black; /* Add a black text color */
         display: block; /* Make it into a block element to fill the whole list */
     }
+    #myUL li a > b {
+        font-size: 15px;
+    }
 
     #myUL li a.header {
         background-color: rgba(0, 0, 0, 0.68); /* Add a darker background color for headers */
@@ -77,34 +80,19 @@ $this->params['breadcrumbs'][] = $page->model->title;
     }
 </style>
 
-<section id="offers">
-    <div class="block">
-        <div class="container">
+<section id="offers" class="top30">
+    <div class="">
+        <div class="col-md-3">
             <nav id="menus" class="navbar">
-<!--                <div class="navbar-header"><span id="category" class="visible-xs">Перечень офшоров</span>-->
-<!--                    <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse"-->
-<!--                            data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>-->
-<!--                </div>-->
-                <!--  offers -->
-
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск юрисдикции..">
 
-                <ul id="myUL">
-                    <?php foreach ($offers as $item) : ?>
-                        <? if($region_name != $item->model->region_name  /*&&  $item->model->region_name!=false*/ ): ?>
-                            <?php $region_name = $item->model->region_name; ?>
-
-
-
-
-                            <li  id="reg_<?= $item->model->region_id ?>"><a href="#" class="header"><?= $region_name ?></a></li>
-                        <? endif ?>
+                <ul id="myUL" class="off-ul">
+                    <?php foreach ($offers as $item) : ?><? if($region_name != $item->model->region_name  /*&&  $item->model->region_name!=false*/ ): ?>
+                    <?php $region_name = $item->model->region_name; ?>
+                    <li  id="reg_<?= $item->model->region_id ?>"><a href="#" class="header"><?= $region_name ?></a></li><? endif ?>
                     <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?> / <b>€<?= $item->model->price ?> / Дней: <?= $item->model->how_days?></b></a></li>
-
                     <?php endforeach; ?>
                 </ul>
-
-
 
                 <div class="">
                     <ul class="nav" id="offers-menu-block">
@@ -145,12 +133,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <?php endforeach; ?>
             </div>
         </div>
-
-
-        <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+        <div class="col-md-9">
+            <div class="">
                     <div class="villaeditors-picks offers-list">
                         <div class="packages style2 remove-ext2">
                             <div class="row">
@@ -187,10 +171,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     </div>
                     <!-- Pagination -->
                 </div>
-            </div>
         </div>
-            </div>
-
+    </div>
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>

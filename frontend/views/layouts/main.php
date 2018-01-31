@@ -12,6 +12,7 @@ use yii\widgets\Menu;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
+use frontend\helpers\Image;
 
 $popularly = \frontend\models\Popularly::find()
     ->groupBy(['slug'])
@@ -154,7 +155,7 @@ $addeng = Yii::t('easyii', 'free');
     <!-- Header -->
     <div class="responsive-header">
         <div class="logomenu-bar">
-            <div class="logodiv"><a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a></div>
+            <div class="logodiv"><a href="/" title=""><img src="/uploads/logo/logo-small.png" alt=""></a></div>
             <div class="container">
                 <div class="centeredmenulist">
                     <span class="vmenu"><a href="/banks"><?= Yii::t('easyii', 'banks') ?>&nbsp;</a></span>
@@ -171,18 +172,6 @@ $addeng = Yii::t('easyii', 'free');
         </div>
         <div class="responsive-menu ps-container" data-ps-id="3359a5b1-f4a3-6575-dffa-5413f2e717d2">
             <span class="close-btn"><i class="fa fa-close"></i></span>
-            <script>
-                (function () {
-                    var cx = '014824414261944164439:sfk3fpa6eoq';
-                    var gcse = document.createElement('script');
-                    gcse.type = 'text/javascript';
-                    gcse.async = true;
-                    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(gcse, s);
-                })();
-            </script>
-            <?php //= frontend\widgets\WLang::widget(); ?>
             <gcse:search></gcse:search>
             <?= Menu::widget([
                 'options' => ['class' => 'nav navbar-nav'],
@@ -224,7 +213,7 @@ $addeng = Yii::t('easyii', 'free');
     <div class="row">
         <?php if ($this->context->id != 'site') : ?>
             <div class="pagetop-sec">
-                <div class="fixed-bg2" style="background-image: url('/uploads/theme_villa/pagetop-bg.jpg');"></div>
+                <div class="fixed-bg2" style="background-image: url(<?= Image::thumb('/uploads/theme_villa/pagetop-bg.jpg', 1024, 159)?>);"></div>
                 <div class="container">
                     <div class="page-title">
                         <strong><span>
@@ -346,7 +335,7 @@ $addeng = Yii::t('easyii', 'free');
                     <div class="footer-widget">
                         <div class="about-widget">
                             <div class="logo">
-                                <a href="/" title=""><img src="/uploads/logo/logo.png" alt=""></a>
+                                <a href="/" title=""><img src="/uploads/logo/logo-small.png" alt=""></a>
                             </div>
                             <p><?= Yii::t('easyii', 'text1') ?><br/>
                                 <?= Yii::t('easyii', 'text2') ?></p>
@@ -433,14 +422,14 @@ $addeng = Yii::t('easyii', 'free');
 <aside id="sticky-social">
 <ul class="list-social" id="sticky-zone">
     <li><a href="viber://add?number=+79254705002"><img src="/images/icons/viber-icon-small.png"
-                    height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
+                    height="30" width="30" alt="В целях безопасности клиентов" /></a></li>
     <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img
                     src="/images/icons/WhatsApp-icon-small.png"
-                    height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
+                    height="30" width="30" alt="В целях безопасности клиентов" /></a></li>
     <li><a href="#"><img src="/images/icons/telegram-logo-small.png"
-                    height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
-    <li><a href="skype:live:asmofad?call"><img src="/images/icons/skype-icon.png"
-                    height="38" width="38" alt="В целях безопасности клиентов" /></a></li>
+                    height="30" width="30" alt="В целях безопасности клиентов" /></a></li>
+    <li><a href="skype:live:asmofad?call"><img src="/images/icons/skype-icon-small.png"
+                    height="30" width="30" alt="В целях безопасности клиентов" /></a></li>
 </ul>
 <div>
     <input name="" width="30" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"
