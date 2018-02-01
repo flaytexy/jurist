@@ -211,7 +211,7 @@ MainAsset::register($this);
                                         data-param1=""
                                         data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
                                         data-param7="" data-param8="" data-param9="" data-param10=""
-                                        data-title="Оффшор за 449 USD">
+                                        data-title="Открыть оффшор за 449 USD">
                                         <!-- MAIN IMAGE -->
                                         <img src="/uploads/theme_villa/slider1-2-2.jpg" alt=""
                                              data-bgposition="center center"

@@ -32,7 +32,10 @@ class AController extends Controller
     public function actionIndex()
     {
         $data = new ActiveDataProvider([
-            'query' => Banks::find()->sortDate(),
+            'query' => Banks::find()->orderBy(['title' => SORT_ASC]), //location_title
+            'pagination' => [
+                'pageSize' => 100,
+            ],
         ]);
 
         return $this->render('index', [

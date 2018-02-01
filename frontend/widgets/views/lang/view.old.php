@@ -11,8 +11,7 @@ use yii\helpers\Html;
         position: absolute;
         display: inline-block;
         color: white;
-        top: 16%;
-        right: 13px;
+        right: 0;
     }
 
     #langs {
@@ -21,7 +20,7 @@ use yii\helpers\Html;
         background-color: #f9f9f9;
         width: 42px;
         height: 23px;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         padding: 4px 5px;
         z-index: 5;
         list-style: none;
@@ -52,11 +51,29 @@ use yii\helpers\Html;
     }
 </style>
 
-<div id="lang">
+<div id="lang" style="float: right;">
      <span id="current-lang">
          <?php foreach ($langs as $lang):?>
       <b> <?= Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl()) ?></b>
           <?php endforeach;?>
    </span>
+
+<!--  <ul id="langs">
+       <?php /*foreach ($langs as $lang):*/?>
+           <li class="item-lang">
+               <?/*= Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl()) */?>
+           </li>
+       <?php /*endforeach;*/?>
+   </ul>-->
+<!--  <span id="current-lang">
+       <b> <?/*= $current->name;*/?></b> <span class="show-more-lang">▼</span>
+    </span>
+  <ul id="langs">
+        <?php /*foreach ($langs as $lang):*/?>
+            <li class="item-lang">
+                <?/*= Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl()) */?>
+            </li>
+        <?php /*endforeach;*/?>
+    </ul>-->
 </div>
 

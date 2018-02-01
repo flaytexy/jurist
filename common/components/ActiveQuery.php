@@ -59,4 +59,14 @@ class ActiveQuery extends \yii\db\ActiveQuery
         $this->orderBy(['time' => SORT_DESC]);
         return $this;
     }
+
+    /**
+     * Order by date
+     * @return $this
+     */
+    public function sortTitle()
+    {
+        $this->orderBy(['title' => SORT_ASC]);
+        return $this;
+    }
 }

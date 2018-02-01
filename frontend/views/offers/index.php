@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         border: 1px solid #ddd; /* Add a border to all links */
         margin-top: -1px; /* Prevent double borders */
         background-color: #f6f6f6; /* Grey background color */
-        padding: 12px; /* Add some padding */
+        padding: 8px 6px; /* Add some padding */
         text-decoration: none; /* Remove default text underline */
         font-size: 18px; /* Increase the font-size */
         color: black; /* Add a black text color */
@@ -138,7 +138,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <div class="villaeditors-picks offers-list">
                         <div class="packages style2 remove-ext2">
                             <div class="row">
-                                <?php foreach ($offers as $item) : ?>
+                                <?php foreach ($offersPerPage as $item) : ?>
                                     <div class="col-md-4">
                                         <div class="package">
 

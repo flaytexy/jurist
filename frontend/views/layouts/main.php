@@ -13,6 +13,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use frontend\helpers\Image;
+use frontend\widgets\WLang;
 
 $popularly = \frontend\models\Popularly::find()
     ->groupBy(['slug'])
@@ -66,8 +67,8 @@ $addeng = Yii::t('easyii', 'free');
                                 'template' => '
                                 <!--<li class="contact-m">-->
                                 <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
-                                    <a href="skype:live:asmofad?call"><i class="fa fa-skype" aria-hidden="true"></i><br><b style="font-size: 12px">IQ Decision</b></a>
-                                </li>'
+                                    <a href="skype:live:asmofad?call"><i class="fa fa-skype" aria-hidden="true"></i>IQ Decision</a>
+                                </li>'.WLang::widget().''
                             ],
                         ],
                     ]); ?>

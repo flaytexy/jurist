@@ -1,16 +1,16 @@
 <?php
 namespace frontend\controllers;
+
 use frontend\models\Packet;
 use frontend\models\Popularly;
-use frontend\modules\news\api\NewsObject;
-use frontend\modules\news\models\News;
-use frontend\modules\news\NewsModule;
 use frontend\modules\offers\api\Offers;
-use frontend\modules\page\api\Page;
 use frontend\modules\page\api\PageObject;
 use frontend\modules\page\models\Page as PageModel;
-//use yii\db\Query;
 
+/**
+ * Class OffersController
+ * @package frontend\controllers
+ */
 class OffersController extends \yii\web\Controller
 {
     public function actionIndex($tag = null)
@@ -19,7 +19,7 @@ class OffersController extends \yii\web\Controller
         if(empty($type_id))
             $type_id = 1;
 
-        $offers = Offers::items(['tags' => $tag, 'list' => 1, 'orderBy'=>'title', 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 300]]);
+        $offers = Offers::items(['tags' => $tag, 'list' => 1, 'orderBy'=>'title', 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 1000]]);
 
         $markers = array();
         foreach($offers as $offer){
@@ -37,9 +37,13 @@ class OffersController extends \yii\web\Controller
         else
             $mapType = 'world_mill';
 
+        Offers::clear();
+        $offersPerPage = Offers::items(['tags' => $tag, 'list' => 1, 'orderBy'=>'title', 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 21]]);
+
         return $this->render('index', [
             'markers' => json_encode($markers),
             'offers' => $offers,
+            'offersPerPage' => $offersPerPage,
             'offer_type' => $type_id,
             'mapType' => $mapType
         ]);

@@ -34,7 +34,7 @@
         "bower-asset/jquery": "*",
 
         "bower-asset/eonasdan-bootstrap-datetimepicker": "^4.7@dev",
-        "bower-asset/fancybox": "~2.1.6",
+        "bower-asset/fancybox": "~3.2.5",
         "bower-asset/jquery.switcher": "*",
 
         "kartik-v/yii2-widget-datepicker": "*",

@@ -262,9 +262,6 @@ div.pagination {
     color: #7dc20f;
 }
 
-ul.top-menus li > a {
-    font-size: 16px;
-}
 
 .tp-caption {
     cursor: pointer;
@@ -632,10 +629,10 @@ header {
 .sign-btns > li > a, .top-menus > li > a {
     background: #121212;
     float: left;
-    padding: 18px 29px;
+    padding: 13px 19px;
     color: inherit;
     text-align: center;
-    /* font-family: Arial, serif;*/
+    font-family: Arial, serif;
 }
 
 .sign-btns > li:hover > a, .top-menus > li:hover > a {
@@ -984,14 +981,9 @@ header.stick .top-menus .contact-m .back-m {
     cursor: pointer;
 }
 
-header.stick .top-menus .skype > a {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    height: 100%;
-    margin: -15px;
-    padding-left: 14px;
-    padding-right: 14px;
-    width: 150%;
-    text-align: center;
+
+header.stick .top-menus i.fa.fa-skype {
+    padding-right: 7px;
 }
 
 /*================ Responsive Header ================*/
@@ -5940,9 +5932,7 @@ input.gsc-search-button-v2:hover {
     right: 50% !important;
 }
 
-.skype {
-    padding-top: 6px;
-}
+
 
 .gsc-adBlock {
     display: none;
