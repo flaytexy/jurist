@@ -37,7 +37,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 1 -->
                                         <div class="tp-caption s1-l1 tp-resizeme"
                                              data-x="center" data-hoffset=""
-                                             data-y="170" data-voffset=""
+                                             data-y="70" data-voffset=""
                                              data-width="['auto','auto','auto','auto']"
                                              data-height="['auto','auto','auto','auto']"
                                              data-transform_idle="o:1;"
@@ -57,7 +57,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 2 -->
                                         <div class="tp-caption s1-l2 tp-resizeme"
                                              data-x="center" data-hoffset=""
-                                             data-y="243" data-voffset=""
+                                             data-y="143" data-voffset=""
                                              data-width="['auto','auto','auto','auto']"
                                              data-height="['auto','auto','auto','auto']"
                                              data-transform_idle="o:1;"
@@ -77,7 +77,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 3 -->
                                         <p class="tp-caption s1-l3 tp-resizeme"
                                            data-x="center" data-hoffset=""
-                                           data-y="297" data-voffset=""
+                                           data-y="197" data-voffset=""
                                            data-width="['auto','auto','auto','auto']"
                                            data-height="['auto','auto','auto','auto']"
                                            data-transform_idle="o:1;"
@@ -110,7 +110,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 5 -->
                                         <span class="tp-caption s2-l5 tp-resizeme"
                                               data-x="585" data-hoffset=""
-                                              data-y="130" data-voffset=""
+                                              data-y="30" data-voffset=""
                                               data-width="['auto','auto','auto','auto']"
                                               data-height="['auto','auto','auto','auto']"
                                               data-transform_idle="o:1;"
@@ -128,7 +128,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 1 -->
                                         <div class="tp-caption s2-l1 tp-resizeme"
                                              data-x="100" data-hoffset=""
-                                             data-y="170" data-voffset=""
+                                             data-y="70" data-voffset=""
                                              data-width="['auto','auto','auto','auto']"
                                              data-height="['auto','auto','auto','auto']"
                                              data-transform_idle="o:1;"
@@ -148,7 +148,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 2 -->
                                         <div class="tp-caption s2-l2 tp-resizeme"
                                              data-x="100" data-hoffset=""
-                                             data-y="223" data-voffset=""
+                                             data-y="123" data-voffset=""
                                              data-width="['auto','auto','auto','auto']"
                                              data-height="['auto','auto','auto','auto']"
                                              data-transform_idle="o:1;"
@@ -168,7 +168,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 3 -->
                                         <i class="tp-caption s2-l3 tp-resizeme"
                                            data-x="100" data-hoffset=""
-                                           data-y="307" data-voffset=""
+                                           data-y="207" data-voffset=""
                                            data-width="['auto','auto','auto','auto']"
                                            data-height="['auto','auto','auto','auto']"
                                            data-transform_idle="o:1;"
@@ -188,7 +188,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 4 -->
                                         <!--<p class="tp-caption s2-l4 tp-resizeme"
                                            data-x="100" data-hoffset=""
-                                           data-y="345" data-voffset=""
+                                           data-y="245" data-voffset=""
                                            data-width="['auto','auto','auto','auto']"
                                            data-height="['auto','auto','auto','auto']"
                                            data-transform_idle="o:1;"
@@ -221,7 +221,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 1 -->
                                         <div class="tp-caption s1-l1 tp-resizeme"
                                              data-x="center" data-hoffset=""
-                                             data-y="170" data-voffset=""
+                                             data-y="70" data-voffset=""
                                              data-width="['auto','auto','auto','auto']"
                                              data-height="['auto','auto','auto','auto']"
                                              data-transform_idle="o:1;"
@@ -242,7 +242,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 2 -->
                                         <div class="tp-caption s1-l2 tp-resizeme"
                                              data-x="center" data-hoffset=""
-                                             data-y="243" data-voffset=""
+                                             data-y="143" data-voffset=""
                                              data-width="['auto','auto','auto','auto']"
                                              data-height="['auto','auto','auto','auto']"
                                              data-transform_idle="o:1;"
@@ -262,7 +262,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 3 -->
                                         <p class="tp-caption s1-l3 tp-resizeme"
                                            data-x="center" data-hoffset=""
-                                           data-y="297" data-voffset=""
+                                           data-y="197" data-voffset=""
                                            data-width="['auto','auto','auto','auto']"
                                            data-height="['auto','auto','auto','auto']"
                                            data-transform_idle="o:1;"
@@ -295,7 +295,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 5 -->
                                         <span class="tp-caption s2-l5 tp-resizeme"
                                               data-x="585" data-hoffset=""
-                                              data-y="130" data-voffset=""
+                                              data-y="30" data-voffset=""
                                               data-width="['auto','auto','auto','auto']"
                                               data-height="['auto','auto','auto','auto']"
                                               data-transform_idle="o:1;"
@@ -314,7 +314,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 1 -->
                                         <div class="tp-caption s2-l1 tp-resizeme"
                                              data-x="100" data-hoffset=""
-                                             data-y="170" data-voffset=""
+                                             data-y="70" data-voffset=""
                                              data-width="['auto','auto','auto','auto']"
                                              data-height="['auto','auto','auto','auto']"
                                              data-transform_idle="o:1;"
@@ -334,7 +334,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 2 -->
                                         <div class="tp-caption s2-l2 tp-resizeme"
                                              data-x="100" data-hoffset=""
-                                             data-y="223" data-voffset=""
+                                             data-y="123" data-voffset=""
                                              data-width="['auto','auto','auto','auto']"
                                              data-height="['auto','auto','auto','auto']"
                                              data-transform_idle="o:1;"
@@ -354,7 +354,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 3 -->
                                         <i class="tp-caption s2-l3 tp-resizeme"
                                            data-x="100" data-hoffset=""
-                                           data-y="307" data-voffset=""
+                                           data-y="207" data-voffset=""
                                            data-width="['auto','auto','auto','auto']"
                                            data-height="['auto','auto','auto','auto']"
                                            data-transform_idle="o:1;"
@@ -374,7 +374,7 @@ MainAsset::register($this);
                                         <!-- LAYER NR. 4 -->
                                         <!--<p class="tp-caption s2-l4 tp-resizeme"
                                            data-x="100" data-hoffset=""
-                                           data-y="345" data-voffset=""
+                                           data-y="245" data-voffset=""
                                            data-width="['auto','auto','auto','auto']"
                                            data-height="['auto','auto','auto','auto']"
                                            data-transform_idle="o:1;"
@@ -839,7 +839,7 @@ MainAsset::register($this);
     </div>
 </section>
 
-<?php if (false): ?>
+<?php if (true): ?>
 <section>
     <div class="block" id="block1">
         <div class="fixed-bg2" style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax3.jpg', 900, 420) ?>');"></div>
@@ -850,32 +850,23 @@ MainAsset::register($this);
                         <div class="title1">
                             <h2><?= Yii::t('easyii', '17') ?></h2>
                             <span><?= Yii::t('easyii', '18') ?></span>
-
                             <p><?= Yii::t('easyii', '19') ?></p>
                         </div>
                         <div class="villa-locationslist">
-                            <ul>
-                                <? foreach ($licenses as $item): ?>
-                                    <li>
-                                        <div class="villa-location"
-                                             onclick="location.href='/licenses/<?= $item->model->slug ?>'">
-                                            <img src="<?= $item->thumb(200, 330) ?>" class="main-banks"/>
-
-                                            <div class="villa-locationinfo">
-                                                <span style="color: #fff"><?= $item->model->title ?></span>
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                <? endforeach; ?>
+                            <ul><? foreach ($licenses as $item): ?>
                                 <li>
-                                    <div class="villa-location" onclick="location.href='/licenses'">
-
+                                    <div class="villa-location" onclick="location.href='/licenses/<?= $item->model->slug ?>'">
+                                        <img src="<?= $item->thumb(200, 330) ?>" class="main-banks"/>
+                                        <div class="villa-locationinfo">
+                                            <span><?= $item->model->title ?></span>
+                                        </div>
+                                    </div>
+                                </li><? endforeach; ?>
+                                <li>
+                                    <div class="villa-location last" onclick="location.href='/licenses'">
                                         <?= Html::img(Image::thumb("/uploads/licenses/license (5).jpg", 200, 330), array('class' => 'main-banks')) ?>
-
                                         <div class="villa-locationinfo">
                                             <span><?= Yii::t('easyii', '20') ?></span>
-
                                         </div>
                                     </div>
                                 </li>

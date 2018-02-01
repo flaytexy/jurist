@@ -38,7 +38,7 @@ function setupViewport() {
 function animateTicker() {
     $ticker.animate({
         marginLeft: -viewportWidth
-    }, 40000, "linear", function () {
+    }, 50000, "linear", function () {
         $ticker.css('margin-left', '0');
         animateTicker();
     });
@@ -113,9 +113,6 @@ $('#searchBlock')
 
 
 $(function (e) {
-
-
-
     $("#clicky").click(function () {
         var ssocial = $("#sticky-zone");
         if (ssocial.is(':visible')) {
@@ -160,34 +157,23 @@ $(function (e) {
 
 
     $("#menu-show-block, #map-pos").on('click', 'a', function () {
-        //alert($(this).attr('data-show-block'));
-        //$('#show-one-el').hide();
-        //$('#show-one-el #' + $(this).attr('data-show-block')).show();
         $('#menu-show-block-zone').show();
         $('#menu-show-block-zone .block-zone').hide();
         $('#' + $(this).attr('data-show-block')).show();
         $.scrollTo('#' + $(this).attr('data-show-block'), -250);
-
-        //$('body').scrollTo('#' + $(this).attr('data-show-block'));
     });
 
-    /*dasdasds a*/
     $("a[data-reveal-id]").on('click', function () {
-
         var curModalSelector = '#' + $(this).attr('data-reveal-id');
         var curModal = $(curModalSelector);
-
         curModal.dialog({
             title: "",
             modal: true,
             width: "auto",
             maxHeight: "700px",
             closeText: "X",
-            // maxWidth: 660, // This won't work
             create: function (event, ui) {
-                // Set maxWidth
                 $(this).css("maxWidth", "1000px");
-
             },
             open: function (event, ui) {
                 $('.ui-widget-overlay').addClass('custom-overlay');
@@ -201,17 +187,12 @@ $(function (e) {
         return false;
     });
 
-
-    initializeTicker();
-
-
     console.log('Its_End_Script READY');
 });
 
 var _d_site = _d_site || '411086831FF94A27DC0340B2';
 
 $(window).load(function () {
-
 
     // executes when complete page is fully loaded, including all frames, objects and images
     (function () {
@@ -227,14 +208,10 @@ $(window).load(function () {
 
         console.log("cse.google.com/cse.js loaded.");
     })();
-
     setTimeout(function(){
         $('.gsc-search-box td.gsc-search-button').addClass("fa fa-search");
         $('td.gsc-search-button input').attr('type', 'button').attr('src', '');
     }, 1000);
-
-
-
 
     if(typeof(_DEBUG_MODE)=='undefined' || _DEBUG_MODE == false){
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();

@@ -92,3 +92,11 @@ $(function () {
 
 	}
 });
+// $(window).scroll(function() {
+//
+// });
+$(window).load(function () {
+    setTimeout(function(){
+        initializeTicker();
+    }, 500);
+});
