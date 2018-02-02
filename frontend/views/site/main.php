@@ -590,7 +590,7 @@ MainAsset::register($this);
             <h2 style="text-align: center;"><?= Yii::t('easyii', '49') ?></h2>
             <div class="row">
                 <? foreach ($news as $item): ?>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="package">
                             <a href="/news/<?= $item->slug ?>">
                                 <div class="package-thumb">
@@ -1016,21 +1016,19 @@ MainAsset::register($this);
 
 <section class="top20">
     <div class="container">
+
         <div class="row">
+            <div class="col-md-12 h2 text-center">Отзывы</div>
             <div class="col-md-offset-1 col-md-5">
                 <div class="bdanzer-card">
-                    <?= Html::img(Image::thumb('/uploads/main/man1-2.jpg', 450, 230)); ?>
-                    <h3><?= Yii::t('easyii', 'eugene') ?></h3>
-                    <h4>justeugenyi@mail.ru</h4>
+                    <div class="h3"><?= Yii::t('easyii', 'eugene') ?></div>
                     <div><p>"<?= Yii::t('easyii', 'eugenereview') ?>"</p></div>
                 </div>
             </div>
 
             <div class="col-md-5">
                 <div class="bdanzer-card">
-                    <?= Html::img(Image::thumb('/uploads/main/woman1-2-3.jpg', 450, 230)); ?>
-                    <h3><?= Yii::t('easyii', 'svetlana') ?></h3>
-                    <h4>pantyhose@gmail.com</h4>
+                    <div class="h3"><?= Yii::t('easyii', 'svetlana') ?></div>
                     <div><p>"<?= Yii::t('easyii', 'svetlanareview') ?>"</p></div>
                 </div>
             </div>

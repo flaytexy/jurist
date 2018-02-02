@@ -1,7 +1,15 @@
-var gridheight = 500;
+
+
 
 var tpj = jQuery;
 var revapi116;
+var gridHeight = 450;
+var gridWidth = 1240;
+if($( window ).width()<700){
+    gridHeight = 500;
+    gridWidth = 960;
+}
+
 tpj(document).ready(function () {
     if (tpj("#rev_slider_4_1").revolution == undefined) {
         revslider_showDoubleJqueryError("#rev_slider_4_1");
@@ -19,7 +27,7 @@ tpj(document).ready(function () {
                 onHoverStop: "on",
                 touch: {
                     touchenabled: "on",
-                    swipe_threshold: 75,
+                    swipe_threshold: 12,
                     swipe_min_touches: 1,
                     swipe_direction: "horizontal",
                     drag_block_vertical: false
@@ -27,7 +35,7 @@ tpj(document).ready(function () {
                 arrows: {
                     style: "hermes",
                     enable: true,
-                    hide_onmobile: false,
+                    hide_onmobile: true,
                     hide_onleave: false,
                     tmp: '<div class="tp-arr-allwrapper">	<div class="tp-arr-imgholder"></div>	<div class="tp-arr-titleholder">{{title}}</div>	</div>',
                     left: {
@@ -49,8 +57,8 @@ tpj(document).ready(function () {
                 outof: "pause",
                 visible_area: "80%"
             },
-            gridwidth: 1240,
-            gridheight: gridheight,
+            gridwidth: gridWidth,
+            gridheight: gridHeight,
             lazyType: "none",
             shadow: 0,
             spinner: "off",
@@ -58,7 +66,7 @@ tpj(document).ready(function () {
             stopAfterLoops: -1,
             stopAtSlide: -1,
             shuffle: "off",
-            autoHeight: "on",
+            autoHeight: "off",
             hideThumbsOnMobile: "off",
             hideSliderAtLimit: 0,
             hideCaptionAtLimit: 0,

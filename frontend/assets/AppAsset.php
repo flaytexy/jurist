@@ -62,6 +62,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         //'https://code.jquery.com/jquery-migrate-3.0.1.min.js',
+        '//code.jquery.com/jquery-migrate-3.0.1.min.js',
         'js/bootstrap-datepicker.js',
         'js/fancybox/jquery.fancybox.pack.js',
 
@@ -73,8 +74,8 @@ class AppAsset extends AssetBundle
         'js/perfect-scrollbar.jquery.js',
         'js/jquery.scrolly.js', //
         'js/bootstrap-submenu.js',
-
         'js/slick.1.8.0.js',
+
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
         //'/uploads/newin.js?v=2017-11-13-v3',
 

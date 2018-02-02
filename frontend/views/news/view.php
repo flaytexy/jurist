@@ -30,19 +30,20 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                     <div class="blogpost-detail">
                                         <ul class="post-meta style2">
                                             <li><i class="fa fa-calendar"></i> <?= $news->date ?></li>
-                                        <!--    <li><i class="fa fa-user"></i> By <a href="#" title="">Admin</a></li>-->
                                             <li><i class="fa fa-comment"></i><a href="#" title="">Прочитали <?= $news->views * 3 ?> человек</a></li>
-                                         <!--   <li><i class="fa fa-comment"></i><a href="#" title="">03 Comments</a></li>-->
                                         </ul>
 
-
-
                                         <h1><?= $news->seo('h1', $news->title) ?></h1>
+
+                                        <div class="text-con">
+                                            <?= $news->text ?>
+                                        </div>
+
                                         <div class="tags-social">
                                             <div class="tags">
                                                 <ul class="cate-list">
                                                     <?php foreach($news->tags as $tag) : ?>
-                                                    <li><a href="<?= Url::to(['/news/tag/'.$tag]) ?>" class="label label-info"><?= $tag ?></a></li>
+                                                        <li><a href="<?= Url::to(['/news/tag/'.$tag]) ?>" class="label label-info"><?= $tag ?></a></li>
                                                     <?php endforeach; ?>
                                                 </ul>
                                             </div>
@@ -54,9 +55,7 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="text-con">
-                                            <?= $news->text ?>
-                                        </div>
+
                                         <?php if(count($news->photos)) : ?>
                                         <div class="comments-sec">
                                             <h2 class="title2"><span><?php echo count($news->photos);?></span> Photos</h2>

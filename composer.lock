@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "71536c6241e6f454a3951eaaebddeeef",
+    "content-hash": "31520d51c53be51e17ef441f6dd39724",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -1212,6 +1212,45 @@
                 "wysiwyg"
             ],
             "time": "2017-12-13T16:47:19+00:00"
+        },
+        {
+            "name": "components/jquery-migrate",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery-migrate.git",
+                "reference": "349e64504a30bf9969c7723711bb5bb707adf450"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery-migrate/zipball/349e64504a30bf9969c7723711bb5bb707adf450",
+                "reference": "349e64504a30bf9969c7723711bb5bb707adf450",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery-migrate.js"
+                    ],
+                    "files": [
+                        "jquery-migrate.min.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jQuery Foundation and other contributors",
+                    "homepage": "https://github.com/jquery/jquery-migrate/blob/master/AUTHORS.txt"
+                }
+            ],
+            "description": "APIs and features removed from jQuery core",
+            "homepage": "https://github.com/jquery/jquery-migrate",
+            "time": "2016-06-14T06:48:05+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -6388,6 +6427,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "mirocow/yii2-yandex-maps": 20,
+        "components/jquery-migrate": 20,
         "bower-asset/eonasdan-bootstrap-datetimepicker": 20,
         "pheme/yii2-toggle-column": 20
     },
