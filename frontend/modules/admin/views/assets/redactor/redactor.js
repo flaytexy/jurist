@@ -2,10 +2,10 @@
 	Redactor v9.2.6
 	Updated: Jul 19, 2014
 
-	http://imperavi.com/redactor/
+	//imperavi.com/redactor/
 
 	Copyright (c) 2009-2014, Imperavi LLC.
-	License: http://imperavi.com/redactor/license/
+	License: //imperavi.com/redactor/license/
 
 	Usage: $('#content').redactor();
 */
@@ -125,7 +125,7 @@
 
 			//linkAnchor: true,
 			//linkEmail: true,
-			linkProtocol: 'http://',
+			linkProtocol: '//',
 			linkNofollow: false,
 			linkSize: 50,
 			predefinedLinks: false, // json url (ex. /some-url.json ) or false
@@ -1386,7 +1386,7 @@
 
 			/*
 				firefox cmd+left/Cmd+right browser back/forward fix -
-				http://joshrhoderick.wordpress.com/2010/05/05/how-firefoxs-command-key-bug-kills-usability-on-the-mac/
+				//joshrhoderick.wordpress.com/2010/05/05/how-firefoxs-command-key-bug-kills-usability-on-the-mac/
 			*/
 			if (this.browser('mozilla') && "modify" in window.getSelection())
 			{
@@ -8278,7 +8278,7 @@
 
 						/*
 							To handle URLs which may have $ characters in them, need to escape $ -> $$ to prevent $1 from getting treated as a backreference.
-							See http://gotofritz.net/blog/code-snippets/escaping-in-replace-strings-in-javascript/
+							See //gotofritz.net/blog/code-snippets/escaping-in-replace-strings-in-javascript/
 						*/
 						var escapedBackReferences = text.replace('$', '$$$');
 
