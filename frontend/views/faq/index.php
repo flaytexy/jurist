@@ -161,7 +161,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
         <div class="toggle-inner">
             <p>Несколько лет назад была глобальная американская международная проверка банков этих стран. Не секрет, что именно в латвихских и кипрских банках открыта была львиная доля счетов на оффшорные компнии. Банки попали под санкции, некоторых лишили лицензий, оштрафовали, ограничили оборот американских долларов. Банки в свою очередь ужесточили требования для своих клиентов и, как следствие, пошел отток капиталов из банков, но от этого лояльнее банки не стали. Главный акцент они сделали на работу со своими агентами. Суть этой работы заключается в том, что банк сам оплачивает за каждого приведенного клиента агентом.<br>
-                Список банков, в которых мы предлагаем открытие счета доступен по данной <a href="http://iq-offshore.com/banks">ссылке</a>…<br>
+                Список банков, в которых мы предлагаем открытие счета доступен по данной <a href="//iq-offshore.com/banks">ссылке</a>…<br>
                 Мы не уговариваем и не отговариваем – просто стараемся рассказывать о причинах и следствии.
             </p>
         </div>
@@ -192,7 +192,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 
 <style>
-    @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,800);
+    @import url(//fonts.googleapis.com/css?family=Open+Sans:300,800);
     /* Styles for Accordion */
     .toggle:last-child {
         border-bottom: 1px solid #dddddd;
@@ -228,7 +228,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
     }
     .toggle .toggle-title i {
         position: absolute;
-        background: url("http://arielbeninca.com/Storage/plus_minus.png") 0px -24px no-repeat;
+        background: url("//arielbeninca.com/Storage/plus_minus.png") 0px -24px no-repeat;
         width: 24px;
         height: 24px;
         -webkit-transition: all 0.3s ease;
@@ -237,7 +237,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         right: 0;
     }
     .toggle .toggle-title.active i {
-        background: url("http://arielbeninca.com/Storage/plus_minus.png") 0px 0px no-repeat;
+        background: url("//arielbeninca.com/Storage/plus_minus.png") 0px 0px no-repeat;
     }
 
 

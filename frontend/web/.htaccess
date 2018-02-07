@@ -8,6 +8,15 @@ Deny from 82.146.41, 82.146.40
 Options +FollowSymLinks
 ##IndexIgnore */*
 RewriteEngine On
+
+# SSL redirect
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+ # WWW redirect
+##RewriteCond %{HTTP_HOST} !^www\.
+##RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 RewriteBase /
 ##RewriteCond %{REQUEST_FILENAME} !-f
 ##RewriteRule ^(.*[^/])$ /$1/ [L,R=301]

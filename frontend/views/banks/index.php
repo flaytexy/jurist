@@ -71,7 +71,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             color: #222;
             padding: 10px 250px;
             text-shadow: 0 1px rgba(255,255,255,.8);
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,7dc20f+100&0+0,1+100 */
+            /* Permalink - use to edit and share this gradient: //colorzilla.com/gradient-editor/#ffffff+0,7dc20f+100&0+0,1+100 */
             background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(125,194,15,1) 100%); /* FF3.6-15 */
             background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(125,194,15,1) 100%); /* Chrome10-25,Safari5.1-6 */
             background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(125,194,15,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */

@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         width: 100%;
         height: 500px;
     }
-    @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+    @import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 
 
 

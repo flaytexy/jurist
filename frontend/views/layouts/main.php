@@ -433,7 +433,7 @@ $addeng = Yii::t('easyii', 'free');
                     height="30" width="30" alt="В целях безопасности клиентов" /></a></li>
 </ul>
 <div>
-    <input name="" width="30" type="image" src="http://iq-offshore.com/uploads/logo/arrow.png"
+    <input name="" width="30" type="image" src="//iq-offshore.com/uploads/logo/arrow.png"
            value="Click me" id="clicky" />
 </div>
 </aside>

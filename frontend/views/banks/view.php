@@ -137,6 +137,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 </div>
             </div>
 
+            <?php if (false): ?>
             <!-- 3-block -->
             <div class="row" style="margin-top: 80px;">
                 <div class="col-md-12">
@@ -150,6 +151,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 <!--                    <div class="small-muted">Views: --><?//= $page->views ?><!--</div>-->
                 </div>
             </div>
+            <? endif; ?>
         </div>
     </div>
 </section>

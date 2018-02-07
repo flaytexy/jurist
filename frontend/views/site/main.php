@@ -49,7 +49,7 @@ MainAsset::register($this);
                                              data-splitout="none"
                                              data-responsive_offset="on"
                                              data-elementdelay="0.05"
-                                             onclick="location.href='http://iq-offshore.com/banks/fio'"
+                                             onclick="location.href='//iq-offshore.com/banks/fio'"
                                              style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
                                             <?= Yii::t('easyii', '89') ?>
                                         </div>
@@ -69,7 +69,7 @@ MainAsset::register($this);
                                              data-splitout="none"
                                              data-responsive_offset="on"
                                              data-elementdelay="0.05"
-                                             onclick="location.href='http://iq-offshore.com/banks/fio'"
+                                             onclick="location.href='//iq-offshore.com/banks/fio'"
                                              style="font-size:30px;color:#fff;font-family:poppins;font-weight:700;letter-spacing:.3px;">
                                             <span><?= Yii::t('easyii', '90') ?></span>
                                         </div>
@@ -89,7 +89,7 @@ MainAsset::register($this);
                                            data-splitout="none"
                                            data-responsive_offset="on"
                                            data-elementdelay="0.05"
-                                           onclick="location.href='http://iq-offshore.com/banks/fio'"
+                                           onclick="location.href='//iq-offshore.com/banks/fio'"
                                            style="font-size:16px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
                                             <?= Yii::t('easyii', '91') ?>
                                         </p>
@@ -140,7 +140,7 @@ MainAsset::register($this);
                                              data-splitout="none"
                                              data-responsive_offset="on"
                                              data-elementdelay="0.05"
-                                             onclick="location.href='http://iq-offshore.com/ru/offers/shotlandiya'"
+                                             onclick="location.href='//iq-offshore.com/ru/offers/shotlandiya'"
                                              style="font-size:36px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.2px;">
                                             <?= Yii::t('easyii', '92') ?>
                                         </div>
@@ -160,7 +160,7 @@ MainAsset::register($this);
                                              data-splitout="none"
                                              data-responsive_offset="on"
                                              data-elementdelay="0.05"
-                                             onclick="location.href='http://iq-offshore.com/ru/offers/shotlandiya'"
+                                             onclick="location.href='//iq-offshore.com/ru/offers/shotlandiya'"
                                              style="font-size:45px;color:#fff;font-family:poppins;font-weight:600;letter-spacing:8px;">
                                             <?= Yii::t('easyii', '93') ?>
                                         </div>
@@ -180,7 +180,7 @@ MainAsset::register($this);
                                            data-splitout="none"
                                            data-responsive_offset="on"
                                            data-elementdelay="0.05"
-                                           onclick="location.href='http://iq-offshore.com/ru/offers/shotlandiya'"
+                                           onclick="location.href='//iq-offshore.com/ru/offers/shotlandiya'"
                                            style="font-size:18px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
                                             <?= Yii::t('easyii', '94') ?>
                                         </i>
@@ -233,7 +233,7 @@ MainAsset::register($this);
                                              data-splitout="none"
                                              data-responsive_offset="on"
                                              data-elementdelay="0.05"
-                                             onclick="location.href='http://iq-offshore.com/offers/beliz'"
+                                             onclick="location.href='//iq-offshore.com/offers/beliz'"
 
                                              style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
                                             <?= Yii::t('easyii', '92') ?>
@@ -254,7 +254,7 @@ MainAsset::register($this);
                                              data-splitout="none"
                                              data-responsive_offset="on"
                                              data-elementdelay="0.05"
-                                             onclick="location.href='http://iq-offshore.com/offers/beliz'"
+                                             onclick="location.href='//iq-offshore.com/offers/beliz'"
                                              style="font-size:30px;color:#fff;font-family:poppins;font-weight:700;letter-spacing:.3px;">
                                             <span><?= Yii::t('easyii', '95') ?></span>
                                         </div>
@@ -274,7 +274,7 @@ MainAsset::register($this);
                                            data-splitout="none"
                                            data-responsive_offset="on"
                                            data-elementdelay="0.05"
-                                           onclick="location.href='http://iq-offshore.com/offers/beliz'"
+                                           onclick="location.href='//iq-offshore.com/offers/beliz'"
                                            style="font-size:16px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
                                             <?= Yii::t('easyii', '96') ?>
                                         </p>
@@ -326,7 +326,7 @@ MainAsset::register($this);
                                              data-splitout="none"
                                              data-responsive_offset="on"
                                              data-elementdelay="0.05"
-                                             onclick="location.href='http://iq-offshore.com/licenses/torgovla-na-forex'"
+                                             onclick="location.href='//iq-offshore.com/licenses/torgovla-na-forex'"
                                              style="font-size:36px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.2px;">
                                             <?= Yii::t('easyii', '97') ?>
                                         </div>
@@ -346,7 +346,7 @@ MainAsset::register($this);
                                              data-splitout="none"
                                              data-responsive_offset="on"
                                              data-elementdelay="0.05"
-                                             onclick="location.href='http://iq-offshore.com/licenses/torgovla-na-forex'"
+                                             onclick="location.href='//iq-offshore.com/licenses/torgovla-na-forex'"
                                              style="font-size:45px;color:#fff;font-family:poppins;font-weight:600;letter-spacing:8px;">
                                             <?= Yii::t('easyii', '98') ?>
                                         </div>
@@ -366,7 +366,7 @@ MainAsset::register($this);
                                            data-splitout="none"
                                            data-responsive_offset="on"
                                            data-elementdelay="0.05"
-                                           onclick="location.href='http://iq-offshore.com/licenses/torgovla-na-forex'"
+                                           onclick="location.href='//iq-offshore.com/licenses/torgovla-na-forex'"
                                            style="font-size:18px;color:#eeeeee;font-family:poppins;font-weight:500;letter-spacing:.3px;">
                                             <?= Yii::t('easyii', '99') ?> <span>+</span> <?= Yii::t('easyii', '100') ?>
                                             <span>+</span> <?= Yii::t('easyii', '101') ?>
@@ -415,34 +415,34 @@ MainAsset::register($this);
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
                                 <li class="ticker__item" data-ticker="item"><a
-                                            href="http://iq-offshore.com/banks"><?= Yii::t('easyii', '1') ?></a></li>
+                                            href="//iq-offshore.com/banks"><?= Yii::t('easyii', '1') ?></a></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
                                                                                aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item"><a
-                                            href="http://iq-offshore.com/banks/mkb-bank"><?= Yii::t('easyii', '2') ?></a>
+                                            href="//iq-offshore.com/banks/mkb-bank"><?= Yii::t('easyii', '2') ?></a>
                                 </li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
                                                                                aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item"><a
-                                            href="http://iq-offshore.com/offers/beliz"><?= Yii::t('easyii', '3') ?></a>
+                                            href="//iq-offshore.com/offers/beliz"><?= Yii::t('easyii', '3') ?></a>
                                 </li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
                                                                                aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item"><a
-                                            href="http://iq-offshore.com/contact"><?= Yii::t('easyii', '4') ?></a></li>
+                                            href="//iq-offshore.com/contact"><?= Yii::t('easyii', '4') ?></a></li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
                                                                                aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item"><a
-                                            href="http://iq-offshore.com/news/partnerstva-sotlandii-otkrytie-spiskov-beneficiarov"><?= Yii::t('easyii', '5') ?></a>
+                                            href="//iq-offshore.com/news/partnerstva-sotlandii-otkrytie-spiskov-beneficiarov"><?= Yii::t('easyii', '5') ?></a>
                                 </li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
                                                                                aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item"><a
-                                            href="http://iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.1') ?></a>
+                                            href="//iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.1') ?></a>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
                                                                                aria-hidden="true"></i></li>
                                 <li class="ticker__item" data-ticker="item"><a
-                                            href="http://iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.2') ?></a>
+                                            href="//iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.2') ?></a>
                                 </li>
                                 <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
                                                                                aria-hidden="true"></i></li>
@@ -453,7 +453,7 @@ MainAsset::register($this);
                                 <!-- Item -->
                                 <div class="item">
                                     <div class="img-fill">
-                                        <!--<img src="http://i.imgur.com/8mwd9AL.jpg?1" alt="">-->
+                                        <!--<img src="//i.imgur.com/8mwd9AL.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
                                                 <h3><?= Yii::t('easyii', '50') ?>:</h3>
@@ -467,7 +467,7 @@ MainAsset::register($this);
                                 <!-- Item -->
                                 <div class="item">
                                     <div class="img-fill">
-                                        <!--<img src="http://i.imgur.com/8mwd9AL.jpg?1" alt="">-->
+                                        <!--<img src="//i.imgur.com/8mwd9AL.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
                                                 <h3><?= Yii::t('easyii', '80') ?></h3>
@@ -482,14 +482,14 @@ MainAsset::register($this);
                                 <!-- Item -->
                                 <div class="item">
                                     <div class="img-fill">
-                                        <!--<img src="http://i.imgur.com/roZuL8V.jpg?1" alt="">-->
+                                        <!--<img src="//i.imgur.com/roZuL8V.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
                                                 <h3><?= Yii::t('easyii', '55') ?></h3>
                                                 <h5>
-                                                    <a href="http://iq-offshore.com/banks/bos-bank"><?= Yii::t('easyii', '84') ?>
+                                                    <a href="//iq-offshore.com/banks/bos-bank"><?= Yii::t('easyii', '84') ?>
                                                         <b> от 3500 EUR</b></a></br>
-                                                    <a href="http://iq-offshore.com/ru/banks/unicredit-bank-serbia"><?= Yii::t('easyii', '85') ?>
+                                                    <a href="//iq-offshore.com/ru/banks/unicredit-bank-serbia"><?= Yii::t('easyii', '85') ?>
                                                         <b> от 3800 EUR</b></a></br>
                                                     <?= Yii::t('easyii', '56') ?> <b> от 2599 EUR</b></h5>
                                             </div>
@@ -500,12 +500,12 @@ MainAsset::register($this);
                                 <!-- Item -->
                                 <div class="item">
                                     <div class="img-fill">
-                                        <!-- <img src="http://i.imgur.com/qa0GO9l.jpg?1" alt="">-->
+                                        <!-- <img src="//i.imgur.com/qa0GO9l.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
                                                 <h3><?= Yii::t('easyii', '58') ?></h3>
                                                 <h5>
-                                                    <a href="http://iq-offshore.com/ru/banks/pasta-bank"><?= Yii::t('easyii', '59') ?>
+                                                    <a href="//iq-offshore.com/ru/banks/pasta-bank"><?= Yii::t('easyii', '59') ?>
                                                         <b>999 EUR</b></a></h5>
                                             </div>
                                         </div>
@@ -515,7 +515,7 @@ MainAsset::register($this);
                                 <!-- Item -->
                                 <div class="item">
                                     <div class="img-fill">
-                                        <!--  <img src="http://i.imgur.com/eeM6ZCe.jpg?1" alt="">-->
+                                        <!--  <img src="//i.imgur.com/eeM6ZCe.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
                                                 <h3><?= Yii::t('easyii', '61') ?></h3>
@@ -528,7 +528,7 @@ MainAsset::register($this);
                                 <!-- Item -->
                                 <div class="item">
                                     <div class="img-fill">
-                                        <!-- <img src="http://i.imgur.com/KpikY6V.jpg?1" alt="">-->
+                                        <!-- <img src="//i.imgur.com/KpikY6V.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
                                                 <h3><?= Yii::t('easyii', '64') ?></h3>
@@ -544,16 +544,16 @@ MainAsset::register($this);
                                 <!-- Item -->
                                 <div class="item">
                                     <div class="img-fill">
-                                        <!-- <img src="http://i.imgur.com/se0oBNb.jpg?1" alt="">-->
+                                        <!-- <img src="//i.imgur.com/se0oBNb.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
                                                 <h3><?= Yii::t('easyii', '69') ?></h3>
                                                 <h5>
-                                                    <a href="http://iq-offshore.com/banks/mashreq-bank"><?= Yii::t('easyii', '70') ?>
+                                                    <a href="//iq-offshore.com/banks/mashreq-bank"><?= Yii::t('easyii', '70') ?>
                                                         <b> от 3700 EUR</b></a></br>
-                                                    <a href="http://iq-offshore.com/ru/banks/unicredit-bank-serbia"><?= Yii::t('easyii', '86') ?>
+                                                    <a href="//iq-offshore.com/ru/banks/unicredit-bank-serbia"><?= Yii::t('easyii', '86') ?>
                                                         <b> от 3500 EUR</b></a></br>
-                                                    <a href="http://iq-offshore.com/banks/universal-capital-bank"><?= Yii::t('easyii', '87') ?>
+                                                    <a href="//iq-offshore.com/banks/universal-capital-bank"><?= Yii::t('easyii', '87') ?>
                                                         <b> от 3400 EUR</b></a>
                                                 </h5>
                                             </div>
@@ -564,7 +564,7 @@ MainAsset::register($this);
                                 <!-- Item 
                                 <div class="item">
                                     <div class="img-fill">
-                                        <!-- <img src="http://i.imgur.com/1B21u8G.jpg?1" alt="">
+                                        <!-- <img src="//i.imgur.com/1B21u8G.jpg?1" alt="">
                                         <div class="info">
                                             <div>
                                                 <h3><?= Yii::t('easyii', '72') ?><b>6500 EUR</b></h3>
@@ -672,7 +672,7 @@ MainAsset::register($this);
                                 <div class='containerrr2'>
                                     <div class="button-container">
                                         <div class='button -green2 center'><b><a
-                                                        href="http://iq-offshore.com/ru/offshornyie-predlozheniya"><?= Yii::t('easyii', 'othercompany') ?></a>
+                                                        href="//iq-offshore.com/ru/offshornyie-predlozheniya"><?= Yii::t('easyii', 'othercompany') ?></a>
                                             </b></div>
                                     </div>
                                 </div>
@@ -808,7 +808,7 @@ MainAsset::register($this);
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="/banks/ameriabank" title="">Ameria Bank</a></h4>
                                                     <span style="font-weight: bold; font-size: large; color: white">Армения</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€2700</span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€2200</span>
                                                     <h4>Корпоративный счет</h4>
                                                 </div>
                                             </div>
@@ -988,7 +988,7 @@ MainAsset::register($this);
                                     <div class="service1">
                                         <span><i class="flaticon-new-credit-card-2"></i></span>
                                         <h4>
-                                            <a href="http://iq-offshore.com/news/otkryt-anonimnyj-bankovskij-debitnyj-scet-predoplaty"
+                                            <a href="//iq-offshore.com/news/otkryt-anonimnyj-bankovskij-debitnyj-scet-predoplaty"
                                                title=""><?= Yii::t('easyii', '42') ?></a></h4>
                                         <i><?= Yii::t('easyii', '43') ?></i>
                                     </div>

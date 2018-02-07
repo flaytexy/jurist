@@ -5,25 +5,25 @@ use yii\helpers\Url;
 
 $page = Page::get('page-'.$typeTitle);
 
-$this->title = !empty($page->seo('title', $pages->model->title)) ? $page->seo('title', $page->model->title) : '';
+if($page){
+    $this->title = !empty($page->seo('title', $pages->model->title)) ? $page->seo('title', $page->model->title) : '';
 
-if($descriptionSeo = !empty($page->seo('description')) ? $page->seo('description') : ''){
-    $this->registerMetaTag([
-        'name' => 'description',
-        'content' => $descriptionSeo,
-    ]);
+    if($descriptionSeo = !empty($page->seo('description')) ? $page->seo('description') : ''){
+        $this->registerMetaTag([
+            'name' => 'description',
+            'content' => $descriptionSeo,
+        ]);
+    }
+    if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
+        $this->registerMetaTag([
+            'name' => 'keywords',
+            'content' => $keywordsSeo,
+        ]);
+    }
+
+    $this->params['breadcrumbs'][] = $page->model->title;
+    $this->params['seo'][] = $page->seo('keywords');
 }
-if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
-    $this->registerMetaTag([
-        'name' => 'keywords',
-        'content' => $keywordsSeo,
-    ]);
-}
-
-
-
-$this->params['breadcrumbs'][] = $page->model->title;
-$this->params['seo'][] = $page->seo('keywords');
 
 ?>
 
