@@ -15,18 +15,11 @@ class BanksController extends \yii\web\Controller
 
     public function actionIndex($tag = null, $type = null, $slug = null, $page = null)
     {
-        ////e_print('mark_1');
         $type_id = \Yii::$app->request->get('type_id');
 
-        $banks = array();
-        if ($page == false || $page === '1') {
-            ////e_print('$banks');
-            $banks = Banks::items(['tags' => $tag, 'list' => 1, 'pagination' => ['pageSize' => 300]]);
-            ////e_print('$banks_end');
-        }
+        $banks = Banks::items(['tags' => $tag, 'list' => 1, 'pagination' => ['pageSize' => 300]]);
 
-
-        /*        $query = \frontend\modules\banks\models\Banks::find()->where(['status' => 1]);
+        /* $query = \frontend\modules\banks\models\Banks::find()->where(['status' => 1]);
                 $count = $query->count();
                 $pagination = new Pagination(['totalCount' => $count]);
                 $banksList = $query->offset($pagination->offset)

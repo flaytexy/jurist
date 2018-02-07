@@ -9,7 +9,7 @@ use frontend\modules\page\models\Page as PageModel;
 
 class NewsController extends \yii\web\Controller
 {
-    public function actionIndex($tag = null, $type = null, $slug = null)
+    public function actionIndex($tag = null, $type = null, $slug = null, $page = null)
     {
         $pageName = 'page-news';
         if($slug){

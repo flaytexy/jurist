@@ -134,10 +134,10 @@ $config = [
 //                        'type_id' => 2
 //                    ],
 //                ],
-                [
-                    'pattern' => '/news/tag/<tag:[\w- ]+>',
-                    'route' => 'news/index',
-                ],
+//                [ // del
+//                    'pattern' => '/news/tag/<tag:[\w- ]+>',
+//                    'route' => 'news/index',
+//                ],
                 [
                     'pattern' => '<slug:spisok-offshorov>',
                     'route' => 'news/index',
@@ -158,6 +158,8 @@ $config = [
                 '<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'pages/index',
                 '<name:(licenses|offshore|processing|fonds|sale)>' => 'pages/index',
                 '<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'pages/view',
+
+                '<controller:\w+>/tag/<tag:[\w- ]+>' => '<controller>/index',
 
                 '<controller:\w+>/page<page:\d+>' => '<controller>/index',
 
@@ -245,6 +247,7 @@ $config = [
                 'styles.css',
                 'style_all.css',
                 'style_all.min.css',
+                'admin.css',
                 'ckeditor',
                 'ooo.css'
             ]
