@@ -14267,20 +14267,20 @@ footer .title1.style2 > h2 {
     line-height: 7rem;
 }
 
-ul.simlist-ol, ol.simlist {
+div.simlistdiv ol, ul.simlist-ol, ol.simlist {
     list-style-type: none !important;
     margin: 0;
     margin-left: 1em;
     padding: 0;
     counter-reset: li-counter;
 }
-ul.simlist-ol > li, ol.simlist > li{
+div.simlistdiv ol > li, ul.simlist-ol > li, ol.simlist > li{
     position: relative;
     margin-bottom:  0.5em;
     padding: 0.7em;
     background-color: #eaeaea;
 }
-ul.simlist-ol > li:before, ol.simlist > li:before {
+div.simlistdiv ol > li:before, ul.simlist-ol > li:before, ol.simlist > li:before {
     position: absolute;
     top: 0;
     left: -1.393em;

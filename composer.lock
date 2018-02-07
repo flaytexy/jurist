@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "31520d51c53be51e17ef441f6dd39724",
+    "content-hash": "e5f4c9bc29e112f4c64d613d252c4f1f",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -565,16 +565,16 @@
         },
         {
             "name": "bower-asset/fancybox",
-            "version": "v3.2.5",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fancyapps/fancyBox.git",
-                "reference": "e68489e6f29334f85b6b98d995469f6be5a13b19"
+                "reference": "687451cc55d96705c65f512d1ffaafeb46dc8931"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fancyapps/fancyBox/zipball/e68489e6f29334f85b6b98d995469f6be5a13b19",
-                "reference": "e68489e6f29334f85b6b98d995469f6be5a13b19",
+                "url": "https://api.github.com/repos/fancyapps/fancyBox/zipball/687451cc55d96705c65f512d1ffaafeb46dc8931",
+                "reference": "687451cc55d96705c65f512d1ffaafeb46dc8931",
                 "shasum": ""
             },
             "require": {
@@ -600,7 +600,7 @@
                 "responsive",
                 "touch"
             ],
-            "time": "2017-11-17T13:22:44+00:00"
+            "time": "2017-11-28T06:38:18+00:00"
         },
         {
             "name": "bower-asset/flag-icon-css",
@@ -6429,6 +6429,7 @@
         "mirocow/yii2-yandex-maps": 20,
         "components/jquery-migrate": 20,
         "bower-asset/eonasdan-bootstrap-datetimepicker": 20,
+        "bower-asset/fancybox": 20,
         "pheme/yii2-toggle-column": 20
     },
     "prefer-stable": false,
