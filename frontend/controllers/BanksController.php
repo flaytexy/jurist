@@ -23,6 +23,7 @@ class BanksController extends \yii\web\Controller
             Banks::clear();
         }
 
+        //ex_print(count($banks),'$banks');
         /* $query = \frontend\modules\banks\models\Banks::find()->where(['status' => 1]);
                 $count = $query->count();
                 $pagination = new Pagination(['totalCount' => $count]);

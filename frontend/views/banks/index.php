@@ -100,20 +100,6 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <form>
                     <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
-                            <li class="listcenter">Только личный счет?</li><br>
-                            <li>Нет</li> <li class="">
-                                <div class="switcher">
-                                    <input value="0" class="switch" js-filter="js-filter-type-id" name="switchName"
-                                           type="checkbox"/>
-                                </div>
-                            </li>
-                            <li>Да</li>
-                        </ul>
-
-                    </div>
-
-                    <div class="col-md-4">
-                        <ul class="list-inline" id="sw-list">
                             <li  class="listcenter">С посещением банка?</li><br>
                             <li>Нет</li>    <li class="">
                                 <div class="switcher">
@@ -134,11 +120,24 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             </li><li>Да</li>
                         </ul>
                     </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline" id="sw-list">
+                            <li class="listcenter">Только личный счет?</li><br>
+                            <li>Нет</li> <li class="">
+                                <div class="switcher">
+                                    <input value="0" class="switch" js-filter="js-filter-type-id" name="switchName"
+                                           type="checkbox"/>
+                                </div>
+                            </li>
+                            <li>Да</li>
+                        </ul>
+                    </div>
                 </form>
             </div>
 
             <div class="row bank-new-list">
                 <div class="col-md-12" id="switchAllBanks">
+                    <!-- //TODO -->
                     <table data-region-assign="reg_3" class="table reg_3 table-bordered 1_0_0.00 js-filter-marker" js-filter-type-id="0" js-filter-personal="0" js-filter-min-deposit="0" style="display: table;">
                         <tbody><tr>
                             <td class="col-md-8 col-lg-2">
@@ -215,7 +214,6 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         </tr>
                         </tbody>
                     </table>
-
                     <table data-region-assign="reg_3" class="table reg_3 table-bordered 1_0_0.00 js-filter-marker" js-filter-type-id="0" js-filter-personal="0" js-filter-min-deposit="0" style="display: table;">
                         <tbody><tr>
                             <td class="col-md-8 col-lg-2">
@@ -512,7 +510,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             </td>
                         </tr>
                         </tbody></table>
-                    <!--    -->
+                    <!-- //TODO end -->
                     <?php if ($items): ?>
                         <?php foreach ($items as $item) : ?>
                         <? if($region_name != $item->model->region_name && $item->model->region_name != 'Polar: Arctic' /*&&  $item->model->region_name!=false*/ ): ?>

@@ -38,6 +38,7 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
 <hr/>
 <?= $form->field($model, 'location_zone_id')->dropDownList([
+    '0'  => 'Не выбрано',
     '1' => 'Европа',
     '2' => 'Азия',
     '3' => 'Америка',

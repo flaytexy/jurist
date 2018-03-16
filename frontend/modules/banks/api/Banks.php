@@ -85,11 +85,17 @@ class Banks extends \frontend\components\API
                     ' cra.`country_id` = ca.`country_id` '
                 );
 
+//                $query->join(
+//                    'LEFT JOIN',
+//                    'country_region as cr',
+//                    " `cr`.`id` = `cra`.`region_id`  "
+//                )->andWhere(" `cr`.`is_unep` = '1' ");
+
                 $query->join(
                     'LEFT JOIN',
                     'country_region as cr',
                     " `cr`.`id` = `cra`.`region_id`  "
-                )->andWhere(" `cr`.`is_unep` = '1' ");
+                );
             }
 
             if (!empty($options['where'])) {

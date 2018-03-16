@@ -12,7 +12,8 @@ $config = [
     ],
 ];
 
-
+// 185.117.240.*  -  (22222) iq new
+//  '195.211.139.*', '195.200.90.*',
 
 if (!YII_ENV_TEST) {
     // configuration adjustments for 'dev' environment
@@ -20,14 +21,14 @@ if (!YII_ENV_TEST) {
         $config['bootstrap'][] = 'debug';
         $config['modules']['debug'] = [
             'class' => 'yii\debug\Module',
-            'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.*', '195.211.139.*', '195.200.90.*' ]//, '195.211.139.*']
+            'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.*', '185.117.240.*' ]//, '195.211.139.*']
         ];
     //}
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
-        'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.*', '195.211.139.*', '1195.200.90.254' ]//, '195.211.139.*']
+        'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.*', '185.117.240.*' ]//, '195.211.139.*']
     ];
 
 
