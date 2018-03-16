@@ -14310,7 +14310,7 @@ ul.simlist > li, div.simlistdiv ul > li{
     margin-bottom:  0.5em;
     padding: 0.7em;
 }
-ul.simlist > li, div.simlistdiv ul > li, ul.simlist > li span, div.simlistdiv ul > li span {
+div.simlistdiv ol > li, div.simlistdiv ol > li span, ol.simlist > li span, ul.simlist > li, div.simlistdiv ul > li, ul.simlist > li span, div.simlistdiv ul > li span {
     background-color: #eaeaea !important;
 }
 ul.simlist > li:before, div.simlistdiv ul > li:before {

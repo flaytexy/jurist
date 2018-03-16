@@ -2,10 +2,12 @@
 namespace frontend\controllers;
 
 use frontend\models\Popularly;
+use frontend\models\Setting;
 use frontend\modules\banks\api\Banks;
 use frontend\modules\page\api\Page;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\Url;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -16,6 +18,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\modules\offers\api\Offers;
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -59,14 +62,48 @@ class SiteController extends Controller
     public function actions()
     {
         return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
+//            'error' => [
+//                'class' => 'yii\web\ErrorAction',
+//            ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
+    }
+
+    public function actionError()
+    {
+
+        $mail = '';
+
+        if(!strpos(Yii::$app->request->url, 'debug/default/toolbar')!==false){
+            if (!Yii::$app->mailer->compose()
+                ->setFrom(Setting::get('robot_email'))
+                //->setFrom('itc@iq-offshore.com')
+                ->setTo('akvamiris@gmail.com')
+                ->setSubject('Рапорт об ошибке')
+                ->setHtmlBody('
+                <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
+                <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
+            ')//Url::to()
+                //->setReplyTo(Setting::get('admin_email'))
+                ->send())
+            {
+                $mail = 'Email not sended!!!!!';
+            }
+        }
+
+
+        return $this->render('error', [
+            'message' => Yii::t('yii', 'Page not found.').' '.$mail,
+            'exception' => Yii::$app->errorHandler->exception
+        ]);
+        /*
+        $exception = Yii::$app->errorHandler->exception;
+        if ($exception !== null) {
+            return $this->render('error', ['exception' => $exception]);
+        }*/
     }
 
     /**

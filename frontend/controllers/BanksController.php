@@ -15,9 +15,13 @@ class BanksController extends \yii\web\Controller
 
     public function actionIndex($tag = null, $type = null, $slug = null, $page = null)
     {
+
         $type_id = \Yii::$app->request->get('type_id');
 
-        $banks = Banks::items(['tags' => $tag, 'list' => 1, 'pagination' => ['pageSize' => 300]]);
+        if($page==1 || $page==false){
+            $banks = Banks::items(['tags' => $tag, 'list' => 1, 'pagination' => ['pageSize' => 300], 'page'=> $page]);
+            Banks::clear();
+        }
 
         /* $query = \frontend\modules\banks\models\Banks::find()->where(['status' => 1]);
                 $count = $query->count();
@@ -42,13 +46,15 @@ class BanksController extends \yii\web\Controller
         );
 
         //e_print('clear');
-        Banks::clear();
+
         //e_print('$banksList');
         $banksList = Banks::items([
             'tags' => $tag,
-            'pagination' => ['pageSize' => 6]
+            'pagination' => ['pageSize' => 6],
+            'page'=> $page
         ]);
         //e_print('$banksList_end');
+
 
         //e_print('$render');
         $render = $this->render('index', [

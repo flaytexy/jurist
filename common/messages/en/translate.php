@@ -48,6 +48,8 @@ return [
     'zerotax' => 'Legal zero taxation',
     //============================================ TICKER
     '1' => 'We open bank account for Forex and Gambling!',
+    'ABLV_stopped_working' => 'ABLV bank in Latvia has stopped its work!',
+    'return_of_funds_from' => 'The decision on the return of funds from ABLV',
     '2' => 'Remote opening an account with Universal Bank Montenegro',
     '3' => 'The cheapest company - Belize',
     '4' => 'The most correct advice of a specialist - individual and free',

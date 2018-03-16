@@ -414,38 +414,22 @@ MainAsset::register($this);
                         <!-- WIP -->
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
-                                <li class="ticker__item" data-ticker="item"><a
-                                            href="//iq-offshore.com/banks"><?= Yii::t('easyii', '1') ?></a></li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
-                                                                               aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item"><a
-                                            href="//iq-offshore.com/banks/mkb-bank"><?= Yii::t('easyii', '2') ?></a>
-                                </li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
-                                                                               aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item"><a
-                                            href="//iq-offshore.com/offers/beliz"><?= Yii::t('easyii', '3') ?></a>
-                                </li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
-                                                                               aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item"><a
-                                            href="//iq-offshore.com/contact"><?= Yii::t('easyii', '4') ?></a></li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
-                                                                               aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item"><a
-                                            href="//iq-offshore.com/news/partnerstva-sotlandii-otkrytie-spiskov-beneficiarov"><?= Yii::t('easyii', '5') ?></a>
-                                </li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
-                                                                               aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item"><a
-                                            href="//iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.1') ?></a>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
-                                                                               aria-hidden="true"></i></li>
-                                <li class="ticker__item" data-ticker="item"><a
-                                            href="//iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.2') ?></a>
-                                </li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up"
-                                                                               aria-hidden="true"></i></li>
+                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/banks"><?= Yii::t('easyii', '1') ?></a></li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
+                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/news/zakrytie-ablv-mozno-li-vernut-svoi-aktivy"><?= Yii::t('easyii', 'return_of_funds_from') ?></a></li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
+                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/banks/mkb-bank"><?= Yii::t('easyii', '2') ?></a></li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
+                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/offers/beliz"><?= Yii::t('easyii', '3') ?></a></li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
+                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/contact"><?= Yii::t('easyii', '4') ?></a></li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
+                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/news/partnerstva-sotlandii-otkrytie-spiskov-beneficiarov"><?= Yii::t('easyii', '5') ?></a></li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
+                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.1') ?></a>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
+                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.2') ?></a></li>
+                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
                             </ul>
                         </div>
 

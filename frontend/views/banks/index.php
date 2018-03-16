@@ -93,7 +93,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
     </div>
 
-
+    <?php if ($items): ?>
     <section id="banks2" class="scroll-container">
         <div class="container">
             <div class="row top30">
@@ -136,18 +136,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     </div>
                 </form>
             </div>
-            <style>
 
-
-
-            </style>
             <div class="row bank-new-list">
                 <div class="col-md-12" id="switchAllBanks">
                     <table data-region-assign="reg_3" class="table reg_3 table-bordered 1_0_0.00 js-filter-marker" js-filter-type-id="0" js-filter-personal="0" js-filter-min-deposit="0" style="display: table;">
-
-
                         <tbody><tr>
-
                             <td class="col-md-8 col-lg-2">
                                 <div id="tpb"> <h3>TOP BANKS</h3></div>
                                 <h6>
@@ -220,7 +213,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 </div>
                             </td>
                         </tr>
-                        </tbody></table>
+                        </tbody>
+                    </table>
+
                     <table data-region-assign="reg_3" class="table reg_3 table-bordered 1_0_0.00 js-filter-marker" js-filter-type-id="0" js-filter-personal="0" js-filter-min-deposit="0" style="display: table;">
                         <tbody><tr>
                             <td class="col-md-8 col-lg-2">
@@ -517,8 +512,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             </td>
                         </tr>
                         </tbody></table>
-                    <!--   <h4>Africa</h4>-->
-                    <?php foreach ($items as $item) : ?>
+                    <!--    -->
+                    <?php if ($items): ?>
+                        <?php foreach ($items as $item) : ?>
                         <? if($region_name != $item->model->region_name && $item->model->region_name != 'Polar: Arctic' /*&&  $item->model->region_name!=false*/ ): ?>
                             <?php $region_name = $item->model->region_name; ?>
                             <div class='h4 top20 region-id-mark' id="reg_<?= $item->model->region_id ?>"><?= $region_name ?></div>
@@ -619,14 +615,15 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             </tr>
                         </table>
                     <? endforeach; ?>
-
+                    <? endif; ?>
                 </div>
             </div>
         </div>
     </section>
+    <? endif; ?>
 
     <?php if (true): ?>
-        <section id="pages" class="top30">
+        <section id="pages" class="top10">
             <div class="block">
                 <div class="container">
                     <div class="row">

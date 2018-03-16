@@ -43,6 +43,7 @@ $module = $this->context->module->id;
     '3' => 'Америка',
     '4' => 'Африка',
     '5' => 'Островная',
+    '8' => 'Австралия',
 ]) ?>
 
 <?= $form->field($model, 'countryNames')

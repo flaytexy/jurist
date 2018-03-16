@@ -116,7 +116,8 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                             <?php endforeach; ?>
 
                                         </ul>
-                                    </div><!-- Widget2
+                                    </div>
+                                    <!-- Widget3
                                     <div class="widget tags-widget">
                                         <div class="title1 style2">
                                             <h2>Облако тегов</h2>

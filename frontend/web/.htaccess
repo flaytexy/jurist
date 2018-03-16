@@ -5,6 +5,11 @@ allow from all
 Deny from 82.146.41, 82.146.40
 
 
+#Order deny,allow
+#deny from all
+## Список IP через пробел, с которых доступ разрешен
+#Allow from 194.183.171
+
 Options +FollowSymLinks
 ##IndexIgnore */*
 RewriteEngine On
