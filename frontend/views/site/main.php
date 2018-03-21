@@ -4,7 +4,7 @@
 use yii\helpers\Html;
 use frontend\assets\MainAsset;
 use frontend\helpers\Image;
-
+use yii\helpers\Url;
 MainAsset::register($this);
 
 ?>
@@ -409,30 +409,14 @@ MainAsset::register($this);
             <div class="row">
                 <div class="col-md-12">
                     <div class="search-luxuriousvilla overlape">
-
-
                         <!-- WIP -->
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
-                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/banks"><?= Yii::t('easyii', '1') ?></a></li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
-                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/news/zakrytie-ablv-mozno-li-vernut-svoi-aktivy"><?= Yii::t('easyii', 'return_of_funds_from') ?></a></li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
-                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/banks/mkb-bank"><?= Yii::t('easyii', '2') ?></a></li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
-                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/offers/beliz"><?= Yii::t('easyii', '3') ?></a></li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
-                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/contact"><?= Yii::t('easyii', '4') ?></a></li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
-                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/news/partnerstva-sotlandii-otkrytie-spiskov-beneficiarov"><?= Yii::t('easyii', '5') ?></a></li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
-                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.1') ?></a>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
-                                <li class="ticker__item" data-ticker="item"><a href="//iq-offshore.com/ru/banks/bank-of-montreal"><?= Yii::t('easyii', '5.2') ?></a></li>
-                                <li class="ticker__item" data-ticker="item"><i class="fa fa-volume-up" aria-hidden="true"></i></li><!-- // -->
+                            <? foreach ($ticker_viewport as $item): ?>
+                            <li class="ticker__item" data-ticker="item"><a href="<?= $item->url ?>"><?= $item->model->title ?></a></li>
+                            <? endforeach; ?>
                             </ul>
                         </div>
-
                         <div class="Modern-Slider" id="Modern-Slider" style="display: none">
                                 <!-- Item -->
                                 <div class="item">
@@ -696,107 +680,22 @@ MainAsset::register($this);
                             <div class="col-md-7">
                                 <div class="we-offers">
                                     <div class="row">
+                                        <? foreach ($banks as $toMainBank): ?>
                                         <div class="col-md-6">
-                                            <div class="offered-service" onclick="location.href='/banks/fio'">
+                                            <div class="offered-service" onclick="location.href='<?= Url::to(['banks/'.$toMainBank->slug]) ?>'">
                                                 <?= Html::img(
-                                                    Image::thumb("/uploads/banks_main/fiobanka1.jpg", 296, 187),
+                                                    Image::thumb($toMainBank->image, 296, 187),
                                                     ['class' => 'main-banks']
                                                 ); ?>
                                                 <div class="offered-serviceinfo">
-                                                    <h4><a href="/banks/fio" title="">FIO</a></h4>
-                                                    <span style="font-weight: bold; font-size: large; color: white">Чехия</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1900</span>
-                                                    <h4>Корпоративный счет</h4>
+                                                    <h4><a href="<?= Url::to(['banks/'.$toMainBank->slug]) ?>" title=""><?= $toMainBank->title ?></a></h4>
+                                                    <span style="font-weight: bold; font-size: large; color: white"><?= $toMainBank->model->location_title ?></span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€<?= $toMainBank->price ?></span>
+                                                    <h4>Корпоративный счет!</h4>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="offered-service" onclick="location.href='/banks/mkb-bank'">
-                                                <?= Html::img(
-                                                    Image::thumb("/uploads/banks_main/mkb_bank.jpg", 296, 187),
-                                                    ['class' => 'main-banks']
-                                                ); ?>
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="/banks/mkb-bank" title="">MKB Bank</a></h4>
-                                                    <span style="font-weight: bold; font-size: large; color: white">Венгрия</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1190</span>
-                                                    <h4>Корпоративный счет</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="offered-service" onclick="location.href='/banks/universal-capital-bank'">
-                                                <?= Html::img(
-                                                    Image::thumb("/uploads/banks_main/universal_capital_bank.png", 296, 187),
-                                                    ['class' => 'main-banks']
-                                                ); ?>
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="/banks/universal-capital-bank" title="">Universal
-                                                            Bank</a></h4>
-                                                    <span style="font-weight: bold; font-size: large; color: white">Черногория</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1890</span>
-                                                    <h4>Корпоративный счет</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="offered-service" onclick="location.href='/banks/unicredit-bank-serbia'">
-                                                <?= Html::img(
-                                                    Image::thumb('/uploads/banks_main/unicredit_bank.jpg', 296, 187),
-                                                    ['class' => 'main-banks']
-                                                ); ?>
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="/banks/unicredit-bank-serbia" title="">Unicredit
-                                                            Bank</a></h4>
-                                                    <span style="font-weight: bold; font-size: large; color: white">Сербия</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€2500</span>
-                                                    <h4>Корпоративный счет</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="offered-service" onclick="location.href='/banks/lihtenshteyn'">
-                                                <?= Html::img(
-                                                    Image::thumb('/uploads/banks_main/bankalpinum.jpg', 296, 187),
-                                                    ['class' => 'main-banks']
-                                                ); ?>
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="/banks/lihtenshteyn" title="">Alpinum</a></h4>
-                                                    <span style="font-weight: bold; font-size: large; color: white">Лихтенштейн</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€1500</span>
-                                                    <h4>Корпоративный счет</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="offered-service" onclick="location.href='/banks/cim'">
-                                                <?= Html::img(
-                                                    Image::thumb('/uploads/banks_main/cim_bank.jpg', 296, 187),
-                                                    ['class' => 'main-banks']
-                                                ); ?>
-
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="/banks/cim" title="">C.I.M Bank</a></h4>
-                                                    <span style="font-weight: bold; font-size: large; color: white">Швейцария</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€600</span>
-                                                    <h4>Корпоративный счет</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="offered-service" onclick="location.href='/banks/ameriabank'">
-                                                <?= Html::img(
-                                                    Image::thumb('/uploads/banks_main/ameria_bank.jpg', 296, 187),
-                                                    ['class' => 'main-banks']
-                                                ); ?>
-                                                <div class="offered-serviceinfo">
-                                                    <h4><a href="/banks/ameriabank" title="">Ameria Bank</a></h4>
-                                                    <span style="font-weight: bold; font-size: large; color: white">Армения</span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€2200</span>
-                                                    <h4>Корпоративный счет</h4>
-                                                </div>
-                                            </div>
-                                        </div>
+                                         <? endforeach; ?>
 
                                         <div class="col-md-6">
                                             <div class="offered-service">

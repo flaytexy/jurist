@@ -35,6 +35,10 @@ $moduleName = $this->context->module->id;
             </div>
             <div class="main">
                 <div class="box sidebar">
+                    <a href="<?= Url::to(['/admin/ticker']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'offshore') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Бегущая строка
+                    </a>
                     <a href="<?= Url::to(['/admin/page?type=6']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'offshore') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         <?= Yii::t('easyii', 'Offshore') ?>

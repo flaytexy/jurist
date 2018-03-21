@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             font-size: 20px;
 
             position: relative;
-            right: 40px;
+            right: 1px;
         }
 
         @media (max-width: 800px) {
@@ -98,9 +98,22 @@ $this->params['breadcrumbs'][] = $page->model->title;
         <div class="container">
             <div class="row top30">
                 <form>
-                    <div class="col-md-4">
+                    <div class="col-md-6 text-center">
+                        <h4>С посещением банка?</h4>
                         <ul class="list-inline" id="sw-list">
-                            <li  class="listcenter">С посещением банка?</li><br>
+                            <li>
+                                <select class="switcherSelect" name="switchName2" js-filter="js-filter-personal">
+                                    <option value="2">Все</option>
+                                    <option value="1">С посещением банка</option>
+                                    <option value="0">Без посещения</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--
+                    <div class="col-md-6 text-center">
+                        <h4>С посещением банка?</h4>
+                        <ul class="list-inline" id="sw-list">
                             <li>Нет</li>    <li class="">
                                 <div class="switcher">
                                     <input  value="0" class="switch" js-filter="js-filter-personal" name="switchName2"
@@ -108,10 +121,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 </div>
                             </li> <li>Да</li>
                         </ul>
-                    </div>
-                    <div class="col-md-4">
+                    </div>-->
+                    <div class="col-md-6 text-center">
+                        <h4>С минимальным депозитом?</h4>
                         <ul class="list-inline" id="sw-list">
-                            <li  class="listcenter">С минимальным депозитом?</li><br>
                             <li>Нет</li>  <li class="">
                                 <div class="switcher">
                                     <input value="0" class="switch" js-filter="js-filter-min-deposit" js-filter-switch-only="1" name="switchName3"
@@ -120,9 +133,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             </li><li>Да</li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
+<!--                    <div class="col-md-4">
                         <ul class="list-inline" id="sw-list">
-                            <li class="listcenter">Только личный счет?</li><br>
+                            <li class="listcenter">Только личный счет?</li>
                             <li>Нет</li> <li class="">
                                 <div class="switcher">
                                     <input value="0" class="switch" js-filter="js-filter-type-id" name="switchName"
@@ -131,11 +144,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             </li>
                             <li>Да</li>
                         </ul>
-                    </div>
+                    </div>-->
                 </form>
             </div>
 
-            <div class="row bank-new-list">
+            <div class="row bank-new-list top20">
                 <div class="col-md-12" id="switchAllBanks">
                     <?php if ($items): ?>
                         <?php foreach ($items as $item) : ?>
@@ -247,7 +260,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
     <? endif; ?>
 
     <?php if (true): ?>
-        <section id="pages" class="top10">
+        <section id="pages" class="top20">
             <div class="block">
                 <div class="container">
                     <div class="row">

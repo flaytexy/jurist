@@ -5,6 +5,7 @@ use frontend\models\Popularly;
 use frontend\models\Setting;
 use frontend\modules\banks\api\Banks;
 use frontend\modules\page\api\Page;
+use frontend\modules\tickers\api\Tickers;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\helpers\Url;
@@ -156,6 +157,12 @@ class SiteController extends Controller
             'pagination' => ['pageSize' => 10]
         ]);
 
+
+        $ticker_viewport = Tickers::items([
+            'where' => [ 'status' => 1 ],
+            'pagination' => ['pageSize' => 100]
+        ]);
+
         $fonds = Page::items([
             'where' => ['type_id' => 4, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 2]
@@ -171,6 +178,7 @@ class SiteController extends Controller
             'licenses' => $licenses,
             'fonds' => $fonds,
             'banks' => $banks,
+            'ticker_viewport' => $ticker_viewport,
             'sale' => $sale
         ]);
     }
