@@ -5,6 +5,7 @@ use frontend\models\Popularly;
 use frontend\models\Setting;
 use frontend\modules\banks\api\Banks;
 use frontend\modules\page\api\Page;
+use frontend\modules\slidesmall\api\Slidesmall;
 use frontend\modules\tickers\api\Tickers;
 use Yii;
 use yii\base\InvalidParamException;
@@ -163,10 +164,16 @@ class SiteController extends Controller
             'pagination' => ['pageSize' => 100]
         ]);
 
+        $slidesmall = Slidesmall::items([
+            'where' => [ 'status' => 1 ],
+            'pagination' => ['pageSize' => 100]
+        ]);
+ex_print($slidesmall);
         $fonds = Page::items([
             'where' => ['type_id' => 4, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 2]
         ]);
+
         $sale = Page::items([
             'where' => ['type_id' => 7, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 10]
@@ -179,6 +186,7 @@ class SiteController extends Controller
             'fonds' => $fonds,
             'banks' => $banks,
             'ticker_viewport' => $ticker_viewport,
+            'slidesmall' => $slidesmall,
             'sale' => $sale
         ]);
     }

@@ -1,5 +1,5 @@
 <?php
-namespace frontend\modules\tickers\models;
+namespace frontend\modules\slidesmall\models;
 
 use common\behaviors\CountriesBehavior;
 use common\models\country\CountryAssign;
@@ -24,7 +24,7 @@ use yii\helpers\StringHelper;
  * @property $country
  * @property $ticker_id
  */
-class Tickers extends \frontend\components\ActiveRecord
+class Slidesmall extends \frontend\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
@@ -36,16 +36,16 @@ class Tickers extends \frontend\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_tickers';
+        return 'easyii_slidesmall';
     }
 
     public function rules()
     {
         return [
-            [['title', 'title_en', 'url'], 'required'],
+            [['title', 'title_en', 'text', 'text_en'], 'required'],
             [['title', 'title_en'], 'string', 'max' => 128],
             [['url'], 'string', 'max' => 512],
-            [['title', 'title_en', 'url'], 'trim']
+            [['title','title_en', 'text', 'text_en', 'url'], 'trim']
         ];
 
 //        return [
@@ -83,17 +83,17 @@ class Tickers extends \frontend\components\ActiveRecord
             'title' => Yii::t('easyii', 'Title'),
             'type_id' => Yii::t('easyii', 'Тип'),
             'text' => Yii::t('easyii', 'Text'),
-            'short' => Yii::t('easyii/tickers', 'Short'),
-            'to_main' => Yii::t('easyii/tickers', 'На главную'),
-            'price' => Yii::t('easyii/tickers', 'Цена'),
-            'how_days' => Yii::t('easyii/tickers', 'Дней'),
+            'short' => Yii::t('easyii/slidesmall', 'Short'),
+            'to_main' => Yii::t('easyii/slidesmall', 'На главную'),
+            'price' => Yii::t('easyii/slidesmall', 'Цена'),
+            'how_days' => Yii::t('easyii/slidesmall', 'Дней'),
             'image' => Yii::t('easyii', 'Image'),
             'time' => Yii::t('easyii', 'Date'),
             'slug' => Yii::t('easyii', 'Slug'),
             'optionNames' => Yii::t('easyii', 'Options'),
             'tagNames' => Yii::t('easyii', 'Tags'),
-            'location_title' => Yii::t('easyii/tickers', 'Страна'),
-            'Personal' => Yii::t('easyii/tickers', 'Пприсутствие'),
+            'location_title' => Yii::t('easyii/slidesmall', 'Страна'),
+            'Personal' => Yii::t('easyii/slidesmall', 'Пприсутствие'),
         ];
     }
 
@@ -139,7 +139,7 @@ class Tickers extends \frontend\components\ActiveRecord
                 $this->min_deposit = '0.00';
             }
 
-            $settings = Yii::$app->getModule('admin')->activeModules['tickers']->settings;
+            $settings = Yii::$app->getModule('admin')->activeModules['slidesmall']->settings;
             $this->short = StringHelper::truncate($settings['enableShort'] ? $this->short : strip_tags($this->text), $settings['shortMaxLength']);
 
             if (!$insert && $this->image != $this->oldAttributes['image'] && $this->oldAttributes['image']) {
@@ -180,7 +180,7 @@ class Tickers extends \frontend\components\ActiveRecord
         return $this->hasMany(Option::className(), ['option_id' => 'option_id'])
             ->viaTable(OptionAssign::tableName(), ['item_id' => 'ticker_id'], function ($query) {
                 /* @var $query \yii\db\ActiveQuery */
-                $query->andWhere([OptionAssign::tableName() .'.class' => Tickers::className()]);
+                $query->andWhere([OptionAssign::tableName() .'.class' => Slidesmall::className()]);
             });
     }
 

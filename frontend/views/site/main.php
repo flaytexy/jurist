@@ -417,133 +417,26 @@ MainAsset::register($this);
                             <? endforeach; ?>
                             </ul>
                         </div>
+                        <? if (isset($slidesmall) && count($slidesmall) > 0): ?>
                         <div class="Modern-Slider" id="Modern-Slider" style="display: none">
                                 <!-- Item -->
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <!--<img src="//i.imgur.com/8mwd9AL.jpg?1" alt="">-->
-                                        <div class="info">
-                                            <div>
-                                                <h3><?= Yii::t('easyii', '50') ?>:</h3>
-                                                <h5><?= Yii::t('easyii', '51') ?> <b> <?= Yii::t('easyii', '52') ?></b>
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- // Item -->
-                                <!-- Item -->
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <!--<img src="//i.imgur.com/8mwd9AL.jpg?1" alt="">-->
-                                        <div class="info">
-                                            <div>
-                                                <h3><?= Yii::t('easyii', '80') ?></h3>
-                                                <h5><?= Yii::t('easyii', '81') ?> <b> от 8600 EUR</b></br>
-                                                    <?= Yii::t('easyii', '82') ?> <b> от 10 000 EUR</b></br>
-                                                    <?= Yii::t('easyii', '83') ?> <b> от 9 800 EUR</b></h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- // Item -->
-                                <!-- Item -->
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <!--<img src="//i.imgur.com/roZuL8V.jpg?1" alt="">-->
-                                        <div class="info">
-                                            <div>
-                                                <h3><?= Yii::t('easyii', '55') ?></h3>
-                                                <h5>
-                                                    <a href="//iq-offshore.com/banks/bos-bank"><?= Yii::t('easyii', '84') ?>
-                                                        <b> от 3500 EUR</b></a></br>
-                                                    <a href="//iq-offshore.com/ru/banks/unicredit-bank-serbia"><?= Yii::t('easyii', '85') ?>
-                                                        <b> от 3800 EUR</b></a></br>
-                                                    <?= Yii::t('easyii', '56') ?> <b> от 2599 EUR</b></h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- // Item -->
-                                <!-- Item -->
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <!-- <img src="//i.imgur.com/qa0GO9l.jpg?1" alt="">-->
-                                        <div class="info">
-                                            <div>
-                                                <h3><?= Yii::t('easyii', '58') ?></h3>
-                                                <h5>
-                                                    <a href="//iq-offshore.com/ru/banks/pasta-bank"><?= Yii::t('easyii', '59') ?>
-                                                        <b>999 EUR</b></a></h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- // Item -->
-                                <!-- Item -->
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <!--  <img src="//i.imgur.com/eeM6ZCe.jpg?1" alt="">-->
-                                        <div class="info">
-                                            <div>
-                                                <h3><?= Yii::t('easyii', '61') ?></h3>
-                                                <h5><?= Yii::t('easyii', '62') ?> <b> 3600 EUR</b></h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- // Item -->
-                                <!-- Item -->
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <!-- <img src="//i.imgur.com/KpikY6V.jpg?1" alt="">-->
-                                        <div class="info">
-                                            <div>
-                                                <h3><?= Yii::t('easyii', '64') ?></h3>
-                                                <h5><?= Yii::t('easyii', '65') ?> <b>2999 EUR</b><br>
-                                                    <?= Yii::t('easyii', '67') ?> <b>2499 EUR</b><br>
-                                                    <?= Yii::t('easyii', '88') ?> <b>1600 EUR</b>
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- // Item -->
-                                <!-- Item -->
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <!-- <img src="//i.imgur.com/se0oBNb.jpg?1" alt="">-->
-                                        <div class="info">
-                                            <div>
-                                                <h3><?= Yii::t('easyii', '69') ?></h3>
-                                                <h5>
-                                                    <a href="//iq-offshore.com/banks/mashreq-bank"><?= Yii::t('easyii', '70') ?>
-                                                        <b> от 3700 EUR</b></a></br>
-                                                    <a href="//iq-offshore.com/ru/banks/unicredit-bank-serbia"><?= Yii::t('easyii', '86') ?>
-                                                        <b> от 3500 EUR</b></a></br>
-                                                    <a href="//iq-offshore.com/banks/universal-capital-bank"><?= Yii::t('easyii', '87') ?>
-                                                        <b> от 3400 EUR</b></a>
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- // Item -->
-                                <!-- Item 
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <!-- <img src="//i.imgur.com/1B21u8G.jpg?1" alt="">
-                                        <div class="info">
-                                            <div>
-                                                <h3><?= Yii::t('easyii', '72') ?><b>6500 EUR</b></h3>
+                                <? foreach ($slidesmall as $item): ?>
 
+                                <div class="item">
+                                    <div class="img-fill">
+                                        <!--<img src="//i.imgur.com/8mwd9AL.jpg?1" alt="">-->
+                                        <div class="info">
+                                            <div>
+                                                <h3><?= Yii::$app->language ?> - <?= $item->title ?></h3>
+                                                <h5><?= $item->model->text ?></h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                Item -->
+                                <!-- // Item -->
+                                <? endforeach; ?>
                             </div>
-
+                        <? endif; ?>
                     </div>
                     <!-- Search Luxurious Form -->
                 </div>

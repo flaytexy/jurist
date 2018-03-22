@@ -15,8 +15,8 @@ Options +FollowSymLinks
 RewriteEngine On
 
 # SSL redirect
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
  # WWW redirect
 ##RewriteCond %{HTTP_HOST} !^www\.

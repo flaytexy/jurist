@@ -75,7 +75,7 @@ class Module extends \frontend\components\ActiveRecord
 
     public static function findAllActive()
     {
-        return Data::cache(self::CACHE_KEY, 3600, function(){
+        //return Data::cache(self::CACHE_KEY, 3600, function(){
             $result = [];
             try {
                 foreach (self::find()->where(['status' => self::STATUS_ON])->sort()->all() as $module) {
@@ -85,7 +85,7 @@ class Module extends \frontend\components\ActiveRecord
             }catch(\yii\db\Exception $e){}
 
             return $result;
-        });
+        //});
     }
 
     public function setSettings($settings)
