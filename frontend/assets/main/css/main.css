@@ -343,7 +343,7 @@
     bottom: 0;
 }
 
-.Modern-Slider b {
+.Modern-Slider b, .Modern-Slider strong {
     color: #7DC20F;
 }
 
@@ -353,7 +353,7 @@
     animation: ProgressDots 11s both;
 }
 
-.Modern-Slider .item h3 {
+.Modern-Slider .item .h3 {
     font: 20px/50px RalewayB;
     text-transform: uppercase;
     color: #FFF;
@@ -363,28 +363,32 @@
     padding: 0;
 }
 
-.Modern-Slider .item h5 {
+.Modern-Slider .item .h5 {
     margin: 0;
     padding: 0;
-    font: 20px/30px RalewayR;
-    color: #FFF;
-    max-width: 700px;
+    /*max-width: 700px;*/
     overflow: hidden;
     height: 90px;
     -webkit-animation: fadeOutLeft 2s both;
     animation: fadeOutLeft 2s both;
 }
 
-.Modern-Slider .item h5 a {
+.Modern-Slider .item .h5, .Modern-Slider .item .h5 p , .Modern-Slider .item .h5 p > a {
     color: #FFF;
 }
+.Modern-Slider .item .h5,  .Modern-Slider .item .h5 p > a {
+    font: 19px/30px RalewayR;
+}
+.Modern-Slider .item .h5 p {
+    font: 19px/30px RalewayR;
+}
 
-.Modern-Slider .item.slick-active h3 {
+.Modern-Slider .item.slick-active h3, .Modern-Slider .item.slick-active .h3 {
     -webkit-animation: fadeInDown 2s both 1s;
     animation: fadeInDown 2s both 1s;
 }
 
-.Modern-Slider .item.slick-active h5 {
+.Modern-Slider .item.slick-active h5, .Modern-Slider .item.slick-active .h5 {
     -webkit-animation: fadeInLeft 2s both 1.5s;
     animation: fadeInLeft 2s both 1.5s;
 }

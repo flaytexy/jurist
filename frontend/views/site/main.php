@@ -427,8 +427,13 @@ MainAsset::register($this);
                                         <!--<img src="//i.imgur.com/8mwd9AL.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
-                                                <h3><?= Yii::$app->language ?> - <?= $item->title ?></h3>
-                                                <h5><?= $item->model->text ?></h5>
+                                                <? if ( Yii::$app->language==='en-EN'): ?>
+                                                <div class="h3"><?= $item->model->title_en ?></div>
+                                                <div class="h5"><?= $item->model->text_en ?></div>
+                                                <? else: ?>
+                                                    <div class="h3"><?= $item->model->title ?></div>
+                                                    <div class="h5"><?= $item->model->text ?></div>
+                                                <? endif; ?>
                                             </div>
                                         </div>
                                     </div>

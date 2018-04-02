@@ -168,7 +168,7 @@ class SiteController extends Controller
             'where' => [ 'status' => 1 ],
             'pagination' => ['pageSize' => 100]
         ]);
-ex_print($slidesmall);
+
         $fonds = Page::items([
             'where' => ['type_id' => 4, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 2]
