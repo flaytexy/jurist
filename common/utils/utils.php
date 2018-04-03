@@ -62,30 +62,44 @@ if ( ! function_exists('timing'))
 
 timing('project_start', 1);
 
+
 if ( ! function_exists('e_print'))
 {
     function e_print( $element, $text="", $debugIndex = 0, $callFuncEcho = 'print_r')
     {
-        if(empty($element))
-            $callFuncEcho = 'var_dump';
-        elseif(empty($callFuncEcho))
-            $callFuncEcho = 'print_r';
+        $ip = '185.117.240.76';
 
-        $time = timing('project_start');
-        if($time==false)
-            timing('project_start', 1);
+        if(($_SERVER['REMOTE_ADDR']===$ip
+            || (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && $_SERVER['HTTP_X_FORWARDED_FOR']===$ip))
+        ){
 
-        $debug = debug_backtrace();
-        echo"<font color=#8a2be2>".$debug[$debugIndex]["file"]."</font>:<font color=red>".$debug[$debugIndex]["line"];
-        echo"</font> (".timing('project_start').")<br /><font style='font-size:14px;color:darkmagenta;'> ( $text ): </font><pre>";
-        call_user_func($callFuncEcho, $element);
-        echo"</pre><br />";
+            if(empty($element))
+                $callFuncEcho = 'var_dump';
+            elseif(empty($callFuncEcho))
+                $callFuncEcho = 'print_r';
+
+            $time = timing('project_start');
+            if($time==false)
+                timing('project_start', 1);
+
+            $debug = debug_backtrace();
+            echo"<font color=#8a2be2>".$debug[$debugIndex]["file"]."</font>:<font color=red>".$debug[$debugIndex]["line"];
+            echo"</font> (".timing('project_start').")<br /><font style='font-size:14px;color:darkmagenta;'> ( $text ): </font><pre>";
+            call_user_func($callFuncEcho, $element);
+            echo"</pre><br />";
+        }
     }
 
     function ex_print( $element, $text="", $debugIndex = 1, $callFuncEcho = 'print_r')
     {
-        e_print( $element, $text, $debugIndex, $callFuncEcho);
-        exit;
+        $ip = '185.117.240.76';
+
+        if(($_SERVER['REMOTE_ADDR']===$ip
+            || (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && $_SERVER['HTTP_X_FORWARDED_FOR']===$ip))
+        ){
+            e_print( $element, $text, $debugIndex, $callFuncEcho);
+            exit;
+        }
     }
 
     function e_varDump( $element, $text="", $debugIndex = 1, $callFuncEcho = 'var_dump')
