@@ -58,7 +58,7 @@ class Banks extends \frontend\components\ActiveRecord
             ],
             ['location_zone_id', 'integer', 'max' => 99],
 
-            [['views', 'time', 'status', 'type_id'], 'integer'],
+            [['views', 'time', 'status', 'type_id', 'rating', 'rating_to_main'], 'integer'],
             ['time', 'default', 'value' => time()],
             ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],

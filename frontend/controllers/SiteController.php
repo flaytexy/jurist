@@ -154,8 +154,8 @@ class SiteController extends Controller
         ]);
 
         $banks = Banks::items([
-            'where' => ['to_main' => 1, 'status' => 1],
-            'pagination' => ['pageSize' => 10]
+            'pagination' => ['pageSize' => 7],
+            'orderBy' => ['rating_to_main'=>SORT_DESC, 'title' => SORT_ASC]
         ]);
 
 

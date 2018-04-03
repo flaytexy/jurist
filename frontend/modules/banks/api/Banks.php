@@ -38,7 +38,7 @@ class Banks extends \frontend\components\API
     {
         //e_print('api_items_start');
 
-        $key = md5(serialize($options)).'44';
+        $key = md5(serialize($options)).'4443addasdsaddsa2daadsdadaqwe';
         $cache = Yii::$app->cache;
         //e_print('get0');
         $this->_items = $cache->get($key.'_items');
@@ -120,7 +120,8 @@ class Banks extends \frontend\components\API
             } elseif (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
             } else {
-                $query->sortDate();
+                //$query->sortDate();
+                $query->orderBy(['rating'=>SORT_DESC, 'title' => SORT_ASC]);
             }
 
             $this->_adp = new ActiveDataProvider([

@@ -14,6 +14,7 @@ use dosamigos\ckeditor\CKEditorInline;
 use mihaildev\elfinder\ElFinder;
 
 $module = $this->context->module->id;
+
 ?>
 <?php $form = ActiveForm::begin([
     'enableAjaxValidation' => true,
@@ -35,7 +36,9 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'website') ?>
 <?= $form->field($model, 'min_deposit') ?>
 <hr/>
-<?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
+<?/*= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) */?>
+<?= $form->field($model, 'rating') ?>
+<?= $form->field($model, 'rating_to_main') ?>
 <hr/>
 <?= $form->field($model, 'location_zone_id')->dropDownList([
     '0'  => 'Не выбрано',

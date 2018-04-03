@@ -47,7 +47,8 @@ class NewsController extends \yii\web\Controller
         $query->select('*')
             ->from('easyii_banks as ba')
             ->where("ba.status = '1' ")
-            ->orderBy(['views'=> SORT_DESC])
+            //->orderBy(['views'=> SORT_DESC])
+            ->orderBy(['rating'=>SORT_DESC, 'title' => SORT_ASC])
             ->limit(2);
         $command = $query->createCommand();
         $topBanks = $command->queryAll();
@@ -140,7 +141,8 @@ class NewsController extends \yii\web\Controller
         $query->select('*')
             ->from('easyii_banks as ba')
             ->where("ba.status = '1' ")
-            ->orderBy(['views'=> SORT_DESC])
+            //->orderBy(['views'=> SORT_DESC])
+            ->orderBy(['rating'=>SORT_DESC, 'title' => SORT_ASC])
             ->limit(2);
         $command = $query->createCommand();
         $topBanks = $command->queryAll();
