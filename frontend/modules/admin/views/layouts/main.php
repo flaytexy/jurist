@@ -35,6 +35,10 @@ $moduleName = $this->context->module->id;
             </div>
             <div class="main">
                 <div class="box sidebar">
+                    <a href="<?= Url::to(['/admin/slidemain']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'slidesmall') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Слайдер (верхний)
+                    </a>
                     <a href="<?= Url::to(['/admin/tickers']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'tickers') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         Бегущая строка
