@@ -38,7 +38,7 @@ class Slidemain extends \frontend\components\API
     {
         //e_print('api_items_start');
 
-        $key = md5(serialize($options)).'44552fds';
+        $key = md5(serialize($options)).'44sda5asd52fds';
         $cache = Yii::$app->cache;
         //e_print('get0');
         $this->_items = $cache->get($key.'_items');

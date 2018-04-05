@@ -42,10 +42,11 @@ class Slidemain extends \frontend\components\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'title_en', 'text', 'text_en'], 'required'],
+            [['title', 'title_en', 'text', 'text_en', 'short', 'short_en'], 'required'],
             [['title', 'title_en'], 'string', 'max' => 128],
-            [['url'], 'string', 'max' => 512],
-            [['title','title_en', 'text', 'text_en', 'url'], 'trim']
+            [['url', 'short', 'short_en', 'pre_text', 'pre_text_en'], 'string', 'max' => 512],
+            [['title','title_en', 'text', 'text_en', 'url', 'short', 'short_en'], 'trim'],
+            ['image', 'image', 'extensions' => 'png, jpg, gif'],
         ];
 
 //        return [
@@ -94,6 +95,8 @@ class Slidemain extends \frontend\components\ActiveRecord
             'tagNames' => Yii::t('easyii', 'Tags'),
             'location_title' => Yii::t('easyii/slidemain', 'Страна'),
             'Personal' => Yii::t('easyii/slidemain', 'Пприсутствие'),
+            'pre_text' => Yii::t('easyii', 'Alt текст для картинки'),
+            'pre_text_en' => Yii::t('easyii', 'Alt текст для картинки (EN)'),
         ];
     }
 

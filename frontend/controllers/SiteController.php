@@ -5,6 +5,7 @@ use frontend\models\Popularly;
 use frontend\models\Setting;
 use frontend\modules\banks\api\Banks;
 use frontend\modules\page\api\Page;
+use frontend\modules\slidemain\api\Slidemain;
 use frontend\modules\slidesmall\api\Slidesmall;
 use frontend\modules\tickers\api\Tickers;
 use Yii;
@@ -164,10 +165,17 @@ class SiteController extends Controller
             'pagination' => ['pageSize' => 100]
         ]);
 
-        $slidesmall = Slidesmall::items([
+        $slideSmall = Slidesmall::items([
             'where' => [ 'status' => 1 ],
             'pagination' => ['pageSize' => 100]
         ]);
+
+        $slideMain = Slidemain::items([
+            'where' => [ 'status' => 1 ],
+            'pagination' => ['pageSize' => 100]
+        ]);
+
+        ex_print($slideMain);
 
         $fonds = Page::items([
             'where' => ['type_id' => 4, 'to_main' => 1, 'status' => 1],
@@ -186,7 +194,8 @@ class SiteController extends Controller
             'fonds' => $fonds,
             'banks' => $banks,
             'ticker_viewport' => $ticker_viewport,
-            'slidesmall' => $slidesmall,
+            'slide_small' => $slideSmall,
+            'slide_main' => $slideMain,
             'sale' => $sale
         ]);
     }

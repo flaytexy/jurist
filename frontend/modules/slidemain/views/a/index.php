@@ -2,6 +2,7 @@
 use frontend\modules\slidemain\models\Slidemain;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use frontend\helpers\Image;
 
 $this->title = Yii::t('easyii/slidemain', 'Slidemain');
 
@@ -14,11 +15,11 @@ $module = $this->context->module->id;
     <table class="table table-hover">
         <thead>
             <tr>
+                <th width="150">Img</th>
                 <?php if(IS_ROOT) : ?>
                     <th width="50">#</th>
                 <?php endif; ?>
                 <th><?= Yii::t('easyii', 'Title') ?></th>
-                <th width="120"><?= Yii::t('easyii', 'Views') ?></th>
                 <th width="100"><?= Yii::t('easyii', 'Status') ?></th>
                 <th width="120"></th>
             </tr>
@@ -26,11 +27,18 @@ $module = $this->context->module->id;
         <tbody>
     <?php foreach($data->models as $item) : ?>
             <tr data-id="<?= $item->primaryKey ?>">
+                <td>
+                    <?php if($item->image) : ?>
+                    <img src="<?= Image::thumb($item->image, 120) ?>">
+                    <?php endif; ?>
+                </td>
                 <?php if(IS_ROOT) : ?>
                     <td><?= $item->primaryKey ?></td>
                 <?php endif; ?>
-                <td><a href="<?= Url::to(['/admin/'.$module.'/a/edit/', 'id' => $item->primaryKey]) ?>"><?= $item->title ?></a></td>
-                <td><?= $item->views ?></td>
+                <td><a href="<?= Url::to(['/admin/'.$module.'/a/edit/', 'id' => $item->primaryKey]) ?>"><?= $item->title ?></a>
+                <br /><?= $item->short ?>
+                </td>
+
                 <td class="status">
                     <?= Html::checkbox('', $item->status == Slidemain::STATUS_ON, [
                         'class' => 'switch',

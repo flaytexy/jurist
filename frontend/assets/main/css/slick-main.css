@@ -186,7 +186,7 @@
 #Slider-Main .item.slick-active .zg5, #Slider-Main .item.slick-active .anim2 {
     animation:fadeInLeft 1s both 1.5s;
 }
-#Slider-Main .item.slick-active.blo .zg5, #Slider-Main .item.slick-active.blo .anim2 {
+#Slider-Main .item.slick-active.blo1 .zg5, #Slider-Main .item.slick-active.blo1 .anim2 {
     animation:fadeInDown 1s both 1.5s;
 }
 
@@ -198,7 +198,7 @@
 #Slider-Main .item.slick-active .anim3 {
     animation:fadeInLeft 1s both 2s;
 }
-#Slider-Main .item.slick-active.blo .anim3 {
+#Slider-Main .item.slick-active.blo1 .anim3 {
     animation:fadeInUp 1s both 1.5s;
 }
 
@@ -238,7 +238,7 @@
     -webkit-animation: Slick-FastSwipeIn 2s both;
     animation: Slick-FastSwipeIn 2s both;
 }
-#Slider-Main .item.slick-active.blo, .lightSpeedIn {
+#Slider-Main .item.slick-active.blo1, .lightSpeedIn {
     -webkit-animation-name: lightSpeedIn;
     animation-name: lightSpeedIn;
     -webkit-animation-timing-function: ease-out;
