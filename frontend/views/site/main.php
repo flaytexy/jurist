@@ -13,7 +13,7 @@ $iteration = 1;
         <div class="block no-padding">
             <div class="row">
                 <div class="col-md-12">
-                    <div id="Slider-Main" class="">
+                    <div id="Slider-Main" class="" style="display: none">
                         <? foreach ($slide_main as $item): ?>
                             <div class="item blo<?php $div = ($iteration % 2); echo"$div"; ?> ">
                                 <div class="img-fill-main">
