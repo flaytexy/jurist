@@ -7,6 +7,7 @@ class MainAsset extends \yii\web\AssetBundle
     public $css = [
         'css/revolution.css?v=2017-02-01-v01',
         'css/main.css?v=2017-02-01-v01',
+        'css/slick-main.css?v=2017-02-01-v01',
         //'css/perfect-scrollbar.css'
     ];
     public $js = [

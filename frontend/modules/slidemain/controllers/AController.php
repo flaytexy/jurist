@@ -1,5 +1,5 @@
 <?php
-namespace frontend\modules\slidesmall\controllers;
+namespace frontend\modules\slidemain\controllers;
 
 
 use Yii;
@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 use yii\web\UploadedFile;
 
 use frontend\components\Controller;
-use frontend\modules\slidesmall\models\Slidesmall;
+use frontend\modules\slidemain\models\Slidemain;
 use frontend\helpers\Image;
 use frontend\behaviors\StatusController;
 
@@ -20,11 +20,11 @@ class AController extends Controller
         return [
             [
                 'class' => SortableDateController::className(),
-                'model' => Slidesmall::className(),
+                'model' => Slidemain::className(),
             ],
             [
                 'class' => StatusController::className(),
-                'model' => Slidesmall::className()
+                'model' => Slidemain::className()
             ]
         ];
     }
@@ -32,7 +32,7 @@ class AController extends Controller
     public function actionIndex()
     {
         $data = new ActiveDataProvider([
-            'query' => Slidesmall::find(), //location_title
+            'query' => Slidemain::find(), //location_title
             'pagination' => [
                 'pageSize' => 100,
             ],
@@ -45,7 +45,7 @@ class AController extends Controller
 
     public function actionCreate()
     {
-        $model = new Slidesmall;
+        $model = new Slidemain;
         $model->time = time();
 
         if ($model->load(Yii::$app->request->post())) {
@@ -57,7 +57,7 @@ class AController extends Controller
                 if(isset($_FILES) && $this->module->settings['enableThumb']){
                     $model->image = UploadedFile::getInstance($model, 'image');
                     if($model->image && $model->validate(['image'])){
-                        $model->image = Image::upload($model->image, 'slidesmall');
+                        $model->image = Image::upload($model->image, 'slidemain');
                     }
                     else{
                         $model->image = '';
@@ -65,7 +65,7 @@ class AController extends Controller
 
                     $model->image_flag = UploadedFile::getInstance($model, 'image_flag');
                     if($model->image_flag && $model->validate(['image_flag'])){
-                        $model->image_flag = Image::upload($model->image_flag, 'slidesmall');
+                        $model->image_flag = Image::upload($model->image_flag, 'slidemain');
                     }
                     else{
                         $model->image_flag = '';
@@ -73,9 +73,9 @@ class AController extends Controller
                 }
 
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/slidesmall', 'Slidesmall created: '. $model->slide_small_id));
+                    $this->flash('success', Yii::t('easyii/slidemain', 'Slidemain created: '. $model->slide_main_id));
                     //return $this->redirect(['/admin/'.$this->module->id]);
-                    return $this->redirect(['/admin/'.$this->module->id.'/a/edit/'.$model->slide_small_id]);
+                    return $this->redirect(['/admin/'.$this->module->id.'/a/edit/'.$model->slide_main_id]);
                 }
                 else{
                     $this->flash('error', Yii::t('easyii', 'Create error. {0}', $model->formatErrors()));
@@ -93,7 +93,7 @@ class AController extends Controller
     public function actionEdit($id)
     {
 
-        $model = Slidesmall::findOne($id);
+        $model = Slidemain::findOne($id);
 
         if($model === null){
             $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
@@ -111,7 +111,7 @@ class AController extends Controller
                 if(isset($_FILES) && $this->module->settings['enableThumb']){
                     $model->image = UploadedFile::getInstance($model, 'image');
                     if($model->image && $model->validate(['image'])){
-                        $model->image = Image::upload($model->image, 'slidesmall');
+                        $model->image = Image::upload($model->image, 'slidemain');
                     }
                     else{
                         $model->image = $model->oldAttributes['image'];
@@ -120,7 +120,7 @@ class AController extends Controller
                     $model->image_flag = UploadedFile::getInstance($model, 'image_flag');
 
                     if($model->image_flag && $model->validate(['image_flag'])){
-                        $model->image_flag = Image::upload($model->image_flag, 'slidesmall');
+                        $model->image_flag = Image::upload($model->image_flag, 'slidemain');
                     }
                     else{
                         $model->image_flag = $model->oldAttributes['image_flag'];
@@ -129,7 +129,7 @@ class AController extends Controller
 
 
                 if($model->save()){
-                    $this->flash('success', Yii::t('easyii/slidesmall', 'Slidesmall updated'));
+                    $this->flash('success', Yii::t('easyii/slidemain', 'Slidemain updated'));
                 }
                 else{
                     $this->flash('error', Yii::t('easyii', 'Update error. {0}', $model->formatErrors()));
@@ -146,7 +146,7 @@ class AController extends Controller
 
     public function actionPhotos($id)
     {
-        if(!($model = Slidesmall::findOne($id))){
+        if(!($model = Slidemain::findOne($id))){
             return $this->redirect(['/admin/'.$this->module->id]);
         }
 
@@ -158,7 +158,7 @@ class AController extends Controller
     public function actionPackets($id)
     {
 
-        if(!($model = Slidesmall::findOne($id))){
+        if(!($model = Slidemain::findOne($id))){
             return $this->redirect(['/admin/'.$this->module->id]);
         }
 
@@ -169,17 +169,17 @@ class AController extends Controller
 
     public function actionDelete($id)
     {
-        if(($model = Slidesmall::findOne($id))){
+        if(($model = Slidemain::findOne($id))){
             $model->delete();
         } else {
             $this->error = Yii::t('easyii', 'Houston, we have a problem');
         }
-        return $this->formatResponse(Yii::t('easyii/slidesmall', 'Slidesmall deleted'));
+        return $this->formatResponse(Yii::t('easyii/slidemain', 'Slidemain deleted'));
     }
 
     public function actionClearImage($id)
     {
-        $model = Slidesmall::findOne($id);
+        $model = Slidemain::findOne($id);
 
         if($model === null){
             $this->flash('error', Yii::t('easyii', 'Houston, we have a problem'));
@@ -208,11 +208,11 @@ class AController extends Controller
 
     public function actionOn($id)
     {
-        return $this->changeStatus($id, Slidesmall::STATUS_ON);
+        return $this->changeStatus($id, Slidemain::STATUS_ON);
     }
 
     public function actionOff($id)
     {
-        return $this->changeStatus($id, Slidesmall::STATUS_OFF);
+        return $this->changeStatus($id, Slidemain::STATUS_OFF);
     }
 }

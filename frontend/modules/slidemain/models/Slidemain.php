@@ -1,5 +1,5 @@
 <?php
-namespace frontend\modules\slidesmall\models;
+namespace frontend\modules\slidemain\models;
 
 use common\behaviors\CountriesBehavior;
 use common\models\country\CountryAssign;
@@ -22,9 +22,9 @@ use yii\helpers\StringHelper;
  * @property $countries
  * @property $properties
  * @property $country
- * @property $slide_small_id
+ * @property $slide_main_id
  */
-class Slidesmall extends \frontend\components\ActiveRecord
+class Slidemain extends \frontend\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
@@ -36,7 +36,7 @@ class Slidesmall extends \frontend\components\ActiveRecord
 
     public static function tableName()
     {
-        return 'easyii_slidesmall';
+        return 'easyii_slidemain';
     }
 
     public function rules()
@@ -83,17 +83,17 @@ class Slidesmall extends \frontend\components\ActiveRecord
             'title' => Yii::t('easyii', 'Title'),
             'type_id' => Yii::t('easyii', 'Тип'),
             'text' => Yii::t('easyii', 'Text'),
-            'short' => Yii::t('easyii/slidesmall', 'Short'),
-            'to_main' => Yii::t('easyii/slidesmall', 'На главную'),
-            'price' => Yii::t('easyii/slidesmall', 'Цена'),
-            'how_days' => Yii::t('easyii/slidesmall', 'Дней'),
+            'short' => Yii::t('easyii/slidemain', 'Short'),
+            'to_main' => Yii::t('easyii/slidemain', 'На главную'),
+            'price' => Yii::t('easyii/slidemain', 'Цена'),
+            'how_days' => Yii::t('easyii/slidemain', 'Дней'),
             'image' => Yii::t('easyii', 'Image'),
             'time' => Yii::t('easyii', 'Date'),
             'slug' => Yii::t('easyii', 'Slug'),
             'optionNames' => Yii::t('easyii', 'Options'),
             'tagNames' => Yii::t('easyii', 'Tags'),
-            'location_title' => Yii::t('easyii/slidesmall', 'Страна'),
-            'Personal' => Yii::t('easyii/slidesmall', 'Пприсутствие'),
+            'location_title' => Yii::t('easyii/slidemain', 'Страна'),
+            'Personal' => Yii::t('easyii/slidemain', 'Пприсутствие'),
         ];
     }
 
@@ -139,7 +139,7 @@ class Slidesmall extends \frontend\components\ActiveRecord
                 $this->min_deposit = '0.00';
             }
 
-            $settings = Yii::$app->getModule('admin')->activeModules['slidesmall']->settings;
+            $settings = Yii::$app->getModule('admin')->activeModules['slidemain']->settings;
             $this->short = StringHelper::truncate($settings['enableShort'] ? $this->short : strip_tags($this->text), $settings['shortMaxLength']);
 
             if (!$insert && $this->image != $this->oldAttributes['image'] && $this->oldAttributes['image']) {
@@ -178,9 +178,9 @@ class Slidesmall extends \frontend\components\ActiveRecord
     public function getProperties()
     {
         return $this->hasMany(Option::className(), ['option_id' => 'option_id'])
-            ->viaTable(OptionAssign::tableName(), ['item_id' => 'slide_small_id'], function ($query) {
+            ->viaTable(OptionAssign::tableName(), ['item_id' => 'slide_main_id'], function ($query) {
                 /* @var $query \yii\db\ActiveQuery */
-                $query->andWhere([OptionAssign::tableName() .'.class' => Slidesmall::className()]);
+                $query->andWhere([OptionAssign::tableName() .'.class' => Slidemain::className()]);
             });
     }
 
