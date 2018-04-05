@@ -175,7 +175,7 @@ class SiteController extends Controller
             'pagination' => ['pageSize' => 100]
         ]);
 
-        ex_print($slideMain);
+        //ex_print($slideMain);
 
         $fonds = Page::items([
             'where' => ['type_id' => 4, 'to_main' => 1, 'status' => 1],
