@@ -2799,6 +2799,10 @@ ul.simlist > li:before, div.simlistdiv ul > li:before {
     margin-bottom: 7px;
     line-height: 22px;
 }
+#faq-content div.toggle ul > li > strong, #faq-content div.toggle ol > li > strong {
+  font-size: 15px;
+}
+
 
 /*=============== Recent News ===============*/
 .recent-news h2 > a {
