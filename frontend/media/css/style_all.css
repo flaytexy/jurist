@@ -14557,6 +14557,10 @@ ul.simlist > li:before, div.simlistdiv ul > li:before {
 }
 
 
+/*=============== FAQ ===============*/
+#faq-content ul li {
+    margin-bottom: 3px;
+}
 
 /*=============== Recent News ===============*/
 .recent-news h2 > a {

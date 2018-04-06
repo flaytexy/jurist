@@ -22,6 +22,8 @@ class Faq extends \frontend\components\API
             foreach(FaqModel::find()->select(['faq_id', 'question', 'answer'])->status(FaqModel::STATUS_ON)->sort()->all() as $item){
                 $items[] = new FaqObject($item);
             }
+
+            //ex_print($items);
             return $items;
         //});
     }
