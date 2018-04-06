@@ -5,9 +5,9 @@ class MainAsset extends \yii\web\AssetBundle
 {
     public $sourcePath = '@frontend/assets/main';
     public $css = [
-        'css/revolution.css?v=2017-02-01-v01',
-        'css/main.css?v=2017-02-01-v01',
-        'css/slick-main.css?v=2017-02-01-v01',
+        'css/revolution.css?v=2017-04-06-v01',
+        'css/main.css?v=2017-02-06-v01',
+        'css/slick-main.css?v=2017-04-06-v01',
         //'css/perfect-scrollbar.css'
     ];
     public $js = [

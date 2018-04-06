@@ -240,10 +240,6 @@
     padding: 6px;
 }
 
-.bdanzer-card p {
-    text-align: left;
-}
-
 .bdanzer-card img {
     border-bottom: 3px solid #7DC20F;
     width: 100%;
@@ -253,7 +249,9 @@
 .bdanzer-card p {
     padding: 0 18px 20px;
 }
-
+.bdanzer-card div > p {
+    text-align: left;
+}
 /* ==== Slider Style === */
 .Modern-Slider .item .img-fill {
     /* height:100vh;*/
