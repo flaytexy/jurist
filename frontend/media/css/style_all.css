@@ -14559,7 +14559,8 @@ ul.simlist > li:before, div.simlistdiv ul > li:before {
 
 /*=============== FAQ ===============*/
 #faq-content div.toggle ul > li, #faq-content div.toggle ol > li {
-    margin-bottom: 3px;
+    margin-bottom: 5px;
+    line-height: 21px;
 }
 
 /*=============== Recent News ===============*/
