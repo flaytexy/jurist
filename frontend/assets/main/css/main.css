@@ -237,6 +237,11 @@
     text-align: center;
     margin: 10px -7px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+    padding: 6px;
+}
+
+.bdanzer-card p {
+    text-align: left;
 }
 
 .bdanzer-card img {
