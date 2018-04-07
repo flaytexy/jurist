@@ -51,7 +51,7 @@ class BanksController extends \yii\web\Controller
         //e_print('$banksList');
         $banksList = Banks::items([
             'tags' => $tag,
-            'pagination' => ['pageSize' => 6],
+            'pagination' => ['pageSize' => 30],
             'page'=> $page
         ]);
         //e_print('$banksList_end');
