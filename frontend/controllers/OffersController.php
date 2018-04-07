@@ -28,7 +28,12 @@ class OffersController extends \yii\web\Controller
             $data['latLng'] = [$cords[0],$cords[1]];
             $data['name'] = $offer->title;
             $data['weburl'] = 'b_' . $offer->model->offer_id;
-            $data['offsets'] = [$cords[2],$cords[3]];
+
+            $offsetX = isset($cords[2]) ?  $cords[2] : 0;
+            $offsetY = isset($cords[3]) ?  $cords[3] : 0;
+            $data['offsets'] = array($offsetX,$offsetY);
+            //$data['offsets'] = [$cords[2],$cords[3]];
+
             $markers[] = $data;
         }
 
