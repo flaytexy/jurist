@@ -13,6 +13,7 @@ class BanksAsset extends \yii\web\AssetBundle
     ];
     public $js = [
         'js/banks.js',
+        //'//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'
     ];
     public $depends = [
         'frontend\assets\TablesAsset',

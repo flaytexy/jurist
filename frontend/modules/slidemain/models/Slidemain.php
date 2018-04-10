@@ -42,10 +42,10 @@ class Slidemain extends \frontend\components\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'title_en', 'text', 'text_en', 'short', 'short_en'], 'required'],
+            //[['title', 'title_en', 'text', 'text_en', 'short', 'short_en'], 'required'],
             [['title', 'title_en'], 'string', 'max' => 128],
             [['url', 'short', 'short_en', 'pre_text', 'pre_text_en'], 'string', 'max' => 512],
-            [['title','title_en', 'text', 'text_en', 'url', 'short', 'short_en'], 'trim'],
+            [['title', 'title_en', 'text', 'text_en', 'short', 'short_en', 'url'], 'trim'],
             ['image', 'image', 'extensions' => 'png, jpg, gif'],
         ];
 

@@ -22,7 +22,7 @@ $iteration = 1;
                                     <div class="info">
                                         <div>
                                             <!-- LAYER NR. 1 -->
-                                            <div class="slimain sli-01-01 anim1"
+                                            <div class="slimain slick-div1 sli-01-01 anim1"
                                                  data-x="center" data-hoffset=""
                                                  data-y="70" data-voffset=""
                                                  data-width="['auto','auto','auto','auto']"
@@ -37,7 +37,7 @@ $iteration = 1;
                                                  data-responsive_offset="on"
                                                  data-elementdelay="0.05"
                                                  onclick="location.href='<?= $item->model->url ?>'"
-                                                 style="font-size:50px;color:#fff;font-family:poppins;font-weight:300;letter-spacing:.3px;">
+                                                 style="">
                                                 <? if ( Yii::$app->language==='en-EN'): ?>
                                                     <?=  $item->model->title_en ?>
                                                 <? else: ?>
@@ -46,7 +46,7 @@ $iteration = 1;
                                             </div>
 
                                             <!-- LAYER NR. 2 -->
-                                            <div class="slimain sli-01-02 anim2"
+                                            <div class="slimain slick-div2 sli-01-02 anim2"
                                                  data-x="center" data-hoffset=""
                                                  data-y="143" data-voffset=""
                                                  data-width="['auto','auto','auto','auto']"
@@ -61,7 +61,7 @@ $iteration = 1;
                                                  data-responsive_offset="on"
                                                  data-elementdelay="0.05"
                                                  onclick="location.href='<?= $item->model->url ?>'"
-                                                 style="font-size:30px;color:#fff;font-family:poppins;font-weight:700;letter-spacing:.3px;">
+                                                 style="">
                                             <span>
                                             <? if ( Yii::$app->language==='en-EN'): ?>
                                                 <?=  $item->model->short_en ?>
@@ -72,7 +72,7 @@ $iteration = 1;
                                             </div>
 
                                             <!-- LAYER NR. 3 -->
-                                            <p class="slimain sli-01-01 anim3"
+                                            <p class="slimain slick-div3 sli-01-01 anim3"
                                                data-x="center" data-hoffset=""
                                                data-y="197" data-voffset=""
                                                data-width="['auto','auto','auto','auto']"
@@ -87,7 +87,7 @@ $iteration = 1;
                                                data-responsive_offset="on"
                                                data-elementdelay="0.05"
                                                onclick="location.href='<?= $item->model->url ?>'"
-                                               style="font-size:16px;color:#eeeeee;font-family:poppins;font-weight:300;letter-spacing:.3px;">
+                                               style="">
                                                 <? if ( Yii::$app->language==='en-EN'): ?>
                                                     <?=  $item->model->text_en ?>
                                                 <? else: ?>

@@ -68,6 +68,22 @@
 #Slider-Main .item .img-fill-main .info .slimain > span {
     color: #7dc20f;
 }
+
+#Slider-Main .item .img-fill-main .info .slimain {
+    color:#fff;font-family:"poppins", sans-serif;font-weight:300;letter-spacing:.3px;
+}
+.slick-div1 {
+    font-size:46px;
+
+}
+.slick-div2 {
+    font-size:30px;
+
+}
+.slick-div3 {
+    font-size:22px;
+}
+
 #Slider-Main .item .img-fill-main .item-img{
 /*    filter:blur(5px);*/
     width: 100%;

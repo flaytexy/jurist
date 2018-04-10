@@ -97,74 +97,26 @@ $this->params['breadcrumbs'][] = $page->model->title;
     <section id="banks2" class="scroll-container">
         <div class="container">
             <div class="row top30">
-                <form>
-                    <!--
-              <div class="col-md-6 text-center">
-                  <h4>С посещением банка?</h4>
-                  <ul class="list-inline" id="sw-list">
-                      <li>
-                          <select class="switcherSelect" name="switchName2" js-filter="js-filter-personal">
-                              <option value="2">Все</option>
-                              <option value="1">С посещением банка</option>
-                              <option value="0">Без посещения</option>
-                          </select>
-                      </li>
-                  </ul>
-              </div>
-        -->
-              <div class="col-md-6 text-center">
-                  <h4>С посещением банка?</h4>
-                  <ul class="list-inline" id="sw-list">
-                      <li>Нет</li>    <li class="">
-                          <div class="switcher">
-                              <input  value="0" class="switch" js-filter="js-filter-personal" name="switchName2"
-                                      type="checkbox"/>
-                          </div>
-                      </li> <li>Да</li>
-                  </ul>
-              </div>
-                    <div class="col-md-6 text-center">
-                        <h4>С минимальным депозитом?</h4>
-                        <ul class="list-inline" id="sw-list">
-                            <li>Нет</li>  <li class="">
-                                <div class="switcher">
-                                    <input value="0" class="switch" js-filter="js-filter-min-deposit" js-filter-switch-only="1" name="switchName3"
-                                           type="checkbox"/>
-                                </div>
-                            </li><li>Да</li>
-                        </ul>
-                    </div>
-<!--                    <div class="col-md-4">
-                        <ul class="list-inline" id="sw-list">
-                            <li class="listcenter">Только личный счет?</li>
-                            <li>Нет</li> <li class="">
-                                <div class="switcher">
-                                    <input value="0" class="switch" js-filter="js-filter-type-id" name="switchName"
-                                           type="checkbox"/>
-                                </div>
-                            </li>
-                            <li>Да</li>
-                        </ul>
-                    </div>-->
-                </form>
+
             </div>
 
             <div class="row bank-new-list top20">
                 <div class="col-md-12" id="switchAllBanks">
+                    <table id="example" class="display" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Имя</th>
+                            <th>С посещением банка</th>
+                            <th>Цена</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
                     <?php if ($items): ?>
                         <?php foreach ($items as $item) : ?>
-                        <? if($region_name != $item->model->region_name && $item->model->region_name != 'Polar: Arctic' /*&&  $item->model->region_name!=false*/ ): ?>
-                            <?php $region_name = $item->model->region_name; ?>
-                            <div class='h4 top20 region-id-mark' id="reg_<?= $item->model->region_id ?>"><?= $region_name ?></div>
-                        <? endif ?>
-                        <table data-region-assign="reg_<?= $item->model->region_id ?>"
-                               class="table reg_<?= $item->model->region_id ?> table-bordered <?= $item->model->type_id ?>_<?= $item->model->personal ?>_<?= $item->model->min_deposit ?>"
-                            <? if ($item->model->type_id !== 1): ?> js-filter-type-id="1" <? else: ?> js-filter-type-id="0" <? endif; ?>
-                            <? if ($item->model->personal === 1): ?> js-filter-personal="1" <? else: ?> js-filter-personal="0" <? endif; ?>
-                            <? if ($item->model->min_deposit > 0): ?> js-filter-min-deposit="1" <? else: ?> js-filter-min-deposit="0" <? endif; ?>
-                        >
                             <tr>
-                                <td class="col-md-8 col-lg-2">
+                                <td data-order="<?= $item->title ?>" class="col-md-8 col-lg-2">
                                     <h6>
                                         <?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?>
                                     </h6>
@@ -179,7 +131,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         </div>
                                     </div>
                                 </td>
-                                <td class="hidden-xs hidden-sm hidden-md  col-lg-8">
+                                <td data-order="<?= $item->model->personal ?>" class="hidden-xs hidden-sm hidden-md  col-lg-8">
                                     <table class="table border-none tBankLi">
                                         <tr>
                                             <td>
@@ -237,7 +189,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         </tr>
                                     </table>
                                 </td>
-                                <td class="col-md-4 col-lg-2 bg-green-price">
+                                <td data-order="<?= $item->price ?>" class="col-md-4 col-lg-2 bg-green-price">
                                     <div class="h6 text-center">
                                         <span>Цена</span>
                                     </div>
@@ -251,9 +203,18 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     </div>
                                 </td>
                             </tr>
-                        </table>
                     <? endforeach; ?>
                     <? endif; ?>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+
+                        </tr>
+                        </tfoot>
+                    </table>
                 </div>
             </div>
         </div>
@@ -317,3 +278,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 <?php //$this->endCache(); ?>
 <?php //endif; ?>
+
+
+<!--<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/autofill/2.2.2/js/dataTables.autoFill.min.js"></script>-->
