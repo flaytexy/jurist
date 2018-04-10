@@ -16,9 +16,9 @@ class BanksAsset extends \yii\web\AssetBundle
         //'//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'
     ];
     public $depends = [
-        'frontend\assets\TablesAsset',
-        'akavov\countries\assets\CountriesAsset',
-        'frontend\assets\SwitcherAsset',
         'frontend\assets\AppAsset',
+        'akavov\countries\assets\CountriesAsset',
+        /*'frontend\assets\SwitcherAsset',*/
+        'frontend\assets\TablesAsset',
     ];
 }
