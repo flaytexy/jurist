@@ -107,7 +107,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
             <div class="row bank-new-list top20">
                 <div class="col-md-12" id="switchAllBanks">
-                    <table id="example" class="table bordered display" style="width:100%">
+                    <table id="example" class="table table-bordered display" style="width:100%">
                         <thead>
                         <tr>
                             <th>Имя</th>
