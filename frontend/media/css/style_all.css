@@ -17411,11 +17411,11 @@ input.gsc-search-button-v2:hover {
 }
 
 #switchAllBanks .table-bordered {
-    border: 2px solid #dddddd;
+    border: 2px solid #dddddd !important;
 }
 
 #switchAllBanks .table-bordered > tbody > tr > td {
-    border: 2px solid #dddddd;
+    border: 2px solid #dddddd !important;
 }
 
 .bank-new-list td > h6 {

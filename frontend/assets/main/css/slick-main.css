@@ -254,7 +254,12 @@
     -webkit-animation: Slick-FastSwipeIn 2s both;
     animation: Slick-FastSwipeIn 2s both;
 }
-#Slider-Main .item.slick-active.blo1, .lightSpeedIn {
+#Slider-Main .item.slick-active.blo1{
+    -webkit-animation: fadeInDown 2s both;
+    animation:fadeInDown both 2s;
+}
+
+.lightSpeedIn {
     -webkit-animation-name: lightSpeedIn;
     animation-name: lightSpeedIn;
     -webkit-animation-timing-function: ease-out;
