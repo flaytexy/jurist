@@ -5646,7 +5646,9 @@ input.gsc-search-button-v2:hover {
 #switchAllBanks .bg-green-price {
     background-color: rgba(237, 253, 208, 0.62);
 }
-
+#switchAllBanks .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border-bottom-width: 0;
+}
 #switchAllBanks .table-bordered {
 /*    border: 2px solid #dddddd;*/
 }
