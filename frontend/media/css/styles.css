@@ -5652,7 +5652,7 @@ input.gsc-search-button-v2:hover {
 }
 
 #switchAllBanks .table-bordered > tbody > tr > td {
-    border: 2px solid #dddddd;
+ /*   border: 2px solid #dddddd;*/
 }
 
 .bank-new-list td > h6 {
