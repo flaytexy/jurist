@@ -100,7 +100,7 @@ $(document).ready(function() {
         "paging": false,
         "aaSorting": []
     })
-    .attr("placeholder", "enter seach terms here");
+    $('#example_filter input[type="search"]').attr("placeholder", "Имя, страна, срок и т.д.");
 
 } );
 

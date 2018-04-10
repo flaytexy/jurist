@@ -83,6 +83,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
             border-style: solid;
             border-color: transparent;
         }
+
+        .dataTables_wrapper .dataTables_filter input::placeholder {
+            color: #d6d6d6;
+            font-size: 13px;
+        }
     </style>
 
 <?php /*if ($this->beginCache(md5(serialize(Yii::$app->request->get())), ['duration' => 700])) : */?>
