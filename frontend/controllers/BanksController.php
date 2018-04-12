@@ -36,11 +36,11 @@ class BanksController extends \yii\web\Controller
 
         $this->getView()->registerJs(
             "
-                $('#sw-list input.switch').switcher({copy: {en: {yes: '', no: ''}}});
+                //$('#sw-list input.switch').switcher({copy: {en: {yes: '', no: ''}}});
                 //reCheckJsFilter();
-                $('#sw-list input.switch').on('change', function(){
-                    reCheckJsFilter($(this));
-                });
+                //$('#sw-list input.switch').on('change', function(){
+                //    reCheckJsFilter($(this));
+                //});
             ",
             View::POS_READY,
             'my-switch-handler'

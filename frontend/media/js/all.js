@@ -62,7 +62,7 @@ jQuery(document).ready(function ($) {
 	});
     });
 
-    //===== Sticky Header =====// 
+    //===== Sticky Header =====//
     //var menu_height = $('header').height();
 	var heightAdmin = $('#easyii-navbar').height();
 	$(window).scroll(function () {
@@ -72,8 +72,10 @@ jQuery(document).ready(function ($) {
 			if (heightAdmin > 0) {
 				$('#theme-layout-js .stick').css('padding-top', heightAdmin);
 			}
+            $('#theme-layout-js').css({'margin-top': 0});
 		} else {
 			$('.stick').removeClass('sticky');
+            $('#theme-layout-js').css({'margin-top': 100});
 		}
 	});
     if ($('header').hasClass('stick')) {

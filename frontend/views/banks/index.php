@@ -87,6 +87,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
         .dataTables_wrapper .dataTables_filter input::placeholder {
             color: #d6d6d6;
             font-size: 13px;
+            padding-left: 3px;
+        }
+        table.dataTable thead th, table.dataTable thead td {
+            border-bottom: 0;
+        }
+        .dataTables_filter > label {
+            margin-bottom: 10px;
         }
     </style>
 

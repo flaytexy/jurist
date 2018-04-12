@@ -33,18 +33,16 @@ $addeng = Yii::t('easyii', 'free');
         return false
     }
 </script>
-
-<div class="theme-layout" id="theme-layout-js">
-    <header class="stick scrollup visible-md-block visible-lg">
-        <div class="top-bar">
-            <div class="container">
-                <div class="topbar-data">
-                    <?= Menu::widget([
-                        'options' => ['class' => 'top-menus', 'id' => 'top-menus'],
-                        'items' => [
-                            ['label' => Yii::t('easyii', 'funds'), 'url' => ['/fonds'], 'options' => ['title' => 'Фонды']],
-                            ['label' => Yii::t('easyii', 'banks'), 'url' => ['/banks'],
-                                'options' => ['class' => 'menu-item-has-children', 'title' => 'Банки'],
+<header class="stick scrollup visible-md-block visible-lg" id="top-header">
+    <div class="top-bar">
+        <div class="container">
+            <div class="topbar-data">
+                <?= Menu::widget([
+                    'options' => ['class' => 'top-menus', 'id' => 'top-menus'],
+                    'items' => [
+                        ['label' => Yii::t('easyii', 'funds'), 'url' => ['/fonds'], 'options' => ['title' => 'Фонды']],
+                        ['label' => Yii::t('easyii', 'banks'), 'url' => ['/banks'],
+                            'options' => ['class' => 'menu-item-has-children', 'title' => 'Банки'],
 //                                        'items' => [
 //                                            ['label' => 'New Arrivals', 'url' => ['news/index', 'tag' => 'new'],
 //                                                'options' => ['class' => 'menu-item-has-children'],
@@ -55,66 +53,66 @@ $addeng = Yii::t('easyii', 'free');
 //                                            ],
 //                                            ['label' => 'Most Popular', 'url' => ['news/index', 'tag' => 'popular']],
 //                                        ],
-                                //'template' => '<li class="menu-item-has-children"><a href="{url}" class="mylink">{label}</a></li>',
-                            ],
-                            ['label' => Yii::t('easyii', 'companies'), 'url' => ['/offshornyie-predlozheniya'], 'options' => ['title' => 'Компании']],
-                            ['label' => Yii::t('easyii', 'licenses'), 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
-                            ['label' => Yii::t('easyii', 'offshores'), 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
-                            ['label' => Yii::t('easyii', 'processing'), 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
-                            ['label' => Yii::t('easyii', 'sells'), 'url' => ['/sale'], 'options' => ['title' => Yii::t('easyii', 'sells')]],
+                            //'template' => '<li class="menu-item-has-children"><a href="{url}" class="mylink">{label}</a></li>',
+                        ],
+                        ['label' => Yii::t('easyii', 'companies'), 'url' => ['/offshornyie-predlozheniya'], 'options' => ['title' => 'Компании']],
+                        ['label' => Yii::t('easyii', 'licenses'), 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
+                        ['label' => Yii::t('easyii', 'offshores'), 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
+                        ['label' => Yii::t('easyii', 'processing'), 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
+                        ['label' => Yii::t('easyii', 'sells'), 'url' => ['/sale'], 'options' => ['title' => Yii::t('easyii', 'sells')]],
 
-                            ['label' => 'contact', 'url' => ['/contact'],
-                                'template' => '
+                        ['label' => 'contact', 'url' => ['/contact'],
+                            'template' => '
                                 <!--<li class="contact-m">-->
                                 <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
                                     <a href="skype:live:asmofad?call"><i class="fa fa-skype" aria-hidden="true"></i>IQ Decision</a>
                                 </li>'.WLang::widget().''
-                            ],
                         ],
-                    ]); ?>
+                    ],
+                ]); ?>
 
-                </div>
             </div>
         </div>
-        <!-- Top Bar -->
-        <div class="logomenu-sec hidden-xs" id="logomenu-sec">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 ">
-                        <div class="logo logo_main"><a href="/" title=""><img id="logo-img" src="/uploads/logo/logo_main_png.png" data-src="/uploads/logo/logo_main_fsd_1.gif" alt=""></a>
-                        </div>
+    </div>
+    <!-- end: Top Bar -->
+    <div class="logomenu-sec hidden-xs" id="logomenu-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 ">
+                    <div class="logo logo_main"><a href="/" title=""><img id="logo-img" src="/uploads/logo/logo_main_png.png" data-src="/uploads/logo/logo_main_fsd_1.gif" alt=""></a>
                     </div>
-                    <div class="col-md-3" id="searchBlock">
-                        <? if (false): ?>
-                            <? $form = ActiveForm::begin(['action' => 'search', 'id' => 'forum_post',
-                                'method' => 'post',
-                            ]); ?>
-                            <div class="search-inp row no-padding">
-                                <div class="col-md-9 no-padding ">
-                                    <?= Html::input('text', 'search', $search, []) ?>
-                                </div>
-                                <div class="col-md-3 no-padding ">
-                                    <?= Html::submitButton(Yii::t('easyii', 'Search'), ['class' => 'btn btn-primary submit']) ?>
-                                </div>
+                </div>
+                <div class="col-md-3" id="searchBlock">
+                    <? if (false): ?>
+                        <? $form = ActiveForm::begin(['action' => 'search', 'id' => 'forum_post',
+                            'method' => 'post',
+                        ]); ?>
+                        <div class="search-inp row no-padding">
+                            <div class="col-md-9 no-padding ">
+                                <?= Html::input('text', 'search', $search, []) ?>
                             </div>
-                            <?php ActiveForm::end(); ?>
-                        <? endif ?>
+                            <div class="col-md-3 no-padding ">
+                                <?= Html::submitButton(Yii::t('easyii', 'Search'), ['class' => 'btn btn-primary submit']) ?>
+                            </div>
+                        </div>
+                        <?php ActiveForm::end(); ?>
+                    <? endif ?>
 
-                        <gcse:search></gcse:search>
-                    </div>
-                    <div class="col-md-7 ">
-                        <nav class="navbar22 navbar-default22">
-                            <?= Menu::widget([
-                                'options' => ['class' => 'inline'],
-                                'items' => [
-                                    //['label' => 'Главная', 'url' => ['site/index'], 'template' => '<li class="22"><a href="{url}" class="mylink"><span>{label}</span></a></li>'],
-                                    ['label' => Yii::t('easyii', 'main'), 'url' => ['site/index']],
-                                    //['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
-                                    //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
-                                    //['label' => 'Shop', 'url' => ['shop/index']],
-                                    ['label' => Yii::t('easyii', 'news'),
-                                        'url' => ['/news'],
-                                        'options' => ['class' => 'menu-item-has-children'],
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="col-md-7 ">
+                    <nav class="navbar22 navbar-default22">
+                        <?= Menu::widget([
+                            'options' => ['class' => 'inline'],
+                            'items' => [
+                                //['label' => 'Главная', 'url' => ['site/index'], 'template' => '<li class="22"><a href="{url}" class="mylink"><span>{label}</span></a></li>'],
+                                ['label' => Yii::t('easyii', 'main'), 'url' => ['site/index']],
+                                //['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
+                                //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
+                                //['label' => 'Shop', 'url' => ['shop/index']],
+                                ['label' => Yii::t('easyii', 'news'),
+                                    'url' => ['/news'],
+                                    'options' => ['class' => 'menu-item-has-children'],
 //                                        'items' => [
 //                                            ['label' => 'New Arrivals', 'url' => ['news/index', 'tag' => 'new'],
 //                                                'options' => ['class' => 'menu-item-has-children'],
@@ -125,35 +123,33 @@ $addeng = Yii::t('easyii', 'free');
 //                                            ],
 //                                            ['label' => 'Most Popular', 'url' => ['news/index', 'tag' => 'popular']],
 //                                        ],
-                                        //'template' => '<li class="menu-item-has-children"><a href="{url}" class="mylink">{label}</a></li>',
-                                    ],
-                                    //['label' => 'Банки', 'url' => ['/banks']],
-                                    //['label' => 'Articles', 'url' => ['articles/index']],
-                                    //['label' => 'Gallery', 'url' => ['gallery/index']],
-                                    //['label' => 'Guestbook', 'url' => ['guestbook/index']],
-                                    //['label' => 'Информация', 'url' => ['/faq']],
-                                    ['label' => Yii::t('easyii', 'faq'), 'url' => ['/faq']],
-                                    ['label' => Yii::t('easyii', 'contact'), 'url' => ['/contact']],
-                                    ['label' => 'contact', 'url' => ['/contact'],
-                                        'template' => '
+                                    //'template' => '<li class="menu-item-has-children"><a href="{url}" class="mylink">{label}</a></li>',
+                                ],
+                                //['label' => 'Банки', 'url' => ['/banks']],
+                                //['label' => 'Articles', 'url' => ['articles/index']],
+                                //['label' => 'Gallery', 'url' => ['gallery/index']],
+                                //['label' => 'Guestbook', 'url' => ['guestbook/index']],
+                                //['label' => 'Информация', 'url' => ['/faq']],
+                                ['label' => Yii::t('easyii', 'faq'), 'url' => ['/faq']],
+                                ['label' => Yii::t('easyii', 'contact'), 'url' => ['/contact']],
+                                ['label' => 'contact', 'url' => ['/contact'],
+                                    'template' => '
                                 <li class="contact-m">
                                     <div class="row">
                                         <div class="col-md-12 tel-m"><a href="tel: ' . str_replace(' ', '', $phoneStr) . '" title="Наш телефон">' . $phoneStr . '</a><a href="tel: +380671931117" title="Наш телефон">+38 067 193 11 17</a><p class="lenta">' . $addeng . ' </p></div>
                                     </div>
                                 </li>'
-                                    ],
                                 ],
-                            ]); ?>
-                        </nav>
-                    </div>
+                            ],
+                        ]); ?>
+                    </nav>
                 </div>
-
             </div>
-        </div>
-        <!-- Logo Menu Sec -->
-    </header>
 
-    <!-- Header -->
+        </div>
+    </div>
+    <!-- end: Logo Menu Sec -->
+
     <div class="responsive-header">
         <div class="logomenu-bar">
             <div class="logodiv"><a href="/" title=""><img src="/uploads/logo/logo-small.png" alt=""></a></div>
@@ -210,7 +206,9 @@ $addeng = Yii::t('easyii', 'free');
             </div>
         </div>
     </div>
-    <!-- Responsive Header -->
+    <!-- end: Responsive Header -->
+</header>
+<div class="theme-layout" id="theme-layout-js">
     <div class="row">
         <?php if ($this->context->id != 'site') : ?>
             <div class="pagetop-sec">
