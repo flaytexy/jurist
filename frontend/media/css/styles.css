@@ -5535,9 +5535,10 @@ ul.faq li.a blockquote {
 
 .gsc-input {
     background: none !important;
-
 }
-
+.gsc-input::placeholder {
+    color: #ffffff;
+}
 .gsc-search-button {
     height: 18px !important;
     width: 24px !important;
