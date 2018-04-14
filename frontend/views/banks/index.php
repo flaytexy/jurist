@@ -100,6 +100,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
     .sidesidebar, .sidesidebar2 {
         position: absolute;
+        display: none;
     }
     .sidesidebar2 {
         right:0;
