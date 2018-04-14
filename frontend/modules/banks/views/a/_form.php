@@ -37,8 +37,8 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'min_deposit') ?>
 <hr/>
 <?/*= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) */?>
-<?= $form->field($model, 'rating') ?>
-<?= $form->field($model, 'rating_to_main') ?>
+<?= $form->field($model, 'rating')->input('text', ['placeholder' => "Чем больше тем выше в рейтинге"])->label("Рейтинг (попадает при > 0)"); ?>
+<?= $form->field($model, 'rating_to_main')->input('text', ['placeholder' => "Чем больше тем выше в рейтинге"])->label("Рейтинг на главной (попадает при > 0)"); ?>
 <hr/>
 <?= $form->field($model, 'location_zone_id')->dropDownList([
     '0'  => 'Не выбрано',

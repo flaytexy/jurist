@@ -58,10 +58,47 @@ class BanksController extends \yii\web\Controller
 
 
         //e_print('$render');
+
+        $banksPist = Banks::items(['list' => 1, 'type_id' => (int)$type_id]);
+        $topNews = [];
+        foreach (PageModel::find()
+                     ->andWhere(['type_id' => '2'])
+                     ->status(PageModel::STATUS_ON)
+                     ->sortDate()->limit(5)->all() as $item) {
+            $obj = new PageObject($item);
+            $topNews[] = $obj;
+        }
+
+
+        //$topOffers = Offers::find(2)->asArray()->all();
+        $query = new \yii\db\Query;
+        $query->select('*')
+            ->from('easyii_banks as ba')
+            ->where("ba.status = '1' ")
+            ->orderBy(['views' => SORT_DESC])
+            ->limit(3);
+        $command = $query->createCommand();
+        $topBanks = $command->queryAll();
+
+        // Offers
+        $query = new \yii\db\Query;
+        $query->select('*')
+            ->from('easyii_offers as of')
+            ->where("of.status = '1' ")
+            ->orderBy(['views' => SORT_DESC])
+            ->limit(3);
+        $command = $query->createCommand();
+        $topOffers = $command->queryAll();
+
+
         $render = $this->render('index', [
             'items' => $banks,
             'banksList' => $banksList,
-            'bank_type' => $type_id
+            'bank_type' => $type_id,
+            'banksPist' => $banksPist,
+            'top_banks' => $topBanks,
+            'top_offers' => $topOffers,
+            'top_news' => $topNews
         ]);
         //e_print('$render_end');
 

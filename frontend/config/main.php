@@ -14,7 +14,9 @@ $config = [
 
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [
-        '@runtime' => '@frontend/runtime'
+        '@runtime' => '@frontend/runtime',
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset'
     ],
     'basePath' => dirname(__DIR__),
     //'bootstrap' => ['log'],

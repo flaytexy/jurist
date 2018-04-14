@@ -11974,8 +11974,8 @@ div.pagination {
     padding: 60px 0
 }
 
-.block .container,
-.container {
+.block .container-nopadd,
+.container-nopadd {
     padding: 0;
 }
 
@@ -14946,6 +14946,9 @@ ul.simlist > li:before, div.simlistdiv ul > li:before {
     transform: rotate(-15deg);
     width: 60%;
 }
+
+/* SITEBAR */
+
 
 /*=============== Villa Agent ===============*/
 .agent-thumb {
