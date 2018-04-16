@@ -8444,7 +8444,7 @@ table.dataTable thead th, table.dataTable thead td {
 }
 
 .pagination > li::before {
-    background: #f9f7f7 none repeat scroll 0 0;
+    /*background: #f9f7f7 none repeat scroll 0 0;*/
     content: "";
     height: 4px;
     left: 0;
