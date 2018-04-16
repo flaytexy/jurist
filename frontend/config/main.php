@@ -187,20 +187,22 @@ $config = [
 //                        YII_DEBUG ? '//code.jquery.com/jquery-migrate-3.0.1.js' : '//code.jquery.com/jquery-migrate-3.0.1.min.js'
 //                    ]
 //                ],
-//                'yii\bootstrap\BootstrapAsset' => [
-//                    'css' => [
-//                        //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css',
-//                        YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
-//                        ],
-//                ],
                 'yii\bootstrap\BootstrapAsset' => [
-                    //'css' => [],
                     'css' => [
-                        //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
-                        '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-                        '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css',
-                        ],
+                        //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css',
+                        //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
+                        '//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
+                    ],
                 ],
+//                'yii\bootstrap\BootstrapAsset' => [
+//                    //'css' => [],
+//                    'css' => [
+//                        //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+//                        //'//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+//                        '//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
+//                        '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css',
+//                    ],
+//                ],
 //                'yii\jui\JuiAsset' => [
 //                    'css' => [],
 ////                    'css' => [
@@ -214,8 +216,10 @@ $config = [
 //                ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [
-                        YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.js' : '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js',
-                        YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js'
+                        //YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.js' : '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js',
+                        //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js'
+                        '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js',
+                        '//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'
                     ],
                 ],
             ],

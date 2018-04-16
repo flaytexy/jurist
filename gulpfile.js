@@ -41,7 +41,8 @@ var concat = require('gulp-concat');
 
 gulp.task('css', function () {
     return gulp.src([
-        'frontend/media/css/bootstrap.css',
+        //'frontend/media/css/bootstrap.css',
+        'frontend/media/css/bootstrap4.min.css',
         'frontend/media/css/jquery-ui.smoothness.1.12.1.css',
         'frontend/media/css/flaticon.css',
         'frontend/media/css/font-awesome/css/font-awesome.min.css',

@@ -34,7 +34,7 @@ class AController extends Controller
         $data = new ActiveDataProvider([
             'query' => Banks::find()->orderBy(['title' => SORT_ASC]), //location_title
             'pagination' => [
-                'pageSize' => 100,
+                'pageSize' => 500,
             ],
         ]);
 

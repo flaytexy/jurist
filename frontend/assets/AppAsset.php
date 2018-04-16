@@ -96,7 +96,7 @@ class AppAsset extends AssetBundle
         'yii\jui\JuiAsset',
         //'frontend\assets\FoundationTableAsset',
         //'yii\bootstrap\BootstrapAsset',
-        //'yii\bootstrap\BootstrapPluginAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
         'yii\web\YiiAsset',
     ];
 

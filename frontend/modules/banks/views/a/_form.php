@@ -83,10 +83,13 @@ $module = $this->context->module->id;
 
 <?php if ($this->context->module->settings['enableThumb']) : ?>
     <?php if ($model->image) : ?>
-        <img src="<?= Image::thumb($model->image, 240) ?>">
+        Оригинал:<br />
+        <img src="<?= Image::thumb($model->image) ?>" style="width: 100%; height: auto">
         <a href="<?= Url::to(['/admin/' . $module . '/a/clear-image', 'id' => $model->bank_id]) ?>"
            class="text-danger confirm-delete"
-           title="<?= Yii::t('easyii', 'Clear image') ?>"><?= Yii::t('easyii', 'Clear image') ?></a>
+           title="<?= Yii::t('easyii', 'Clear image') ?>"><?= Yii::t('easyii', 'Clear image') ?></a><br /><br /><br />
+        Как на сайте будет:<br />
+        <img src="<?= Image::thumb($model->image, 480, 120) ?>">
     <?php endif; ?>
     <?= $form->field($model, 'image')->fileInput() ?>
 <?php endif; ?>

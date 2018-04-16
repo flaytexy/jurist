@@ -44,7 +44,7 @@ class Banks extends \frontend\components\ActiveRecord
         return [
             [['text', 'title', 'location_zone_id', 'how_days'], 'required'],
             [['pre_options', 'title', 'website', 'location_title'], 'string', 'max' => 128],
-            [['title', 'short', 'text'], 'trim'],
+            [['title', 'short', 'text', 'website', 'location_title'], 'trim'],
             [['pos', 'coordinates'], 'string', 'max' => 64],
             ['to_main', 'integer', 'max' => 1],
             ['personal', 'integer', 'max' => 1],
