@@ -38,7 +38,7 @@ class Banks extends \frontend\components\API
     {
         //e_print('api_items_start');
 
-        $key = md5(serialize($options)).'4443addasdsaddsa2daadsdadaqwe';
+        $key = md5(serialize($options)).'VBn5';
         $cache = Yii::$app->cache;
         //e_print('get0');
         $this->_items = $cache->get($key.'_items');
@@ -51,6 +51,7 @@ class Banks extends \frontend\components\API
         //e_print('end_print');
 
         if (!($this->_items && $this->_adp)) {
+        //if (true) {
             //e_print('SET');
             $this->_items = [];
 
@@ -65,7 +66,7 @@ class Banks extends \frontend\components\API
 
             if (!empty($options['list'])) {
 
-                $query->select(" " . BanksModel::tableName() . ".*, cdt.* , ca.`country_id` as ca_id, cra.*, cr.name as region_name  ");
+                $query->select(" " . BanksModel::tableName() . ".*, cdt.* , ca.`country_id` as ca_id, cra.*, cr.name as region_name, `cr`.`sort_order`  ");
 
                 $query->join(
                     'LEFT JOIN',
@@ -116,14 +117,15 @@ class Banks extends \frontend\components\API
 
             //$query->groupBy('bank_id');
             if (!empty($options['list'])) {
-                $query->orderBy(' `cr`.`sort_order` ASC, `cdt`.`country_id` DESC ');
+                //$query->orderBy(' `cr`.`sort_order` ASC, `cdt`.`country_id` DESC ');
+                $query->orderBy(' `cr`.`sort_order` ASC, `rating` DESC ');
             } elseif (!empty($options['orderBy'])) {
                 $query->orderBy($options['orderBy']);
             } else {
                 //$query->sortDate();
                 $query->orderBy(['rating'=>SORT_DESC, 'title' => SORT_ASC]);
             }
-
+//ex_print($query->createCommand()->rawSql);
             $this->_adp = new ActiveDataProvider([
                 'query' => $query,
                 'pagination' => !empty($options['pagination']) ? $options['pagination'] : []
@@ -137,7 +139,7 @@ class Banks extends \frontend\components\API
                 //$item->countries = isset($countries[$model->bank_id]) ? $countries[$model->bank_id] : $model->countries;
                 $this->_items[] = $item;
             }
-
+//ex_print($this->_items);
             $cache->set($key.'_adp', $this->_adp, 40);
             $cache->set($key.'_items', $this->_items, 40);
 
