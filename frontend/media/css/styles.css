@@ -3884,20 +3884,20 @@ table.dataTable thead th, table.dataTable thead td {
     color: #ffffff;
 }
 
-.pagination > li::before {
-    /*background: #f9f7f7 none repeat scroll 0 0;*/
-    content: "";
-    height: 4px;
-    left: 0;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 52px;
-}
+/*.pagination > li::before {*/
+    /*!*background: #f9f7f7 none repeat scroll 0 0;*!*/
+    /*content: "";*/
+    /*height: 4px;*/
+    /*left: 0;*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*-webkit-transform: translateY(-50%);*/
+    /*-moz-transform: translateY(-50%);*/
+    /*-ms-transform: translateY(-50%);*/
+    /*-o-transform: translateY(-50%);*/
+    /*transform: translateY(-50%);*/
+    /*width: 52px;*/
+/*}*/
 
 .pagination > li.prev::before,
 .pagination > li.next::before {
