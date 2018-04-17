@@ -8446,8 +8446,8 @@ table.dataTable thead th, table.dataTable thead td {
 .pagination > li.active > a {
     height: 35px !important;
     width: 35px !important;
-    display: inline-table;
     line-height: normal;
+    margin: 8px !important;
 }
 
 /*.pagination > li::before {*/
