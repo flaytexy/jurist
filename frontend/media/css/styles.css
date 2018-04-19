@@ -1680,7 +1680,7 @@ footer .title1.style2 > h2 {
 }
 
 .title1.style2 > span {
-    font-size: 15px;
+    font-size: 12px;
     margin-top: 8px;
 }
 
@@ -5506,6 +5506,7 @@ header .row .fa {
 
 .package .cate {
     min-height: 20px;
+    font-size: 14px;
 }
 
 /*=============== Services Page ===============*/
