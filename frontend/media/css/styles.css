@@ -1680,7 +1680,7 @@ footer .title1.style2 > h2 {
 }
 
 .title1.style2 > span {
-    font-size: 12px;
+    font-size: 15px;
     margin-top: 8px;
 }
 
@@ -3887,8 +3887,9 @@ table.dataTable thead th, table.dataTable thead td {
 .pagination > li.active > a {
     height: 35px !important;
     width: 35px !important;
-    line-height: normal;
+    line-height: 35px;
     margin: 8px !important;
+    display: block;
 }
 
 /*.pagination > li::before {*/
