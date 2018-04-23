@@ -1,22 +1,17 @@
 AddDefaultCharset UTF-8
 
-Order allow,deny
-allow from all
-Deny from 82.146.41, 82.146.40
-
-
 #Order deny,allow
 #deny from all
 ## Список IP через пробел, с которых доступ разрешен
-#Allow from 194.183.171
+#Allow from 195.211.139.66
 
 Options +FollowSymLinks
 ##IndexIgnore */*
 RewriteEngine On
 
 # SSL redirect
-#RewriteCond %{HTTPS} off
-#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 ## https to http
 #RewriteEngine On
@@ -24,15 +19,15 @@ RewriteEngine On
 #RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI}
 
  # WWW redirect
-##RewriteCond %{HTTP_HOST} !^www\.
-##RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 RewriteBase /
 ##RewriteCond %{REQUEST_FILENAME} !-f
 ##RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
 
-#RewriteCond %{HTTP_HOST} ^www*.iq-offshore\.com [NC]
-#RewriteRule (.*) http://iq-offshore.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^www*.iq-offshore\.com [NC]
+RewriteRule (.*) https://iq-offshore.com/$1 [L,R=301]
 
 RewriteCond %{THE_REQUEST} ^.*/index\.(php|html?) [NC]
 RewriteRule ^(.*)index.(php|html?)$ /$1 [R=301,NC,L]
@@ -63,7 +58,14 @@ RewriteRule ^(.*)/index /$1 [R=301,NC,L]
 ##RewriteRule ^(.*)index.php http://iq-offshore.com/$1 [R=301,L]
 
 RewriteRule ^sitemap\.xml$ /uploads/seo/sitemap\.xml [L]
+
+RewriteCond %{HTTP_HOST} betta\.iq-offshore\.com.*$
+RewriteRule ^robots\.txt$ robots_betta.txt [L]
+
 RewriteRule ^robots\.txt /uploads/seo/robots\.txt [L]
+
+
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !\.rar
 #RewriteCond %{REQUEST_URI} !\.zip
