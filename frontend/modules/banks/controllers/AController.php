@@ -45,6 +45,9 @@ class AController extends Controller
 
     public function actionCreate()
     {
+        $cache = Yii::$app->cache;
+        $cache->flush();
+
         $model = new Banks;
         $model->time = time();
 
@@ -63,6 +66,14 @@ class AController extends Controller
                         $model->image = '';
                     }
 
+                    $model->pre_image = UploadedFile::getInstance($model, 'pre_image');
+                    if($model->pre_image && $model->validate(['image'])){
+                        $model->pre_image = Image::upload($model->pre_image, 'banks');
+                    }
+                    else{
+                        $model->pre_image = '';
+                    }
+                    
                     $model->image_flag = UploadedFile::getInstance($model, 'image_flag');
                     if($model->image_flag && $model->validate(['image_flag'])){
                         $model->image_flag = Image::upload($model->image_flag, 'banks');
@@ -92,6 +103,8 @@ class AController extends Controller
 
     public function actionEdit($id)
     {
+        $cache = Yii::$app->cache;
+        $cache->flush();
 
         $model = Banks::findOne($id);
 
@@ -117,8 +130,15 @@ class AController extends Controller
                         $model->image = $model->oldAttributes['image'];
                     }
 
-                    $model->image_flag = UploadedFile::getInstance($model, 'image_flag');
+                    $model->pre_image = UploadedFile::getInstance($model, 'pre_image');
+                    if($model->pre_image && $model->validate(['image'])){
+                        $model->pre_image = Image::upload($model->pre_image, 'banks');
+                    }
+                    else{
+                        $model->pre_image = '';
+                    }
 
+                    $model->image_flag = UploadedFile::getInstance($model, 'image_flag');
                     if($model->image_flag && $model->validate(['image_flag'])){
                         $model->image_flag = Image::upload($model->image_flag, 'banks');
                     }

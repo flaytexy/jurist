@@ -51,10 +51,13 @@ class Banks extends \frontend\components\ActiveRecord
             [['price'], 'required'],
             [['price', 'min_deposit'], 'number', 'max' => 100000000],
             ['how_days', 'integer', 'max' => 999],
-            ['image', 'image', 'extensions' => 'png, jpg, gif'],
-            ['image_flag', 'image', 'extensions' => 'png, jpg, gif',
-                'minWidth' => 100, 'maxWidth' => 1200,
-                'minHeight' => 100, 'maxHeight' => 1200,
+            //[['image', 'pre_image'], 'image', 'extensions' => 'png, jpg, gif'],
+            ['image', 'image', 'extensions' => 'png, jpg, jpeg, gif'],
+            ['pre_image', 'image', 'extensions' => 'png, jpg, jpeg, gif'],
+
+            ['image_flag', 'image', 'extensions' => 'png, jpg, jpeg, gif',
+                'minWidth' => 100, 'maxWidth' => 1240,
+                'minHeight' => 100, 'maxHeight' => 1240,
             ],
             ['location_zone_id', 'integer', 'max' => 99],
 

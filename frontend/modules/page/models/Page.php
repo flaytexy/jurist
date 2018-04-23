@@ -29,7 +29,10 @@ class Page extends \frontend\components\ActiveRecord
             ['title', 'string', 'max' => 128],
             [['views', 'time', 'status', 'type_id'], 'integer'],
             ['to_main', 'integer', 'max' => 1],
-            ['image', 'image'],
+
+            ['image', 'image', 'extensions' => 'png, jpg, jpeg, gif'],
+            ['pre_image', 'image', 'extensions' => 'png, jpg, jpeg, gif'],
+
             [['views', 'time', 'status'], 'integer'],
             ['time', 'default', 'value' => time()],
             ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],

@@ -125,7 +125,7 @@ class Banks extends \frontend\components\API
                 //$query->sortDate();
                 $query->orderBy(['rating'=>SORT_DESC, 'title' => SORT_ASC]);
             }
-//ex_print($query->createCommand()->rawSql);
+ex_print($query->createCommand()->rawSql);
             $this->_adp = new ActiveDataProvider([
                 'query' => $query,
                 'pagination' => !empty($options['pagination']) ? $options['pagination'] : []

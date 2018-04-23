@@ -92,13 +92,21 @@ class AController extends Controller
                 return ActiveForm::validate($model);
             }
             else{
-                if(isset($_FILES) && $this->module->settings['enableThumb']){
+                if(isset($_FILES)){
                     $model->image = UploadedFile::getInstance($model, 'image');
                     if($model->image && $model->validate(['image'])){
                         $model->image = Image::upload($model->image, 'page');
                     }
                     else{
                         $model->image = '';
+                    }
+
+                    $model->pre_image = UploadedFile::getInstance($model, 'pre_image');
+                    if($model->pre_image && $model->validate(['image'])){
+                        $model->pre_image = Image::upload($model->pre_image, 'page');
+                    }
+                    else{
+                        $model->pre_image = '';
                     }
                 }
 

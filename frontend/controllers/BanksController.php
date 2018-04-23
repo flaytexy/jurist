@@ -75,7 +75,7 @@ class BanksController extends \yii\web\Controller
         $query->select('*')
             ->from('easyii_banks as ba')
             ->where("ba.status = '1' ")
-            ->orderBy(['views' => SORT_DESC])
+            ->orderBy(['rating' => SORT_DESC])
             ->limit(3);
         $command = $query->createCommand();
         $topBanks = $command->queryAll();
@@ -107,6 +107,11 @@ class BanksController extends \yii\web\Controller
 
     public function actionView($slug)
     {
+        $banks = Banks::get($slug);
+
+        if(!$banks){
+            throw new \yii\web\NotFoundHttpException('Bank not found by slug.');
+        }
 
         $topNews = [];
         foreach (PageModel::find()
@@ -123,7 +128,7 @@ class BanksController extends \yii\web\Controller
         $query->select('*')
             ->from('easyii_banks as ba')
             ->where("ba.status = '1' ")
-            ->orderBy(['views' => SORT_DESC])
+            ->orderBy(['rating' => SORT_DESC])
             ->limit(3);
         $command = $query->createCommand();
         $topBanks = $command->queryAll();
@@ -151,7 +156,7 @@ class BanksController extends \yii\web\Controller
 
         $this->getView()->registerJsFile(\Yii::$app->request->BaseUrl . '/js/site.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
-        $banks = Banks::get($slug);
+
 
         $popularly = Popularly::findOne(['class' => \Yii::$app->controller->id . '\\' . \Yii::$app->controller->action->id]);
         if (empty($popularly)) {

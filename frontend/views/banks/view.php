@@ -3,8 +3,13 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
 
-$this->title = !empty($page->seo('title', $page->model->title)) ? $page->seo('title', $page->model->title) : '';
-if($descriptionSeo = !empty($page->seo('description')) ? $page->seo('description') : ''){
+if(!$page->model){
+    exit('MODEL NOT FOUND!');
+}
+
+$this->title = !empty($page->model->title) ? $page->seo('title', $page->model->title) : '';
+
+if($descriptionSeo = !empty($page->seo('description','')) ? $page->seo('description','') : ''){
     $this->registerMetaTag([
         'name' => 'description',
         'content' => $descriptionSeo,

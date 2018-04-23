@@ -80,10 +80,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
     }
 </style>
 
-<section id="offers" class="top30">
-    <div class="">
+<section id="offers" class="container-fluid top30">
+    <div class="row">
         <div class="col-md-3">
-            <nav id="menus" class="navbar">
+            <nav id="menus" class="navbar no-padding">
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск юрисдикции..">
 
                 <ul id="myUL" class="off-ul">

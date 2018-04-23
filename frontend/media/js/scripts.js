@@ -90,6 +90,8 @@ var $ticker = $('[data-ticker="list"]'),
 function sHide() {
     $('#adBlock').hide();
     $('.gsc-adBlock').hide();
+
+    return true;
 }
 
 $('#searchBlock')

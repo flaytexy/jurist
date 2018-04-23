@@ -20,6 +20,7 @@ class BanksObject extends \frontend\components\ApiObject
 {
     public $slug;
     public $image;
+    //public $pre_image;
     public $views;
     public $time;
 

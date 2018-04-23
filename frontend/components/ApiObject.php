@@ -82,6 +82,6 @@ class ApiObject extends \yii\base\Object
      * @return string
      */
     public function seo($attribute, $default = ''){
-        return !empty($this->model->seo->{$attribute}) ? $this->model->seo->{$attribute} : $default;
+        return isset($this->model->seo->{$attribute}) ? $this->model->seo->{$attribute} : $default;
     }
 }

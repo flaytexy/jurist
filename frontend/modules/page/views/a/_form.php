@@ -33,15 +33,28 @@ $module = $this->context->module->id;
 <?= $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false) ?>
 
 
-<?php if ($this->context->module->settings['enableThumb']) : ?>
-    <?php if ($model->image) : ?>
-        <img src="<?= Image::thumb($model->image, 240) ?>">
-        <a href="<?= Url::to(['/admin/' . $module . '/a/clear-image', 'id' => $model->page_id]) ?>"
-           class="text-danger confirm-delete"
-           title="<?= Yii::t('easyii', 'Clear image') ?>"><?= Yii::t('easyii', 'Clear image') ?></a>
-    <?php endif; ?>
-    <?= $form->field($model, 'image')->fileInput() ?>
+<hr/>
+<?php if ($model->image) : ?>
+    Оригинал:<br />
+
+    <img src="<?= Image::thumb($model->image) ?>" style="width: 100%; height: auto">
+    <a href="<?= Url::to(['/admin/' . $module . '/a/clear-image', 'id' => $model->page_id]) ?>"
+       class="text-danger confirm-delete"
+       title="<?= Yii::t('easyii', 'Clear image') ?>"><?= Yii::t('easyii', 'Clear image') ?></a><br /><br /><br />
+    Как на сайте будет:<br />
+    <img src="<?= Image::thumb($model->image, 480, 120) ?>"><br />
 <?php endif; ?>
+<span>Картинка главная (длинная) (1600x400, 1240x310, 800x200, 640x160) (90% качетсва)</span><br />
+<?= $form->field($model, 'image')->fileInput() ?>
+
+<hr/>
+<?php if ($model->pre_image) : ?>
+    <?= Html::img(Image::thumb($model->pre_image, 320, 180), array('class' => 'sadsa', 'style'=> 'width:320px; height: 180px;')) ?><br />
+<?php endif; ?>
+<span>Картинка для вревью (1600x900, 1366x768, 800x450, 640x360) (90% качетсва)</span><br />
+<?= $form->field($model, 'pre_image')->fileInput() ?>
+<hr/>
+
 <?php if ($this->context->module->settings['enableShort']) : ?>
     <?= $form->field($model, 'short')->textarea() ?>
 <?php endif; ?>
