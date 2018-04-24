@@ -125,7 +125,7 @@ class Banks extends \frontend\components\API
                 //$query->sortDate();
                 $query->orderBy(['rating'=>SORT_DESC, 'title' => SORT_ASC]);
             }
-ex_print($query->createCommand()->rawSql);
+
             $this->_adp = new ActiveDataProvider([
                 'query' => $query,
                 'pagination' => !empty($options['pagination']) ? $options['pagination'] : []
@@ -139,18 +139,10 @@ ex_print($query->createCommand()->rawSql);
                 //$item->countries = isset($countries[$model->bank_id]) ? $countries[$model->bank_id] : $model->countries;
                 $this->_items[] = $item;
             }
-//ex_print($this->_items);
+
             $cache->set($key.'_adp', $this->_adp, 40);
             $cache->set($key.'_items', $this->_items, 40);
-
-            //e_print('SET END');
-        } else {
-             ////e_print($options, '$options');
-             ////e_print($this->_items, '$dataGet');
-             //ex_print('GET');
         }
-
-        //ex_print('api_items_end');
 
         return $this->_items;
     }

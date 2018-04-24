@@ -26,7 +26,12 @@ $this->params['breadcrumbs'][] = $news->model->title;
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="blog-post2">
-                                    <?= Html::img($news->thumb(640, 480)) ?>
+                                    <?php if(isset($news->image) && !empty($news->image)): ?>
+                                        <?= Html::img(Image::thumb($news->image, 800, 200)) ?>
+                                    <?php else: ?>
+                                        <?= Html::img(Image::thumb($news->pre_image, 800, 450)) ?>
+                                    <?php endif; ?>
+
                                     <div class="blogpost-detail">
                                         <ul class="post-meta style2">
                                             <li><i class="fa fa-calendar"></i> <?= $news->date ?></li>

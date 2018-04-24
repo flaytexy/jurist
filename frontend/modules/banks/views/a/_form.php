@@ -91,14 +91,14 @@ $module = $this->context->module->id;
     Как на сайте будет:<br />
     <img src="<?= Image::thumb($model->image, 480, 120) ?>"><br />
 <?php endif; ?>
-<span>Картинка главная (длинная) (1600x400, 1240x310, 800x200, 640x160) (90% качетсва)</span><br />
+<span>Картинка главная (jpg) (длинная) (1600x400, 1240x310, 800x200, 640x160) (90% качетсва)</span><br />
 <?= $form->field($model, 'image')->fileInput() ?>
 
 <hr/>
 <?php if ($model->pre_image) : ?>
     <?= Html::img(Image::thumb($model->pre_image, 320, 180), array('class' => 'sadsa', 'style'=> 'width:320px; height: 180px;')) ?><br />
 <?php endif; ?>
-<span>Картинка для вревью (1600x900, 1366x768, 800x450, 640x360) (90% качетсва)</span><br />
+<span>Картинка (jpg) для вревью (1600x900, 1366x768, 800x450, 640x360) (90% качетсва)</span><br />
 <?= $form->field($model, 'pre_image')->fileInput() ?>
 <hr/>
 <?php if ($this->context->module->settings['enableShort']) : ?>

@@ -211,7 +211,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             <div class="col-md-4">
                                                 <div class="package">
                                                     <div class="package-thumb">
-                                                        <?= Html::img($item->thumb(240, 90)) ?>
+                                                        <?= Html::img($item->thumb(240, 60)) ?>
                                                         <span><b><? if ($item->model->countries[0]->name_ru): ?><?= $item->countries[0]->name_ru ?><? else: ?><?= $item->model->location_title ?><? endif; ?></b></span>
                                                     </div>
                                                     <div class="package-detail">

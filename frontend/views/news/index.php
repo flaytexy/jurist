@@ -1,5 +1,7 @@
 <?php
 use frontend\modules\page\api\Page;
+use frontend\helpers\Image;
+
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -72,7 +74,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <ul class="widget-gallery">
                             <?php foreach($top_offers as $item) : ?>
                                 <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
-                                        <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                                        <?= Html::img(Image::thumb($item['image'], 300, 200)) ?>
                                     </a>
                                     <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span></li>
                             <?php endforeach; ?>
@@ -88,7 +90,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <ul class="widget-gallery">
                             <?php foreach($top_banks as $item) : ?>
                                 <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                        <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                                        <?= Html::img(Image::thumb($item['image'], 300, 200)) ?>
                                     </a>
                                     <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
                             <?php endforeach; ?>
