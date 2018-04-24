@@ -134,6 +134,7 @@ class AController extends Controller
 
     public function actionEdit($id)
     {
+
         //$categories = PageCategories::findAll();
         $query = new \yii\db\Query;
         $query->select('ept.title as parent_title, ept.*, ept2.*')

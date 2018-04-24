@@ -2,6 +2,7 @@
 use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use frontend\helpers\Image;
 
 $page = Page::get('page-'.$typeTitle);
 
@@ -55,7 +56,11 @@ if($page){
 
                                         <div class="package-thumb">
                                             <a href="<?= Url::to([$typeTitle.'/'.$item->slug]) ?>" class="">
-                                                <?= Html::img($item->thumb(500, 375)) ?>
+                                                <?php if(isset($item->model->pre_image) && !empty($item->model->pre_image)): ?>
+                                                    <?= Html::img(Image::thumb($item->model->pre_image, 320, 180)) ?>
+                                                <?php else: ?>
+                                                    <?= Html::img(Image::thumb($item->model->image, 320, 180)) ?>
+                                                <?php endif; ?>
                                             </a>
                                             <!--<span><i>$<?/*= $item->model->price */?></i> / <?/* if ($item->model->how_days): */?><?/*= $item->model->how_days*/?><?/* else: */?>Минимал<?/* endif; */?></span>-->
                                         </div>

@@ -11047,7 +11047,7 @@ blockquote > p a,
     border-bottom-color: #7dc20f;
 }
 
-#paddinglist .package .package-thumb .image > img {
+.villaeditors-picks .package .package-thumb .image > img,  #paddinglist .package .package-thumb .image > img {
     width: 100%;
     height: auto;
 }
