@@ -165,10 +165,10 @@ $iteration = 1;
                             <a href="/news/<?= $item->slug ?>">
                                 <div class="package-thumb">
                                     <div class="image">
-                                        <?php if(isset($item->pre_image) && !empty($item->pre_image)): ?>
-                                            <?= Html::img(Image::thumb($item->pre_image, 370, 259)) ?>
+                                        <?php if(isset($item->model->pre_image) && !empty($item->model->pre_image)): ?>
+                                            <?= Html::img(Image::thumb($item->model->pre_image, 400, 225)) ?>
                                         <?php else: ?>
-                                            <?= Html::img(Image::thumb($item->image, 370, 259)) ?>
+                                            <?= Html::img(Image::thumb($item->model->image, 400, 225)) ?>
                                         <?php endif; ?>
                                     </div>
                                     <div id="newsinfo">

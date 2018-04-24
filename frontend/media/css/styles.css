@@ -2118,7 +2118,11 @@ footer .title1.style2 > h2 {
 }
 
 #paddinglist .package-thumb h4 > a {
-    font-size: 18px;
+    font-size: 17px;
+}
+
+#paddinglist #centered-package {
+    top: 28% !important;
 }
 .package-detail {
     background: #ffffff none repeat scroll 0 0;
