@@ -165,7 +165,11 @@ $iteration = 1;
                             <a href="/news/<?= $item->slug ?>">
                                 <div class="package-thumb">
                                     <div class="image">
-                                        <?= Html::img($item->thumb(370, 259), array('class' => 'sadsa')) ?>
+                                        <?php if(isset($item->pre_image) && !empty($item->pre_image)): ?>
+                                            <?= Html::img(Image::thumb($item->pre_image, 370, 259)) ?>
+                                        <?php else: ?>
+                                            <?= Html::img(Image::thumb($item->image, 370, 259)) ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div id="newsinfo">
                                         <i class="fa fa-calendar"></i><b> <?= $item->date ?></b> /

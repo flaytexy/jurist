@@ -41,7 +41,7 @@ class AController extends Controller
         $data = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => 100,
+                'pageSize' => 200,
             ],
         ]);
 

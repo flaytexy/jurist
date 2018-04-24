@@ -17,6 +17,7 @@ $module = $this->context->module->id;
                 <?php if(IS_ROOT) : ?>
                     <th width="50">#</th>
                 <?php endif; ?>
+                <th><?= Yii::t('easyii', 'Img') ?></th>
                 <th><?= Yii::t('easyii', 'Title') ?></th>
                 <th width="100"><?= Yii::t('easyii', 'Rating') ?></th>
                 <th width="120"><?= Yii::t('easyii', 'Views') ?></th>
@@ -30,6 +31,11 @@ $module = $this->context->module->id;
                 <?php if(IS_ROOT) : ?>
                     <td><?= $item->primaryKey ?></td>
                 <?php endif; ?>
+                <td>
+                    <?php if($item->pre_image) : ?>
+                        <img src="<?= \frontend\helpers\Image::thumb($item->pre_image, 160,90) ?>">
+                    <?php endif; ?>
+                </td>
                 <td><a href="<?= Url::to(['/admin/'.$module.'/a/edit/', 'id' => $item->primaryKey]) ?>"><?= $item->title ?></a></td>
                 <td><?= $item->rating ?>/<?= $item->rating_to_main ?></td>
                 <td><?= $item->views ?></td>
