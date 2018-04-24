@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                     <?php if(isset($news->image) && !empty($news->image)): ?>
                                         <?= Html::img(Image::thumb($news->image, 800, 200)) ?>
                                     <?php else: ?>
-                                        <?= Html::img(Image::thumb($news->pre_image, 800, 450)) ?>
+                                        <?= Html::img(Image::thumb($news->model->pre_image, 800, 450)) ?>
                                     <?php endif; ?>
 
                                     <div class="blogpost-detail">
