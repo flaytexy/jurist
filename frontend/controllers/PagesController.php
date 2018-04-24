@@ -29,7 +29,7 @@ class PagesController extends \yii\web\Controller
         $pages = Page::items([
             'tags' => $tag,
             'where' => ['type_id' => (int)$type, 'status' => 1],
-            'pagination' => ['pageSize' => 9]
+            'pagination' => ['pageSize' => 15]
         ]);
 
         return $this->render('index',[
