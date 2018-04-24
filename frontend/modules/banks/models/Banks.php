@@ -52,8 +52,8 @@ class Banks extends \frontend\components\ActiveRecord
             [['price', 'min_deposit'], 'number', 'max' => 100000000],
             ['how_days', 'integer', 'max' => 999],
             //[['image', 'pre_image'], 'image', 'extensions' => 'png, jpg, gif'],
-            ['image', 'image', 'extensions' => 'jpg'], // 'png, jpg, jpeg, gif'
-            ['pre_image', 'image', 'extensions' => 'jpg'], //'png, jpg, jpeg, gif'
+            ['image', 'image', 'extensions' => 'jpg', 'jpeg'], // 'png, jpg, jpeg, gif'
+            ['pre_image', 'image', 'extensions' => 'jpg', 'jpeg'], //'png, jpg, jpeg, gif'
 
             ['image_flag', 'image', 'extensions' => 'png, jpg, jpeg, gif',
                 'minWidth' => 100, 'maxWidth' => 1240,

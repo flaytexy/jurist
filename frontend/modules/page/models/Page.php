@@ -30,8 +30,8 @@ class Page extends \frontend\components\ActiveRecord
             [['views', 'time', 'status', 'type_id'], 'integer'],
             ['to_main', 'integer', 'max' => 1],
 
-            ['image', 'image', 'extensions' => 'jpg'], //'png, jpg, jpeg, gif'
-            ['pre_image', 'image', 'extensions' => 'jpg'], //'png, jpg, jpeg, gif'
+            ['image', 'image', 'extensions' => 'jpg', 'jpeg'], //'png, jpg, jpeg, gif'
+            ['pre_image', 'image', 'extensions' => 'jpg', 'jpeg'], //'png, jpg, jpeg, gif'
 
             [['views', 'time', 'status'], 'integer'],
             ['time', 'default', 'value' => time()],
