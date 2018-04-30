@@ -28,7 +28,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 <div class="col-md-6">
                                     <div class="recentnew-post">
                                         <a href="<?= Url::to(['news/'.$item->slug]) ?>" class="">
-                                            <?= Html::img($item->thumb(420, 314)) ?>
+                                            <?php if(isset($item->model->pre_image) && !empty($item->model->pre_image)): ?>
+                                                <?= Html::img(Image::thumb($item->model->pre_image, 320, 180)) ?>
+                                            <?php else: ?>
+                                                <?= Html::img(Image::thumb($item->model->image, 320, 180)) ?>
+                                            <?php endif; ?>
                                         </a>
                                         <div class="recentnew-detail2">
                                             <h4>
@@ -90,7 +94,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <ul class="widget-gallery">
                             <?php foreach($top_banks as $item) : ?>
                                 <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                        <?= Html::img(Image::thumb($item['image'], 300, 200)) ?>
+                                        <?php if(isset($item['pre_image']) && !empty($item['pre_image'])): ?>
+                                            <?= Html::img(Image::thumb($item['pre_image'], 320, 180)) ?>
+                                        <?php else: ?>
+                                            <?= Html::img(Image::thumb($item['image'], 320, 180)) ?>
+                                        <?php endif; ?>
                                     </a>
                                     <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
                             <?php endforeach; ?>

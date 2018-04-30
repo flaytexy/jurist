@@ -183,6 +183,7 @@ $config = [
 //                    //'js' => [YII_DEBUG ? '//code.jquery.com/jquery-2.2.4.js' : '//code.jquery.com/jquery-2.2.4.min.js']
 //                    'js' => [
 //                        YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js' : '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',
+//                        //'//code.jquery.com/jquery-1.12.4.js',
 //                        //YII_DEBUG ? '//code.jquery.com/jquery-migrate-1.4.1.js' : '//code.jquery.com/jquery-migrate-1.4.1.min.js',
 //                        YII_DEBUG ? '//code.jquery.com/jquery-migrate-3.0.1.js' : '//code.jquery.com/jquery-migrate-3.0.1.min.js'
 //                    ]

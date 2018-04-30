@@ -37,6 +37,7 @@ class AppAsset extends AssetBundle
 
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css',
         //'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css',
+        //'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/vader/theme.min.css',
 
 //        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
         'css/bootstrap.css', //*last

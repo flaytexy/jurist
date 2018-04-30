@@ -67,10 +67,10 @@ if ( ! function_exists('e_print'))
 {
     function e_print( $element, $text="", $debugIndex = 0, $callFuncEcho = 'print_r')
     {
-        $ip = '195.211.139.66'; // 195.211.139.66 // 185.117.240.76
+        $ips = array('195.211.139.66', '46.201.243.141'); // 195.211.139.66 // 185.117.240.76
 
-        if(($_SERVER['REMOTE_ADDR']===$ip
-            || (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && $_SERVER['HTTP_X_FORWARDED_FOR']===$ip))
+        if (in_array($_SERVER['REMOTE_ADDR'], $ips)
+            || (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && in_array( $_SERVER['HTTP_X_FORWARDED_FOR'], $ips ))
         ){
 
             if(empty($element))
@@ -92,10 +92,10 @@ if ( ! function_exists('e_print'))
 
     function ex_print( $element, $text="", $debugIndex = 1, $callFuncEcho = 'print_r')
     {
-        $ip = '195.211.139.66'; // 195.211.139.66 // 185.117.240.76
+        $ips = array('195.211.139.66', '46.201.243.141'); // 195.211.139.66 // 185.117.240.76
 
-        if(($_SERVER['REMOTE_ADDR']===$ip
-            || (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && $_SERVER['HTTP_X_FORWARDED_FOR']===$ip))
+        if (in_array($_SERVER['REMOTE_ADDR'], $ips)
+            || (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && in_array( $_SERVER['HTTP_X_FORWARDED_FOR'], $ips ))
         ){
             e_print( $element, $text, $debugIndex, $callFuncEcho);
             exit;

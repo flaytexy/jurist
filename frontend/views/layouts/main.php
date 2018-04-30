@@ -246,7 +246,8 @@ $addeng = Yii::t('easyii', 'free');
                         </div>
                         <div class="instagram-gallery">
                             <ul>
-                                <?php foreach ($popularly as $item) : ?><?php if (!empty($item->image)): ?>
+                                <?php foreach ($popularly as $item) : ?>
+                                    <?php if (!empty($item->image) || !empty($item->pre_image)): ?>
                                     <li>
                                         <a href="<?= Url::to([$item->slug]) ?>">
                                             <?= Html::img(\frontend\helpers\Image::thumb($item->image, 150, 150), array('class' => 'main-news')) ?>
@@ -441,7 +442,9 @@ $addeng = Yii::t('easyii', 'free');
     </div>
 </div>
 <a href="#" class="scrollToTop"></a>
-
+<div id="dialog-vyhodnoy" class="" style="display: none">
+    Выходной 30 апреля на 1 мая.
+</div>
 <?php //if (!YII_DEBUG): ?>
 <!--    <script type='text/javascript'>-->
 <!--        var _d_site = _d_site || '411086831FF94A27DC0340B2';-->

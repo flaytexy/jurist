@@ -94,6 +94,47 @@ function sHide() {
     return true;
 }
 
+// возвращает cookie с именем name, если есть, если нет, то undefined
+function getCookie(name) {
+    var matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+function setCookie(name, value, options) {
+    options = options || {};
+
+    var expires = options.expires;
+
+    if (typeof expires == "number" && expires) {
+        var d = new Date();
+        d.setTime(d.getTime() + expires * 1000);
+        expires = options.expires = d;
+    }
+    if (expires && expires.toUTCString) {
+        options.expires = expires.toUTCString();
+    }
+
+    value = encodeURIComponent(value);
+
+    var updatedCookie = name + "=" + value;
+
+    for (var propName in options) {
+        updatedCookie += "; " + propName;
+        var propValue = options[propName];
+        if (propValue !== true) {
+            updatedCookie += "=" + propValue;
+        }
+    }
+
+    document.cookie = updatedCookie;
+}
+function deleteCookie(name) {
+    setCookie(name, "", {
+        expires: -1
+    })
+}
+
 $('#searchBlock')
     .on('keypress', '.gsib_a', function (e) {
         console.log('sea keypress');
@@ -115,6 +156,24 @@ $('#searchBlock')
 
 
 $(function (e) {
+
+    if (getCookie('shownDialogVyhodnoy34e') != 'true') { // Cookie not set?
+        $('#dialog-vyhodnoy').dialog({
+            modal: true,
+            buttons: { //Show dialog
+                'Закрыть': function() {
+                    $(this).dialog('close');
+            }},
+            open: function() {
+                $(this).closest(".ui-dialog")
+                    .find(".ui-dialog-titlebar-close")
+                    //.removeClass("ui-dialog-titlebar-close")
+                    .html("<span class='ui-button-icon-primary ui-icon ui-icon-closethick'></span>");
+            }
+        });
+    }
+    setCookie('shownDialogVyhodnoy343e', 'true', 1); // Set cookie
+
     $("#clicky").click(function () {
         var ssocial = $("#sticky-zone");
         if (ssocial.is(':visible')) {
