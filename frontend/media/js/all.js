@@ -68,14 +68,15 @@ jQuery(document).ready(function ($) {
 	var heightHeader = $('#top-header').height();
 	$(window).scroll(function () {
 		var scroll = $(window).scrollTop();
+        heightHeader = $('#top-header').height();
+
 		if (scroll >= 60) {
 			$('.stick').addClass('sticky');
 			if (heightAdmin > 0) {
 				$('#theme-layout-js .stick').css('padding-top', heightAdmin);
 			}
-            $('#theme-layout-js').css({'margin-top': 0});
+            $('#theme-layout-js').css({'margin-top': heightAdmin});
 		} else {
-            heightHeader = $('#top-header').height();
 			$('.stick').removeClass('sticky');
             $('#theme-layout-js').css({'margin-top': heightHeader});
 		}
