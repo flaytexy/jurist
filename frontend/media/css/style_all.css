@@ -3848,7 +3848,7 @@ header {
     float: left;
     width: 100%;
     z-index: 99;
-    position: relative;
+    position: fixed;
 }
 
 /*===== Top Bar =====*/
