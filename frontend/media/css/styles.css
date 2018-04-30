@@ -6597,7 +6597,7 @@ blockquote > p a,
         content: none;
     }
 
-    header {
+    header .logomenu-sec {
         display: none;
     }
 

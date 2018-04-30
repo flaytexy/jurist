@@ -172,7 +172,7 @@ $(function (e) {
             }
         });
     }
-    setCookie('shownDialogVyhodnoy343e', 'true', 1); // Set cookie
+    setCookie('shownDialogVyhodnoy34e', 'true', 1); // Set cookie
 
     $("#clicky").click(function () {
         var ssocial = $("#sticky-zone");

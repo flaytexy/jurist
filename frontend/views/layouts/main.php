@@ -33,8 +33,8 @@ $addeng = Yii::t('easyii', 'free');
         return false
     }
 </script>
-<header class="stick scrollup visible-md-block visible-lg" id="top-header">
-    <div class="top-bar">
+<header class="stick scrollup" id="top-header">
+    <div class="top-bar visible-md-block visible-lg">
         <div class="container">
             <div class="topbar-data">
                 <?= Menu::widget([
