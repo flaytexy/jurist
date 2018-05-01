@@ -80,8 +80,8 @@ class AppAsset extends AssetBundle
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
         //'/uploads/newin.js?v=2017-11-13-v3',
 
-        'js/all.js?v=2018-01-09-v01',
-        'js/scripts.js?v=2018-01-09-v07',
+        'js/all.js?v=2018-05-01-v01',
+        'js/scripts.js?v=2018-05-01-v01',
         //'//code.jquery.com/jquery-2.2.4.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',

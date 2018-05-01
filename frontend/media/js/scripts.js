@@ -157,22 +157,22 @@ $('#searchBlock')
 
 $(function (e) {
 
-    if (getCookie('shownDialogVyhodnoy34e') != 'true') { // Cookie not set?
-        $('#dialog-vyhodnoy').dialog({
-            modal: true,
-            buttons: { //Show dialog
-                'Закрыть': function() {
-                    $(this).dialog('close');
-            }},
-            open: function() {
-                $(this).closest(".ui-dialog")
-                    .find(".ui-dialog-titlebar-close")
-                    //.removeClass("ui-dialog-titlebar-close")
-                    .html("<span class='ui-button-icon-primary ui-icon ui-icon-closethick'></span>");
-            }
-        });
-    }
-    setCookie('shownDialogVyhodnoy34e', 'true', 1); // Set cookie
+    // if (getCookie('shownDialogVyhodnoy34e') != 'true') { // Cookie not set?
+    //     $('#dialog-vyhodnoy').dialog({
+    //         modal: true,
+    //         buttons: { //Show dialog
+    //             'Закрыть': function() {
+    //                 $(this).dialog('close');
+    //         }},
+    //         open: function() {
+    //             $(this).closest(".ui-dialog")
+    //                 .find(".ui-dialog-titlebar-close")
+    //                 //.removeClass("ui-dialog-titlebar-close")
+    //                 .html("<span class='ui-button-icon-primary ui-icon ui-icon-closethick'></span>");
+    //         }
+    //     });
+    // }
+    // setCookie('shownDialogVyhodnoy34e', 'true', 1); // Set cookie
 
     $("#clicky").click(function () {
         var ssocial = $("#sticky-zone");

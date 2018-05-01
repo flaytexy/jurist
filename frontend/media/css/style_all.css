@@ -7097,7 +7097,7 @@ table.dataTable thead th, table.dataTable thead td {
 
 .pagination > li > a,
 .pagination > li > span {
-    background: #f9f7f7 none repeat scroll 0 0;
+    background: #fbf9f9 none repeat scroll 0 0;
     border: 0 none;
     color: inherit;
     height: 100%;
@@ -7106,6 +7106,7 @@ table.dataTable thead th, table.dataTable thead td {
     padding: 0;
     width: 100%;
     text-align: center;
+    display: block;
 }
 
 .pagination > li:last-child {
