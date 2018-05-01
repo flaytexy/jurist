@@ -105,7 +105,7 @@ class AppAsset extends AssetBundle
     {
         if (!YII_DEBUG) {
             $this->css = [
-                'css/style_all.min.css?v=2018-04-24-v01'
+                'css/style_all.min.css?v=2018-05-01-v02'
             ];
         }
 
