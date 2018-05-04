@@ -21,7 +21,7 @@ $moduleName = $this->context->module->id;
 <body>
 <?php $this->beginBody() ?>
 <div id="admin-body">
-    <div class="container">
+    <div class="containerok">
         <div class="wrapper">
             <div class="header">
                 <div class="logo">
@@ -35,6 +35,11 @@ $moduleName = $this->context->module->id;
             </div>
             <div class="main">
                 <div class="box sidebar">
+                    <a href="<?= Url::to(['/admin/novanews']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novanews') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        novanews
+                    </a>
+
                     <a href="<?= Url::to(['/admin/slidemain']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'slidesmall') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         Слайдер (верхний)

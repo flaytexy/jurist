@@ -80,7 +80,9 @@ class SiteController extends Controller
 
         $mail = '';
 
-        if(!strpos(Yii::$app->request->url, 'debug/default/toolbar')!==false){
+        if(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/'))==false){
+            //e_print(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/')),'saddassda');
+            //e_print('not finded');
             if (!Yii::$app->mailer->compose()
                 ->setFrom(Setting::get('robot_email'))
                 //->setFrom('itc@iq-offshore.com')
@@ -89,12 +91,15 @@ class SiteController extends Controller
                 ->setHtmlBody('
                 <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
                 <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
+                <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
             ')//Url::to()
                 //->setReplyTo(Setting::get('admin_email'))
                 ->send())
             {
                 $mail = 'Email not sended!!!!!';
             }
+        }else{
+            //e_print('finded');
         }
 
 

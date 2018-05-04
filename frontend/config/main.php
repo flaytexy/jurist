@@ -337,8 +337,20 @@ $config = [
     ],
     'params' => $params,
     'modules' => [
+//        'admin' => [
+//            'class' => 'frontend\modules\admin\AdminModule',
+//        ],
+
         'admin' => [
             'class' => 'frontend\modules\admin\AdminModule',
+            'layout' => '@frontend/modules/admin/views/layouts/main.php', //"@app/views/layouts/main.old.php";
+            'modules' => [
+                'novanews' => [
+                    'class' => 'frontend\modules\novanews\Module',
+                    'controllerNamespace' => 'frontend\modules\novanews\controllers\backend',
+                    'viewPath' => '@frontend/modules/novanews/views/backend',
+                ],
+            ],
         ],
     ],
     'bootstrap' => [

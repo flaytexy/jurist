@@ -2,8 +2,9 @@ AddDefaultCharset UTF-8
 
 #Order deny,allow
 #deny from all
-## Список IP через пробел, с которых доступ разрешен
-#Allow from 195.211.139.66
+#### Список IP через пробел, с которых доступ разрешен
+##Allow from 195.211.139.66 46.211.
+#Allow from 195.211.139.66 37.187.99.146
 
 Options +FollowSymLinks
 ##IndexIgnore */*
