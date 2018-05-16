@@ -7242,6 +7242,9 @@ table.dataTable thead th, table.dataTable thead td {
     padding-top: 5px;
     color: #7dc20f;
 }
+.recent-news h4 > a {
+    color: #7dc20f;
+}
 
 /*END OF NEWS FONT FOR DELETE PADDING*/
 
