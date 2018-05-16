@@ -7238,12 +7238,12 @@ table.dataTable thead th, table.dataTable thead td {
 
 /*NEWS FONT FOR DELETE PADDING */
 .recent-news h4 {
-    font-size: 18px;
+    font-size: 17px;
     padding-top: 5px;
-    color: #7dc20f;
 }
-.recent-news h4 > a {
-    color: #7dc20f;
+.recent-news h4, .recent-news h4 > a {
+    color: #343a40;
+    font-weight: 300;
 }
 
 /*END OF NEWS FONT FOR DELETE PADDING*/
