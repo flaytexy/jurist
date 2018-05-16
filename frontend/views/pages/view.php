@@ -414,8 +414,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <? endif ?>
                                 </div>
                                 <div class="title-video alignleft">
-                                    <h1><?= $page->seo('h1', $page->title) ?></h1>
-                                    <span><?= $page->seo('h1', $page->short) ?></span>
+                                    <h1><?= $page->model->title ?></h1>
+                                    <span><?= $page->model->short ?></span>
                                 </div>
                             </div>
                         <?php endif; ?>
