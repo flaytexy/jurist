@@ -5955,7 +5955,7 @@ ul.simlist > li:before, div.simlistdiv ul > li:before {
 }
 
 .packages-detail tr:nth-child(odd) td {
-    background: #EBEBEB;
+    background: #7dc20f69;
 }
 
 .packages-detail tr:nth-child(odd):hover td {

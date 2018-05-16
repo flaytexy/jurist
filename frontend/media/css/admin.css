@@ -10,7 +10,9 @@ html{
     display: table;
     width: 100%;
 }
-
+#admin-body .help-block {
+    color: red !important;
+}
 /*--------------- HEADER ---------------*/
 #admin-body .header {
     display: table-row;
