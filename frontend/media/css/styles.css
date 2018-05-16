@@ -4691,7 +4691,7 @@ section.client .section-title {
     font-size: 13px;
     line-height: 20px;
     margin-bottom: 10px;
-    margin-top: 10px;
+/*    margin-top: 10px;*/
 }
 
 .recent-post > h4 > a {
