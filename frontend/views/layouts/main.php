@@ -215,14 +215,13 @@ $addeng = Yii::t('easyii', 'free');
                 <div class="fixed-bg2" style="background-image: url(<?= Image::thumb('/uploads/theme_villa/pagetop-bg.jpg', 1024, 159)?>);"></div>
                 <div class="container">
                     <div class="page-title">
-                        <strong><span>
+                        <h1>
                                 <?php if (count($this->params['breadcrumbs'][0]) == 1): ?>
                                     <?= $this->params['breadcrumbs'][0] ?>
                                 <? elseif (!empty($this->params['breadcrumbs'][1])): ?>
                                     <?= $this->params['breadcrumbs'][1] ?>
                                 <? endif; ?>
-                            </span>
-                        </strong>
+                        </h1>
                         <?= Breadcrumbs::widget([
                             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                             'class' => 'breadcrumbs'

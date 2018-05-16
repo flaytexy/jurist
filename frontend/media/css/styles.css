@@ -3788,7 +3788,7 @@ table.dataTable thead th, table.dataTable thead td {
     width: 100%;
 }
 
-.page-title > strong > h1 {
+.page-title > strong > h1, .page-title > h1 {
     color: #7dc20f;
 }
 
