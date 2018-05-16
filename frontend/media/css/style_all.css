@@ -7238,7 +7238,8 @@ table.dataTable thead th, table.dataTable thead td {
 
 /*NEWS FONT FOR DELETE PADDING */
 .recent-news h4 {
-    font-size: 17.7px;
+    font-size: 18px;
+    padding-top: 5px;
 }
 
 /*END OF NEWS FONT FOR DELETE PADDING*/

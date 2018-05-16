@@ -413,10 +413,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <?= Html::img(Image::thumb($page->photos[1]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
+                                <? if($page->model->short): ?>
                                 <div class="title-video alignleft">
-                                    <h1><?= $page->model->title ?></h1>
                                     <span><?= $page->model->short ?></span>
                                 </div>
+                                <?php endif; ?>
                             </div>
                         <?php endif; ?>
                         <p>
