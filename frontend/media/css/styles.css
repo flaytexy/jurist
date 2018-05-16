@@ -2710,6 +2710,7 @@ ul.simlist > li:before, div.simlistdiv ul > li:before {
 }
 .packages-detail tr:nth-child(odd) td {
     background: #7dc20f69;
+    /* dsaddsaasd da*/
 }
 
 .packages-detail tr:nth-child(odd):hover td {
