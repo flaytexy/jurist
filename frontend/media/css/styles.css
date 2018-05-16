@@ -2705,9 +2705,12 @@ ul.simlist > li:before, div.simlistdiv ul > li:before {
 .packages-detail tr:last-child {
     border-bottom: none;
 }
+.packages-detail2 {
 
+}
 .packages-detail tr:nth-child(odd) td {
     background: #7dc20f69;
+    /* adssda */
 }
 
 .packages-detail tr:nth-child(odd):hover td {
