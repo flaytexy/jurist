@@ -10,7 +10,7 @@
 function initMap() {
     var mapOptions = {
         zoom: 15,
-        center: new google.maps.LatLng(55.800312, 37.565437), // New York
+        center: new google.maps.LatLng(55.758784, 37.608181) // New York
         //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
     };
 
@@ -18,7 +18,7 @@ function initMap() {
     var map = new google.maps.Map(mapElement, mapOptions);
 
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(55.800312, 37.565437),
+        position: new google.maps.LatLng(55.758784, 37.608181),
         map: map,
         title: 'Snazzy!'
     });

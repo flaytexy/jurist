@@ -7,6 +7,12 @@ return [
             'username' => 'iq_vila', //iq_bettau
             'password' => 'Ti3bapktOc', //Ti3bapktOcBetaa
             'charset' => 'utf8',
+
+            'enableSchemaCache' => true,
+            // Duration of schema cache.
+            'schemaCacheDuration' => 7200,
+            // Name of the cache component used to store schema information
+            'schemaCache' => 'cache',
         ],
 //                'db' => [
 //            'class' => 'yii\db\Connection',

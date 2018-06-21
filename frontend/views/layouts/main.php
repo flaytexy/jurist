@@ -234,6 +234,7 @@ $addeng = Yii::t('easyii', 'free');
     <?= $content ?>
     <div class="push"></div>
 
+    <!-- popularly -->
     <section>
         <div class="block no-padding">
             <div class="row">
@@ -265,6 +266,7 @@ $addeng = Yii::t('easyii', 'free');
             </div>
         </div>
     </section>
+    <!-- _end popularly -->
 </div>
 <footer>
     <div class="block dark">
@@ -369,18 +371,16 @@ $addeng = Yii::t('easyii', 'free');
                             <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-skype"></i>
                                     Skype</strong><br>
                                 <a href="skype:live:asmofad?call">IQ Decision</a></p>
-                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=left' ) )"
-                               class="theme-btn" title=""><?= Yii::t('easyii', 'contactus') ?></a>
+                            <a class="theme-btn" title="" href="javascript:void( window.open( 'https://forms.amocrm.ru/forms/html/form_326401_ab9058f531bfbd2671c5d24aa0d8dc90.html?date=<?php echo time(); ?>', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">
+                                <?= Yii::t('easyii', 'contactus') ?></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="footer-widget">
                         <div id="map" style="height: 450px;width: 100%"></div>
                     </div>
-                </div>
-                <div class="col-md-2">
                     <div class="footer-widget">
                         <div class="title1 style2">
                             <h2>Быстрый переход</h2>

@@ -172,7 +172,7 @@ AIzaSyAxsOMhMNNlJe38h-ON-0MkOxBLCT78MRU&callback=initMap"></script>
 
                     <p>
                         <strong><i class="fa fa-map-marker"></i> Адрес</strong><br>
-                        Старый Петровско-Разумовский проезд, 1/23 стр.1, Москва, 127287
+                        <?= Yii::t('easyii','addressinfo1')?>
                     </p>
                     <p><strong><i class="fa fa-phone"></i> Номер телефона</strong><br>
                         +7 925 470 50 02</p>
