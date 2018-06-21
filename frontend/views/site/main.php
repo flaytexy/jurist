@@ -38,7 +38,7 @@ $iteration = 1;
                                                  data-elementdelay="0.05"
                                                  onclick="location.href='<?= $item->model->url ?>'"
                                                  style="">
-                                                <? if ( Yii::$app->language==='en-EN'): ?>
+                                                <? if ( Yii::$app->language==='en-US'): ?>
                                                     <?=  $item->model->title_en ?>
                                                 <? else: ?>
                                                     <?=  $item->model->title ?>
@@ -63,7 +63,7 @@ $iteration = 1;
                                                  onclick="location.href='<?= $item->model->url ?>'"
                                                  style="">
                                             <span>
-                                            <? if ( Yii::$app->language==='en-EN'): ?>
+                                            <? if ( Yii::$app->language==='en-US'): ?>
                                                 <?=  $item->model->short_en ?>
                                             <? else: ?>
                                                 <?=  $item->model->short ?>
@@ -88,7 +88,7 @@ $iteration = 1;
                                                data-elementdelay="0.05"
                                                onclick="location.href='<?= $item->model->url ?>'"
                                                style="">
-                                                <? if ( Yii::$app->language==='en-EN'): ?>
+                                                <? if ( Yii::$app->language==='en-US'): ?>
                                                     <?=  $item->model->text_en ?>
                                                 <? else: ?>
                                                     <?=  $item->model->text ?>
@@ -131,7 +131,7 @@ $iteration = 1;
                                         <!--<img src="//i.imgur.com/8mwd9AL.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
-                                                <? if ( Yii::$app->language==='en-EN'): ?>
+                                                <? if ( Yii::$app->language==='en-US'): ?>
                                                 <div class="h3"><?= $item->model->title_en ?></div>
                                                 <div class="h5"><?= $item->model->text_en ?></div>
                                                 <? else: ?>
@@ -230,13 +230,16 @@ $iteration = 1;
                                                 <h4><a href="/offers/<?= $offer->model->slug ?>"
                                                        title="<?= $offer->model->title ?>"><?= $offer->model->title ?></a>
                                                 </h4>
+
+
                                                 <ul class="location-book">
                                                     <li class="book-btn"><i class="fa fa-info"></i>
                                                         <a
                                                                 href="/offers/<?= $offer->model->slug ?>"
                                                                 title=""><?= Yii::t('easyii', '9') ?></a></li>
-                                                    <li class="book-btn"><i class="fa fa-shopping-basket"></i> <a
-                                                                href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
+                                                    <li class="book-btn"><i class="fa fa-shopping-basket"></i>
+                                                        <a href="javascript:void( window.open( 'https://forms.amocrm.ru/forms/html/form_326401_ab9058f531bfbd2671c5d24aa0d8dc90.html?date=<?php echo time(); ?>', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">
+                                                            <?= Yii::t('easyii', '10') ?></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -557,3 +560,4 @@ $iteration = 1;
     </div>
 </section>
 <? endif; ?>
+

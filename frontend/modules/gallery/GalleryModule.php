@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\gallery;
 
-class GalleryModule extends \frontend\components\Module
+class GalleryModule extends \common\components\Module
 {
     public $settings = [
         'categoryThumb' => true,

@@ -2,7 +2,7 @@
 namespace frontend\modules\carousel\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
 use frontend\helpers\Data;
 use frontend\modules\carousel\models\Carousel as CarouselModel;
 use yii\helpers\Html;

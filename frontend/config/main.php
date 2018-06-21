@@ -10,7 +10,7 @@ $params = array_merge(
 $config = [
     'id' => 'app-frontend',
     'language' => 'ru-RU', // en-US
-    'sourceLanguage' => 'ru-RU',
+    'sourceLanguage' => 'en',
 
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [
@@ -53,17 +53,17 @@ $config = [
             'translations' => [
                 'frontend*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'sourceLanguage' => 'en-US',
+                    'sourceLanguage' => 'en',
                     'basePath' => '@common/messages',
                 ],
                 'backend*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'sourceLanguage' => 'en-US',
+                    'sourceLanguage' => 'en',
                     'basePath' => '@common/messages',
                 ],
                 'easyii*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'sourceLanguage' => 'en-US',
+                    'sourceLanguage' => 'en',
                     'basePath' => '@common/messages',
                     'fileMap' => [
                         'easyii' => 'translate.php',
@@ -91,12 +91,111 @@ $config = [
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
+//            'targets' => [
+//                [
+//                    'class' => 'yii\log\FileTarget',
+//                    'levels' => ['error', 'warning'],
+//                    'logFile' => '@runtime/log/requests.log',
+//                    //'prefix' => function ($message) { //formatter
+//                    //    $user = Yii::$app->has('user', true) ? Yii::$app->get('user') : null;
+//                    //    $userID = $user ? $user->getId(false) : '-';
+//                    //    return "[$userID]";
+//                    //}
+//                ],
+//            ],
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
-                    'logFile' => '@runtime/log/requests.log',
+                    'logFile' => '@runtime/log/requests_all.log',
+                    'maxFileSize' => 1024 * 2,
+                    'maxLogFiles' => 20,
+                    //'logVars' => ['GET', 'POST'], // log some globals
                 ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error'],
+                    'maxFileSize' => 1024 * 2,
+                    'maxLogFiles' => 20,
+                    'logFile' => '@runtime/log/requests_error.log',
+                    //'logVars' => ['GET', 'POST'], // log some globals
+                ],
+                '404_mail' => [
+                    'class' => 'yii\log\EmailTarget',
+                    'categories' => ['yii\web\HttpException:404'],
+                    'message' => [
+                        'from' => ['itc@iq-offshore.com' => 'Iq-offshore.com'], //от кого
+                        'to' => ['akvamiris@gmail.com'], //кому
+                        'subject' => '404 ошибка на саайте', //тема
+                    ],
+                ],
+                '404_file' => [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning'],
+                    'categories' => ['yii\web\HttpException:404'],
+                    //'logVars' => [], //не добавлять в лог глобальные переменные ($_SERVER, $_SESSION...)
+                    'logFile' => '@runtime/logs/404.log',
+                ],
+                'delete_end_truncate' => [
+                    'class' => 'yii\log\EmailTarget',
+                    'categories' => ['delete_end_truncate'],
+                    'message' => [
+                        'from' => ['itc@iq-offshore.com' => 'Iq-offshore.com'], //от кого
+                        'to' => ['akvamiris@gmail.com'], //кому
+                        'subject' => 'Попитка delete_end_truncate', //тема
+                    ],
+                    //'logVars' => [] //не добавлять в лог глобальные переменные ($_SERVER, $_SESSION...)
+                ],
+                'delete_end_truncate_file' => [
+                    'class' => 'yii\log\FileTarget',
+                    //'levels' => ['error', 'warning'],
+                    'categories' => ['delete_end_truncate'],
+                    //'logVars' => [], //не добавлять в лог глобальные переменные ($_SERVER, $_SESSION...)
+                    'logFile' => '@runtime/logs/delete_end_truncate.log',
+                    'maxFileSize' => 1024 * 2,
+                    'maxLogFiles' => 20,
+                ],
+//                [
+//                    'class' => 'yii\log\EmailTarget', //шлет на e-mail
+//                    'categories' => ['payment_success'],
+//                    'mailer' => 'yii\swiftmailer\Mailer',
+//                    'logVars' => [],
+//                    'message' => [
+//                        'from' => ['admin@site.com' => 'НАЗВАНИЕ САЙТА'], //от кого
+//                        'to' => ['mail@gmail.com'], //кому
+//                        'subject' => 'Получен платеж. Лог в теле сообщения.', //тема
+//                    ],
+//                ],
+//                'email' => [
+//                    'class' => 'yii\log\EmailTarget',
+//                    'except' => ['yii\web\HttpException:404'],
+//                    'levels' => ['error', 'warning'],
+//                    'message' => ['from' => 'robot@iq-offshore.com', 'to' => 'akvamiris@gmail.com'],
+//                ],
+//
+//                [
+//                    'class' => 'yii\log\FileTarget',
+//                    'levels' => ['info'],
+//                    'categories' => ['orders'],
+//                    'logFile' => '@app/runtime/logs/Orders/requests.log',
+//                    'maxFileSize' => 1024 * 2,
+//                    'maxLogFiles' => 20,
+//                ],
+//                [
+//                    'class' => 'yii\log\FileTarget',
+//                    'levels' => ['info'],
+//                    'categories' => ['pushNotifications'],
+//                    'logFile' => '@app/runtime/logs/Orders/notification.log',
+//                    'maxFileSize' => 1024 * 2,
+//                    'maxLogFiles' => 50,
+//                ],
+//                [
+//                    'class' => 'yii\log\FileTarget',
+//                    'levels' => ['error'],
+//                    'logFile' => '@app/runtime/logs/Orders/my_error.log',
+//                    'maxFileSize' => 1024 * 2,
+//                    'maxLogFiles' => 50,
+//                ],
             ],
         ],
         'errorHandler' => [
@@ -117,6 +216,7 @@ $config = [
             //'baseUrl' => '/',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            //'class' => 'yii\web\UrlManager',
             'class' => 'frontend\components\LangUrlManager',
             //'languages' => ['ru' => 'ru-RU', 'en' => 'en-US', 'uk' => 'uk-UA'],
             'rules' => [
@@ -157,12 +257,15 @@ $config = [
                 ],
 
                 //'<alias:index|search|detail|result|hospital>' => 'site/<alias>', ////
-                '<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'pages/index',
-                '<name:(licenses|offshore|processing|fonds|sale)>' => 'pages/index',
-                '<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'pages/view',
+                //'<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'pages/index',   //@todo
+                //'<name:(licenses|offshore|processing|fonds|sale)>' => 'pages/index',                  //@todo
+                //'<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'pages/view',     //@todo
+                '<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'novanews/index',
+                '<name:(licenses|offshore|processing|fonds|sale)>' => 'novanews/index',
+                '<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'novanews/view',
 
                 '<controller:\w+>/tag/<tag:[\w- ]+>' => '<controller>/index',
-
+                //'<controller:\w+>/page<page:\d+>' => '<controller>/index',                            //@todo
                 '<controller:\w+>/page<page:\d+>' => '<controller>/index',
 
                 '<name:(offers|news|banks)>/<slug:[\w-]+>' => '<name>/view',
@@ -340,6 +443,17 @@ $config = [
 //        'admin' => [
 //            'class' => 'frontend\modules\admin\AdminModule',
 //        ],
+//        'novanews' => [
+//            'class' => 'frontend\modules\novanews\Module',
+//            'controllerNamespace' => 'frontend\modules\novanews\controllers\frontend',
+//            'viewPath' => '@frontend/modules/novanews/views/frontend',
+//        ],
+//        'news' => [
+//            'class' => 'frontend\modules\news\Module',
+//            'controllerNamespace' => 'frontend\modules\news\controllers\frontend',
+//            'viewPath' => '@frontend/modules/news/views/frontend',
+//        ],
+        //'novanews' => ['class' => 'frontend\modules\novanews\Module'],
 
         'admin' => [
             'class' => 'frontend\modules\admin\AdminModule',
@@ -350,6 +464,11 @@ $config = [
                     'controllerNamespace' => 'frontend\modules\novanews\controllers\backend',
                     'viewPath' => '@frontend/modules/novanews/views/backend',
                 ],
+                'attachment' => [
+                    'class' => 'common\modules\attachment\Module',
+                    'controllerNamespace' => 'common\modules\attachment\controllers\backend',
+                    'viewPath' => '@common/modules/attachment/views/backend',
+                ],
             ],
         ],
     ],
@@ -357,7 +476,8 @@ $config = [
         'admin',
         'log',
         //'debug',
-        'gii'
+        'gii',
+        'frontend\modules\novanews\Bootstrap'
     ]
 
 ];

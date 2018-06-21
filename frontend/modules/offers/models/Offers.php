@@ -11,7 +11,7 @@ use frontend\behaviors\Optionable;
 use frontend\models\Photo;
 use yii\helpers\StringHelper;
 
-class Offers extends \frontend\components\ActiveRecord
+class Offers extends \common\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;

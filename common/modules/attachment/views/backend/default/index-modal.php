@@ -2,16 +2,9 @@
 
 /**
  * @var \yii\web\View $this
- * @var \common\modules\news\models\News|array $models
- * @var \common\modules\news\models\News $model
- * @var \yii\data\Pagination $pages
- */
-
-?>
-<?php
-
-/**
+ * @var \common\modules\attachment\models\Attachment|array $models
  * @var \common\modules\attachment\models\Attachment $model
+ * @var \yii\data\Pagination $pages
  */
 
 ?>

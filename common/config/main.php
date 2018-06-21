@@ -4,7 +4,8 @@ return [
 
     'bootstrap' => [
         //'log',
-          'frontend\modules\novanews\Bootstrap',
+//          'common\modules\attachment\Bootstrap',
+//          'frontend\modules\novanews\Bootstrap',
 //        'app\modules\main\Bootstrap',
 //        'app\modules\user\Bootstrap',
 //        'app\modules\menu\Bootstrap',
@@ -13,7 +14,7 @@ return [
 //        'app\modules\album\Bootstrap',
 //        'app\modules\video\Bootstrap',
 //        'app\modules\press\Bootstrap',
-//        'app\modules\attachment\Bootstrap',
+
 //        'app\modules\park\Bootstrap',
 //        'app\modules\currency\Bootstrap',
 //        'app\modules\seo\Bootstrap',

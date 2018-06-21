@@ -6,7 +6,7 @@ use Yii;
 use frontend\helpers\Data;
 use frontend\behaviors\CacheFlush;
 
-class Setting extends \frontend\components\ActiveRecord
+class Setting extends \common\components\ActiveRecord
 {
     const VISIBLE_NONE = 0;
     const VISIBLE_ROOT = 1;

@@ -26,7 +26,7 @@ $moduleName = $this->context->module->id;
             <div class="header">
                 <div class="logo">
                     <img src="<?= $asset->baseUrl ?>/img/logo_20.png">
-                    NNNCMS
+                    ETR_CMS
                 </div>
                 <div class="nav">
                     <a href="<?= Yii::$app->homeUrl ?>" class="pull-left"><i class="glyphicon glyphicon-home"></i> <?= Yii::t('easyii', 'Open site') ?></a>

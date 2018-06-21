@@ -72,8 +72,8 @@ use common\modules\attachment\models\Attachment;
                         ->label(false)
                         ->dropDownList(
                             [
-                                Page::STATUS_DRAFT => 'Черновик',
-                                Page::STATUS_PUBLISHED => 'Опубликовано',
+                                Page::STATUS_OFF => 'Черновик',
+                                Page::STATUS_ON => 'Опубликовано',
                             ],
                             [
                                 'class' => 'c-select form-control boxed',

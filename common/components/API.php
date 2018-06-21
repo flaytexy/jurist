@@ -1,8 +1,9 @@
 <?php
-namespace frontend\components;
+namespace common\components;
 
 use Yii;
-
+use frontend\models\Setting;
+use yii\helpers\Url;
 /**
  * Base API component. Used by all modules
  * @package frontend\components
@@ -41,5 +42,21 @@ class API extends \yii\base\Object
     public static  function liveEdit($text, $path, $tag = 'span')
     {
         return $text ? '<'.$tag.' class="easyiicms-edit" data-edit="'.$path.'">'.$text.'</'.$tag.'>' : '';
+    }
+
+    public function mailApi($errorMessage = ''){
+        return Yii::$app->mailer->compose()
+            ->setFrom(Setting::get('robot_email'))
+            //->setFrom('itc@iq-offshore.com')
+            ->setTo('akvamiris@gmail.com')
+            ->setSubject('Рапорт об ошибке')
+            ->setHtmlBody('
+                <h1>'.$errorMessage.'</h1>
+                <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
+                <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
+                <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
+            ')//Url::to()
+            //->setReplyTo(Setting::get('admin_email'))
+            ->send();
     }
 }

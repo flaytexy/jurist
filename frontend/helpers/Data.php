@@ -2,7 +2,7 @@
 namespace frontend\helpers;
 
 use Yii;
-use yii\helpers\Inflector;
+use common\helpers\InflectorTextTranslate;
 use yii\helpers\StringHelper;
 
 class Data

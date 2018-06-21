@@ -18,7 +18,7 @@ use frontend\widgets\ReCaptcha;
  * @method static array save(array $attributes) If you using your own form, this function will be useful for manual saving orders's.
  */
 
-class Orders extends \frontend\components\API
+class Orders extends \common\components\API
 {
     const SENT_VAR = 'orders_sent';
 

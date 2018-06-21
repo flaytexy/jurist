@@ -1,14 +1,19 @@
 <?php
-use frontend\modules\page\api\Page;
+//use frontend\modules\novanews\api\Novanews as Page;
+
+/**
+ * @var \frontend\modules\novanews\api\NovanewsObject $page
+ * @var \frontend\modules\novanews\api\NovanewsObject[] $news
+ */
+
 use frontend\helpers\Image;
 
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$page = Page::get($page_name);
 
-if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
-$this->params['breadcrumbs'][] = $page->model->title;
+if(!empty($page)) $this->title = $page->seo('title', $page->title);
+$this->params['breadcrumbs'][] = $page->title;
 
 ?>
 
@@ -51,7 +56,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 </div>
                 <!-- Recent Pages -->
                 <div id="pagination">
-                    <?= Page::pages() ?>
+                    <?= \frontend\modules\novanews\api\Novanews::pages() ?>
                 </div>
                 <!-- Pagination -->
 

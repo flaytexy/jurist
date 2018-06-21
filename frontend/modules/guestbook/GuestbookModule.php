@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\guestbook;
 
-class GuestbookModule extends \frontend\components\Module
+class GuestbookModule extends \common\components\Module
 {
     public $settings = [
         'enableTitle' => false,

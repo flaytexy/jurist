@@ -1,12 +1,15 @@
 <?php
-use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
 
-$this->title = $news->seo('title', $news->model->title);
+/**
+ * @var \frontend\modules\novanews\api\NovanewsObject $news
+ */
+
+$this->title = $news->seo('title', $news->title);
 $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/news']];
-$this->params['breadcrumbs'][] = $news->model->title;
+$this->params['breadcrumbs'][] = $news->title;
 ?>
 
 <style>
@@ -72,7 +75,7 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                         </div>
                                         <?php endif; ?>
 
-                                        <?php Page::plugin() ?>
+                                        <?php \frontend\modules\novanews\api\Novanews::plugin() ?>
                                     </div>
                                 </div>
                             </div>

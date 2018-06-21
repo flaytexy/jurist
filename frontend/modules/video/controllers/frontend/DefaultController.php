@@ -3,9 +3,8 @@
 namespace frontend\modules\video\controllers\frontend;
 
 use Yii;
-use app\modules\video\models\Video;
+use frontend\modules\video\models\Video;
 use yii\data\Pagination;
-use yii\db\ActiveQuery;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 

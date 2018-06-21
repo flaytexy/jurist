@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\carousel;
 
-class CarouselModule extends \frontend\components\Module
+class CarouselModule extends \common\components\Module
 {
     public $settings = [
         'enableTitle' => true,

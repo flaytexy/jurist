@@ -3,7 +3,7 @@
 namespace frontend\modules\tickers\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
 use frontend\models\Photo;
 use frontend\modules\tickers\models\Tickers as TickersModel;
 use yii\helpers\Url;
@@ -16,7 +16,7 @@ use yii\helpers\Url;
  * @property $countries;
  * @property $properties;
  */
-class TickersObject extends \frontend\components\ApiObject
+class TickersObject extends \common\components\APIObject
 {
     public $slug;
     public $image;

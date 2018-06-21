@@ -6,7 +6,7 @@ use yii\behaviors\SluggableBehavior;
 use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\SortableModel;
 
-class File extends \frontend\components\ActiveRecord
+class File extends \common\components\ActiveRecord
 {
     public static function tableName()
     {

@@ -32,7 +32,7 @@ class InstallController extends \yii\web\Controller
             return $this->showError(Yii::t('easyii/install', 'Cannot connect to database. Please configure `{0}`.', $configFile));
         }
         if($this->module->installed){
-            return $this->showError(Yii::t('easyii/install', 'NNNCMS is already installed. If you want to reinstall nnnCMS, please drop all tables with prefix `easyii_` from your database manually.'));
+            return $this->showError(Yii::t('easyii/install', 'ETR_CMS is already installed. If you want to reinstall ETR_CMS, please drop all tables with prefix `easyii_` from your database manually.'));
         }
 
         $installForm = new InstallForm();

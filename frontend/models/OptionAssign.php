@@ -1,7 +1,7 @@
 <?php
 namespace frontend\models;
 
-class OptionAssign extends \frontend\components\ActiveRecord
+class OptionAssign extends \common\components\ActiveRecord
 {
     public static function tableName()
     {

@@ -11,8 +11,8 @@ Options +FollowSymLinks
 RewriteEngine On
 
 # SSL redirect
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 ## https to http
 #RewriteEngine On
@@ -35,6 +35,7 @@ RewriteRule ^(.*)index.(php|html?)$ /$1 [R=301,NC,L]
 
 RewriteRule ^offers/index$ /$1 [R=301,NC,L]
 RewriteRule ^news/index$ /news [R=301,NC,L]
+RewriteRule ^news/c/(.*)$ /news-category/$1 [R=301,NC,L]
 RewriteRule ^news/c/(.*)$ /news-category/$1 [R=301,NC,L]
 
 RewriteRule ^ru/ru/(.*)$ /ru/$1 [R=301,NC,L]
@@ -60,8 +61,13 @@ RewriteRule ^(.*)/index /$1 [R=301,NC,L]
 
 RewriteRule ^sitemap\.xml$ /uploads/seo/sitemap\.xml [L]
 
-RewriteCond %{HTTP_HOST} betta\.iq-offshore\.com.*$
+#RewriteCond %{HTTP_HOST} betta\.iq-offshore\.com.*$
+#RewriteRule ^robots\.txt$ robots_betta.txt [L]
+
+#RewriteCond %{HTTP_HOST} alpha\.iq-offshore\.com.*$
+RewriteCond %{HTTP_HOST} !^iq-offshore\.com.*$
 RewriteRule ^robots\.txt$ robots_betta.txt [L]
+
 
 RewriteRule ^robots\.txt /uploads/seo/robots\.txt [L]
 

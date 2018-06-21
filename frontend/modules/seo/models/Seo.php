@@ -9,7 +9,7 @@ use frontend\behaviors\Optionable;
 use frontend\models\Photo;
 use yii\helpers\StringHelper;
 
-class Seo extends \frontend\components\ActiveRecord
+class Seo extends \common\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;

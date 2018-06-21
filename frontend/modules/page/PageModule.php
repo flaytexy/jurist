@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\page;
 
-class PageModule extends \frontend\components\Module
+class PageModule extends \common\components\Module
 {
     public $settings = [
         'enableThumb' => true,

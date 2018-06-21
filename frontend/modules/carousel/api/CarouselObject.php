@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\carousel\api;
 
-class CarouselObject extends \frontend\components\ApiObject
+class CarouselObject extends \common\components\APIObject
 {
     public $image;
     public $link;

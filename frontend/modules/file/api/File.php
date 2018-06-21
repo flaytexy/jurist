@@ -17,7 +17,7 @@ use yii\widgets\LinkPager;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class File extends \frontend\components\API
+class File extends \common\components\API
 {
     private $_adp;
     private $_last;

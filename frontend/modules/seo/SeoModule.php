@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\seo;
 
-class SeoModule extends \frontend\components\Module
+class SeoModule extends \common\components\Module
 {
     public $settings = [
         'enableThumb2' => true,

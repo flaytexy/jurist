@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\modules\admin\AdminModule;
 use Yii;
 use frontend\helpers\WebConsole;
 use frontend\models\Setting;
@@ -18,7 +19,7 @@ class SystemController extends \frontend\components\Controller
     {
         $result = WebConsole::migrate();
 
-        Setting::set('easyii_version', \frontend\AdminModule::VERSION);
+        Setting::set('easyii_version', AdminModule::VERSION);
         Yii::$app->cache->flush();
 
         return $this->render('update', ['result' => $result]);

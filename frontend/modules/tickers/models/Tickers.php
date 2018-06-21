@@ -24,7 +24,7 @@ use yii\helpers\StringHelper;
  * @property $country
  * @property $ticker_id
  */
-class Tickers extends \frontend\components\ActiveRecord
+class Tickers extends \common\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
@@ -190,7 +190,7 @@ class Tickers extends \frontend\components\ActiveRecord
             return $this->hasOne(self::getModelClassName(), ['content_id' => 'id'])
                 //->andOnCondition([ContentTranslation::tableName() . '.language' => Yii::$app->language])
                 ->where([
-                    ContentTranslation::tableName() . '.status' => Content::STATUS_PUBLISHED,
+                    ContentTranslation::tableName() . '.status' => Content::STATUS_ON,
                     ContentTranslation::tableName() . '.language' => Yii::$app->language
                 ]);
         }

@@ -868,7 +868,7 @@ function urlTranslate($str, $options = array()) {
         '?' => 'y',
 
 // Latin symbols
-        '©' => '(c)',
+        'пїЅ' => '(c)',
 
 // Greek
         '?' => 'A', '?' => 'B', '?' => 'G', '?' => 'D', '?' => 'E', '?' => 'Z', '?' => 'H', '?' => '8',
@@ -887,20 +887,20 @@ function urlTranslate($str, $options = array()) {
         '?' => 's', '?' => 'i', '?' => 'c', '?' => 'u', '?' => 'o', '?' => 'g',
 
 // Russian
-        'А' => 'A', 'Б' => 'B', 'В' => 'V', 'Г' => 'G', 'Д' => 'D', 'Е' => 'E', 'Ё' => 'Yo', 'Ж' => 'Zh',
-        'З' => 'Z', 'И' => 'I', 'Й' => 'J', 'К' => 'K', 'Л' => 'L', 'М' => 'M', 'Н' => 'N', 'О' => 'O',
-        'П' => 'P', 'Р' => 'R', 'С' => 'S', 'Т' => 'T', 'У' => 'U', 'Ф' => 'F', 'Х' => 'H', 'Ц' => 'C',
-        'Ч' => 'Ch', 'Ш' => 'Sh', 'Щ' => 'Sh', 'Ъ' => '', 'Ы' => 'Y', 'Ь' => '', 'Э' => 'E', 'Ю' => 'Yu',
-        'Я' => 'Ya',
-        'а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd', 'е' => 'e', 'ё' => 'yo', 'ж' => 'zh',
-        'з' => 'z', 'и' => 'i', 'й' => 'j', 'к' => 'k', 'л' => 'l', 'м' => 'm', 'н' => 'n', 'о' => 'o',
-        'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't', 'у' => 'u', 'ф' => 'f', 'х' => 'h', 'ц' => 'c',
-        'ч' => 'ch', 'ш' => 'sh', 'щ' => 'sh', 'ъ' => '', 'ы' => 'y', 'ь' => '', 'э' => 'e', 'ю' => 'yu',
-        'я' => 'ya',
+        'пїЅ' => 'A', 'пїЅ' => 'B', 'пїЅ' => 'V', 'пїЅ' => 'G', 'пїЅ' => 'D', 'пїЅ' => 'E', 'пїЅ' => 'Yo', 'пїЅ' => 'Zh',
+        'пїЅ' => 'Z', 'пїЅ' => 'I', 'пїЅ' => 'J', 'пїЅ' => 'K', 'пїЅ' => 'L', 'пїЅ' => 'M', 'пїЅ' => 'N', 'пїЅ' => 'O',
+        'пїЅ' => 'P', 'пїЅ' => 'R', 'пїЅ' => 'S', 'пїЅ' => 'T', 'пїЅ' => 'U', 'пїЅ' => 'F', 'пїЅ' => 'H', 'пїЅ' => 'C',
+        'пїЅ' => 'Ch', 'пїЅ' => 'Sh', 'пїЅ' => 'Sh', 'пїЅ' => '', 'пїЅ' => 'Y', 'пїЅ' => '', 'пїЅ' => 'E', 'пїЅ' => 'Yu',
+        'пїЅ' => 'Ya',
+        'пїЅ' => 'a', 'пїЅ' => 'b', 'пїЅ' => 'v', 'пїЅ' => 'g', 'пїЅ' => 'd', 'пїЅ' => 'e', 'пїЅ' => 'yo', 'пїЅ' => 'zh',
+        'пїЅ' => 'z', 'пїЅ' => 'i', 'пїЅ' => 'j', 'пїЅ' => 'k', 'пїЅ' => 'l', 'пїЅ' => 'm', 'пїЅ' => 'n', 'пїЅ' => 'o',
+        'пїЅ' => 'p', 'пїЅ' => 'r', 'пїЅ' => 's', 'пїЅ' => 't', 'пїЅ' => 'u', 'пїЅ' => 'f', 'пїЅ' => 'h', 'пїЅ' => 'c',
+        'пїЅ' => 'ch', 'пїЅ' => 'sh', 'пїЅ' => 'sh', 'пїЅ' => '', 'пїЅ' => 'y', 'пїЅ' => '', 'пїЅ' => 'e', 'пїЅ' => 'yu',
+        'пїЅ' => 'ya',
 
 // Ukrainian
-        'Є' => 'Ye', 'І' => 'I', 'Ї' => 'Yi', 'Ґ' => 'G',
-        'є' => 'ye', 'і' => 'i', 'ї' => 'yi', 'ґ' => 'g',
+        'пїЅ' => 'Ye', 'пїЅ' => 'I', 'пїЅ' => 'Yi', 'пїЅ' => 'G',
+        'пїЅ' => 'ye', 'пїЅ' => 'i', 'пїЅ' => 'yi', 'пїЅ' => 'g',
 
 // Czech
         '?' => 'C', '?' => 'D', '?' => 'E', '?' => 'N', '?' => 'R', '?' => 'S', '?' => 'T', '?' => 'U',
@@ -962,7 +962,7 @@ function authSiteByCurl($url,$accesstoken){
     curl_close($ch);
 
     if($page === false){
-        //echo 'Ошибка curl: ' . curl_error($ch);
+        //echo 'пїЅпїЅпїЅпїЅпїЅпїЅ curl: ' . curl_error($ch);
         return false;
     }else
         return true;
@@ -973,8 +973,6 @@ function file_get_contents_curl_by_auth($url,$accesstoken,$watchPartHtmlCodeInTh
     $page = file_get_contents_curl($url,$request);
 
     if (!preg_match("/".$watchPartHtmlCodeInTheOnlyAuthPage."/is", $page, $form)) {
-        echo '2222222';
-
         if(!authSiteByCurl($url,$accesstoken)){
             //die('Erorr: Could not login!');
             return false;
@@ -1010,7 +1008,7 @@ function file_get_contents_curl($url,$request=false) {
     curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0");
     //curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
     curl_setopt($ch, CURLOPT_COOKIEFILE, $_SERVER['DOCUMENT_ROOT'].'/cookie.txt');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Устанавливаем параметр, чтобы curl возвращал данные, вместо того, чтобы выводить их в браузер.
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ curl пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
     if(isset($post)){
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
@@ -1020,7 +1018,7 @@ function file_get_contents_curl($url,$request=false) {
 
     if(false === $data = curl_exec($ch))
     {
-        echo 'Ошибка curl: ' . curl_error($ch) .'<br />';
+        echo 'пїЅпїЅпїЅпїЅпїЅпїЅ curl: ' . curl_error($ch) .'<br />';
     }
 
     curl_close($ch);

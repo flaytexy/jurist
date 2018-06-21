@@ -37,7 +37,7 @@ class LicensesController extends \yii\web\Controller
 //        $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id.$parts[1];
 //        $popularly->slug = 'licenses/'.$pages->slug;
 //        $popularly->title = $pages->title;
-//        $popularly->item_id = $pages->model->page_id;
+//        $popularly->item_id = $pages->model->id;
 //        $popularly->image = $pages->image;
 //        $popularly->time = time();
 //        $popularly->save();

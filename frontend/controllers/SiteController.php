@@ -102,10 +102,10 @@ class SiteController extends Controller
             //e_print('finded');
         }
 
-
         return $this->render('error', [
-            'message' => Yii::t('yii', 'Page not found.').' '.$mail,
-            'exception' => Yii::$app->errorHandler->exception
+            'message' => Yii::$app->errorHandler->exception->getMessage(),
+            'error_text' => Yii::t('yii', 'Page not found.'),
+            //'exception' => Yii::$app->errorHandler->exception
         ]);
         /*
         $exception = Yii::$app->errorHandler->exception;
@@ -121,7 +121,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $page = \frontend\modules\page\api\Page::get('page-main');
+        $page = \frontend\modules\novanews\api\Novanews::get('page-main');
+
         if($page){
             $this->view->title = $page->seo('title', $page->model->title);
             //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
@@ -138,7 +139,6 @@ class SiteController extends Controller
                 'content' => $page->seo('description', '')
             ]);
         }
-
 
         if (!Yii::$app->getModule('admin')->installed) {
             //return $this->redirect(['/install/step1']);

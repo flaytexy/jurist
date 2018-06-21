@@ -2,11 +2,11 @@
 namespace frontend\modules\file\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-class FileObject extends \frontend\components\ApiObject
+class FileObject extends \common\components\APIObject
 {
     public $slug;
     public $downloads;

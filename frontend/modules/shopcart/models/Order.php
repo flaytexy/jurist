@@ -8,7 +8,7 @@ use frontend\models\Setting;
 use frontend\validators\EscapeValidator;
 use yii\helpers\Url;
 
-class Order extends \frontend\components\ActiveRecord
+class Order extends \common\components\ActiveRecord
 {
     const STATUS_BLANK = 0;
     const STATUS_PENDING = 1;

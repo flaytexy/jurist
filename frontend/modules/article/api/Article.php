@@ -25,7 +25,7 @@ use yii\widgets\LinkPager;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class Article extends \frontend\components\API
+class Article extends \common\components\API
 {
     private $_cats;
     private $_items;

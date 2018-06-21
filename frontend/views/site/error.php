@@ -8,6 +8,7 @@ use yii\helpers\Html;
 /* @var $exception Exception */
 
 $this->title = $name;
+
 ?>
 <div class="container">
     <div class="site-error">
@@ -15,11 +16,11 @@ $this->title = $name;
         <h1><?= Html::encode('Houston, we have a problem.') ?></h1>
 
         <div class="alert alert-danger">
-            <?= nl2br(Html::encode($message)) ?>
+            <?= nl2br(Html::encode($error_text)) ?> <?php if($message): ?><span><?= $message ?></span><? endif; ?>
         </div>
 
         <p class="top10">
-            Ошибка 404. Невозможно обработать запрос.
+            Ошибка 404. Невозможно обработать запрос.<br />
         </p>
         <p class="bold top30">
             Воспользуйтесь пожалуйста меню, чтобы перейти в нужный раздел:

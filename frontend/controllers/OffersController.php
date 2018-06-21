@@ -89,11 +89,11 @@ class OffersController extends \yii\web\Controller
         // Categories Left Menu
         $query = new \yii\db\Query;
         $query->select('ept.title as parent_title, ept.*, ept2.*,
-                (SELECT count(p.page_id) as count FROM easyii_pages as p
+                (SELECT count(p.id) as count FROM content as p
                     WHERE p.category_id = ept2.category_id) as counter
             ')
-            ->from('easyii_pages_categories as ept')
-            ->join('RIGHT JOIN', 'easyii_pages_categories as ept2', 'ept2.parent_id = ept.category_id')
+            ->from('content_categories as ept')
+            ->join('RIGHT JOIN', 'content_categories as ept2', 'ept2.parent_id = ept.category_id')
             ->where("ept2.type_id = '2' and ept2.category_id != '2' ")
             ->limit(20);
 

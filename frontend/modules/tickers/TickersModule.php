@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\tickers;
 
-class TickersModule extends \frontend\components\Module
+class TickersModule extends \common\components\Module
 {
     public $settings = [
         'enableThumb2' => true,

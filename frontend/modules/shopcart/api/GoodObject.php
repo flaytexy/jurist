@@ -3,7 +3,7 @@ namespace frontend\modules\shopcart\api;
 
 use frontend\modules\catalog\api\ItemObject;
 
-class GoodObject extends \frontend\components\ApiObject
+class GoodObject extends \common\components\APIObject
 {
     public $order_id;
     public $item_id;

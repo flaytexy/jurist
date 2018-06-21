@@ -2,12 +2,12 @@
 namespace frontend\modules\catalog\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
 use frontend\models\Photo;
 use frontend\modules\catalog\models\Item;
 use yii\helpers\Url;
 
-class ItemObject extends \frontend\components\ApiObject
+class ItemObject extends \common\components\APIObject
 {
     public $slug;
     public $image;

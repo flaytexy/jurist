@@ -5,7 +5,7 @@ use Yii;
 use frontend\behaviors\CacheFlush;
 use frontend\behaviors\SortableModel;
 
-class Carousel extends \frontend\components\ActiveRecord
+class Carousel extends \common\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;

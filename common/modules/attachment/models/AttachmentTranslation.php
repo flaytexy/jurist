@@ -20,7 +20,7 @@ class AttachmentTranslation extends ActiveRecord
     {
         return [
             [['attachment_id', 'title'], 'safe'],
-            [['language'], 'in', 'range' => ['ru-RU', 'uk-UA', 'en-US'], 'message' => 'Неверное значение языка'],
+            [['language'], 'in', 'range' => ['ru-RU', 'en-US'], 'message' => 'Неверное значение языка'],
         ];
     }
 

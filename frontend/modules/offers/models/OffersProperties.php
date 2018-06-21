@@ -2,7 +2,7 @@
 namespace frontend\modules\offers\models;
 
 
-use frontend\components\ActiveRecord;
+use common\components\ActiveRecord;
 use Yii;
 
 

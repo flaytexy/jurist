@@ -30,7 +30,7 @@ class VideoTranslation extends ContentTranslation
             //[['slug'], 'unique', 'message' => 'Постоянная ссылка должна быть уникальной'],
             [['short_description'], 'string', 'message' => 'Введите краткое содержание новости'],
             [['description'], 'string', 'message' => 'Введите содержание новости'],
-            [['language'], 'in', 'range' => ['ru-RU', 'uk-UA', 'en-US'], 'message' => 'Неверное значение языка'],
+            [['language'], 'in', 'range' => ['ru-RU', 'en-US'], 'message' => 'Неверное значение языка'],
             [['status'], 'boolean'],
             [['video_link'], 'string'],
         ];

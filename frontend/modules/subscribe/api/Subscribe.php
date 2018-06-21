@@ -16,7 +16,7 @@ use yii\bootstrap\ActiveForm;
  * @method static array save(array $attributes) If you are using your own form, this function will be useful for manual saving of subscribers.
  */
 
-class Subscribe extends \frontend\components\API
+class Subscribe extends \common\components\API
 {
     const SENT_VAR = 'subscribe_sent';
 

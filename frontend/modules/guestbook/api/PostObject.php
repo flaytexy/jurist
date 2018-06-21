@@ -2,10 +2,10 @@
 namespace frontend\modules\guestbook\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
 use yii\helpers\Url;
 
-class PostObject extends \frontend\components\ApiObject
+class PostObject extends \common\components\APIObject
 {
     public $image;
     public $time;

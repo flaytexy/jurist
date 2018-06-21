@@ -13,7 +13,7 @@ use frontend\modules\faq\models\Faq as FaqModel;
  * @method static array items() list of all FAQ as FaqObject objects
  */
 
-class Faq extends \frontend\components\API
+class Faq extends \common\components\API
 {
     public function api_items()
     {

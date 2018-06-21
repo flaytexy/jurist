@@ -4,7 +4,7 @@ namespace frontend\models;
 use Yii;
 use frontend\behaviors\SortableModel;
 
-class Photo extends \frontend\components\ActiveRecord
+class Photo extends \common\components\ActiveRecord
 {
     const PHOTO_MAX_WIDTH = 1900;
     const PHOTO_THUMB_WIDTH = 120;

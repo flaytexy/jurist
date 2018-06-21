@@ -9,7 +9,7 @@ use frontend\validators\ReCaptchaValidator;
 use frontend\validators\EscapeValidator;
 use yii\helpers\Url;
 
-class Guestbook extends \frontend\components\ActiveRecord
+class Guestbook extends \common\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;

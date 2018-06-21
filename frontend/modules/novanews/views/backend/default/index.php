@@ -9,6 +9,11 @@
 
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
+use yii\helpers\Html;
+
+use frontend\modules\novanews\models\Novanews;
+
+$moduleName = $this->context->module->id;
 
 ?>
 
@@ -40,47 +45,70 @@ use yii\widgets\LinkPager;
             </div>
         </li>
         <?php if (!empty($models)) { ?>
-            <?php foreach ($models as $model) { ?>
-                <li class="item">
-                    <div class="item-row">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <?php if(IS_ROOT) : ?>
+                        <th width="50">#</th>
+                    <?php endif; ?>
+                    <th width="170"><?= Yii::t('easyii', 'Img') ?></th>
+                    <th><?= Yii::t('easyii', 'Title') ?></th>
+                    <th width="120"><?= Yii::t('easyii', 'Views') ?></th>
+                    <th width="100"><?= Yii::t('easyii', 'Date') ?></th>
+                    <th width="80"><?= Yii::t('easyii', 'public_status') ?></th>
+                    <th width="70"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($models as $model) : ?>
+                    <tr data-id="<?= $model->primaryKey ?>">
+                        <?php if(IS_ROOT) : ?>
+                            <td><?= $model->primaryKey ?></td>
+                        <?php endif; ?>
+                        <td>
+                            <?php if($model->pre_image) : ?>
+                                <img src="<?= \frontend\helpers\Image::thumb($model->pre_image, 160,90) ?>">
+                            <?php endif; ?>
+                        </td>
 
-                        <div class="item-col fixed pull-left item-col-title">
-                            <div class="item-heading">Заголовок</div>
-                            <div style="width: auto; margin-right: 10px">
-                                <img src="<?= \common\modules\attachment\models\Attachment::getImage($model->thumbnail, [60,60]) ?>" />
-                            </div>
-                            <div>
-                                <a href="<?= $model->getEditLink(); ?>">
-                                    <h4 class="item-title"><?= $model->getTitle(); ?></h4>
-                                </a>
-                            </div>
-                        </div>
+                        <td><a href="<?= $model->getEditLink(); ?>"><?= $model->title ?></a></td>
+                        <td><?= $model->views ?></td>
+                        <td><?= $model->date ?></td>
+                        <td class="public_status">
+                            <?= Html::checkbox('status', $model->status == $model::STATUS_ON, [
+                                'class' => 'switch',
+                                'data-id' => $model->primaryKey,
+                                'data-link' => Url::to(['/admin/'.$moduleName.'/default']),
+                            ]) ?>
+                        </td>
+                        <td>
+                            <div class="btn-group btn-group-sm" role="group">
 
-                        <div class="item-col fixed item-col-actions-dropdown">
-                            <div class="item-actions-dropdown">
-                                <a class="item-actions-toggle-btn">
-                                    <span class="inactive"><i class="fa fa-cog"></i></span>
-                                    <span class="active"><i class="fa fa-chevron-circle-right"></i></span>
-                                </a>
-                                <div class="item-actions-block">
-                                    <ul class="item-actions-list">
-                                        <li>
-                                            <a class="remove" href="<?= Url::to(['/admin/novanews/default/delete', 'id' => $model->id]); ?>">
-                                                <i class="fa fa-trash-o"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="edit" href="<?= $model->getEditLink(); ?>">
-                                                <i class="fa fa-pencil"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a href="<?= Url::to(['/admin/'.$moduleName.'/default/up', 'id' => $model->primaryKey]) ?>" class="btn btn-default move-up" title="<?= Yii::t('easyii', 'Move up') ?>"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                                <a href="<?= Url::to(['/admin/'.$moduleName.'/default/down', 'id' => $model->primaryKey]) ?>" class="btn btn-default move-down" title="<?= Yii::t('easyii', 'Move down') ?>"><span class="glyphicon glyphicon-arrow-down"></span></a>
+
+                                <!--<a href="<?= Url::to(['/admin/'.$moduleName.'/default/delete', 'id' => $model->primaryKey]) ?>" class="btn btn-default confirm-delete" title="<?= Yii::t('easyii', 'Delete item') ?>"><span class="glyphicon glyphicon-remove"></span></a>-->
                             </div>
-                        </div>
-                    </div>
-                </li>
-            <?php } ?>
+                        </td>
+
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?=
+            LinkPager::widget([
+                'pagination' => $pages,
+                'linkOptions' => [
+                    'class' => 'page-link',
+                ],
+                'pageCssClass' => 'page-item',
+                'prevPageCssClass' => 'page-item',
+                'nextPageCssClass' => 'page-item',
+                'disabledListItemSubTagOptions' => [
+                    'class' => 'page-link',
+                ],
+            ]);
+            ?>
         <?php } else { ?>
         <li class="item">
             <div class="item-row py-1">
@@ -90,20 +118,5 @@ use yii\widgets\LinkPager;
         <?php } ?>
     </ul>
 </div>
-<nav class="text-xs-center">
-    <?=
-        LinkPager::widget([
-            'pagination' => $pages,
-            'linkOptions' => [
-                'class' => 'page-link',
-            ],
-            'pageCssClass' => 'page-item',
-            'prevPageCssClass' => 'page-item',
-            'nextPageCssClass' => 'page-item',
-            'disabledListItemSubTagOptions' => [
-                'class' => 'page-link',
-            ],
-        ]);
-    ?>
-</nav>
+
 </div>

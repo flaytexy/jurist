@@ -1,7 +1,7 @@
 <?php
 namespace frontend\models;
 
-class Tag extends \frontend\components\ActiveRecord
+class Tag extends \common\components\ActiveRecord
 {
     public static function tableName()
     {

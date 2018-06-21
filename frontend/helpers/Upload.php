@@ -4,7 +4,7 @@ namespace frontend\helpers;
 use Yii;
 use yii\web\UploadedFile;
 use \yii\web\HttpException;
-use yii\helpers\Inflector;
+use common\helpers\InflectorTextTranslate;
 use yii\helpers\StringHelper;
 use yii\helpers\FileHelper;
 use yii\helpers\Url;
@@ -40,7 +40,7 @@ class Upload
     static function getFileName($fileInstanse, $namePostfix = true)
     {
         $baseName = str_ireplace('.'.$fileInstanse->extension, '', $fileInstanse->name);
-        $fileName =  StringHelper::truncate(Inflector::slug($baseName), 32, '');
+        $fileName =  StringHelper::truncate(InflectorTextTranslate::slug($baseName), 32, '');
         if($namePostfix || !$fileName) {
             $fileName .= ($fileName ? '-' : '') . substr(uniqid(md5(rand()), true), 0, 10);
         }

@@ -3,7 +3,7 @@
 namespace frontend\modules\slidemain\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
 use frontend\models\Photo;
 use frontend\modules\slidemain\models\Slidemain as SlidemainModel;
 use yii\helpers\Url;
@@ -16,7 +16,7 @@ use yii\helpers\Url;
  * @property $countries;
  * @property $properties;
  */
-class SlidemainObject extends \frontend\components\ApiObject
+class SlidemainObject extends \common\components\APIObject
 {
     public $slug;
     public $image;

@@ -9,7 +9,9 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\helpers\FileHelper;
+use yii\helpers\Json;
 use yii\imagine\Image as Imagine;
+use yii\imagine\Image;
 use yii\web\UploadedFile;
 
 /**
@@ -32,8 +34,8 @@ class Attachment extends ActiveRecord
     const CACHE_PATH = '@webroot/image_cache';
 
     const ADMIN_PAGE_LIMIT = 60;
-    const STATUS_DRAFT = 0;
-    const STATUS_PUBLISHED = 1;
+    const STATUS_OFF = 0;
+    const STATUS_ON = 1;
 
     private static $_imageMaxLength = 1600;
     private static $_imageQuality = 90;
@@ -200,7 +202,7 @@ class Attachment extends ActiveRecord
 //    public function afterSave($insert, $changedAttributes)
 //    {
 //        //$pathToSaveImage = Yii::getAlias('@path/to/save/image');
-//        $pathToSaveImage = Yii::getAlias(static::UPLOAD_URL);
+//        $pathToSaveImage = Yii::getAlias(static::UPLOAD_URL.'/1');
 //        var_dump($pathToSaveImage);exit;
 //
 //        // open image
@@ -261,9 +263,8 @@ class Attachment extends ActiveRecord
         $saveFile = FileHelper::normalizePath(Yii::getAlias(self::UPLOAD_PATH)) . DIRECTORY_SEPARATOR . $this->name;
         //Image::resizeByMaxLength($saveFile, self::$_imageMaxLength, ['quality' => 80], FileHelper::normalizePath(Yii::getAlias('@webroot/uploadsnew2')) . DIRECTORY_SEPARATOR. $model_file_name);
 
-        \frontend\components\Image::resizeByMaxLength($saveFile, self::$_imageMaxLength, ['quality' => self::$_imageQuality]);
+        \common\components\Image::resizeByMaxLength($saveFile, self::$_imageMaxLength, ['quality' => self::$_imageQuality]);
         //Image::resizeByMaxLength($saveFile, self::$_imageMaxLength);
-
     }
 
     public function getTitle()

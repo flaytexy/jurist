@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\text;
 
-class TextModule extends \frontend\components\Module
+class TextModule extends \common\components\Module
 {
     public static $installConfig = [
         'title' => [

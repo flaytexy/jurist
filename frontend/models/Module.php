@@ -7,7 +7,7 @@ use frontend\helpers\Data;
 use frontend\behaviors\CacheFlush;
 use frontend\behaviors\SortableModel;
 
-class Module extends \frontend\components\ActiveRecord
+class Module extends \common\components\ActiveRecord
 {
     const STATUS_OFF= 0;
     const STATUS_ON = 1;

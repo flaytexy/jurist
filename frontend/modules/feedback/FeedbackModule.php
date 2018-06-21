@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\feedback;
 
-class FeedbackModule extends \frontend\components\Module
+class FeedbackModule extends \common\components\Module
 {
     public $settings = [
         'mailAdminOnNewFeedback' => true,

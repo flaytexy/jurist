@@ -8,7 +8,7 @@ use frontend\behaviors\Taggable;
 use frontend\models\Photo;
 use yii\helpers\StringHelper;
 
-class Item extends \frontend\components\ActiveRecord
+class Item extends \common\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;

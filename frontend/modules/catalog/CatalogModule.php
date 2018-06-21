@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\catalog;
 
-class CatalogModule extends \frontend\components\Module
+class CatalogModule extends \common\components\Module
 {
     public $settings = [
         'categoryThumb' => true,

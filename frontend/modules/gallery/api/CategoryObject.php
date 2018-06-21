@@ -2,13 +2,13 @@
 namespace frontend\modules\gallery\api;
 
 use yii\data\ActiveDataProvider;
-use frontend\components\API;
+use common\components\API;
 use frontend\models\Photo;
 use frontend\modules\gallery\models\Category;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-class CategoryObject extends \frontend\components\ApiObject
+class CategoryObject extends \common\components\APIObject
 {
     public $slug;
     public $image;

@@ -13,9 +13,11 @@ use common\models\ContentTranslation;
  * @property string $language
  * @property string $title
  * @property string $slug
+ * @property string $short
  * @property string $short_description
  * @property string $description
- * @property int $status
+ * @property string $text
+ * @property int $public_status
  * @property int $created_at
  * @property int $updated_at
  */
@@ -24,13 +26,15 @@ class NovanewsTranslation extends ContentTranslation
     public function rules()
     {
         return [
-            [['title'], 'required', 'message' => 'Введите заголовок новости'],
+            [['name'], 'required', 'message' => 'Введите заголовок новости'],
             [['slug'], 'required', 'message' => 'Введите постоянную ссылку для новости'],
             //[['slug'], 'unique', 'message' => 'Постоянная ссылка должна быть уникальной'],
             [['short_description'], 'required', 'message' => 'Введите краткое содержание новости'],
             [['description'], 'required', 'message' => 'Введите содержание новости'],
-            [['language'], 'in', 'range' => ['ru-RU', 'uk-UA', 'en-US'], 'message' => 'Неверное значение языка'],
-            [['status'], 'boolean'],
+            [['language'], 'in', 'range' => ['ru-RU', 'en-US'], 'message' => 'Неверное значение языка'],
+            [['public_status'], 'boolean'],
+            [['name', 'short_description', 'description', 'meta_title', 'meta_keywords', 'meta_description'], 'trim'],
+            [['meta_title', 'meta_keywords', 'meta_description', 'tagNames'], 'safe'],
         ];
     }
 
@@ -39,9 +43,10 @@ class NovanewsTranslation extends ContentTranslation
         return [
             'title' => 'Заголовок',
             'slug' => 'Постоянная ссылка',
-            'short_description' => 'Краткое содержание',
+            'short_description' => 'Краткое содержание (до 100)',
             'description' => 'Содержание',
             'language' => 'Язык',
         ];
     }
+
 }

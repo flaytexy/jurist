@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\banks;
 
-class BanksModule extends \frontend\components\Module
+class BanksModule extends \common\components\Module
 {
     public $settings = [
         'enableThumb2' => true,
