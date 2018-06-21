@@ -36,7 +36,9 @@ class ApiObject extends \yii\base\Object
     /**
      * calls after __construct
      */
-    public function init(){}
+    public function init(){
+        $this->title = $this->getName();
+    }
 
     /**
      * Returns object id

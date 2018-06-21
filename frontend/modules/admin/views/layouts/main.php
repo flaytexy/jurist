@@ -37,7 +37,7 @@ $moduleName = $this->context->module->id;
                 <div class="box sidebar">
                     <a href="<?= Url::to(['/admin/novanews']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novanews') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
-                        novanews
+                        Статии (Новое)
                     </a>
 
                     <a href="<?= Url::to(['/admin/slidemain']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'slidesmall') ? 'active' :'' ?>">
@@ -52,6 +52,7 @@ $moduleName = $this->context->module->id;
                         <i class="glyphicon glyphicon-file"></i>
                         Слайдер (нижний)
                     </a>
+                    <!--
                     <a href="<?= Url::to(['/admin/page?type=6']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'offshore') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         <?= Yii::t('easyii', 'Offshore') ?>
@@ -80,6 +81,7 @@ $moduleName = $this->context->module->id;
                         <i class="glyphicon glyphicon-file"></i>
                         <?= Yii::t('easyii', 'Processing') ?>
                     </a>
+                    -->
                     <?php foreach(Yii::$app->getModule('admin')->activeModules as $module) : ?>
                         <a href="<?= Url::to(["/admin/$module->name"]) ?>" class="menu-item <?= ($moduleName == $module->name ? 'active' : '') ?>">
                             <?php if($module->icon != '') : ?>

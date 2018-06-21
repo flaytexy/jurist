@@ -177,6 +177,9 @@ class Content extends ActiveRecord
             $this->miniature = $this->_findImage();
         }
 
+
+
+
         if (is_null($this->_name)) {
 //            if($this->type==false){
 //                $this->initType();
@@ -197,6 +200,8 @@ class Content extends ActiveRecord
         }
 
         parent::afterFind();
+
+        //$this->title = $this->getName(); //@todo xxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     public function getTitle()
@@ -209,7 +214,6 @@ class Content extends ActiveRecord
         return $this->_name;
     }
 
-    
     public function getEditLink()
     {
         return $this->_edit_link;

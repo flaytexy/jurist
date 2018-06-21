@@ -7,7 +7,7 @@ use common\components\API;
 use frontend\models\Photo;
 use frontend\modules\banks\models\Banks as BanksModel;
 use yii\helpers\Url;
-
+use common\components\APIObject;
 /**
  * Class BanksObject
  * @package frontend\modules\banks\api
@@ -16,7 +16,7 @@ use yii\helpers\Url;
  * @property $countries;
  * @property $properties;
  */
-class BanksObject extends \common\components\APIObject
+class BanksObject extends APIObject
 {
     public $slug;
     public $image;
