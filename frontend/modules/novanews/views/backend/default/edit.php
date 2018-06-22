@@ -359,7 +359,11 @@ JS
             echo $form->field($model, 'tagNames')->widget(TagsInput::className()) ;
 
             if (IS_ROOT || true) {
-                echo $form->field($model, 'slug');
+                if(empty($model->slug)){
+                    echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed', 'readonly'=>'readonly']);
+                }else{
+                    echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed']);
+                }
             }
 
             ?>

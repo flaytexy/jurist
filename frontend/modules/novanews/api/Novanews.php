@@ -3,6 +3,7 @@
 namespace frontend\modules\novanews\api;
 
 
+use frontend\modules\novanews\models\NovanewsTranslation;
 use Yii;
 use yii\data\ActiveDataProvider;
 use frontend\models\Tag;
@@ -40,6 +41,7 @@ class Novanews extends \common\components\API
         $query = NovanewsModel::find()
             ->joinWith('translation')
             ->with($with)
+            ->andWhere([NovanewsTranslation::tableName() . '.public_status' => NovanewsTranslation::STATUS_ON])
             ->status(NovanewsModel::STATUS_ON);
 
 
@@ -143,9 +145,10 @@ class Novanews extends \common\components\API
 
             $errorMessage = 'Страница без перевода!!!: '. $id_slug .'  .#36561';
 
-            if (!$this->mailApi($errorMessage))
-            {
-                ex_print($errorMessage); //@todo test_novanews
+            if (!$this->mailApi($errorMessage)) {
+                //header("HTTP/1.0 404 Not Found");
+                //header("Location: " . Url::to(['/404/error/mailsend'], true));
+                //exit;s
             }
 
             $page = NovanewsModel::find()
@@ -161,7 +164,7 @@ class Novanews extends \common\components\API
 
             return $page;
         } else {
-            return null;
+            return false;
         }
     }
 

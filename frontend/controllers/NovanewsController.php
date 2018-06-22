@@ -33,7 +33,6 @@ class NovanewsController extends \yii\web\Controller
             'where' => ['type_id' => (int)$type, 'status' => 1],
             'pagination' => ['pageSize' => 15]
         ]);
-
         return $this->render('index',[
             'page' => $page,
             'pages' => $pages,

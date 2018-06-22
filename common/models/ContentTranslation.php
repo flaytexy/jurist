@@ -27,6 +27,9 @@ use yii\behaviors\TimestampBehavior;
  */
 class ContentTranslation extends ActiveRecord
 {
+    const STATUS_OFF = 0;
+    const STATUS_ON = 1;
+
     /**
      * @return string the name of the table associated with this ActiveRecord class.
      */
@@ -52,7 +55,7 @@ class ContentTranslation extends ActiveRecord
             [['name'], 'required', 'message' => 'Введите заголовок новости'],
             [['slug'], 'required', 'message' => 'Введите постоянную ссылку для новости'],
             //[['slug'], 'unique', 'message' => 'Постоянная ссылка должна быть уникальной'],
-            [['short_description'], 'required', 'message' => 'Введите краткое содержание новости'],
+            //[['short_description'], 'required', 'message' => 'Введите краткое содержание новости'],
             [['description'], 'required', 'message' => 'Введите содержание новости'],
             [['language'], 'in', 'range' => ['ru-RU', 'en-US'], 'message' => 'Неверное значение языка'], // 'uk-UA',
             [['public_status'], 'boolean'],

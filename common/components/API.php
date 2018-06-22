@@ -1,9 +1,14 @@
 <?php
 namespace common\components;
 
+use frontend\helpers\Mail;
 use Yii;
 use frontend\models\Setting;
+use yii\base\ErrorException;
+use yii\base\Exception;
 use yii\helpers\Url;
+use yii\web\NotFoundHttpException;
+
 /**
  * Base API component. Used by all modules
  * @package frontend\components
@@ -45,18 +50,31 @@ class API extends \yii\base\Object
     }
 
     public function mailApi($errorMessage = ''){
-        return Yii::$app->mailer->compose()
-            ->setFrom(Setting::get('robot_email'))
-            //->setFrom('itc@iq-offshore.com')
-            ->setTo('akvamiris@gmail.com')
-            ->setSubject('Рапорт об ошибке')
-            ->setHtmlBody('
+//        return Mail::send(
+//            Setting::get('admin_email'),
+//            'Рапорт об ошибке',
+//            false,
+//            ['orders' => $this, 'link' => Url::to(['/admin/orders/a/view', 'id' => $this->primaryKey], true)]
+//        );
+
+          try {
+              $mail =  Yii::$app->mailer->compose()
+                  ->setFrom(Setting::get('robot_email'))
+                  //->setFrom('itc@iq-offshore.com')
+                  ->setTo('akvamiris@gmail.com')
+                  ->setSubject('Рапорт об ошибке')
+                  ->setHtmlBody('
                 <h1>'.$errorMessage.'</h1>
                 <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
                 <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
                 <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
             ')//Url::to()
-            //->setReplyTo(Setting::get('admin_email'))
-            ->send();
+                  //->setReplyTo(Setting::get('admin_email'))
+                  ->send();
+          } catch (\Exception $e) {
+             //throw new NotFoundHttpException($e->getMessage());
+          }
+
+        return ;
     }
 }

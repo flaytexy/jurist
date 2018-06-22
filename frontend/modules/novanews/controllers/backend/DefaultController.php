@@ -140,6 +140,8 @@ class DefaultController extends ContentAdminController
         }
 
         //$categories = PageCategories::findAll();
+        $model->category_detail =  $model->type_id . ":" . $model->category_id;
+
         $query = new \yii\db\Query;
         $query->select('ept.title as parent_title, ept.*, ept2.*')
             ->from('content_categories as ept')

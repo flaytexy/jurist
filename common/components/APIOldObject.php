@@ -212,19 +212,19 @@ class APIOldObject extends \yii\base\Object
         return Html::a(Yii::t('easyii/page/api', 'Create page'), ['/admin/novanews/default/create', 'slug' => $this->slug], ['target' => '_blank']);
     }
 
-    public function mailAPIObject($errorMessage = ''){
-        return Yii::$app->mailer->compose()
-            ->setFrom(Setting::get('robot_email'))
-            //->setFrom('itc@iq-offshore.com')
-            ->setTo('akvamiris@gmail.com')
-            ->setSubject('Рапорт об ошибке')
-            ->setHtmlBody('
-                <h1>'.$errorMessage.'</h1>
-                <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
-                <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
-                <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
-            ')//Url::to()
-            //->setReplyTo(Setting::get('admin_email'))
-            ->send();
-    }
+//    public function mailAPIObject($errorMessage = ''){
+//        return Yii::$app->mailer->compose()
+//            ->setFrom(Setting::get('robot_email'))
+//            //->setFrom('itc@iq-offshore.com')
+//            ->setTo('akvamiris@gmail.com')
+//            ->setSubject('Рапорт об ошибке')
+//            ->setHtmlBody('
+//                <h1>'.$errorMessage.'</h1>
+//                <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
+//                <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
+//                <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
+//            ')//Url::to()
+//            //->setReplyTo(Setting::get('admin_email'))
+//            ->send();
+//    }
 }

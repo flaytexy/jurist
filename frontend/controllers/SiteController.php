@@ -77,33 +77,37 @@ class SiteController extends Controller
 
     public function actionError()
     {
-
         $mail = '';
+
+        $message = '';
+        if(isset( Yii::$app->errorHandler->exception)){
+            //$message = Yii::$app->errorHandler->exception->getMessage();
+        }
 
         if(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/'))==false){
             //e_print(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/')),'saddassda');
             //e_print('not finded');
-            if (!Yii::$app->mailer->compose()
-                ->setFrom(Setting::get('robot_email'))
-                //->setFrom('itc@iq-offshore.com')
-                ->setTo('akvamiris@gmail.com')
-                ->setSubject('Рапорт об ошибке')
-                ->setHtmlBody('
-                <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
-                <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
-                <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
-            ')//Url::to()
-                //->setReplyTo(Setting::get('admin_email'))
-                ->send())
-            {
-                $mail = 'Email not sended!!!!!';
+            try {
+                $mail =  Yii::$app->mailer->compose()
+                    ->setFrom(Setting::get('robot_email'))
+                    //->setFrom('itc@iq-offshore.com')
+                    ->setTo('akvamiris@gmail.com')
+                    ->setSubject('Рапорт об ошибке')
+                    ->setHtmlBody('
+                        <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
+                        <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
+                        <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
+            '       )//Url::to()
+                    //->setReplyTo(Setting::get('admin_email'))
+                    ->send();
+            } catch (\Exception $e) {
+                //throw new ErrorException('xxxxxxxxxxfjjidshghadfg');
+                //@to
             }
-        }else{
-            //e_print('finded');
         }
 
         return $this->render('error', [
-            'message' => Yii::$app->errorHandler->exception->getMessage(),
+            'message' => $message,
             'error_text' => Yii::t('yii', 'Page not found.'),
             //'exception' => Yii::$app->errorHandler->exception
         ]);

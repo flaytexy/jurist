@@ -6,6 +6,7 @@ use frontend\helpers\Image;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\models\Setting;
+use yii\web\NotFoundHttpException;
 
 /**
  * Class APIObject
@@ -98,8 +99,10 @@ class APIObject extends \yii\base\Object
             return $this->model->translation->{'meta_'.$attribute};
         }
 
-        $this->mailAPIObject('SEO_HASNT_ATTR: '.$attribute);
-        //ex_print('SEO_HASNT_ATTR: '.$attribute);
+        $mess = 'SEO_HASNT_ATTR: '.$attribute;
+        $this->mailAPIObject($mess);
+        //ex_print($mess);
+        //throw new NotFoundHttpException($mess);
 
         if($attribute === "title"){
             return $this->getTitle();
@@ -213,18 +216,24 @@ class APIObject extends \yii\base\Object
     }
 
     public function mailAPIObject($errorMessage = ''){
-        return Yii::$app->mailer->compose()
-            ->setFrom(Setting::get('robot_email'))
-            //->setFrom('itc@iq-offshore.com')
-            ->setTo('akvamiris@gmail.com')
-            ->setSubject('Рапорт об ошибке')
-            ->setHtmlBody('
+        try {
+            $mail = Yii::$app->mailer->compose()
+                ->setFrom(Setting::get('robot_email'))
+                //->setFrom('itc@iq-offshore.com')
+                ->setTo('akvamiris@gmail.com')
+                ->setSubject('Рапорт об ошибке')
+                ->setHtmlBody('
                 <h1>'.$errorMessage.'</h1>
                 <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
                 <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
                 <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
-            ')//Url::to()
-            //->setReplyTo(Setting::get('admin_email'))
-            ->send();
+            ')
+             ->send();
+        } catch (\Exception $e) {
+            //throw new ErrorException('xxxxxxxxxxfjjidshghadfg');
+            //@to
+        }
+
+        return $mail;
     }
 }

@@ -14,6 +14,8 @@ class NewsController extends \yii\web\Controller
 {
     public function actionIndex($tag = null, $type = null, $slug = null, $page = null)
     {
+
+
         if($slug){
             $pageName = 'page-news-'.$slug;
             if(! $page = Page::get($pageName)){
@@ -39,7 +41,9 @@ class NewsController extends \yii\web\Controller
         }
         else {
             $pageName = 'page-news';
+
             $page = Page::get($pageName);
+
             if(!$page){
                 throw new \yii\web\NotFoundHttpException('Page Houston, we have a problem. #54341');
             }
