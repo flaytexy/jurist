@@ -1,6 +1,5 @@
 <?php
 /* @var $this yii\web\View */
-/* @var $searchModel \frontend\models\search\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 use yii\helpers\Html;
 $asset = \frontend\assets\AppAsset::register($this);

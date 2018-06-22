@@ -1,7 +1,7 @@
 <?php
 namespace frontend\controllers;
 
-use frontend\models\Popularly;
+
 use frontend\models\Setting;
 use frontend\modules\banks\api\Banks;
 use frontend\modules\page\api\Page;
@@ -123,22 +123,18 @@ class SiteController extends Controller
     {
         $page = \frontend\modules\novanews\api\Novanews::get('page-main');
 
-//        if($page){
-//            $this->view->title = $page->seo('title', $page->title);
-//            //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
-//            $this->view->registerMetaTag([
-//                'name' => 'title',
-//                'content' => $page->seo('title', '')
-//            ]);
-//            $this->view->registerMetaTag([
-//                'name' => 'keywords',
-//                'content' => $page->seo('keywords', '')
-//            ]);
-//            $this->view->registerMetaTag([
-//                'name' => 'description',
-//                'content' => $page->seo('description', '')
-//            ]);
-//        }
+        if($page){
+            $this->view->title = $page->seo('title', $page->title);
+            //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
+            $this->view->registerMetaTag([
+                'name' => 'keywords',
+                'content' => $page->seo('keywords', '')
+            ]);
+            $this->view->registerMetaTag([
+                'name' => 'description',
+                'content' => $page->seo('description', '')
+            ]);
+        }
 
         if (!Yii::$app->getModule('admin')->installed) {
             //return $this->redirect(['/install/step1']);
@@ -193,6 +189,7 @@ class SiteController extends Controller
         ]);
 
         return $this->render('main', [
+            'page' => $page,
             'offers' => $offers,
             'news' => $news,
             'licenses' => $licenses,

@@ -1,5 +1,9 @@
 <?php
-/** Created by CyberBrain  */
+/**
+ * Created by CyberBrain
+ *
+ * @var \frontend\modules\novanews\api\NovanewsObject $page
+ */
 
 use yii\helpers\Html;
 use frontend\assets\MainAsset;
@@ -7,6 +11,9 @@ use frontend\helpers\Image;
 use yii\helpers\Url;
 MainAsset::register($this);
 $iteration = 1;
+
+//$this->title = $page->seo('meta_title', $page->title); // seo from site/index
+
 ?>
 <? if (true): ?>
     <section>
