@@ -1,14 +1,11 @@
 <?php
 namespace frontend\modules\offers\api;
 
-use frontend\models\Option;
-use frontend\modules\offers\models\OffersProperties;
-use frontend\modules\offers\OffersModule;
 use Yii;
+use frontend\models\Option;
 use yii\data\ActiveDataProvider;
 use frontend\models\Tag;
 use frontend\widgets\Fancybox;
-use yii\db\Query;
 use yii\widgets\LinkPager;
 
 use frontend\modules\offers\models\Offers as OffersModel;

@@ -2,12 +2,11 @@
 
 namespace frontend\modules\banks\api;
 
-use frontend\models\Option;
 use Yii;
 use yii\data\ActiveDataProvider;
 use frontend\models\Tag;
 use frontend\widgets\Fancybox;
-use yii\db\Query;
+
 use yii\widgets\LinkPager;
 
 use frontend\modules\banks\models\Banks as BanksModel;

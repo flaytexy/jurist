@@ -7,10 +7,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use frontend\models\Tag;
 use frontend\widgets\Fancybox;
-use yii\data\Pagination;
-
 use yii\widgets\LinkPager;
-
 use frontend\modules\novanews\models\Novanews as NovanewsModel;
 
 /**

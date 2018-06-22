@@ -3,11 +3,13 @@
 namespace frontend\modules\banks\api;
 
 use Yii;
-use common\components\API;
+use common\components\APIObject;
 use frontend\models\Photo;
+
+use common\components\API;
 use frontend\modules\banks\models\Banks as BanksModel;
 use yii\helpers\Url;
-use common\components\APIObject;
+
 /**
  * Class BanksObject
  * @package frontend\modules\banks\api

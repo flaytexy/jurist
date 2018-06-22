@@ -2,7 +2,7 @@
 namespace frontend\modules\novanews\api;
 
 use Yii;
-use common\components\ApiObject;
+use common\components\APIObject;
 use frontend\models\Photo;
 use frontend\modules\novanews\models\Novanews as NovanewsModel;
 
@@ -23,7 +23,7 @@ use frontend\modules\novanews\models\Novanews as NovanewsModel;
  * @property int $public_status_public
  */
 
-class NovanewsObject extends ApiObject
+class NovanewsObject extends APIObject
 {
     public $slug;
     public $image;

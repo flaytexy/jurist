@@ -1,9 +1,9 @@
 <?php
 namespace frontend\modules\offers\models;
 
-use common\models\country\CountryData;
-use frontend\behaviors\CountryAble;
 use Yii;
+use frontend\behaviors\CountryAble;
+
 use common\behaviors\MySluggableBehavior;
 use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;

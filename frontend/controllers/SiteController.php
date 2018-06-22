@@ -123,22 +123,22 @@ class SiteController extends Controller
     {
         $page = \frontend\modules\novanews\api\Novanews::get('page-main');
 
-        if($page){
-            $this->view->title = $page->seo('title', $page->model->title);
-            //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
-            $this->view->registerMetaTag([
-                'name' => 'title',
-                'content' => $page->seo('title', '')
-            ]);
-            $this->view->registerMetaTag([
-                'name' => 'keywords',
-                'content' => $page->seo('keywords', '')
-            ]);
-            $this->view->registerMetaTag([
-                'name' => 'description',
-                'content' => $page->seo('description', '')
-            ]);
-        }
+//        if($page){
+//            $this->view->title = $page->seo('title', $page->title);
+//            //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
+//            $this->view->registerMetaTag([
+//                'name' => 'title',
+//                'content' => $page->seo('title', '')
+//            ]);
+//            $this->view->registerMetaTag([
+//                'name' => 'keywords',
+//                'content' => $page->seo('keywords', '')
+//            ]);
+//            $this->view->registerMetaTag([
+//                'name' => 'description',
+//                'content' => $page->seo('description', '')
+//            ]);
+//        }
 
         if (!Yii::$app->getModule('admin')->installed) {
             //return $this->redirect(['/install/step1']);

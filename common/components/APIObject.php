@@ -8,17 +8,19 @@ use yii\helpers\Url;
 use frontend\models\Setting;
 
 /**
- * Class ApiObject
+ * Class APIObject
  * @package frontend\components
  *
  * @property Model $model
  */
-class ApiObject extends \yii\base\Object
+class APIObject extends \yii\base\Object
 {
     public $model;
 
+    //public $title;
+
     /**
-     * Generates ApiObject, attaching all settable properties to the child object
+     * Generates APIObject, attaching all settable properties to the child object
      * @param \yii\base\Model $model
      */
     public function __construct($model){
@@ -26,18 +28,21 @@ class ApiObject extends \yii\base\Object
 
         foreach($model->attributes as $attribute => $value){
             if($this->canSetProperty($attribute)){
+                //e_print($attribute,'$attribute');
                 $this->{$attribute} = $value;
             }
         }
 
         $this->init();
+        //ex_print($this->title,'title');
+        //ex_print($this);
     }
 
     /**
      * calls after __construct
      */
     public function init(){
-        $this->title = $this->getName();
+       // $this->title = $this->getName();
     }
 
     /**
@@ -93,7 +98,7 @@ class ApiObject extends \yii\base\Object
             return $this->model->translation->{'meta_'.$attribute};
         }
 
-        $this->mailApiObject('SEO_HASNT_ATTR: '.$attribute);
+        $this->mailAPIObject('SEO_HASNT_ATTR: '.$attribute);
         //ex_print('SEO_HASNT_ATTR: '.$attribute);
 
         if($attribute === "title"){
@@ -114,6 +119,7 @@ class ApiObject extends \yii\base\Object
      */
     public function getTitle()
     {
+        //ex_print('addssad');
         return $this->getName();
     }
 
@@ -206,7 +212,7 @@ class ApiObject extends \yii\base\Object
         return Html::a(Yii::t('easyii/page/api', 'Create page'), ['/admin/novanews/default/create', 'slug' => $this->slug], ['target' => '_blank']);
     }
 
-    public function mailApiObject($errorMessage = ''){
+    public function mailAPIObject($errorMessage = ''){
         return Yii::$app->mailer->compose()
             ->setFrom(Setting::get('robot_email'))
             //->setFrom('itc@iq-offshore.com')

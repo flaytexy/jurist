@@ -4,15 +4,12 @@ namespace frontend\controllers;
 
 use frontend\models\Popularly;
 use frontend\modules\banks\api\Banks;
-use yii\data\Pagination;
 use yii\web\View;
-use yii\widgets\LinkPager;
 use frontend\modules\page\models\Page as PageModel;
 use frontend\modules\page\api\PageObject;
 
 class BanksController extends \yii\web\Controller
 {
-
     public function actionIndex($tag = null, $type = null, $slug = null, $page = null)
     {
 
