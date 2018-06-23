@@ -175,7 +175,7 @@ class APIObject extends \yii\base\Object
             return $this->createLink;
         } else {
             if(isset($this->model->translation)){
-                $name = $this->model->translation->short_description;
+                $name = $this->model->translation->description;
             }else{
                 $name = $this->text;
             }

@@ -28,16 +28,16 @@ class Novanews extends Content
         self::$_translateModel = NovanewsTranslation::className();
     }
 
-    public function behaviors()
-    {
-        return [
-            'seoBehavior' => SeoBehavior::className(),
-            'taggabble' => Taggable::className(),
-            'sluggable' => [
-                'class' => SluggableBehavior::className(),
-                'attribute' => 'title',
-                'ensureUnique' => true
-            ],
-        ];
-    }
+//    public function behaviors()
+//    {
+//        return [
+//            'seoBehavior' => SeoBehavior::className(),
+//            'taggabble' => Taggable::className(),
+//            'sluggable' => [
+//                'class' => SluggableBehavior::className(),
+//                'attribute' => 'title',
+//                'ensureUnique' => true
+//            ],
+//        ];
+//    }
 }

@@ -145,11 +145,11 @@ class Novanews extends \common\components\API
 
             $errorMessage = 'Страница без перевода!!!: '. $id_slug .'  .#36561';
 
-            if (!$this->mailApi($errorMessage)) {
+            //if (!$this->mailApi($errorMessage)) {
                 //header("HTTP/1.0 404 Not Found");
                 //header("Location: " . Url::to(['/404/error/mailsend'], true));
                 //exit;s
-            }
+            //}
 
             $page = NovanewsModel::find()
                 //->joinWith('translation')

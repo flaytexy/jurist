@@ -101,6 +101,10 @@ html{
     margin-top: 2px;
     float: right;
 }
+#admin-body .alert-error {
+    color: red;
+    font-size: 30px;
+}
 
 /*--------------- CONTENT ---------------*/
 #admin-body .main {

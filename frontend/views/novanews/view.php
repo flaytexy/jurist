@@ -6,7 +6,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
-$this->title = $page->seo('meta_title', $page->title);
+$this->title = $page->seo('meta_title', $page->name);
 
 if($descriptionSeo = $page->seo('meta_description')){
     $this->registerMetaTag([
@@ -403,15 +403,15 @@ $this->params['breadcrumbs'][] = $page->name;
                                         <?= Html::img(Image::thumb($page->photos[1]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
-                                <? if($page->short): ?>
+                                <? if($page->getShortDescription()): ?>
                                 <div class="title-video alignleft">
-                                    <span><?= $page->short ?></span>
+                                    <span><?= $page->getShortDescription() ?></span>
                                 </div>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
                         <p>
-                            <?= $page->text ?>
+                            <?= $page->getDescription() ?>
                         </p>
                     </div>
                     <!-- Blog List Posts -->

@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $news->title;
                                         <h1><?= $news->seo('h1', $news->title) ?></h1>
 
                                         <div class="text-con">
-                                            <?= $news->text ?>
+                                            <?= $news->getDescription() ?>
                                         </div>
 
                                         <div class="tags-social">

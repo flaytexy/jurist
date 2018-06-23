@@ -71,7 +71,7 @@ $moduleName = $this->context->module->id;
                             <?php endif; ?>
                         </td>
 
-                        <td><a href="<?= $model->getEditLink(); ?>"><?= $model->title ?></a></td>
+                        <td><a href="<?= $model->getEditLink(); ?>"><?= $model->getTitle() ?></a></td>
                         <td><?= $model->views ?></td>
                         <td><?= $model->date ?></td>
                         <td class="public_status">
