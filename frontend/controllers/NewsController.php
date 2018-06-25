@@ -14,14 +14,12 @@ class NewsController extends \yii\web\Controller
 {
     public function actionIndex($tag = null, $type = null, $slug = null, $page = null)
     {
-
-
         if($slug){
             $pageName = 'page-news-'.$slug;
             if(! $page = Page::get($pageName)){
                 $pageName = 'page-news';
             }else{
-                throw new \yii\web\NotFoundHttpException('Page Houston, we have a problem. #54340');
+                //throw new \yii\web\NotFoundHttpException('Page Houston, we have a problem. #54340');
             }
 
             $query = new \yii\db\Query;
@@ -41,9 +39,7 @@ class NewsController extends \yii\web\Controller
         }
         else {
             $pageName = 'page-news';
-
             $page = Page::get($pageName);
-
             if(!$page){
                 throw new \yii\web\NotFoundHttpException('Page Houston, we have a problem. #54341');
             }
@@ -124,7 +120,7 @@ class NewsController extends \yii\web\Controller
     }
 
     public function actionIndexed($tag = null, $type = null, $slug = null){
-        ex_print('asddsa');
+
     }
 
     public function actionView($slug)

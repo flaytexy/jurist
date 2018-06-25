@@ -9844,6 +9844,9 @@ blockquote > p a,
 
     .packages-detail {
         box-shadow: none;
+        padding: 0 !important;
+        margin: 0 !important;
+
     }
 
     #new-index .recentnew-post {
