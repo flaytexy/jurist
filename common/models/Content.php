@@ -62,7 +62,8 @@ class Content extends ActiveRecord
             [['category_detail'], 'trim'],
             ['image', 'image', 'extensions' => 'jpg, jpeg'], //'png, jpg, jpeg, gif'
             ['pre_image', 'image', 'extensions' => 'jpg, jpeg'], //'png, jpg, jpeg, gif'
-            ['tagNames', 'safe']
+            ['tagNames', 'safe'],
+            ['to_main', 'integer', 'max' => 1],
         ];
     }
 

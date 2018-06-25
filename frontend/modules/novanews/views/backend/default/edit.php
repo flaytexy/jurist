@@ -23,7 +23,11 @@ use frontend\widgets\SeoForm;
 
 use dosamigos\ckeditor\CKEditor;
 use mihaildev\elfinder\ElFinder;
-e_print(IS_ROOT,'IS_ROOT');
+
+if(IS_ROOT){
+    e_print(IS_ROOT,'IS_ROOT');
+}
+
 ?>
 
 <div class="item-editor-page">
@@ -306,7 +310,6 @@ JS
                             ],
                         ]
                     ]);
-
                 echo $form->field($translation_model, "[$language]description", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
                     ->widget(Redactor::className(), [
                         'settings' => [
@@ -322,7 +325,6 @@ JS
                         ]
                     ]);
                 */
-
 
 //               echo $form->field($translation_model, "[$language]meta_h1", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
 //                   ->label(null, ['class' => 'form-control-label'])
@@ -351,10 +353,9 @@ JS
                 }
             }
 
+            echo $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false);
             echo $form->field($model, 'time')->widget(DateTimePicker::className());
-
             echo $form->field($model, 'tagNames')->widget(TagsInput::className()) ;
-
 
             if (IS_ROOT) {
                 echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed']);
@@ -364,10 +365,7 @@ JS
                     echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed', 'readonly'=>'readonly']);
                 }
             }
-
-
             ?>
-
         </div>
 
         <? if (false): ?>
