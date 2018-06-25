@@ -80,7 +80,7 @@ class SiteController extends Controller
 
         $mail = '';
 
-        if(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/'))==false){
+        if(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/', 'uploads/'))==false){
             //e_print(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/')),'saddassda');
             //e_print('not finded');
             if (!Yii::$app->mailer->compose()
