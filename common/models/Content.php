@@ -135,7 +135,7 @@ class Content extends ActiveRecord
             $this->initType();
 
             $settings = Yii::$app->getModule('admin')->activeModules['page']->settings;
-            $this->short = StringHelper::truncate($settings['enableShort'] ? $this->short : strip_tags($this->text), $settings['shortMaxLength']);
+            //$this->short = StringHelper::truncate($settings['enableShort'] ? $this->short : strip_tags($this->text), $settings['shortMaxLength']);
 
             if(strlen($this->category_detail)>1){
                 $categoryData = explode(':',$this->category_detail);

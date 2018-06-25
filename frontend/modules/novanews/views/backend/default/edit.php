@@ -23,7 +23,7 @@ use frontend\widgets\SeoForm;
 
 use dosamigos\ckeditor\CKEditor;
 use mihaildev\elfinder\ElFinder;
-
+e_print(IS_ROOT,'IS_ROOT');
 ?>
 
 <div class="item-editor-page">
@@ -322,15 +322,7 @@ JS
                         ]
                     ]);
                 */
-                if (IS_ROOT) {
-                    echo $form->field($translation_model, "[$language]slug", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
-                        ->label(null, ['class' => 'form-control-label'])
-                        ->textInput(['class' => 'form-control boxed']);
-                }else{
-                    echo $form->field($translation_model, "[$language]slug", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
-                        ->label(null, ['class' => 'form-control-label'])
-                        ->textInput(['class' => 'form-control boxed', 'readonly'=>'readonly']);
-                }
+
 
 //               echo $form->field($translation_model, "[$language]meta_h1", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
 //                   ->label(null, ['class' => 'form-control-label'])
@@ -348,9 +340,14 @@ JS
                     ->label(null, ['class' => 'form-control-label'])
                     ->textInput(['class' => 'form-control boxed']);
 
-                if (IS_ROOT){
-                    echo $form->field($model, 'slug');
-                    echo \frontend\widgets\SeoFormLang::widget(['model' => $model, 'lang' => $language]);
+                if (IS_ROOT) {
+                    echo $form->field($translation_model, "[$language]slug", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
+                        ->label(null, ['class' => 'form-control-label'])
+                        ->textInput(['class' => 'form-control boxed']);
+                }else{
+                    echo $form->field($translation_model, "[$language]slug", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
+                        ->label(null, ['class' => 'form-control-label'])
+                        ->textInput(['class' => 'form-control boxed', 'readonly'=>'readonly']);
                 }
             }
 
@@ -358,13 +355,16 @@ JS
 
             echo $form->field($model, 'tagNames')->widget(TagsInput::className()) ;
 
-            if (IS_ROOT || true) {
-                if(empty($model->slug)){
+
+            if (IS_ROOT) {
+                echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed']);
+                echo \frontend\widgets\SeoForm::widget(['model' => $model]);
+            }else{
+                if(!empty($model->slug)){
                     echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed', 'readonly'=>'readonly']);
-                }else{
-                    echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed']);
                 }
             }
+
 
             ?>
 

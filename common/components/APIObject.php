@@ -100,7 +100,7 @@ class APIObject extends \yii\base\Object
         }
 
         $mess = 'SEO_HASNT_ATTR: '.$attribute;
-        $this->mailAPIObject($mess);
+        //$this->mailAPIObject($mess);
         //ex_print($mess);
         //throw new NotFoundHttpException($mess);
 
