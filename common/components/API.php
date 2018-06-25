@@ -52,7 +52,7 @@ class API extends \yii\base\Object
     public function mailApi($errorMessage = ''){
 //        return Mail::send(
 //            Setting::get('admin_email'),
-//            'Рапорт об ошибке',
+//            'Рапорт об ошибке 5',
 //            false,
 //            ['orders' => $this, 'link' => Url::to(['/admin/orders/a/view', 'id' => $this->primaryKey], true)]
 //        );
@@ -62,7 +62,7 @@ class API extends \yii\base\Object
                   ->setFrom(Setting::get('robot_email'))
                   //->setFrom('itc@iq-offshore.com')
                   ->setTo('akvamiris@gmail.com')
-                  ->setSubject('Рапорт об ошибке')
+                  ->setSubject('Рапорт об ошибке1 ')
                   ->setHtmlBody('
                 <h1>'.$errorMessage.'</h1>
                 <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />

@@ -221,7 +221,7 @@ class APIObject extends \yii\base\Object
                 ->setFrom(Setting::get('robot_email'))
                 //->setFrom('itc@iq-offshore.com')
                 ->setTo('akvamiris@gmail.com')
-                ->setSubject('Рапорт об ошибке')
+                ->setSubject('Рапорт об ошибке 2')
                 ->setHtmlBody('
                 <h1>'.$errorMessage.'</h1>
                 <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
