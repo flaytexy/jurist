@@ -55,6 +55,11 @@ class Content extends ActiveRecord
         return '{{content}}';
     }
 
+    public static function primaryKey()
+    {
+        return ['id'];
+    }
+
     public function rules()
     {
         return [
@@ -176,7 +181,8 @@ class Content extends ActiveRecord
     {
         if (is_null($this->miniature)) {
             //$this->miniature = ($this->_findImage()) ? $this->_findImage() : $this->image;
-            $this->miniature = $this->_findImage();
+
+            //$this->miniature = $this->_findImage(); //@todo miniature
         }
 
 
