@@ -475,8 +475,8 @@ $config = [
     'bootstrap' => [
         'admin',
         'log',
-        //'debug',
-        'gii',
+        'debug',
+        //'gii',
         'frontend\modules\novanews\Bootstrap'
     ]
 
