@@ -52,6 +52,10 @@ class ParserController extends \yii\web\Controller
         $iter = 0;
         foreach ($contentItems as $contentItem){
             //ex_print($contentItem,'$contentItem');
+            $contentItem['title'] = $contentItem['title'] ?: $contentItem['title_old'];
+            $contentItem['text'] = $contentItem['text'] ?: $contentItem['text_old'];
+            $contentItem['short']  = $contentItem['short'] ?: $contentItem['short_old'];
+
             $db->createCommand()
                 ->insert('content_translation',
                     [
