@@ -25,11 +25,6 @@ use frontend\modules\novanews\models\Novanews as NovanewsModel;
 
 class NovanewsObject extends APIObject
 {
-    public $slug;
-    public $image;
-    public $views;
-    public $time;
-
     private $_photos;
 
     public function __construct($model){

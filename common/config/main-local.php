@@ -36,14 +36,24 @@ return [
 //                //'encryption' => 'tls', // It is often used, check your provider or mail server specs
 //            ],
 
+//            'transport' => [
+//                'class' => 'Swift_SmtpTransport',
+//                'host' => 'smtp.gmail.com',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
+//                'username' => 'okamiris@gmail.com',
+//                'password' => '6PCjera5',
+//                'port' => '465 ', // Port 25 is a very common port too
+//                'encryption' => 'ssl', // It is often used, check your provider or mail server specs
+//            ],
+
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
-                'username' => 'okamiris@gmail.com',
-                'password' => '6PCjera5',
+                'host' => 'mx.iq-offshore.com',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
+                'username' => 'noreply@iq-offshore.com',
+                'password' => 'Do7shyTIBT23',
                 'port' => '465 ', // Port 25 is a very common port too
                 'encryption' => 'ssl', // It is often used, check your provider or mail server specs
             ],
+
 
 //            'transport' => [
 //                'class' => 'Swift_SmtpTransport',

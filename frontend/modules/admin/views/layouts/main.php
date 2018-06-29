@@ -40,6 +40,11 @@ $moduleName = $this->context->module->id;
                         Статии (Новое)
                     </a>
 
+                    <a href="<?= Url::to(['/admin/novabanks']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novabanks') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Банки (Новое)
+                    </a>
+
                     <a href="<?= Url::to(['/admin/slidemain']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'slidesmall') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         Слайдер (верхний)

@@ -5,7 +5,8 @@ return [
     'bootstrap' => [
         //'log',
 //          'common\modules\attachment\Bootstrap',
-//          'frontend\modules\novanews\Bootstrap',
+            'frontend\modules\novanews\Bootstrap',
+            'frontend\modules\novabanks\Bootstrap',
 //        'app\modules\main\Bootstrap',
 //        'app\modules\user\Bootstrap',
 //        'app\modules\menu\Bootstrap',

@@ -1,12 +1,12 @@
 <?php
 
-namespace frontend\modules\Novabanks\controllers\backend;
+namespace frontend\modules\novabanks\controllers\backend;
 
 use common\controllers\ContentAdminController;
 use common\models\Language;
 
-use frontend\modules\Novabanks\models\Novabanks;
-use frontend\modules\Novabanks\models\NovabanksTranslation;
+use frontend\modules\novabanks\models\Novabanks;
+use frontend\modules\novabanks\models\NovabanksTranslation;
 
 use Yii;
 use yii\helpers\Url;
@@ -119,7 +119,7 @@ class DefaultController extends ContentAdminController
             }
         } else {
             if ($id) {
-                return $this->redirect(['/admin/Novabanks/default/index']);
+                return $this->redirect(['/admin/novabanks/default/index']);
             }
 
             $model = new Novabanks;
@@ -191,7 +191,7 @@ class DefaultController extends ContentAdminController
             Yii::$app->session->setFlash('flash-admin-message-success', 'Новость удалена.');
         }
 
-        return $this->redirect(Url::to(['/admin/Novabanks/default/index']));
+        return $this->redirect(Url::to(['/admin/novabanks/default/index']));
     }
 
 

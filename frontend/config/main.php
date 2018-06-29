@@ -120,15 +120,15 @@ $config = [
                     'logFile' => '@runtime/log/requests_error.log',
                     //'logVars' => ['GET', 'POST'], // log some globals
                 ],
-                '404_mail' => [
-                    'class' => 'yii\log\EmailTarget',
-                    'categories' => ['yii\web\HttpException:404'],
-                    'message' => [
-                        'from' => ['itc@iq-offshore.com' => 'Iq-offshore.com'], //от кого
-                        'to' => ['akvamiris@gmail.com'], //кому
-                        'subject' => '404 ошибка на саайте', //тема
-                    ],
-                ],
+//                '404_mail' => [
+//                    'class' => 'yii\log\EmailTarget',
+//                    'categories' => ['yii\web\HttpException:404'],
+//                    'message' => [
+//                        'from' => ['itc@iq-offshore.com' => 'Iq-offshore.com'], //от кого
+//                        'to' => ['akvamiris@gmail.com'], //кому
+//                        'subject' => '404 ошибка на саайте', //тема
+//                    ],
+//                ],
                 '404_file' => [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
@@ -222,6 +222,7 @@ $config = [
             'rules' => [
                 '' => 'site/index',
                 'offshornyie-predlozheniya' => 'offers/index',
+                'banks' => 'novabanks/index',
 //                [
 //                    'pattern' => 'offshornyie-predlozheniya',
 //                    'route' => 'offers/index',
@@ -268,7 +269,8 @@ $config = [
                 //'<controller:\w+>/page<page:\d+>' => '<controller>/index',                            //@todo
                 '<controller:\w+>/page<page:\d+>' => '<controller>/index',
 
-                '<name:(offers|news|banks)>/<slug:[\w-]+>' => '<name>/view',
+                '<name:(offers|news)>/<slug:[\w-]+>' => '<name>/view',
+                '<name:(banks|novabanks)>/<slug:[\w-]+>' => 'novabanks/view', //'banks/view',
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',
@@ -464,6 +466,13 @@ $config = [
                     'controllerNamespace' => 'frontend\modules\novanews\controllers\backend',
                     'viewPath' => '@frontend/modules/novanews/views/backend',
                 ],
+
+                'novabanks' => [
+                    'class' => 'frontend\modules\novabanks\Module',
+                    'controllerNamespace' => 'frontend\modules\novabanks\controllers\backend',
+                    'viewPath' => '@frontend/modules/novabanks/views/backend',
+                ],
+
                 'attachment' => [
                     'class' => 'common\modules\attachment\Module',
                     'controllerNamespace' => 'common\modules\attachment\controllers\backend',
@@ -477,7 +486,8 @@ $config = [
         'log',
         'debug',
         //'gii',
-        'frontend\modules\novanews\Bootstrap'
+        'frontend\modules\novanews\Bootstrap',
+        'frontend\modules\novabanks\Bootstrap'
     ]
 
 ];

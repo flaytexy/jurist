@@ -2,8 +2,8 @@
 
 /**
  * @var \yii\web\View $this
- * @var \frontend\modules\Novabanks\models\Novabanks $model
- * @var \frontend\modules\Novabanks\models\Novabanks $next
+ * @var \frontend\modules\novabanks\models\Novabanks $model
+ * @var \frontend\modules\novabanks\models\Novabanks $next
  */
 
 use common\modules\attachment\models\Attachment;
@@ -23,12 +23,12 @@ use yii\helpers\Url;
             <div class="press__items__item__desc">
                 <?php if ($prev) { ?>
                     <div class="press_prev_item">
-                        <a href="<?= Url::to(['/Novabanks/default/view', 'id' => $prev['id']]); ?>" title="<?= $prev['translation']['title'] ?>"><?= Yii::t('app', 'Previous Novabanks'); ?></a>
+                        <a href="<?= Url::to(['/novabanks/default/view', 'id' => $prev['id']]); ?>" title="<?= $prev['translation']['title'] ?>"><?= Yii::t('app', 'Previous novabanks'); ?></a>
                     </div>
                 <?php } ?>
                 <?php if ($next) { ?>
                     <div class="press_next_item">
-                        <a href="<?= Url::to(['/Novabanks/default/view', 'id' => $next['id']]); ?>" title="<?= $next['translation']['title'] ?>"><?= Yii::t('app', 'Next Novabanks'); ?></a>
+                        <a href="<?= Url::to(['/novabanks/default/view', 'id' => $next['id']]); ?>" title="<?= $next['translation']['title'] ?>"><?= Yii::t('app', 'Next novabanks'); ?></a>
                     </div>
                 <?php } ?>
                 <p><?= $model['translation']['title'] ?></p>

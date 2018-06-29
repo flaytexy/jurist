@@ -368,4 +368,10 @@ class SiteController extends Controller
             throw new NotFoundHttpException;
         }
     }
+
+    public function actionTest()
+    {
+        ex_print('saddasdsa');
+    }
+
 }

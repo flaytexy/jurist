@@ -2,8 +2,8 @@
 
 /**
  * @var \yii\web\View $this
- * @var \frontend\modules\Novabanks\models\Novabanks|array $models
- * @var \frontend\modules\Novabanks\models\Novabanks $model
+ * @var \frontend\modules\novabanks\models\Novabanks|array $models
+ * @var \frontend\modules\novabanks\models\Novabanks $model
  * @var \yii\data\Pagination $pages
  */
 
@@ -11,7 +11,7 @@ use yii\helpers\Url;
 use yii\widgets\LinkPager;
 use yii\helpers\Html;
 
-use frontend\modules\Novabanks\models\Novabanks;
+use frontend\modules\novabanks\models\Novabanks;
 
 $moduleName = $this->context->module->id;
 
@@ -25,7 +25,7 @@ $moduleName = $this->context->module->id;
             <div class="col-md-6">
                 <h3 class="title">
                     Новости
-                    <a href="<?= Url::to(['/admin/Novabanks/default/edit', 'id' => 0]); ?>" class="btn btn-primary btn-sm rounded-s">
+                    <a href="<?= Url::to(['/admin/novabanks/default/edit', 'id' => 0]); ?>" class="btn btn-primary btn-sm rounded-s">
                         добавить
                     </a>
                 </h3>

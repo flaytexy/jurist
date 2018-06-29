@@ -1,9 +1,9 @@
 <?php
 
-namespace frontend\modules\Novabanks\controllers\frontend;
+namespace frontend\modules\novabanks\controllers\frontend;
 
 use Yii;
-use frontend\modules\Novabanks\models\Novabanks;
+use frontend\modules\novabanks\models\Novabanks;
 use yii\data\Pagination;
 use yii\web\Controller;
 

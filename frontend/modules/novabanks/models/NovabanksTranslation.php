@@ -1,12 +1,12 @@
 <?php
 
-namespace frontend\modules\Novabanks\models;
+namespace frontend\modules\novabanks\models;
 
 use common\models\ContentTranslation;
 
 /**
  * Class NovabanksTranslation
- * @package frontend\modules\Novabanks\models
+ * @package frontend\modules\novabanks\models
  *
  * @property int $id
  * @property int $content_id

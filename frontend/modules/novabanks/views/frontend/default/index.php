@@ -10,8 +10,8 @@ use common\modules\attachment\models\Attachment;
 use yii\helpers\Url;
 
 ?>
-<section class="Novabanks gl-section">
-    <div class="Novabanks__title">
+<section class="novabanks gl-section">
+    <div class="novabanks__title">
         <p><?= Yii::t('app', 'Novabanks') ?></p>
     </div>
 
@@ -79,7 +79,7 @@ use yii\helpers\Url;
                 load_more = true;
                 $('.load-more').removeClass('hidden');
                 $.get(
-                    '<?= Url::to(['/Novabanks/default/load-more/']); ?>?offset=' + countShowElements,
+                    '<?= Url::to(['/novabanks/default/load-more/']); ?>?offset=' + countShowElements,
                     function (data) {
                         countShowElements = parseInt(countShowElements) + parseInt(pageSize);
                         data = $.trim(data);

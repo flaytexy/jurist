@@ -157,7 +157,7 @@ class Banks extends \common\components\ActiveRecord
             @unlink(Yii::getAlias('@webroot') . $this->image);
         }
 
-        if ($this->image_flag) {
+        if ($this->fimage_flag) {
             @unlink(Yii::getAlias('@webroot') . $this->image_flag);
         }
     }

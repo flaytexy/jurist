@@ -2,11 +2,11 @@
 
 /**
  * @var \yii\web\View $this
- * @var \frontend\modules\Novabanks\models\Novabanks $model
- * @var \frontend\modules\Novabanks\models\NovabanksTranslation|array $translation_models
+ * @var \frontend\modules\novabanks\models\Novabanks $model
+ * @var \frontend\modules\novabanks\models\NovabanksTranslation|array $translation_models
  */
 
-use frontend\modules\Novabanks\models\Novabanks;
+use frontend\modules\novabanks\models\Novabanks;
 
 use common\models\Language;
 use common\modules\attachment\models\Attachment;
@@ -189,7 +189,7 @@ if(IS_ROOT){
 
             <div>
                 <?php
-                // http://loc.ak.yabloko.studio/admin/Novabanks/default/cropImage?id=dfjksjkfsfd
+                // http://loc.ak.yabloko.studio/admin/novabanks/default/cropImage?id=dfjksjkfsfd
 
                 echo \demi\cropper\Cropper::widget([
                     // If true - it's output button for toggle modal crop window

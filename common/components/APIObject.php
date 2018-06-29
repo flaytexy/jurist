@@ -18,7 +18,10 @@ class APIObject extends \yii\base\Object
 {
     public $model;
 
-    //public $title;
+    public $slug;
+    public $image;
+    public $views;
+    public $time;
 
     /**
      * Generates APIObject, attaching all settable properties to the child object
@@ -29,14 +32,11 @@ class APIObject extends \yii\base\Object
 
         foreach($model->attributes as $attribute => $value){
             if($this->canSetProperty($attribute)){
-                //e_print($attribute,'$attribute');
                 $this->{$attribute} = $value;
             }
         }
 
         $this->init();
-        //ex_print($this->title,'title');
-        //ex_print($this);
     }
 
     /**

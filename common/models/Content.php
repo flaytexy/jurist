@@ -18,6 +18,7 @@ use frontend\behaviors\Taggable;
  * @property int $id
  * @property string $thumbnail
  * @property string $type
+ * @property int $type_id
  * @property int $publish_date
  *
  *
@@ -69,6 +70,8 @@ class Content extends ActiveRecord
             ['pre_image', 'image', 'extensions' => 'jpg, jpeg'], //'png, jpg, jpeg, gif'
             ['tagNames', 'safe'],
             ['to_main', 'integer', 'max' => 1],
+            [['rating', 'rating_to_main'], 'integer'],
+
         ];
     }
 

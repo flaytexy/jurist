@@ -9,7 +9,7 @@ use yii\helpers\Url;
 ?>
 
 <?php foreach ($models as $index => $model) { ?>
-    <a class="grid-item wow fadeInUp" href="<?= Url::to(['/Novabanks/default/view', 'id' => $model['id']]); ?>">
+    <a class="grid-item wow fadeInUp" href="<?= Url::to(['/novabanks/default/view', 'id' => $model['id']]); ?>">
         <div class="grid-item__date">
             <p><?= Yii::$app->formatter->asDate($model['publish_date'], 'php:d/m/Y'); ?></p>
         </div>
