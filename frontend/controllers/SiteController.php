@@ -4,6 +4,8 @@ namespace frontend\controllers;
 
 use frontend\models\Setting;
 use frontend\modules\banks\api\Banks;
+use frontend\modules\novabanks\api\Novabanks;
+use frontend\modules\novabanks\models\NovabanksTranslation;
 use frontend\modules\page\api\Page;
 use frontend\modules\slidemain\api\Slidemain;
 use frontend\modules\slidesmall\api\Slidesmall;
@@ -159,9 +161,9 @@ class SiteController extends Controller
             'pagination' => ['pageSize' => 10]
         ]);
 
-        $banks = Banks::items([
+        $banks = Novabanks::items([
             'pagination' => ['pageSize' => 7],
-            'orderBy' => ['rating_to_main'=>SORT_DESC, 'title' => SORT_ASC]
+            'orderBy' => ['rating_to_main'=>SORT_DESC, NovabanksTranslation::tableName().'.name' => SORT_ASC]
         ]);
 
 

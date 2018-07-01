@@ -221,7 +221,8 @@ $config = [
             //'languages' => ['ru' => 'ru-RU', 'en' => 'en-US', 'uk' => 'uk-UA'],
             'rules' => [
                 '' => 'site/index',
-                'offshornyie-predlozheniya' => 'offers/index',
+                //'offshornyie-predlozheniya' => 'offers/index',
+                'offshornyie-predlozheniya' => 'novaoffers/index',
                 'banks' => 'novabanks/index',
 //                [
 //                    'pattern' => 'offshornyie-predlozheniya',
@@ -269,7 +270,9 @@ $config = [
                 //'<controller:\w+>/page<page:\d+>' => '<controller>/index',                            //@todo
                 '<controller:\w+>/page<page:\d+>' => '<controller>/index',
 
-                '<name:(offers|news)>/<slug:[\w-]+>' => '<name>/view',
+                //'<name:(offers|news)>/<slug:[\w-]+>' => '<name>/view',
+                '<name:(offers)>/<slug:[\w-]+>' => 'novaoffers/view',
+                '<name:(news)>/<slug:[\w-]+>' => '<name>/view',
                 '<name:(banks|novabanks)>/<slug:[\w-]+>' => 'novabanks/view', //'banks/view',
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
@@ -473,6 +476,12 @@ $config = [
                     'viewPath' => '@frontend/modules/novabanks/views/backend',
                 ],
 
+                'novaoffers' => [
+                    'class' => 'frontend\modules\novaoffers\Module',
+                    'controllerNamespace' => 'frontend\modules\novaoffers\controllers\backend',
+                    'viewPath' => '@frontend/modules/novaoffers/views/backend',
+                ],
+                
                 'attachment' => [
                     'class' => 'common\modules\attachment\Module',
                     'controllerNamespace' => 'common\modules\attachment\controllers\backend',
@@ -487,7 +496,8 @@ $config = [
         'debug',
         //'gii',
         'frontend\modules\novanews\Bootstrap',
-        'frontend\modules\novabanks\Bootstrap'
+        'frontend\modules\novabanks\Bootstrap',
+        'frontend\modules\novaoffers\Bootstrap'
     ]
 
 ];

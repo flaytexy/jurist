@@ -22,6 +22,7 @@ class APIObject extends \yii\base\Object
     public $image;
     public $views;
     public $time;
+    public $title;
 
     /**
      * Generates APIObject, attaching all settable properties to the child object
@@ -43,7 +44,7 @@ class APIObject extends \yii\base\Object
      * calls after __construct
      */
     public function init(){
-       // $this->title = $this->getName();
+        $this->title = $this->getName();
     }
 
     /**
@@ -131,17 +132,16 @@ class APIObject extends \yii\base\Object
      */
     public function getName()
     {
-        if ($this->model->isNewRecord) {
-            return $this->createLink;
-        } else {
+        if(isset($this->model->translation)){
+            $name = $this->model->translation->name;
+        }elseif(isset($this->model->translations[''])){
+            ex_print($this->model->translations[Yii::$app->language]);
 
-            if(isset($this->model->translation)){
-                $name = $this->model->translation->name;
-            }else{
-                $name = $this->title;
-            }
-            return LIVE_EDIT ? API::liveEdit($name, $this->editLink) : $name;
+        }else{
+            $name = $this->title;
         }
+
+        return $name;
     }
 
     /**

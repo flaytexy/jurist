@@ -3,6 +3,11 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
 
+/**
+ * @var \frontend\modules\novanews\api\NovanewsObject[] $top_news
+ * @var \frontend\modules\novabanks\api\NovabanksObject[] $top_banks
+ * @var \frontend\modules\novaoffers\api\NovaoffersObject[] $top_offers
+ */
 if(!$page->model){
     exit('MODEL NOT FOUND!');
 }
@@ -38,22 +43,20 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                 <div class="row">
                                     <div class="carousel-client">
                                         <?php foreach ($banksPist as $itemList) : ?>
-                                            <div class="slide"><h3><a href="<?= Url::to(['banks/'.$itemList->slug]) ?>"><?=$itemList->title?><br><b>€<?= $itemList->model->price ?></b></a></h3></div>
+                                            <div class="slide"><h3><a href="<?= Url::to(['banks/'.$itemList->slug]) ?>"><?=$itemList->title?><br><b>€<?= $itemList->model->bank->price ?></b></a></h3></div>
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        <?php if (count($page->photos) || !empty($page->model->image)) : ?>
+                        <?php if (!empty($page->model->image)) : ?>
                             <div class="package-video">
                                 <div>
                                     <?php if (!empty($page->model->image)) : ?>
                                         <?= Html::img(Image::thumb($page->model->image, 1200, 300), ['width' => '100%', 'height' => '100%']) ?>
-                                    <? else: ?>
-                                        <?= Html::img(Image::thumb($page->photos[1]->image, 1200, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
-                                <strong class="per-night" style="font-family: Arial"><span>€</span><?= $page->price; ?> <i>Дней: <?= $page->model->how_days; ?></i></strong>
+                                <strong class="per-night" style="font-family: Arial"><span>€</span><?= $page->model->bank->price; ?> <i>Дней: <?= $page->model->bank->how_days; ?></i></strong>
                                 <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title="">Заказать</a>
                                 <div class="title-video alignleft">
                                     <h1><?= $page->seo('h1', $page->title) ?></h1>
@@ -95,10 +98,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 </div>
                 <ul class="widget-gallery">
                     <?php foreach($top_banks as $item) : ?>
-                        <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                <?= Html::img(Image::thumb($item['image'], 240, 120)) ?>
+                        <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
+                                <?= Html::img(Image::thumb($item->image, 240, 120)) ?>
                             </a>
-                            <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
+                            <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
                     <?php endforeach; ?>
                 </ul>
             </div><!-- end: Widget3 -->
@@ -131,10 +134,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 </div>
                 <ul class="widget-gallery">
                     <?php foreach($top_offers as $item) : ?>
-                        <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
-                                <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                        <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
+                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
                             </a>
-                            <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $item['price'] ?> / Дней: <?= $item['how_days']?></b></a></span></li>
+                            <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->model->offer->price ?> / Дней: <?= $item->model->offer->how_days ?></b></a></span></li>
                     <?php endforeach; ?>
 
                 </ul>
@@ -144,7 +147,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <div class="widget vertical-menu">
                 <a href="#" class="active">Банки</a>
                 <?php foreach ($banksPist as $itemList) : ?>
-                    <a href="<?= Url::to(['banks/'.$itemList->slug]) ?>"><?=$itemList->title?> <b>€<?= $itemList->model->price ?></b></a>
+                    <a href="<?= Url::to(['banks/'.$itemList->slug]) ?>"><?=$itemList->title?> <b>€<?= $itemList->model->bank->price ?></b></a>
                 <?php endforeach; ?>
             </div><!-- end: Widget4 -->
         </div>

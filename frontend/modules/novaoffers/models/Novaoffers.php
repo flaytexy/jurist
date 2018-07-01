@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\modules\novabanks\models;
+namespace frontend\modules\novaoffers\models;
 
 use common\behaviors\MySluggableBehavior;
 use common\models\Content;
@@ -10,27 +10,27 @@ use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;
 
 /**
- * Class Novabanks
- * @package frontend\modules\novabanks\models
+ * Class Novaoffers
+ * @package frontend\modules\novaoffers\models
  *
  * @property int $id
  * @property string $thumbnail
  * @property int $publish_date
  * @property string $image
- * @property Banks $bank
+ * @property Offers $offer
  *
- * @property NovabanksTranslation|array $translations
+ * @property NovaoffersTranslation|array $translations
  */
-class Novabanks extends Content
+class Novaoffers extends Content
 {
     const PAGE_LIMIT = 7;
-    const TYPE_ID = 101;
+    const TYPE_ID = 201;
 
-    public static $_type = 'novabanks';
+    public static $_type = 'novaoffers';
 
     public function init()
     {
-        self::$_translateModel = NovabanksTranslation::className();
+        self::$_translateModel = NovaoffersTranslation::className();
     }
 
 
@@ -93,10 +93,10 @@ class Novabanks extends Content
     }
 
     public function getChild() {
-        return $this->getBank();
+        return $this->getOffer();
     }
 
-    public function getBank() {
-        return $this->hasOne(Banks::className(), ['content_id' => 'id']);
+    public function getOffer() {
+        return $this->hasOne(Offers::className(), ['content_id' => 'id']);
     }
 }

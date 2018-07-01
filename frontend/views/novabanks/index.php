@@ -14,6 +14,10 @@ use yii\helpers\Url;
  * @var \frontend\modules\page\api\Page $page
  * @var \frontend\modules\novabanks\models\Novabanks $model
  * @var \frontend\modules\novabanks\api\NovabanksObject[] $items
+ *
+ * @var \frontend\modules\novanews\api\NovanewsObject[] $top_news
+ * @var \frontend\modules\novabanks\api\NovabanksObject[] $top_banks
+ * @var \frontend\modules\novaoffers\api\NovaoffersObject[] $top_offers
  */
 
 $page = Page::get('page-banks');
@@ -140,10 +144,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     </div>
                     <ul class="widget-gallery">
                         <?php foreach($top_banks as $item) : ?>
-                            <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                    <?= Html::img(Image::thumb($item['image'], 240, 120)) ?>
+                            <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
+                                    <?= Html::img(Image::thumb($item->image, 240, 120)) ?>
                                 </a>
-                                <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
+                                <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
                         <?php endforeach; ?>
                     </ul>
                 </div><!-- end: Widget3 -->
@@ -176,10 +180,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     </div>
                     <ul class="widget-gallery">
                         <?php foreach($top_offers as $item) : ?>
-                            <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
-                                    <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                            <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
+                                    <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
                                 </a>
-                                <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $item['price'] ?> / Дней: <?= $item['how_days']?></b></a></span></li>
+                                <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / Дней: <?= $item->model->child->how_days ?></b></a></span></li>
                         <?php endforeach; ?>
 
                     </ul>

@@ -418,23 +418,7 @@ $addeng = Yii::t('easyii', 'free');
     <!-- Bottom Line -->
 </footer>
 
-<aside id="sticky-social">
-<ul class="list-social" id="sticky-zone">
-    <li><a href="viber://add?number=+79254705002"><img src="/images/icons/viber-icon-small.png"
-                    height="30" width="30" alt="В целях безопасности клиентов" /></a></li>
-    <li><a href="https://api.whatsapp.com/send?phone=79254705002"><img
-                    src="/images/icons/WhatsApp-icon-small.png"
-                    height="30" width="30" alt="В целях безопасности клиентов" /></a></li>
-    <li><a href="#"><img src="/images/icons/telegram-logo-small.png"
-                    height="30" width="30" alt="В целях безопасности клиентов" /></a></li>
-    <li><a href="skype:live:asmofad?call"><img src="/images/icons/skype-icon-small.png"
-                    height="30" width="30" alt="В целях безопасности клиентов" /></a></li>
-</ul>
-<div>
-    <input name="" width="30" type="image" src="//iq-offshore.com/uploads/logo/arrow.png"
-           value="Click me" id="clicky" />
-</div>
-</aside>
+
 <div id="stl_left" style="display: block; opacity: 1; width: 178px;" class="">
     <div id="stl_bg">
         <nobr id="stl_text">Вверх</nobr>

@@ -305,8 +305,8 @@ $iteration = 1;
                                                 ); ?>
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="<?= Url::to(['banks/'.$toMainBank->slug]) ?>" title=""><?= $toMainBank->title ?></a></h4>
-                                                    <span style="font-weight: bold; font-size: large; color: white"><?= $toMainBank->model->location_title ?></span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€<?= $toMainBank->price ?></span>
+                                                    <span style="font-weight: bold; font-size: large; color: white"><?= $toMainBank->model->bank->location_title ?></span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€<?= $toMainBank->model->bank->price ?></span>
                                                     <h4>Корпоративный счет!</h4>
                                                 </div>
                                             </div>

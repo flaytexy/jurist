@@ -9,7 +9,7 @@ use frontend\models\Popularly;
 use frontend\modules\novanews\api\Novanews as Page;
 use frontend\modules\novanews\api\NovanewsObject as PageObject;
 use frontend\modules\novanews\models\Novanews as PageModel;
-
+ex_print('NewsController.php');
 class NewsController extends \yii\web\Controller
 {
     public function actionIndex($tag = null, $type = null, $slug = null, $page = null)
