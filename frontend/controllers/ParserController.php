@@ -22,10 +22,58 @@ class ParserController extends \yii\web\Controller
     public function actionIndex()
     {
         $db = \Yii::$app->db;
+//
+//        $db->createCommand("
+// UPDATE `lang` SET `local` = 'en-Us' WHERE `lang`.`id` = 1;
+//
+//UPDATE `easyii_pages` SET `type` = 'novanews';
+//UPDATE `content` SET `type` = 'novanews';
+//
+//ALTER TABLE `content` CHANGE `page_id` `id` INT(11) NOT NULL AUTO_INCREMENT,
+//CHANGE `title` `title_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `short` `short_old` VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `text` `text_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+//
+//ALTER TABLE `easyii_banks`
+//CHANGE `title` `title_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `image` `image_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `short` `short_old` VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `text` `text_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `slug` `slug_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `pre_image` `pre_image_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `pre_text` `pre_text_old` VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+//
+//ALTER TABLE `easyii_banks`
+//CHANGE `to_main` `to_main_old` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+//CHANGE `time` `time_old` INT(11) NULL DEFAULT '0',
+//CHANGE `views` `views_old` INT(11) NULL DEFAULT '0',
+//CHANGE `rating` `rating_old` INT(11) NULL DEFAULT NULL,
+//CHANGE `rating_to_main` `rating_to_main_old` INT(11) NULL DEFAULT NULL,
+//CHANGE `status` `status_old` TINYINT(1) NULL DEFAULT '1';
+//
+//ALTER TABLE `easyii_offers`
+//CHANGE `to_main` `to_main_old` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+//CHANGE `title` `title_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `image` `image_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `short` `short_old` VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `text` `text_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `slug` `slug_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `pre_image` `pre_image_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `pre_text` `pre_text_old` VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `time` `time_old` INT(11) NULL DEFAULT '0',
+//CHANGE `views` `views_old` INT(11) NULL DEFAULT '0',
+//CHANGE `status` `status_old` TINYINT(1) NULL DEFAULT '1';
+//
+//
+//ALTER TABLE `easyii_banks` CHANGE `pre_options` `pre_options_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+//ALTER TABLE `easyii_offers` CHANGE `pre_options` `pre_options_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+//       ")->execute();
+
 
         $db->createCommand("
             DELETE FROM `content` WHERE `type` ='novabanks';
             DELETE FROM `content` WHERE `type` ='novaoffers';
+            
             TRUNCATE `content_translation`;
             DELETE FROM `easyii_tags_assign` WHERE `class` LIKE '%novanews%';
             DELETE FROM `easyii_tags_assign` WHERE `class` LIKE '%novabanks%';
@@ -67,7 +115,7 @@ class ParserController extends \yii\web\Controller
             $insert = $db->createCommand()
                 ->insert('content_translation',
                     [
-                        'name' =>               'En ' . $contentItem['title'],
+                        'name' =>               $contentItem['title']. 'En',
                         'description' =>        'En ' . $contentItem['text'],
                         'short_description' =>  'En ' . $contentItem['short'],
 
@@ -148,8 +196,8 @@ class ParserController extends \yii\web\Controller
             $contentItem['to_main']  = $contentItem['to_main'] ?: $contentItem['to_main_old'];
             $contentItem['time'] = $contentItem['time'] ?: $contentItem['time_old'];
 
-            //$contentItem['rating']  = $contentItem['rating'] ?: $contentItem['rating_old'];
-            //$contentItem['rating_to_main']  = $contentItem['rating_to_main'] ?: $contentItem['rating_to_main_old'];
+            $contentItem['rating']  = $contentItem['rating'] ?: $contentItem['rating_old'];
+            $contentItem['rating_to_main']  = $contentItem['rating_to_main'] ?: $contentItem['rating_to_main_old'];
             $contentItem['slug']  = $contentItem['slug'] ?: $contentItem['slug_old'];
 
             $contentItem['time'] = $contentItem['time'] ?: $contentItem['time_old'];
@@ -170,8 +218,8 @@ class ParserController extends \yii\web\Controller
             $newModel->to_main = $contentItem['to_main'];
             $newModel->time =  $contentItem['time'];
 
-            //$newModel->rating = $contentItem['rating'];
-            //$newModel->rating_to_main =  $contentItem['rating_to_main'];
+            $newModel->rating = $contentItem['rating'];
+            $newModel->rating_to_main =  $contentItem['rating_to_main'];
 
             $newModel->slug = $contentItem['slug'];
 
@@ -196,7 +244,7 @@ class ParserController extends \yii\web\Controller
             $insert = $db->createCommand()
                 ->insert('content_translation',
                     [
-                        'name' =>               'En ' . $contentItem['title'],
+                        'name' =>               $contentItem['title']. 'En',
                         'description' =>        'En ' . $contentItem['text'],
                         'short_description' =>  'En ' . $contentItem['short'],
 
@@ -279,8 +327,8 @@ class ParserController extends \yii\web\Controller
             $contentItem['to_main']  = $contentItem['to_main'] ?: $contentItem['to_main_old'];
             $contentItem['time'] = $contentItem['time'] ?: $contentItem['time_old'];
 
-            $contentItem['rating']  = $contentItem['rating'] ?: $contentItem['rating_old'];
-            $contentItem['rating_to_main']  = $contentItem['rating_to_main'] ?: $contentItem['rating_to_main_old'];
+            //$contentItem['rating']  = $contentItem['rating'] ?: $contentItem['rating_old'];
+            //$contentItem['rating_to_main']  = $contentItem['rating_to_main'] ?: $contentItem['rating_to_main_old'];
             $contentItem['slug']  = $contentItem['slug'] ?: $contentItem['slug_old'];
 
             $contentItem['time'] = $contentItem['time'] ?: $contentItem['time_old'];
@@ -300,8 +348,8 @@ class ParserController extends \yii\web\Controller
             $newModel->to_main = $contentItem['to_main'];
             $newModel->time =  $contentItem['time'];
 
-            $newModel->rating = $contentItem['rating'];
-            $newModel->rating_to_main =  $contentItem['rating_to_main'];
+            //$newModel->rating = $contentItem['rating'];
+            //$newModel->rating_to_main =  $contentItem['rating_to_main'];
 
             $newModel->slug = $contentItem['slug'];
 
@@ -326,7 +374,7 @@ class ParserController extends \yii\web\Controller
             $insert = $db->createCommand()
                 ->insert('content_translation',
                     [
-                        'name' =>               'En ' . $contentItem['title'],
+                        'name' =>               $contentItem['title']. 'En',
                         'description' =>        'En ' . $contentItem['text'],
                         'short_description' =>  'En ' . $contentItem['short'],
 
@@ -386,15 +434,4 @@ class ParserController extends \yii\web\Controller
         exit('exit');
         //return $this->render('index');
     }
-
-    public function actionDao()
-    {
-        $db = \Yii::$app->db;
-        //$db->createCommand()->truncateTable('easyii_offers')->execute();
-
-
-        exit;
-        //return $this->render('index');
-    }
-
 }

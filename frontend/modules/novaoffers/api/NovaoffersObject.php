@@ -58,6 +58,10 @@ class NovaoffersObject extends APIObject
         }
     }
 
+    public function getoffer(){
+        return $this->getchild();
+    }
+
     public function getchild(){
         return $this->model->child;
     }

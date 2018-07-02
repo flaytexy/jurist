@@ -30,7 +30,7 @@ class NovaoffersController extends General
             $cords = explode(';', $offer->coordinates);
             $data['latLng'] = [$cords[0],$cords[1]];
             $data['name'] = $offer->title;
-            $data['weburl'] = 'b_' . $offer->offer_id;
+            $data['weburl'] = 'b_' . $offer->id;
 
             $offsetX = isset($cords[2]) ?  $cords[2] : 0;
             $offsetY = isset($cords[3]) ?  $cords[3] : 0;
@@ -59,35 +59,6 @@ class NovaoffersController extends General
 
     public function actionView($slug)
     {
-        $topNews = [];
-        foreach(PageModel::find()
-                    ->andWhere(['type_id' => '2'])
-                    ->status(PageModel::STATUS_ON)
-                    ->sortDate()->limit(4)->all() as $item){
-            $obj = new PageObject($item);
-            $topNews[] = $obj;
-        }
-
-        // Banks
-        //$topOffers = Novaoffers::find(2)->asArray()->all();
-        $query = new \yii\db\Query;
-        $query->select('*')
-            ->from('easyii_banks as ba')
-            ->where("ba.status = '1' ")
-            ->orderBy(['views'=> SORT_DESC])
-            ->limit(3);
-        $command = $query->createCommand();
-        $topBanks = $command->queryAll();
-
-        // Offers
-        $query = new \yii\db\Query;
-        $query->select('*')
-            ->from('easyii_offers as of')
-            ->where("of.status = '1' ")
-            ->orderBy(['views'=> SORT_DESC])
-            ->limit(4);
-        $command = $query->createCommand();
-        $topOffers = $command->queryAll();
 
         // Categories Left Menu
         $query = new \yii\db\Query;
@@ -106,94 +77,37 @@ class NovaoffersController extends General
 
         $offers = Novaoffers::get($slug);
 
-        $offer_id = $offers->offer_id;
-        $packets = Packet::find()
-            ->where([
-                'item_id' => $offer_id,
-                'class' => \frontend\modules\offers\models\Novaoffers::className()
-            ])->all();
-//adssad
-        foreach ($packets as $packet) {
-            $packet_id = $packet->packet_id;
-            $packet->price = number_format( $packet->price, 0, '.', '');
-
-            $findOptions = $db
-                ->createCommand('SELECT *
-                                      FROM `easyii_packets` as p
-                                      INNER JOIN `easyii_offers_packets_options` as po ON po.packet_id= p.packet_id
-                                      INNER JOIN `easyii_offers_options` as o ON po.option_id = o.option_id
-                                      WHERE p.packet_id = :packet_id
-                                      ORDER BY po.option_id ASC, p.packet_id ASC')
-                ->bindValues([
-                    ':packet_id' => $packet_id
-                ])
-                ->queryAll();
-
-            $packetOptions = [];
-            foreach ($findOptions as $packetOption) {
-
-                $packetOptions[$packetOption['option_id']] = $packetOption;
-            }
-
-            $packet->options = $packetOptions;
-        }
-
-        $options = $db
-            ->createCommand('SELECT o.*, po.packet_id as packetId, COUNT(p.packet_id) as countPacket
-                                      FROM `easyii_packets` as p
-                                      INNER JOIN `easyii_offers_packets_options` as po ON po.packet_id = p.packet_id
-                                      INNER JOIN `easyii_offers_options` as o ON po.option_id = o.option_id
-                                      WHERE p.item_id = :item_id AND p.class = :className
-                                        GROUP BY po.option_id
-                                      ORDER BY po.option_id ASC, countPacket ASC
-
-                                      ')
-            ->bindValues([
-                ':item_id' => $offer_id,
-                ':className' => \frontend\modules\offers\models\Novaoffers::className()
-
-            ])
-            ->queryAll();
-
-
-        if (!$offers) {
-            throw new \yii\web\NotFoundHttpException('Offers Houston, we have a problem.');
-        }
-
-        foreach ($options as $key => $option) {
-            foreach ($packets as $key2 => $packet) {
-                $options[$key]['child'][$key2] = 0;
-
-                if (isset($packet['options'][$option['option_id']])) {
-                    $options[$key]['child'][$key2] = 1;
-                }
-            }
-        }
-
-
         $popularly  = Popularly::findOne(['class' => \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id]);
         if(empty($popularly)){ $popularly  = new Popularly; }
         //$popularly->getInherit($news, $popularly);
         $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id;
         $popularly->slug = 'offers/'.$offers->slug;
         $popularly->title = $offers->title;
-        $popularly->item_id = $offers->offer_id;
+        $popularly->item_id = $offers->id;
         $popularly->image = $offers->image;
         $popularly->time = time();
         $popularly->save();
 
 
         $type_id = \Yii::$app->request->get('type_id');
-        if(empty($type_id))
-            $type_id = 1;
+        if(empty($type_id)){
+            $type_id = \frontend\modules\novaoffers\models\Novaoffers::TYPE_ID;
+        }
+
 
         $offersList = Novaoffers::items(['list' => 1, 'type_id' => (int)$type_id]);
 
+        // News
+        $topNews = $this->getTopNews();
+        // Banks
+        $topBanks = $this->getTopBanks();
+        // Offers
+        $topOffers = $this->getTopOffers();
+
         return $this->render('view', [
             'offers' => $offers,
-            'packets' => $packets,
-            'options' => $options,
             'offersList' => $offersList,
+
             'top_banks' => $topBanks,
             'top_offers' => $topOffers,
             'top_news' => $topNews

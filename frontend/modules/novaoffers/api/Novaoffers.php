@@ -60,23 +60,26 @@ class Novaoffers extends \common\components\API
                 ->addGroupBy('id');
         }
 
-        if (!empty($options['orderBy'])) {
-            if($options['orderBy']==='title'){
-                $query->orderBy(NovaoffersTranslation::tableName().'.name');
-            }else{
+        if (!empty($options['list'])) {
+            $query->orderBy(NovaoffersTranslation::tableName() . '.name');
+
+        } elseif (!empty($options['orderBy'])) {
+            if ($options['orderBy'] === 'title') {
+                $query->orderBy(NovaoffersTranslation::tableName() . '.name');
+            } else {
                 $query->orderBy($options['orderBy']);
             }
         } else {
             $query->sortDate();
         }
-//ex_print($query->createCommand()->rawSql);
+
         $this->_adp = new ActiveDataProvider([
             'query' => $query,
             'pagination' => !empty($options['pagination']) ? $options['pagination'] : []
         ]);
 
         /**
-         * @var \frontend\modules\novaoffers\models\Novaoffers  $model
+         * @var \frontend\modules\novaoffers\models\Novaoffers $model
          */
         foreach ($this->_adp->models as $model) {
             $oneItem = new NovaoffersObject($model);
@@ -146,24 +149,24 @@ class Novaoffers extends \common\components\API
         $page = NovaoffersModel::find()
             ->joinWith('translation')
             ->joinWith('child')
-            ->where(['or', NovaoffersModel::tableName().'.id=:id_slug', NovaoffersModel::tableName().'.slug=:id_slug'], [':id_slug' => $id_slug])
+            ->where(['or', NovaoffersModel::tableName() . '.id=:id_slug', NovaoffersModel::tableName() . '.slug=:id_slug'], [':id_slug' => $id_slug])
             ->andWhere([NovaoffersModel::tableName() . '.type_id' => NovaoffersModel::TYPE_ID])
             ->status(NovaoffersModel::STATUS_ON)
             ->one();
 
-        if(!$page){
+        if (!$page) {
 
-            $errorMessage = 'Страница без перевода!!!: '. $id_slug .'  .#36561';
+            $errorMessage = 'Страница без перевода!!!: ' . $id_slug . '  .#36561';
 
             //if (!$this->mailApi($errorMessage)) {
-                //header("HTTP/1.0 404 Not Found");
-                //header("Location: " . Url::to(['/404/error/mailsend'], true));
-                //exit;s
+            //header("HTTP/1.0 404 Not Found");
+            //header("Location: " . Url::to(['/404/error/mailsend'], true));
+            //exit;s
             //}
 
             $page = NovaoffersModel::find()
                 //->joinWith('translation')
-                ->where(['or', NovaoffersModel::tableName().'.id=:id_slug', NovaoffersModel::tableName().'.slug=:id_slug'], [':id_slug' => $id_slug])
+                ->where(['or', NovaoffersModel::tableName() . '.id=:id_slug', NovaoffersModel::tableName() . '.slug=:id_slug'], [':id_slug' => $id_slug])
                 ->status(NovaoffersModel::STATUS_ON)
                 ->one();
         }

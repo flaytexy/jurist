@@ -8,7 +8,7 @@ use frontend\modules\novanews\api\NovanewsObject;
 use frontend\modules\novanews\models\Novanews as NovanewsModel;
 use yii\web\NotFoundHttpException;
 
-class NovanewsController extends \yii\web\Controller
+class NovanewsController extends General
 {
     public function actionIndex($type = null, $tag = null, $name = null, $page = null)
     {
@@ -48,41 +48,6 @@ class NovanewsController extends \yii\web\Controller
             throw new NotFoundHttpException('Page Houston, we have a problem.');
         }
 
-        $topNews = [];
-        foreach(NovanewsModel::find()
-                    ->joinWith('translation')
-                    ->andWhere(['type_id' => '2'])
-                    ->status(NovanewsModel::STATUS_ON)
-                    ->sortDate()
-                    ->limit(4)
-                    ->all()
-            as $item
-        ){
-            $obj = new NovanewsObject($item);
-            $topNews[] = $obj;
-        }
-
-        // Banks
-        //$topOffers = Offers::find(2)->asArray()->all();
-        $query = new \yii\db\Query;
-        $query->select('*')
-            ->from('easyii_banks as ba')
-            ->where("ba.status = '1' ")
-            ->orderBy(['views'=> SORT_DESC])
-            ->limit(3);
-        $command = $query->createCommand();
-        $topBanks = $command->queryAll();
-
-        // Offers
-        $query = new \yii\db\Query;
-        $query->select('*')
-            ->from('easyii_offers as of')
-            ->where("of.status = '1' ")
-            ->orderBy(['views'=> SORT_DESC])
-            ->limit(4);
-        $command = $query->createCommand();
-        $topOffers = $command->queryAll();
-
         // Categories Left Menu
         $query = new \yii\db\Query;
         $query->select('ept.title as parent_title, ept.*, ept2.*,
@@ -118,9 +83,9 @@ class NovanewsController extends \yii\web\Controller
             'page' => $pages,
             'parentPage' => \frontend\modules\novanews\models\Novanews::findOne(['slug'=>'page-'.$prefixSlug]),
             'pageParentUrl' => $prefixSlug,
-            'top_banks' => $topBanks,
-            'top_offers' => $topOffers,
-            'top_news' => $topNews
+            'top_banks' => $this->getTopOffers(),
+            'top_offers' => $this->getTopOffers(),
+            'top_news' => $this->getTopNews(),
         ]);
     }
 }

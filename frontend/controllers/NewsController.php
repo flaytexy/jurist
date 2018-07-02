@@ -9,8 +9,8 @@ use frontend\models\Popularly;
 use frontend\modules\novanews\api\Novanews as Page;
 use frontend\modules\novanews\api\NovanewsObject as PageObject;
 use frontend\modules\novanews\models\Novanews as PageModel;
-ex_print('NewsController.php');
-class NewsController extends \yii\web\Controller
+
+class NewsController extends General
 {
     public function actionIndex($tag = null, $type = null, $slug = null, $page = null)
     {
@@ -51,27 +51,6 @@ class NewsController extends \yii\web\Controller
             ]);
         }
 
-        // Banks
-        //$topOffers = Offers::find(2)->asArray()->all();
-        $query = new \yii\db\Query;
-        $query->select('*')
-            ->from('easyii_banks as ba')
-            ->where("ba.status = '1' ")
-            //->orderBy(['views'=> SORT_DESC])
-            ->orderBy(['rating'=>SORT_DESC, 'title' => SORT_ASC])
-            ->limit(2);
-        $command = $query->createCommand();
-        $topBanks = $command->queryAll();
-
-        // Offers
-        $query = new \yii\db\Query;
-        $query->select('*')
-            ->from('easyii_offers as of')
-            ->where("of.status = '1' ")
-            ->orderBy(['views'=> SORT_DESC])
-            ->limit(3);
-        $command = $query->createCommand();
-        $topOffers = $command->queryAll();
 
         // Tags
         $query = new \yii\db\Query;
@@ -98,23 +77,17 @@ class NewsController extends \yii\web\Controller
         $command = $query->createCommand();
         $categoriesTops = $command->queryAll();
 
-        $topNews = [];
-        foreach(PageModel::find()
-                    ->andWhere(['type_id' => '2'])
-                    ->status(PageModel::STATUS_ON)
-                    ->sortDate()->limit(5)->all() as $item){
-            $obj = new PageObject($item);
-            $topNews[] = $obj;
-        }
+
 
         return $this->render('index', [
             'page' => $page,
             'news' => $news,
             'categories_tops' => $categoriesTops,
             'page_name' => $pageName,
-            'top_banks' => $topBanks,
-            'top_offers' => $topOffers,
-            'top_news' => $topNews,
+
+            'top_banks' => $this->getTopBanks(),
+            'top_offers' => $this->getTopOffers(),
+            'top_news' => $this->getTopNews(),
             'top_tags' => $topTags,
         ]);
     }
@@ -130,47 +103,6 @@ class NewsController extends \yii\web\Controller
         if(!$news){
             throw new \yii\web\NotFoundHttpException('Page Houston, we have a problem.');
         }
-
-
-        // News
-/*        $query = new \yii\db\Query;
-        $query->select('*')
-            ->from('content as of')
-            ->where("of.status = '1' and type_id = '2'")
-            ->orderBy(['views'=> SORT_DESC])
-            ->limit(5);
-        $command = $query->createCommand();
-        $topNews = $command->queryAll();*/
-        $topNews = [];
-        foreach(PageModel::find()
-                    ->andWhere(['type_id' => '2'])
-                    ->status(PageModel::STATUS_ON)
-                    ->sortDate()->limit(5)->all() as $item){
-            $obj = new PageObject($item);
-            $topNews[] = $obj;
-        }
-
-        // Banks
-        //$topOffers = Offers::find(2)->asArray()->all();
-        $query = new \yii\db\Query;
-        $query->select('*')
-            ->from('easyii_banks as ba')
-            ->where("ba.status = '1' ")
-            //->orderBy(['views'=> SORT_DESC])
-            ->orderBy(['rating'=>SORT_DESC, 'title' => SORT_ASC])
-            ->limit(2);
-        $command = $query->createCommand();
-        $topBanks = $command->queryAll();
-
-        // Offers
-        $query = new \yii\db\Query;
-        $query->select('*')
-            ->from('easyii_offers as of')
-            ->where("of.status = '1' ")
-            ->orderBy(['views'=> SORT_DESC])
-            ->limit(3);
-        $command = $query->createCommand();
-        $topOffers = $command->queryAll();
 
         // Tags
         $query = new \yii\db\Query;
@@ -214,9 +146,11 @@ class NewsController extends \yii\web\Controller
             //'new' => $news,
             'news' => $news,
             'categories_tops' => $categoriesTops,
-            'top_banks' => $topBanks,
-            'top_offers' => $topOffers,
-            'top_news' => $topNews,
+
+
+            'top_banks' => $this->getTopBanks(),
+            'top_offers' => $this->getTopOffers(),
+            'top_news' => $this->getTopNews(),
             'top_tags' => $topTags,
         ]);
     }

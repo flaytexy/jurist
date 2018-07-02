@@ -362,10 +362,10 @@ $this->params['breadcrumbs'][] = $page->name;
                 </div>
                 <ul class="widget-gallery">
                     <?php foreach($top_offers as $item) : ?>
-                        <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
-                                <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                        <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
+                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
                             </a>
-                            <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $item['price'] ?> / Дней: <?= $item['how_days']?></b></a></span></li>
+                            <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / Дней: <?= $item->how_days?></b></a></span></li>
                     <?php endforeach; ?>
 
                 </ul>
@@ -379,10 +379,10 @@ $this->params['breadcrumbs'][] = $page->name;
                 </div>
                 <ul class="widget-gallery" id="dottedbord">
                     <?php foreach($top_banks as $item) : ?>
-                        <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                        <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
+                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
                             </a>
-                            <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
+                            <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
                     <?php endforeach; ?>
 
                 </ul>
@@ -394,13 +394,11 @@ $this->params['breadcrumbs'][] = $page->name;
                 <div class="col-md-12">
 
                     <div class="packages-detail">
-                        <?php if (count($page->photos) || !empty($page->model->image)) : ?>
+                        <?php if (!empty($page->model->image)) : ?>
                             <div class="package-video">
                                 <div>
                                     <?php if (!empty($page->model->image)) : ?>
                                         <?= Html::img(Image::thumb($page->model->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
-                                    <? else: ?>
-                                        <?= Html::img(Image::thumb($page->photos[1]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
                                 <? if($page->getShortDescription()): ?>

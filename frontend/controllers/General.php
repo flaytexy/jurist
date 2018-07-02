@@ -75,6 +75,7 @@ class General extends \yii\web\Controller
 
         foreach ($rows as $item) {
             $obj = new NovabanksObject($item);
+
             $topBanks[] = $obj;
         }
 
@@ -93,8 +94,9 @@ class General extends \yii\web\Controller
             ->andWhere([Novaoffers::tableName() . '.type_id' => Novaoffers::TYPE_ID])
             ->andWhere([NovaoffersTranslation::tableName() . '.public_status' => NovaoffersTranslation::STATUS_ON])
             ->status(Novaoffers::STATUS_ON)
-            ->orderBy(['rating' => SORT_DESC])
-            ->limit(3)
+            //->orderBy([NovaoffersTranslation::tableName() .'.name' => SORT_ASC])
+            ->orderBy(['views' => SORT_DESC])
+            ->limit(4)
             //->asArray()
             ->all();
 

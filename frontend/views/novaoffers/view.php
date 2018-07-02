@@ -292,10 +292,10 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                     </div>
                     <ul class="widget-gallery">
                         <?php foreach($top_offers as $item) : ?>
-                            <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
-                                    <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                            <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
+                                    <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
                                 </a>
-                                <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $item['price'] ?> / Дней: <?= $item['how_days']?></b></a></span></li>
+                                <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / Дней: <?= $item->how_days?></b></a></span></li>
                         <?php endforeach; ?>
 
                     </ul>
@@ -309,10 +309,10 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                 </div>
                 <ul class="widget-gallery" id="dottedbord">
                     <?php foreach($top_banks as $item) : ?>
-                        <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
+                        <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
+                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
                             </a>
-                            <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
+                            <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
                     <?php endforeach; ?>
 
                 </ul>
@@ -337,14 +337,12 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                                 </div>
                             </div>
                         </section>
-                        <?php if (count($offers->photos) || !empty($offers->model->image)) : ?>
+                        <?php if (!empty($offers->model->image)) : ?>
 
                         <div class="package-video">
                             <div>
                                 <?php if (!empty($offers->model->image)) : ?>
                                     <?= Html::img(Image::thumb($offers->model->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
-                                <? else: ?>
-                                    <?= Html::img(Image::thumb($offers->photos[0]->image, 1100, 300), ['width' => '100%', 'height' => '100%']) ?>
                                 <? endif ?>
                             </div>
                             <!-- <i class="fa fa-play-circle"></i>-->

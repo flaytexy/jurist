@@ -100,10 +100,10 @@ $this->params['breadcrumbs'][] = $news->title;
                                         </div>
                                         <ul class="widget-gallery">
                                             <?php foreach($top_offers as $item) : ?>
-                                                <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
-                                                        <?= Html::img(Image::thumb($item['image'], 240, 180)) ?>
+                                                <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
+                                                        <?= Html::img(Image::thumb($item->image, 240, 180)) ?>
                                                     </a>
-                                                    <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span></li>
+                                                    <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?></a></span></li>
                                             <?php endforeach; ?>
 
                                         </ul>
@@ -117,10 +117,10 @@ $this->params['breadcrumbs'][] = $news->title;
                                         </div>
                                         <ul class="widget-gallery">
                                             <?php foreach($top_banks as $item) : ?>
-                                                <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                                        <?= Html::img(Image::thumb($item['image'], 240, 180)) ?>
+                                                <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
+                                                        <?= Html::img(Image::thumb($item->image, 240, 180)) ?>
                                                     </a>
-                                                    <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
+                                                    <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
                                             <?php endforeach; ?>
 
                                         </ul>
