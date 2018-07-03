@@ -172,7 +172,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     </div>
                     <!-- Villa Editors Picks -->
                     <div id="pagination">
-                        <div><?= Offers::pages() ?></div>
+                        <div><?= \frontend\modules\novaoffers\api\Novaoffers::pages() ?></div>
                     </div>
                     <!-- Pagination -->
                 </div>

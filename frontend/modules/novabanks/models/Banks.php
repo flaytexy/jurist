@@ -1,6 +1,7 @@
 <?php
 namespace frontend\modules\novabanks\models;
 
+use frontend\behaviors\CountryAble;
 use frontend\models\Option;
 use frontend\models\OptionAssign;
 use Yii;
@@ -22,16 +23,40 @@ class Banks extends \common\components\ActiveRecord
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
+    public $region_name;
+    public $region_id;
+    public $country_id;
+    public $property_list;
+
+
     public static function tableName()
     {
         return 'easyii_banks';
+    }
+
+    public function behaviors()
+    {
+        return [
+            //'seoBehavior' => SeoBehavior::className(),
+            //'taggabble' => Taggable::className(),
+            //'optionabble' => Optionable::className(),
+//            'sluggable' => [
+//                'class' => MySluggableBehavior::className(),
+//                'attribute' => 'title',
+//                'ensureUnique' => true
+//            ],
+            'countryable' => CountryAble::className(),
+            //'CountriesBehavior' => CountriesBehavior::className(),
+
+        ];
     }
 
     public function rules()
     {
         return [
             [['location_zone_id', 'how_days'], 'required'],
-            [['pre_options', 'website', 'location_title'], 'string', 'max' => 128],
+            //[['pre_options', 'website', 'location_title'], 'string', 'max' => 128],
+            [['website', 'location_title'], 'string', 'max' => 128],
             [['website', 'location_title'], 'trim'],
             [['pos', 'coordinates'], 'string', 'max' => 64],
 
@@ -40,17 +65,17 @@ class Banks extends \common\components\ActiveRecord
             [['price', 'min_deposit'], 'number', 'max' => 100000000],
             ['how_days', 'integer', 'max' => 999],
             ['location_zone_id', 'integer', 'max' => 99],
-            ['time', 'default', 'value' => time()],
+            //['time', 'default', 'value' => time()],
 
             //['to_main', 'integer', 'max' => 1],
             //[['image', 'pre_image'], 'image', 'extensions' => 'png, jpg, gif'],
             //['image', 'image', 'extensions' => 'jpg, jpeg'], // 'png, jpg, jpeg, gif'
             //['pre_image', 'image', 'extensions' => 'jpg, jpeg'], //'png, jpg, jpeg, gif'
 
-            ['image_flag', 'extensions' => 'png, jpg, jpeg, gif',
-                'minWidth' => 100, 'maxWidth' => 1240,
-                'minHeight' => 100, 'maxHeight' => 1240,
-            ],
+//            ['image_flag', 'extensions' => 'png, jpg, jpeg, gif',
+//                'minWidth' => 100, 'maxWidth' => 1240,
+//                'minHeight' => 100, 'maxHeight' => 1240,
+//            ],
            // [['views', 'time', 'status', 'type_id', 'rating', 'rating_to_main'], 'integer'],
 
             //['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
@@ -61,7 +86,7 @@ class Banks extends \common\components\ActiveRecord
 
             //['optionNames', 'safe'],
             //['tagNames', 'safe'],
-            //['countryNames', 'safe']
+            ['countryNames', 'safe']
         ];
     }
 

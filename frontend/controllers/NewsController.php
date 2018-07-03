@@ -7,8 +7,6 @@ use frontend\models\Popularly;
 //use frontend\modules\page\models\Page as PageModel;
 
 use frontend\modules\novanews\api\Novanews as Page;
-use frontend\modules\novanews\api\NovanewsObject as PageObject;
-use frontend\modules\novanews\models\Novanews as PageModel;
 
 class NewsController extends General
 {
@@ -76,8 +74,6 @@ class NewsController extends General
             ->limit(20);
         $command = $query->createCommand();
         $categoriesTops = $command->queryAll();
-
-
 
         return $this->render('index', [
             'page' => $page,

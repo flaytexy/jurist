@@ -80,7 +80,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule ^(.*)index.php(.*) http://iq-offshore.com/$1 [L,R=301]
 RewriteRule . /
 
-<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf|woff)$">
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf|woff|woff2)$">
   Header set Cache-Control "max-age=2592000"
 </FilesMatch>
 <FilesMatch ".(html)$">

@@ -50,7 +50,8 @@ class Tickers extends \common\components\API
         //e_print( !empty($this->_adp),'_adp_is_true');
         //e_print('end_print');
 
-        if (!($this->_items && $this->_adp)) {
+        //if (!($this->_items && $this->_adp)) {
+        if(true){
             //e_print('SET');
             $this->_items = [];
 

@@ -10,10 +10,12 @@ use frontend\models\Option;
 use frontend\models\Packet;
 use frontend\models\Parse;
 use frontend\models\TagAssign;
+use frontend\modules\banks\models\Banks;
 use frontend\modules\novabanks\models\Novabanks;
 use frontend\modules\novaoffers\models\Novaoffers;
 use frontend\modules\offers\models\Offers;
 use frontend\modules\offers\models\OffersPacketsOptions;
+use frontend\modules\page\models\Page;
 use Sunra\PhpSimple\HtmlDomParser;
 
 
@@ -28,6 +30,9 @@ class ParserController extends \yii\web\Controller
 //
 //UPDATE `easyii_pages` SET `type` = 'novanews';
 //UPDATE `content` SET `type` = 'novanews';
+//
+//UPDATE `country_assign` SET `class` = 'frontend\\modules\\novaoffers\\models\\Novaoffers' WHERE  `class` = 'frontend\\modules\\offers\\models\\Offers' ;
+//UPDATE `country_assign` SET `class` = 'frontend\\modules\\novabanks\\models\\Novabanks' WHERE  `class` = 'frontend\\modules\\banks\\models\\Banks' ;
 //
 //ALTER TABLE `content` CHANGE `page_id` `id` INT(11) NOT NULL AUTO_INCREMENT,
 //CHANGE `title` `title_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -68,7 +73,7 @@ class ParserController extends \yii\web\Controller
 //ALTER TABLE `easyii_banks` CHANGE `pre_options` `pre_options_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 //ALTER TABLE `easyii_offers` CHANGE `pre_options` `pre_options_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 //       ")->execute();
-
+//
 
         $db->createCommand("
             DELETE FROM `content` WHERE `type` ='novabanks';
@@ -91,7 +96,7 @@ class ParserController extends \yii\web\Controller
 
 
         $iter = 0;
-        $classItems = 'frontend\\modules\\page\\models\\Page';
+        $classItems  = 'frontend\\\modules\\\page\\\models\\\Page';
         $classChange = 'frontend\\modules\\novanews\\models\\Novanews';
         foreach ($contentItems as $contentItem){
             //ex_print($contentItem,'$contentItem');
@@ -99,6 +104,11 @@ class ParserController extends \yii\web\Controller
             $contentItem['text'] = $contentItem['text'] ?: $contentItem['text_old'];
             $contentItem['short']  = $contentItem['short'] ?: $contentItem['short_old'];
             $contentId = $contentItem['id'];
+
+echo'<hr />';
+e_print($contentItem['title'],'TITlE_CONTENT');
+e_print($contentId,'$itemId');
+e_print($contentId,'$contentId');
             $db->createCommand()
                 ->insert('content_translation',
                     [
@@ -138,7 +148,7 @@ class ParserController extends \yii\web\Controller
                 ->queryAll();
 
             if(!empty($seoData)){
-
+                //e_print($seoData,'$seoData');
                 $seoData = $seoData[0];
                 $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'ru-RU'])->one();//->createCommand()->rawSql;
                 $customer->meta_h1 = $seoData['h1'];//($customer['h1']) ?: $contentItem['title'];
@@ -147,13 +157,22 @@ class ParserController extends \yii\web\Controller
                 $customer->meta_description = $seoData['description'];
                 $customer->slug = $contentItem['sluger'];
                 $customer->save(false);
+
+                $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'en-Us'])->one();//->createCommand()->rawSql;
+                $customer->meta_h1 = $seoData['h1'].'_EN';//($customer['h1']) ?: $contentItem['title'];
+                $customer->meta_title = $seoData['title'].'_EN';//$contentItem['title'] ?: $contentItem['title'];
+                $customer->meta_keywords = $seoData['keywords'].'_EN';
+                $customer->meta_description = $seoData['description'].'_EN';
+                $customer->slug = $contentItem['sluger'].'_en';;
+                $customer->save(false);
             }
 
 
-            $tagsRows = TagAssign::find()->where(['class' => $classItems, 'item_id'=> $contentId])->all();//->createCommand()->rawSql;
+            $tagsRows = TagAssign::find()->where(['class' => Page::className(), 'item_id'=> $contentId])->all();//->createCommand()->rawSql;
 
             if($tagsRows){
                 foreach ($tagsRows as $tagsPos){
+                    //e_print($tagsPos->attributes,'$tagsPos');
                     $tagsNewPos = new TagAssign();
                     $tagsNewPos->class = $classChange;
                     $tagsNewPos->item_id = $contentId;
@@ -173,6 +192,11 @@ class ParserController extends \yii\web\Controller
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// BANKS
 ///
+        echo'<hr /><hr /><hr />';
+
+        $db->createCommand("
+               ALTER TABLE `content` AUTO_INCREMENT=1000;
+       ")->execute();
 
         $banksItems = $db
             ->createCommand('SELECT `c`.*, `c`.bank_id as id, `c`.slug_old as sluger
@@ -181,11 +205,13 @@ class ParserController extends \yii\web\Controller
             ->queryAll();
 
         $iter = 0;
-        $classItems = 'frontend\\modules\\banks\\models\\Banks';
+        $classItems  = 'frontend\\\modules\\\banks\\\models\\\Banks';
         $classChange = 'frontend\\modules\\novabanks\\models\\Novabanks';
         foreach ($banksItems as $contentItem){
+
             //ex_print($contentItem,'$contentItem');
             $contentItem['title'] = $contentItem['title'] ?: $contentItem['title_old'];
+
             $contentItem['text'] = $contentItem['text'] ?: $contentItem['text_old'];
             $contentItem['short']  = $contentItem['short'] ?: $contentItem['short_old'];
 
@@ -201,6 +227,12 @@ class ParserController extends \yii\web\Controller
             $contentItem['slug']  = $contentItem['slug'] ?: $contentItem['slug_old'];
 
             $contentItem['time'] = $contentItem['time'] ?: $contentItem['time_old'];
+
+            $itemId = $contentItem['bank_id'];
+
+echo'<hr />';
+e_print($contentItem['title'],'TITlE_BANK');
+e_print($itemId,'$itemId');
 
             //e_print(array($contentItem['title'],$contentItem['slug']),'_BANKS');
             $newModel = new Novabanks();
@@ -225,7 +257,7 @@ class ParserController extends \yii\web\Controller
 
             $newModel->save(false);
             $contentId = $newModel->getPrimaryKey();
-
+e_print($contentId,'$contentId_in_bank');
             $db->createCommand()
                 ->insert('content_translation',
                     [
@@ -262,12 +294,12 @@ class ParserController extends \yii\web\Controller
                 ->createCommand("SELECT *
                             FROM `easyii_seotext` as seo
                             WHERE `seo`.`class` = '".$classItems."'
-                              AND `seo`.item_id = '".(int)$contentId."'
+                              AND `seo`.item_id = '".(int)$itemId."'
                             LIMIT 1  ")
                 ->queryAll();
 
             if(!empty($seoData)){
-
+                //e_print($seoData,'$seoData');
                 $seoData = $seoData[0];
                 $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'ru-RU'])->one();//->createCommand()->rawSql;
                 $customer->meta_h1 = $seoData['h1'];//($customer['h1']) ?: $contentItem['title'];
@@ -276,16 +308,25 @@ class ParserController extends \yii\web\Controller
                 $customer->meta_description = $seoData['description'];
                 $customer->slug = $contentItem['sluger'];
                 $customer->save(false);
+
+                $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'en-Us'])->one();//->createCommand()->rawSql;
+                $customer->meta_h1 = $seoData['h1'].'_EN';//($customer['h1']) ?: $contentItem['title'];
+                $customer->meta_title = $seoData['title'].'_EN';//$contentItem['title'] ?: $contentItem['title'];
+                $customer->meta_keywords = $seoData['keywords'].'_EN';
+                $customer->meta_description = $seoData['description'].'_EN';
+                $customer->slug = $contentItem['sluger'].'_en';;
+                $customer->save(false);
             }
 
             $db->createCommand("UPDATE `easyii_banks` SET `content_id` = '".$contentId."' 
-                WHERE `bank_id` = '".$contentItem['id']."';")->execute();
+                WHERE `bank_id` = '".$itemId."';")->execute();
 
 
-            $tagsRows = TagAssign::find()->where(['class' => $classItems, 'item_id'=> $contentId])->all();//->createCommand()->rawSql;
+            $tagsRows = TagAssign::find()->where(['class' => Banks::className(), 'item_id'=> $itemId])->all();//->createCommand()->rawSql;
 
             if($tagsRows){
                 foreach ($tagsRows as $tagsPos){
+                    //e_print($tagsPos->attributes,'$tagsPos');
                     $tagsNewPos = new TagAssign();
                     $tagsNewPos->class = $classChange;
                     $tagsNewPos->item_id = $contentId;
@@ -299,11 +340,17 @@ class ParserController extends \yii\web\Controller
             }
             //ex_print($insert,'$insert');
         }
+
         e_print($iter,'$iter_BANKS');
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// OFFERS
 ///
+        echo'<hr /><hr /><hr />';
+
+        $db->createCommand("
+               ALTER TABLE `content` AUTO_INCREMENT=2000;
+       ")->execute();
 
         $banksItems = $db
             ->createCommand('SELECT `c`.*, `c`.offer_id as id, `c`.slug_old as sluger
@@ -312,7 +359,7 @@ class ParserController extends \yii\web\Controller
             ->queryAll();
 
         $iter = 0;
-        $classItems = 'frontend\\modules\\offers\\models\\Offers';
+        $classItems  = 'frontend\\\modules\\\offers\\\models\\\Offers';
         $classChange = 'frontend\\modules\\novaoffers\\models\\Novaoffers';
         foreach ($banksItems as $contentItem){
             //ex_print($contentItem,'$contentItem');
@@ -326,6 +373,12 @@ class ParserController extends \yii\web\Controller
             $contentItem['views'] = $contentItem['views'] ?: $contentItem['views_old'];
             $contentItem['to_main']  = $contentItem['to_main'] ?: $contentItem['to_main_old'];
             $contentItem['time'] = $contentItem['time'] ?: $contentItem['time_old'];
+
+            $itemId = $contentItem['offer_id'];
+
+echo'<hr />';
+e_print($contentItem['title'],'TITlE_OFFER');
+e_print($itemId,'$itemId');
 
             //$contentItem['rating']  = $contentItem['rating'] ?: $contentItem['rating_old'];
             //$contentItem['rating_to_main']  = $contentItem['rating_to_main'] ?: $contentItem['rating_to_main_old'];
@@ -355,7 +408,7 @@ class ParserController extends \yii\web\Controller
 
             $newModel->save(false);
             $contentId = $newModel->getPrimaryKey();
-
+e_print($contentId,'$contentId_in_offer');
             $db->createCommand()
                 ->insert('content_translation',
                     [
@@ -388,16 +441,23 @@ class ParserController extends \yii\web\Controller
 
             /////////////////////////////////////
             /// SEO
+//e_print("SELECT * FROM `easyii_seotext` as seo
+//                            WHERE `seo`.`class` = '".$classItems."'
+//                              AND `seo`.item_id = '".(int)$itemId."'
+//                            LIMIT 1  ",
+//        'sql'
+//);
+
             $seoData = $db
                 ->createCommand("SELECT *
                             FROM `easyii_seotext` as seo
                             WHERE `seo`.`class` = '".$classItems."'
-                              AND `seo`.item_id = '".(int)$contentId."'
+                              AND `seo`.item_id = '".(int)$itemId."'
                             LIMIT 1  ")
                 ->queryAll();
 
             if(!empty($seoData)){
-
+                //e_print($seoData,'$seoData');
                 $seoData = $seoData[0];
                 $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'ru-RU'])->one();//->createCommand()->rawSql;
                 $customer->meta_h1 = $seoData['h1'];//($customer['h1']) ?: $contentItem['title'];
@@ -406,15 +466,24 @@ class ParserController extends \yii\web\Controller
                 $customer->meta_description = $seoData['description'];
                 $customer->slug = $contentItem['sluger'];
                 $customer->save(false);
+
+                $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'en-Us'])->one();//->createCommand()->rawSql;
+                $customer->meta_h1 = $seoData['h1'].'_EN';//($customer['h1']) ?: $contentItem['title'];
+                $customer->meta_title = $seoData['title'].'_EN';//$contentItem['title'] ?: $contentItem['title'];
+                $customer->meta_keywords = $seoData['keywords'].'_EN';
+                $customer->meta_description = $seoData['description'].'_EN';
+                $customer->slug = $contentItem['sluger'].'_en';;
+                $customer->save(false);
             }
 
             $db->createCommand("UPDATE `easyii_offers` SET `content_id` = '".$contentId."' 
-                WHERE `offer_id` = '".$contentItem['id']."';")->execute();
+                WHERE `offer_id` = '".$itemId."';")->execute();
 
-            $tagsRows = TagAssign::find()->where(['class' => $classItems, 'item_id'=> $contentId])->all();//->createCommand()->rawSql;
+            $tagsRows = TagAssign::find()->where(['class' => Offers::tableName(), 'item_id'=> $itemId])->all();//->createCommand()->rawSql;
 
             if($tagsRows){
                 foreach ($tagsRows as $tagsPos){
+                    //e_print($tagsPos->attributes,'$tagsPos');
                     $tagsNewPos = new TagAssign();
                     $tagsNewPos->class = $classChange;
                     $tagsNewPos->item_id = $contentId;
@@ -428,6 +497,10 @@ class ParserController extends \yii\web\Controller
             }
             //ex_print($insert,'$insert');
         }
+
+        $db->createCommand("
+               ALTER TABLE `content` AUTO_INCREMENT=5000;
+       ")->execute();
 
         e_print($iter,'$iter_OFFERS');
 

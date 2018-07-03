@@ -4,13 +4,15 @@ use yii\helpers\Url;
 use frontend\helpers\Image;
 
 /**
+ * @var \frontend\modules\novaoffers\api\NovaoffersObject $offers
+ *
  * @var \frontend\modules\novanews\api\NovanewsObject[] $top_news
  * @var \frontend\modules\novabanks\api\NovabanksObject[] $top_banks
  * @var \frontend\modules\novaoffers\api\NovaoffersObject[] $top_offers
  */
-$this->title = $offers->seo('title', $offers->model->title);
+$this->title = $offers->seo('title', $offers->title);
 $this->params['breadcrumbs'][] = ['label' => 'Компании', 'url' => ['offers/index']];
-$this->params['breadcrumbs'][] = $offers->model->title;
+$this->params['breadcrumbs'][] = $offers->title;
 ?>
 
 <style>
@@ -349,10 +351,10 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                             <strong class="per-night" style="font-family: Arial"><span>€</span><?= $offers->price; ?> <i>Дней: <?= $offers->how_days; ?></i></strong>
                             <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title="">Заказать</a>
 
-                            <div class="title-video alignleft">
+                            <!--<div class="title-video alignleft">
                                 <h1><?= $offers->seo('h1', $offers->title) ?></h1>
                                 <span><?= $offers->seo('h1', $offers->short) ?></span>
-                            </div>
+                            </div>-->
                         </div>
                         <?php endif; ?>
 

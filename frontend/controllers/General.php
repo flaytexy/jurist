@@ -87,7 +87,7 @@ class General extends \yii\web\Controller
      */
     public function getTopOffers()
     {
-        $rows = Novaoffers::find()
+        $query = Novaoffers::find()
             //->select([NovabanksModel::tableName().'.*', NovabanksTranslation::tableName().'.*'])
             ->joinWith('translation')
             ->joinWith('offer')
@@ -96,9 +96,10 @@ class General extends \yii\web\Controller
             ->status(Novaoffers::STATUS_ON)
             //->orderBy([NovaoffersTranslation::tableName() .'.name' => SORT_ASC])
             ->orderBy(['views' => SORT_DESC])
-            ->limit(4)
+            ->limit(4);
             //->asArray()
-            ->all();
+            //->all();
+        $rows = $query->all();
 
         foreach ($rows as $item) {
             $obj = new NovaoffersObject($item);

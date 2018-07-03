@@ -5,6 +5,7 @@ namespace frontend\modules\novabanks\controllers\backend;
 use common\controllers\ContentAdminController;
 use common\models\Language;
 
+use frontend\modules\novabanks\models\Banks;
 use frontend\modules\novabanks\models\Novabanks;
 use frontend\modules\novabanks\models\NovabanksTranslation;
 
@@ -56,7 +57,7 @@ class DefaultController extends ContentAdminController
 
     public function beforeAction($action)
     {
-        $this->view->title = 'Новости – ' . Yii::$app->params['sitePrefix'];
+        $this->view->title = 'Банки – ' . Yii::$app->params['sitePrefix'];
 
         return parent::beforeAction($action);
     }
@@ -65,10 +66,10 @@ class DefaultController extends ContentAdminController
     {
         $query = Novabanks::find()
             ->joinWith('translations')
-            //->where(['type' => Novabanks::$_type])
+            ->where(['type' => Novabanks::$_type])
             //->groupBy(Novabanks::tableName() . '.id');
             ->orderBy([Novabanks::tableName() . '.time' => SORT_DESC]); //publish_date' => SORT_DESC
-            //->limit();
+        //->limit();
         //$sql = $query->createCommand()->rawSql;
 
         $countQuery = clone $query;
@@ -76,12 +77,11 @@ class DefaultController extends ContentAdminController
         $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 200]);
 
         $models = $query
-            //->where(['type' => Novabanks::$_type])
-            ->orderBy([Novabanks::tableName() . '.time' => SORT_DESC]) //publish_date' => SORT_DESC
+            ->where(['type' => Novabanks::$_type])
+            ->orderBy([Novabanks::tableName() . '.time' => SORT_DESC])//publish_date' => SORT_DESC
             ->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
-
 
 
         return $this->render('index', [
@@ -103,7 +103,9 @@ class DefaultController extends ContentAdminController
         $model = Novabanks::find()
             ->where([Novabanks::tableName() . '.id' => $id])
             ->with('translations')
+            ->with('child')
             ->with('images')
+            //->createCommand()->rawSql;
             ->one();
 
         if ($model instanceof Novabanks) {
@@ -111,7 +113,7 @@ class DefaultController extends ContentAdminController
             $translation_models = $model->translations;
 
             foreach (Language::getLanguages() as $language) {
-                if(!isset($model->translations[$language['local']])){
+                if (!isset($model->translations[$language['local']])) {
                     $translation_model = new NovabanksTranslation;
                     $translation_model->loadDefaultValues();
                     $translation_models[$language['local']] = $translation_model;
@@ -132,15 +134,20 @@ class DefaultController extends ContentAdminController
             }
         }
 
-        if($request->post()){
-            $model->category_detail =  $model->type_id . ":" . $model->category_id;
-            $model->time = time();
-
-            $this->_saveItem($model, $request, $translation_models);
+        if (isset($model->child)) {
+            //$child = Banks::find()->where(['bank_id'=>$model->child->primaryKey])->one();
+            $child = $model->child;
+        } else {
+            $child = new Banks();
+            //$child->loadDefaultValues();
         }
 
-        //$categories = PageCategories::findAll();
-        $model->category_detail =  $model->type_id . ":" . $model->category_id;
+        //$model->category_detail =  $model->type_id . ":" . $model->category_id;
+        $model->category_detail = Novabanks::TYPE_ID . ':20';
+
+        if ($request->post()) {
+            $this->_saveItem($model, $request, $translation_models, $child);
+        }
 
         $query = new \yii\db\Query;
         $query->select('ept.title as parent_title, ept.*, ept2.*')
@@ -151,19 +158,17 @@ class DefaultController extends ContentAdminController
         $categoriesData = $command->queryAll();
 
         $categories = [];
-        foreach($categoriesData as $value){
-            if($value['parent_title']) {
-                $categories[$value['type_id'] . ":" .$value['category_id']] = $value['parent_title'] . " -> ". $value['title'];
-
+        foreach ($categoriesData as $value) {
+            if ($value['parent_title']) {
+                $categories[$value['type_id'] . ":" . $value['category_id']] = $value['parent_title'] . " -> " . $value['title'];
+            } else {
+                $categories[$value['type_id'] . ":" . $value['category_id']] = $value['title'];
             }
-            else {
-                $categories[$value['type_id'] . ":" .$value['category_id']] = $value['title'];
-            }
-
         }
 
         return $this->render('edit', [
             'model' => $model,
+            'child' => $child,
             'categories' => $categories,
             'translation_models' => $translation_models,
         ]);

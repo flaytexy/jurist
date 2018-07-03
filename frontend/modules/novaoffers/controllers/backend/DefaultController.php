@@ -8,6 +8,7 @@ use common\models\Language;
 use frontend\modules\novaoffers\models\Novaoffers;
 use frontend\modules\novaoffers\models\NovaoffersTranslation;
 
+use frontend\modules\novaoffers\models\Offers;
 use Yii;
 use yii\helpers\Url;
 use yii\data\Pagination;
@@ -65,10 +66,10 @@ class DefaultController extends ContentAdminController
     {
         $query = Novaoffers::find()
             ->joinWith('translations')
-            //->where(['type' => Novaoffers::$_type])
+            ->where(['type' => Novaoffers::$_type])
             //->groupBy(Novaoffers::tableName() . '.id');
             ->orderBy([Novaoffers::tableName() . '.time' => SORT_DESC]); //publish_date' => SORT_DESC
-            //->limit();
+        //->limit();
         //$sql = $query->createCommand()->rawSql;
 
         $countQuery = clone $query;
@@ -76,12 +77,11 @@ class DefaultController extends ContentAdminController
         $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 200]);
 
         $models = $query
-            //->where(['type' => Novaoffers::$_type])
-            ->orderBy([Novaoffers::tableName() . '.time' => SORT_DESC]) //publish_date' => SORT_DESC
+            ->where(['type' => Novaoffers::$_type])
+            ->orderBy([Novaoffers::tableName() . '.time' => SORT_DESC])//publish_date' => SORT_DESC
             ->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
-
 
 
         return $this->render('index', [
@@ -111,7 +111,7 @@ class DefaultController extends ContentAdminController
             $translation_models = $model->translations;
 
             foreach (Language::getLanguages() as $language) {
-                if(!isset($model->translations[$language['local']])){
+                if (!isset($model->translations[$language['local']])) {
                     $translation_model = new NovaoffersTranslation;
                     $translation_model->loadDefaultValues();
                     $translation_models[$language['local']] = $translation_model;
@@ -132,15 +132,20 @@ class DefaultController extends ContentAdminController
             }
         }
 
-        if($request->post()){
-            $model->category_detail =  $model->type_id . ":" . $model->category_id;
-            $model->time = time();
-
-            $this->_saveItem($model, $request, $translation_models);
+        if (isset($model->child)) {
+            //$child = Banks::find()->where(['bank_id'=>$model->child->primaryKey])->one();
+            $child = $model->child;
+        } else {
+            $child = new Offers();
+            //$child->loadDefaultValues();
         }
 
-        //$categories = PageCategories::findAll();
-        $model->category_detail =  $model->type_id . ":" . $model->category_id;
+        //$model->category_detail =  $model->type_id . ":" . $model->category_id;
+        $model->category_detail = Novaoffers::TYPE_ID . ':30';
+
+        if ($request->post()) {
+            $this->_saveItem($model, $request, $translation_models, $child);
+        }
 
         $query = new \yii\db\Query;
         $query->select('ept.title as parent_title, ept.*, ept2.*')
@@ -151,15 +156,12 @@ class DefaultController extends ContentAdminController
         $categoriesData = $command->queryAll();
 
         $categories = [];
-        foreach($categoriesData as $value){
-            if($value['parent_title']) {
-                $categories[$value['type_id'] . ":" .$value['category_id']] = $value['parent_title'] . " -> ". $value['title'];
-
+        foreach ($categoriesData as $value) {
+            if ($value['parent_title']) {
+                $categories[$value['type_id'] . ":" . $value['category_id']] = $value['parent_title'] . " -> " . $value['title'];
+            } else {
+                $categories[$value['type_id'] . ":" . $value['category_id']] = $value['title'];
             }
-            else {
-                $categories[$value['type_id'] . ":" .$value['category_id']] = $value['title'];
-            }
-
         }
 
         return $this->render('edit', [

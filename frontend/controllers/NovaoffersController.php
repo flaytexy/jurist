@@ -1,14 +1,9 @@
 <?php
 namespace frontend\controllers;
 
-use frontend\models\Packet;
 use frontend\models\Popularly;
-//use frontend\modules\offers\api\Offers;
-//use frontend\modules\page\api\PageObject;
-//use frontend\modules\page\models\Page as PageModel;
 use frontend\modules\novaoffers\api\Novaoffers;
-use frontend\modules\novanews\api\NovanewsObject as PageObject;
-use frontend\modules\novanews\models\Novanews as PageModel;
+use frontend\modules\novaoffers\models\Novaoffers as NovaoffersModel;
 
 /**
  * Class OffersController
@@ -18,11 +13,7 @@ class NovaoffersController extends General
 {
     public function actionIndex($tag = null)
     {
-        $type_id = \Yii::$app->request->get('type_id');
-        if(empty($type_id))
-            $type_id = 1;
-
-        $offers = Novaoffers::items(['tags' => $tag, 'list' => 1, 'orderBy'=>'title', 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 1000]]);
+        $offers = Novaoffers::items(['tags' => $tag, 'list' => 1, 'orderBy'=>'title', 'pagination' => ['pageSize' => 1000]]);
 
         $markers = array();
         foreach($offers as $offer){
@@ -40,20 +31,20 @@ class NovaoffersController extends General
             $markers[] = $data;
         }
 
-        if($type_id==2)
-            $mapType = 'europe_mill';
-        else
-            $mapType = 'world_mill';
-
         Novaoffers::clear();
-        $offersPerPage = Novaoffers::items(['tags' => $tag, 'list' => 1, 'orderBy'=>'title', 'type_id' => (int)$type_id, 'pagination' => ['pageSize' => 21]]);
+
+        $offersPerPage = Novaoffers::items([
+            'tags' => $tag, 'list' => 1,
+            'orderBy'=>'title',
+            'type_id' => (int)NovaoffersModel::TYPE_ID,
+            'pagination' => ['pageSize' => 21]
+        ]);
 
         return $this->render('index', [
             'markers' => json_encode($markers),
             'offers' => $offers,
             'offersPerPage' => $offersPerPage,
-            'offer_type' => $type_id,
-            'mapType' => $mapType
+            'mapType' => 'world_mill'
         ]);
     }
 
@@ -71,8 +62,6 @@ class NovaoffersController extends General
             ->where("ept2.type_id = '2' and ept2.category_id != '2' ")
             ->limit(20);
 
-        $db = \Yii::$app->db;
-
         $this->getView()->registerJsFile(\Yii::$app->request->BaseUrl . '/js/site.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
         $offers = Novaoffers::get($slug);
@@ -88,14 +77,7 @@ class NovaoffersController extends General
         $popularly->time = time();
         $popularly->save();
 
-
-        $type_id = \Yii::$app->request->get('type_id');
-        if(empty($type_id)){
-            $type_id = \frontend\modules\novaoffers\models\Novaoffers::TYPE_ID;
-        }
-
-
-        $offersList = Novaoffers::items(['list' => 1, 'type_id' => (int)$type_id]);
+        $offersList = Novaoffers::items(['list' => 1, 'type_id' => (int) NovaoffersModel::TYPE_ID]);
 
         // News
         $topNews = $this->getTopNews();

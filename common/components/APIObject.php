@@ -97,12 +97,17 @@ class APIObject extends \yii\base\Object
     public function seo($attribute, $default = ''){
 
         if(isset($this->model->translation) && isset($this->model->translation->{'meta_'.$attribute})){
+            //ex_print($this->model->translation,'dadadsaad');
+            if($this->model->translation->{'meta_'.$attribute}==false){
+                //return $default;
+            }
+
             return $this->model->translation->{'meta_'.$attribute};
         }
 
         $mess = 'SEO_HASNT_ATTR: '.$attribute;
         //$this->mailAPIObject($mess);
-        //ex_print($mess);
+        ex_print($mess);
         //throw new NotFoundHttpException($mess);
 
         if($attribute === "title"){
@@ -134,9 +139,8 @@ class APIObject extends \yii\base\Object
     {
         if(isset($this->model->translation)){
             $name = $this->model->translation->name;
-        }elseif(isset($this->model->translations[''])){
+        }elseif(isset($this->model->translations) && isset($this->model->translations[Yii::$app->language])){
             ex_print($this->model->translations[Yii::$app->language]);
-
         }else{
             $name = $this->title;
         }

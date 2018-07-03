@@ -124,7 +124,7 @@ $iteration = 1;
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
                             <? foreach ($ticker_viewport as $item): ?>
-                            <li class="ticker__item" data-ticker="item"><a href="<?= $item->url ?>"><?= $item->model->title ?></a></li>
+                            <li class="ticker__item" data-ticker="item"><a href="<?= $item->url ?>"><?= $item->title ?></a></li>
                             <? endforeach; ?>
                             </ul>
                         </div>
@@ -223,26 +223,26 @@ $iteration = 1;
                                 <? foreach ($offers as $offer): ?>
                                     <div class="col-md-4">
                                         <div class="package">
-                                            <a href="/offers/<?= $offer->model->slug ?>">
+                                            <a href="/offers/<?= $offer->slug ?>">
                                                 <div class="package-thumb">
                                                     <?= Html::img($offer->thumb(280, 200), array('class' => 'sadsa')) ?>
-                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $offer->model->price ?></i> <b> / <?= Yii::t('easyii', 'days') ?>
-                                                            : <?= $offer->model->how_days ?></b>  </span>
+                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $offer->price ?></i> <b> / <?= Yii::t('easyii', 'days') ?>
+                                                            : <?= $offer->how_days ?></b>  </span>
                                                 </div>
                                             </a>
                                             <div class="package-detail">
                                                 <span class="line"></span>
-                                                <a class="cate" href="/offers/<?= $offer->model->slug ?>"
+                                                <a class="cate" href="/offers/<?= $offer->slug ?>"
                                                    title="">Регистрация компании:</a>
-                                                <h4><a href="/offers/<?= $offer->model->slug ?>"
-                                                       title="<?= $offer->model->title ?>"><?= $offer->model->title ?></a>
+                                                <h4><a href="/offers/<?= $offer->slug ?>"
+                                                       title="<?= $offer->title ?>"><?= $offer->title ?></a>
                                                 </h4>
 
 
                                                 <ul class="location-book">
                                                     <li class="book-btn"><i class="fa fa-info"></i>
                                                         <a
-                                                                href="/offers/<?= $offer->model->slug ?>"
+                                                                href="/offers/<?= $offer->slug ?>"
                                                                 title=""><?= Yii::t('easyii', '9') ?></a></li>
                                                     <li class="book-btn"><i class="fa fa-shopping-basket"></i>
                                                         <a href="javascript:void( window.open( 'https://forms.amocrm.ru/forms/html/form_326401_ab9058f531bfbd2671c5d24aa0d8dc90.html?date=<?php echo time(); ?>', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">

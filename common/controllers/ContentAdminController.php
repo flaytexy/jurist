@@ -2,6 +2,7 @@
 
 namespace common\controllers;
 
+use common\components\ActiveRecord;
 use common\components\CategoryController;
 use frontend\helpers\Image;
 use Yii;
@@ -24,11 +25,16 @@ class ContentAdminController extends CategoryController
      * @param \common\models\Content $model
      * @param \yii\web\Request $request
      * @param ContentTranslation[] $translation_models
+     * @param ActiveRecord $child
      * @return \yii\web\Response
      * @throws \yii\web\HttpException
      */
-    protected function _saveItem($model, $request, $translation_models){
+    protected function _saveItem($model, $request, $translation_models, $child = false){
+
         if ($model->load($request->post()) && Model::loadMultiple($translation_models, $request->post()) && $model->validate()) {
+
+            //$model->category_detail =  $model->type_id . ":" . $model->category_id;
+            $model->time = time();
 
             $model->language = $request->get('language', $model->language);
             $model->publish_date = date('d.m.Y', ($model->publish_date ? $model->publish_date : time()));
@@ -58,6 +64,16 @@ class ContentAdminController extends CategoryController
                 ex_print($model->errors, '$errors');
             }
 
+            if(isset($child) && $child!=false){
+                $child->load($request->post());
+                //$child->content_id = $model->primaryKey;
+                if ($child->validate()) {
+                    $child->save();
+                }
+            }
+
+
+
             if(isset($_FILES)){
                 $model->image = UploadedFile::getInstance($model, 'image');
                 if($model->image && $model->validate(['image'])){
@@ -79,6 +95,10 @@ class ContentAdminController extends CategoryController
 
             if($model->save(false)){ //@todo true  #langValidAndAddidional
 
+                if(isset($child) && $child!=false){
+                    $model->link('child', $child);
+                }
+
 //                ContentImage::deleteAll(['content_id' => $model->id]);
 //                if ($content_images = $request->post('Images', [])) {
 //                    $order_by = new Expression('FIELD (id, ' . implode(', ', $content_images) . ')');
@@ -96,6 +116,10 @@ class ContentAdminController extends CategoryController
 
                 $is_new_record = $model->isNewRecord;
                 //$item = $translation_models[$model->language];
+
+
+
+                ///ex_print('saddsaads222');
 
                 if ($translation_models[$model->language]->validate()) {
                     foreach ($translation_models as $language => $translation_model) {

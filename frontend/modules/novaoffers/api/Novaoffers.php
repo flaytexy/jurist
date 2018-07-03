@@ -3,7 +3,6 @@
 namespace frontend\modules\novaoffers\api;
 
 
-use frontend\modules\novaoffers\models\Offers;
 use frontend\modules\novaoffers\models\NovaoffersTranslation;
 use Yii;
 use yii\data\ActiveDataProvider;
