@@ -48,8 +48,4 @@ class NovaoffersTranslation extends ContentTranslation
             'language' => 'Язык',
         ];
     }
-
-    public function getOffer() {
-        return $this->hasOne(Offers::className(), ['content_id' => 'id']);
-    }
 }

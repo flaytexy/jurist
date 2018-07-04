@@ -166,6 +166,7 @@ class DefaultController extends ContentAdminController
 
         return $this->render('edit', [
             'model' => $model,
+            'child' => $child,
             'categories' => $categories,
             'translation_models' => $translation_models,
         ]);

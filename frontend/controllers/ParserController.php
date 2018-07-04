@@ -31,8 +31,8 @@ class ParserController extends \yii\web\Controller
 //UPDATE `easyii_pages` SET `type` = 'novanews';
 //UPDATE `content` SET `type` = 'novanews';
 //
-//UPDATE `country_assign` SET `class` = 'frontend\\modules\\novaoffers\\models\\Novaoffers' WHERE  `class` = 'frontend\\modules\\offers\\models\\Offers' ;
-//UPDATE `country_assign` SET `class` = 'frontend\\modules\\novabanks\\models\\Novabanks' WHERE  `class` = 'frontend\\modules\\banks\\models\\Banks' ;
+//UPDATE `country_assign` SET `class` = 'frontend\\modules\\novaoffers\\models\\Offers' WHERE  `class` = 'frontend\\modules\\offers\\models\\Offers' ;
+//UPDATE `country_assign` SET `class` = 'frontend\\modules\\novabanks\\models\\Banks' WHERE  `class` = 'frontend\\modules\\banks\\models\\Banks' ;
 //
 //ALTER TABLE `content` CHANGE `page_id` `id` INT(11) NOT NULL AUTO_INCREMENT,
 //CHANGE `title` `title_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -129,7 +129,7 @@ e_print($contentId,'$contentId');
                         'description' =>        'En ' . $contentItem['text'],
                         'short_description' =>  'En ' . $contentItem['short'],
 
-                        'public_status' => Content::STATUS_ON,
+                        'public_status' => Content::STATUS_OFF,
 
                         'content_id' => $contentItem['id'],
                         'language' => 'en-US'
@@ -280,7 +280,7 @@ e_print($contentId,'$contentId_in_bank');
                         'description' =>        'En ' . $contentItem['text'],
                         'short_description' =>  'En ' . $contentItem['short'],
 
-                        'public_status' => Content::STATUS_ON,
+                        'public_status' => Content::STATUS_OFF,
 
                         'content_id' => $contentId,
                         'language' => 'en-US'
@@ -431,7 +431,7 @@ e_print($contentId,'$contentId_in_offer');
                         'description' =>        'En ' . $contentItem['text'],
                         'short_description' =>  'En ' . $contentItem['short'],
 
-                        'public_status' => Content::STATUS_ON,
+                        'public_status' => Content::STATUS_OFF,
 
                         'content_id' => $contentId,
                         'language' => 'en-US'

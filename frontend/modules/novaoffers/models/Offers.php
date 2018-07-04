@@ -26,11 +26,28 @@ class Offers extends \common\components\ActiveRecord
         return 'easyii_offers';
     }
 
+    public function behaviors()
+    {
+        return [
+            //'seoBehavior' => SeoBehavior::className(),
+            //'taggabble' => Taggable::className(),
+            //'optionabble' => Optionable::className(),
+//            'sluggable' => [
+//                'class' => MySluggableBehavior::className(),
+//                'attribute' => 'title',
+//                'ensureUnique' => true
+//            ],
+            'countryable' => CountryAble::className(),
+            //'CountriesBehavior' => CountriesBehavior::className(),
+
+        ];
+    }
+
     public function rules()
     {
         return [
-            ['pre_options', 'string', 'max' => 128],
-            ['title', 'string', 'max' => 128],
+            //['pre_options', 'string', 'max' => 128],
+            //['title', 'string', 'max' => 128],
             ['pos', 'string', 'max' => 64],
             [['price'], 'required'],
             [['price'], 'number', 'max' => 100000000],
@@ -38,7 +55,7 @@ class Offers extends \common\components\ActiveRecord
             ['coordinates', 'string', 'max' => 64],
             //['optionNames', 'safe'],
             //['tagNames', 'safe'],
-            //['countryNames', 'safe'],
+            ['countryNames', 'safe']
         ];
     }
 

@@ -122,24 +122,9 @@ if(IS_ROOT){
 
 
         <div class="card menu-manage">
-            <div class="card-header">
-                <div class="header-block">
-                    <p class="title">Картинка главная</p><br/>
-                    <span>(jpg, jpeg) (длинная) (1600x400, 1240x310, 800x200, 640x160) (90% качетсва)</span>
-                </div>
-            </div>
             <?php if ($model->image) : ?>
                 <div class="card-block">
                     <div class="car-images row">
-                        <? if (false): ?>
-                            Оригинал:<br/>
-                            <img src="<?= Image::thumb($model->image) ?>" style="width: 100%; height: 100%;">
-                            <a href="<?= Url::to(['/admin/' . $module . '/a/clear-image', 'id' => $model->id]) ?>"
-                               class="text-danger confirm-delete"
-                               title="<?= Yii::t('easyii', 'Clear image') ?>"><?= Yii::t('easyii', 'Clear image') ?></a>
-                            <br/><br/><br/>
-                            Как на сайте будет:<br/>
-                        <? endif; ?>
                         <img src="<?= Image::thumb($model->image, 480, 120) ?>" style="width: 100%; height: 100%;"><br/>
                     </div>
                 </div>
@@ -147,15 +132,15 @@ if(IS_ROOT){
             <div class="card-footer">
                 <?= $form->field($model, 'image')->fileInput()->label(false) ?>
             </div>
+            <div class="card-header">
+                <div class="header-block">
+                    <p class="title">Картинка главная</p><br/>
+                    <span>(jpg, jpeg) (длинная) (1600x400, 1240x310, 800x200, 640x160) (90% качетсва)</span>
+                </div>
+            </div>
         </div>
 
         <div class="card menu-manage">
-            <div class="card-header">
-                <div class="header-block">
-                    <p class="title">Картинка для вревью</p><br/>
-                    <span>(jpg, jpeg) (1600x900, 1366x768, 800x450, 640x360) (90% качетсва)</span>
-                </div>
-            </div>
             <?php if ($model->pre_image) : ?>
                 <div class="card-block">
                     <div class="car-images row">
@@ -167,8 +152,61 @@ if(IS_ROOT){
             <div class="card-footer">
                 <?= $form->field($model, 'pre_image')->fileInput()->label(false) ?>
             </div>
+            <div class="card-header">
+                <div class="header-block">
+                    <p class="title">Картинка для вревью</p><br/>
+                    <span>(jpg, jpeg) (1600x900, 1366x768, 800x450, 640x360) (90% качетсва)</span>
+                </div>
+            </div>
         </div>
+<!---->
+<!--        <div class="card menu-manage">-->
+<!--            <div class="card-block">-->
+<!--                <div class="car-images row">-->
+<!--                    --><?//= $form->field($model, 'rating')->input('text', ['placeholder' => "Чем больше тем выше в рейтинге"])->label("Рейтинг (попадает при > 0)"); ?>
+<!--                    --><?//= $form->field($model, 'rating_to_main')->input('text', ['placeholder' => "Чем больше тем выше в рейтинге"])->label("Рейтинг на главной (попадает при > 0)"); ?>
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
+        <?php if($child): ?>
+            <div class="card menu-manage">
+                <div class="card-block">
+                    <div class="car-images row">
+                        <?= $form->field($child, 'countryNames')
+                            ->widget(\akavov\countries\widgets\CountriesSelectizeTextInput::className(), [
+                                'countryModelNamespace' => 'common\models\country\CountryData',
+                                'customRender' => [
+                                    'item' => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
+                                    'option' => '<div> <span class="label flag flag-icon-background flag-icon-{item.alpha}">&nbsp;</span>&nbsp;<span class="name"> {escape(item.name_en)}&nbsp;&nbsp;&nbsp;{escape(item.name_ru)}</span></div>',
+                                ],
+                                'clientOptions' => [
+                                    'valueField' => 'name_en',
+                                    'labelField' => 'name_en',
+                                    'searchField' => ['name_en', 'name_ru'],
+                                    'plugins' => ['remove_button'],
+                                    'closeAfterSelect' => true,
+                                    'maxItems' => 10,
+                                    'delimiter' => ',',
+                                    'persist' => false,
+                                    'preload' => true,
+                                    'items' => $child->countryNames,
+                                    'create' => false,
+                                ],
+                            ]); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="card menu-manage">
+                <div class="card-block">
+                    <div class="car-images row">
+                        <?= $form->field($child, 'coordinates') ?>
+                        <?= $form->field($child, 'price') ?>
+                        <?= $form->field($child, 'how_days') ?>
+                    </div>
+                </div>
+            </div>
+        <? endif; ?>
 
         <?php if (false) : ?>
             <div class="card card-block">
