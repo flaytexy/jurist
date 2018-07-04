@@ -260,33 +260,37 @@ $this->params['breadcrumbs'][] = $offers->title;
 <section>
     <div class="block">
         <div class="sidesidebar">
-        <div class="vertical-menu">
-            <a href="#" class="active">Юрисдикции</a>
-            <?php foreach ($offersList as $itemList) : ?>
-                <a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?> <b>€<?= $itemList->price ?></b></a>
-            <?php endforeach; ?>
-        </div>
-        <div class="vertical-menu-widget">
-            <div class="widget recent-posts-widget">
-                <div class="title1 style2">
-                    <h2>Интересные статьи</h2>
-                    <span>Популярные новости</span>
-                </div>
-                <div class="recent-posts">
-                    <?php foreach($top_news as $item) : ?>
-                        <div class="recent-post">
-                            <?= Html::img(\frontend\helpers\Image::thumb($item->image, 90, 90)) ?>
-                            <h4><a href="<?= Url::to(['news/'.$item->slug]) ?>"><?= $item->title ?></a></h4>
-                            <span><i class="fa fa-calendar"></i> <?= $item->date ?></span>
-                        </div>
-                    <?php endforeach; ?>
+            <div class="vertical-menu">
+                <a href="#" class="active">Юрисдикции</a>
+                <?php foreach ($offersList as $itemList) : ?>
+                    <a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?> <b>€<?= $itemList->price ?></b></a>
+                <?php endforeach; ?>
+            </div>
 
-                </div>
-            </div><!-- Widget -->
-        </div>
+            <?php if(isset($top_news) && count($top_news)>0): ?>
+            <div class="vertical-menu-widget">
+                <div class="widget recent-posts-widget">
+                    <div class="title1 style2">
+                        <h2>Интересные статьи</h2>
+                        <span>Популярные новости</span>
+                    </div>
+                    <div class="recent-posts">
+                        <?php foreach($top_news as $item) : ?>
+                            <div class="recent-post">
+                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 90, 90)) ?>
+                                <h4><a href="<?= Url::to(['news/'.$item->slug]) ?>"><?= $item->title ?></a></h4>
+                                <span><i class="fa fa-calendar"></i> <?= $item->date ?></span>
+                            </div>
+                        <?php endforeach; ?>
+
+                    </div>
+                </div><!-- Widget -->
+            </div>
+            <? endif; ?>
+
         </div>
         <div class="sidesidebar2">
-
+            <?php if(isset($top_offers) && count($top_offers)>0): ?>
                 <div class="widget villa-photos-widget">
                     <div class="title1 style2">
                         <h2>Хорошие предложения</h2>
@@ -302,7 +306,9 @@ $this->params['breadcrumbs'][] = $offers->title;
 
                     </ul>
                 </div><!-- Widget -->
+            <? endif; ?>
 
+            <?php if(isset($top_banks) && count($top_banks)>0): ?>
             <!-- Widget2 -->
             <div class="widget villa-photos-widget">
                 <div class="title1 style2">
@@ -316,9 +322,9 @@ $this->params['breadcrumbs'][] = $offers->title;
                             </a>
                             <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
                     <?php endforeach; ?>
-
                 </ul>
             </div><!-- Widget2 -->
+            <? endif; ?>
         </div>
         <div class="container">
 

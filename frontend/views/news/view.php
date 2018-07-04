@@ -92,7 +92,7 @@ $this->params['breadcrumbs'][] = $news->title;
                                             <?php endforeach; ?>
                                         </ul>
                                     </div><!-- Widget -->
-                                    <? if ($top_offers) : ?>
+                                    <?php if(isset($top_offers) && count($top_offers)>0): ?>
                                     <div class="widget villa-photos-widget">
                                         <div class="title1 style2">
                                             <h2>Хорошие предложения</h2>
@@ -109,6 +109,7 @@ $this->params['breadcrumbs'][] = $news->title;
                                         </ul>
                                     </div><!-- Widget -->
                                     <? endif; ?>
+                                    <?php if(isset($top_banks) && count($top_banks)>0): ?>
                                     <!-- Widget2 -->
                                     <div class="widget villa-photos-widget">
                                         <div class="title1 style2">
@@ -124,21 +125,9 @@ $this->params['breadcrumbs'][] = $news->title;
                                             <?php endforeach; ?>
 
                                         </ul>
-                                    </div>
-                                    <!-- Widget3
-                                    <div class="widget tags-widget">
-                                        <div class="title1 style2">
-                                            <h2>Облако тегов</h2>
-                                            <!--<span>We Provide Best Services</span>
-                                        </div>
-                                        <div class="tags">
-                                            <ul class="cate-list">
-                                                </?php foreach($top_tags as $item) : ?>
-                                                    <li><a href="</?= Url::to(['news/tag/'.$item['name']]) ?>" class="label label-info"></?= $item['name'] ?></a></li>
-                                                </?php endforeach; ?>
-                                            </ul>
-                                        </div>
-                                    </div> Widget -->
+                                    </div><!-- Widget -->
+                                    <? endif; ?>
+                                    <?php if(isset($top_banks) && count($top_banks)>0): ?>
                                     <div class="widget recent-posts-widget">
                                         <div class="title1 style2">
                                             <h2>Интересные статьи</h2>
@@ -155,6 +144,8 @@ $this->params['breadcrumbs'][] = $news->title;
 
                                         </div>
                                     </div><!-- Widget -->
+                                    <? endif; ?>
+
                                 </div><!-- Sidebar -->
                             </div>
                         </div>

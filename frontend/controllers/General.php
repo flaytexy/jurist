@@ -13,9 +13,10 @@ use frontend\modules\novabanks\api\Novabanks as Banks;
 use frontend\modules\novabanks\api\Novabanks;
 use frontend\modules\novabanks\api\NovabanksObject;
 use frontend\modules\novabanks\models\NovabanksTranslation;
-use frontend\modules\novanews\models\Novanews as PageModel;
+use frontend\modules\novanews\models\Novanews;
 use frontend\modules\novanews\api\NovanewsObject as PageObject;
 use frontend\modules\novabanks\models\Novabanks as NovabanksModel;
+use frontend\modules\novanews\models\NovanewsTranslation;
 use frontend\modules\novaoffers\api\NovaoffersObject;
 use frontend\modules\novaoffers\models\Novaoffers;
 use frontend\modules\novaoffers\models\NovaoffersTranslation;
@@ -32,14 +33,16 @@ class General extends \yii\web\Controller
     }
 
     /**
-     * @return PageModel[]
+     * @return Novanews[]
      */
     public function getTopNews()
     {
         // Top News
-        $rows = PageModel::find()
-            ->andWhere(['type_id' => '2'])
-            ->status(PageModel::STATUS_ON)
+        $rows = Novanews::find()
+            ->joinWith('translation')
+            ->andWhere([NovanewsTranslation::tableName() . '.public_status' => NovanewsTranslation::STATUS_ON])
+            ->andWhere(['type_id' => Novanews::TYPE_ID])
+            ->status(Novanews::STATUS_ON)
             ->sortDate()->limit(5)->all();
 
         $topNews = [];

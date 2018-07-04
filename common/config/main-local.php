@@ -3,8 +3,8 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=iq_vila', //iq_betta
-            'username' => 'iq_vila', //iq_bettau
+            'dsn' => 'mysql:host=localhost;dbname=iq_vilanew', //iq_betta
+            'username' => 'iq_vilanew', //iq_bettau
             'password' => 'Ti3bapktOc', //Ti3bapktOcBetaa
             'charset' => 'utf8',
 

@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <h1><?= $page->seo('h1', $page->title) ?></h1>
                                     <span><?= $page->seo('h1', $page->short) ?></span>
                                 </div>
-                            </div>
+                            </div><!-- Widget -->
                         <?php endif; ?>
 
                         <p>
@@ -90,6 +90,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <? endif; ?>
         </div>
         <div class="col-md-3">
+
+            <?php if(isset($top_banks) && count($top_banks)>0): ?>
             <!-- Widget3 -->
             <div class="widget villa-photos-widget">
                 <div class="title1 style2">
@@ -105,7 +107,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <?php endforeach; ?>
                 </ul>
             </div><!-- end: Widget3 -->
-
+            <? endif; ?>
+            <?php if(isset($top_news) && count($top_news)>0): ?>
             <!-- Widget1 -->
             <div class="widget vertical-menu-widget top10">
                 <div class="recent-posts-widget">
@@ -125,7 +128,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     </div>
                 </div>
             </div><!-- end: Widget1 -->
-
+            <? endif; ?>
+            <?php if(isset($top_offers) && count($top_offers)>0): ?>
             <!-- Widget2 -->
             <div class="widget villa-photos-widget top20">
                 <div class="title1 style2">
@@ -142,7 +146,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
                 </ul>
             </div><!-- end: Widget2 -->
-
+            <? endif; ?>
+            <?php if(isset($banksPist) && count($banksPist)>0): ?>
             <!-- Widget4 -->
             <div class="widget vertical-menu">
                 <a href="#" class="active">Банки</a>
@@ -150,6 +155,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <a href="<?= Url::to(['banks/'.$itemList->slug]) ?>"><?=$itemList->title?> <b>€<?= $itemList->model->bank->price ?></b></a>
                 <?php endforeach; ?>
             </div><!-- end: Widget4 -->
+            <? endif; ?>
         </div>
     </div>
 </section>

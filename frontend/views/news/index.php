@@ -60,7 +60,7 @@ $this->params['breadcrumbs'][] = $page->title;
                 </div>
                 <!-- Pagination -->
 
-                <?php if($page->text): ?><div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
+                <?php if($page->text): ?><div><?= $page->text; ?></div><? endif; ?>
             </div>
             <div class="col-md-3 col-sm-4">
                 <div class="sidebar">
