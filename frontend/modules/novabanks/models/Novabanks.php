@@ -40,11 +40,11 @@ class Novabanks extends Content
             'seoBehavior' => SeoBehavior::className(),
             'taggabble' => Taggable::className(),
             'optionabble' => Optionable::className(),
-            'sluggable' => [
-                'class' => MySluggableBehavior::className(),
-                'attribute' => 'title',
-                'ensureUnique' => true
-            ],
+//            'sluggable' => [
+//                'class' => MySluggableBehavior::className(),
+//                'attribute' => 'title',
+//                'ensureUnique' => true
+//            ],
             'countryable' => CountryAble::className(),
             //'CountriesBehavior' => CountriesBehavior::className(),
             'imageUploaderBehavior' => [

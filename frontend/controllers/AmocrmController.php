@@ -11,14 +11,6 @@ class AmocrmController extends Controller
 {
     public function actionSend()
     {
-
-        ////////////////////////////////////
-        $f = fopen("../web/1.txt", "a+");
-        fwrite($f, print_r($_REQUEST, true));
-        fclose($f);
-
-        exit;
-
         include_once('./../amocrm/src/Client.php');
         include_once('./../amocrm/src/Request/Request.php');
         include_once('./../amocrm/src/Request/ParamsBag.php');

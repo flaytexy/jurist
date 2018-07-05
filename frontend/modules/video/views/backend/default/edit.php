@@ -102,7 +102,7 @@ use common\modules\attachment\models\Attachment;
                 ]);
             ?>
 
-            <?= Html::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить', ['class' => 'btn btn-primary btn-block']) ?>
+            <?= Html::submitButton($model->isNewRecord ? 'Сохранить(new)' : 'Сохранить', ['class' => 'btn btn-primary btn-block']) ?>
         </div>
 
         <div class="card card-block">

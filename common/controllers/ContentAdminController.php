@@ -44,6 +44,9 @@ class ContentAdminController extends CategoryController
 
                 if (!InflectorTextTranslate::slug($translation_model->slug)) {
                     $translation_model->slug = InflectorTextTranslate::slug($translation_model->name);
+                    if($model->slug==false && $translation_model->slug!=false){
+                        $model->slug = $translation_model->slug;
+                    }
                 }
 
                 //@todo validate  #langValidAndAddidional
@@ -60,9 +63,9 @@ class ContentAdminController extends CategoryController
 
             $model->publish_date = strtotime($model->publish_date);
 
-            if(!$model->validate()){
-                ex_print($model->errors, '$errors');
-            }
+            //if(!$model->validate()){
+                //ex_print($model->errors, '$errors');
+            //}
 
             if(isset($child) && $child!=false){
                 $child->load($request->post());
@@ -71,8 +74,6 @@ class ContentAdminController extends CategoryController
                     $child->save();
                 }
             }
-
-
 
             if(isset($_FILES)){
                 $model->image = UploadedFile::getInstance($model, 'image');
@@ -83,7 +84,6 @@ class ContentAdminController extends CategoryController
                     $model->image = $model->oldAttributes['image'];
                 }
 
-
                 $model->pre_image = UploadedFile::getInstance($model, 'pre_image');
                 if($model->pre_image && $model->validate(['image'])){
                     $model->pre_image = Image::upload($model->pre_image, 'page');
@@ -93,7 +93,7 @@ class ContentAdminController extends CategoryController
                 }
             }
 
-            if($model->save(false)){ //@todo true  #langValidAndAddidional
+            if($model->save()){ //@todo true  #langValidAndAddidional
 
                 if(isset($child) && $child!=false){
                     $model->link('child', $child);
@@ -115,11 +115,6 @@ class ContentAdminController extends CategoryController
 //                }
 
                 $is_new_record = $model->isNewRecord;
-                //$item = $translation_models[$model->language];
-
-
-
-                ///ex_print('saddsaads222');
 
                 if ($translation_models[$model->language]->validate()) {
                     foreach ($translation_models as $language => $translation_model) {
@@ -137,10 +132,11 @@ class ContentAdminController extends CategoryController
                     Yii::$app->session->setFlash('error', Yii::t('easyii','Update error. {0}', $translation_models[$model->language]->formatErrors()));
                 }
             }
-            else{
-                ex_print($model->errors, '$errors');
-            }
+        }
 
+        if($model->errors){
+            //ex_print($model->errors, '$errors');
+            Yii::$app->session->setFlash('error', Yii::t('easyii','Update error. {0}', $model->formatErrors()));
         }
     }
 }

@@ -2,15 +2,13 @@
 
 namespace common\models;
 
+use common\behaviors\MySluggableBehavior;
 use common\modules\attachment\models\Attachment;
 use common\components\ActiveRecord;
 
 use Imagine\Image\ImageInterface;
 use Yii;
-use yii\helpers\StringHelper;
 use yii\helpers\Url;
-
-use yii\behaviors\SluggableBehavior;
 use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;
 /**
@@ -72,6 +70,10 @@ class Content extends ActiveRecord
             ['to_main', 'integer', 'max' => 1],
             [['rating', 'rating_to_main'], 'integer'],
 
+            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
+            ['slug', 'default', 'value' => null],
+            ['slug', 'unique'],
+
         ];
     }
 
@@ -88,11 +90,11 @@ class Content extends ActiveRecord
         return [
             'seoBehavior' => SeoBehavior::className(),
             'taggabble' => Taggable::className(),
-            'sluggable' => [
-                'class' => SluggableBehavior::className(),
-                'attribute' => 'title',
-                'ensureUnique' => true
-            ],
+//            'sluggable' => [
+//                'class' => MySluggableBehavior::className(),
+//                'attribute' => 'title',
+//                'ensureUnique' => true
+//            ],
             'imageUploaderBehavior' => [
                 'class' => 'common\behaviors\ImageUploaderBehavior',
                 'imageConfig' => [

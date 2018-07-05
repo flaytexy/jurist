@@ -1,5 +1,7 @@
 AddDefaultCharset UTF-8
 
+##php_value memory_limit 1024M
+
 #Order deny,allow
 #deny from all
 #### Список IP через пробел, с которых доступ разрешен

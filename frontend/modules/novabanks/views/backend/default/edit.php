@@ -121,7 +121,7 @@ if(IS_ROOT){
             //                ]);
             //            ?>
 
-            <?= Html::submitButton($model->isNewRecord ? 'Добавить' : 'Сохранить', ['class' => 'btn btn-primary btn-block']) ?>
+            <?= Html::submitButton($model->isNewRecord ? 'Сохранить(new)' : 'Сохранить', ['class' => 'btn btn-primary btn-block']) ?>
         </div>
 
 
@@ -423,7 +423,11 @@ JS
                 echo \frontend\widgets\SeoForm::widget(['model' => $model]);
             }else{
                 if(!empty($model->slug)){
-                    echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed', 'readonly'=>'readonly']);
+                    if($model->isNewRecord){
+                        echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed']);
+                    }else{
+                        echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed', 'readonly'=>'readonly']);
+                    }
                 }
             }
             ?>
