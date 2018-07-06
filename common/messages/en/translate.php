@@ -9,6 +9,8 @@ return [
     'free' => 'Free Consultation!',
     'funds' => 'Funds',
     'banks' => 'Banks',
+    'pay_system' => 'Pay system',
+    'about' => 'About',
     'companies' => 'Companies',
     'licenses' => 'Licenses',
     'offshores' => 'Offshores',

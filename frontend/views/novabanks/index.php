@@ -11,7 +11,7 @@ use yii\helpers\Url;
 
 /**
  * @var  \yii\web\View $this
- * @var \frontend\modules\page\api\Page $page
+ * @var \frontend\modules\novanews\api\Novanews $page
  * @var \frontend\modules\novabanks\models\Novabanks $model
  * @var \frontend\modules\novabanks\api\NovabanksObject[] $items
  *
@@ -20,8 +20,8 @@ use yii\helpers\Url;
  * @var \frontend\modules\novaoffers\api\NovaoffersObject[] $top_offers
  */
 
-$page = Page::get('page-banks');
-$this->title = !empty($page->seo('title', $page->model->title)) ? $page->seo('title', $page->model->title) : '';
+
+$this->title = !empty($page->seo('title', $page->title)) ? $page->seo('title', $page->title) : '';
 if($descriptionSeo = !empty($page->seo('description')) ? $page->seo('description') : ''){
     $this->registerMetaTag([
         'name' => 'description',
@@ -35,7 +35,7 @@ if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
     ]);
 }
 
-$this->params['breadcrumbs'][] = $page->model->title;
+$this->params['breadcrumbs'][] = $page->title;
 ?>
 
 <?php /*if ($this->beginCache(md5(serialize(Yii::$app->request->get())), ['duration' => 700])) : */?>
@@ -43,9 +43,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
     <section class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-            <h1><?= $page->seo('h1', $page->title) ?></h1>
+            <h1><?= $page->title ?></h1>
             <?php if ($page->text): ?>
-                <div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
+                <div><?= $page->text ?></div><? endif; ?>
             </div>
         </div>
     </section>

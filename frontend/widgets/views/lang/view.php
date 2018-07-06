@@ -8,7 +8,6 @@ use yii\helpers\Html;
         }
     }
     #lang {
-        position: absolute;
         display: inline-block;
         color: white;
         top: 16%;

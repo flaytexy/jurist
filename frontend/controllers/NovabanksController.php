@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use frontend\models\Popularly;
 use frontend\modules\novabanks\api\Novabanks as Banks;
+use frontend\modules\novanews\api\Novanews;
 use yii\web\View;
 use frontend\modules\novanews\models\Novanews as PageModel;
 use frontend\modules\novanews\api\NovanewsObject as PageObject;
@@ -40,6 +41,7 @@ class NovabanksController extends General
         ]);
 
         $render = $this->render('index', [
+            'page' => Novanews::get('page-banks'),
             'items' => $banks,
             'banksList' => $banksList,
             'bank_type' => $type_id,

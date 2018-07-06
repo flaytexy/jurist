@@ -43,31 +43,14 @@ $addeng = Yii::t('easyii', 'free');
                         ['label' => Yii::t('easyii', 'funds'), 'url' => ['/fonds'], 'options' => ['title' => 'Фонды']],
                         ['label' => Yii::t('easyii', 'banks'), 'url' => ['/banks'],
                             'options' => ['class' => 'menu-item-has-children', 'title' => 'Банки'],
-//                                        'items' => [
-//                                            ['label' => 'New Arrivals', 'url' => ['news/index', 'tag' => 'new'],
-//                                                'options' => ['class' => 'menu-item-has-children'],
-//                                                'items' => [
-//                                                    ['label' => 'New Arrivals', 'url' => ['news/index', 'tag' => 'new']],
-//                                                    ['label' => 'Most Popular', 'url' => ['news/index', 'tag' => 'popular']],
-//                                                ],
-//                                            ],
-//                                            ['label' => 'Most Popular', 'url' => ['news/index', 'tag' => 'popular']],
-//                                        ],
-                            //'template' => '<li class="menu-item-has-children"><a href="{url}" class="mylink">{label}</a></li>',
                         ],
+                        ['label' => Yii::t('easyii', 'pay_system'), 'url' => ['/pay-system'], 'options' => ['title' => Yii::t('easyii', 'pay_system')]],
                         ['label' => Yii::t('easyii', 'companies'), 'url' => ['/offshornyie-predlozheniya'], 'options' => ['title' => 'Компании']],
                         ['label' => Yii::t('easyii', 'licenses'), 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
                         ['label' => Yii::t('easyii', 'offshores'), 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
                         ['label' => Yii::t('easyii', 'processing'), 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
                         ['label' => Yii::t('easyii', 'sells'), 'url' => ['/sale'], 'options' => ['title' => Yii::t('easyii', 'sells')]],
-
-                        ['label' => 'contact', 'url' => ['/contact'],
-                            'template' => '
-                                <!--<li class="contact-m">-->
-                                <li class="skype hidden-xs" title="Вызов в skype: IQ Decision">
-                                    <a href="skype:live:asmofad?call"><i class="fa fa-skype" aria-hidden="true"></i>IQ Decision</a>
-                                </li>'.WLang::widget().''
-                        ],
+                        ['label' => 'contact', 'url' => ['/contact'], 'template' => ''.WLang::widget().'' ],
                     ],
                 ]); ?>
 
@@ -105,11 +88,7 @@ $addeng = Yii::t('easyii', 'free');
                         <?= Menu::widget([
                             'options' => ['class' => 'inline'],
                             'items' => [
-                                //['label' => 'Главная', 'url' => ['site/index'], 'template' => '<li class="22"><a href="{url}" class="mylink"><span>{label}</span></a></li>'],
                                 ['label' => Yii::t('easyii', 'main'), 'url' => ['site/index']],
-                                //['label' => 'Оффшорные предложения', 'url' => ['/offshornyie-predlozheniya']],
-                                //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
-                                //['label' => 'Shop', 'url' => ['shop/index']],
                                 ['label' => Yii::t('easyii', 'news'),
                                     'url' => ['/news'],
                                     'options' => ['class' => 'menu-item-has-children'],
@@ -125,18 +104,15 @@ $addeng = Yii::t('easyii', 'free');
 //                                        ],
                                     //'template' => '<li class="menu-item-has-children"><a href="{url}" class="mylink">{label}</a></li>',
                                 ],
-                                //['label' => 'Банки', 'url' => ['/banks']],
-                                //['label' => 'Articles', 'url' => ['articles/index']],
-                                //['label' => 'Gallery', 'url' => ['gallery/index']],
-                                //['label' => 'Guestbook', 'url' => ['guestbook/index']],
-                                //['label' => 'Информация', 'url' => ['/faq']],
+
                                 ['label' => Yii::t('easyii', 'faq'), 'url' => ['/faq']],
+                                ['label' => Yii::t('easyii', 'about'), 'url' => ['/about']],
                                 ['label' => Yii::t('easyii', 'contact'), 'url' => ['/contact']],
                                 ['label' => 'contact', 'url' => ['/contact'],
                                     'template' => '
-                                <li class="contact-m">
+                                <li class="contact-m2" style="width: 250px">
                                     <div class="row">
-                                        <div class="col-md-12 tel-m"><a href="tel: ' . str_replace(' ', '', $phoneStr) . '" title="Наш телефон">' . $phoneStr . '</a><a href="tel: +380671931117" title="Наш телефон">+38 067 193 11 17</a><p class="lenta">' . $addeng . ' </p></div>
+                                        <div class="col-md-12 tel-m"><div><a href=' . Url::to('/contact') .'> <p class="lenta">' . $addeng . ' </p></a></div></div>
                                     </div>
                                 </li>'
                                 ],
@@ -174,21 +150,15 @@ $addeng = Yii::t('easyii', 'free');
                 'options' => ['class' => 'nav navbar-nav'],
                 'items' => [
                     ['label' => Yii::t('easyii', 'main'), 'url' => ['site/index']],
-
-
                     ['label' => Yii::t('easyii', 'funds'), 'url' => ['/fonds']],
                     ['label' => Yii::t('easyii', 'banks'), 'url' => ['/banks']],
-                    ['label' => Yii::t('easyii', 'companies'), 'url' => ['/offshornyie-predlozheniya']],
+                    ['label' => Yii::t('easyii', 'pay_system'), 'url' => ['/pay-system'], 'options' => ['title' => Yii::t('easyii', 'pay_system')]],
                     ['label' => Yii::t('easyii', 'licenses'), 'url' => ['/licenses']],
+                    ['label' => Yii::t('easyii', 'news'), 'url' => ['/news']],
+                    ['label' => Yii::t('easyii', 'companies'), 'url' => ['/offshornyie-predlozheniya']],
                     ['label' => Yii::t('easyii', 'processing'), 'url' => ['/processing']],
                     ['label' => Yii::t('easyii', 'sells'), 'url' => ['/sale']],
-                    //['label' => 'Европейские компании', 'url' => ['/evropejskie-kompanii']],
-                    //['label' => 'Shop', 'url' => ['shop/index']],
-                    ['label' => Yii::t('easyii', 'news'), 'url' => ['/news']],
-                    //['label' => 'Articles', 'url' => ['articles/index']],
-                    //['label' => 'Gallery', 'url' => ['gallery/index']],
-                    //['label' => 'Guestbook', 'url' => ['guestbook/index']],
-                    //['label' => 'Информация', 'url' => ['/faq']],
+                    ['label' => Yii::t('easyii', 'about'), 'url' => ['/about']],
                     ['label' => Yii::t('easyii', 'contact'), 'url' => ['/contact']],
                 ],
             ]); ?>

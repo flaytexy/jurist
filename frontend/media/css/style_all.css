@@ -4315,13 +4315,7 @@ header.stick .top-menus i.fa.fa-skype {
 
 }
 
-.menu-btn {
-    color: #fbfbfb;
-    cursor: pointer;
-    float: right;
-    font-size: 15px;
-    /*margin-right: 20px;*/
-}
+
 
 .centeredmenulist {
 
@@ -4335,13 +4329,17 @@ header.stick .top-menus i.fa.fa-skype {
 
 .btncenter {
     position: fixed;
-    top: 9px;
-    right: 5px;
-
-    display: flex;
+    top: 1px;
+    right: 8px;
     align-items: center;
     justify-content: center;
     overflow: auto;
+}
+.btncenter .menu-btn {
+    color: #fbfbfb;
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
 }
 
 .responsive-menu {
