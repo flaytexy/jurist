@@ -25,9 +25,9 @@ $moduleName = $this->context->module->id;
             <div class="col-md-6">
                 <h3 class="title">
                     Новости
-<!--                    <a href="--><?//= Url::to(['/admin/novabanks/default/edit', 'id' => 0]); ?><!--" class="btn btn-primary btn-sm rounded-s">-->
-<!--                        добавить-->
-<!--                    </a>-->
+                    <a href="<?= Url::to(['/admin/novabanks/default/edit', 'id' => 0]); ?>" class="btn btn-primary btn-sm rounded-s">
+                        добавить
+                    </a>
                 </h3>
             </div>
         </div>

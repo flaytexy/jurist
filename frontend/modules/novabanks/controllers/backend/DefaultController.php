@@ -119,6 +119,8 @@ class DefaultController extends ContentAdminController
                     $translation_models[$language['local']] = $translation_model;
                 }
             }
+
+            $model->category_detail =  $model->type_id . ":" . $model->category_id;
         } else {
             if ($id) {
                 return $this->redirect(['/admin/novabanks/default/index']);
@@ -133,7 +135,6 @@ class DefaultController extends ContentAdminController
                 $translation_models[$language['local']] = $translation_model;
             }
 
-            //$model->category_detail =  $model->type_id . ":" . $model->category_id;
             $model->category_detail = Novabanks::TYPE_ID . ':20';
         }
 
