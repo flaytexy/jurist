@@ -49,11 +49,6 @@ class ContentAdminController extends CategoryController
                     }
                 }
 
-                //@todo validate  #langValidAndAddidional
-//                if(!$translation_model->validate()){
-//                    ex_print($translation_model->errors, '$errors');
-//                }
-
                 if ($language !== $model->language && !$translation_model->validate()) {
                     $translation_model->public_status = $model::STATUS_OFF;
                 }
@@ -62,10 +57,6 @@ class ContentAdminController extends CategoryController
             }
 
             $model->publish_date = strtotime($model->publish_date);
-
-            //if(!$model->validate()){
-                //ex_print($model->errors, '$errors');
-            //}
 
             if(isset($child) && $child!=false){
                 $child->load($request->post());
@@ -95,8 +86,12 @@ class ContentAdminController extends CategoryController
 
             if($model->save()){ //@todo true  #langValidAndAddidional
 
-                if(isset($child) && $child!=false){
-                    $model->link('child', $child);
+                if(isset($child)){
+                    if($child->validate()){
+                        $model->link('child', $child);
+                    }else{
+                        Yii::$app->session->setFlash('error', Yii::t('easyii','Update error. {0}', $child->formatErrors()));
+                    }
                 }
 
 //                ContentImage::deleteAll(['content_id' => $model->id]);
@@ -115,6 +110,10 @@ class ContentAdminController extends CategoryController
 //                }
 
                 $is_new_record = $model->isNewRecord;
+                //$item = $translation_models[$model->language];
+
+
+                //e_print($model->language, 'saddsaads222');
 
                 if ($translation_models[$model->language]->validate()) {
                     foreach ($translation_models as $language => $translation_model) {

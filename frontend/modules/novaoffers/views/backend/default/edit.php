@@ -400,7 +400,7 @@ JS
                 echo \frontend\widgets\SeoForm::widget(['model' => $model]);
             }else{
                 if(!empty($model->slug)){
-                    if($model->isNewRecord){
+                    if($model->isNewRecord || $model->hasErrors()){
                         echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed']);
                     }else{
                         echo $form->field($model, 'slug')->textInput(['class' => 'form-control boxed', 'readonly'=>'readonly']);
