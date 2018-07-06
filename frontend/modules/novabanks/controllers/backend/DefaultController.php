@@ -132,6 +132,9 @@ class DefaultController extends ContentAdminController
                 $translation_model->loadDefaultValues();
                 $translation_models[$language['local']] = $translation_model;
             }
+
+            //$model->category_detail =  $model->type_id . ":" . $model->category_id;
+            $model->category_detail = Novabanks::TYPE_ID . ':20';
         }
 
         if (isset($model->child)) {
@@ -139,11 +142,8 @@ class DefaultController extends ContentAdminController
             $child = $model->child;
         } else {
             $child = new Banks();
-            //$child->loadDefaultValues();
+            $child->loadDefaultValues();
         }
-
-        //$model->category_detail =  $model->type_id . ":" . $model->category_id;
-        $model->category_detail = Novabanks::TYPE_ID . ':20';
 
         if ($request->post()) {
             $this->_saveItem($model, $request, $translation_models, $child);

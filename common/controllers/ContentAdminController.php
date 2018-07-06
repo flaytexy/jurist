@@ -86,7 +86,7 @@ class ContentAdminController extends CategoryController
 
             if($model->save()){ //@todo true  #langValidAndAddidional
 
-                if(isset($child)){
+                if(isset($child) && $child!=false){
                     if($child->validate()){
                         $model->link('child', $child);
                     }else{

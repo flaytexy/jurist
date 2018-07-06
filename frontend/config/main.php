@@ -224,7 +224,11 @@ $config = [
                 //'offshornyie-predlozheniya' => 'offers/index',
                 'offshornyie-predlozheniya' => 'novaoffers/index',
                 'banks' => 'novabanks/index',
-                'about' => 'novanews/view/about',
+                [
+                    'pattern' => 'about',
+                    'route' => 'novanews/view',
+                    'defaults' => ['slug' => 'about'],
+                ],
 //                [
 //                    'pattern' => 'offshornyie-predlozheniya',
 //                    'route' => 'offers/index',
