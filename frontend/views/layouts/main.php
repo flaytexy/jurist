@@ -44,16 +44,16 @@ $addeng = Yii::t('easyii', 'free');
                         ['label' => Yii::t('easyii', 'banks'), 'url' => ['/banks'],
                             'options' => ['class' => 'menu-item-has-children', 'title' => 'Банки'],
                         ],
-                        ['label' => Yii::t('easyii', 'pay_system'), 'url' => ['/pay-system'], 'options' => ['title' => Yii::t('easyii', 'pay_system')]],
+                        //['label' => Yii::t('easyii', 'pay_system'), 'url' => ['/pay-system'], 'options' => ['title' => Yii::t('easyii', 'pay_system')]],
                         ['label' => Yii::t('easyii', 'companies'), 'url' => ['/offshornyie-predlozheniya'], 'options' => ['title' => 'Компании']],
                         ['label' => Yii::t('easyii', 'licenses'), 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
                         ['label' => Yii::t('easyii', 'offshores'), 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
                         ['label' => Yii::t('easyii', 'processing'), 'url' => ['/processing'], 'options' => ['title' => 'Процессинг']],
                         ['label' => Yii::t('easyii', 'sells'), 'url' => ['/sale'], 'options' => ['title' => Yii::t('easyii', 'sells')]],
-                        ['label' => 'contact', 'url' => ['/contact'], 'template' => ''.WLang::widget().'' ],
+                        ['label' => 'contact', 'url' => ['/contact'], 'template' => '' ],
                     ],
                 ]); ?>
-
+                <?= WLang::widget() ?>
             </div>
         </div>
     </div>
@@ -110,7 +110,7 @@ $addeng = Yii::t('easyii', 'free');
                                 ['label' => Yii::t('easyii', 'contact'), 'url' => ['/contact']],
                                 ['label' => 'contact', 'url' => ['/contact'],
                                     'template' => '
-                                <li class="contact-m2" style="width: 250px">
+                                <li class="contact-m2">
                                     <div class="row">
                                         <div class="col-md-12 tel-m"><div><a href=' . Url::to('/contact') .'> <p class="lenta">' . $addeng . ' </p></a></div></div>
                                     </div>
@@ -152,7 +152,7 @@ $addeng = Yii::t('easyii', 'free');
                     ['label' => Yii::t('easyii', 'main'), 'url' => ['site/index']],
                     ['label' => Yii::t('easyii', 'funds'), 'url' => ['/fonds']],
                     ['label' => Yii::t('easyii', 'banks'), 'url' => ['/banks']],
-                    ['label' => Yii::t('easyii', 'pay_system'), 'url' => ['/pay-system'], 'options' => ['title' => Yii::t('easyii', 'pay_system')]],
+                    //['label' => Yii::t('easyii', 'pay_system'), 'url' => ['/pay-system'], 'options' => ['title' => Yii::t('easyii', 'pay_system')]],
                     ['label' => Yii::t('easyii', 'licenses'), 'url' => ['/licenses']],
                     ['label' => Yii::t('easyii', 'news'), 'url' => ['/news']],
                     ['label' => Yii::t('easyii', 'companies'), 'url' => ['/offshornyie-predlozheniya']],

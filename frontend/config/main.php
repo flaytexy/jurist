@@ -106,7 +106,7 @@ $config = [
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                    'levels' => ['error', 'warning', 'info'],
                     'logFile' => '@runtime/log/requests_all.log',
                     'maxFileSize' => 1024 * 2,
                     'maxLogFiles' => 20,
@@ -118,13 +118,13 @@ $config = [
                     'maxFileSize' => 1024 * 2,
                     'maxLogFiles' => 20,
                     'logFile' => '@runtime/log/requests_error.log',
-                    //'logVars' => ['GET', 'POST'], // log some globals
+                    'logVars' => ['_FILES', '_COOKIE', '_SESSION', '_SERVER'],
                 ],
 //                '404_mail' => [
 //                    'class' => 'yii\log\EmailTarget',
 //                    'categories' => ['yii\web\HttpException:404'],
 //                    'message' => [
-//                        'from' => ['itc@iq-offshore.com' => 'Iq-offshore.com'], //от кого
+//                        'from' => ['noreply@iq-offshore.com' => 'Iq-offshore.com'], //от кого
 //                        'to' => ['akvamiris@gmail.com'], //кому
 //                        'subject' => '404 ошибка на саайте', //тема
 //                    ],
@@ -133,19 +133,26 @@ $config = [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                     'categories' => ['yii\web\HttpException:404'],
-                    //'logVars' => [], //не добавлять в лог глобальные переменные ($_SERVER, $_SESSION...)
+                    'logVars' => ['_FILES', '_COOKIE', '_SESSION', '_SERVER'],
                     'logFile' => '@runtime/logs/404.log',
                 ],
-                'delete_end_truncate' => [
-                    'class' => 'yii\log\EmailTarget',
-                    'categories' => ['delete_end_truncate'],
-                    'message' => [
-                        'from' => ['itc@iq-offshore.com' => 'Iq-offshore.com'], //от кого
-                        'to' => ['akvamiris@gmail.com'], //кому
-                        'subject' => 'Попитка delete_end_truncate', //тема
-                    ],
-                    //'logVars' => [] //не добавлять в лог глобальные переменные ($_SERVER, $_SESSION...)
+                'seo_hasnt_attr' => [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning', 'info'],
+                    //'_GET', '_POST', '_FILES', '_COOKIE', '_SESSION', '_SERVER'
+                    'logVars' => ['_FILES', '_COOKIE', '_SESSION', '_SERVER'], //не добавлять в лог глобальные переменные ($_SERVER, $_SESSION...)
+                    'logFile' => '@runtime/logs/seo_hasnt_attr.log',
                 ],
+//                'delete_end_truncate' => [
+//                    'class' => 'yii\log\EmailTarget',
+//                    'categories' => ['delete_end_truncate'],
+//                    'message' => [
+//                        'from' => ['noreply@iq-offshore.com' => 'Iq-offshore.com'], //от кого
+//                        'to' => ['akvamiris@gmail.com'], //кому
+//                        'subject' => 'Попитка delete_end_truncate', //тема
+//                    ],
+//                    //'logVars' => ['_FILES', '_COOKIE', '_SESSION', '_SERVER'],
+//                ],
                 'delete_end_truncate_file' => [
                     'class' => 'yii\log\FileTarget',
                     //'levels' => ['error', 'warning'],
@@ -224,10 +231,11 @@ $config = [
                 //'offshornyie-predlozheniya' => 'offers/index',
                 'offshornyie-predlozheniya' => 'novaoffers/index',
                 'banks' => 'novabanks/index',
+                'pay-system' => 'paysystem/index',
                 [
                     'pattern' => 'about',
                     'route' => 'novanews/view',
-                    'defaults' => ['slug' => 'about'],
+                    'defaults' => ['slug' => 'page-about'],
                 ],
 //                [
 //                    'pattern' => 'offshornyie-predlozheniya',
@@ -279,6 +287,7 @@ $config = [
                 '<name:(offers)>/<slug:[\w-]+>' => 'novaoffers/view',
                 '<name:(news)>/<slug:[\w-]+>' => '<name>/view',
                 '<name:(banks|novabanks)>/<slug:[\w-]+>' => 'novabanks/view', //'banks/view',
+                '<name:(pay-system)>/<slug:[\w-]+>' => 'paysystem/view', //'banks/view',
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',
@@ -485,6 +494,12 @@ $config = [
                     'class' => 'frontend\modules\novaoffers\Module',
                     'controllerNamespace' => 'frontend\modules\novaoffers\controllers\backend',
                     'viewPath' => '@frontend/modules/novaoffers/views/backend',
+                ],
+
+                'paysystem' => [
+                    'class' => 'frontend\modules\paysystem\Module',
+                    'controllerNamespace' => 'frontend\modules\paysystem\controllers\backend',
+                    'viewPath' => '@frontend/modules/paysystem/views/backend',
                 ],
                 
                 'attachment' => [

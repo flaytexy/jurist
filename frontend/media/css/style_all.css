@@ -4250,8 +4250,11 @@ header {
 header.stick .top-menus li:first-child {
 
 }
-
+.contact-m2 {
+    width: 175px;
+}
 header.stick .top-menus .contact-m {
+    width: 175px;
     /*  padding: 3px 24px; */
 }
 

@@ -180,7 +180,7 @@ e_print($contentId,'$contentId');
                     $tagsNewPos->save(false);
                 }   //ex_print($tagsNewPos->getPrimaryKey(), '$tagsNewPos');
             }
-            //ex_print('xxxxxxxxxxxxxxx');
+
 
             if($insert){
                 $iter ++;

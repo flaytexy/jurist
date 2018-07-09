@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\modules\novabanks\models;
+namespace frontend\modules\paysystem\models;
 
 use common\behaviors\MySluggableBehavior;
 use common\models\Content;
@@ -10,8 +10,8 @@ use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;
 
 /**
- * Class Novabanks
- * @package frontend\modules\novabanks\models
+ * Class Paysystem
+ * @package frontend\modules\paysystem\models
  *
  * @property int $id
  * @property string $thumbnail
@@ -19,18 +19,18 @@ use frontend\behaviors\Taggable;
  * @property string $image
  * @property Banks $bank
  *
- * @property NovabanksTranslation|array $translations
+ * @property PaysystemTranslation|array $translations
  */
-class Novabanks extends Content
+class Paysystem extends Content
 {
     const PAGE_LIMIT = 7;
-    const TYPE_ID = 101;
+    const TYPE_ID = 151;
 
-    public static $_type = 'novabanks';
+    public static $_type = 'paysystem';
 
     public function init()
     {
-        self::$_translateModel = NovabanksTranslation::className();
+        self::$_translateModel = PaysystemTranslation::className();
     }
 
 

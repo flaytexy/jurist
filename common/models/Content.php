@@ -126,7 +126,7 @@ class Content extends ActiveRecord
                         'tooBig' => \Yii::t('yii', 'The file "{file}" is too big. Its size cannot exceed {formattedLimit}.'),
                     ],
                     // Cropper config
-                    'aspectRatio' => 4 / 3, // or 16/9(wide) or 1/1(square) or any other ratio. Null - free ratio
+                    'aspectRatio' => 16 / 9, // or 16/9(wide) or 1/1(square) or any other ratio. Null - free ratio
                     // default config
                     'imageRequire' => false,
                     'fileTypes' => 'jpg,jpeg,gif,png',
@@ -214,7 +214,7 @@ class Content extends ActiveRecord
 
         parent::afterFind();
 
-        //$this->title = $this->getName(); //@todo xxxxxxxxxxxxxxxxxxxxxxxxxx
+        //$this->title = $this->getName(); //@todo afterFind title
     }
 
     public function getTitle()

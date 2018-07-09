@@ -3,7 +3,7 @@
 	$m  = $_POST['data'];
 	$name = $_POST['user_name'];
 	$email = $_POST['user_email'];
-	$user_ip = $_POST['user_ip'];
+	$user_ip = $_SERVER['REMOTE_ADDR'];
 	$is_bot = preg_match(
  "~(Google|Yahoo|Rambler|Bot|Yandex|Spider|Snoopy|Crawler|Finder|Mail|curl)~i", 
  $_SERVER['HTTP_USER_AGENT']
@@ -14,7 +14,8 @@ $country = $geo['country']['name_ru'];
 					{
 						$message .= $m[$i]."\n\r";
 					}
-	$amo = new \AmoCRM\Client('iqdecision', 'vientos.pro@gmail.com', '168bbdd65d38cc1ed10a6ee5c12649a30ae88f9d'); // Данные от амо (домен, email, api ключ)
+	$amo = new \AmoCRM\Client('iqdecision', 'chedajo@gmail.com', 'ee91ac8a76cd72fee25b53fa8a639b6e'); // Данные от амо (домен, email, api ключ)
+	//$amo = new \AmoCRM\Client('scaleup', 'chedajo@gmail.com', 'ee91ac8a76cd72fee25b53fa8a639b6e');
 			$data_c = array();
 			$data_c[] = array(
         						           'name' => $name.' ('.$user_ip.')',
@@ -27,15 +28,7 @@ $country = $geo['country']['name_ru'];
         						                   'value' => $email,
         						                 ),
         						               ),
-        						             ),
-        						             array(
-        						               'id'     => 527459, //ID поля Страна
-        						               'values' => array(
-        						                 array(
-        						                   'value' => $country,
-        						                 ),
-        						               ),
-        						             ),
+        						             ), 
         						       ),
         						       );
 		  $unsorted = $amo->unsorted;
@@ -50,6 +43,16 @@ $country = $geo['country']['name_ru'];
                'leads'    => array(
                  array(
                    'name' => 'Сделка: '.$name.' ('.$user_ip.')',
+                    'custom_fields' => array(
+        						             array(
+        						               'id'     => 527459, //ID поля Страна
+        						               'values' => array(
+        						                 array(
+        						                   'value' => $country,
+        						                 ),
+        						               ),
+        						             ),
+        						       ),
                    'notes' => array(
 	                   array(
 		                'note_type' => '4',

@@ -240,7 +240,7 @@ if(IS_ROOT){
                     // Url-path to original image for cropping
                     'image' => Yii::$app->request->baseUrl . '' . Attachment::getImage($model->thumbnail),
                     // The aspect ratio for the area of cropping
-                    'aspectRatio' => 4 / 3, // or 16/9(wide) or 1/1(square) or any other ratio. Null - free ratio
+                    'aspectRatio' => 16 / 9, // or 16/9(wide) or 1/1(square) or any other ratio. Null - free ratio
                     // Additional params for JS cropper plugin
                     'pluginOptions' => [
                         // All possible options: https://github.com/fengyuanchen/cropper/blob/master/README.md#options

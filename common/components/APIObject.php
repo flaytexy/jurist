@@ -96,29 +96,38 @@ class APIObject extends \yii\base\Object
      */
     public function seo($attribute, $default = ''){
 
-        if(isset($this->model->translation) && isset($this->model->translation->{'meta_'.$attribute})){
-            //ex_print($this->model->translation,'dadadsaad');
-            if($this->model->translation->{'meta_'.$attribute}==false){
-                //return $default;
+        $attributeValue = '';
+        if(isset($this->model->translation)){
+            if(isset($this->model->translation->{'meta_'.$attribute})){
+                $attributeValue = $this->model->translation->{'meta_'.$attribute};
+            }elseif(isset($this->model->translation->{$attribute})){
+                $attributeValue = $this->model->translation->{$attribute};
             }
-
-            return $this->model->translation->{'meta_'.$attribute};
         }
 
-        $mess = 'SEO_HASNT_ATTR: '.$attribute;
-        //$this->mailAPIObject($mess);
-        ex_print($mess);
-        //throw new NotFoundHttpException($mess);
+        if($attributeValue==false && $default!=false){
+            $attributeValue = $default;
+        }elseif($attributeValue==false){
+            $mess = 'SEO_HASNT_ATTR: '.$attribute;
+            $data = array(
+                '$mess' => $mess,
+                'slug' => $this->slug,
+                'id' => $this->model->id,
+                'type_id' => $this->model->type_id,
+                'category_id' => $this->model->category_id
+            );
 
-        if($attribute === "title"){
-            return $this->getTitle();
-        }elseif($attribute === "description"){
-            return $this->getDescription();
-        }elseif($attribute === "keywords"){
-            return '';
+            $this->mailAPIObject($mess, $data);
+
+            Yii::info(
+                serialize($data),
+                'seo_hasnt_attr'
+            ); //отправка лога
+            //ex_print($mess);
+            //throw new NotFoundHttpException($mess);
         }
 
-        return '';
+        return $attributeValue;
 
         //return isset($this->model->seo->{$attribute}) ? $this->model->seo->{$attribute} : $default;
     }
@@ -219,18 +228,26 @@ class APIObject extends \yii\base\Object
         return Html::a(Yii::t('easyii/page/api', 'Create page'), ['/admin/novanews/default/create', 'slug' => $this->slug], ['target' => '_blank']);
     }
 
-    public function mailApiObject($errorMessage = ''){
-        return Yii::$app->mailer->compose()
-            ->setFrom(Setting::get('robot_email'))
-            //->setFrom('itc@iq-offshore.com')
-            ->setTo('akvamiris@gmail.com')
-            ->setSubject('Рапорт об ошибке')
-            ->setHtmlBody('
+    public function mailApiObject($errorMessage = '', $data = array()){
+        $message = '
                 <h1>'.$errorMessage.'</h1>
                 <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
                 <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
                 <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
-            ')//Url::to()
+            ';
+
+        if(is_array($data) && count($data)>0){
+            foreach ($data as $key => $value){
+                $message .= '<span>'.$key.': ' . $value . '</span><br />';
+            }
+        }
+
+        return Yii::$app->mailer->compose()
+            ->setFrom(Setting::get('robot_email'))
+            //->setFrom('itc@iq-offshore.com')
+            ->setTo('akvamiris@gmail.com')
+            ->setSubject('Рапорт об ошибке Seo')
+            ->setHtmlBody($message)//Url::to()
             //->setReplyTo(Setting::get('admin_email'))
             ->send();
     }
