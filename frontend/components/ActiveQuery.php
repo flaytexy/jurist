@@ -1,6 +1,7 @@
 <?php
 namespace frontend\components;
 
+
 /**
  * Base active query class for models
  * @package frontend\components
