@@ -60,9 +60,9 @@ function access_logger($file_path = "accessLogFile.log", $data = array()) {
     }
 
     //COMBINE VARS INTO OUR LOG ENTRY
-    $msg = "" . $time ."; IP: " . $ip . "; " . $botStr . $str . "REQUEST_URI: " . $_SERVER['REQUEST_URI'] . "; REFERRER: " . $referrer . "; SEARCHSTRING: " . $query . "; USERAGENT: " . $userAgent . "; ";
+    $msg = "" . $time ."; IP: " . $ip . "; " . $botStr . $str . "REQUEST_URI: " . @urldecode($_SERVER['REQUEST_URI']) . "; REFERRER: " . $referrer . "; SEARCHSTRING: " . $query . "; USERAGENT: " . $userAgent . "; ";
 
-    $msg = iconv( "utf-8", "windows-1251", $msg );
+    //$msg = iconv( "utf-8", "windows-1251", $msg );
 
     $today = date("Y_m_d");
     $logfile = $today."_log.txt";

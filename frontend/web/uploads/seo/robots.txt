@@ -1,6 +1,5 @@
 User-agent: *
-Allow: /
-Disallow: /en/*
+Disallow: /
 
-Host: iq-offshore.com
-Sitemap: https://iq-offshore.com/sitemap.xml
+Host: iqold.shopix.top
+Sitemap: https://iqold.shopix.top/sitemap.xml
