@@ -57,7 +57,7 @@ class DefaultController extends ContentAdminController
 
     public function beforeAction($action)
     {
-        $this->view->title = 'Новости – ' . Yii::$app->params['sitePrefix'];
+        $this->view->title = 'Компании – ' . Yii::$app->params['sitePrefix'];
 
         return parent::beforeAction($action);
     }

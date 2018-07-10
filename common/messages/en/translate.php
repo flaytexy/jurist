@@ -145,8 +145,8 @@ return [
     'svetlanareview' => 'In another company I ordered an offshore registration and an account opening.
                The company was registered, but they could not open the account. After this, turning to others, I learned that it turns out that you can open an account by buying from them and the company, and so not only from them ... I am heartily grateful to IQ Decision that they entered the position and opened an account without registering another company.',
     'eugene' => 'Eugeny',
-    'svetlana' => 'Svetlana'
+    'svetlana' => 'Svetlana',
 
-
+    'More_about_our_banks' => 'More about our banks',
 
 ];

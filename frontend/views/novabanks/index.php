@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $page->title;
     <?php if ($items): ?>
     <section id="banks2" class="scroll-container container-fluid">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-lg-9 col-md-12 col-sm-12">
                 <div class="row bank-new-list top20">
                     <div class="col-md-12" id="switchAllBanks">
                         <table id="example" class="table table-bordered display" style="width:100%">
@@ -82,10 +82,10 @@ $this->params['breadcrumbs'][] = $page->title;
                                             </div>
                                         </td>
 
-                                        <td data-order="<? if ($item->model->countries[0]->name_ru): ?><?= $item->model->countries[0]->name_ru ?><? else: ?><?= $item->model->bank->location_title ?><? endif ?>" class="col-md-8 col-lg-2 text-center">
+                                        <td data-order="<? if ($item->model->child->countries[0]->name_ru): ?><?= $item->model->child->countries[0]->name_ru ?><? else: ?><?= $item->model->bank->location_title ?><? endif ?>" class="col-md-8 col-lg-2 text-center">
                                             <div class="bnk-country">
-                                                <? if ($item->model->countries[0]->alpha): ?><div class="text-center"><div class="bnk-flag"> <div class="label flag flag-icon-background flag-icon-<?= $item->model->countries[0]->alpha ?>">&nbsp;</div></div></div><? endif ?>
-                                                <div class="left tBankLi" style="margin: 2px 0 0 0"><? if ($item->model->countries[0]->name_ru): ?><?= $item->model->countries[0]->name_ru ?><? else: ?><?= $item->model->bank->location_title ?><? endif ?></div>
+                                                <? if ($item->model->child->countries[0]->alpha): ?><div class="text-center"><div class="bnk-flag"> <div class="label flag flag-icon-background flag-icon-<?= $item->model->child->countries[0]->alpha ?>">&nbsp;</div></div></div><? endif ?>
+                                                <div class="left tBankLi" style="margin: 2px 0 0 0"><? if ($item->model->child->countries[0]->name_ru): ?><?= $item->model->child->countries[0]->name_ru ?><? else: ?><?= $item->model->bank->location_title ?><? endif ?></div>
                                             </div>
                                         </td>
                                         <td data-order="<?= $item->model->bank->personal ?>" class="hidden-xs hidden-sm hidden-md col-lg-8 no-padding">
@@ -135,7 +135,7 @@ $this->params['breadcrumbs'][] = $page->title;
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <!-- Widget3 -->
                 <div class="widget villa-photos-widget top20">
                     <div class="title1 style2">
@@ -207,7 +207,7 @@ $this->params['breadcrumbs'][] = $page->title;
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="font-color">Подробнее о наших банках</h3>
+                            <h3 class="font-color"><?= Yii::t('easyii', 'More_about_our_banks') ?></h3>
                             <div class="villaeditors-picks">
                                 <div class="packages style2 remove-ext2">
                                     <div class="row">
@@ -216,7 +216,7 @@ $this->params['breadcrumbs'][] = $page->title;
                                                 <div class="package">
                                                     <div class="package-thumb">
                                                         <?= Html::img($item->thumb(240, 60)) ?>
-                                                        <span><b><? if ($item->model->countries[0]->name_ru): ?><?= $item->countries[0]->name_ru ?><? else: ?><?= $item->model->bank->location_title ?><? endif; ?></b></span>
+                                                        <span><b><? if ($item->model->child->countries[0]->name_ru): ?><?= $item->child->countries[0]->name_ru ?><? else: ?><?= $item->model->bank->location_title ?><? endif; ?></b></span>
                                                     </div>
                                                     <div class="package-detail">
                                                         <!--                                            <span class="cate">

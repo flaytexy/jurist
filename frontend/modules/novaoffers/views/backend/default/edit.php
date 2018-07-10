@@ -280,7 +280,7 @@ JS
             <?= $form->field($model, 'category_detail')->dropDownList($categories); ?>
             <? /*= $form->field($model, 'type_id')->dropDownList([
                 '1' => 'Страница',
-                '2' => 'Новости',
+                '2' => 'Компании',
                 '3' => 'Лицензии',
                 '4' => 'Фонды',
                 '5' => 'Процессинг'

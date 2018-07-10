@@ -24,7 +24,7 @@ $moduleName = $this->context->module->id;
         <div class="row">
             <div class="col-md-6">
                 <h3 class="title">
-                    Новости
+                    Статьи
                     <a href="<?= Url::to(['/admin/novanews/default/edit', 'id' => 0]); ?>" class="btn btn-primary btn-sm rounded-s">
                         добавить
                     </a>
@@ -39,7 +39,7 @@ $moduleName = $this->context->module->id;
         <li class="item item-list-header hidden-sm-down">
             <div class="item-row">
                 <div class="item-col item-col-header item-col-title">
-                    <div> <span>Новости</span> </div>
+                    <div> <span>Статьи</span> </div>
                 </div>
                 <div class="item-col item-col-header fixed item-col-actions-dropdown"> </div>
             </div>

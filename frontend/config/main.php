@@ -275,19 +275,23 @@ $config = [
                 //'<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'pages/index',   //@todo
                 //'<name:(licenses|offshore|processing|fonds|sale)>' => 'pages/index',                  //@todo
                 //'<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'pages/view',     //@todo
+
                 '<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'novanews/index',
                 '<name:(licenses|offshore|processing|fonds|sale)>' => 'novanews/index',
                 '<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'novanews/view',
+
+                '<name:(banks|novabanks)>/page<page:\d+>' => 'novabanks/index',
+                '<name:(banks|novabanks)>/<slug:[\w-]+>' => 'novabanks/view', //'banks/view',
+                '<name:(pay-system)>/<slug:[\w-]+>' => 'paysystem/view', //'banks/view',
 
                 '<controller:\w+>/tag/<tag:[\w- ]+>' => '<controller>/index',
                 //'<controller:\w+>/page<page:\d+>' => '<controller>/index',                            //@todo
                 '<controller:\w+>/page<page:\d+>' => '<controller>/index',
 
-                //'<name:(offers|news)>/<slug:[\w-]+>' => '<name>/view',
+
                 '<name:(offers)>/<slug:[\w-]+>' => 'novaoffers/view',
                 '<name:(news)>/<slug:[\w-]+>' => '<name>/view',
-                '<name:(banks|novabanks)>/<slug:[\w-]+>' => 'novabanks/view', //'banks/view',
-                '<name:(pay-system)>/<slug:[\w-]+>' => 'paysystem/view', //'banks/view',
+
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',
@@ -314,7 +318,7 @@ $config = [
                     'css' => [
                         //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css',
                         //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
-                        '//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
+                        //'//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
                     ],
                 ],
 //                'yii\bootstrap\BootstrapAsset' => [
@@ -326,23 +330,23 @@ $config = [
 //                        '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css',
 //                    ],
 //                ],
-//                'yii\jui\JuiAsset' => [
-//                    'css' => [],
-////                    'css' => [
-////                        YII_DEBUG ? '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css'
-////                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css'
-////                    ],
-//                    'js' => [
-//                        YII_DEBUG ? '//code.jquery.com/ui/1.12.1/jquery-ui.js' : '//code.jquery.com/ui/1.12.1/jquery-ui.min.js'
-//                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/jquery-ui.min.js' : '//code.jquery.com/ui/1.7.2/jquery-ui.min.js'
+                'yii\jui\JuiAsset' => [
+                    'css' => [],
+//                    'css' => [
+//                        YII_DEBUG ? '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css'
+//                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css'
 //                    ],
-//                ],
+//                     'js' => [
+//                        //YII_DEBUG ? '//code.jquery.com/ui/1.12.1/jquery-ui.js' : '//code.jquery.com/ui/1.12.1/jquery-ui.min.js'
+//                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/jquery-ui.min.js' : '//code.jquery.com/ui/1.7.2/jquery-ui.min.js'
+//                     ],
+                ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [
                         //YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.js' : '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js',
                         //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js'
                         '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js',
-                        '//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'
+                        //'//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'
                     ],
                 ],
             ],
@@ -356,7 +360,7 @@ $config = [
         'view' => [
             'class' => '\rmrevin\yii\minify\View',
             //'enableMinify' => !YII_DEBUG,
-            'enableMinify' => true,
+            'enableMinify' => false,
             'concatCss' => true, // concatenate css
             'minifyCss' => true, // minificate css
             'concatJs' => true, // concatenate js

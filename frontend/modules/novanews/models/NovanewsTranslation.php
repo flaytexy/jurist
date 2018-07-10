@@ -26,11 +26,11 @@ class NovanewsTranslation extends ContentTranslation
     public function rules()
     {
         return [
-            [['name'], 'required', 'message' => 'Введите заголовок новости'],
-            [['slug'], 'required', 'message' => 'Введите постоянную ссылку для новости'],
+            [['name'], 'required', 'message' => 'Введите заголовок статьи'],
+            [['slug'], 'required', 'message' => 'Введите постоянную ссылку для статьи'],
             //[['slug'], 'unique', 'message' => 'Постоянная ссылка должна быть уникальной'],
-            //[['short_description'], 'required', 'message' => 'Введите краткое содержание новости'],
-            [['description'], 'required', 'message' => 'Введите содержание новости'],
+            //[['short_description'], 'required', 'message' => 'Введите краткое содержание статьи'],
+            [['description'], 'required', 'message' => 'Введите содержание статьи'],
             [['language'], 'in', 'range' => ['ru-RU', 'en-US'], 'message' => 'Неверное значение языка'],
             [['public_status'], 'boolean'],
             [['name', 'short_description', 'description', 'meta_title', 'meta_keywords', 'meta_description'], 'trim'],

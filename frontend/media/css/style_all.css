@@ -4253,6 +4253,7 @@ header.stick .top-menus li:first-child {
 .contact-m2 {
     width: 175px;
 }
+
 header.stick .top-menus .contact-m {
     width: 175px;
     /*  padding: 3px 24px; */
@@ -9230,9 +9231,19 @@ input.gsc-search-button-v2:hover {
     border: 1px solid rgba(176, 176, 176, 0.65);
     background-color: #fff !important;
 }
+/* ----- Banks-table ---------- */
+#switchAllBanks .table{
+
+}
+
 #switchAllBanks > table {
     margin-bottom: -2px;
 }
+
+#switchAllBanks .table td {
+    padding: 10px;
+}
+
 
 .tBankLi {
     padding: 4px 2px;
@@ -9253,10 +9264,10 @@ input.gsc-search-button-v2:hover {
 }
 
 .tBankLi td .hegg {
-    /*min-height: 30px;*/
     text-align: center;
     padding: 12px 0;
     font-size: 11px;
+    overflow-x: auto;
 }
 
 .tBankLi .green_yes, .tBankLi .green_no {
@@ -9782,6 +9793,18 @@ blockquote > p a,
         font-size: 19px;
     }
 
+    #switchAllBanks .table td {
+        padding: 7px;
+    }
+
+    .tBankLi td .hegg {
+        max-width: 90px !important;
+    }
+
+    .tBankLi {
+        font-size: 12px;
+    }
+
     .search-luxuriousvilla.overlape {
         margin-left: 0;
         width: 100%;
@@ -9807,6 +9830,14 @@ blockquote > p a,
 
     .top-bar {
         display: none;
+    }
+
+    #switchAllBanks .table td {
+        padding: 6px;
+    }
+
+    .tBankLi td .hegg {
+        max-width: 80px !important;
     }
 
     .fun-facts > ul > li:nth-child(2n+1) {
@@ -9842,6 +9873,10 @@ blockquote > p a,
 }
 
 @media (max-width: 991px) {
+
+    #switchAllBanks .table td {
+        padding: 5px;
+    }
 
     .packages-detail {
         box-shadow: none;

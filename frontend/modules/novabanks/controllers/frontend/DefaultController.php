@@ -11,7 +11,7 @@ class DefaultController extends Controller
 {
     public function beforeAction($action)
     {
-        $this->view->title = 'Новости – ' . Yii::$app->params['sitePrefix'];
+        $this->view->title = 'Банки – ' . Yii::$app->params['sitePrefix'];
 
         return parent::beforeAction($action);
     }
