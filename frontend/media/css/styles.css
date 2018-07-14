@@ -627,7 +627,7 @@ header {
     position: fixed;
 }
 #theme-layout-js {
-    margin-top: 100px;
+    margin-top: 80px;
 }
 /*===== Top Bar =====*/
 .top-bar {
@@ -4388,10 +4388,7 @@ blockquote > p {
 }
 
 .widget > ul > li > span {
-    background: #f5f5f5 none repeat scroll 0 0;
-    border-left: 2px solid #ffffff;
-    color: #999999;
-    float: right;
+    background: rgb(255, 255, 255) none repeat scroll 0 0;
     padding: 20px 18px;
 }
 
@@ -4446,10 +4443,8 @@ ul.widget-gallery > li > a {
 
 ul.widget-gallery > li > span {
     border: none;
-    width: 100%;
     float: left;
     font-size: 17px;
-    margin-bottom: 5px;
 }
 
 ul.widget-gallery > li a {

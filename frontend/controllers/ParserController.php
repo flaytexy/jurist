@@ -74,7 +74,7 @@ class ParserController extends \yii\web\Controller
 //ALTER TABLE `easyii_offers` CHANGE `pre_options` `pre_options_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 //       ")->execute();
 //
-
+exit;
         $db->createCommand("
             DELETE FROM `content` WHERE `type` ='novabanks';
             DELETE FROM `content` WHERE `type` ='novaoffers';
