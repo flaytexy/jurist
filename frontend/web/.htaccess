@@ -57,6 +57,11 @@ RewriteRule ^(.*)/view/(.*)$ /$1/$2 [R=301,NC,L]
 RewriteRule ^index.(.*)/$ / [R=301,NC,L]
 RewriteRule ^(.*)/index /$1 [R=301,NC,L]
 
+#RewriteRule ^rss\.xml /rss/xml [L]
+#RewriteRule ^rss$ rss/xml [L]
+#RewriteRule ^feed\.xml$ rss/xml [L]
+#RewriteRule ^feed$ rss/xml [L]
+#RewriteRule ^feed\.rss$ rss/xml [L]
 
 ##RewriteRule ^(.*)index.php(.*) http://iq-offshore.com/$1$2 [R=301,L]
 ##RewriteRule ^(.*)index.php http://iq-offshore.com/$1 [R=301,L]
@@ -72,8 +77,6 @@ RewriteRule ^robots\.txt$ robots_betta.txt [L]
 
 
 RewriteRule ^robots\.txt /uploads/seo/robots\.txt [L]
-
-
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !\.rar

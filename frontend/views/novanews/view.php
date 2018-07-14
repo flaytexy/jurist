@@ -354,7 +354,7 @@ $this->params['breadcrumbs'][] = $page->name;
             </div>
         </div>
         <div class="sidesidebar2">
-
+            <?php if(isset($top_offers)) :?>
             <div class="widget villa-photos-widget">
                 <div class="title1 style2">
                     <h2>Хорошие предложения</h2>
@@ -370,25 +370,10 @@ $this->params['breadcrumbs'][] = $page->name;
 
                 </ul>
             </div><!-- Widget -->
+            <? endif; ?>
 
-            <!-- Widget2
-            <div class="widget villa-photos-widget">
-                <div class="title1 style2">
-                    <h2>Банки</h2>
-                    <span>Лучшие банковские условия</span>
-                </div>
-                <ul class="widget-gallery" id="dottedbord">
-                    <?php foreach($top_banks as $item) : ?>
-                        <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
-                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
-                            </a>
-                            <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
-                    <?php endforeach; ?>
-
-                </ul>
-            </div> Widget2 -->
         </div>
-        <div class="container">
+        <div class="container container-c">
             <!-- 1-block -->
             <div class="row">
                 <div class="col-md-12">

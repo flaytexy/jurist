@@ -117,7 +117,7 @@ class APIObject extends \yii\base\Object
                 'category_id' => $this->model->category_id
             );
 
-            $this->mailAPIObject($mess, $data);
+            //$this->mailAPIObject($mess, $data);
 
             Yii::info(
                 serialize($data),

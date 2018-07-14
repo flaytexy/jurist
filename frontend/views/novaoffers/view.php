@@ -230,6 +230,12 @@ $this->params['breadcrumbs'][] = $offers->title;
     width: 104.5% !important;
     margin-left: -2.2%;
 }
+.bxx-carousel {
+    display: none;
+}
+.bx-viewport{
+    min-height: 78px;
+}
     @media (max-width: 1800px) {
 
         .packages-detail {
@@ -334,7 +340,7 @@ $this->params['breadcrumbs'][] = $offers->title;
                 <div class="col-md-12">
 
                     <div class="packages-detail">
-                        <section class="client">
+                        <section class="client bxx-carousel">
                             <div class="container">
                                 <div class="row">
                                     <div class="carousel-client">
@@ -390,14 +396,26 @@ $this->params['breadcrumbs'][] = $offers->title;
 
 </section>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script>
-<script>
- $('.carousel-client').bxSlider({
-     auto: true,
-     slideWidth: 234,
-     minSlides: 2,
-     maxSlides: 5,
-     controls: false
- });
-</script>
+<?php
+$this->registerJs(
+"
+    $(document).ready(function(){
+        $('.bxx-carousel').show();
+        $('.carousel-client').bxSlider({
+            auto: true,
+            slideWidth: 234,
+            minSlides: 2,
+            maxSlides: 5,
+            controls: false
+        });
+    });
+",
+\yii\web\View::POS_READY,
+'bxx-carousel'
+);
+
+$this->registerJsFile(
+    '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js',
+    ['depends' => [\yii\web\JqueryAsset::className()]]
+);
+?>

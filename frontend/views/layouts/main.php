@@ -205,10 +205,10 @@ $addeng = Yii::t('easyii', 'free');
     <div class="push"></div>
 
     <!-- popularly -->
-    <section>
+    <section class="top20">
         <div class="block no-padding">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 top20">
                     <div class="instagram">
                         <div class="title1 light">
                             <h2> <?= Yii::t('easyii', 'lastviews') ?></h2>

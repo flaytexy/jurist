@@ -229,6 +229,8 @@ $config = [
             'rules' => [
                 '' => 'site/index',
                 //'offshornyie-predlozheniya' => 'offers/index',
+
+                'offers' => 'novaoffers/index',
                 'offshornyie-predlozheniya' => 'novaoffers/index',
                 'banks' => 'novabanks/index',
                 'pay-system' => 'paysystem/index',
@@ -304,16 +306,18 @@ $config = [
             // uncomment the following line if you want to auto update your assets (unix hosting only)
             //'linkAssets' => true,
             'bundles' => [
-//                'yii\web\JqueryAsset' => [
-//                    //'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js']
-//                    //'js' => [YII_DEBUG ? '//code.jquery.com/jquery-2.2.4.js' : '//code.jquery.com/jquery-2.2.4.min.js']
-//                    'js' => [
-//                        YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js' : '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',
-//                        //'//code.jquery.com/jquery-1.12.4.js',
-//                        //YII_DEBUG ? '//code.jquery.com/jquery-migrate-1.4.1.js' : '//code.jquery.com/jquery-migrate-1.4.1.min.js',
-//                        YII_DEBUG ? '//code.jquery.com/jquery-migrate-3.0.1.js' : '//code.jquery.com/jquery-migrate-3.0.1.min.js'
-//                    ]
-//                ],
+                'yii\web\JqueryAsset' => [
+                    //'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js']
+                    //'js' => [YII_DEBUG ? '//code.jquery.com/jquery-2.2.4.js' : '//code.jquery.com/jquery-2.2.4.min.js']
+                    'js' => [
+                        //https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
+                        //YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js' : '//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+                        YII_DEBUG ? '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js' : '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+                        //'//code.jquery.com/jquery-1.12.4.js',
+                        //YII_DEBUG ? '//code.jquery.com/jquery-migrate-1.4.1.js' : '//code.jquery.com/jquery-migrate-1.4.1.min.js',
+                        //YII_DEBUG ? '//code.jquery.com/jquery-migrate-3.0.1.js' : '//code.jquery.com/jquery-migrate-3.0.1.min.js'
+                    ]
+                ],
                 'yii\bootstrap\BootstrapAsset' => [
                     'css' => [
                         //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css',
@@ -336,16 +340,16 @@ $config = [
 //                        YII_DEBUG ? '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css'
 //                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css'
 //                    ],
-//                     'js' => [
-//                        //YII_DEBUG ? '//code.jquery.com/ui/1.12.1/jquery-ui.js' : '//code.jquery.com/ui/1.12.1/jquery-ui.min.js'
+//                    'js' => [
+//                        YII_DEBUG ? '//code.jquery.com/ui/1.12.1/jquery-ui.js' : '//code.jquery.com/ui/1.12.1/jquery-ui.min.js'
 //                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/jquery-ui.min.js' : '//code.jquery.com/ui/1.7.2/jquery-ui.min.js'
-//                     ],
+//                    ],
                 ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [
                         //YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.js' : '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js',
                         //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js'
-                        '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js',
+                        //'//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js',
                         //'//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'
                     ],
                 ],
@@ -360,11 +364,11 @@ $config = [
         'view' => [
             'class' => '\rmrevin\yii\minify\View',
             //'enableMinify' => !YII_DEBUG,
-            'enableMinify' => false,
+            'enableMinify' => true,
             'concatCss' => true, // concatenate css
             'minifyCss' => true, // minificate css
             'concatJs' => true, // concatenate js
-            'minifyJs' => false, // minificate js
+            'minifyJs' => true, // minificate js
             'minifyOutput' => false, // minificate result html page
             'webPath' => '@web', // path alias to web base
             'basePath' => '@webroot', // path alias to web base
@@ -375,7 +379,7 @@ $config = [
             'compressOptions' => ['extra' => true], // options for compress
             'excludeFiles' => [
                 'jquery.js',  // exclude this file from minification
-                'jquery-ui.js',
+                //'jquery-ui.js',
                 'app-[^.].js', // you may use regexp
                 'styles.css',
                 'style_all.css',

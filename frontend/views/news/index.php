@@ -75,6 +75,7 @@ $this->params['breadcrumbs'][] = $page->title;
                             <?php endforeach; ?>
                         </ul>
                     </div><!-- Widget -->
+                    <?php if(isset($top_offers)) :?>
                     <div class="widget villa-photos-widget">
                         <div class="title1 style2">
                             <h2>Хорошие предложения</h2>
@@ -90,8 +91,10 @@ $this->params['breadcrumbs'][] = $page->title;
 
                         </ul>
                     </div><!-- Widget -->
+                    <? endif; ?>
+
                     <!-- Widget2 -->
-                    <div class="widget villa-photos-widget">
+                    <div class="widget villa-photos-widget widget-bank">
                         <div class="title1 style2">
                             <h2>Банки</h2>
                             <span>Лучшие банковские условия</span>

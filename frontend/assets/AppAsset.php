@@ -41,11 +41,9 @@ class AppAsset extends AssetBundle
 
 //        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
         //'css/bootstrap.css', //*last
-
         'css/jquery-ui.smoothness.1.12.1.css', //*last
         'css/bootstrap.4.1.0.min.css',
-        //'css/bootstrap.css',
-        //'//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
+
         'css/flaticon.css', //*last
 //        //'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', //*last
         'css/font-awesome/css/font-awesome.min.css', //*last
@@ -68,8 +66,10 @@ class AppAsset extends AssetBundle
     public $js = [
         //'https://code.jquery.com/jquery-migrate-3.0.1.min.js',
         '//code.jquery.com/jquery-migrate-3.0.1.min.js',
-        //'//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js',
+
         'js/bootstrap/bootstrap.4.1.0.min.js',
+        'js/bootstrap/popper.1.14.0.min.js',
+
         'js/bootstrap-datepicker.js',
         'js/fancybox/jquery.fancybox.pack.js',
 
@@ -81,13 +81,14 @@ class AppAsset extends AssetBundle
         'js/perfect-scrollbar.jquery.js',
         'js/jquery.scrolly.js', //
         'js/bootstrap-submenu.js',
+        //'//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
         'js/slick.1.8.0.js',
 
         //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
         //'/uploads/newin.js?v=2017-11-13-v3',
 
-        'js/all.js?v=2018-07-10-v01',
-        'js/scripts.js?v=2018-07-10-v01',
+        'js/all.js?v=2018-07-11-v01',
+        'js/scripts.js?v=2018-07-10-v02',
         //'//code.jquery.com/jquery-2.2.4.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',

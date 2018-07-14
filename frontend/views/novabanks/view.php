@@ -30,7 +30,11 @@ if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
 $this->params['breadcrumbs'][] = ['label' => 'Banks', 'url' => ['banks/index']];
 $this->params['breadcrumbs'][] = $page->model->title;
 ?>
-
+<style>
+    .bxx-carousel {
+        display: none;
+    }
+</style>
 <section id="banks-view" class="container-fluid">
     <div class="row">
         <div class="col-md-9">
@@ -38,7 +42,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <div class="row">
                 <div class="col-md-12">
                     <div class="packages-detail">
-                        <section class="client">
+                        <section class="client bxx-carousel">
                             <div class="container">
                                 <div class="row">
                                     <div class="carousel-client">
@@ -89,7 +93,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
             <?php if(isset($top_banks) && count($top_banks)>0): ?>
             <!-- Widget3 -->
-            <div class="widget villa-photos-widget">
+            <div class="widget villa-photos-widget top20">
                 <div class="title1 style2">
                     <h2>Топ банки</h2>
                     <span>Лучшие банковские условия</span>
@@ -97,9 +101,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <ul class="widget-gallery">
                     <?php foreach($top_banks as $item) : ?>
                         <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
-                                <?= Html::img(Image::thumb($item->image, 240, 120)) ?>
+                                <?= Html::img(Image::thumb($item->image, 332, 83)) ?>
                             </a>
-                            <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </div><!-- end: Widget3 -->
@@ -201,14 +205,27 @@ $this->params['breadcrumbs'][] = $page->model->title;
         </form>
     </div>
 </div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script>
-<script>
-    $('.carousel-client').bxSlider({
-        auto: true,
-        slideWidth: 234,
-        minSlides: 2,
-        maxSlides: 5,
-        controls: false
+
+<?php
+$this->registerJs(
+    "
+    $(document).ready(function(){
+        $('.bxx-carousel').show();
+        $('.carousel-client').bxSlider({
+            auto: true,
+            slideWidth: 234,
+            minSlides: 2,
+            maxSlides: 5,
+            controls: false
+        });
     });
-</script>
+",
+    \yii\web\View::POS_READY,
+    'bxx-carousel'
+);
+
+$this->registerJsFile(
+    '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js',
+    ['depends' => [\yii\web\JqueryAsset::className()]]
+);
+?>

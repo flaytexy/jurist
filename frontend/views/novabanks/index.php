@@ -145,9 +145,9 @@ $this->params['breadcrumbs'][] = $page->title;
                     <ul class="widget-gallery">
                         <?php foreach($top_banks as $item) : ?>
                             <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
-                                    <?= Html::img(Image::thumb($item->image, 240, 120)) ?>
+                                    <?= Html::img(Image::thumb($item->image, 332, 83)) ?>
                                 </a>
-                                <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
+                            </li>
                         <?php endforeach; ?>
                     </ul>
                 </div><!-- end: Widget3 -->
@@ -172,6 +172,7 @@ $this->params['breadcrumbs'][] = $page->title;
                     </div>
                 </div><!-- end: Widget1 -->
 
+                <?php if(isset($top_offers)) :?>
                 <!-- Widget2 -->
                 <div class="widget villa-photos-widget top20">
                     <div class="title1 style2">
@@ -188,6 +189,7 @@ $this->params['breadcrumbs'][] = $page->title;
 
                     </ul>
                 </div><!-- end: Widget2 -->
+                <? endif; ?>
 
                 <!-- Widget4 -->
                 <div class="widget vertical-menu">
