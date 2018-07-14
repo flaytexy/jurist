@@ -7,28 +7,61 @@ use frontend\helpers\Image;
  * @var \frontend\modules\novanews\api\NovanewsObject[] $top_news
  * @var \frontend\modules\novabanks\api\NovabanksObject[] $top_banks
  * @var \frontend\modules\novaoffers\api\NovaoffersObject[] $top_offers
+ * @var \frontend\modules\novabanks\api\NovabanksObject $page
  */
-if(!$page->model){
-    exit('MODEL NOT FOUND!');
-}
 
-$this->title = !empty($page->model->title) ? $page->seo('title', $page->model->title) : '';
+$this->params['breadcrumbs'][] = ['label' => 'Banks', 'url' => ['banks/index']];
+$this->params['breadcrumbs'][] = $page->name;
 
-if($descriptionSeo = !empty($page->seo('description','')) ? $page->seo('description','') : ''){
+///_____meta
+$this->title = $page->seo('meta_title', $page->name);
+
+if($descriptionSeo = $page->seo('meta_description')){
     $this->registerMetaTag([
         'name' => 'description',
         'content' => $descriptionSeo,
     ]);
 }
-if($keywordsSeo = !empty($page->seo('keywords')) ? $page->seo('keywords') : ''){
+
+if($keywordsSeo = $page->seo('meta_keywords')){
     $this->registerMetaTag([
         'name' => 'keywords',
         'content' => $keywordsSeo,
     ]);
 }
 
-$this->params['breadcrumbs'][] = ['label' => 'Banks', 'url' => ['banks/index']];
-$this->params['breadcrumbs'][] = $page->model->title;
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:type',
+    'content' => 'article'
+]);
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:title',
+    'content' => $page->title
+]);
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:description',
+    'content' => $descriptionSeo
+]);
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:url',
+    'content' => Url::to(['news/'.$page->slug])
+]);
+
+$image = (isset($page->image) && !empty($page->image)) ? Image::thumb($page->image, 800, 200) : Image::thumb($page->model->pre_image, 800, 450);
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:image',
+    'content' => $image
+]);
+
+$imagex = (isset($page->image) && !empty($page->image)) ? $page->image : $page->model->pre_image;
+Yii::$app->view->registerMetaTag([
+    'property' => 'imagex',
+    'content' => $imagex
+]);
+
 ?>
 <style>
     .bxx-carousel {

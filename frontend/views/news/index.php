@@ -88,7 +88,6 @@ $this->params['breadcrumbs'][] = $page->title;
                                     </a>
                                     <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?></a></span></li>
                             <?php endforeach; ?>
-
                         </ul>
                     </div><!-- Widget -->
                     <? endif; ?>
@@ -101,31 +100,18 @@ $this->params['breadcrumbs'][] = $page->title;
                         </div>
                         <ul class="widget-gallery">
                             <?php foreach($top_banks as $item) : ?>
-                                <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
+                                <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>" title="<?= $item->title ?>">
                                         <?php if(isset($item->pre_image) && !empty($item->pre_image)): ?>
-                                            <?= Html::img(Image::thumb($item->pre_image, 320, 180)) ?>
+                                            <?= Html::img(Image::thumb($item->pre_image, 332, 83)) ?>
                                         <?php else: ?>
-                                            <?= Html::img(Image::thumb($item->image, 320, 180)) ?>
+                                            <?= Html::img(Image::thumb($item->image, 332, 83)) ?>
                                         <?php endif; ?>
-                                    </a>
-                                    <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
+                                    </a></li>
                             <?php endforeach; ?>
 
                         </ul>
                     </div><!-- Widget2 -->
-                 <!--   <div class="widget tags-widget">
-                        <div class="title1 style2">
-                            <h2>Облако тегов</h2>
-                            <span>We Provide Best Services</span>
-                        </div>
-                        <div class="tags">
-                            <ul class="cate-list">
-                                </*?php foreach($top_tags as $item) : ?>
-                                    <li><a href="</?= Url::to(['news/tag/'.$item['name']]) ?>" class="label label-info"></?= $item['name'] ?></a></li>
-                                </?php endforeach; ?*/>
-                            </ul>
-                        </div>
-                    </div>--><!-- Widget -->
+
                     <div class="widget recent-posts-widget">
                         <div class="title1 style2">
                             <h2>Интересные статьи</h2>

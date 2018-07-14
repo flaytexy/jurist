@@ -140,7 +140,7 @@ class NewsController extends General
 
         return $this->render('view', [
             //'new' => $news,
-            'news' => $news,
+            'page' => $news,
             'categories_tops' => $categoriesTops,
 
 

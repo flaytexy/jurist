@@ -2,10 +2,18 @@
 
 /**
  * @var \frontend\modules\novanews\api\NovanewsObject $page
+ * @var \frontend\modules\novanews\api\NovanewsObject $parentPage
  */
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
+
+if(!empty($parentPage->title)){
+    $this->params['breadcrumbs'][] = ['label' => $parentPage->title, 'url' => Url::to([$pageParentUrl.'/'])];
+}
+$this->params['breadcrumbs'][] = $page->name;
+
+///_____meta
 $this->title = $page->seo('meta_title', $page->name);
 
 if($descriptionSeo = $page->seo('meta_description')){
@@ -14,6 +22,7 @@ if($descriptionSeo = $page->seo('meta_description')){
         'content' => $descriptionSeo,
     ]);
 }
+
 if($keywordsSeo = $page->seo('meta_keywords')){
     $this->registerMetaTag([
         'name' => 'keywords',
@@ -21,11 +30,71 @@ if($keywordsSeo = $page->seo('meta_keywords')){
     ]);
 }
 
-if(!empty($parentPage->title)){
-    $this->params['breadcrumbs'][] = ['label' => $parentPage->title, 'url' => Url::to([$pageParentUrl.'/'])];
-}
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:type',
+    'content' => 'article'
+]);
 
-$this->params['breadcrumbs'][] = $page->name;
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:title',
+    'content' => $page->title
+]);
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:description',
+    'content' => $descriptionSeo
+]);
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:url',
+    'content' => Url::to(['news/'.$page->slug])
+]);
+
+$image = (isset($page->image) && !empty($page->image)) ? Image::thumb($page->image, 800, 200) : Image::thumb($page->model->pre_image, 800, 450);
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:image',
+    'content' => $image
+]);
+
+$imagex = (isset($page->image) && !empty($page->image)) ? $page->image : $page->model->pre_image;
+Yii::$app->view->registerMetaTag([
+    'property' => 'imagex',
+    'content' => $imagex
+]);
+
+
+//<meta property="og:title" content="Приятный баг для новых пользователей Google AdSense"/>
+//<meta property="og:description" content="Описание новой ошибки в системе Google AdSense "/>
+//<meta property="og:image" content="http://pr-cy.ru/news/upload/49127/images/1051f4d0d4dee5fe79e56c59aa71c063.jpg ">
+//<meta property="og:type" content="article"/>
+//<meta property="og:url" content= "http:// pr-cy.ru/news/p/5396" />
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:type',
+    'content' => 'article'
+]);
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:title',
+    'content' => $page->title
+]);
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:url',
+    'content' => Url::to(['banks/'.$page->slug])
+]);
+
+$image = (isset($page->image) && !empty($page->image)) ? Image::thumb($page->image, 800, 200) : Image::thumb($page->model->pre_image, 800, 450);
+$imagex = (isset($page->image) && !empty($page->image)) ? $page->image : $page->model->pre_image;
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:image',
+    'content' => $image
+]);
+Yii::$app->view->registerMetaTag([
+    'property' => 'imagex',
+    'content' => $imagex
+]);
+
 ?>
 <style>
 
