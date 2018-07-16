@@ -2439,7 +2439,8 @@ footer .title1.style2 > h2 {
     border: 1px solid #ddd;
     color: #333;
     padding: 20px;
-    width: 180px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */
+    min-width: 185px;
+    max-width: 24%;
     float: left;
     position: relative;
 }

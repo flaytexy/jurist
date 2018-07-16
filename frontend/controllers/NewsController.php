@@ -7,6 +7,7 @@ use frontend\models\Popularly;
 //use frontend\modules\page\models\Page as PageModel;
 
 use frontend\modules\novanews\api\Novanews as Page;
+use frontend\modules\novanews\models\NovanewsTranslation;
 
 class NewsController extends General
 {
@@ -31,7 +32,8 @@ class NewsController extends General
 
             $news = Page::items([
                 'where' => ['category_id' => $category_id, 'status' => 1],
-                'pagination' => ['pageSize' => 12]
+                'pagination' => ['pageSize' => 12],
+                'orderBy' => [NovanewsTranslation::tableName().'.id' => SORT_DESC]
             ]);
 
         }
@@ -45,7 +47,8 @@ class NewsController extends General
             $news = Page::items([
                 'where' => ['type_id' => 2, 'status' => 1],
                 'tags' => $tag,
-                'pagination' => ['pageSize' => 12]
+                'pagination' => ['pageSize' => 12],
+                'orderBy' => [NovanewsTranslation::tableName().'.id' => SORT_DESC]
             ]);
         }
 

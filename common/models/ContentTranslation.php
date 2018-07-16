@@ -30,6 +30,12 @@ class ContentTranslation extends ActiveRecord
     const STATUS_OFF = 0;
     const STATUS_ON = 1;
 
+
+    public static function primaryKey()
+    {
+        return ['id'];
+    }
+
     /**
      * @return string the name of the table associated with this ActiveRecord class.
      */

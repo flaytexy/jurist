@@ -12,11 +12,11 @@ class RssController extends \yii\web\Controller
 
     public function actionXml()
     {
-        $contentItems = \Yii::$app->db->createCommand("SELECT `c`.*, `ct`.`name`, `ct`.`description`, `c`.id as id, `c`.slug as sluger
+        $contentItems = \Yii::$app->db->createCommand("SELECT `c`.*, `ct`.`name`, `ct`.`meta_title`, `ct`.`description`, `ct`.`short_description`, `ct`.`meta_description`, `c`.id as id, `c`.slug as sluger
                             FROM `content` as c
                             LEFT JOIN `content_translation` as ct ON c.id = ct.content_id
                             WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1'
-                            ORDER BY c.`id` DESC 
+                            ORDER BY c.`id` ASC 
                             LIMIT 1000  ")
         ->queryAll();
 
@@ -53,13 +53,26 @@ class RssController extends \yii\web\Controller
         foreach ($contentItems as $contentItem){
             $item = new Item();
 
-            $desc = empty($contentItem['short_description']) ? $contentItem['description'] : $contentItem['short_description'] ;
+
+            $desc = $contentItem['meta_description'];
+
+            if(empty($desc)){
+                $desc = empty($contentItem['short_description']) ? $contentItem['description'] : $contentItem['short_description'] ;
+            }
+
+            $desc = strip_tags($desc);
+
+
             $desc = str_replace('&nbsp;',' ',  $desc);
             $desc = trim($desc);
-            $desc = mb_substr(strip_tags($desc), 0, 250);
+            $desc = mb_substr($desc, 0, 250);
+
             $pos =  mb_strripos($desc, '.');
-            $desc = mb_substr($desc, 0, $pos+1);
-            $title = $contentItem['name'];
+            if($pos!==false){
+                $desc = mb_substr($desc, 0, $pos+1);
+            }
+
+            $title = empty($contentItem['meta_title']) ? $contentItem['name'] : $contentItem['meta_title'] ;
             $title = trim($title);
 
             $item

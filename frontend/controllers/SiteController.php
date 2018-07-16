@@ -7,6 +7,7 @@ use frontend\modules\banks\api\Banks;
 use frontend\modules\novabanks\api\Novabanks;
 use frontend\modules\novabanks\models\NovabanksTranslation;
 use frontend\modules\novanews\api\Novanews;
+use frontend\modules\novanews\models\NovanewsTranslation;
 use frontend\modules\novaoffers\api\Novaoffers;
 use frontend\modules\page\api\Page;
 use frontend\modules\slidemain\api\Slidemain;
@@ -155,7 +156,8 @@ class SiteController extends Controller
 
         $news = Novanews::items([
             'where' => ['type_id' => 2, 'to_main' => 1, 'status' => 1],
-            'pagination' => ['pageSize' => 3]
+            'pagination' => ['pageSize' => 3],
+            'orderBy' => [NovanewsTranslation::tableName().'.id' => SORT_DESC]
         ]);
 
         $licenses = Novanews::items([
