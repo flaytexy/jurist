@@ -68,7 +68,8 @@ class DefaultController extends ContentAdminController
             ->joinWith('translations')
             ->where(['type' => Novanews::$_type])
             //->groupBy(Novanews::tableName() . '.id');
-            ->orderBy([Novanews::tableName() . '.time' => SORT_DESC]); //publish_date' => SORT_DESC
+            //->orderBy([Novanews::tableName() . '.time' => SORT_DESC]); //publish_date' => SORT_DESC
+            ->orderBy([Novanews::tableName() . '.id' => SORT_DESC]);
         //->limit();
         //$sql = $query->createCommand()->rawSql;
 
@@ -78,7 +79,8 @@ class DefaultController extends ContentAdminController
 
         $models = $query
             ->where(['type' => Novanews::$_type])
-            ->orderBy([Novanews::tableName() . '.time' => SORT_DESC])//publish_date' => SORT_DESC
+            //->orderBy([Novanews::tableName() . '.time' => SORT_DESC])//publish_date' => SORT_DESC
+            ->orderBy([Novanews::tableName() . '.id' => SORT_DESC])
             ->offset($pages->offset)
             ->limit($pages->limit)
             ->all();

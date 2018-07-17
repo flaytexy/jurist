@@ -10,15 +10,69 @@ use yii\web\Response;
 class RssController extends \yii\web\Controller
 {
 
+    public function actionTest (){
+        //date_default_timezone_set('Europe/London');
+
+        if (date_default_timezone_get()) {
+            echo 'date_default_timezone_set: ' . date_default_timezone_get() . '<br />';
+
+            e_print(time()) ;
+            e_print($date = date("Y-m-d H:i:s", time()));
+            e_print(strtotime($date));
+        }
+
+        date_default_timezone_set('Europe/London');
+
+        if (date_default_timezone_get()) {
+            echo 'date_default_timezone_set: ' . date_default_timezone_get() . '<br />';
+
+            e_print(time()) ;
+            e_print($date = date("Y-m-d H:i:s", time()));
+            e_print(strtotime($date));
+        }
+
+        date_default_timezone_set('Europe/Kiev');
+
+        if (date_default_timezone_get()) {
+            echo 'date_default_timezone_set: ' . date_default_timezone_get() . '<br />';
+
+            e_print(time()) ;
+            e_print($date = date("Y-m-d H:i:s", time()));
+            e_print(strtotime($date));
+        }
+
+        if (ini_get('date.timezone')) {
+            echo 'date.timezone: ' . ini_get('date.timezone');
+
+            e_print(time()) ;
+            e_print($date = date("Y-m-d H:i:s", time()));
+            e_print(strtotime($date));
+        }
+
+        exit;
+    }
+
     public function actionXml()
     {
-        $contentItems = \Yii::$app->db->createCommand("SELECT `c`.*, `ct`.`name`, `ct`.`meta_title`, `ct`.`description`, `ct`.`short_description`, `ct`.`meta_description`, `c`.id as id, `c`.slug as sluger
+//        $contentItems = \Yii::$app->db->createCommand("
+//                            SELECT `c`.*, `ct`.`name`, `ct`.`meta_title`, `ct`.`description`, `ct`.`short_description`,
+//                                  `ct`.`meta_description`, `c`.id as id, `c`.slug as sluger
+//                            FROM `content` as c
+//                            LEFT JOIN `content_translation` as ct ON c.id = ct.content_id
+//                            WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1' AND ct.public_status
+//                            ORDER BY c.`id` ASC
+//                            LIMIT 1000  ")
+//        ->queryAll();
+
+        $contentItems = \Yii::$app->db->createCommand("
+                            SELECT `c`.*, `ct`.`name`, `ct`.`meta_title`, `ct`.`description`, `ct`.`short_description`, 
+                                  `ct`.`meta_description`, `c`.id as id, `c`.slug as sluger
                             FROM `content` as c
                             LEFT JOIN `content_translation` as ct ON c.id = ct.content_id
                             WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1'
                             ORDER BY c.`id` ASC 
                             LIMIT 1000  ")
-        ->queryAll();
+            ->queryAll();
 
         $feed = new Feed();
         $channel = new Channel();
@@ -81,6 +135,7 @@ class RssController extends \yii\web\Controller
                 ->url('http://iq-offshore.com/ru/news/'.$contentItem['sluger'])
                 ->author('author@iq-offshore.com')
                 ->creator('Iq Decision')
+                ->pubDate($contentItem['time'])
                 ->appendTo($channel);
         }
 

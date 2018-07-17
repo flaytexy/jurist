@@ -21,7 +21,7 @@ return [
     'address' => 'Address',
     'number' => 'Phone number',
     'worktime' => 'Work time',
-    'addressinfo1' => 'Staryy Petrovsko-Razumovskiy pr-d, 1/23с1, Moscow, 127287, Russia',
+    'addressinfo1' => 'Gazetnyy pereulok, 9 с7, Moscow, 127287, Russia',
     'addressinfo2' => 'Artema St, 21, Kyiv, 04053, Ukraine',
     'text1' => 'Optimizing the taxation of your company through legal means is what we specialize in. ',
     'text2' => 'We are not responsible for the success of your business, but we can contribute to getting the opportunity to reduce costs and hand in the registered new company in the required jurisdiction.',
