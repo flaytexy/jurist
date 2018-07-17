@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\orders;
 
-class OrdersModule extends \frontend\components\Module
+class OrdersModule extends \common\components\Module
 {
     public $settings = [
         'mailAdminOnNewOrders' => true,

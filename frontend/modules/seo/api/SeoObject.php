@@ -2,12 +2,12 @@
 namespace frontend\modules\seo\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
 use frontend\models\Photo;
 use frontend\modules\seo\models\Seo as SeoModel;
 use yii\helpers\Url;
 
-class SeoObject extends \frontend\components\ApiObject
+class SeoObject extends \common\components\APIObject
 {
 
     public function __construct($model){

@@ -7,7 +7,7 @@ use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\SortableModel;
 use frontend\models\Photo;
 
-class ItemData extends \frontend\components\ActiveRecord
+class ItemData extends \common\components\ActiveRecord
 {
 
     public static function tableName()

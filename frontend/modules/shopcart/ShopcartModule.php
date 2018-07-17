@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\shopcart;
 
-class ShopcartModule extends \frontend\components\Module
+class ShopcartModule extends \common\components\Module
 {
     public $settings = [
         'mailAdminOnNewOrder' => true,

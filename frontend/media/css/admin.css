@@ -1,5 +1,5 @@
 html{
-    overflow-y: scroll;
+
 }
 #admin-body{
     font-family: 'Open Sans', sans-serif;
@@ -13,18 +13,29 @@ html{
 #admin-body .help-block {
     color: red !important;
 }
+.modal.fade{
+    opacity:1;
+}
+.modal.fade .modal-dialog {
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    transform: translate(0);
+}
 /*--------------- HEADER ---------------*/
 #admin-body .header {
+    width: 100%;
     display: table-row;
     height: 50px;
-    background: #1d212a;
+    background: #303b46;
     color: #B3B8C3;
     line-height: 50px;
+    left: 0;
+    position: fixed;
+    right: 0;
 }
 #admin-body .header .logo{
     float: left;
     width: 220px;
-    text-align: center;
     font-size: 18px;
     color: #FFF;
 }
@@ -37,6 +48,7 @@ html{
 }
 #admin-body .header .nav a{
     color: #B3B8C3;
+    padding: 0 10px;
 }
 #admin-body .header .nav a:hover, #admin-body .header .nav a:focus, #admin-body .header .nav a:active{
     color: #fff;
@@ -52,14 +64,15 @@ html{
 
 /*--------------- LEFT MENU ---------------*/
 #admin-body .sidebar {
-    background: #1d212a;
+    /*background: #1d212a;*/
     width: 231px;
     padding: 0;
     vertical-align: top;
     position: relative;
+    z-index: 9;
 }
 #admin-body .sidebar a.menu-item{
-    border-top: 1px solid #333;
+    /*border-top: 1px solid #333;*/
     display: block;
     padding: 15px 20px;
 /*    color: #B3B8C3;*/
@@ -88,6 +101,10 @@ html{
     margin-top: 2px;
     float: right;
 }
+#admin-body .alert-error {
+    color: red;
+    font-size: 30px;
+}
 
 /*--------------- CONTENT ---------------*/
 #admin-body .main {
@@ -95,6 +112,7 @@ html{
     display: table;
     width: 100%;
     background: #fff;
+    margin-top: 50px;
 }
 #admin-body .main .page-title{
     font-size: 18px;
@@ -2573,18 +2591,18 @@ span a {
     background-color: #85CE36;
 }
 
-/* Let's get this party started */
+
+/*!* Let's get this party started *!
 ::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
+    z-index: 100;
 }
 
-/* Track */
+!* Track *!
 ::-webkit-scrollbar-track {
     border-radius: 0;
 }
 
-/* Handle */
+!* Handle *!
 ::-webkit-scrollbar-thumb {
     border-radius: 0;
     background: #78bd2e;
@@ -2592,7 +2610,7 @@ span a {
 
 ::-webkit-scrollbar-thumb:window-inactive {
     background: #85CE36;
-}
+}*/
 
 .auth label,
 .table label {
@@ -2789,7 +2807,7 @@ span a {
     height: 70px;
     position: absolute;
     left: 230px;
-    right: 0;
+    right: 16px;
     transition: left 0.3s ease;
     z-index: 10;
     display: -webkit-box;

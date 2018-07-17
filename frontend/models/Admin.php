@@ -3,7 +3,7 @@ namespace frontend\models;
 
 use Yii;
 
-class Admin extends \frontend\components\ActiveRecord implements \yii\web\IdentityInterface
+class Admin extends \common\components\ActiveRecord implements \yii\web\IdentityInterface
 {
     static $rootUser = [
         'admin_id' => 0,

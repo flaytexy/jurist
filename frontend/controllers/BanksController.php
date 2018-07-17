@@ -9,7 +9,7 @@ use yii\web\View;
 use yii\widgets\LinkPager;
 use frontend\modules\page\models\Page as PageModel;
 use frontend\modules\page\api\PageObject;
-
+ex_print('Banks_OLD_Controllers');
 class BanksController extends \yii\web\Controller
 {
 

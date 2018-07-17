@@ -9,7 +9,7 @@ use frontend\validators\ReCaptchaValidator;
 use frontend\validators\EscapeValidator;
 use yii\helpers\Url;
 
-class Feedback extends \frontend\components\ActiveRecord
+class Feedback extends \common\components\ActiveRecord
 {
     const STATUS_NEW = 0;
     const STATUS_VIEW = 1;

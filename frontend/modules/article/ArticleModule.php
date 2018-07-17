@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\article;
 
-class ArticleModule extends \frontend\components\Module
+class ArticleModule extends \common\components\Module
 {
     public $settings = [
         'categoryThumb' => true,

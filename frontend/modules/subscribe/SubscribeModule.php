@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\subscribe;
 
-class SubscribeModule extends \frontend\components\Module
+class SubscribeModule extends \common\components\Module
 {
     public static $installConfig = [
         'title' => [

@@ -1,14 +1,19 @@
 <?php
-use frontend\modules\page\api\Page;
+//use frontend\modules\novanews\api\Novanews as Page;
+
+/**
+ * @var \frontend\modules\novanews\api\NovanewsObject $page
+ * @var \frontend\modules\novanews\api\NovanewsObject[] $news
+ */
+
 use frontend\helpers\Image;
 
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$page = Page::get($page_name);
 
-if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
-$this->params['breadcrumbs'][] = $page->model->title;
+if(!empty($page)) $this->title = $page->seo('title', $page->title);
+$this->params['breadcrumbs'][] = $page->title;
 
 ?>
 
@@ -51,11 +56,11 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 </div>
                 <!-- Recent Pages -->
                 <div id="pagination">
-                    <?= Page::pages() ?>
+                    <?= \frontend\modules\novanews\api\Novanews::pages() ?>
                 </div>
                 <!-- Pagination -->
 
-                <?php if($page->text): ?><div><?= $page->seo('div', $page->text) ?></div><? endif; ?>
+                <?php if($page->text): ?><div><?= $page->text; ?></div><? endif; ?>
             </div>
             <div class="col-md-3 col-sm-4">
                 <div class="sidebar">
@@ -70,6 +75,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             <?php endforeach; ?>
                         </ul>
                     </div><!-- Widget -->
+                    <?php if(isset($top_offers)) :?>
                     <div class="widget villa-photos-widget">
                         <div class="title1 style2">
                             <h2>Хорошие предложения</h2>
@@ -77,47 +83,35 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         </div>
                         <ul class="widget-gallery">
                             <?php foreach($top_offers as $item) : ?>
-                                <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
-                                        <?= Html::img(Image::thumb($item['image'], 300, 200)) ?>
+                                <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
+                                        <?= Html::img(Image::thumb($item->image, 300, 200)) ?>
                                     </a>
-                                    <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span></li>
+                                    <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?></a></span></li>
                             <?php endforeach; ?>
-
                         </ul>
                     </div><!-- Widget -->
+                    <? endif; ?>
+
                     <!-- Widget2 -->
-                    <div class="widget villa-photos-widget">
+                    <div class="widget villa-photos-widget widget-bank">
                         <div class="title1 style2">
                             <h2>Банки</h2>
                             <span>Лучшие банковские условия</span>
                         </div>
                         <ul class="widget-gallery">
                             <?php foreach($top_banks as $item) : ?>
-                                <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                        <?php if(isset($item['pre_image']) && !empty($item['pre_image'])): ?>
-                                            <?= Html::img(Image::thumb($item['pre_image'], 320, 180)) ?>
+                                <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>" title="<?= $item->title ?>">
+                                        <?php if(isset($item->pre_image) && !empty($item->pre_image)): ?>
+                                            <?= Html::img(Image::thumb($item->pre_image, 332, 83)) ?>
                                         <?php else: ?>
-                                            <?= Html::img(Image::thumb($item['image'], 320, 180)) ?>
+                                            <?= Html::img(Image::thumb($item->image, 332, 83)) ?>
                                         <?php endif; ?>
-                                    </a>
-                                    <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
+                                    </a></li>
                             <?php endforeach; ?>
 
                         </ul>
                     </div><!-- Widget2 -->
-                 <!--   <div class="widget tags-widget">
-                        <div class="title1 style2">
-                            <h2>Облако тегов</h2>
-                            <span>We Provide Best Services</span>
-                        </div>
-                        <div class="tags">
-                            <ul class="cate-list">
-                                </*?php foreach($top_tags as $item) : ?>
-                                    <li><a href="</?= Url::to(['news/tag/'.$item['name']]) ?>" class="label label-info"></?= $item['name'] ?></a></li>
-                                </?php endforeach; ?*/>
-                            </ul>
-                        </div>
-                    </div>--><!-- Widget -->
+
                     <div class="widget recent-posts-widget">
                         <div class="title1 style2">
                             <h2>Интересные статьи</h2>

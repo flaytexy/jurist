@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\offers;
 
-class OffersModule extends \frontend\components\Module
+class OffersModule extends \common\components\Module
 {
     public $settings = [
         'enableThumb2' => true,

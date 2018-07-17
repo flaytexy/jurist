@@ -2,12 +2,12 @@
 namespace frontend\modules\article\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
 use frontend\models\Photo;
 use frontend\modules\article\models\Item;
 use yii\helpers\Url;
 
-class ArticleObject extends \frontend\components\ApiObject
+class ArticleObject extends \common\components\APIObject
 {
     /** @var  string */
     public $slug;

@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 
-$this->title = 'NNNCMS installation step 3';
+$this->title = 'ETR_CMS installation step 3';
 ?>
 
 <?= $this->render('_steps', ['currentStep' => 3])?>

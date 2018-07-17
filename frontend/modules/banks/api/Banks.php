@@ -11,7 +11,7 @@ use yii\db\Query;
 use yii\widgets\LinkPager;
 
 use frontend\modules\banks\models\Banks as BanksModel;
-
+ex_print('Banks_OLD_MODEL');
 /**
  * Banks module API
  * @package frontend\modules\banks\api
@@ -38,7 +38,7 @@ class Banks extends \frontend\components\API
     {
         //e_print('api_items_start');
 
-        $key = md5(serialize($options)).'VBn5';
+        $key = md5(serialize($options)).'VBnadasasads5';
         $cache = Yii::$app->cache;
         //e_print('get0');
         $this->_items = $cache->get($key.'_items');
@@ -216,11 +216,5 @@ class Banks extends \frontend\components\API
         }
     }
 
-    public function api_clear()
-    {
-        $this->_adp = false;
-        $this->_last = false;
-        $this->_items = false;
-        $this->_item = [];
-    }
+
 }

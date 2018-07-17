@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
  * @method static array cost() returns total cost of current shopcart.
  */
 
-class Shopcart extends \frontend\components\API
+class Shopcart extends \common\components\API
 {
     const SENT_VAR = 'shopcart_sent';
 

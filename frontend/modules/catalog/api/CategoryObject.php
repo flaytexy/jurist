@@ -2,12 +2,12 @@
 namespace frontend\modules\catalog\api;
 
 use yii\data\ActiveDataProvider;
-use frontend\components\API;
+use common\components\API;
 use frontend\modules\catalog\models\Item;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-class CategoryObject extends \frontend\components\ApiObject
+class CategoryObject extends \common\components\APIObject
 {
     public $slug;
     public $image;

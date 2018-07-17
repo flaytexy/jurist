@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\slidesmall;
 
-class SlidesmallModule extends \frontend\components\Module
+class SlidesmallModule extends \common\components\Module
 {
     public $settings = [
         'enableThumb2' => true,

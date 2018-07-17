@@ -1,12 +1,64 @@
 <?php
-use frontend\modules\page\api\Page;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\helpers\Image;
 
-$this->title = $news->seo('title', $news->model->title);
+/**
+ * @var \frontend\modules\novanews\api\NovanewsObject $page
+ */
+
 $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/news']];
-$this->params['breadcrumbs'][] = $news->model->title;
+$this->params['breadcrumbs'][] = $page->name;
+
+///_____meta
+$this->title = $page->seo('meta_title', $page->name);
+
+if($descriptionSeo = $page->seo('meta_description')){
+    $this->registerMetaTag([
+        'name' => 'description',
+        'content' => $descriptionSeo,
+    ]);
+}
+
+if($keywordsSeo = $page->seo('meta_keywords')){
+    $this->registerMetaTag([
+        'name' => 'keywords',
+        'content' => $keywordsSeo,
+    ]);
+}
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:type',
+    'content' => 'article'
+]);
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:title',
+    'content' => $page->title
+]);
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:description',
+    'content' => $descriptionSeo
+]);
+
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:url',
+    'content' => Url::to(['news/'.$page->slug])
+]);
+
+$image = (isset($page->image) && !empty($page->image)) ? Image::thumb($page->image, 800, 200) : Image::thumb($page->model->pre_image, 800, 450);
+\Yii::$app->view->registerMetaTag([
+    'property' => 'og:image',
+    'content' => $image
+]);
+
+$imagex = (isset($page->image) && !empty($page->image)) ? $page->image : $page->model->pre_image;
+Yii::$app->view->registerMetaTag([
+    'property' => 'imagex',
+    'content' => $imagex
+]);
+
 ?>
 
 <style>
@@ -26,28 +78,28 @@ $this->params['breadcrumbs'][] = $news->model->title;
                         <div class="row">
                             <div class="col-md-9">
                                 <div class="blog-post2">
-                                    <?php if(isset($news->image) && !empty($news->image)): ?>
-                                        <?= Html::img(Image::thumb($news->image, 800, 200)) ?>
+                                    <?php if(isset($page->image) && !empty($page->image)): ?>
+                                        <?= Html::img(Image::thumb($page->image, 800, 200)) ?>
                                     <?php else: ?>
-                                        <?= Html::img(Image::thumb($news->model->pre_image, 800, 450)) ?>
+                                        <?= Html::img(Image::thumb($page->model->pre_image, 800, 450)) ?>
                                     <?php endif; ?>
 
                                     <div class="blogpost-detail">
                                         <ul class="post-meta style2">
-                                            <li><i class="fa fa-calendar"></i> <?= $news->date ?></li>
-                                            <li><i class="fa fa-comment"></i><a href="#" title="">Прочитали <?= $news->views * 3 ?> человек</a></li>
+                                            <li><i class="fa fa-calendar"></i> <?= $page->date ?></li>
+                                            <li><i class="fa fa-comment"></i><a href="#" title="">Прочитали <?= $page->views * 3 ?> человек</a></li>
                                         </ul>
 
-                                        <h1><?= $news->seo('h1', $news->title) ?></h1>
+                                        <h1><?= $page->seo('h1', $page->title) ?></h1>
 
                                         <div class="text-con">
-                                            <?= $news->text ?>
+                                            <?= $page->getDescription() ?>
                                         </div>
 
                                         <div class="tags-social">
                                             <div class="tags">
                                                 <ul class="cate-list">
-                                                    <?php foreach($news->tags as $tag) : ?>
+                                                    <?php foreach($page->tags as $tag) : ?>
                                                         <li><a href="<?= Url::to(['/news/tag/'.$tag]) ?>" class="label label-info"><?= $tag ?></a></li>
                                                     <?php endforeach; ?>
                                                 </ul>
@@ -61,18 +113,18 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                             </div>
                                         </div>
 
-                                        <?php if(count($news->photos)) : ?>
+                                        <?php if(count($page->photos)) : ?>
                                         <div class="comments-sec">
-                                            <h2 class="title2"><span><?php echo count($news->photos);?></span> Photos</h2>
+                                            <h2 class="title2"><span><?php echo count($page->photos);?></span> Photos</h2>
                                                 <ul class="list-inline">
-                                                    <?php foreach($news->photos as $photo) : ?>
+                                                    <?php foreach($page->photos as $photo) : ?>
                                                     <li><?= $photo->box(160, 120) ?></li>
                                                     <?php endforeach;?>
                                                 </ul>
                                         </div>
                                         <?php endif; ?>
 
-                                        <?php Page::plugin() ?>
+                                        <?php \frontend\modules\novanews\api\Novanews::plugin() ?>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +141,7 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                             <?php endforeach; ?>
                                         </ul>
                                     </div><!-- Widget -->
-                                    <? if ($top_offers) : ?>
+                                    <?php if(isset($top_offers) && count($top_offers)>0): ?>
                                     <div class="widget villa-photos-widget">
                                         <div class="title1 style2">
                                             <h2>Хорошие предложения</h2>
@@ -97,15 +149,16 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                         </div>
                                         <ul class="widget-gallery">
                                             <?php foreach($top_offers as $item) : ?>
-                                                <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
-                                                        <?= Html::img(Image::thumb($item['image'], 240, 180)) ?>
+                                                <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
+                                                        <?= Html::img(Image::thumb($item->image, 240, 180)) ?>
                                                     </a>
-                                                    <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span></li>
+                                                    <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?></a></span></li>
                                             <?php endforeach; ?>
 
                                         </ul>
                                     </div><!-- Widget -->
                                     <? endif; ?>
+                                    <?php if(isset($top_banks) && count($top_banks)>0): ?>
                                     <!-- Widget2 -->
                                     <div class="widget villa-photos-widget">
                                         <div class="title1 style2">
@@ -114,28 +167,14 @@ $this->params['breadcrumbs'][] = $news->model->title;
                                         </div>
                                         <ul class="widget-gallery">
                                             <?php foreach($top_banks as $item) : ?>
-                                                <li><a href="<?= Url::to(['banks/'.$item['slug']]) ?>">
-                                                        <?= Html::img(Image::thumb($item['image'], 240, 180)) ?>
-                                                    </a>
-                                                    <span><a href="<?= Url::to(['banks/'.$item['slug']]) ?>"><?= $item['title'] ?></a></span> </li>
+                                                <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>" title="<?= $item->title ?>">
+                                                        <?= Html::img(Image::thumb($item->image, 332, 83)) ?>
+                                                    </a></li>
                                             <?php endforeach; ?>
-
                                         </ul>
-                                    </div>
-                                    <!-- Widget3
-                                    <div class="widget tags-widget">
-                                        <div class="title1 style2">
-                                            <h2>Облако тегов</h2>
-                                            <!--<span>We Provide Best Services</span>
-                                        </div>
-                                        <div class="tags">
-                                            <ul class="cate-list">
-                                                </?php foreach($top_tags as $item) : ?>
-                                                    <li><a href="</?= Url::to(['news/tag/'.$item['name']]) ?>" class="label label-info"></?= $item['name'] ?></a></li>
-                                                </?php endforeach; ?>
-                                            </ul>
-                                        </div>
-                                    </div> Widget -->
+                                    </div><!-- Widget -->
+                                    <? endif; ?>
+                                    <?php if(isset($top_banks) && count($top_banks)>0): ?>
                                     <div class="widget recent-posts-widget">
                                         <div class="title1 style2">
                                             <h2>Интересные статьи</h2>
@@ -152,6 +191,8 @@ $this->params['breadcrumbs'][] = $news->model->title;
 
                                         </div>
                                     </div><!-- Widget -->
+                                    <? endif; ?>
+
                                 </div><!-- Sidebar -->
                             </div>
                         </div>

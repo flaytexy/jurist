@@ -1,5 +1,9 @@
 <?php
-/** Created by CyberBrain  */
+/**
+ * Created by CyberBrain
+ *
+ * @var \frontend\modules\novanews\api\NovanewsObject $page
+ */
 
 use yii\helpers\Html;
 use frontend\assets\MainAsset;
@@ -7,7 +11,17 @@ use frontend\helpers\Image;
 use yii\helpers\Url;
 MainAsset::register($this);
 $iteration = 1;
+
+//$this->title = $page->seo('meta_title', $page->title); // seo from site/index
+
 ?>
+
+<style>
+    .bdanzer-card {
+        min-height: 245px;
+    }
+</style>
+
 <? if (true): ?>
     <section>
         <div class="block no-padding">
@@ -38,7 +52,7 @@ $iteration = 1;
                                                  data-elementdelay="0.05"
                                                  onclick="location.href='<?= $item->model->url ?>'"
                                                  style="">
-                                                <? if ( Yii::$app->language==='en-EN'): ?>
+                                                <? if ( Yii::$app->language==='en-US'): ?>
                                                     <?=  $item->model->title_en ?>
                                                 <? else: ?>
                                                     <?=  $item->model->title ?>
@@ -63,7 +77,7 @@ $iteration = 1;
                                                  onclick="location.href='<?= $item->model->url ?>'"
                                                  style="">
                                             <span>
-                                            <? if ( Yii::$app->language==='en-EN'): ?>
+                                            <? if ( Yii::$app->language==='en-US'): ?>
                                                 <?=  $item->model->short_en ?>
                                             <? else: ?>
                                                 <?=  $item->model->short ?>
@@ -88,7 +102,7 @@ $iteration = 1;
                                                data-elementdelay="0.05"
                                                onclick="location.href='<?= $item->model->url ?>'"
                                                style="">
-                                                <? if ( Yii::$app->language==='en-EN'): ?>
+                                                <? if ( Yii::$app->language==='en-US'): ?>
                                                     <?=  $item->model->text_en ?>
                                                 <? else: ?>
                                                     <?=  $item->model->text ?>
@@ -117,7 +131,7 @@ $iteration = 1;
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
                             <? foreach ($ticker_viewport as $item): ?>
-                            <li class="ticker__item" data-ticker="item"><a href="<?= $item->url ?>"><?= $item->model->title ?></a></li>
+                            <li class="ticker__item" data-ticker="item"><a href="<?= $item->url ?>"><?= $item->title ?></a></li>
                             <? endforeach; ?>
                             </ul>
                         </div>
@@ -131,7 +145,7 @@ $iteration = 1;
                                         <!--<img src="//i.imgur.com/8mwd9AL.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
-                                                <? if ( Yii::$app->language==='en-EN'): ?>
+                                                <? if ( Yii::$app->language==='en-US'): ?>
                                                 <div class="h3"><?= $item->model->title_en ?></div>
                                                 <div class="h5"><?= $item->model->text_en ?></div>
                                                 <? else: ?>
@@ -216,26 +230,26 @@ $iteration = 1;
                                 <? foreach ($offers as $offer): ?>
                                     <div class="col-md-4">
                                         <div class="package">
-                                            <a href="/offers/<?= $offer->model->slug ?>">
+                                            <a href="/offers/<?= $offer->slug ?>">
                                                 <div class="package-thumb">
                                                     <?= Html::img($offer->thumb(280, 200), array('class' => 'sadsa')) ?>
-                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $offer->model->price ?></i> <b> / <?= Yii::t('easyii', 'days') ?>
-                                                            : <?= $offer->model->how_days ?></b>  </span>
+                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $offer->price ?></i> <b> / <?= Yii::t('easyii', 'days') ?>
+                                                            : <?= $offer->how_days ?></b>  </span>
                                                 </div>
                                             </a>
                                             <div class="package-detail">
                                                 <span class="line"></span>
-                                                <a class="cate" href="/offers/<?= $offer->model->slug ?>"
+                                                <a class="cate" href="/offers/<?= $offer->slug ?>"
                                                    title="">Регистрация компании:</a>
-                                                <h4><a href="/offers/<?= $offer->model->slug ?>"
-                                                       title="<?= $offer->model->title ?>"><?= $offer->model->title ?></a>
+                                                <h4><a href="/offers/<?= $offer->slug ?>"
+                                                       title="<?= $offer->title ?>"><?= $offer->title ?></a>
                                                 </h4>
 
 
                                                 <ul class="location-book">
                                                     <li class="book-btn"><i class="fa fa-info"></i>
                                                         <a
-                                                                href="/offers/<?= $offer->model->slug ?>"
+                                                                href="/offers/<?= $offer->slug ?>"
                                                                 title=""><?= Yii::t('easyii', '9') ?></a></li>
                                                     <li class="book-btn"><i class="fa fa-shopping-basket"></i>
                                                         <a href="javascript:void( window.open( 'https://forms.amocrm.ru/forms/html/form_326401_ab9058f531bfbd2671c5d24aa0d8dc90.html?date=<?php echo time(); ?>', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">
@@ -298,8 +312,8 @@ $iteration = 1;
                                                 ); ?>
                                                 <div class="offered-serviceinfo">
                                                     <h4><a href="<?= Url::to(['banks/'.$toMainBank->slug]) ?>" title=""><?= $toMainBank->title ?></a></h4>
-                                                    <span style="font-weight: bold; font-size: large; color: white"><?= $toMainBank->model->location_title ?></span>
-                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€<?= $toMainBank->price ?></span>
+                                                    <span style="font-weight: bold; font-size: large; color: white"><?= $toMainBank->model->bank->location_title ?></span>
+                                                    <span style="font-weight: bolder; font-size: large; color: white; font-family: Verdana;">€<?= $toMainBank->model->bank->price ?></span>
                                                     <h4>Корпоративный счет!</h4>
                                                 </div>
                                             </div>
@@ -511,17 +525,117 @@ $iteration = 1;
 
         <div class="row">
             <div class="col-md-12 h2 text-center">Отзывы</div>
-            <div class="col-md-offset-1 col-md-5">
+            <div class="col-md-6">
                 <div class="bdanzer-card">
-                    <div class="h3"><?= Yii::t('easyii', 'eugene') ?></div>
-                    <div><p>"<?= Yii::t('easyii', 'eugenereview') ?>"</p></div>
+                    <div class="h3">Виктория</div>
+                    <div><p>"Нигде не могли открыть счет на компанию. Получили около десяти отказов из европейских и
+                            азиатских банков. Когда обратились в компанию IQ Decision, то были удивлены оперативности и
+                            компетентности юристов. Нам предложили интересное решение и открыли счет. Проконсультировали
+                            по подготовке документов, а перевод взяли на себя. С учетом времени, потраченного на сбор
+                            документов, на открытие счета ушло всего несколько дней. Благодарим за плодотворное
+                            сотрудничество."</p></div>
                 </div>
             </div>
 
-            <div class="col-md-5">
+
+            <div class="col-md-6">
                 <div class="bdanzer-card">
-                    <div class="h3"><?= Yii::t('easyii', 'svetlana') ?></div>
-                    <div><p>"<?= Yii::t('easyii', 'svetlanareview') ?>"</p></div>
+                    <div class="h3">Инесса</div>
+                    <div><p>"Деятельность нашей фирмы такого рода, что у банков все время возникают претензии
+                            относительно лицензирования. Хотя, уточню, в нашем случае законом разрешено работать без
+                            лицензии. Устав от бесконечных отказов и постоянных претензий банков – решили обратиться к
+                            специалистам. Нам открыли счет в европейском и азиатском государствах, что было просто
+                            необходимо и важно для нашего бизнеса. Выражаем благодарность за содействие."</p></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bdanzer-card">
+                    <div class="h3">Александр</div>
+                    <div><p>"Не мог открыть счет ни в одном банке, куда обращался, чтобы вывести деньги из Латвии.
+                            Обратился в IQ Decision и получил консультацию и помощь в этом вопросе. Счет открыли –
+                            деньги вывели. Всем доволен. Рекомендую."</p></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bdanzer-card">
+                    <div class="h3">Иван</div>
+                    <div><p>"Искал возможность легально оформить криптообменник. Одна юридическая фирма предложила свою
+                            помощь, но в результате – так ничего не сделали, только тянули время и обещали. Обращаясь в
+                            IQ Decision, особо ни на что не рассчитывал. В итоге, мне все оформили по выгодной цене и
+                            довольно быстро."</p></div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="bdanzer-card">
+                    <div class="h3">Владимир</div>
+                    <div><p>"Имел опыт работы с другой компанией, но столкнулся с мошенничеством. Предоплату взяли, а
+                            счет не открыли. Я ходил к ним три месяца подряд, но каждый раз требовалось что-то новое.
+                            Партнеры по бизнесу посоветовали обратится к вам. Спасибо, что быстро и четко решили мою
+                            проблему. Надеюсь на дальнейшее сотрудничество."</p></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bdanzer-card">
+                    <div class="h3">Михаил</div>
+                    <div><p>"В виду постоянной занятости – ценю время. Специалисты компании четко и понятно объяснили,
+                            как обстоят дела в Прибалтике и посоветовали конкретные действия. Вначале проконсультировали
+                            по телефону, а после назначили личную встречу в ходе которой – были приняты решения. Быстро
+                            и законно все оформили. Я остался очень доволен. Рекомендую.
+                            "</p></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bdanzer-card">
+                    <div class="h3">Марина</div>
+                    <div><p>"Обратилась с деликатной проблемой – важно было решить вопрос с регистрацией бизнеса за
+                            рубежом и налогообложением в родной стране. Проконсультировали, помогли, оказали
+                            сопровождение. Не ожидала, что все так быстро решится. Теперь периодически обращаюсь за
+                            советами. Надежная, проверенная компания."</p></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bdanzer-card">
+                    <div class="h3">Ксения</div>
+                    <div><p>"Хотела зарегистрировать компанию за границей, но не знала с чего начать. Как начинающий
+                            стартапер - допустила ряд ошибок. Хорошо, что в интернете нашла эту юридическую компанию.
+                            Спасибо IQ Decision, что проконсультировали и помогли. Кроме того, подсказали где и как
+                            лучше открыть счет на мою компанию и какие могут быть нюансы. В будущем также буду
+                            пользоваться их услугами. "</p></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bdanzer-card">
+                    <div class="h3">Ольга</div>
+                    <div><p>"Давно занимаюсь бизнесом в Украине. Недавно получила предложение из-за границы насчет
+                            сотрудничества. Для этого было необходимо зарегистрировать компанию и открыть счет. По
+                            неопытности сначала повелась на предложение одного «юриста» зарегистрировать компанию на
+                            Маршалловых островах, но хороший знакомый посоветовал проконсультироваться у специалистов
+                            компании IQ Decision насчет альтернативных вариантов. Оказалось, что в 2018 году на компанию
+                            на Маршалловых островах практически невозможно открыть счет – банки воспринимают компании из
+                            этого государства – как оффшор. Таким образом, я чуть не купила себе проблемы. Благодаря IQ
+                            Decision, оформила бизнес в Европе (счет и компанию) и планирую дальше расширять свое дело.
+                            Искренне благодарю!"</p></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bdanzer-card">
+                    <div class="h3">Марк</div>
+                    <div><p>"Я давно занимаюсь форексом как трейдер. Недавно решил оформить брокерство и открыть счет,
+                            чтобы иметь возможность увеличить доход. Не думал, что столкнусь с таким количеством
+                            сложностей: получить лицензию тяжело, а оформить счет на форекс – вообще оказалось
+                            нереально. К счастью, в интернете наткнулся на IQ Decision и обратился к ним. Девушка уже по
+                            телефону подробно и бесплатно проконсультировала по моему вопросу. После того как я принял
+                            окончательное решение – мне помогли открыть счет. Причем предлагали несколько вариантов с
+                            разными преимуществами – я выбрал оптимальный для себя. Спасибо."</p></div>
                 </div>
             </div>
         </div>

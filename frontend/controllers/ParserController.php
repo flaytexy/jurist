@@ -3,12 +3,19 @@
 namespace frontend\controllers;
 
 use common\helpers\Text;
+use common\models\Content;
+use common\models\ContentTranslation;
 use frontend\behaviors\Optionable;
 use frontend\models\Option;
 use frontend\models\Packet;
 use frontend\models\Parse;
+use frontend\models\TagAssign;
+use frontend\modules\banks\models\Banks;
+use frontend\modules\novabanks\models\Novabanks;
+use frontend\modules\novaoffers\models\Novaoffers;
 use frontend\modules\offers\models\Offers;
 use frontend\modules\offers\models\OffersPacketsOptions;
+use frontend\modules\page\models\Page;
 use Sunra\PhpSimple\HtmlDomParser;
 
 
@@ -16,286 +23,488 @@ class ParserController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-
         $db = \Yii::$app->db;
-        $db->createCommand()->truncateTable('easyii_offers')->execute();
-        $db->createCommand()->truncateTable('easyii_offers_options')->execute();
-        $db->createCommand()->truncateTable('easyii_packets')->execute();
-        $db->createCommand()->truncateTable('easyii_options')->execute();
-        $db->createCommand()->truncateTable('easyii_offers_packets_options')->execute();
+//
+//        $db->createCommand("
+// UPDATE `lang` SET `local` = 'en-Us' WHERE `lang`.`id` = 1;
+//
+//UPDATE `easyii_pages` SET `type` = 'novanews';
+//UPDATE `content` SET `type` = 'novanews';
+//
+//UPDATE `country_assign` SET `class` = 'frontend\\modules\\novaoffers\\models\\Offers' WHERE  `class` = 'frontend\\modules\\offers\\models\\Offers' ;
+//UPDATE `country_assign` SET `class` = 'frontend\\modules\\novabanks\\models\\Banks' WHERE  `class` = 'frontend\\modules\\banks\\models\\Banks' ;
+//
+//ALTER TABLE `content` CHANGE `page_id` `id` INT(11) NOT NULL AUTO_INCREMENT,
+//CHANGE `title` `title_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `short` `short_old` VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `text` `text_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+//
+//ALTER TABLE `easyii_banks`
+//CHANGE `title` `title_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `image` `image_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `short` `short_old` VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `text` `text_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `slug` `slug_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `pre_image` `pre_image_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `pre_text` `pre_text_old` VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+//
+//ALTER TABLE `easyii_banks`
+//CHANGE `to_main` `to_main_old` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+//CHANGE `time` `time_old` INT(11) NULL DEFAULT '0',
+//CHANGE `views` `views_old` INT(11) NULL DEFAULT '0',
+//CHANGE `rating` `rating_old` INT(11) NULL DEFAULT NULL,
+//CHANGE `rating_to_main` `rating_to_main_old` INT(11) NULL DEFAULT NULL,
+//CHANGE `status` `status_old` TINYINT(1) NULL DEFAULT '1';
+//
+//ALTER TABLE `easyii_offers`
+//CHANGE `to_main` `to_main_old` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+//CHANGE `title` `title_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `image` `image_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `short` `short_old` VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `text` `text_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `slug` `slug_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+//CHANGE `pre_image` `pre_image_old` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `pre_text` `pre_text_old` VARCHAR(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+//CHANGE `time` `time_old` INT(11) NULL DEFAULT '0',
+//CHANGE `views` `views_old` INT(11) NULL DEFAULT '0',
+//CHANGE `status` `status_old` TINYINT(1) NULL DEFAULT '1';
+//
+//
+//ALTER TABLE `easyii_banks` CHANGE `pre_options` `pre_options_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+//ALTER TABLE `easyii_offers` CHANGE `pre_options` `pre_options_old` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+//       ")->execute();
+//
+exit;
+        $db->createCommand("
+            DELETE FROM `content` WHERE `type` ='novabanks';
+            DELETE FROM `content` WHERE `type` ='novaoffers';
+            
+            TRUNCATE `content_translation`;
+            DELETE FROM `easyii_tags_assign` WHERE `class` LIKE '%novanews%';
+            DELETE FROM `easyii_tags_assign` WHERE `class` LIKE '%novabanks%';
+            DELETE FROM `easyii_tags_assign` WHERE `class` LIKE '%novaoffers%';
+       ")->execute();
+
+        //$db->createCommand()->truncateTable('easyii_offers')->execute();
+
+        $contentItems = $db
+            ->createCommand('SELECT `c`.*, `ct`.*, `c`.id as id, `c`.slug as sluger
+                            FROM `content` as c
+                            LEFT JOIN `content_translation` as ct ON c.id = ct.content_id
+                            LIMIT 100000  ')
+            ->queryAll();
 
 
-        $url = 'https://it-offshore.com/offshornyie-predlozheniya.html';
-        //$current = file_get_contents($url);
-        //file_put_contents(\Yii::getAlias('@webroot').'\1.html', $current);
+        $iter = 0;
+        $classItems  = 'frontend\\\modules\\\page\\\models\\\Page';
+        $classChange = 'frontend\\modules\\novanews\\models\\Novanews';
+        foreach ($contentItems as $contentItem){
+            //ex_print($contentItem,'$contentItem');
+            $contentItem['title'] = $contentItem['title'] ?: $contentItem['title_old'];
+            $contentItem['text'] = $contentItem['text'] ?: $contentItem['text_old'];
+            $contentItem['short']  = $contentItem['short'] ?: $contentItem['short_old'];
+            $contentId = $contentItem['id'];
 
-        $pageData = array(
-            array(
-                'url' => \Yii::getAlias('@webroot') . '\1.html',
-                'type' => 1
-            ),
-            array(
-                'url' => \Yii::getAlias('@webroot') . '\2.htm',
-                'type' => 2
-            )
-        );
+echo'<hr />';
+e_print($contentItem['title'],'TITlE_CONTENT');
+e_print($contentId,'$itemId');
+e_print($contentId,'$contentId');
+            $db->createCommand()
+                ->insert('content_translation',
+                    [
+                        'content_id' => $contentId,
+                        'name' => $contentItem['title'],
+                        'description' => $contentItem['text'],
+                        'short_description' => $contentItem['short'],
+                        'public_status' => Content::STATUS_ON,
+                        'language' => 'ru-RU'
+                    ]
+                )
+                ->execute();
 
-        foreach ($pageData as $pageItem) {
-            $this->htmlParse($pageItem['url'], $pageItem['type']);
+            $insert = $db->createCommand()
+                ->insert('content_translation',
+                    [
+                        'name' =>               $contentItem['title']. 'En',
+                        'description' =>        'En ' . $contentItem['text'],
+                        'short_description' =>  'En ' . $contentItem['short'],
+
+                        'public_status' => Content::STATUS_OFF,
+
+                        'content_id' => $contentItem['id'],
+                        'language' => 'en-US'
+                    ]
+                )
+                ->execute();
+
+            /////////////////////////////////////
+            /// SEO
+            $seoData = $db
+                ->createCommand("SELECT *
+                            FROM `easyii_seotext` as seo
+                            WHERE `seo`.`class` = '".$classItems."'
+                              AND `seo`.item_id = '".(int)$contentId."'
+                            LIMIT 1  ")
+                ->queryAll();
+
+            if(!empty($seoData)){
+                //e_print($seoData,'$seoData');
+                $seoData = $seoData[0];
+                $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'ru-RU'])->one();//->createCommand()->rawSql;
+                $customer->meta_h1 = $seoData['h1'];//($customer['h1']) ?: $contentItem['title'];
+                $customer->meta_title = $seoData['title'];//$contentItem['title'] ?: $contentItem['title'];
+                $customer->meta_keywords = $seoData['keywords'];
+                $customer->meta_description = $seoData['description'];
+                $customer->slug = $contentItem['sluger'];
+                $customer->save(false);
+
+                $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'en-Us'])->one();//->createCommand()->rawSql;
+                $customer->meta_h1 = $seoData['h1'].'_EN';//($customer['h1']) ?: $contentItem['title'];
+                $customer->meta_title = $seoData['title'].'_EN';//$contentItem['title'] ?: $contentItem['title'];
+                $customer->meta_keywords = $seoData['keywords'].'_EN';
+                $customer->meta_description = $seoData['description'].'_EN';
+                $customer->slug = $contentItem['sluger'].'_en';;
+                $customer->save(false);
+            }
+
+
+            $tagsRows = TagAssign::find()->where(['class' => Page::className(), 'item_id'=> $contentId])->all();//->createCommand()->rawSql;
+
+            if($tagsRows){
+                foreach ($tagsRows as $tagsPos){
+                    //e_print($tagsPos->attributes,'$tagsPos');
+                    $tagsNewPos = new TagAssign();
+                    $tagsNewPos->class = $classChange;
+                    $tagsNewPos->item_id = $contentId;
+                    $tagsNewPos->tag_id = $tagsPos->tag_id;
+                    $tagsNewPos->save(false);
+                }   //ex_print($tagsNewPos->getPrimaryKey(), '$tagsNewPos');
+            }
+
+
+            if($insert){
+                $iter ++;
+            }
+            //ex_print($insert,'$insert');
+        }
+        e_print($iter,'$iterContent');
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// BANKS
+///
+        echo'<hr /><hr /><hr />';
+
+        $db->createCommand("
+               ALTER TABLE `content` AUTO_INCREMENT=1000;
+       ")->execute();
+
+        $banksItems = $db
+            ->createCommand('SELECT `c`.*, `c`.bank_id as id, `c`.slug_old as sluger
+                            FROM `easyii_banks` as c
+                            LIMIT 100000  ')
+            ->queryAll();
+
+        $iter = 0;
+        $classItems  = 'frontend\\\modules\\\banks\\\models\\\Banks';
+        $classChange = 'frontend\\modules\\novabanks\\models\\Novabanks';
+        foreach ($banksItems as $contentItem){
+
+            //ex_print($contentItem,'$contentItem');
+            $contentItem['title'] = $contentItem['title'] ?: $contentItem['title_old'];
+
+            $contentItem['text'] = $contentItem['text'] ?: $contentItem['text_old'];
+            $contentItem['short']  = $contentItem['short'] ?: $contentItem['short_old'];
+
+            $contentItem['image'] = $contentItem['image'] ?: $contentItem['image_old'];
+            $contentItem['pre_image']  = $contentItem['pre_image'] ?: $contentItem['pre_image_old'];
+
+            $contentItem['views'] = $contentItem['views'] ?: $contentItem['views_old'];
+            $contentItem['to_main']  = $contentItem['to_main'] ?: $contentItem['to_main_old'];
+            $contentItem['time'] = $contentItem['time'] ?: $contentItem['time_old'];
+
+            $contentItem['rating']  = $contentItem['rating'] ?: $contentItem['rating_old'];
+            $contentItem['rating_to_main']  = $contentItem['rating_to_main'] ?: $contentItem['rating_to_main_old'];
+            $contentItem['slug']  = $contentItem['slug'] ?: $contentItem['slug_old'];
+
+            $contentItem['time'] = $contentItem['time'] ?: $contentItem['time_old'];
+
+            $itemId = $contentItem['bank_id'];
+
+echo'<hr />';
+e_print($contentItem['title'],'TITlE_BANK');
+e_print($itemId,'$itemId');
+
+            //e_print(array($contentItem['title'],$contentItem['slug']),'_BANKS');
+            $newModel = new Novabanks();
+            $newModel->title_old = $contentItem['title'];
+            $newModel->text_old = $contentItem['text'];
+            $newModel->short_old = $contentItem['short'];
+
+            $newModel->image = $contentItem['image'];
+            $newModel->pre_image = $contentItem['pre_image'];
+
+            $newModel->type_id = 101;
+            $newModel->category_id = 20;
+
+            $newModel->views = $contentItem['views'];
+            $newModel->to_main = $contentItem['to_main'];
+            $newModel->time =  $contentItem['time'];
+
+            $newModel->rating = $contentItem['rating'];
+            $newModel->rating_to_main =  $contentItem['rating_to_main'];
+
+            $newModel->slug = $contentItem['slug'];
+
+            $newModel->save(false);
+            $contentId = $newModel->getPrimaryKey();
+e_print($contentId,'$contentId_in_bank');
+            $db->createCommand()
+                ->insert('content_translation',
+                    [
+                        'content_id' => $contentId,
+                        'name' => $contentItem['title'],
+                        'description' => $contentItem['text'],
+                        'short_description' => $contentItem['short'],
+
+                        'public_status' => Content::STATUS_ON,
+
+                        'language' => 'ru-RU'
+                    ]
+                )
+                ->execute();
+
+            $insert = $db->createCommand()
+                ->insert('content_translation',
+                    [
+                        'name' =>               $contentItem['title']. 'En',
+                        'description' =>        'En ' . $contentItem['text'],
+                        'short_description' =>  'En ' . $contentItem['short'],
+
+                        'public_status' => Content::STATUS_OFF,
+
+                        'content_id' => $contentId,
+                        'language' => 'en-US'
+                    ]
+                )
+                ->execute();
+
+            /////////////////////////////////////
+            /// SEO
+            $seoData = $db
+                ->createCommand("SELECT *
+                            FROM `easyii_seotext` as seo
+                            WHERE `seo`.`class` = '".$classItems."'
+                              AND `seo`.item_id = '".(int)$itemId."'
+                            LIMIT 1  ")
+                ->queryAll();
+
+            if(!empty($seoData)){
+                //e_print($seoData,'$seoData');
+                $seoData = $seoData[0];
+                $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'ru-RU'])->one();//->createCommand()->rawSql;
+                $customer->meta_h1 = $seoData['h1'];//($customer['h1']) ?: $contentItem['title'];
+                $customer->meta_title = $seoData['title'];//$contentItem['title'] ?: $contentItem['title'];
+                $customer->meta_keywords = $seoData['keywords'];
+                $customer->meta_description = $seoData['description'];
+                $customer->slug = $contentItem['sluger'];
+                $customer->save(false);
+
+                $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'en-Us'])->one();//->createCommand()->rawSql;
+                $customer->meta_h1 = $seoData['h1'].'_EN';//($customer['h1']) ?: $contentItem['title'];
+                $customer->meta_title = $seoData['title'].'_EN';//$contentItem['title'] ?: $contentItem['title'];
+                $customer->meta_keywords = $seoData['keywords'].'_EN';
+                $customer->meta_description = $seoData['description'].'_EN';
+                $customer->slug = $contentItem['sluger'].'_en';;
+                $customer->save(false);
+            }
+
+            $db->createCommand("UPDATE `easyii_banks` SET `content_id` = '".$contentId."' 
+                WHERE `bank_id` = '".$itemId."';")->execute();
+
+
+            $tagsRows = TagAssign::find()->where(['class' => Banks::className(), 'item_id'=> $itemId])->all();//->createCommand()->rawSql;
+
+            if($tagsRows){
+                foreach ($tagsRows as $tagsPos){
+                    //e_print($tagsPos->attributes,'$tagsPos');
+                    $tagsNewPos = new TagAssign();
+                    $tagsNewPos->class = $classChange;
+                    $tagsNewPos->item_id = $contentId;
+                    $tagsNewPos->tag_id = $tagsPos->tag_id;
+                    $tagsNewPos->save(false);
+                }   //ex_print($tagsNewPos->getPrimaryKey(), '$tagsNewPos');
+            }
+
+            if($insert){
+                $iter ++;
+            }
+            //ex_print($insert,'$insert');
         }
 
-        exit;
+        e_print($iter,'$iter_BANKS');
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// OFFERS
+///
+        echo'<hr /><hr /><hr />';
+
+        $db->createCommand("
+               ALTER TABLE `content` AUTO_INCREMENT=2000;
+       ")->execute();
+
+        $banksItems = $db
+            ->createCommand('SELECT `c`.*, `c`.offer_id as id, `c`.slug_old as sluger
+                            FROM `easyii_offers` as c
+                            LIMIT 100000  ')
+            ->queryAll();
+
+        $iter = 0;
+        $classItems  = 'frontend\\\modules\\\offers\\\models\\\Offers';
+        $classChange = 'frontend\\modules\\novaoffers\\models\\Novaoffers';
+        foreach ($banksItems as $contentItem){
+            //ex_print($contentItem,'$contentItem');
+            $contentItem['title'] = $contentItem['title'] ?: $contentItem['title_old'];
+            $contentItem['text'] = $contentItem['text'] ?: $contentItem['text_old'];
+            $contentItem['short']  = $contentItem['short'] ?: $contentItem['short_old'];
+
+            $contentItem['image'] = $contentItem['image'] ?: $contentItem['image_old'];
+            $contentItem['pre_image']  = $contentItem['pre_image'] ?: $contentItem['pre_image_old'];
+
+            $contentItem['views'] = $contentItem['views'] ?: $contentItem['views_old'];
+            $contentItem['to_main']  = $contentItem['to_main'] ?: $contentItem['to_main_old'];
+            $contentItem['time'] = $contentItem['time'] ?: $contentItem['time_old'];
+
+            $itemId = $contentItem['offer_id'];
+
+echo'<hr />';
+e_print($contentItem['title'],'TITlE_OFFER');
+e_print($itemId,'$itemId');
+
+            //$contentItem['rating']  = $contentItem['rating'] ?: $contentItem['rating_old'];
+            //$contentItem['rating_to_main']  = $contentItem['rating_to_main'] ?: $contentItem['rating_to_main_old'];
+            $contentItem['slug']  = $contentItem['slug'] ?: $contentItem['slug_old'];
+
+            $contentItem['time'] = $contentItem['time'] ?: $contentItem['time_old'];
+            //e_print(array($contentItem['title'],$contentItem['slug']),'_OFFERS');
+            $newModel = new Novaoffers();
+            $newModel->title_old = $contentItem['title'];
+            $newModel->text_old = $contentItem['text'];
+            $newModel->short_old = $contentItem['short'];
+
+            $newModel->image = $contentItem['image'];
+            $newModel->pre_image = $contentItem['pre_image'];
+
+            $newModel->type_id = 201;
+            $newModel->category_id = 30;
+
+            $newModel->views = $contentItem['views'];
+            $newModel->to_main = $contentItem['to_main'];
+            $newModel->time =  $contentItem['time'];
+
+            //$newModel->rating = $contentItem['rating'];
+            //$newModel->rating_to_main =  $contentItem['rating_to_main'];
+
+            $newModel->slug = $contentItem['slug'];
+
+            $newModel->save(false);
+            $contentId = $newModel->getPrimaryKey();
+e_print($contentId,'$contentId_in_offer');
+            $db->createCommand()
+                ->insert('content_translation',
+                    [
+                        'content_id' => $contentId,
+                        'name' => $contentItem['title'],
+                        'description' => $contentItem['text'],
+                        'short_description' => $contentItem['short'],
+
+                        'public_status' => Content::STATUS_ON,
+
+                        'language' => 'ru-RU'
+                    ]
+                )
+                ->execute();
+
+            $insert = $db->createCommand()
+                ->insert('content_translation',
+                    [
+                        'name' =>               $contentItem['title']. 'En',
+                        'description' =>        'En ' . $contentItem['text'],
+                        'short_description' =>  'En ' . $contentItem['short'],
+
+                        'public_status' => Content::STATUS_OFF,
+
+                        'content_id' => $contentId,
+                        'language' => 'en-US'
+                    ]
+                )
+                ->execute();
+
+            /////////////////////////////////////
+            /// SEO
+//e_print("SELECT * FROM `easyii_seotext` as seo
+//                            WHERE `seo`.`class` = '".$classItems."'
+//                              AND `seo`.item_id = '".(int)$itemId."'
+//                            LIMIT 1  ",
+//        'sql'
+//);
+
+            $seoData = $db
+                ->createCommand("SELECT *
+                            FROM `easyii_seotext` as seo
+                            WHERE `seo`.`class` = '".$classItems."'
+                              AND `seo`.item_id = '".(int)$itemId."'
+                            LIMIT 1  ")
+                ->queryAll();
+
+            if(!empty($seoData)){
+                //e_print($seoData,'$seoData');
+                $seoData = $seoData[0];
+                $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'ru-RU'])->one();//->createCommand()->rawSql;
+                $customer->meta_h1 = $seoData['h1'];//($customer['h1']) ?: $contentItem['title'];
+                $customer->meta_title = $seoData['title'];//$contentItem['title'] ?: $contentItem['title'];
+                $customer->meta_keywords = $seoData['keywords'];
+                $customer->meta_description = $seoData['description'];
+                $customer->slug = $contentItem['sluger'];
+                $customer->save(false);
+
+                $customer = ContentTranslation::find()->where(['content_id' => $contentId,'language'=>'en-Us'])->one();//->createCommand()->rawSql;
+                $customer->meta_h1 = $seoData['h1'].'_EN';//($customer['h1']) ?: $contentItem['title'];
+                $customer->meta_title = $seoData['title'].'_EN';//$contentItem['title'] ?: $contentItem['title'];
+                $customer->meta_keywords = $seoData['keywords'].'_EN';
+                $customer->meta_description = $seoData['description'].'_EN';
+                $customer->slug = $contentItem['sluger'].'_en';;
+                $customer->save(false);
+            }
+
+            $db->createCommand("UPDATE `easyii_offers` SET `content_id` = '".$contentId."' 
+                WHERE `offer_id` = '".$itemId."';")->execute();
+
+            $tagsRows = TagAssign::find()->where(['class' => Offers::tableName(), 'item_id'=> $itemId])->all();//->createCommand()->rawSql;
+
+            if($tagsRows){
+                foreach ($tagsRows as $tagsPos){
+                    //e_print($tagsPos->attributes,'$tagsPos');
+                    $tagsNewPos = new TagAssign();
+                    $tagsNewPos->class = $classChange;
+                    $tagsNewPos->item_id = $contentId;
+                    $tagsNewPos->tag_id = $tagsPos->tag_id;
+                    $tagsNewPos->save(false);
+                }   //ex_print($tagsNewPos->getPrimaryKey(), '$tagsNewPos');
+            }
+
+            if($insert){
+                $iter ++;
+            }
+            //ex_print($insert,'$insert');
+        }
+
+        $db->createCommand("
+               ALTER TABLE `content` AUTO_INCREMENT=5000;
+       ")->execute();
+
+        e_print($iter,'$iter_OFFERS');
+
+        exit('exit');
         //return $this->render('index');
     }
-
-
-    function htmlParse($url, $type)
-    {
-
-        $db = \Yii::$app->db;
-
-        $dom = HtmlDomParser::file_get_html($url);
-
-
-        $myHref = $dom->find(".//*[@id='offshore-map'] a.offshores_map_marker");
-        foreach ($myHref as $a) {
-            $aAttr = $a->getAllAttributes();
-            $style = $aAttr['style'];
-
-            preg_match_all('/(?:[0-9]{1,4})/', $style, $arr);
-
-            $pos = '';
-            $cords = '';
-            $oldXSize = 1170;
-            $oldYSize = 700;
-
-            if (isset($arr[0][0])) {
-                $y = trim($arr[0][0]); //top
-                $x = trim($arr[0][1]); // left
-
-                $pos =  $x. ';' . $y;
-                $cords = (-$y + ($oldYSize - 110)/2)*((360/2)/$oldYSize) . ';' . ($x - ($oldXSize - 340 )/2)*(360/$oldXSize);
-            }
-            e_print($pos, '$pos');
-            e_print($cords, '$cords');
-
-            $idBlockOpen = $aAttr['data-open-block'];
-            e_print($idBlockOpen);
-
-            $block = $dom->find(".//*[@id='offshore-windows'] div.window[@data-place='" . $a = str_replace('b', 'id', $idBlockOpen) . "']", 0);
-
-            $blockDetail = false;
-            if ($idBlockOpen) {
-                $blockDetail = $dom->find(".//*[@id='" . $idBlockOpen . "']", 0);
-            }
-
-            echo $block . "<hr />";
-            //$le = $block->find('div.grid',0);
-            $title = $block->find('div.top span.name', 0)->text();
-            $title = trim($title);
-
-
-            $descBlock = '';
-            $imagePath = '';
-            if ($blockDetail) {
-                $descBlock = trim($blockDetail->find('div.grid', 0)->innertext);
-
-                $img = $block->find('div.map img', 0)->src;
-                e_print($img,'$imgx');
-                if (!empty($img)) {
-                    $imgUpload = 'https://it-offshore.com/' . $img;
-                    $imagePath = '/uploads/offers/' . Text::transliterate($title) . '.png';
-                    e_print($imagePath,'$imagePath');
-                    if(!file_exists(\Yii::getAlias('@webroot') . $imagePath)){
-                        e_print($imagePath,'$imagePath_get');
-                        file_put_contents(\Yii::getAlias('@webroot') . $imagePath, file_get_contents($imgUpload));
-                    }
-
-                }
-            }
-
-            e_print($title, '$title');
-            e_print($imagePath, '$imagePath');
-
-            $offer = Offers::find()
-                ->where(['title' => $title, 'type_id' => $type])
-                ->one();
-
-            if (empty($offer)) {
-                $offer = new Parse();
-                $offer->type_id = $type;
-                $offer->title = $title;
-                $offer->text = $descBlock;
-                $offer->image = $imagePath;
-                $offer->pre_image = $imagePath;
-                $offer->pos = $pos;
-                $offer->coordinates = $cords;
-                //$offer->pre_options = $pre_options;
-                //$offer->pre_text = $imagePath;
-                $re = $offer->save();
-                e_print($re, '$reSave');
-            }
-
-            $offer_id = $offer->offer_id;
-
-            if ($offer_id) {
-
-                //////////////////////////////////
-                // Properties
-                $uls = $block->find('ul.list li');
-
-                if (!empty($uls)) {
-                    foreach ($uls as $listItem) {
-                        $listTitle = $listItem->text();
-                        $listTitle = trim($listTitle);
-                        if ($listTitle) {
-                            e_print($listTitle, 'listName');
-
-                            $offersProperties = Option::find()
-                                ->where(['name' => $listTitle])
-                                ->one();
-
-                            if (empty($offersProperties)) {
-                                $offersProperties = new Option();
-                                $offersProperties->name = $listTitle;
-                                $offersProperties->save();
-                            }
-
-                            $property_id = $offersProperties->option_id;
-
-                            if ($property_id) {
-                                e_print($property_id, '$property_id');
-                                $row = $db
-                                    ->createCommand('SELECT *
-                                      FROM `easyii_options_assign`
-                                      WHERE option_id  = :option_id AND item_id = :item_id ')
-                                    ->bindValues([
-                                        ':option_id' => $property_id,
-                                        ':item_id' => $offer_id
-                                    ])
-                                    ->queryOne();
-
-                                if (empty($row)) {
-                                    $row = $db->createCommand()
-                                        ->insert('easyii_options_assign',
-                                            [
-                                                'item_id' => $offer_id,
-                                                'option_id' => $property_id,
-                                                'class' => 'frontend\modules\offers\models\Offers'
-
-                                            ]
-                                        )
-                                        ->execute();
-                                }
-
-                                e_print($row, '$row');
-                            }
-                        }
-                    }
-
-                }
-
-                //////////////////////////////////
-                // Packets
-
-                $packets = $blockDetail->find('section.prices div.prices-item');
-
-
-                if ($packets) {
-                    $pack = [];
-                    foreach ($packets as $packet) {
-                        echo '-->'.$packet;
-
-                        $pack['title'] = trim($packet->find('div.name', 0)->text());
-                        //$pack['price'] = trim($packet->find('div.price', 0)->text());
-                        $pack['price'] = trim(preg_replace("/[^A-Za-z0-9]/", "", $packet->find('div.price', 0)->text()));
-
-                        $packObj = Packet::find()
-                            ->where(['title' => $title])
-                            ->one();
-
-                        if (empty($packObj)) {
-                            $packObj = new Packet();
-                            //$packObj->load($pack);
-                            $packObj->title = $pack['title'];
-                            $packObj->price = (int)$pack['price'];
-                            $packObj->item_id = $offer_id;
-                            $packObj->class = Offers::className();
-                            $re = $packObj->save();
-                            e_print($re, '$reSaveOffersPackets');
-                        }
-
-                        $packet_id = $packObj->packet_id;
-                        e_print($packet_id, '$packet_id');
-
-                        $uls = $packet->find('div.description li');
-
-                        if (!empty($uls)) {
-                            foreach ($uls as $listItem) {
-                                $listTitle = $listItem->text();
-                                $listTitle = trim($listTitle);
-                                if ($listTitle) {
-
-
-                                    $offersProperties = OffersPacketsOptions::find()
-                                        ->where(['title' => $listTitle])
-                                        ->one();
-
-                                    if (empty($offersProperties)) {
-                                        e_print($listTitle, 'listTitle_OffersPacketsOptionsNotFIND');
-                                        $offersProperties = new OffersPacketsOptions();
-                                        $offersProperties->title = $listTitle;
-                                        $offersProperties->save();
-                                    }else{
-                                        e_print($listTitle, 'listTitle_OffersPacketsOptions');
-                                    }
-
-                                    $option_id = $offersProperties->option_id;
-
-                                    if ($option_id) {
-
-                                        e_print($option_id, '$option_id');
-                                        $row = $db
-                                            ->createCommand('SELECT *
-                                              FROM easyii_offers_packets_options
-                                              WHERE packet_id  = :packet_id AND option_id = :option_id ')
-                                            ->bindValues([
-                                                ':packet_id' => $packet_id,
-                                                ':option_id' => $option_id
-                                            ])
-                                            ->queryOne();
-
-                                        if (empty($row)) {
-                                            e_print(array('packet_id' => $packet_id, 'option_id' => $option_id),'easyii_offers_packets_options');
-                                            $row = $db->createCommand()
-                                                ->insert('easyii_offers_packets_options', ['packet_id' => $packet_id, 'option_id' => $option_id])
-                                                ->execute();
-                                        }
-
-                                        e_print($row, '$row');
-                                    }
-                                }
-                            }
-
-                        }
-
-                        echo $packet;
-                    }
-                }
-
-            }
-
-            e_print($offer->offer_id, 'offer_id');
-
-            echo $blockDetail . "<hr />";
-
-
-        }
-
-        unset($block);
-        unset($dom);
-
-    }
-
-
 }

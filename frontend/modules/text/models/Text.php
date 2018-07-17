@@ -4,7 +4,7 @@ namespace frontend\modules\text\models;
 use Yii;
 use frontend\behaviors\CacheFlush;
 
-class Text extends \frontend\components\ActiveRecord
+class Text extends \common\components\ActiveRecord
 {
     const CACHE_KEY = 'easyii_text';
 

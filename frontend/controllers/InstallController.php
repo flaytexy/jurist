@@ -105,7 +105,7 @@ class InstallController extends \yii\web\Controller
         $this->db->createCommand('TRUNCATE TABLE `'.Text::tableName().'`')->query();
 
         (new Text([
-            'text' => 'Welcome on NNNCMS demo website',
+            'text' => 'Welcome on ETR_CMS demo website',
             'slug' => 'index-welcome-title'
         ]))->save();
 
@@ -125,7 +125,7 @@ class InstallController extends \yii\web\Controller
             'slug' => 'page-index'
         ]);
         $page1->save();
-        $this->attachSeo($page1, '', 'NNNCMS demo', 'yii2, easyii, admin');
+        $this->attachSeo($page1, '', 'ETR_CMS demo', 'yii2, easyii, admin');
 
         $page2 = new Page([
             'title' => 'Shop',

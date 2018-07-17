@@ -2,14 +2,14 @@
 namespace frontend\modules\offers\models;
 
 
-use frontend\components\ActiveRecord;
+use common\components\ActiveRecord;
 use Yii;
 use common\behaviors\MySluggableBehavior;
 use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;
 
 
-class OffersPackets2 extends ActiveRecord
+class OffersPackets extends ActiveRecord
 {
 
     public $itemId;

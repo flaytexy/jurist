@@ -2,12 +2,14 @@
 namespace frontend\modules\offers\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
+use common\components\APIOldObject;
+use common\components\APIObject;
 use frontend\models\Photo;
 use frontend\modules\offers\models\Offers as OffersModel;
 use yii\helpers\Url;
 
-class OffersObject extends \frontend\components\ApiObject
+class OffersObject extends APIOldObject
 {
     public $slug;
     public $image;

@@ -21,7 +21,7 @@ use frontend\widgets\Fancybox;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class Gallery extends \frontend\components\API
+class Gallery extends \common\components\API
 {
     private $_cats;
     private $_photos;

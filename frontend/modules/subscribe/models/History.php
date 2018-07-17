@@ -3,7 +3,7 @@ namespace frontend\modules\subscribe\models;
 
 use Yii;
 
-class History extends \frontend\components\ActiveRecord
+class History extends \common\components\ActiveRecord
 {
     public static function tableName()
     {

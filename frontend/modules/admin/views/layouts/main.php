@@ -21,12 +21,12 @@ $moduleName = $this->context->module->id;
 <body>
 <?php $this->beginBody() ?>
 <div id="admin-body">
-    <div class="container">
+    <div class="containerok">
         <div class="wrapper">
             <div class="header">
                 <div class="logo">
                     <img src="<?= $asset->baseUrl ?>/img/logo_20.png">
-                    NNNCMS
+                    ETR_CMS
                 </div>
                 <div class="nav">
                     <a href="<?= Yii::$app->homeUrl ?>" class="pull-left"><i class="glyphicon glyphicon-home"></i> <?= Yii::t('easyii', 'Open site') ?></a>
@@ -35,6 +35,21 @@ $moduleName = $this->context->module->id;
             </div>
             <div class="main">
                 <div class="box sidebar">
+                    <a href="<?= Url::to(['/admin/novanews']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novanews') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Статии (Новое)
+                    </a>
+
+                    <a href="<?= Url::to(['/admin/novabanks']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novabanks') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Банки (Новое)
+                    </a>
+
+                    <a href="<?= Url::to(['/admin/novaoffers']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novaoffers') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Компании (Новое)
+                    </a>
+
                     <a href="<?= Url::to(['/admin/slidemain']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'slidesmall') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         Слайдер (верхний)
@@ -47,6 +62,7 @@ $moduleName = $this->context->module->id;
                         <i class="glyphicon glyphicon-file"></i>
                         Слайдер (нижний)
                     </a>
+                    <!--
                     <a href="<?= Url::to(['/admin/page?type=6']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'offshore') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         <?= Yii::t('easyii', 'Offshore') ?>
@@ -75,6 +91,7 @@ $moduleName = $this->context->module->id;
                         <i class="glyphicon glyphicon-file"></i>
                         <?= Yii::t('easyii', 'Processing') ?>
                     </a>
+                    -->
                     <?php foreach(Yii::$app->getModule('admin')->activeModules as $module) : ?>
                         <a href="<?= Url::to(["/admin/$module->name"]) ?>" class="menu-item <?= ($moduleName == $module->name ? 'active' : '') ?>">
                             <?php if($module->icon != '') : ?>

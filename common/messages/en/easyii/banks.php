@@ -124,5 +124,5 @@ return [
     'Clear image' => 'Очистить изображение',
     'Image cleared' => 'Изображение очищено',
 
-
+    'More_about_our_banks' => 'More about our banks',
 ];

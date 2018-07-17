@@ -1,9 +1,14 @@
 <?php
 namespace frontend\controllers;
 
-use frontend\models\Popularly;
+
 use frontend\models\Setting;
 use frontend\modules\banks\api\Banks;
+use frontend\modules\novabanks\api\Novabanks;
+use frontend\modules\novabanks\models\NovabanksTranslation;
+use frontend\modules\novanews\api\Novanews;
+use frontend\modules\novanews\models\NovanewsTranslation;
+use frontend\modules\novaoffers\api\Novaoffers;
 use frontend\modules\page\api\Page;
 use frontend\modules\slidemain\api\Slidemain;
 use frontend\modules\slidesmall\api\Slidesmall;
@@ -77,35 +82,39 @@ class SiteController extends Controller
 
     public function actionError()
     {
-
         $mail = '';
+
+        $message = '';
+        if(isset( Yii::$app->errorHandler->exception)){
+            //$message = Yii::$app->errorHandler->exception->getMessage();
+        }
 
         if(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/'))==false){
             //e_print(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/')),'saddassda');
             //e_print('not finded');
-            if (!Yii::$app->mailer->compose()
-                ->setFrom(Setting::get('robot_email'))
-                //->setFrom('itc@iq-offshore.com')
-                ->setTo('akvamiris@gmail.com')
-                ->setSubject('Рапорт об ошибке')
-                ->setHtmlBody('
-                <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
-                <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
-                <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
-            ')//Url::to()
-                //->setReplyTo(Setting::get('admin_email'))
-                ->send())
-            {
-                $mail = 'Email not sended!!!!!';
+            try {
+                $mail =  Yii::$app->mailer->compose()
+                    ->setFrom(Setting::get('robot_email'))
+                    //->setFrom('itc@iq-offshore.com')
+                    ->setTo('akvamiris@gmail.com')
+                    ->setSubject('Рапорт об ошибке 3')
+                    ->setHtmlBody('
+                        <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
+                        <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
+                        <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
+            '       )//Url::to()
+                    //->setReplyTo(Setting::get('admin_email'))
+                    ->send();
+            } catch (\Exception $e) {
+                //throw new ErrorException('xxxxxxxxxxfjjidshghadfg');
+                //@to
             }
-        }else{
-            //e_print('finded');
         }
 
-
         return $this->render('error', [
-            'message' => Yii::t('yii', 'Page not found.').' '.$mail,
-            'exception' => Yii::$app->errorHandler->exception
+            'message' => $message,
+            'error_text' => Yii::t('yii', 'Page not found.'),
+            //'exception' => Yii::$app->errorHandler->exception
         ]);
         /*
         $exception = Yii::$app->errorHandler->exception;
@@ -121,14 +130,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $page = \frontend\modules\page\api\Page::get('page-main');
+        $page = \frontend\modules\novanews\api\Novanews::get('page-main');
+
         if($page){
-            $this->view->title = $page->seo('title', $page->model->title);
+            $this->view->title = $page->seo('title', $page->title);
             //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
-            $this->view->registerMetaTag([
-                'name' => 'title',
-                'content' => $page->seo('title', '')
-            ]);
             $this->view->registerMetaTag([
                 'name' => 'keywords',
                 'content' => $page->seo('keywords', '')
@@ -139,29 +145,29 @@ class SiteController extends Controller
             ]);
         }
 
-
         if (!Yii::$app->getModule('admin')->installed) {
             //return $this->redirect(['/install/step1']);
         }
 
-        $offers = Offers::items([
+        $offers = Novaoffers::items([
             'where' => ['to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 10]
         ]);
 
-        $news = Page::items([
+        $news = Novanews::items([
             'where' => ['type_id' => 2, 'to_main' => 1, 'status' => 1],
-            'pagination' => ['pageSize' => 3]
+            'pagination' => ['pageSize' => 3],
+            'orderBy' => [NovanewsTranslation::tableName().'.id' => SORT_DESC]
         ]);
 
-        $licenses = Page::items([
+        $licenses = Novanews::items([
             'where' => ['type_id' => 3, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 10]
         ]);
 
-        $banks = Banks::items([
+        $banks = Novabanks::items([
             'pagination' => ['pageSize' => 7],
-            'orderBy' => ['rating_to_main'=>SORT_DESC, 'title' => SORT_ASC]
+            'orderBy' => ['rating_to_main'=>SORT_DESC, NovabanksTranslation::tableName().'.name' => SORT_ASC]
         ]);
 
 
@@ -193,6 +199,7 @@ class SiteController extends Controller
         ]);
 
         return $this->render('main', [
+            'page' => $page,
             'offers' => $offers,
             'news' => $news,
             'licenses' => $licenses,
@@ -367,4 +374,10 @@ class SiteController extends Controller
             throw new NotFoundHttpException;
         }
     }
+
+    public function actionTest()
+    {
+        ex_print('saddasdsa');
+    }
+
 }

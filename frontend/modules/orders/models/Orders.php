@@ -9,7 +9,7 @@ use frontend\validators\ReCaptchaValidator;
 use frontend\validators\EscapeValidator;
 use yii\helpers\Url;
 
-class Orders extends \frontend\components\ActiveRecord
+class Orders extends \common\components\ActiveRecord
 {
     const STATUS_NEW = 0;
     const STATUS_VIEW = 1;

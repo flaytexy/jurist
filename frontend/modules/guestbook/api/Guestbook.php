@@ -22,7 +22,7 @@ use frontend\widgets\ReCaptcha;
  * @method static \stdClass pagination() returns yii\data\Pagination object.
  */
 
-class Guestbook extends \frontend\components\API
+class Guestbook extends \common\components\API
 {
     const SENT_VAR = 'guestbook_sent';
 

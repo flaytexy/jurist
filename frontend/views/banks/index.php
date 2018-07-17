@@ -203,7 +203,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="font-color">Подробнее о наших банках</h3>
+                            <h3 class="font-color"><?= Yii::t('easyii', 'More_about_our_banks') ?></h3>
                             <div class="villaeditors-picks">
                                 <div class="packages style2 remove-ext2">
                                     <div class="row">

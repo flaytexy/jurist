@@ -1,9 +1,11 @@
 <?php
-namespace frontend\components;
+namespace common\components;
 
 /**
  * Base active query class for models
  * @package frontend\components
+ *
+ * @property \yii\db\ActiveRecord $modelClass
  */
 class ActiveQuery extends \yii\db\ActiveQuery
 {
@@ -14,7 +16,8 @@ class ActiveQuery extends \yii\db\ActiveQuery
      */
     public function status($status)
     {
-        $this->andWhere(['status' => (int)$status]);
+        $model = $this->modelClass;
+        $this->andWhere([$model::tableName() . '.status' => (int)$status]);
         return $this;
     }
 
@@ -57,16 +60,6 @@ class ActiveQuery extends \yii\db\ActiveQuery
     public function sortDate()
     {
         $this->orderBy(['time' => SORT_DESC]);
-        return $this;
-    }
-
-    /**
-     * Order by date
-     * @return $this
-     */
-    public function sortTitle()
-    {
-        $this->orderBy(['title' => SORT_ASC]);
         return $this;
     }
 }

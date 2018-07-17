@@ -3,7 +3,7 @@
 namespace frontend\models;
 
 use Yii;
-use frontend\components\ActiveRecord;
+use common\components\ActiveRecord;
 
 use frontend\validators\EscapeValidator;
 

@@ -1,5 +1,7 @@
 AddDefaultCharset UTF-8
 
+##php_value memory_limit 1024M
+
 #Order deny,allow
 #deny from all
 #### Список IP через пробел, с которых доступ разрешен
@@ -36,6 +38,7 @@ RewriteRule ^(.*)index.(php|html?)$ /$1 [R=301,NC,L]
 RewriteRule ^offers/index$ /$1 [R=301,NC,L]
 RewriteRule ^news/index$ /news [R=301,NC,L]
 RewriteRule ^news/c/(.*)$ /news-category/$1 [R=301,NC,L]
+RewriteRule ^news/c/(.*)$ /news-category/$1 [R=301,NC,L]
 
 RewriteRule ^ru/ru/(.*)$ /ru/$1 [R=301,NC,L]
 RewriteRule ^en/ru/(.*)$ /ru/$1 [R=301,NC,L]
@@ -54,21 +57,25 @@ RewriteRule ^(.*)/view/(.*)$ /$1/$2 [R=301,NC,L]
 RewriteRule ^index.(.*)/$ / [R=301,NC,L]
 RewriteRule ^(.*)/index /$1 [R=301,NC,L]
 
+#RewriteRule ^rss\.xml /rss/xml [L]
+#RewriteRule ^rss$ rss/xml [L]
+#RewriteRule ^feed\.xml$ rss/xml [L]
+#RewriteRule ^feed$ rss/xml [L]
+#RewriteRule ^feed\.rss$ rss/xml [L]
 
 ##RewriteRule ^(.*)index.php(.*) http://iq-offshore.com/$1$2 [R=301,L]
 ##RewriteRule ^(.*)index.php http://iq-offshore.com/$1 [R=301,L]
 
 RewriteRule ^sitemap\.xml$ /uploads/seo/sitemap\.xml [L]
 
-RewriteCond %{HTTP_HOST} betta\.iq-offshore\.com.*$
-RewriteRule ^robots\.txt$ robots_betta.txt [L]
+#RewriteCond %{HTTP_HOST} betta\.iq-offshore\.com.*$
+#RewriteRule ^robots\.txt$ robots_betta.txt [L]
 
-RewriteCond %{HTTP_HOST} alpha\.iq-offshore\.com.*$
+#RewriteCond %{HTTP_HOST} alpha\.iq-offshore\.com.*$
+RewriteCond %{HTTP_HOST} !^iq-offshore\.com.*$
 RewriteRule ^robots\.txt$ robots_betta.txt [L]
 
 RewriteRule ^robots\.txt /uploads/seo/robots\.txt [L]
-
-
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !\.rar
@@ -77,7 +84,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule ^(.*)index.php(.*) http://iq-offshore.com/$1 [L,R=301]
 RewriteRule . /
 
-<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf|woff)$">
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf|woff|woff2)$">
   Header set Cache-Control "max-age=2592000"
 </FilesMatch>
 <FilesMatch ".(html)$">

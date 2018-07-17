@@ -1,10 +1,10 @@
 <?php
 namespace frontend\modules\faq\api;
 
-use frontend\components\API;
+use common\components\API;
 use yii\helpers\Url;
 
-class FaqObject extends \frontend\components\ApiObject
+class FaqObject extends \common\components\APIObject
 {
     public function getQuestion(){
         return LIVE_EDIT ? API::liveEdit($this->model->question, $this->editLink) : $this->model->question;

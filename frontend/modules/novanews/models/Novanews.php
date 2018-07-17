@@ -18,6 +18,7 @@ use common\models\Content;
 class Novanews extends Content
 {
     const PAGE_LIMIT = 7;
+    const TYPE_ID = 2;
 
     public static $_type = 'novanews';
 

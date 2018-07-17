@@ -2,7 +2,7 @@
 namespace frontend\modules\text\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
 use frontend\helpers\Data;
 use yii\helpers\Url;
 use frontend\modules\text\models\Text as TextModel;

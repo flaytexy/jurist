@@ -1,7 +1,7 @@
 <?php
 namespace frontend\modules\file;
 
-class FileModule extends \frontend\components\Module
+class FileModule extends \common\components\Module
 {
     public static $installConfig = [
         'title' => [

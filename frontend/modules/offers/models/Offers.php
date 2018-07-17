@@ -1,9 +1,9 @@
 <?php
 namespace frontend\modules\offers\models;
 
-use common\models\country\CountryData;
-use frontend\behaviors\CountryAble;
 use Yii;
+use frontend\behaviors\CountryAble;
+
 use common\behaviors\MySluggableBehavior;
 use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;
@@ -11,7 +11,7 @@ use frontend\behaviors\Optionable;
 use frontend\models\Photo;
 use yii\helpers\StringHelper;
 
-class Offers extends \frontend\components\ActiveRecord
+class Offers extends \common\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;

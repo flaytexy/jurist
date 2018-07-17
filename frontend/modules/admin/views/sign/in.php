@@ -26,8 +26,8 @@ $this->title = Yii::t('easyii', 'Sign in');
                 </div>
             </div>
             <div class="text-center">
-                <a class="logo" href="//easyiicms.com" target="_blank" title="NNNCMS homepage">
-                    <img src="<?= $asset->baseUrl ?>/img/logo_20.png">NNNCMS
+                <a class="logo" href="//easyiicms.com" target="_blank" title="ETR_CMS homepage">
+                    <img src="<?= $asset->baseUrl ?>/img/logo_20.png">ETR_CMS2
                 </a>
             </div>
         </div>

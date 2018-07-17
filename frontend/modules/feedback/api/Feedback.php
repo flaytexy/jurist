@@ -18,7 +18,7 @@ use frontend\widgets\ReCaptcha;
  * @method static array save(array $attributes) If you using your own form, this function will be useful for manual saving feedback's.
  */
 
-class Feedback extends \frontend\components\API
+class Feedback extends \common\components\API
 {
     const SENT_VAR = 'feedback_sent';
 

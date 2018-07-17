@@ -3,7 +3,7 @@ namespace frontend\modules\subscribe\models;
 
 use Yii;
 
-class Subscriber extends \frontend\components\ActiveRecord
+class Subscriber extends \common\components\ActiveRecord
 {
     const FLASH_KEY = 'eaysiicms_subscribe_send_result';
 

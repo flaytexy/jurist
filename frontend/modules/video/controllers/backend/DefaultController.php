@@ -10,7 +10,7 @@ use frontend\modules\video\models\VideoTranslation;
 use Yii;
 use yii\base\Model;
 use yii\db\Expression;
-use yii\helpers\Inflector;
+use common\helpers\InflectorTextTranslate;
 use yii\helpers\Url;
 use yii\data\Pagination;
 use yii\web\Controller;
@@ -103,12 +103,12 @@ class DefaultController extends Controller
             foreach ($translation_models as $language => $translation_model) {
                 $translation_model->language = $language;
 
-                if (!Inflector::slug($translation_model->slug)) {
-                    $translation_model->slug = Inflector::slug($translation_model->title);
+                if (!InflectorTextTranslate::slug($translation_model->slug)) {
+                    $translation_model->slug = InflectorTextTranslate::slug($translation_model->title);
                 }
 
                 if ($language !== $model->language && !$translation_model->validate()) {
-                    $translation_model->status = Video::STATUS_DRAFT;
+                    $translation_model->status = Video::STATUS_OFF;
                 }
 
                 $translation_model->clearErrors();

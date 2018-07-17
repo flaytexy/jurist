@@ -5,7 +5,7 @@ use frontend\modules\catalog\models\Item;
 use Yii;
 use frontend\validators\EscapeValidator;
 
-class Good extends \frontend\components\ActiveRecord
+class Good extends \common\components\ActiveRecord
 {
     public static function tableName()
     {

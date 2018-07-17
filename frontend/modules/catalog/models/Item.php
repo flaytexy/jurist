@@ -6,7 +6,7 @@ use yii\behaviors\SluggableBehavior;
 use frontend\behaviors\SeoBehavior;
 use frontend\models\Photo;
 
-class Item extends \frontend\components\ActiveRecord
+class Item extends \common\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;

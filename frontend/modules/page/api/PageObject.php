@@ -2,14 +2,15 @@
 namespace frontend\modules\page\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
+use common\components\APIOldObject;
+
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\models\Photo;
 use frontend\modules\page\models\Page as PageModel;
 
-
-class PageObject extends \frontend\components\ApiObject
+class PageObject extends APIOldObject
 {
     public $slug;
     public $image;

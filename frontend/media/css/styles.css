@@ -627,7 +627,7 @@ header {
     position: fixed;
 }
 #theme-layout-js {
-    margin-top: 100px;
+    margin-top: 80px;
 }
 /*===== Top Bar =====*/
 .top-bar {
@@ -1002,8 +1002,12 @@ header {
 header.stick .top-menus li:first-child {
 
 }
+.contact-m2 {
+    width: 175px;
+}
 
 header.stick .top-menus .contact-m {
+    width: 175px;
     /*  padding: 3px 24px; */
 }
 
@@ -1067,13 +1071,7 @@ header.stick .top-menus i.fa.fa-skype {
 
 }
 
-.menu-btn {
-    color: #fbfbfb;
-    cursor: pointer;
-    float: right;
-    font-size: 15px;
-    /*margin-right: 20px;*/
-}
+
 
 .centeredmenulist {
 
@@ -1087,13 +1085,17 @@ header.stick .top-menus i.fa.fa-skype {
 
 .btncenter {
     position: fixed;
-    top: 9px;
-    right: 5px;
-
-    display: flex;
+    top: 1px;
+    right: 8px;
     align-items: center;
     justify-content: center;
     overflow: auto;
+}
+.btncenter .menu-btn {
+    color: #fbfbfb;
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
 }
 
 .responsive-menu {
@@ -2644,8 +2646,8 @@ ul.simlist > li:before, div.simlistdiv ul > li:before {
 
 .packages-detail {
     width: 100%;
-    padding-left: -15px;
-    padding-right: -15px;
+    padding-left: 10px;
+    padding-right: 10px;
     -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, .5);
     -moz-box-shadow: 0 4px 16px rgba(0, 0, 0, .5);
     box-shadow: 0 4px 16px rgba(0, 0, 0, .5);
@@ -4386,10 +4388,7 @@ blockquote > p {
 }
 
 .widget > ul > li > span {
-    background: #f5f5f5 none repeat scroll 0 0;
-    border-left: 2px solid #ffffff;
-    color: #999999;
-    float: right;
+    background: rgb(255, 255, 255) none repeat scroll 0 0;
     padding: 20px 18px;
 }
 
@@ -4444,10 +4443,8 @@ ul.widget-gallery > li > a {
 
 ul.widget-gallery > li > span {
     border: none;
-    width: 100%;
     float: left;
     font-size: 17px;
-    margin-bottom: 5px;
 }
 
 ul.widget-gallery > li a {
@@ -5981,9 +5978,19 @@ input.gsc-search-button-v2:hover {
     border: 1px solid rgba(176, 176, 176, 0.65);
     background-color: #fff !important;
 }
+/* ----- Banks-table ---------- */
+#switchAllBanks .table{
+
+}
+
 #switchAllBanks > table {
     margin-bottom: -2px;
 }
+
+#switchAllBanks .table td {
+    padding: 10px;
+}
+
 
 .tBankLi {
     padding: 4px 2px;
@@ -6004,10 +6011,10 @@ input.gsc-search-button-v2:hover {
 }
 
 .tBankLi td .hegg {
-    /*min-height: 30px;*/
     text-align: center;
     padding: 12px 0;
     font-size: 11px;
+    overflow-x: auto;
 }
 
 .tBankLi .green_yes, .tBankLi .green_no {
@@ -6533,6 +6540,18 @@ blockquote > p a,
         font-size: 19px;
     }
 
+    #switchAllBanks .table td {
+        padding: 7px;
+    }
+
+    .tBankLi td .hegg {
+        max-width: 90px !important;
+    }
+
+    .tBankLi {
+        font-size: 12px;
+    }
+
     .search-luxuriousvilla.overlape {
         margin-left: 0;
         width: 100%;
@@ -6558,6 +6577,14 @@ blockquote > p a,
 
     .top-bar {
         display: none;
+    }
+
+    #switchAllBanks .table td {
+        padding: 6px;
+    }
+
+    .tBankLi td .hegg {
+        max-width: 80px !important;
     }
 
     .fun-facts > ul > li:nth-child(2n+1) {
@@ -6593,6 +6620,10 @@ blockquote > p a,
 }
 
 @media (max-width: 991px) {
+
+    #switchAllBanks .table td {
+        padding: 5px;
+    }
 
     .packages-detail {
         box-shadow: none;

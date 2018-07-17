@@ -101,7 +101,7 @@ class SearchController extends Controller
         $search = Yii::$app->request->post('search');
 
         $query = (new Query())->select("*, MATCH (title,text) AGAINST ('".$search."' IN BOOLEAN MODE) as REL")
-            ->from('easyii_pages')
+            ->from('content')
             ->where("MATCH (title,text) AGAINST ('".$search."' IN BOOLEAN MODE) OR `text` LIKE  '%".$search."%' ")
             ->orderBy('REL DESC');
 

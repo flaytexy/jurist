@@ -1,5 +1,5 @@
 <?php
-$this->title = 'NNNCMS installation step 2';
+$this->title = 'ETR_CMS installation step 2';
 ?>
 
 <?= $this->render('_steps', ['currentStep' => 2])?>

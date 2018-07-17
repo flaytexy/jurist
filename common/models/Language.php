@@ -9,7 +9,7 @@ class Language extends Model
     private static $languages = [
         'ru' => ['id' => 'ru', 'local' => 'ru-RU', 'name' => 'RU', 'title' => 'Русский'],
         'en' => ['id' => 'en', 'local' => 'en-US', 'name' => 'ENG', 'title' => 'Английский'],
-        'ua' => ['id' => 'ua', 'local' => 'uk-UA', 'name' => 'UA', 'title' => 'Украинский'],
+        //'ua' => ['id' => 'ua', 'local' => 'uk-UA', 'name' => 'UA', 'title' => 'Украинский'],
     ];
     static $current = null;
 

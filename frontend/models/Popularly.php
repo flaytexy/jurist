@@ -1,7 +1,7 @@
 <?php
 namespace frontend\models;
 
-use frontend\components\ActiveRecord;
+use common\components\ActiveRecord;
 
 class Popularly extends ActiveRecord
 {

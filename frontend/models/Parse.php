@@ -7,7 +7,7 @@ use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;
 use yii\helpers\StringHelper;
 
-class Parse extends \frontend\components\ActiveRecord
+class Parse extends \common\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;

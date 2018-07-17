@@ -10,7 +10,7 @@ $params = array_merge(
 $config = [
     'id' => 'app-frontend',
     'language' => 'ru-RU', // en-US
-    'sourceLanguage' => 'ru-RU',
+    'sourceLanguage' => 'en',
 
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [
@@ -53,17 +53,17 @@ $config = [
             'translations' => [
                 'frontend*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'sourceLanguage' => 'en-US',
+                    'sourceLanguage' => 'en',
                     'basePath' => '@common/messages',
                 ],
                 'backend*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'sourceLanguage' => 'en-US',
+                    'sourceLanguage' => 'en',
                     'basePath' => '@common/messages',
                 ],
                 'easyii*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'sourceLanguage' => 'en-US',
+                    'sourceLanguage' => 'en',
                     'basePath' => '@common/messages',
                     'fileMap' => [
                         'easyii' => 'translate.php',
@@ -91,12 +91,118 @@ $config = [
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
+//            'targets' => [
+//                [
+//                    'class' => 'yii\log\FileTarget',
+//                    'levels' => ['error', 'warning'],
+//                    'logFile' => '@runtime/log/requests.log',
+//                    //'prefix' => function ($message) { //formatter
+//                    //    $user = Yii::$app->has('user', true) ? Yii::$app->get('user') : null;
+//                    //    $userID = $user ? $user->getId(false) : '-';
+//                    //    return "[$userID]";
+//                    //}
+//                ],
+//            ],
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                    'logFile' => '@runtime/log/requests.log',
+                    'levels' => ['error', 'warning', 'info'],
+                    'logFile' => '@runtime/log/requests_all.log',
+                    'maxFileSize' => 1024 * 2,
+                    'maxLogFiles' => 20,
+                    //'logVars' => ['GET', 'POST'], // log some globals
                 ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error'],
+                    'maxFileSize' => 1024 * 2,
+                    'maxLogFiles' => 20,
+                    'logFile' => '@runtime/log/requests_error.log',
+                    'logVars' => ['_FILES', '_COOKIE', '_SESSION', '_SERVER'],
+                ],
+//                '404_mail' => [
+//                    'class' => 'yii\log\EmailTarget',
+//                    'categories' => ['yii\web\HttpException:404'],
+//                    'message' => [
+//                        'from' => ['noreply@iq-offshore.com' => 'Iq-offshore.com'], //от кого
+//                        'to' => ['akvamiris@gmail.com'], //кому
+//                        'subject' => '404 ошибка на саайте', //тема
+//                    ],
+//                ],
+                '404_file' => [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning'],
+                    'categories' => ['yii\web\HttpException:404'],
+                    'logVars' => ['_FILES', '_COOKIE', '_SESSION', '_SERVER'],
+                    'logFile' => '@runtime/logs/404.log',
+                ],
+                'seo_hasnt_attr' => [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning', 'info'],
+                    //'_GET', '_POST', '_FILES', '_COOKIE', '_SESSION', '_SERVER'
+                    'logVars' => ['_FILES', '_COOKIE', '_SESSION', '_SERVER'], //не добавлять в лог глобальные переменные ($_SERVER, $_SESSION...)
+                    'logFile' => '@runtime/logs/seo_hasnt_attr.log',
+                ],
+//                'delete_end_truncate' => [
+//                    'class' => 'yii\log\EmailTarget',
+//                    'categories' => ['delete_end_truncate'],
+//                    'message' => [
+//                        'from' => ['noreply@iq-offshore.com' => 'Iq-offshore.com'], //от кого
+//                        'to' => ['akvamiris@gmail.com'], //кому
+//                        'subject' => 'Попитка delete_end_truncate', //тема
+//                    ],
+//                    //'logVars' => ['_FILES', '_COOKIE', '_SESSION', '_SERVER'],
+//                ],
+                'delete_end_truncate_file' => [
+                    'class' => 'yii\log\FileTarget',
+                    //'levels' => ['error', 'warning'],
+                    'categories' => ['delete_end_truncate'],
+                    //'logVars' => [], //не добавлять в лог глобальные переменные ($_SERVER, $_SESSION...)
+                    'logFile' => '@runtime/logs/delete_end_truncate.log',
+                    'maxFileSize' => 1024 * 2,
+                    'maxLogFiles' => 20,
+                ],
+//                [
+//                    'class' => 'yii\log\EmailTarget', //шлет на e-mail
+//                    'categories' => ['payment_success'],
+//                    'mailer' => 'yii\swiftmailer\Mailer',
+//                    'logVars' => [],
+//                    'message' => [
+//                        'from' => ['admin@site.com' => 'НАЗВАНИЕ САЙТА'], //от кого
+//                        'to' => ['mail@gmail.com'], //кому
+//                        'subject' => 'Получен платеж. Лог в теле сообщения.', //тема
+//                    ],
+//                ],
+//                'email' => [
+//                    'class' => 'yii\log\EmailTarget',
+//                    'except' => ['yii\web\HttpException:404'],
+//                    'levels' => ['error', 'warning'],
+//                    'message' => ['from' => 'robot@iq-offshore.com', 'to' => 'akvamiris@gmail.com'],
+//                ],
+//
+//                [
+//                    'class' => 'yii\log\FileTarget',
+//                    'levels' => ['info'],
+//                    'categories' => ['orders'],
+//                    'logFile' => '@app/runtime/logs/Orders/requests.log',
+//                    'maxFileSize' => 1024 * 2,
+//                    'maxLogFiles' => 20,
+//                ],
+//                [
+//                    'class' => 'yii\log\FileTarget',
+//                    'levels' => ['info'],
+//                    'categories' => ['pushNotifications'],
+//                    'logFile' => '@app/runtime/logs/Orders/notification.log',
+//                    'maxFileSize' => 1024 * 2,
+//                    'maxLogFiles' => 50,
+//                ],
+//                [
+//                    'class' => 'yii\log\FileTarget',
+//                    'levels' => ['error'],
+//                    'logFile' => '@app/runtime/logs/Orders/my_error.log',
+//                    'maxFileSize' => 1024 * 2,
+//                    'maxLogFiles' => 50,
+//                ],
             ],
         ],
         'errorHandler' => [
@@ -117,11 +223,22 @@ $config = [
             //'baseUrl' => '/',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            //'class' => 'yii\web\UrlManager',
             'class' => 'frontend\components\LangUrlManager',
             //'languages' => ['ru' => 'ru-RU', 'en' => 'en-US', 'uk' => 'uk-UA'],
             'rules' => [
                 '' => 'site/index',
-                'offshornyie-predlozheniya' => 'offers/index',
+                //'offshornyie-predlozheniya' => 'offers/index',
+
+                'offers' => 'novaoffers/index',
+                'offshornyie-predlozheniya' => 'novaoffers/index',
+                'banks' => 'novabanks/index',
+                'pay-system' => 'paysystem/index',
+                [
+                    'pattern' => 'about',
+                    'route' => 'novanews/view',
+                    'defaults' => ['slug' => 'page-about'],
+                ],
 //                [
 //                    'pattern' => 'offshornyie-predlozheniya',
 //                    'route' => 'offers/index',
@@ -157,15 +274,26 @@ $config = [
                 ],
 
                 //'<alias:index|search|detail|result|hospital>' => 'site/<alias>', ////
-                '<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'pages/index',
-                '<name:(licenses|offshore|processing|fonds|sale)>' => 'pages/index',
-                '<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'pages/view',
+                //'<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'pages/index',   //@todo
+                //'<name:(licenses|offshore|processing|fonds|sale)>' => 'pages/index',                  //@todo
+                //'<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'pages/view',     //@todo
+
+                '<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'novanews/index',
+                '<name:(licenses|offshore|processing|fonds|sale)>' => 'novanews/index',
+                '<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'novanews/view',
+
+                '<name:(banks|novabanks)>/page<page:\d+>' => 'novabanks/index',
+                '<name:(banks|novabanks)>/<slug:[\w-]+>' => 'novabanks/view', //'banks/view',
+                '<name:(pay-system)>/<slug:[\w-]+>' => 'paysystem/view', //'banks/view',
 
                 '<controller:\w+>/tag/<tag:[\w- ]+>' => '<controller>/index',
-
+                //'<controller:\w+>/page<page:\d+>' => '<controller>/index',                            //@todo
                 '<controller:\w+>/page<page:\d+>' => '<controller>/index',
 
-                '<name:(offers|news|banks)>/<slug:[\w-]+>' => '<name>/view',
+
+                '<name:(offers)>/<slug:[\w-]+>' => 'novaoffers/view',
+                '<name:(news)>/<slug:[\w-]+>' => '<name>/view',
+
                 '<controller:\w+>/view/<slug:[\w-]+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/cat/<slug:[\w-]+>' => '<controller>/cat',
@@ -178,21 +306,23 @@ $config = [
             // uncomment the following line if you want to auto update your assets (unix hosting only)
             //'linkAssets' => true,
             'bundles' => [
-//                'yii\web\JqueryAsset' => [
-//                    //'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js']
-//                    //'js' => [YII_DEBUG ? '//code.jquery.com/jquery-2.2.4.js' : '//code.jquery.com/jquery-2.2.4.min.js']
-//                    'js' => [
-//                        YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js' : '//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',
-//                        //'//code.jquery.com/jquery-1.12.4.js',
-//                        //YII_DEBUG ? '//code.jquery.com/jquery-migrate-1.4.1.js' : '//code.jquery.com/jquery-migrate-1.4.1.min.js',
-//                        YII_DEBUG ? '//code.jquery.com/jquery-migrate-3.0.1.js' : '//code.jquery.com/jquery-migrate-3.0.1.min.js'
-//                    ]
-//                ],
+                'yii\web\JqueryAsset' => [
+                    //'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js']
+                    //'js' => [YII_DEBUG ? '//code.jquery.com/jquery-2.2.4.js' : '//code.jquery.com/jquery-2.2.4.min.js']
+                    'js' => [
+                        //https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
+                        //YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js' : '//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+                        YII_DEBUG ? '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js' : '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+                        //'//code.jquery.com/jquery-1.12.4.js',
+                        //YII_DEBUG ? '//code.jquery.com/jquery-migrate-1.4.1.js' : '//code.jquery.com/jquery-migrate-1.4.1.min.js',
+                        //YII_DEBUG ? '//code.jquery.com/jquery-migrate-3.0.1.js' : '//code.jquery.com/jquery-migrate-3.0.1.min.js'
+                    ]
+                ],
                 'yii\bootstrap\BootstrapAsset' => [
                     'css' => [
                         //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css',
                         //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
-                        '//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
+                        //'//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
                     ],
                 ],
 //                'yii\bootstrap\BootstrapAsset' => [
@@ -204,23 +334,23 @@ $config = [
 //                        '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css',
 //                    ],
 //                ],
-//                'yii\jui\JuiAsset' => [
-//                    'css' => [],
-////                    'css' => [
-////                        YII_DEBUG ? '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css'
-////                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css'
-////                    ],
+                'yii\jui\JuiAsset' => [
+                    'css' => [],
+//                    'css' => [
+//                        YII_DEBUG ? '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css'
+//                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css'
+//                    ],
 //                    'js' => [
 //                        YII_DEBUG ? '//code.jquery.com/ui/1.12.1/jquery-ui.js' : '//code.jquery.com/ui/1.12.1/jquery-ui.min.js'
 //                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/jquery-ui.min.js' : '//code.jquery.com/ui/1.7.2/jquery-ui.min.js'
 //                    ],
-//                ],
+                ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [
                         //YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.js' : '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js',
                         //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js'
-                        '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js',
-                        '//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'
+                        //'//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js',
+                        //'//stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'
                     ],
                 ],
             ],
@@ -238,7 +368,7 @@ $config = [
             'concatCss' => true, // concatenate css
             'minifyCss' => true, // minificate css
             'concatJs' => true, // concatenate js
-            'minifyJs' => false, // minificate js
+            'minifyJs' => true, // minificate js
             'minifyOutput' => false, // minificate result html page
             'webPath' => '@web', // path alias to web base
             'basePath' => '@webroot', // path alias to web base
@@ -249,7 +379,7 @@ $config = [
             'compressOptions' => ['extra' => true], // options for compress
             'excludeFiles' => [
                 'jquery.js',  // exclude this file from minification
-                'jquery-ui.js',
+                //'jquery-ui.js',
                 'app-[^.].js', // you may use regexp
                 'styles.css',
                 'style_all.css',
@@ -340,6 +470,17 @@ $config = [
 //        'admin' => [
 //            'class' => 'frontend\modules\admin\AdminModule',
 //        ],
+//        'novanews' => [
+//            'class' => 'frontend\modules\novanews\Module',
+//            'controllerNamespace' => 'frontend\modules\novanews\controllers\frontend',
+//            'viewPath' => '@frontend/modules/novanews/views/frontend',
+//        ],
+//        'news' => [
+//            'class' => 'frontend\modules\news\Module',
+//            'controllerNamespace' => 'frontend\modules\news\controllers\frontend',
+//            'viewPath' => '@frontend/modules/news/views/frontend',
+//        ],
+        //'novanews' => ['class' => 'frontend\modules\novanews\Module'],
 
         'admin' => [
             'class' => 'frontend\modules\admin\AdminModule',
@@ -350,14 +491,41 @@ $config = [
                     'controllerNamespace' => 'frontend\modules\novanews\controllers\backend',
                     'viewPath' => '@frontend/modules/novanews/views/backend',
                 ],
+
+                'novabanks' => [
+                    'class' => 'frontend\modules\novabanks\Module',
+                    'controllerNamespace' => 'frontend\modules\novabanks\controllers\backend',
+                    'viewPath' => '@frontend/modules/novabanks/views/backend',
+                ],
+
+                'novaoffers' => [
+                    'class' => 'frontend\modules\novaoffers\Module',
+                    'controllerNamespace' => 'frontend\modules\novaoffers\controllers\backend',
+                    'viewPath' => '@frontend/modules/novaoffers/views/backend',
+                ],
+
+                'paysystem' => [
+                    'class' => 'frontend\modules\paysystem\Module',
+                    'controllerNamespace' => 'frontend\modules\paysystem\controllers\backend',
+                    'viewPath' => '@frontend/modules/paysystem/views/backend',
+                ],
+                
+                'attachment' => [
+                    'class' => 'common\modules\attachment\Module',
+                    'controllerNamespace' => 'common\modules\attachment\controllers\backend',
+                    'viewPath' => '@common/modules/attachment/views/backend',
+                ],
             ],
         ],
     ],
     'bootstrap' => [
         'admin',
         'log',
-        //'debug',
-        'gii'
+        'debug',
+        //'gii',
+        'frontend\modules\novanews\Bootstrap',
+        'frontend\modules\novabanks\Bootstrap',
+        'frontend\modules\novaoffers\Bootstrap'
     ]
 
 ];

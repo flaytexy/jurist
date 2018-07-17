@@ -4,7 +4,16 @@ namespace frontend\models;
 use Yii;
 use frontend\validators\EscapeValidator;
 
-class SeoText extends \frontend\components\ActiveRecord
+/**
+ * Class SeoText
+ * @package frontend\models
+ *
+ * @property $h1
+ * @property $title
+ * @property $keywords
+ * @property $description
+ */
+class SeoText extends \common\components\ActiveRecord
 {
     public static function tableName()
     {

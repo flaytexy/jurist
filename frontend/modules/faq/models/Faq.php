@@ -5,7 +5,7 @@ use Yii;
 use frontend\behaviors\CacheFlush;
 use frontend\behaviors\SortableModel;
 
-class Faq extends \frontend\components\ActiveRecord
+class Faq extends \common\components\ActiveRecord
 {
     const STATUS_OFF = 0;
     const STATUS_ON = 1;

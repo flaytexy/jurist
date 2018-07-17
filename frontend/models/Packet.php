@@ -2,13 +2,13 @@
 namespace frontend\models;
 
 use Yii;
-use frontend\components\ActiveRecord;
+use common\components\ActiveRecord;
 use common\behaviors\MySluggableBehavior;
 use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;
 
 
-class Packet extends \frontend\components\ActiveRecord
+class Packet extends \common\components\ActiveRecord
 {
     public $options;
 

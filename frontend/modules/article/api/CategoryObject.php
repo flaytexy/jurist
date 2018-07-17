@@ -3,13 +3,13 @@ namespace frontend\modules\article\api;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use frontend\components\API;
+use common\components\API;
 use frontend\models\Tag;
 use frontend\modules\article\models\Item;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-class CategoryObject extends \frontend\components\ApiObject
+class CategoryObject extends \common\components\APIObject
 {
     public $slug;
     public $image;

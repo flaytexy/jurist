@@ -1,5 +1,5 @@
 <?php
-namespace frontend\components;
+namespace common\components;
 
 /**
  * Base active record class for easyii models

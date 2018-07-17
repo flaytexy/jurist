@@ -2,11 +2,11 @@
 namespace frontend\modules\offers\api;
 
 use Yii;
-use frontend\components\API;
+use common\components\API;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-class PhotoObject extends \frontend\components\ApiObject
+class PhotoObject extends \common\components\APIObject
 {
     public $image;
     public $description;

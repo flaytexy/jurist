@@ -2,9 +2,13 @@
 
 namespace frontend\modules\banks\api;
 
+
 use Yii;
-use frontend\components\API;
+use common\components\APIOldObject;
+use common\components\APIObject;
 use frontend\models\Photo;
+
+use common\components\API;
 use frontend\modules\banks\models\Banks as BanksModel;
 use yii\helpers\Url;
 
@@ -16,7 +20,7 @@ use yii\helpers\Url;
  * @property $countries;
  * @property $properties;
  */
-class BanksObject extends \frontend\components\ApiObject
+class BanksObject extends APIOldObject
 {
     public $slug;
     public $image;
