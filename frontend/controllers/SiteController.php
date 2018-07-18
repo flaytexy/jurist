@@ -3,13 +3,13 @@ namespace frontend\controllers;
 
 
 use frontend\models\Setting;
-use frontend\modules\banks\api\Banks;
+
 use frontend\modules\novabanks\api\Novabanks;
 use frontend\modules\novabanks\models\NovabanksTranslation;
 use frontend\modules\novanews\api\Novanews;
 use frontend\modules\novanews\models\NovanewsTranslation;
 use frontend\modules\novaoffers\api\Novaoffers;
-use frontend\modules\page\api\Page;
+
 use frontend\modules\slidemain\api\Slidemain;
 use frontend\modules\slidesmall\api\Slidesmall;
 use frontend\modules\tickers\api\Tickers;
@@ -25,7 +25,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use frontend\modules\offers\api\Offers;
+
 use yii\web\NotFoundHttpException;
 
 /**
@@ -188,12 +188,12 @@ class SiteController extends Controller
 
         //ex_print($slideMain);
 
-        $fonds = Page::items([
+        $fonds = Novanews::items([
             'where' => ['type_id' => 4, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 2]
         ]);
 
-        $sale = Page::items([
+        $sale = Novanews::items([
             'where' => ['type_id' => 7, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 10]
         ]);
