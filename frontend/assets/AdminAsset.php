@@ -1,6 +1,7 @@
 <?php
 namespace frontend\assets;
 
+
 class AdminAsset extends \yii\web\AssetBundle
 {
     public $sourcePath = '@frontend/media';
