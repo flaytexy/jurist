@@ -29,9 +29,9 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 /tests/
-/console/
+
 /vagrant/
-/environments/
+
 
 /frontend/system/
 
