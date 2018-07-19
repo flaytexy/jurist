@@ -1,3 +1,13 @@
 User-agent: *
+Crawl-delay: 0.5
 
-Disallow: /
+Disallow: /amocrm/
+Disallow: /en/*
+
+Disallow: *?filter
+Disallow: *?&filter
+Disallow: *?order
+Disallow: *?&order
+Disallow: *?q=
+
+Host: https://iq-offshore.com
