@@ -49,7 +49,7 @@ class RssController extends \yii\web\Controller
         exit;
     }
 
-    public function actionXml()
+    public function actionFeed()
     {
 //        $contentItems = \Yii::$app->db->createCommand("
 //                            SELECT `c`.*, `ct`.`name`, `ct`.`meta_title`, `ct`.`description`, `ct`.`short_description`,
@@ -78,7 +78,7 @@ class RssController extends \yii\web\Controller
             ->description('Открыть оффшор эффективно')
             ->url('http://iq-offshore.com/ru/news')
             ->feedUrl('http://iq-offshore.com/rss/xml')
-            ->language('en-US')
+            ->language('ru-RU')
             ->copyright('Copyright 2016, Iq Decision')
             //->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
             //->lastBuildDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
@@ -129,6 +129,7 @@ class RssController extends \yii\web\Controller
             $item
                 ->title($title)
                 ->description($desc)
+                ->contentEncoded($desc)
                 ->url('http://iq-offshore.com/ru/news/'.$contentItem['sluger'])
                 ->author('author@iq-offshore.com')
                 ->creator('Iq Decision')
@@ -147,7 +148,7 @@ class RssController extends \yii\web\Controller
         \Yii::$app->response->content = $feed->render();
     }
 
-    public function actionFeed()
+    public function actionXml()
     {
 //        $contentItems = \Yii::$app->db->createCommand("
 //                            SELECT `c`.*, `ct`.`name`, `ct`.`meta_title`, `ct`.`description`, `ct`.`short_description`,
@@ -169,14 +170,14 @@ class RssController extends \yii\web\Controller
                             LIMIT 1000  ")
             ->queryAll();
 
-        $feed = new \common\components\rssnew\Feed();
-        $channel = new \common\components\rssnew\Channel();
+        $feed = new \common\components\rss\Feed();
+        $channel = new \common\components\rss\Channel();
         $channel
             ->title('IQ Decision')
             ->description('Открыть оффшор эффективно')
             ->url('http://iq-offshore.com/ru/news')
             ->feedUrl('http://iq-offshore.com/rss/xml')
-            ->language('en-US')
+            ->language('ru-RU')
             ->copyright('Copyright 2016, Iq Decision')
             //->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
             //->lastBuildDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
@@ -200,7 +201,7 @@ class RssController extends \yii\web\Controller
 
 
         foreach ($contentItems as $contentItem){
-            $item = new \common\components\rssnew\Item();
+            $item = new \common\components\rss\Item();
 
 
             $desc = $contentItem['meta_description'];

@@ -234,6 +234,7 @@ $config = [
                 'offshornyie-predlozheniya' => 'novaoffers/index',
                 'banks' => 'novabanks/index',
                 'pay-system' => 'paysystem/index',
+                'feed' => 'rss/feed',
                 [
                     'pattern' => 'about',
                     'route' => 'novanews/view',

@@ -41,7 +41,7 @@ class Item implements ItemInterface
     /** @var string */
     protected $creator;
 
-    protected $preferCdata = false;
+    protected $preferCdata = true;
 
     public function title($title)
     {
@@ -189,11 +189,21 @@ class Item implements ItemInterface
         }
 
         if (!empty($this->author)) {
-            $xml->addChild('author', $this->author);
+            //$xml->addChild('author', $this->author);
+            if ($this->preferCdata) {
+                $xml->addCdataChild('author', $this->author);
+            } else {
+                $xml->addChild('author', $this->author);
+            }
         }
 
         if (!empty($this->creator)) {
-            $xml->addChild('dc:creator', $this->creator,"http://purl.org/dc/elements/1.1/");
+            //$xml->addChild('dc:creator', $this->creator);
+            if ($this->preferCdata) {
+                $xml->addCdataChild('dc:creator', $this->creator, "http://purl.org/dc/elements/1.1/");
+            } else {
+                $xml->addChild('dc:creator', $this->creator,"http://purl.org/dc/elements/1.1/");
+            }
         }
 
         return $xml;

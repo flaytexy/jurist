@@ -37,4 +37,19 @@ class SimpleXMLElement extends \SimpleXMLElement
         $dom->appendChild($elementOwner->createCDATASection($value));
         return $element;
     }
+
+    /**
+     * @param string $name
+     * @param string $value
+     * @param string $namespace
+     * @return \SimpleXMLElement
+     */
+    public function addCdataChildWithoutNamespace($name, $value = null, $namespace = null)
+    {
+        $element = $this->addChild($name, null);
+        $dom = dom_import_simplexml($element);
+        $elementOwner = $dom->ownerDocument;
+        $dom->appendChild($elementOwner->createCDATASection($value));
+        return $element;
+    }
 }
