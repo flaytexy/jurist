@@ -15,6 +15,9 @@ class Item implements ItemInterface
     protected $url;
 
     /** @var string */
+    protected $thumbnail;
+
+    /** @var string */
     protected $description;
 
     /** @var string */
@@ -52,6 +55,11 @@ class Item implements ItemInterface
     public function url($url)
     {
         $this->url = $url;
+        return $this;
+    }
+
+    public function thumbnail($thumbnail){
+        $this->thumbnail = $thumbnail;
         return $this;
     }
 
@@ -144,6 +152,15 @@ class Item implements ItemInterface
         if ($this->url) {
             $xml->addChild('link', $this->url);
         }
+
+        if ($this->thumbnail) {
+            $xml->addChild('media:thumbnail', $this->thumbnail,"http://purl.org/dc/elements/1.1/");
+        }
+
+        //$this->setEnclosure('http://example.com/image.jpg', 123456, 'image/jpeg');
+
+        //$this->addNamespace('media', 'http://search.yahoo.com/mrss/');
+        //$this->addElement('media:thumbnail', '', array('url' => 'http://example.com/image.jpg', 'height' => '75', 'width' => '75'));
 
         // At least one of <title> or <description> must be present
         if ($this->description || ! $this->title) {

@@ -150,8 +150,10 @@ class DefaultController extends ContentAdminController
 
         if ($request->post()) {
             //$this->_saveItem($model, $request, $translation_models, $child); //@todo
-            $this->_saveItem($model, $request, $translation_models);
+            $modelFinish = $this->_saveItem($model, $request, $translation_models);
         }
+
+
 
         $query = new \yii\db\Query;
         $query->select('ept.title as parent_title, ept.*, ept2.*')

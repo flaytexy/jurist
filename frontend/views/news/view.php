@@ -50,13 +50,13 @@ if($keywordsSeo = $page->seo('meta_keywords')){
 $image = (isset($page->image) && !empty($page->image)) ? Image::thumb($page->image, 800, 200) : Image::thumb($page->model->pre_image, 800, 450);
 \Yii::$app->view->registerMetaTag([
     'property' => 'og:image',
-    'content' => $image
+    'content' => Url::base('https') . $image
 ]);
 
 $imagex = (isset($page->image) && !empty($page->image)) ? $page->image : $page->model->pre_image;
 Yii::$app->view->registerMetaTag([
     'property' => 'imagex',
-    'content' => $imagex
+    'content' => Url::base('https') . $imagex
 ]);
 
 ?>
@@ -89,8 +89,6 @@ Yii::$app->view->registerMetaTag([
                                             <li><i class="fa fa-calendar"></i> <?= $page->date ?></li>
                                             <li><i class="fa fa-comment"></i><a href="#" title="">Прочитали <?= $page->views * 3 ?> человек</a></li>
                                         </ul>
-
-                                        <h1><?= $page->seo('h1', $page->title) ?></h1>
 
                                         <div class="text-con">
                                             <?= $page->getDescription() ?>

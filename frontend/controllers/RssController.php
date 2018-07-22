@@ -2,6 +2,10 @@
 
 namespace frontend\controllers;
 
+use common\helpers\Telegram;
+use frontend\helpers\Image;
+use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\web\Response;
 
 class RssController extends \yii\web\Controller
@@ -56,7 +60,7 @@ class RssController extends \yii\web\Controller
 //                                  `ct`.`meta_description`, `c`.id as id, `c`.slug as sluger
 //                            FROM `content` as c
 //                            LEFT JOIN `content_translation` as ct ON c.id = ct.content_id
-//                            WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1' AND ct.public_status
+//                            WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1' AND ct.public_status = '1'
 //                            ORDER BY c.`id` ASC
 //                            LIMIT 1000  ")
 //        ->queryAll();
@@ -66,8 +70,8 @@ class RssController extends \yii\web\Controller
                                   `ct`.`meta_description`, `c`.id as id, `c`.slug as sluger
                             FROM `content` as c
                             LEFT JOIN `content_translation` as ct ON c.id = ct.content_id
-                            WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1'
-                            ORDER BY c.`id` ASC 
+                            WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1' AND ct.public_status = '1'
+                            ORDER BY c.`id` DESC 
                             LIMIT 1000  ")
             ->queryAll();
 
@@ -76,14 +80,14 @@ class RssController extends \yii\web\Controller
         $channel
             ->title('IQ Decision')
             ->description('Открыть оффшор эффективно')
-            ->url('http://iq-offshore.com/ru/news')
-            ->feedUrl('http://iq-offshore.com/rss/xml')
+            ->url('https://iq-offshore.com/ru/news')
+            ->feedUrl('https://iq-offshore.com/feed')
             ->language('ru-RU')
             ->copyright('Copyright 2016, Iq Decision')
             //->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
             //->lastBuildDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
             ->ttl(60)
-            //->pubsubhubbub('http://example.com/feed.xml', 'http://pubsubhubbub.appspot.com') // This is optional. Specify PubSubHubbub discovery if you want.
+            //->pubsubhubbub('https://example.com/feed.xml', 'https://pubsubhubbub.appspot.com') // This is optional. Specify PubSubHubbub discovery if you want.
             ->appendTo($feed);
 
 // Blog item
@@ -92,11 +96,11 @@ class RssController extends \yii\web\Controller
 //            ->title('Blog Entry Title')
 //            ->description('<div>Blog body</div>')
 //            ->contentEncoded('<div>Blog body</div>')
-//            ->url('http://blog.example.com/2012/08/21/blog-entry/')
+//            ->url('https://blog.example.com/2012/08/21/blog-entry/')
 //            ->author('john@smith.com')
 //            ->creator('John Smith')
 //            ->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
-//            ->guid('http://blog.example.com/2012/08/21/blog-entry/', true)
+//            ->guid('https://blog.example.com/2012/08/21/blog-entry/', true)
 //            ->preferCdata(true) // By this, title and description become CDATA wrapped HTML.
 //            ->appendTo($channel);
 
@@ -125,15 +129,21 @@ class RssController extends \yii\web\Controller
 
             $title = empty($contentItem['meta_title']) ? $contentItem['name'] : $contentItem['meta_title'] ;
             $title = trim($title);
+            $title = strip_tags($title);
+            $title = str_replace(array('&#34', '"', "'"), '', $title);
 
             $item
                 ->title($title)
                 ->description($desc)
-                ->contentEncoded($desc)
-                ->url('http://iq-offshore.com/ru/news/'.$contentItem['sluger'])
-                ->author('author@iq-offshore.com')
+                //->contentEncoded($contentItem['description'])
+                ->contentEncoded("<p>".Html::img(Url::base('https') . Image::thumb($contentItem['image'], 800, 200)).'</p>
+                                <p>'.$desc.'</p>')
+                ->url('https://iq-offshore.com/ru/news/'.$contentItem['sluger'])
+                //->thumbnail(Url::base('https') . Image::thumb($contentItem['image'], 800, 200))
+                //->author('author@iq-offshore.com')
                 ->creator('Iq Decision')
                 ->pubDate($contentItem['time'])
+                ->guid('https://iq-offshore.com/ru/news/'.$contentItem['sluger'], true)
                 ->appendTo($channel);
         }
 
@@ -155,7 +165,7 @@ class RssController extends \yii\web\Controller
 //                                  `ct`.`meta_description`, `c`.id as id, `c`.slug as sluger
 //                            FROM `content` as c
 //                            LEFT JOIN `content_translation` as ct ON c.id = ct.content_id
-//                            WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1' AND ct.public_status
+//                            WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1' AND ct.public_status = '1'
 //                            ORDER BY c.`id` ASC
 //                            LIMIT 1000  ")
 //        ->queryAll();
@@ -165,7 +175,7 @@ class RssController extends \yii\web\Controller
                                   `ct`.`meta_description`, `c`.id as id, `c`.slug as sluger
                             FROM `content` as c
                             LEFT JOIN `content_translation` as ct ON c.id = ct.content_id
-                            WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1'
+                            WHERE `type_id` = '2' AND ct.language = 'ru-RU' AND `c`.`status` = '1' AND ct.public_status = '1'
                             ORDER BY c.`id` ASC 
                             LIMIT 1000  ")
             ->queryAll();
@@ -175,14 +185,14 @@ class RssController extends \yii\web\Controller
         $channel
             ->title('IQ Decision')
             ->description('Открыть оффшор эффективно')
-            ->url('http://iq-offshore.com/ru/news')
-            ->feedUrl('http://iq-offshore.com/rss/xml')
+            ->url('https://iq-offshore.com/ru/news')
+            ->feedUrl('https://iq-offshore.com/rss/xml')
             ->language('ru-RU')
             ->copyright('Copyright 2016, Iq Decision')
             //->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
             //->lastBuildDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
             ->ttl(60)
-            //->pubsubhubbub('http://example.com/feed.xml', 'http://pubsubhubbub.appspot.com') // This is optional. Specify PubSubHubbub discovery if you want.
+            //->pubsubhubbub('https://example.com/feed.xml', 'https://pubsubhubbub.appspot.com') // This is optional. Specify PubSubHubbub discovery if you want.
             ->appendTo($feed);
 
 // Blog item
@@ -191,11 +201,11 @@ class RssController extends \yii\web\Controller
 //            ->title('Blog Entry Title')
 //            ->description('<div>Blog body</div>')
 //            ->contentEncoded('<div>Blog body</div>')
-//            ->url('http://blog.example.com/2012/08/21/blog-entry/')
+//            ->url('https://blog.example.com/2012/08/21/blog-entry/')
 //            ->author('john@smith.com')
 //            ->creator('John Smith')
 //            ->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
-//            ->guid('http://blog.example.com/2012/08/21/blog-entry/', true)
+//            ->guid('https://blog.example.com/2012/08/21/blog-entry/', true)
 //            ->preferCdata(true) // By this, title and description become CDATA wrapped HTML.
 //            ->appendTo($channel);
 
@@ -224,14 +234,18 @@ class RssController extends \yii\web\Controller
 
             $title = empty($contentItem['meta_title']) ? $contentItem['name'] : $contentItem['meta_title'] ;
             $title = trim($title);
+            $title = strip_tags($title);
+            $title = str_replace(array('&#34', '"', "'"), '', $title);
 
             $item
                 ->title($title)
                 ->description($desc)
-                ->url('http://iq-offshore.com/ru/news/'.$contentItem['sluger'])
+                //->contentEncoded($contentItem['description'])
+                ->url('https://iq-offshore.com/ru/news/'.$contentItem['sluger'])
                 ->author('author@iq-offshore.com')
                 ->creator('Iq Decision')
                 ->pubDate($contentItem['time'])
+                ->guid('https://iq-offshore.com/ru/news/'.$contentItem['sluger'], true)
                 ->appendTo($channel);
         }
 
@@ -245,4 +259,16 @@ class RssController extends \yii\web\Controller
         $headers->add('Content-Type', 'text/xml; charset=utf-8');
         \Yii::$app->response->content = $feed->render();
     }
+
+
+    public function actionTg()
+    {
+        $text = "<a href='https://iq-offshore.com/uploads/offers/text-how-to-open-an-offshore-com-4ecc0851e7.jpg'>✉</a>\n<a href='https://iq-offshore.com/ru/news/bystraa-i-nedorogaa-licenzia-na-foreks-v-2018-godu6'>Новое выгодное решение: компания в Сингапуре со счетом в 2018 году!</a>\nМы подскажем Вам,где лучше всего открыть компанию для работы с ICO, а также как получить лицензию на ICO на Багамских островах.";
+        Telegram::sendMessage($text);
+
+        ex_print($text,'$text');
+        exit;
+    }
+
+
 }

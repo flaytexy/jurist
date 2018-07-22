@@ -196,8 +196,8 @@ class Channel implements ChannelInterface
 
         if($this->feedUrl !== null) {
             $link = $xml->addChild('atom:link', '', "http://www.w3.org/2005/Atom");
-            $link->addAttribute('href',$this->feedUrl);
             $link->addAttribute('type','application/rss+xml');
+            $link->addAttribute('href',$this->feedUrl);
             $link->addAttribute('rel','self');
         }
 

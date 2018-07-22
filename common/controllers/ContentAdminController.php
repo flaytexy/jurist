@@ -4,6 +4,7 @@ namespace common\controllers;
 
 use common\components\ActiveRecord;
 use common\components\CategoryController;
+use common\helpers\Telegram;
 use frontend\helpers\Image;
 use Yii;
 
@@ -84,6 +85,8 @@ class ContentAdminController extends CategoryController
                 }
             }
 
+            $is_new_record = $model->isNewRecord;
+
             if($model->save()){ //@todo true  #langValidAndAddidional
 
                 if(isset($child) && $child!=false){
@@ -109,7 +112,7 @@ class ContentAdminController extends CategoryController
 //                    }
 //                }
 
-                $is_new_record = $model->isNewRecord;
+
                 //$item = $translation_models[$model->language];
 
 
@@ -125,6 +128,38 @@ class ContentAdminController extends CategoryController
                         //}
                     }
                     Yii::$app->session->setFlash('flash-admin-message-success', $is_new_record ? 'Операция по созданию успешна.' : 'Операция по обновлению успешна.');
+
+                    if($is_new_record){
+                        $title = $model->translation->name;
+                        $description = (!empty($model->translation->meta_description)) ? $model->translation->meta_description : '';
+
+                        $img = (isset($model->image) && !empty($model->image)) ? Image::thumb($model->image, 800, 200) : Image::thumb($model->pre_image, 800, 450);
+                        $img = Url::base('https') . $img;
+                        //$img = 'https://iq-offshore.com/uploads/thumbs/111-afbbfee65b-800x200-80-50245eca5453a2d9047285d801ff7d28.jpg';
+                        //echo $img;
+                        //https://iq-offshore.com/uploads/thumbs/111-afbbfee65b-800x200-80-50245eca5453a2d9047285d801ff7d28.jpg
+                        //file_get_contents($img);
+                        //echo "<img src='".$img."' />";
+                        //usleep(8000000);
+                        //https://iq-offshore.com/uploads/thumbs/newcomp-2-9847220052-800x200-80-0829a67cc9c0e438aa80084e8cf6fa3a.jpg
+                        //https://iq-offshore.com/uploads/thumbs/c59ec6a9eb1e7e0c849895c48ffecd53-eef9e3e417-800x450-80-5fce77536ff4da9920e9f8c78e63b9ea.jpg
+                        //https://iq-offshore.com/uploads/thumbs/c59ec6a9eb1e7e0c849895c48ffecd53-e91adb8372-800x200-80-501fb6a37f3f9a35e9fef09ebad947e0.jpg
+
+                        //https://iq-offshore.com/uploads/thumbs/lqdcusv5zw4a5q3xo8vtjz2whxu-3a888c3f1e-800x200-80-dd1c7b969e2135235df3899a8b9f479a.jpeg
+                        //https://iq-offshore.com/uploads/thumbs/lqdcusv5zw4a5q3xo8vtjz2whxu-3a888c3f1e-800x200-80-dd1c7b969e2135235df3899a8b9f479a.jpeg
+
+                        //https://iq-offshore.com/uploads/thumbs/111-ab56cf4a99-800x200-80-4640aeb9bcd6de20fbfebbac116ab68d.jpg
+                        //https://iq-offshore.com/uploads/thumbs/111-ab56cf4a99-800x200-80-4640aeb9bcd6de20fbfebbac116ab68d.jpg
+
+                        $link = Url::base('https') . '/news/'. $model->slug ;
+
+                        $text = "<a href='".trim($img)."'>✉</a>\n<a href='".$link."'>".trim($title)."</a>\n".trim($description);
+
+                        Telegram::sendMessage($text);
+
+                        //echo $text;exit;
+                    }
+
                     return $this->redirect(Url::to(['/admin/'.$model->type.'/default/edit', 'id' => $model->id, 'language' => $model->language]));
                 }else{
                     //Yii::$app->session->setFlash('error', Yii::t('easyii','Update error. {0}', serialize($translation_models[$model->language]->errors)));
