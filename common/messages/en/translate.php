@@ -19,6 +19,8 @@ return [
     'contactus' => 'Contact us',
     //============================================ FOOTERS
     'address' => 'Address',
+    'address_in_moskow' => 'Our address in Moscow',
+    'address_in_kiev' => 'Our address in Kiev',
     'number' => 'Phone number',
     'worktime' => 'Work time',
     'addressinfo1' => 'Gazetnyy pereulok, 9 с7, Moscow, 125009, Russia',

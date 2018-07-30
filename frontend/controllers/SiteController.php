@@ -89,7 +89,7 @@ class SiteController extends Controller
             //$message = Yii::$app->errorHandler->exception->getMessage();
         }
 
-        if(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/'))==false){
+        if(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/', 'thumbs/'))==false){
             //e_print(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/')),'saddassda');
             //e_print('not finded');
             try {
@@ -97,7 +97,7 @@ class SiteController extends Controller
                     ->setFrom(Setting::get('robot_email'))
                     //->setFrom('itc@iq-offshore.com')
                     ->setTo('akvamiris@gmail.com')
-                    ->setSubject('Рапорт об ошибке 3')
+                    ->setSubject('Рапорт об ошибке 3(404)')
                     ->setHtmlBody('
                         <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
                         <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />

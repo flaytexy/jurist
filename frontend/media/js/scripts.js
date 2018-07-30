@@ -8,20 +8,82 @@
 })(jQuery);
 
 function initMap() {
-    var mapOptions = {
-        zoom: 15,
-        center: new google.maps.LatLng(55.758784, 37.608181) // New York
-        //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
-    };
 
-    var mapElement = document.getElementById('map');
-    var map = new google.maps.Map(mapElement, mapOptions);
+    if(initializeScroll){
 
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(55.758784, 37.608181),
-        map: map,
-        title: 'Snazzy!'
-    });
+        $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0", function () {
+            var mapElement = document.getElementById('map');
+            if(mapElement){
+                var mapOptions = {
+                    zoom: 15,
+                    center: new google.maps.LatLng(55.758784, 37.608181) // New York
+                    //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
+                };
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(55.758784, 37.608181),
+                    map: map,
+                    title: 'Snazzy!'
+                });
+            }
+
+            //console.log("GoogleMaps loaded. (maps.googleapis.com bottom-right)");
+        });
+
+        initializeScroll = false;
+    }
+}
+
+function initMapContactFirst() {
+    var mapElement = document.getElementById('mapFirst');
+    if(mapElement){
+        var mapOptions = {
+            zoom: 15,
+            center: new google.maps.LatLng(55.758784, 37.608181) // New York
+            //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
+        };
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(55.758784, 37.608181),
+            map: map,
+            title: 'Snazzy!'
+        });
+    }
+}
+
+function initMapContactSecond() {
+    var mapElement = document.getElementById('mapSecond');
+    if(mapElement){
+        //50.456247 30.4995463
+        var mapOptions = {
+            zoom: 15,
+            center: new google.maps.LatLng(50.456247, 30.4995463) // New York
+            //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
+        };
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+        var marker = new google.maps.Marker({
+            //50.456247 30.501735
+            position: new google.maps.LatLng(50.456247, 30.501735),
+            map: map,
+            title: 'Snazzy!'
+        });
+    }
+}
+
+function initMaps() {
+    if(typeof(mapInitizlize) !== "undefined" && mapInitizlize === true){
+        $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0", function () {
+            initMapContactFirst();
+            initMapContactSecond();
+
+            //console.log("GoogleMaps loaded. (maps.googleapis.com bottom-right)");
+        });
+
+        mapInitizlize = false;
+    }
 }
 
 function setupViewport() {
@@ -253,6 +315,8 @@ $(function (e) {
 
 var _d_site = _d_site || '411086831FF94A27DC0340B2';
 
+var initializeScroll = true;
+
 $(window).load(function () {
 
     // executes when complete page is fully loaded, including all frames, objects and images
@@ -267,7 +331,7 @@ $(window).load(function () {
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(gcse, s);
 
-        console.log("cse.google.com/cse.js loaded.");
+        //console.log("cse.google.com/cse.js loaded.");
     })();
     setTimeout(function(){
         $('.gsc-search-box td.gsc-search-button').addClass("fa fa-search");
@@ -287,21 +351,22 @@ $(window).load(function () {
     // }
 
     $(window).scroll(function() {
-        // // Подпишитесь
-        // $.getScript("//widget.privy.com/assets/widget.js", function () {
-        //     $('#privy-container').hide();
-        //     setTimeout(function(){
-        //         //$('#privy-container').show();
-        //     }, 1000);
-        //     console.log("widget.privy.com loaded. (subscribe - top left)");
-        // });
 
-        $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0&callback=initMap", function () {
-            console.log("GoogleMaps loaded. (maps.googleapis.com bottom-right)");
-            initMap();
-        });
+            // // Подпишитесь
+            // $.getScript("//widget.privy.com/assets/widget.js", function () {
+            //     $('#privy-container').hide();
+            //     setTimeout(function(){
+            //         //$('#privy-container').show();
+            //     }, 1000);
+            //     console.log("widget.privy.com loaded. (subscribe - top left)");
+            // });
+
+        initMap();
+
+
     });
 
+    initMaps();
 
     // // 'Позвонить? // не работает главный слайдер )) когда сюда перемещаем
     // $.getScript("https://cdn.jotfor.ms/static/feedback2.js", function () {

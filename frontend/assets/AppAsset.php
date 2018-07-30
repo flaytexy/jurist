@@ -88,7 +88,7 @@ class AppAsset extends AssetBundle
         //'/uploads/newin.js?v=2017-11-13-v3',
 
         'js/all.js?v=2018-07-11-v01',
-        'js/scripts.js?v=2018-07-10-v02',
+        'js/scripts.js?v=2018-07-10-v01',
         //'//code.jquery.com/jquery-2.2.4.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',

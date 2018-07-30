@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $page->title;
     <?php if ($items): ?>
     <section id="banks2" class="scroll-container container-fluid">
         <div class="row">
-            <div class="col-lg-9 col-md-12 col-sm-12">
+            <div class="col-lg-9 col-md-9 col-sm-12">
                 <div class="row bank-new-list top20">
                     <div class="col-md-12" id="switchAllBanks">
                         <table id="example" class="table table-bordered display" style="width:100%">

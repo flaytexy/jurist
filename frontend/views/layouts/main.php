@@ -319,19 +319,22 @@ $addeng = Yii::t('easyii', 'free');
                         <div class="address-widget">
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i
-                                            class="fa fa-map-marker"></i> <?= Yii::t('easyii', 'address') ?>
+                                            class="fa fa-map-marker"></i> <?= Yii::t('easyii', 'address_in_moskow') ?>
                                 </strong><br>
                                 <?= Yii::t('easyii', 'addressinfo1') ?>
                             </p>
+                            <p style="color: white"><strong style="color: #7dc20f"><i
+                                            class="fa fa-phone"></i> <?= Yii::t('easyii', 'number') ?></strong><br>
+                                +7 925 470 50 02</p>
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i
-                                            class="fa fa-map-marker"></i> <?= Yii::t('easyii', 'address') ?>
-                                    2</strong><br>
+                                            class="fa fa-map-marker"></i> <?= Yii::t('easyii', 'address_in_kiev') ?>
+                                    </strong><br>
                                 <?= Yii::t('easyii', 'addressinfo2') ?>
                             </p>
                             <p style="color: white"><strong style="color: #7dc20f"><i
                                             class="fa fa-phone"></i> <?= Yii::t('easyii', 'number') ?></strong><br>
-                                +7 925 470 50 02 <br> +38 067 193 11 17</p>
+                                +38 067 193 11 17</p>
                             <p style="color: white"><strong style="color: #7dc20f"><i
                                             class="fa fa-clock-o"></i> <?= Yii::t('easyii', 'worktime') ?></strong><br>
                                 09:00-19:00</p>
