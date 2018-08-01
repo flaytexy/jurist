@@ -102,6 +102,11 @@ class DefaultController extends ContentAdminController
          * @var NovanewsTranslation|array $translation_models
          * @var NovanewsTranslation $translation_model
          */
+
+        if(($Novanews = $request->post('Novanews')) && $id ==  false){
+            $id = $Novanews['id'];
+        }
+
         $model = Novanews::find()
             ->where([Novanews::tableName() . '.id' => $id])
             ->with('translations')

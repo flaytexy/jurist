@@ -299,6 +299,9 @@ JS
     </div>
     <div class="col-sm-9 pull-sm-3">
         <div class="card card-block">
+            <?php  if(!$model->isNewRecord): ?>
+                <?php echo $form->field($model, 'id')->textInput(['readonly'=> true]) ?>
+            <? endif; ?>
 
             <?= $form->field($model, 'category_detail')->dropDownList($categories); ?>
             <? /*= $form->field($model, 'type_id')->dropDownList([

@@ -66,7 +66,11 @@ class Content extends ActiveRecord
             [['category_detail'], 'trim'],
             ['image', 'image', 'extensions' => 'jpg, jpeg'], //'png, jpg, jpeg, gif'
             ['pre_image', 'image', 'extensions' => 'jpg, jpeg'], //'png, jpg, jpeg, gif'
-            ['tagNames', 'safe'],
+
+            ['image', 'required', 'message' => 'Загрузите главную картинку'],
+            ['pre_image', 'required', 'message' => 'Загрузите картинку для вревью'],
+
+            [['tagNames'], 'safe'],
             [['to_main', 'post_telegram'], 'integer', 'max' => 1],
             [['rating', 'rating_to_main'], 'integer'],
             ['post_telegram', 'default', 'value' => 0],
@@ -295,5 +299,9 @@ class Content extends ActiveRecord
 
     public function getDatetime(){
         return date('Y-m-d H:i:s', $this->time);
+    }
+
+    public function getPostTelegram(){
+        return  $this->attributes['post_telegram'];
     }
 }
