@@ -24,10 +24,14 @@ if($page){
     $this->params['seo'][] = $page->seo('keywords');
 }
 
+if(!$page->text && empty($pages)){
+    //throw new \yii\web\NotFoundHttpException('Page not found');
+    //Yii::$app->response->setStatusCode(404);
+}
+
 ?>
 
 <div class="container" >
-    <h1 id="h1text"><?= $page->seo('h1', $page->title) ?></h1>
     <?php if($page->text): ?><div><?= $page->text ?></div><? endif; ?>
 </div>
 <style>

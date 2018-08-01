@@ -41,7 +41,7 @@ class PaysystemController extends General
         ]);
 
         $render = $this->render('index', [
-            'page' => Novanews::get('page-banks'),
+            'page' => Novanews::get('page-pay-system'),
             'items' => $banks,
             'banksList' => $banksList,
             'bank_type' => $type_id,

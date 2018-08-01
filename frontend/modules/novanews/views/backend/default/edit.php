@@ -260,6 +260,10 @@ JS
                     ->label(null, ['class' => 'form-control-label'])
                     ->textInput(['class' => 'form-control boxed', 'autofocus' => ($model->language === $language ? true : false)]);
 
+                echo $form->field($translation_model, "[$language]meta_h1", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
+                    ->label(null, ['class' => 'form-control-label'])
+                    ->textInput(['class' => 'form-control boxed']);
+
                 echo $form->field($translation_model, "[$language]short_description", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
                     ->textarea();
 
@@ -329,6 +333,8 @@ JS
 //               echo $form->field($translation_model, "[$language]meta_h1", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
 //                   ->label(null, ['class' => 'form-control-label'])
 //                   ->textInput(['class' => 'form-control boxed']);
+
+
 
                 echo $form->field($translation_model, "[$language]meta_title", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
                     ->label(null, ['class' => 'form-control-label'])

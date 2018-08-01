@@ -43,7 +43,6 @@ $this->params['breadcrumbs'][] = $page->title;
     <section class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-            <h1><?= $page->title ?></h1>
             <?php if ($page->text): ?>
                 <div><?= $page->text ?></div><? endif; ?>
             </div>

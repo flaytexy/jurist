@@ -28,11 +28,24 @@ $addeng = Yii::t('easyii', 'free');
 ?>
 <?php $this->beginContent('@app/views/layouts/base.php'); ?>
 
+<? if(!YII_MODERATOR) : ?>
 <script language="JavaScript">
-    document.onselectstart = function () {
-        return false
+    var limtxtcp = 200;
+    var chrome   = navigator.userAgent.indexOf('Chrome') > -1;
+    function copySelectedTextPrepare() {
+        var txt = '';
+        if (txt = window.getSelection) { // Не IE, используем метод getSelection
+            txt = window.getSelection().toString();
+        } else { // IE, используем объект selection
+            txt = document.selection.createRange().text;
+        }
+        if (txt.length > limtxtcp) {  txt = txt.slice(0, limtxtcp); }
+        navigator.clipboard.writeText(txt);
+        return txt;
     }
+    if(chrome){ document.oncopy = copySelectedTextPrepare; } else {  document.onselectstart = function () { return false } }
 </script>
+<? endif; ?>
 <header class="stick scrollup" id="top-header">
     <div class="top-bar visible-md-block visible-lg">
         <div class="container">
@@ -44,7 +57,7 @@ $addeng = Yii::t('easyii', 'free');
                         ['label' => Yii::t('easyii', 'banks'), 'url' => ['/banks'],
                             'options' => ['class' => 'menu-item-has-children', 'title' => 'Банки'],
                         ],
-                        //['label' => Yii::t('easyii', 'pay_system'), 'url' => ['/pay-system'], 'options' => ['title' => Yii::t('easyii', 'pay_system')]],
+                        ['label' => Yii::t('easyii', 'pay_system'), 'url' => ['/pay-system'], 'options' => ['title' => Yii::t('easyii', 'pay_system')]],
                         ['label' => Yii::t('easyii', 'companies'), 'url' => ['/offshornyie-predlozheniya'], 'options' => ['title' => 'Компании']],
                         ['label' => Yii::t('easyii', 'licenses'), 'url' => ['/licenses'], 'options' => ['title' => 'Лицензии']],
                         ['label' => Yii::t('easyii', 'offshores'), 'url' => ['/offshore'], 'options' => ['title' => 'Оффшоры']],
@@ -152,7 +165,7 @@ $addeng = Yii::t('easyii', 'free');
                     ['label' => Yii::t('easyii', 'main'), 'url' => ['site/index']],
                     ['label' => Yii::t('easyii', 'funds'), 'url' => ['/fonds']],
                     ['label' => Yii::t('easyii', 'banks'), 'url' => ['/banks']],
-                    //['label' => Yii::t('easyii', 'pay_system'), 'url' => ['/pay-system'], 'options' => ['title' => Yii::t('easyii', 'pay_system')]],
+                    ['label' => Yii::t('easyii', 'pay_system'), 'url' => ['/pay-system'], 'options' => ['title' => Yii::t('easyii', 'pay_system')]],
                     ['label' => Yii::t('easyii', 'licenses'), 'url' => ['/licenses']],
                     ['label' => Yii::t('easyii', 'news'), 'url' => ['/news']],
                     ['label' => Yii::t('easyii', 'companies'), 'url' => ['/offshornyie-predlozheniya']],

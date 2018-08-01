@@ -67,8 +67,9 @@ class Content extends ActiveRecord
             ['image', 'image', 'extensions' => 'jpg, jpeg'], //'png, jpg, jpeg, gif'
             ['pre_image', 'image', 'extensions' => 'jpg, jpeg'], //'png, jpg, jpeg, gif'
             ['tagNames', 'safe'],
-            ['to_main', 'integer', 'max' => 1],
+            [['to_main', 'post_telegram'], 'integer', 'max' => 1],
             [['rating', 'rating_to_main'], 'integer'],
+            ['post_telegram', 'default', 'value' => 0],
 
             ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
             ['slug', 'default', 'value' => null],

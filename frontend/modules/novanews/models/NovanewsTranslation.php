@@ -33,8 +33,8 @@ class NovanewsTranslation extends ContentTranslation
             [['description'], 'required', 'message' => 'Введите содержание статьи'],
             [['language'], 'in', 'range' => ['ru-RU', 'en-US'], 'message' => 'Неверное значение языка'],
             [['public_status'], 'boolean'],
-            [['name', 'short_description', 'description', 'meta_title', 'meta_keywords', 'meta_description'], 'trim'],
-            [['meta_title', 'meta_keywords', 'meta_description', 'tagNames'], 'safe'],
+            [['name', 'short_description', 'description', 'meta_title', 'meta_keywords', 'meta_description', 'meta_h1'], 'trim'],
+            [['meta_title', 'meta_keywords', 'meta_description', 'meta_h1', 'tagNames'], 'safe'],
         ];
     }
 

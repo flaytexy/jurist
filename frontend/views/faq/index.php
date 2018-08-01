@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
     }
     .toggle .toggle-title i {
         position: absolute;
-        background: url("//arielbeninca.com/Storage/plus_minus.png") 0px -24px no-repeat;
+        /*background: url("plus.png") 0 -24px no-repeat;*/
         width: 24px;
         height: 24px;
         -webkit-transition: all 0.3s ease;
@@ -78,7 +78,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         right: 0;
     }
     .toggle .toggle-title.active i {
-        background: url("//arielbeninca.com/Storage/plus_minus.png") 0px 0px no-repeat;
+        /*background: url("plus.png") 0 0 no-repeat;*/
     }
 
 
