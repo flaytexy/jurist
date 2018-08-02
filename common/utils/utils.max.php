@@ -1,4 +1,63 @@
 <?php
+
+if ( ! function_exists('e_print'))
+{
+    /**
+     * @param string||array $element
+     * @param string $text
+     * @param int $debugIndex
+     * @param string $callFuncEcho
+     */
+    function e_print( $element, $text="", $debugIndex = 0, $callFuncEcho = 'print_r')
+    {
+        $ips = array('127.0.0.1', '195.211.139.66', '188.163.72.20', '188.163.78.34'); // 195.211.139.66 // 185.117.240.76
+
+        if (in_array($_SERVER['REMOTE_ADDR'], $ips)
+            || (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && in_array( $_SERVER['HTTP_X_FORWARDED_FOR'], $ips ))
+        ){
+
+            if(empty($element))
+                $callFuncEcho = 'var_dump';
+            elseif(empty($callFuncEcho))
+                $callFuncEcho = 'print_r';
+
+            $time = timing('project_start');
+            if($time==false)
+                timing('project_start', 1);
+
+            $debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 10);
+            echo"<font color=#8a2be2>".$debug[$debugIndex]["file"]."</font>:<font color=red>".$debug[$debugIndex]["line"];
+            echo"</font> (".timing('project_start').")<br /><font style='font-size:14px;color:darkmagenta;'> ( $text ): </font><pre>";
+            call_user_func($callFuncEcho, $element);
+            echo"</pre><br />";
+        }
+    }
+
+    function ex_print( $element, $text="", $debugIndex = 1, $callFuncEcho = 'print_r')
+    {
+        $ips = array('127.0.0.1', '195.211.139.66', '188.163.72.20', '188.163.78.34'); // 195.211.139.66 // 185.117.240.76
+
+        if (in_array($_SERVER['REMOTE_ADDR'], $ips)
+            || (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && in_array( $_SERVER['HTTP_X_FORWARDED_FOR'], $ips ))
+        ){
+            e_print( $element, $text, $debugIndex, $callFuncEcho);
+            exit;
+        }
+    }
+
+    function e_varDump( $element, $text="", $debugIndex = 1, $callFuncEcho = 'var_dump')
+    {
+        e_print( $element, $text, $debugIndex, $callFuncEcho);
+    }
+
+    function ex_varDump( $element, $text="", $debugIndex = 1, $callFuncEcho = 'var_dump')
+    {
+        e_print( $element, $text, $debugIndex, $callFuncEcho);
+        exit;
+    }
+}
+
+
 function bla_tool (){
     $timezones = array(
         'Pacific/Midway'       => "(GMT-11:00) Midway Island",
@@ -304,121 +363,7 @@ function e_trace($ignore = 1,$limit = 5, $debug = true)
     e_print($trace, "trace", false, false,false, false,1);
 }
 
-function e_print( $element, $text="", $mod = "", $tag="font", $size="", $color="", $debugIndex = 0,$type = false)
-{
-//    $args = func_get_args();
-//    if(count($args)>0){
-//        $element = isset($args[0]) ? $args[0] : "";
-//        $text = isset($args[1]) ? $args[1] : "";
-//        $mod = isset($args[2]) ? $args[2] : "";
-//        $tag = isset($args[3]) ? $args[3] : "";
-//        $size = isset($args[4]) ? $args[4] : "";
-//        $color = isset($args[5]) ? $args[5] : "";
-//        $debugIndex = isset($args[6]) ? $args[6] : "";
-//    }
 
-
-    $time = timing('project_start');
-    if($time==false)
-        timing('project_start',1);
-
-    $debug = debug_backtrace();
-    echo"<font color=#8a2be2>".$debug[$debugIndex]["file"]."</font>:<font color='red'>".$debug[$debugIndex]["line"];echo"</font> (".timing('project_start').")<br />";
-
-    $tag_font_size = '';
-    $tag_font_color = '';
-
-    if($mod == "1"){
-        $tag = "h1";
-        $size = "14px";
-        $color = "black";
-    }elseif($mod=="bblack"){
-        $tag = "b";
-        $size = "14px";
-        $color = "black";
-    }elseif($mod=="3"){
-        $tag = "h1";
-        $size = "14px";
-        $color = "red";
-    }elseif($mod=="4"){
-        $tag = "h1";
-        $size = "14px";
-        $color = "green";
-    }elseif($mod=="green"){
-        $tag = "b";
-        $size = "16px";
-        $color = "green";
-    }elseif($mod=="red"){
-        $tag = "b";
-        $size = "16px";
-        $color = "red";
-    }else{
-
-    }
-
-    if($size>0){
-        $text_size = $size+3;
-    }else{
-        $text_size = 14;
-    }
-    if($size!=false){
-        $tag_font_size = "font-size:".$size."px;";
-    }
-    if($color!=false){
-        $tag_font_color = "color:".$color.";";
-    }
-
-    if($tag!=false){
-        $tag_begin = "<".$tag." style=".$tag_font_size.$tag_font_color.">";
-        $tag_end = "</".$tag.">";
-    }else{
-        $tag_begin = "<font style=".$tag_font_size.$tag_font_color.">";
-        $tag_end = "</font>";
-    }
-
-    if (is_array($element) or is_object($element)){
-        if (is_object($element))
-        {
-            $objMathods = get_class_methods ($element);
-            echo "<font style=\"font-size:".$text_size."px;color:darkmagenta;\"> ( ".$text." ): </font>";
-            echo $tag_begin."<xmp>";
-            if($type=="var_dump")
-                var_dump($element);
-            else
-                print_r($element);
-            //print_r($objMathods); //
-            echo"</xmp>".$tag_end;
-        }
-        elseif(is_array($element))
-        {
-            echo "<font style=\"font-size:".$text_size."px;color:darkmagenta;\"> ( ".$text." ): </font>";
-            echo $tag_begin."<xmp>";
-            if($type=="var_dump")
-                var_dump($element);
-            else
-                print_r($element);
-            echo"</xmp>".$tag_end;
-        }
-
-
-    }else{
-        echo "<font style=\"font-size:".$text_size."px;color:darkmagenta;\"> ( ".$text." ): </font>";
-        echo $tag_begin;
-        if($type=="var_dump")
-            var_dump($element);
-        else
-            print_r($element);
-        echo $tag_end;
-    }
-
-    echo"<br />";
-}
-
-function ex_print( $element, $text="", $mod = "", $tag="font", $size="", $color="",$debugIndex = 1)
-{
-    e_print($element, $text, $mod, $tag, $size, $color, $debugIndex);
-    exit;
-}
 function e_print_only_devel( $element, $text="", $mod = "", $tag="font", $size="", $color="",$debugIndex = 1)
 {
     if(ETREX_ONLY){
