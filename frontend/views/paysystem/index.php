@@ -134,7 +134,7 @@ $this->params['breadcrumbs'][] = $page->title;
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="col-lg-3 col-md-3 col-sm-12">
                 <!-- Widget3 -->
                 <div class="widget villa-photos-widget top20">
                     <div class="title1 style2">

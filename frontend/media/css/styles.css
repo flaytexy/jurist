@@ -5979,6 +5979,9 @@ input.gsc-search-button-v2:hover {
     background-color: #fff !important;
 }
 /* ----- Banks-table ---------- */
+#switchAllBanks {
+    overflow: auto;
+}
 #switchAllBanks .table{
 
 }
@@ -6963,7 +6966,7 @@ blockquote > p a,
     }
 
     ul.widget-gallery > li {
-        width: 20%;
+        width: 50%;
     }
 
     ul.widget-gallery > li img {
@@ -7520,7 +7523,7 @@ blockquote > p a,
     }
 
     ul.widget-gallery > li {
-        width: 25%;
+        width: 100%;
     }
 
     .ratings > i {
