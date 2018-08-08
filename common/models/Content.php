@@ -68,16 +68,16 @@ class Content extends ActiveRecord
             ['pre_image', 'image', 'extensions' => 'jpg, jpeg'], //'png, jpg, jpeg, gif'
 
             ['image', 'required', 'message' => 'Загрузите главную картинку'],
-            ['pre_image', 'required', 'message' => 'Загрузите картинку для вревью'],
+            //['pre_image', 'required', 'message' => 'Загрузите картинку для вревью'],
 
             [['tagNames'], 'safe'],
             [['to_main', 'post_telegram'], 'integer', 'max' => 1],
             [['rating', 'rating_to_main'], 'integer'],
             ['post_telegram', 'default', 'value' => 0],
 
-            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
-            ['slug', 'default', 'value' => null],
             ['slug', 'unique'],
+            ['slug', 'match', 'pattern' => self::$SLUG_PATTERN, 'message' => Yii::t('easyii', 'Slug can contain only 0-9, a-z and "-" characters (max: 128).')],
+            ['slug', 'required', 'message' => 'Slug(url) статьи уже существует'],
 
         ];
     }

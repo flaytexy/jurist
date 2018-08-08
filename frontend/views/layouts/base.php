@@ -41,7 +41,7 @@ use \frontend\widgets\ScriptsFooter;
         <?= $content ?>
         <?php $this->endBody() ?>
 
-<?php if (!YII_DEBUG): ?>
+<?php  if (!YII_NOT_LOAD_OTHET_JS): ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112429010-1"></script>
         <script>

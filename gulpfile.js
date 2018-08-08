@@ -43,7 +43,7 @@ gulp.task('css', function () {
     return gulp.src([
         //'frontend/media/css/bootstrap.css',
        'frontend/media/css/jquery-ui.smoothness.1.12.1.css',
-       'frontend/media/css/bootstrap.4.1.0.min.css',
+       'frontend/media/css/bootstrap.4.1.3.min.css',
         //'vendor/bower-asset/jquery-ui/themes/smoothness/jquery-ui.min.css',
         //'vendor/bower-asset/jquery-ui/themes/smoothness/theme.css',
         'frontend/media/css/flaticon.css',

@@ -92,6 +92,7 @@ $this->params['breadcrumbs'][] = $page->title;
                     </div><!-- Widget -->
                     <? endif; ?>
 
+                    <?php if(isset($top_banks)) :?>
                     <!-- Widget2 -->
                     <div class="widget villa-photos-widget widget-bank">
                         <div class="title1 style2">
@@ -111,6 +112,7 @@ $this->params['breadcrumbs'][] = $page->title;
 
                         </ul>
                     </div><!-- Widget2 -->
+                    <? endif; ?>
 
                     <div class="widget recent-posts-widget">
                         <div class="title1 style2">

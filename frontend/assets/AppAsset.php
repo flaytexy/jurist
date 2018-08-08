@@ -42,7 +42,7 @@ class AppAsset extends AssetBundle
 //        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
         //'css/bootstrap.css', //*last
         'css/jquery-ui.smoothness.1.12.1.css', //*last
-        'css/bootstrap.4.1.0.min.css',
+        'css/bootstrap.4.1.3.min.css',
 
         'css/flaticon.css', //*last
 //        //'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', //*last

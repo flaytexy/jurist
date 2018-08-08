@@ -6,6 +6,7 @@ use common\components\ActiveRecord;
 use common\components\CategoryController;
 use common\helpers\Telegram;
 use frontend\helpers\Image;
+use frontend\models\Setting;
 use Yii;
 
 use common\helpers\InflectorTextTranslate;
@@ -88,9 +89,16 @@ class ContentAdminController extends CategoryController
             }
 
             $is_new_record = $model->isNewRecord;
-            $model->save(false);
 
-            if($model->validate()){ //@todo true  #langValidAndAddidional
+            $slugError = false;
+            if(!$model->validate(['slug'])){
+                $model->slug .= '-' . substr(md5(time()), 0, 2);
+                $slugError = true;
+            }
+
+
+
+            if($model->save(false)){ //@todo true  #langValidAndAddidional
 
                 if(isset($child) && $child!=false){
                     if($child->validate()){
@@ -152,7 +160,9 @@ class ContentAdminController extends CategoryController
                         }
                     }
 
-                    return $this->redirect(Url::to(['/admin/'.$model->type.'/default/edit', 'id' => $model->id, 'language' => $model->language]));
+                    if($model->validate()){
+                        return $this->redirect(Url::to(['/admin/'.$model->type.'/default/edit', 'id' => $model->id, 'language' => $model->language]));
+                    }
                 }else{
                     //Yii::$app->session->setFlash('error', Yii::t('easyii','Update error. {0}', serialize($translation_models[$model->language]->errors)));
                     Yii::$app->session->setFlash('error', Yii::t('easyii','Update error. {0}', $translation_models[$model->language]->formatErrors()));
@@ -163,6 +173,27 @@ class ContentAdminController extends CategoryController
         if($model->errors){
             //ex_print($model->errors, '$errors');
             Yii::$app->session->setFlash('error', Yii::t('easyii','Update error. {0}', $model->formatErrors()));
+        }
+
+        if($slugError){
+            try {
+                $mail =  Yii::$app->mailer->compose()
+                    ->setFrom(Setting::get('robot_email'))
+                    //->setFrom('itc@iq-offshore.com')
+                    ->setTo('akvamiris@gmail.com')
+                    ->setSubject('Рапорт об ошибке 5 - Slug Error')
+                    ->setHtmlBody('
+                        <b>Name: ' . $model->name . '</b><br />
+                        <span>Slug: ' . $model->slug . '</span><br />
+                        <span>ID: ' . $model->id  . '</span><br />
+                        <span>'.Url::to(['https://iq-offshore.com'.'/admin/'.$model->type.'/default/edit', 'id' => $model->id, 'language' => $model->language]).'</span>
+            '       )//Url::to()
+                    //->setReplyTo(Setting::get('admin_email'))
+                    ->send();
+            } catch (\Exception $e) {
+                //throw new ErrorException('xxxxxxxxxxfjjidshghadfg');
+                //@to
+            }
         }
     }
 }

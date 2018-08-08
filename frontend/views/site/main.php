@@ -139,10 +139,8 @@ $iteration = 1;
                         <div class="Modern-Slider" id="Modern-Slider" style="display: none">
                                 <!-- Item -->
                                 <? foreach ($slide_small as $item): ?>
-
                                 <div class="item">
                                     <div class="img-fill">
-                                        <!--<img src="//i.imgur.com/8mwd9AL.jpg?1" alt="">-->
                                         <div class="info">
                                             <div>
                                                 <? if ( Yii::$app->language==='en-US'): ?>
@@ -168,15 +166,16 @@ $iteration = 1;
         </div>
     </div>
 </section>
+<? if(isset($news) && !empty($news)): ?>
 <section id="paddinglist" class="top20">
-    <div class="block no-padding gray2">
+    <div class="block no-padding gray2 top20">
         <div class="container">
             <h2 style="text-align: center;"><?= Yii::t('easyii', '49') ?></h2>
             <div class="row">
                 <? foreach ($news as $item): ?>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="package">
-                            <a href="/news/<?= $item->slug ?>">
+                            <a href="<?= Url::to(['news/'.$item->slug]) ?>">
                                 <div class="package-thumb">
                                     <div class="image">
                                         <?php if(isset($item->model->pre_image) && !empty($item->model->pre_image)): ?>
@@ -193,7 +192,7 @@ $iteration = 1;
                                     </div>
                                     <div class="package-centered">
                                         <div id="centered-package">
-                                            <h4><a href="/news/<?= $item->slug ?>"><?= $item->title ?></a></h4><br>
+                                            <h4><a href="<?= Url::to(['news/'.$item->slug]) ?>"><?= $item->title ?></a></h4><br>
                                         </div>
                                     </div>
                                 </div>
@@ -204,7 +203,7 @@ $iteration = 1;
             </div>
             <div class='containerrr'>
                 <div class="button-container">
-                    <div class='button -green center'><b><a href="/news/"><?= Yii::t('easyii', 'othernews') ?></a> </b>
+                    <div class='button -green center'><b><a href="<?= Url::to(['news/']) ?>"><?= Yii::t('easyii', 'othernews') ?></a> </b>
                     </div>
                 </div>
             </div>
@@ -212,6 +211,7 @@ $iteration = 1;
         <!-- Sponsor Carousel -->
     </div>
 </section>
+<? endif; ?>
 <section>
     <div class="block ext-toppadd-one">
         <div class="fixed-bg2" style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax2.jpg', 900, 420) ?>');"></div>
@@ -230,7 +230,7 @@ $iteration = 1;
                                 <? foreach ($offers as $offer): ?>
                                     <div class="col-md-4">
                                         <div class="package">
-                                            <a href="/offers/<?= $offer->slug ?>">
+                                            <a href="<?= Url::to(['offers/'.$offer->slug]) ?>">
                                                 <div class="package-thumb">
                                                     <?= Html::img($offer->thumb(280, 200), array('class' => 'sadsa')) ?>
                                                     <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $offer->price ?></i> <b> / <?= Yii::t('easyii', 'days') ?>
@@ -239,18 +239,15 @@ $iteration = 1;
                                             </a>
                                             <div class="package-detail">
                                                 <span class="line"></span>
-                                                <a class="cate" href="/offers/<?= $offer->slug ?>"
-                                                   title="">Регистрация компании:</a>
-                                                <h4><a href="/offers/<?= $offer->slug ?>"
-                                                       title="<?= $offer->title ?>"><?= $offer->title ?></a>
+                                                <a class="cate" href="<?= Url::to(['offers/'.$offer->slug]) ?>" title=""><?= Yii::t('easyii', 'reg_company') ?></a>
+                                                <h4>
+                                                    <a href="<?= Url::to(['offers/'.$offer->slug]) ?>" title="<?= $offer->title ?>"><?= $offer->title ?></a>
                                                 </h4>
 
 
                                                 <ul class="location-book">
                                                     <li class="book-btn"><i class="fa fa-info"></i>
-                                                        <a
-                                                                href="/offers/<?= $offer->slug ?>"
-                                                                title=""><?= Yii::t('easyii', '9') ?></a></li>
+                                                        <a href="<?= Url::to(['offers/'.$offer->slug]) ?>" title=""><?= Yii::t('easyii', '9') ?></a></li>
                                                     <li class="book-btn"><i class="fa fa-shopping-basket"></i>
                                                         <a href="javascript:void( window.open( 'https://forms.amocrm.ru/forms/html/form_326401_ab9058f531bfbd2671c5d24aa0d8dc90.html?date=<?php echo time(); ?>', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">
                                                             <?= Yii::t('easyii', '10') ?></a>
@@ -296,7 +293,7 @@ $iteration = 1;
                                         <li><?= Yii::t('easyii', '15') ?></li>
                                         <li><?= Yii::t('easyii', '16') ?></li>
                                     </ul>
-                                    <a href="/banks" class="theme-btn"
+                                    <a href="<?= Url::to(['banks']) ?>" class="theme-btn"
                                        title="Банки"><?= Yii::t('easyii', 'detail') ?></a>
                                 </div>
                             </div>
@@ -361,7 +358,7 @@ $iteration = 1;
                         <div class="villa-locationslist">
                             <ul><? foreach ($licenses as $item): ?>
                                 <li>
-                                    <div class="villa-location" onclick="location.href='/licenses/<?= $item->model->slug ?>'">
+                                    <div class="villa-location" onclick="location.href='<?= Url::to(["licenses/".$item->model->slug]) ?>'">
                                         <img src="<?= $item->thumb(200, 330) ?>" class="main-banks"/>
                                         <div class="villa-locationinfo">
                                             <span><?= $item->model->title ?></span>
@@ -369,7 +366,7 @@ $iteration = 1;
                                     </div>
                                 </li><? endforeach; ?>
                                 <li>
-                                    <div class="villa-location last" onclick="location.href='/licenses'">
+                                    <div class="villa-location last" onclick="location.href='<?= Url::to(["licenses/"]) ?>'">
                                         <?= Html::img(Image::thumb("/uploads/licenses/license (5).jpg", 200, 330), array('class' => 'main-banks')) ?>
                                         <div class="villa-locationinfo">
                                             <span><?= Yii::t('easyii', '20') ?></span>

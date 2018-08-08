@@ -24,65 +24,14 @@ $moduleName = $this->context->module->id;
     <div class="containerok">
         <div class="wrapper">
             <div class="header">
-                <nav class="navbar navbar-expand-sm navbar-dark bg-dark d-none d-sm-block d-md-none">
-                    <a class="navbar-brand" href="#">Expand at sm</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarsExample03">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-
-                            <?php foreach(Yii::$app->getModule('admin')->activeModules as $module) : ?>
-                                <li class="nav-item"><a href="<?= Url::to(["/admin/$module->name"]) ?>" class="menu-item <?= ($moduleName == $module->name ? 'active' : '') ?>">
-                                        <?php if($module->icon != '') : ?>
-                                            <i class="glyphicon glyphicon-<?= $module->icon ?>"></i>
-                                        <?php endif; ?>
-                                        <?= $module->title ?>!
-                                        <?php if($module->notice > 0) : ?>
-                                            <span class="badge"><?= $module->notice ?></span>
-                                        <?php endif; ?>
-                                    </a>   </li>
-                            <?php endforeach; ?>
-
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown03">
-
-                                    <a href="<?= Url::to(['/admin/settings']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'settings') ? 'active' :'' ?>">
-                                        <i class="glyphicon glyphicon-cog"></i>
-                                        <?= Yii::t('easyii', 'Settings') ?>
-                                    </a>
-                                    <?php if(IS_ROOT) : ?>
-                                        <a href="<?= Url::to(['/admin/modules']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'modules') ? 'active' :'' ?>">
-                                            <i class="glyphicon glyphicon-folder-close"></i>
-                                            <?= Yii::t('easyii', 'Modules') ?>
-                                        </a>
-                                        <a href="<?= Url::to(['/admin/admins']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'admins') ? 'active' :'' ?>">
-                                            <i class="glyphicon glyphicon-user"></i>
-                                            <?= Yii::t('easyii', 'Admins') ?>
-                                        </a>
-                                        <a href="<?= Url::to(['/admin/system']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'system') ? 'active' :'' ?>">
-                                            <i class="glyphicon glyphicon-hdd"></i>
-                                            <?= Yii::t('easyii', 'System') ?>
-                                        </a>
-                                        <a href="<?= Url::to(['/admin/logs']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'logs') ? 'active' :'' ?>">
-                                            <i class="glyphicon glyphicon-align-justify"></i>
-                                            <?= Yii::t('easyii', 'Logs') ?>
-                                        </a>
-                                    <?php endif; ?>
-
-                                </div>
-                            </li>
-                        </ul>
-                        <form class="form-inline my-2 my-md-0">
-                            <input class="form-control" type="text" placeholder="Search">
-                        </form>
-                    </div>
-                </nav>
+                <div class="logo">
+                    <img src="<?= $asset->baseUrl ?>/img/logo_20.png">
+                    ETR_CMS
+                </div>
+                <div class="nav">
+                    <a href="<?= Yii::$app->homeUrl ?>" class="pull-left"><i class="glyphicon glyphicon-home"></i> <?= Yii::t('easyii', 'Open site') ?></a>
+                    <a href="<?= Url::to(['/admin/sign/out']) ?>" class="pull-right"><i class="glyphicon glyphicon-log-out"></i> <?= Yii::t('easyii', 'Logout') ?></a>
+                </div>
             </div>
             <div class="main">
                 <div class="box sidebar">
