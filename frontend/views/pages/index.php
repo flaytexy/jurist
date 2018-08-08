@@ -75,7 +75,7 @@ if($page){
                                             <ul class="location-book">
                                                 <li class="book-btn"><i class="fa fa-info"></i>
 
-                                                    <?= Html::a('Подробнее', [$typeTitle.'/'.$item->slug]) ?></li>
+                                                    <?= Html::a(Yii::t('easyii', 'more_details'), [$typeTitle.'/'.$item->slug]) ?></li>
                                                 <li class="book-btn"><i class="fa fa-shopping-basket"></i>
                                                     <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
                                                 </li>

@@ -176,6 +176,7 @@ Did not find the information you need? Contact our specialists for online suppor
 
     'More_about_our_banks' => 'More about our banks',
 
-    'reg_company' => 'Company registration:'
+    'reg_company' => 'Company registration:',
+    'more_details' => 'Learn more'
 
 ];
