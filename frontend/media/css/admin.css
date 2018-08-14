@@ -2871,8 +2871,9 @@ span a {
 
 @media (max-width: 991px) {
     .sidebar {
-        position: fixed;
-        left: -230px;
+        /*position: fixed;*/
+        /*left: -230px;*/
+        display: none !important;
     }
 }
 

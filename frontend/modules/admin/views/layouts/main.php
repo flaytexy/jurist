@@ -19,13 +19,21 @@ $moduleName = $this->context->module->id;
     <?php $this->head() ?>
 </head>
 <body>
+<style>
+    .containerok .navbar {
+        padding: 0.1rem 1rem !important;
+    }
+    .containerok .navbar > .navbar-brand {
+        padding-top: 0 !important;  padding-bottom: 0 !important;
+    }
+</style>
 <?php $this->beginBody() ?>
 <div id="admin-body">
     <div class="containerok">
         <div class="wrapper">
             <div class="header">
-                <nav class="navbar navbar-expand-sm navbar-dark bg-dark d-none d-sm-block d-md-none">
-                    <a class="navbar-brand" href="#">Expand at sm</a>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-lg-none d-xl-none">
+                    <a class="navbar-brand" href="#">Menu</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

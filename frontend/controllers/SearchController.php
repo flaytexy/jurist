@@ -1,24 +1,12 @@
 <?php
 namespace frontend\controllers;
 
-use frontend\models\Popularly;
-use frontend\modules\banks\api\Banks;
+use frontend\modules\novanews\models\NovanewsTranslation;
 use frontend\modules\page\api\Page;
 use Yii;
-use yii\base\InvalidParamException;
 use yii\data\ActiveDataProvider;
-use yii\data\ArrayDataProvider;
 use yii\db\Query;
-use yii\web\BadRequestHttpException;
 use yii\web\Controller;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\ContactForm;
-use frontend\modules\offers\api\Offers;
 use yii\widgets\LinkPager;
 
 /**
@@ -26,60 +14,63 @@ use yii\widgets\LinkPager;
  */
 class SearchController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
-                'rules' => [
-                    [
-                        'actions' => ['signup'],
-                        'allow' => true,
-                        'roles' => ['?'],
-                    ],
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
+//    /**
+//     * @inheritdoc
+//     */
+//    public function behaviors()
+//    {
+//        return [
+//            'access' => [
+//                'class' => AccessControl::className(),
+//                'only' => ['logout', 'signup'],
+//                'rules' => [
+//                    [
+//                        'actions' => ['signup'],
+//                        'allow' => true,
+//                        'roles' => ['?'],
+//                    ],
+//                    [
+//                        'actions' => ['logout'],
+//                        'allow' => true,
+//                        'roles' => ['@'],
+//                    ],
+//                ],
+//            ],
+//            'verbs' => [
+//                'class' => VerbFilter::className(),
+//                'actions' => [
+//                    'logout' => ['post'],
+//                ],
+//            ],
+//        ];
+//    }
+//
+//    /**
+//     * @inheritdoc
+//     */
+//    public function actions()
+//    {
+//        return [
+//            'error' => [
+//                'class' => 'yii\web\ErrorAction',
+//            ],
+//            'captcha' => [
+//                'class' => 'yii\captcha\CaptchaAction',
+//                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+//            ],
+//        ];
+//    }
+//
+//    /**
+//     * Displays homepage.
+//     *
+//     * @return mixed
+//     */
 
-    /**
-     * @inheritdoc
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
-        ];
-    }
 
-    /**
-     * Displays homepage.
-     *
-     * @return mixed
-     */
     public function actionIndex()
     {
+
         $page = \frontend\modules\page\api\Page::get('page-search');
         if($page){
             $this->view->title = $page->seo('title', $page->model->title);
@@ -98,17 +89,26 @@ class SearchController extends Controller
             ]);
         }
 
+//        $news = Novanews::items([
+//            'seasch' => '',
+//            'where' => ['status' => 1],
+//            'pagination' => ['pageSize' => 250]
+//        ]);
+
         $search = Yii::$app->request->post('search');
 
-        $query = (new Query())->select("*, MATCH (title,text) AGAINST ('".$search."' IN BOOLEAN MODE) as REL")
-            ->from('content')
-            ->where("MATCH (title,text) AGAINST ('".$search."' IN BOOLEAN MODE) OR `text` LIKE  '%".$search."%' ")
+        $query = (new Query())->select("content_translation.*, content.*, content_categories.slug as slug_category, (MATCH (`description`) AGAINST ('".$search."' IN BOOLEAN MODE)) as REL")
+            ->from('content_translation')
+            ->where("(MATCH (`description`) AGAINST ('".$search."' IN BOOLEAN MODE)) ")
+            ->andWhere([NovanewsTranslation::tableName() . '.public_status' => NovanewsTranslation::STATUS_ON])
+            ->leftJoin('content', 'content.id = content_translation.content_id')
+            ->leftJoin('content_categories', 'content.category_id = content_categories.category_id')
             ->orderBy('REL DESC');
 
         $_adp = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => 10,
+                'pageSize' => 100,
             ],
 
         ]);

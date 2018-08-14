@@ -50,7 +50,6 @@ class NovaoffersController extends General
 
     public function actionView($slug)
     {
-
         // Categories Left Menu
         $query = new \yii\db\Query;
         $query->select('ept.title as parent_title, ept.*, ept2.*,

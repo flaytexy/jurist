@@ -159,8 +159,11 @@ $(function () {
             //console.log(myMarker[label].weburl);
             $('#menu-show-block-zone').show();
             $('#menu-show-block-zone .block-zone').hide();
-            $('#' + myMarker[label].weburl).show();
-            $('button:visible').click();
+            //alert('#' + myMarker[label].weburl);
+            var mark = $('#' + myMarker[label].weburl);
+            mark.show();
+            mark.find('button:visible').click();
+            //$('button:visible').click();
         }
         /*onMarkerOver: function (event, code, region) {
          console.log('sdadas22');

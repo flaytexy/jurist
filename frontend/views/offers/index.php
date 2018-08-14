@@ -113,21 +113,14 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <div class="col-md-8">
                             <span><b><?= $item->title ?></b></span>
                             <?= $item->short ?>
-
                             <ul>
                                 <?php foreach ($item->properties as $prop) : ?>
-                                    <li>
-                                        <?= $prop->name ?>
-                                    </li>
+                                    <li><?= $prop->name ?></li>
                                 <?php endforeach; ?>
                             </ul>
-
                             <div class="btn abtn">
-
-                             <a id="autoclicking" href="<?= Url::to(['offers/view', 'slug' => $item->slug]) ?>"><button><?= Yii::t('easyii', 'more_details') ?></button></a>
+                                <a class="autoclicking" href="<?= Url::to(['offers/view', 'slug' => $item->slug]) ?>"><button><?= Yii::t('easyii', 'more_details') ?></button></a>
                             </div>
-                            <!--['class'=>'btn btn-default']-->
-
                         </div>
                     </div>
                 <?php endforeach; ?>

@@ -79,22 +79,20 @@ $addeng = Yii::t('easyii', 'free');
                     </div>
                 </div>
                 <div class="col-md-3" id="searchBlock">
-                    <? if (false): ?>
+                    <? if (TRUE): ?>
                         <? $form = ActiveForm::begin(['action' => 'search', 'id' => 'forum_post',
                             'method' => 'post',
                         ]); ?>
                         <div class="search-inp row no-padding">
                             <div class="col-md-9 no-padding ">
-                                <?= Html::input('text', 'search', $search, []) ?>
+                                <?= Html::input('text', 'search', $this->params['search'], []) ?>
                             </div>
                             <div class="col-md-3 no-padding ">
-                                <?= Html::submitButton(Yii::t('easyii', 'Search'), ['class' => 'btn btn-primary submit']) ?>
+                                <?= Html::submitButton(Yii::t('easyii', 'search'), ['class' => 'btn btn-primary submit']) ?>
                             </div>
                         </div>
                         <?php ActiveForm::end(); ?>
                     <? endif ?>
-
-                    <gcse:search></gcse:search>
                 </div>
                 <div class="col-md-7 ">
                     <nav class="navbar22 navbar-default22">

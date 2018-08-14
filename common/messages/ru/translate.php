@@ -218,6 +218,7 @@ return [
     'More_about_our_banks' => 'Подробнее о наших банках',
 
     'reg_company' => 'Регистрация компании:',
-    'more_details' => 'Подробнее'
+    'more_details' => 'Подробнее',
+    'search' => 'Поиск',
 
 ];
