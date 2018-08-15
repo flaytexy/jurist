@@ -1,112 +1,202 @@
 <?php
-/**
- * @var \yii\web\View $this
- * @var \frontend\modules\video\models\Video|array $models
- * @var \frontend\modules\video\models\Video $model
- * @var \yii\data\Pagination $pages
- */
-
-use common\modules\attachment\models\Attachment;
+use frontend\modules\offers\api\Offers;
+use frontend\modules\page\api\Page;
+use yii\helpers\Html;
 use yii\helpers\Url;
+use frontend\assets\MapsAsset;
+
+MapsAsset::register($this);
+$page = Page::get('page-offers');
+/**
+ * @var \frontend\modules\novanews\api\NovanewsObject[] $top_news
+ * @var \frontend\modules\novabanks\api\NovabanksObject[] $top_banks
+ * @var \frontend\modules\novaoffers\api\NovaoffersObject[] $top_offers
+ */
+if(!empty($page)) $this->title = $page->seo('title', $page->model->title);
+$this->params['breadcrumbs'][] = $page->model->title;
 
 ?>
-<section class="novaoffers gl-section">
-    <div class="novaoffers__title">
-        <p><?= Yii::t('app', 'Novaoffers') ?></p>
-    </div>
 
-    <div class="grid add-ajax-content" id="grid">
-        <?php echo $this->render('items',['models' => $models]); ?>
-    </div>
+<div class="container">
+    <h1><?= $page->seo('h1', $page->title) ?></h1>
+    <div><?= $page->seo('div', $page->text) ?></div>
+</div>
 
-    <?php $offers_links = $pages->getLinks(); ?>
-    <?php if (isset($offers_links['next'])) { ?>
-        <div class="load-more hidden">
-            <i class="fa fa-refresh fa-spin"></i>
+<script type="application/javascript">
+    var myMarker = <?= $markers; ?>;
+    var mapType = "<?= $mapType; ?>";
+</script>
+
+<section id="world-map-markers-block">
+    <div class="row">
+        <div class="col-md-12 hidden-xs">
+            <article class="format-standard">
+                <figure>
+                    <div id="world-map-markers" style="margin:0 auto; width: 1020px; height: 400px"></div>
+                </figure>
+            </article>
         </div>
-    <?php } ?>
-
-    <?php ob_start(); ?>
-    <script>
-        var selector = ".add-ajax-content";
-        var pageSize = "<?=$pages->pageSize?>";
-        var countShowElements = "<?=$pages->pageSize?>";
-        var load_more = false;
-
-        function loadImages(data){
-            $(data).find('img').each(function( index, val ) {
-                console.log( index + ": " + $( this ).attr('src') );
-               //alert( index + ": " + $( this ).attr('src') );
-
-                var image = $('<img />').attr('src', $( this ).attr('src'));
-            });
-        }
-
-        var $masonry_bricks = $('#grid');
-        var $grid = $masonry_bricks.masonry({});
-        $grid.on( 'layoutComplete', function( laidOutItems ) {
-            if (!$masonry_bricks.hasClass('loaded')) {
-                //var $images = $('#grid img:not(.loaded)'),
-                var $images = $('#grid .grid-item img'),
-                    images_count = $images.length,
-                    images_loaded = 0;
-
-                $images.each(function(index) {
-                    console.log('index: ' + index);
-                    //alert(index);
-                    var i = new Image();
-
-                    i.onload = function () {
-                        images_loaded++;
-                        if(images_loaded == images_count) {
-                            var msnry = new Masonry( '#grid', {});
-                            msnry.layout();
-                            //$grid.masonry('layout');
-                            $masonry_bricks.addClass('loaded');
-                        }
-                    };
-
-                    i.src = $(this).attr('src');
-                });
-            }
-            console.log( 'Masonry layout complete with ' + laidOutItems.length + ' items' );
-        });
-
-
-        $(window).on('scroll', function () {
-            var scroll_bottom = $(document).height() - $(this).outerHeight(true) - $(this).scrollTop();
-            if (scroll_bottom < 40 && !load_more) {
-                load_more = true;
-                $('.load-more').removeClass('hidden');
-                $.get(
-                    '<?= Url::to(['/novaoffers/default/load-more/']); ?>?offset=' + countShowElements,
-                    function (data) {
-                        countShowElements = parseInt(countShowElements) + parseInt(pageSize);
-                        data = $.trim(data);
-                        if (data) {
-                            //loadImages(data);
-                            console.log('scroll!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-                            $('#grid').removeClass('loaded');
-
-                            $(selector).append(data);
-                            //$grid.masonry('layout');
-                            var msnry = new Masonry( '#grid', {});
-                            msnry.layout();
-
-                            load_more = false;
-                            $('body').trigger('scroll');
-                        } else {
-                            $('body').off('scroll');
-                        }
-                        $('.load-more').addClass('hidden');
-                    }
-                );
-            }
-        });
-    </script>
-    <?php $script = str_replace(['<script>', '</script>'], '', ob_get_contents()); ?>
-    <?php ob_end_clean(); ?>
-
-    <?php $this->registerJs($script); ?>
-
+    </div>
 </section>
+
+<!-- НОВЫЙ СПИСОК -->
+<style>
+    #myInput {
+        background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+        background-position: 10px 12px; /* Position the search icon */
+        background-repeat: no-repeat; /* Do not repeat the icon image */
+        width: 100%; /* Full-width */
+        font-size: 16px; /* Increase font-size */
+        padding: 12px 20px 12px 40px; /* Add some padding */
+        border: 1px solid #ddd; /* Add a grey border */
+        margin-bottom: 12px; /* Add some space below the input */
+    }
+
+    #myUL {
+        /* Remove default list styling */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #myUL li a {
+        border: 1px solid #ddd; /* Add a border to all links */
+        margin-top: -1px; /* Prevent double borders */
+        background-color: #f6f6f6; /* Grey background color */
+        padding: 8px 6px; /* Add some padding */
+        text-decoration: none; /* Remove default text underline */
+        font-size: 18px; /* Increase the font-size */
+        color: black; /* Add a black text color */
+        display: block; /* Make it into a block element to fill the whole list */
+    }
+    #myUL li a > b, #myUL li a > span {
+        font-size: 15px;
+    }
+
+    #myUL li a.header {
+        background-color: rgba(0, 0, 0, 0.68); /* Add a darker background color for headers */
+        cursor: default; /* Change cursor style */
+        color: aliceblue;
+    }
+
+    #myUL li a:hover:not(.header) {
+        background-color: #eee; /* Add a hover effect to all links, except for headers */
+    }
+</style>
+
+<section id="offers" class="container-fluid top30">
+    <div class="row">
+        <div class="col-md-3">
+            <nav id="menus" class="navbar no-padding">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск юрисдикции..">
+
+                <ul id="myUL" class="off-ul">
+                    <?php foreach ($offers as $item) : ?><? if($region_name != $item->region_name ): ?>
+                    <?php $region_name = $item->region_name; ?>
+                    <li  id="reg_<?= $item->model->region_id ?>"><a href="#" class="header"><?= $region_name ?></a></li><? endif ?>
+                    <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?> / <span>€<?= $item->price ?> / Дней: <?= $item->how_days?></span></a></li>
+                    <?php endforeach; ?>
+                </ul>
+
+                <div class="">
+                    <ul class="nav" id="offers-menu-block">
+
+                    </ul>
+                </div>
+            </nav>
+            <div id="menu-show-block-zone" class="" style="display: none; ">
+                <?php foreach ($offers as $item) : ?>
+                    <div id="b_<?= $item->id ?>" class="block-zone row" style="display: none;">
+                        <div class="col-md-4">
+                            <div class="package-thumb">
+                                <a href="<?= Url::to(['offers/'.$item->slug]) ?>" class="label label-info">
+                                    <?= Html::img($item->thumbFile($item->image, 500, 375), array('class' => 'sadsa')) ?>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <span><b><?= $item->title ?></b></span>
+                            <?= $item->short ?>
+
+                            <?php if(isset($item->model->child->properties) && $item->model->child->properties): ?>
+                            <ul>
+                                <?php foreach ($item->model->child->properties as $prop) : ?>
+                                    <li>
+                                        <?= $prop->name ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <? endif; ?>
+                            <div class="btn abtn">
+
+                             <a id="autoclicking" href="<?= Url::to(['offers/view', 'slug' => $item->slug]) ?>"><button><?= Yii::t('easyii', 'more_details') ?></button></a>
+                            </div>
+                            <!--['class'=>'btn btn-default']-->
+
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="">
+                    <div class="villaeditors-picks offers-list">
+                        <div class="packages style2 remove-ext2">
+                            <div class="row">
+                                <?php foreach ($offersPerPage as $item) : ?>
+                                    <div class="col-md-4">
+                                        <div class="package">
+
+                                            <a href="<?= Url::to(['offers/'.$item->slug]) ?>">
+                                                <div class="package-thumb">
+                                                    <?= Html::img($item->thumb(500, 375)) ?>
+                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $item->price ?></i><b> / <? if ($item->how_days): ?>Дней: <?= $item->how_days?><? else: ?>Минимал<? endif; ?></b></span>
+                                                </div>
+                                            </a>
+                                            <div class="package-detail">
+                                                <h4><?= Html::a($item->title, ['offers/view', 'slug' => $item->slug]) ?></h4>
+                                                <ul class="location-book">
+                                                    <li class="book-btn"><i class="fa fa-info"></i>
+                                                       <a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= Yii::t('easyii', 'more_details') ?></a></li>
+                                                    <li class="book-btn"><i class="fa fa-shopping-basket"></i>
+                                                        <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Villa Editors Picks -->
+                    <div id="pagination">
+                        <div><?= \frontend\modules\novaoffers\api\Novaoffers::pages() ?></div>
+                    </div>
+                    <!-- Pagination -->
+                </div>
+        </div>
+    </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('li');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>

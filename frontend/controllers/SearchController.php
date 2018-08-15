@@ -108,7 +108,7 @@ class SearchController extends Controller
         $_adp = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => 100,
+                'pageSize' => 200,
             ],
 
         ]);

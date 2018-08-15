@@ -245,8 +245,10 @@ $config = [
                 '' => 'site/index',
                 //'offshornyie-predlozheniya' => 'offers/index',
 
-                'offers' => 'novaoffers/index',
-                'offshornyie-predlozheniya' => 'novaoffers/index',
+                'offers' => 'novaoffers/default/index',
+                //'offshornyie-predlozheniya' => 'novaoffers/index',
+                'offshornyie-predlozheniya' => 'novaoffers/default/index',
+
                 'banks' => 'novabanks/index',
                 'pay-system' => 'paysystem/index',
                 'feed' => 'rss/feed',
@@ -301,6 +303,15 @@ $config = [
                 '<name:(banks|novabanks)>/page<page:\d+>' => 'novabanks/index',
                 '<name:(banks|novabanks)>/<slug:[\w-]+>' => 'novabanks/view', //'banks/view',
                 '<name:(pay-system)>/<slug:[\w-]+>' => 'paysystem/view', //'banks/view',
+
+                //'<module>/<controller>/<action>/<id:\w+>' => '<module>/<controller>/<action>',
+                //'<module:\w+>/<controller:\w+>/<action:[0-9a-zA-Z_\-]+>/<id:\d+>' => '<module>/<controller>/<action>',
+
+//                '<module:cabinet>/<controller:\w+>/<id:\d+>' => '<module>/<controller>/view',
+//                '<module:cabinet>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
+//                '<module:cabinet>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+
+                //'<module:novaoffers>/<controller:\w+>/<id:\d+>' => '<module>/<controller>/view',
 
                 '<controller:\w+>/tag/<tag:[\w- ]+>' => '<controller>/index',
                 //'<controller:\w+>/page<page:\d+>' => '<controller>/index',                            //@todo
@@ -497,7 +508,11 @@ $config = [
 //            'viewPath' => '@frontend/modules/news/views/frontend',
 //        ],
         //'novanews' => ['class' => 'frontend\modules\novanews\Module'],
-
+        'novaoffers' => [
+            'class' => 'frontend\modules\novaoffers\Module',
+            'controllerNamespace' => 'frontend\modules\novaoffers\controllers\frontend',
+            'viewPath' => '@frontend/modules/novaoffers/views/frontend',
+        ],
         'admin' => [
             'class' => 'frontend\modules\admin\AdminModule',
             'layout' => '@frontend/modules/admin/views/layouts/main.php', //"@app/views/layouts/main.old.php";

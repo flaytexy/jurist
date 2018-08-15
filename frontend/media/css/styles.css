@@ -200,7 +200,7 @@ div.pagination {
 }
 
 .search-inp .submit {
-    padding: 2px 16px;
+    padding: 0 16px;
     background-color: #3b3b3b;
     border-color: #000000;
     margin-left: 4px;

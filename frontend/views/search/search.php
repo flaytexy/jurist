@@ -12,7 +12,12 @@ $this->params['search'] = $search;
 <section>
     <div class="container">
         <?php foreach ($items as $item) : ?>
+        <?php
+            if(strpos($item['type'],'news',0)!==false){
+                $item['slug_category'] = 'news';
+            }
 
+            ?>
         <div class="row">
             <div class="col-sm-3 col-md-3 no-padding">
                 <div class="padv-5">

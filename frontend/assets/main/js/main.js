@@ -71,7 +71,7 @@ $(function () {
 		});
 
 		//===== Recent News Carousel =====//
-		$(".recentnews-carousel").owlCarousel({
+		$("#recentnews-carouselka, #recent-comments").owlCarousel({
 			autoplay:true,
 			smartSpeed:500,
 			loop:true,

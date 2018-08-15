@@ -80,7 +80,7 @@ $addeng = Yii::t('easyii', 'free');
                 </div>
                 <div class="col-md-3" id="searchBlock">
                     <? if (TRUE): ?>
-                        <? $form = ActiveForm::begin(['action' => 'search', 'id' => 'forum_post',
+                        <? $form = ActiveForm::begin(['action' => '/search', 'id' => 'forum_post',
                             'method' => 'post',
                         ]); ?>
                         <div class="search-inp row no-padding">

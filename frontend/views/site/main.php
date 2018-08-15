@@ -16,11 +16,7 @@ $iteration = 1;
 
 ?>
 
-<style>
-    .bdanzer-card {
-        min-height: 245px;
-    }
-</style>
+
 
 <? if (true): ?>
     <section>
@@ -409,7 +405,7 @@ $iteration = 1;
                         </div>
                         <div class="remove-ext">
                             <div class="h5"><?= Yii::t('easyii', '24') ?></div>
-                            <div class="recentnews-carousel">
+                            <div class="recentnews-carousel" id="recentnews-carouselka">
                                 <? foreach ($fonds as $item): ?>
                                     <div class="recentnew-post"
                                          onclick="location.href='/fonds/<?= $item->model->slug ?>'">
@@ -522,7 +518,9 @@ $iteration = 1;
 
         <div class="row">
             <div class="col-md-12 h2 text-center">Отзывы</div>
-            <div class="col-md-6">
+        </div>
+        <div class="row recentnews-carousel" id="recent-comments">
+            <div class="fcol-md-6">
                 <div class="bdanzer-card">
                     <div class="h3">Виктория</div>
                     <div><p>"Нигде не могли открыть счет на компанию. Получили около десяти отказов из европейских и
@@ -535,7 +533,7 @@ $iteration = 1;
             </div>
 
 
-            <div class="col-md-6">
+            <div class="fcol-md-6">
                 <div class="bdanzer-card">
                     <div class="h3">Инесса</div>
                     <div><p>"Деятельность нашей фирмы такого рода, что у банков все время возникают претензии
@@ -546,7 +544,7 @@ $iteration = 1;
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="fcol-md-6">
                 <div class="bdanzer-card">
                     <div class="h3">Александр</div>
                     <div><p>"Не мог открыть счет ни в одном банке, куда обращался, чтобы вывести деньги из Латвии.
@@ -555,7 +553,7 @@ $iteration = 1;
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="fcol-md-6">
                 <div class="bdanzer-card">
                     <div class="h3">Иван</div>
                     <div><p>"Искал возможность легально оформить криптообменник. Одна юридическая фирма предложила свою
@@ -566,7 +564,7 @@ $iteration = 1;
             </div>
 
 
-            <div class="col-md-6">
+            <div class="fcol-md-6">
                 <div class="bdanzer-card">
                     <div class="h3">Владимир</div>
                     <div><p>"Имел опыт работы с другой компанией, но столкнулся с мошенничеством. Предоплату взяли, а
@@ -576,7 +574,7 @@ $iteration = 1;
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="fcol-md-6">
                 <div class="bdanzer-card">
                     <div class="h3">Михаил</div>
                     <div><p>"В виду постоянной занятости – ценю время. Специалисты компании четко и понятно объяснили,
@@ -587,7 +585,7 @@ $iteration = 1;
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="fcol-md-6">
                 <div class="bdanzer-card">
                     <div class="h3">Марина</div>
                     <div><p>"Обратилась с деликатной проблемой – важно было решить вопрос с регистрацией бизнеса за
@@ -597,7 +595,7 @@ $iteration = 1;
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="fcol-md-6">
                 <div class="bdanzer-card">
                     <div class="h3">Ксения</div>
                     <div><p>"Хотела зарегистрировать компанию за границей, но не знала с чего начать. Как начинающий
@@ -608,7 +606,7 @@ $iteration = 1;
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="fcol-md-6">
                 <div class="bdanzer-card">
                     <div class="h3">Ольга</div>
                     <div><p>"Давно занимаюсь бизнесом в Украине. Недавно получила предложение из-за границы насчет
@@ -623,7 +621,7 @@ $iteration = 1;
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="fcol-md-6">
                 <div class="bdanzer-card">
                     <div class="h3">Марк</div>
                     <div><p>"Я давно занимаюсь форексом как трейдер. Недавно решил оформить брокерство и открыть счет,

@@ -235,9 +235,11 @@
 .bdanzer-card {
     background: white;
     text-align: center;
-    margin: 10px -7px;
+    /*margin: 10px -7px;*/
+    margin: 3px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
     padding: 6px;
+    min-height: 350px;
 }
 
 .bdanzer-card img {
