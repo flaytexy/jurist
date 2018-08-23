@@ -47,6 +47,12 @@ function access_logger($file_path = "accessLogFile.log", $data = array()) {
         elseif(strpos($userAgent,'crawl',0)!=false){
             $botStr = ' BOT: crawler; ';
         }
+        elseif(strpos($userAgent,'Googlebot',0)!=false){
+            $botStr = ' BOT: Googlebot; ';
+        }
+        elseif(strpos($userAgent,'YandexBot',0)!=false){
+            $botStr = ' BOT: YandexBot; ';
+        }
         elseif(strpos($userAgent,'bot',0)!=false){
             $botStr = ' BOT: ; ';
         }
@@ -77,7 +83,7 @@ function access_logger($file_path = "accessLogFile.log", $data = array()) {
 
         $reV = 1;
         $clearFile = false;
-        $limitStr = 50000; //20000
+        $limitStr = 100000; //20000
 
         if($reV === 1){
             // 1500 - 11 lines
@@ -116,7 +122,16 @@ function access_logger($file_path = "accessLogFile.log", $data = array()) {
         }
 
         if (@fwrite($handle,"$msg\r\n", $lineLimit) === FALSE) {
-            exit;
+            //exit;
+        }
+
+        if(strpos($referrer,'google',0)!=false){
+            $saveLocation = 'accessLogFileGoogle.log';
+            $handle = @fopen($saveLocation, "a+");
+
+            if (file_exists($saveLocation) && is_writable($saveLocation)) {
+                @fwrite($handle,"$msg\r\n", $lineLimit);
+            }
         }
 
         @fclose($handle);

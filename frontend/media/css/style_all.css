@@ -6712,6 +6712,16 @@ footer .title1.style2 > h2 {
 #paddinglist #centered-package {
     top: 28% !important;
 }
+
+#paddinglist .package {
+    margin-bottom: 15px;
+}
+#paddinglist .subs-main {
+    border: 6px solid #ffffff;margin-bottom: 20px; padding: 20px 0;
+}
+#paddinglist .subs-main .btn {
+    background-color: #7dc20f;
+}
 .package-detail {
     background: #ffffff none repeat scroll 0 0;
     -webkit-border-radius: 0 0 5px 5px;

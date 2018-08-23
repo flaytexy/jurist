@@ -245,9 +245,9 @@ $config = [
                 '' => 'site/index',
                 //'offshornyie-predlozheniya' => 'offers/index',
 
-                'offers' => 'novaoffers/default/index',
-                //'offshornyie-predlozheniya' => 'novaoffers/index',
-                'offshornyie-predlozheniya' => 'novaoffers/default/index',
+                'offers' => 'novaoffers/index',
+                'offshornyie-predlozheniya' => 'novaoffers/index',
+                //'offshornyie-predlozheniya' => 'novaoffers/default/index',
 
                 'banks' => 'novabanks/index',
                 'pay-system' => 'paysystem/index',
@@ -508,11 +508,11 @@ $config = [
 //            'viewPath' => '@frontend/modules/news/views/frontend',
 //        ],
         //'novanews' => ['class' => 'frontend\modules\novanews\Module'],
-        'novaoffers' => [
-            'class' => 'frontend\modules\novaoffers\Module',
-            'controllerNamespace' => 'frontend\modules\novaoffers\controllers\frontend',
-            'viewPath' => '@frontend/modules/novaoffers/views/frontend',
-        ],
+//        'novaoffers' => [
+//            'class' => 'frontend\modules\novaoffers\Module',
+//            'controllerNamespace' => 'frontend\modules\novaoffers\controllers\frontend',
+//            'viewPath' => '@frontend/modules/novaoffers/views/frontend',
+//        ],
         'admin' => [
             'class' => 'frontend\modules\admin\AdminModule',
             'layout' => '@frontend/modules/admin/views/layouts/main.php', //"@app/views/layouts/main.old.php";

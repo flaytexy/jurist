@@ -170,7 +170,7 @@ $iteration = 1;
             <div class="row">
                 <? foreach ($news as $item): ?>
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="package">
+                        <div class="package ">
                             <a href="<?= Url::to(['news/'.$item->slug]) ?>">
                                 <div class="package-thumb">
                                     <div class="image">
@@ -197,9 +197,20 @@ $iteration = 1;
                     </div>
                 <? endforeach; ?>
             </div>
-            <div class='containerrr'>
-                <div class="button-container">
-                    <div class='button -green center'><b><a href="<?= Url::to(['news/']) ?>"><?= Yii::t('easyii', 'othernews') ?></a> </b>
+            <div class='container'>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="button-container">
+                            <div class='button -green center'><b><a href="<?= Url::to(['news/']) ?>"><?= Yii::t('easyii', 'othernews') ?></a> </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 top20">
+                        <div class="subs-main text-center">
+                            <a href="https://t.me/iqoffshore" target="_blank" rel="nofollow"><button class="btn btn-success"  style="font-size: 35px">Подписаться на наши новости</button></a>
+                        </div>
                     </div>
                 </div>
             </div>

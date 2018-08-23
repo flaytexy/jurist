@@ -77,7 +77,7 @@ $(function () {
 			loop:true,
 			items:2,
 			dots:false,
-			slideSpeed:2000,
+			slideSpeed:4000,
 			nav:true,
 			margin: 30,
 			responsive:{

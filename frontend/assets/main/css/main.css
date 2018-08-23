@@ -1046,7 +1046,13 @@
 }
 
 @media (max-width: 767px) {
-
+    .bdanzer-card {
+        margin: 7px;
+        box-shadow: none;
+        max-height: 250px !important;
+        width: 105%;
+        overflow: auto;
+    }
 }
 
 @media (max-width: 540px) {

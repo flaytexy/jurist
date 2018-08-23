@@ -9,5 +9,6 @@ Disallow: *?&filter
 Disallow: *?order
 Disallow: *?&order
 Disallow: *?q=
+Disallow: *?slug=
 
 Host: https://iq-offshore.com

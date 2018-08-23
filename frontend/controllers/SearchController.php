@@ -2,7 +2,6 @@
 namespace frontend\controllers;
 
 use frontend\modules\novanews\models\NovanewsTranslation;
-use frontend\modules\page\api\Page;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\db\Query;
@@ -71,7 +70,7 @@ class SearchController extends Controller
     public function actionIndex()
     {
 
-        $page = \frontend\modules\page\api\Page::get('page-search');
+        $page = \frontend\modules\novanews\api\Novanews::get('page-search');
         if($page){
             $this->view->title = $page->seo('title', $page->model->title);
             //$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'yii, framework, php']);
