@@ -209,7 +209,7 @@ $iteration = 1;
                 <div class="row">
                     <div class="col-md-12 top20">
                         <div class="subs-main text-center">
-                            <a href="https://t.me/iqoffshore" target="_blank" rel="nofollow"><button class="btn btn-success"  style="font-size: 35px">Подписаться на наши новости</button></a>
+                            <a href="https://t.me/iqoffshore" target="_blank" rel="nofollow"><button class="btn btn-success">Подписаться на наши новости</button></a>
                         </div>
                     </div>
                 </div>

@@ -2162,6 +2162,7 @@ footer .title1.style2 > h2 {
 }
 #paddinglist .subs-main .btn {
     background-color: #7dc20f;
+    font-size: 32px;
 }
 .package-detail {
     background: #ffffff none repeat scroll 0 0;
@@ -7010,6 +7011,9 @@ blockquote > p a,
         display: none !important;
     }
 
+    #paddinglist .subs-main .btn {
+        font-size: 22px;
+    }
     .packages-detail img {
         width: 100% !important;
         height: auto !important;
