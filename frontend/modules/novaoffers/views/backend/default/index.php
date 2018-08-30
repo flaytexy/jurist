@@ -87,7 +87,9 @@ $moduleName = $this->context->module->id;
                                 <a href="<?= Url::to(['/admin/'.$moduleName.'/default/up', 'id' => $model->primaryKey]) ?>" class="btn btn-default move-up" title="<?= Yii::t('easyii', 'Move up') ?>"><span class="glyphicon glyphicon-arrow-up"></span></a>
                                 <a href="<?= Url::to(['/admin/'.$moduleName.'/default/down', 'id' => $model->primaryKey]) ?>" class="btn btn-default move-down" title="<?= Yii::t('easyii', 'Move down') ?>"><span class="glyphicon glyphicon-arrow-down"></span></a>
 
-                                <!--<a href="<?= Url::to(['/admin/'.$moduleName.'/default/delete', 'id' => $model->primaryKey]) ?>" class="btn btn-default confirm-delete" title="<?= Yii::t('easyii', 'Delete item') ?>"><span class="glyphicon glyphicon-remove"></span></a>-->
+                                <?php if (IS_ROOT) : ?>
+                                    <a href="<?= Url::to(['/admin/'.$moduleName.'/default/delete', 'id' => $model->primaryKey]) ?>" class="btn btn-default confirm-delete" title="<?= Yii::t('easyii', 'Delete item') ?>"><span class="glyphicon glyphicon-remove"></span></a>
+                                <? endif; ?>
                             </div>
                         </td>
 
