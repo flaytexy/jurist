@@ -241,7 +241,7 @@ JS
     <div class="col-sm-9 pull-sm-3">
         <div class="card card-block">
             <?php  if(!$model->isNewRecord): ?>
-                <?php echo $form->field($model, 'id')->textInput(['readonly'=> true]) ?>
+                <?= Html::textInput('id', $model->id, ['class' => 'form-control', 'readonly'=> true]) ?>
             <? endif; ?>
 
             <?= $form->field($model, 'category_detail')->dropDownList($categories); ?>

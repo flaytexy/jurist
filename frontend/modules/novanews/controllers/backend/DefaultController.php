@@ -97,6 +97,10 @@ class DefaultController extends ContentAdminController
 
         $request = Yii::$app->request;
 
+        if($id==false && $request->post('id')){
+            $id = $request->post('id');
+        }
+
         /**
          * @var Novanews $model
          * @var NovanewsTranslation|array $translation_models

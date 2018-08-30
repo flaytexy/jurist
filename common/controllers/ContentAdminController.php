@@ -33,6 +33,8 @@ class ContentAdminController extends CategoryController
      */
     protected function _saveItem($model, $request, $translation_models, $child = false){
 
+        //if($request->post()['id']!=false && $model->id==false){ }
+
         $model->loadDefaultValues();
 
         if ($model->load($request->post()) && Model::loadMultiple($translation_models, $request->post())) {
