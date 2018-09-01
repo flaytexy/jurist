@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         list-style: none;
     }
     /* Set a size for our map container, the Google Map will take up 100% of this container */
-    #mapFirst, #mapSecond {
+    .maps-grid-contact {
         width: 100%;
         height: 500px;
     }
@@ -124,7 +124,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 
 
-<div class="container" id="page-contact">
+<div class="container-fluid" id="page-contact">
     <div class="row contact-zone">
         <div class="col-md-4">
             <div class="row top10">
@@ -136,7 +136,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number')?></strong><br>
                         +44 7940 507811</p>
 
-                    <p><strong><i class="fa fa-clock-o"></i> Часы работы</strong><br>09:00-19:00</p>
+                    <p><strong><i class="fa fa-clock-o"></i> <?= Yii::t('easyii','works_time')?></strong><br>09:00-19:00</p>
                     <p><strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
                             one@iq-offshore.com</a></p>
                     <p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Messengers (+44 7940 507811)</strong></p>
@@ -144,7 +144,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div id="mapThird"></div>
+                    <div id="mapThird" class="maps-grid-contact"></div>
                 </div>
             </div>
         </div>
@@ -159,7 +159,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number')?></strong><br>
                         +7 925 470 50 02</p>
 
-                    <p><strong><i class="fa fa-clock-o"></i> Часы работы</strong><br>09:00-19:00</p>
+                    <p><strong><i class="fa fa-clock-o"></i> <?= Yii::t('easyii','works_time')?></strong><br>09:00-19:00</p>
                     <p><strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
                         one@iq-offshore.com</a></p>
                     <p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Messengers (+7 925 470-50-02)</strong></p>
@@ -167,7 +167,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
              </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div id="mapFirst"></div>
+                    <div id="mapFirst" class="maps-grid-contact"></div>
                 </div>
             </div>
         </div>
@@ -182,7 +182,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                     <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number')?></strong><br>
                          +38 067 193 11 17</p>
 
-                    <p><strong><i class="fa fa-clock-o"></i> Часы работы</strong><br>09:00-19:00</p>
+                    <p><strong><i class="fa fa-clock-o"></i> <?= Yii::t('easyii','works_time')?></strong><br>09:00-19:00</p>
                     <p><strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
                             one@iq-offshore.com</a></p>
                     <p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Messengers (+38 067 193 11 17)</strong></p>
@@ -190,7 +190,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div id="mapSecond"></div>
+                    <div id="mapSecond" class="maps-grid-contact"></div>
                 </div>
             </div>
         </div>
@@ -210,62 +210,9 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 
 <script type="text/javascript">
-    function initMapContactFirst() {
-        var mapElement = document.getElementById('mapFirst');
-        if(mapElement){
-            var mapOptions = {
-                zoom: 15,
-                center: new google.maps.LatLng(55.758784, 37.608181) // Moskov
-                //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
-            };
-            var map = new google.maps.Map(mapElement, mapOptions);
-
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(55.758784, 37.608181),
-                map: map,
-                title: 'Snazzy!'
-            });
-        }
-    }
-
-    function initMapContactSecond() {
-        var mapElement = document.getElementById('mapSecond');
-        if(mapElement){
-            //50.4471427,30.5121536 //50.4472725 30.5136556
-            var mapOptions = {
-                zoom: 15, //
-                center: new google.maps.LatLng(50.4471427, 30.5121536) // Volodymyrska Str. 48, Kyiv, 02000, Ukraine
-                //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
-            };
-            var map = new google.maps.Map(mapElement, mapOptions);
-
-            var marker = new google.maps.Marker({
-                //50.456247 30.501735
-                position: new google.maps.LatLng(50.4472725, 30.5136556),
-                map: map,
-                title: 'Snazzy!'
-            });
-        }
-    }
-
-    function initMaps() {
-        if(typeof(mapInitizlize) !== "undefined" && mapInitizlize === true){
-            $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0", function () {
-                initMapContactFirst();
-                initMapContactSecond();
-
-                //console.log("GoogleMaps loaded. (maps.googleapis.com bottom-right)");
-            });
-
-            mapInitizlize = false;
-        }
-    }
-
     var mapInitizlize = true;
 
-    $(window).load(function () {
-        initMaps();
-    });
+
 </script>
 
 

@@ -289,7 +289,81 @@ var _d_site = _d_site || '411086831FF94A27DC0340B2';
 
 var initializeScroll = true;
 
+function initMapContactFirst() {
+    var mapElement = document.getElementById('mapFirst');
+    if(mapElement){
+        var mapOptions = {
+            zoom: 15,
+            center: new google.maps.LatLng(55.758784, 37.608181) // Moskov
+            //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
+        };
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(55.758784, 37.608181),
+            map: map,
+            title: 'Snazzy!'
+        });
+    }
+}
+
+function initMapContactSecond() {
+    var mapElement = document.getElementById('mapSecond');
+    if(mapElement){
+        //50.4471427,30.5121536 //50.4472725 30.5136556
+        var mapOptions = {
+            zoom: 15, //
+            center: new google.maps.LatLng(50.4471427, 30.5121536) // Volodymyrska Str. 48, Kyiv, 02000, Ukraine
+            //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
+        };
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+        var marker = new google.maps.Marker({
+            //50.456247 30.501735
+            position: new google.maps.LatLng(50.4472725, 30.5136556),
+            map: map,
+            title: 'Snazzy!'
+        });
+    }
+}
+
+function initMapContactThird() {
+    var mapElement = document.getElementById('mapThird');
+
+    if(mapElement){
+        //50.4471427,30.5121536 //50.4472725 30.5136556
+        var mapOptions = {
+            zoom: 15, //
+            center: new google.maps.LatLng(21.4471427, 41.5121536) // Volodymyrska Str. 48, Kyiv, 02000, Ukraine
+            //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
+        };
+        var mapx = new google.maps.Map(mapElement, mapOptions);
+
+        var marker = new google.maps.Marker({
+            //50.456247 30.501735
+            position: new google.maps.LatLng(21.4472725, 41.5136556),
+            map: map,
+            title: 'Snazzy!'
+        });
+    }
+}
+
+function initMaps() {
+    if(typeof(mapInitizlize) !== "undefined" && mapInitizlize === true){
+        $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0", function () {
+            initMapContactFirst();
+            initMapContactSecond();
+            initMapContactThird();
+            console.log("GoogleMaps loaded. (maps.googleapis.com bottom-right)");
+        });
+
+        mapInitizlize = false;
+    }
+}
+
 $(window).load(function () {
+
+    initMaps();
 
     // executes when complete page is fully loaded, including all frames, objects and images
     (function () {
