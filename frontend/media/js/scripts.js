@@ -325,9 +325,9 @@ $(window).load(function () {
     $(window).scroll(function () {
         var scrollPos = $(document).scrollTop();
 
-        console.log('window.scrollTop: ' + $(window).scrollTop());
-        console.log('window.height: ' +$(window).height());
-        console.log('document.height: ' +$(document).height());
+        // console.log('window.scrollTop: ' + $(window).scrollTop());
+        // console.log('window.height: ' +$(window).height());
+        // console.log('document.height: ' +$(document).height());
 
         if($(window).scrollTop() + $(window).height() + 1300 >= $(document).height()) {
             //alert("Bottom Reached!");
