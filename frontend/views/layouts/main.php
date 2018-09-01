@@ -330,6 +330,16 @@ $addeng = Yii::t('easyii', 'free');
                         <div class="address-widget">
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i
+                                            class="fa fa-map-marker"></i> <?= Yii::t('easyii', 'address_in_london') ?>
+                                </strong><br>
+                                <?= Yii::t('easyii', 'addressinfo3') ?>
+                            </p>
+                            <p style="color: white"><strong style="color: #7dc20f"><i
+                                            class="fa fa-phone"></i> <?= Yii::t('easyii', 'number') ?></strong><br>
+                                +44 7940 507811</p>
+                            <p style="color: white">
+                            <p style="color: white">
+                                <strong style="color: #7dc20f"><i
                                             class="fa fa-map-marker"></i> <?= Yii::t('easyii', 'address_in_moskow') ?>
                                 </strong><br>
                                 <?= Yii::t('easyii', 'addressinfo1') ?>

@@ -84,7 +84,6 @@ class AppAsset extends AssetBundle
         //'//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
         'js/slick.1.8.0.js',
 
-        //'https://maps.googleapis.com/maps/api/js?key=AIzaSyAHpsQLvCsVj-lsinvgPKSns0YhnRW8gtE&callback=initMap',
         //'/uploads/newin.js?v=2017-11-13-v3',
 
         'js/all.js?v=2018-07-11-v01',

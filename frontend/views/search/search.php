@@ -16,7 +16,9 @@ $this->params['search'] = $search;
             if(strpos($item['type'],'news',0)!==false){
                 $item['slug_category'] = 'news';
             }
-
+            if(strpos($item['slug_category'],'paysystem',0)!==false){
+                $item['slug_category'] = 'pay-system';
+            }
             ?>
         <div class="row">
             <div class="col-sm-3 col-md-3 no-padding">

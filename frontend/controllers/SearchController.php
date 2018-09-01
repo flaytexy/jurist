@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\modules\novanews\models\Novanews;
 use frontend\modules\novanews\models\NovanewsTranslation;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -98,10 +99,13 @@ class SearchController extends Controller
 
         $query = (new Query())->select("content_translation.*, content.*, content_categories.slug as slug_category, (MATCH (`description`) AGAINST ('".$search."' IN BOOLEAN MODE)) as REL")
             ->from('content_translation')
-            ->where("(MATCH (`description`) AGAINST ('".$search."' IN BOOLEAN MODE)) ")
-            ->andWhere([NovanewsTranslation::tableName() . '.public_status' => NovanewsTranslation::STATUS_ON])
             ->leftJoin('content', 'content.id = content_translation.content_id')
             ->leftJoin('content_categories', 'content.category_id = content_categories.category_id')
+            ->where("(MATCH (`description`) AGAINST ('".$search."' IN BOOLEAN MODE)) ")
+            ->andWhere(['content' . '.status' => Novanews::STATUS_ON])
+            ->andWhere([NovanewsTranslation::tableName() . '.public_status' => NovanewsTranslation::STATUS_ON])
+            ->andWhere([NovanewsTranslation::tableName() . '.language' => Yii::$app->language ])
+            //->groupBy(['content.id'])
             ->orderBy('REL DESC');
 
         $_adp = new ActiveDataProvider([

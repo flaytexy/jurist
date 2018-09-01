@@ -109,7 +109,7 @@ class SiteController extends Controller
                     ->setFrom(Setting::get('robot_email'))
                     //->setFrom('itc@iq-offshore.com')
                     ->setTo('akvamiris@gmail.com')
-                    ->setSubject('Рапорт об ошибке 33 (404)')
+                    ->setSubject(' Рапорт об ошибке 33 (404)' . Yii::$app->getRequest()->serverName )
                     ->setHtmlBody('
                         <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
                         <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />

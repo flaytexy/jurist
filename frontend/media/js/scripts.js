@@ -1,6 +1,6 @@
-(function($) {
-    $.fn.onEnter = function(func) {
-        this.bind('keypress', function(e) {
+(function ($) {
+    $.fn.onEnter = function (func) {
+        this.bind('keypress', function (e) {
             if (e.keyCode == 13) func.apply(this, [e]);
         });
         return this;
@@ -9,11 +9,11 @@
 
 function initMap() {
 
-    if(initializeScroll){
+    if (initializeScroll) {
 
         $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0", function () {
             var mapElement = document.getElementById('map');
-            if(mapElement){
+            if (mapElement) {
                 var mapOptions = {
                     zoom: 15,
                     center: new google.maps.LatLng(55.758784, 37.608181) // New York
@@ -35,56 +35,6 @@ function initMap() {
     }
 }
 
-function initMapContactFirst() {
-    var mapElement = document.getElementById('mapFirst');
-    if(mapElement){
-        var mapOptions = {
-            zoom: 15,
-            center: new google.maps.LatLng(55.758784, 37.608181) // Moskov
-            //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
-        };
-        var map = new google.maps.Map(mapElement, mapOptions);
-
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(55.758784, 37.608181),
-            map: map,
-            title: 'Snazzy!'
-        });
-    }
-}
-
-function initMapContactSecond() {
-    var mapElement = document.getElementById('mapSecond');
-    if(mapElement){
-        //50.4471427,30.5121536 //50.4472725 30.5136556
-        var mapOptions = {
-            zoom: 15, //
-            center: new google.maps.LatLng(50.4471427, 30.5121536) // Volodymyrska Str. 48, Kyiv, 02000, Ukraine
-            //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
-        };
-        var map = new google.maps.Map(mapElement, mapOptions);
-
-        var marker = new google.maps.Marker({
-            //50.456247 30.501735
-            position: new google.maps.LatLng(50.4472725, 30.5136556),
-            map: map,
-            title: 'Snazzy!'
-        });
-    }
-}
-
-function initMaps() {
-    if(typeof(mapInitizlize) !== "undefined" && mapInitizlize === true){
-        $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCWVV9qdg3P78sJnnzvx1o9CJ6nqSKagG0", function () {
-            initMapContactFirst();
-            initMapContactSecond();
-
-            //console.log("GoogleMaps loaded. (maps.googleapis.com bottom-right)");
-        });
-
-        mapInitizlize = false;
-    }
-}
 
 function setupViewport() {
     $ticker.find(tickerItem).clone().prependTo('[data-ticker="list"]');
@@ -141,12 +91,10 @@ jQuery.scrollTo = function (target, offset, speed, container) {
 };
 
 
-
 var $ticker = $('[data-ticker="list"]'),
     tickerItem = '[data-ticker="item"]',
     itemCount = $(tickerItem).length,
     viewportWidth = 0;
-
 
 
 function sHide() {
@@ -163,6 +111,7 @@ function getCookie(name) {
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
+
 function setCookie(name, value, options) {
     options = options || {};
 
@@ -191,6 +140,7 @@ function setCookie(name, value, options) {
 
     document.cookie = updatedCookie;
 }
+
 function deleteCookie(name) {
     setCookie(name, "", {
         expires: -1
@@ -200,20 +150,42 @@ function deleteCookie(name) {
 $('#searchBlock')
     .on('keypress', '.gsib_a', function (e) {
         console.log('sea keypress');
-        setTimeout(function(){ sHide(); }, 10);
-        setTimeout(function(){ sHide(); }, 100);
-        setTimeout(function(){ sHide(); }, 300);
-        setTimeout(function(){ sHide(); }, 600);
-        setTimeout(function(){ sHide(); }, 1000);
-        setTimeout(function(){ sHide(); }, 3000);
+        setTimeout(function () {
+            sHide();
+        }, 10);
+        setTimeout(function () {
+            sHide();
+        }, 100);
+        setTimeout(function () {
+            sHide();
+        }, 300);
+        setTimeout(function () {
+            sHide();
+        }, 600);
+        setTimeout(function () {
+            sHide();
+        }, 1000);
+        setTimeout(function () {
+            sHide();
+        }, 3000);
     })
     .on('click', '.gsc-search-button', function (e) {
         console.log('sea click');
-        setTimeout(function(){ sHide(); }, 10);
-        setTimeout(function(){ sHide(); }, 100);
-        setTimeout(function(){ sHide(); }, 300);
-        setTimeout(function(){ sHide(); }, 600);
-        setTimeout(function(){ sHide(); }, 1000);
+        setTimeout(function () {
+            sHide();
+        }, 10);
+        setTimeout(function () {
+            sHide();
+        }, 100);
+        setTimeout(function () {
+            sHide();
+        }, 300);
+        setTimeout(function () {
+            sHide();
+        }, 600);
+        setTimeout(function () {
+            sHide();
+        }, 1000);
     });
 
 
@@ -333,7 +305,7 @@ $(window).load(function () {
 
         //console.log("cse.google.com/cse.js loaded.");
     })();
-    setTimeout(function(){
+    setTimeout(function () {
         $('.gsc-search-box td.gsc-search-button').addClass("fa fa-search");
         $('td.gsc-search-button input').attr('type', 'button').attr('src', '');
     }, 1000);
@@ -350,23 +322,30 @@ $(window).load(function () {
     //     })();
     // }
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
+        var scrollPos = $(document).scrollTop();
 
-            // // Подпишитесь
-            // $.getScript("//widget.privy.com/assets/widget.js", function () {
-            //     $('#privy-container').hide();
-            //     setTimeout(function(){
-            //         //$('#privy-container').show();
-            //     }, 1000);
-            //     console.log("widget.privy.com loaded. (subscribe - top left)");
-            // });
+        console.log('window.scrollTop: ' + $(window).scrollTop());
+        console.log('window.height: ' +$(window).height());
+        console.log('document.height: ' +$(document).height());
 
-        initMap();
-
-
+        if($(window).scrollTop() + $(window).height() + 1300 >= $(document).height()) {
+            //alert("Bottom Reached!");
+            initMap();
+        }
     });
 
-    initMaps();
+    // $(window).scroll(function() {
+    //     // // Подпишитесь
+    //     // $.getScript("//widget.privy.com/assets/widget.js", function () {
+    //     //     $('#privy-container').hide();
+    //     //     setTimeout(function(){
+    //     //         //$('#privy-container').show();
+    //     //     }, 1000);
+    //     //     console.log("widget.privy.com loaded. (subscribe - top left)");
+    //     // });
+    // });
+
 
     // // 'Позвонить? // не работает главный слайдер )) когда сюда перемещаем
     // $.getScript("https://cdn.jotfor.ms/static/feedback2.js", function () {
