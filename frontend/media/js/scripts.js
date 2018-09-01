@@ -331,7 +331,7 @@ $(window).load(function () {
 
         if($(window).scrollTop() + $(window).height() + 1100 >= $(document).height()) {
             //alert("Bottom Reached!");
-            console.log('Bottom Reached! + 1200');
+            console.log('Bottom Reached! + 1100');
             initMap();
         }
     });
