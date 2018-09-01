@@ -329,9 +329,9 @@ $(window).load(function () {
         // console.log('window.height: ' +$(window).height());
         // console.log('document.height: ' +$(document).height());
 
-        if($(window).scrollTop() + $(window).height() + 1300 >= $(document).height()) {
+        if($(window).scrollTop() + $(window).height() + 1100 >= $(document).height()) {
             //alert("Bottom Reached!");
-            console.log('Bottom Reached! + 1300');
+            console.log('Bottom Reached! + 1200');
             initMap();
         }
     });
