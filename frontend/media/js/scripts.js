@@ -334,14 +334,14 @@ function initMapContactThird() {
         //50.4471427,30.5121536 //50.4472725 30.5136556
         var mapOptions = {
             zoom: 15, //
-            center: new google.maps.LatLng(21.4471427, 41.5121536) // Volodymyrska Str. 48, Kyiv, 02000, Ukraine
+            center: new google.maps.LatLng(51.5005605, -0.1855582) // Volodymyrska Str. 48, Kyiv, 02000, Ukraine
             //styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#4f595d"},{"visibility":"on"}]}]
         };
         var mapx = new google.maps.Map(mapElement, mapOptions);
 
         var marker = new google.maps.Marker({
             //50.456247 30.501735
-            position: new google.maps.LatLng(21.4472725, 41.5136556),
+            position: new google.maps.LatLng(51.500698, -0.1836757),
             map: map,
             title: 'Snazzy!'
         });

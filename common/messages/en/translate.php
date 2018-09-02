@@ -25,7 +25,7 @@ return [
     'address_in_kiev' => 'Our address in Kiev',
     'number' => 'Phone number',
     'worktime' => 'Work time',
-    'addressinfo3' => '2 Place Gate, Kensington, London, UK, W8 5LS',
+    'addressinfo3' => '2 Pаlace Gate, Kensington, London, UK, W8 5LS',
     'addressinfo1' => 'Gazetnyy pereulok, 9 с7, Moscow, 125009, Russia',
     'addressinfo2' => 'Volodymyrska Str. 48, Kyiv, 02000, Ukraine',
     'text1' => 'Optimizing the taxation of your company through legal means is what we specialize in. ',
