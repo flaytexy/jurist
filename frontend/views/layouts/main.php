@@ -75,7 +75,7 @@ $addeng = Yii::t('easyii', 'free');
         <div class="container">
             <div class="row">
                 <div class="col-md-2 ">
-                    <div class="logo logo_main"><a href="/" title=""><img id="logo-img" src="/uploads/logo/logo_main_png.png" data-src="/uploads/logo/logo_main_fsd_1.gif" alt=""></a>
+                    <div class="logo logo_main"><a href="/" title=""><img id="logo-img" src="/uploads/logo/newLogo.gif" data-src="/uploads/logo/logo_main_png.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-3" id="searchBlock">
@@ -335,7 +335,7 @@ $addeng = Yii::t('easyii', 'free');
                                 <?= Yii::t('easyii', 'addressinfo3') ?>
                             </p>
                             <p style="color: white"><strong style="color: #7dc20f"><i
-                                            class="fa fa-phone"></i> <?= Yii::t('easyii', 'number') ?></strong><br>
+                                            class="fa fa-phone"></i> <?= Yii::t('easyii', 'number_eng') ?></strong><br>
                                 +44 7940 507811</p>
                             <p style="color: white">
                             <p style="color: white">

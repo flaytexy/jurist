@@ -21,6 +21,8 @@ return [
     'works_time' => 'Business hours',
     'address' => 'Address',
     'address_in_london' => 'Our address in London',
+    'works_time_eng' => 'Business hours',
+    'number_eng' => 'Phone number',
     'address_in_moskow' => 'Our address in Moscow',
     'address_in_kiev' => 'Our address in Kiev',
     'number' => 'Phone number',

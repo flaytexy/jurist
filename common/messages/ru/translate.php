@@ -19,7 +19,10 @@ return [
     //============================================
     'works_time' => 'Часы работы',
     'address' => 'Адрес',
-    'address_in_london' => 'Адрес в Лондоне',
+    'address_in_london' => 'Our address in London',
+    'works_time_eng' => 'Work time',
+    'number_eng' => 'Phone number',
+
     'address_in_moskow' => 'Адрес в Москве',
     'address_in_kiev' => 'Адрес в Киеве',
     'number' => 'Номер телефона',

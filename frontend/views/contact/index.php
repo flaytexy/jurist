@@ -133,10 +133,10 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <strong><i class="fa fa-map-marker"></i> <?= Yii::t('easyii','address_in_london')?></strong><br>
                         <?= Yii::t('easyii','addressinfo3')?>
                     </p>
-                    <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number')?></strong><br>
+                    <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number_eng')?></strong><br>
                         +44 7940 507811</p>
 
-                    <p><strong><i class="fa fa-clock-o"></i> <?= Yii::t('easyii','works_time')?></strong><br>09:00-19:00</p>
+                    <p><strong><i class="fa fa-clock-o"></i> <?= Yii::t('easyii','works_time_eng')?></strong><br>09:00-19:00</p>
                     <p><strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
                             one@iq-offshore.com</a></p>
                     <p><strong><i class="fa fa-commenting" aria-hidden="true"></i> Messengers (+44 7940 507811)</strong></p>
