@@ -336,7 +336,7 @@ $addeng = Yii::t('easyii', 'free');
                             </p>
                             <p style="color: white"><strong style="color: #7dc20f"><i
                                             class="fa fa-phone"></i> <?= Yii::t('easyii', 'number_eng') ?></strong><br>
-                                +44 7940 507811</p>
+                                +44 7562 787794</p>
                             <p style="color: white">
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i
@@ -404,9 +404,10 @@ $addeng = Yii::t('easyii', 'free');
             </div>
         </div>
         <div class="copyright">
-            <?php /*<div class="container">
-                <p><span>Copyright 2016.</span> Created by <a title="Cyber Brain - Web Studio">Cyber Brain </a></p>
-            </div> */ ?>
+            <div class="container">
+                <?php if(false) :?><p><span>Copyright 2016.</span> Created by <a title="Cyber Brain - Web Studio">Cyber Brain </a></p><? endif; ?>
+                <p class="flu"><?= Yii::t('easyii','copyright_text')?></p>
+            </div>
         </div>
     </div>
     <!-- Bottom Line -->

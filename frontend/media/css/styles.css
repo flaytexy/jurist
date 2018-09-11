@@ -5056,17 +5056,20 @@ header .row .fa {
 
 .copyright {
     float: left;
-    padding: 2px 0 17px;
+    padding: 2px 0 0;
     text-align: center;
+    margin-top: 7px;
     width: 100%;
 }
 
 .copyright p {
-    color: #e5e5e5;
+    color: #808080;
     font-family: Georgia, serif;
     font-size: 12px;
     font-weight: 500;
+    opacity: 0.7;
 }
+
 
 /*=============== About Us ===============*/
 .style2 .featuredimage-content {
@@ -7012,7 +7015,7 @@ blockquote > p a,
     }
 
     #paddinglist .subs-main .btn {
-        font-size: 22px;
+        font-size: 20px;
     }
     .packages-detail img {
         width: 100% !important;
@@ -7131,6 +7134,9 @@ blockquote > p a,
 @media (max-width: 540px) {
     .instagram-gallery > ul > li {
         max-width: 50%;
+    }
+    #paddinglist .subs-main .btn {
+        font-size: 17px;
     }
 }
 

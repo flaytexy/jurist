@@ -21,12 +21,12 @@ return [
     'works_time' => 'Business hours',
     'address' => 'Address',
     'address_in_london' => 'Our address in London',
-    'works_time_eng' => 'Business hours',
+    'works_time_eng' => 'Office hours',
     'number_eng' => 'Phone number',
     'address_in_moskow' => 'Our address in Moscow',
     'address_in_kiev' => 'Our address in Kiev',
     'number' => 'Phone number',
-    'worktime' => 'Work time',
+    'worktime' => 'Office hours',
     'addressinfo3' => '2 Pаlace Gate, Kensington, London, UK, W8 5LS',
     'addressinfo1' => 'Gazetnyy pereulok, 9 с7, Moscow, 125009, Russia',
     'addressinfo2' => 'Volodymyrska Str. 48, Kyiv, 02000, Ukraine',
@@ -184,5 +184,6 @@ Did not find the information you need? Contact our specialists for online suppor
     'reg_company' => 'Company registration:',
     'more_details' => 'Learn more',
     'search' => 'Search',
+    'copyright_text' => 'Our services are provided by the company Copwork Commerce LP'
 
 ];

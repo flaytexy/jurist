@@ -20,7 +20,7 @@ return [
     'works_time' => 'Часы работы',
     'address' => 'Адрес',
     'address_in_london' => 'Our address in London',
-    'works_time_eng' => 'Work time',
+    'works_time_eng' => 'Office hours',
     'number_eng' => 'Phone number',
 
     'address_in_moskow' => 'Адрес в Москве',
@@ -226,5 +226,6 @@ return [
     'reg_company' => 'Регистрация компании:',
     'more_details' => 'Подробнее',
     'search' => 'Поиск',
+    'copyright_text' => 'Услуги предоставляются компанией Copwork Commerce LP'
 
 ];
