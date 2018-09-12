@@ -336,7 +336,7 @@ $addeng = Yii::t('easyii', 'free');
                             </p>
                             <p style="color: white"><strong style="color: #7dc20f"><i
                                             class="fa fa-phone"></i> <?= Yii::t('easyii', 'number_eng') ?></strong><br>
-                                +44 7562 787794</p>
+                                +44 7562 787794, +44 (0) 1727 834359</p>
                             <p style="color: white">
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i

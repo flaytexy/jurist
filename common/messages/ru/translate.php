@@ -27,7 +27,8 @@ return [
     'address_in_kiev' => 'Адрес в Киеве',
     'number' => 'Номер телефона',
     'worktime' => 'Время работы',
-    'addressinfo3' => '2 Pаlace Gate, Kensington, London, UK, W8 5LS',
+    //'addressinfo3' => '2 Pаlace Gate, Kensington, London, UK, W8 5LS',
+    'addressinfo3' => 'KEMP HOUSE 160 City Road, LONDON, UK, EC1V 2NX',
     'addressinfo1' => 'Газетный переулок 9, стр.7, Москва, 125009',
     'addressinfo2' => 'улица Владимирская 48, Киев, 02000',
     'text1' => 'Оптимизация налогообложения Вашей компании законным путем это то, на чем мы специализируемся.',
@@ -226,6 +227,6 @@ return [
     'reg_company' => 'Регистрация компании:',
     'more_details' => 'Подробнее',
     'search' => 'Поиск',
-    'copyright_text' => 'Услуги предоставляются компанией Copwork Commerce LP'
+    'copyright_text' => 'Our services are provided by the company Copwork Commerce LP'
 
 ];
