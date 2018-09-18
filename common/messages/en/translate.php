@@ -204,5 +204,19 @@ Did not find the information you need? Contact our specialists for online suppor
     'reg_company' => 'Company registration:',
     'more_details' => 'Learn more',
     'search' => 'Search',
+    //Bank Table
+    'name' => 'Name',
+    'country' => 'Country',
+    'visitBank' => 'With a visit to the bank',
+    'price' =>  'Price',
+    'bankSite' =>  'Bank website',
+    'minDeposit' => 'Deposit minimum',
+    'Term' => 'Term'
+
+
+
+
+
+
 
 ];

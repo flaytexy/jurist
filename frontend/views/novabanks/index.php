@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = $page->title;
                         <table id="example" class="table table-bordered display" style="width:100%">
                             <thead>
                             <tr>
-                                <th>Имя</th>
+                                <th><?= Yii::t('easyii', 'BankName') ?></th>
                                 <th>Страна</th>
                                 <th>С посещением банка</th>
                                 <th>Цена</th>
