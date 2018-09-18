@@ -1,4 +1,9 @@
+uploads/
 assets/*
 index-test.php
 index.php
 accessLogFile.log
+uploads/!.gitignore
+uploads/!.htaccess
+uploads/!logo
+uploads/!logo/*
