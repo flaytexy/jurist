@@ -127,7 +127,7 @@ $iteration = 1;
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
                             <? foreach ($ticker_viewport as $item): ?>
-                            <li class="ticker__item" data-ticker="item"><a href="<?= $item->url ?>"><?= $item->title ?></a></li>
+                            <li class="ticker__item" data-ticker="item"><a href="<?= $item->url ?>"><? if ( Yii::$app->language==='en-US'): ?><?= $item->model->title_en ?><? else: ?><?= $item->model->title ?><? endif; ?></a></li>
                             <? endforeach; ?>
                             </ul>
                         </div>
