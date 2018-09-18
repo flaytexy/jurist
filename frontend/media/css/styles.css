@@ -2469,6 +2469,10 @@ footer .title1.style2 > h2 {
     box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
 }
 
+#pricing-table ul > li strong {
+    display: block;
+}
+
 #pricing-table .plan:nth-child(1) {
     -moz-border-radius: 5px 0 0 5px;
     -webkit-border-radius: 5px 0 0 5px;

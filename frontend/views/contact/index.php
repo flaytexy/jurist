@@ -134,7 +134,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <?= Yii::t('easyii','addressinfo3')?>
                     </p>
                     <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number_eng')?></strong><br>
-                        +44 7562 787794, +44 (0) 1727 834359</p>
+                        +44 7562 787794,<br /> +44 (0) 1727 834359</p>
 
                     <p><strong><i class="fa fa-clock-o"></i> <?= Yii::t('easyii','works_time_eng')?></strong><br>09:00-19:00</p>
                     <p><strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
