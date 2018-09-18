@@ -209,7 +209,7 @@ $iteration = 1;
                 <div class="row">
                     <div class="col-md-12 top20">
                         <div class="subs-main text-center">
-                            <a href="https://t.me/iqoffshore" target="_blank" rel="nofollow"><button class="btn btn-success">Подписаться на наши новости</button></a>
+                            <a href="https://t.me/iqoffshore" target="_blank" rel="nofollow"><button class="btn btn-success"><?= Yii::t('easyii', 'subscribenews') ?></button></a>
                         </div>
                     </div>
                 </div>
@@ -528,7 +528,7 @@ $iteration = 1;
     <div class="container">
 
         <div class="row">
-            <div class="col-md-12 h2 text-center">Отзывы</div>
+            <div class="col-md-12 h2 text-center"><?= Yii::t('easyii', 'reviews') ?></div>
         </div>
         <div class="row recentnews-carousel" id="recent-comments">
             <div class="fcol-md-6">

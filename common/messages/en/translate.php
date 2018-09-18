@@ -157,6 +157,7 @@ Did not find the information you need? Contact our specialists for online suppor
     'othercompany' => 'View other company',
     'days' => 'Days',
     'othernews' => 'See more news',
+    'subscribenews' => 'Subscribe to our news',
     'viewed' => ' viewed',
     '89' => 'Official agents of the bank',
     '90' => 'Open the account for 2 days',
@@ -172,6 +173,7 @@ Did not find the information you need? Contact our specialists for online suppor
     '100' => 'License',
     '101' => 'Account',
     //REVIEWS
+    'reviews' =>  'Reviews',
     'eugenereview' => 'I decided to open an account with a company in a Latvian bank. Turned to IQ-Offshore, tk. he was introduced to them on the site. The guys did not refuse, but delicately tried to persuade me to choose another bank. But I stood my ground. Instead of the promised month, the account was opened to me in one and a half. But it\'s not about that. For half a year, I grudgingly used the account, giving endless confirmation at the bank\'s request for doubtful, in their opinion, translations. And here after half a year access to my account was blocked completely groundless. While the proceedings were under way, I was forced again to apply to IQ Decision for opening a new account. This time I did not have a certain bank in mind, and I agreed to the one offered to me. After 2 weeks I already used a new account, and to this day I have no complaints. Guys fellows, and I lost time: the Latvian bank still has not returned my money. In vain I did not listen from the beginning ...',
     'svetlanareview' => 'Initially ordered the registration of an offshore company and the opening of an account with another company. The firm was registered, but the account could not be opened. Later I learned that you can buy a ready offshore company with an open account in IQ Decision ... I sincerely thank the guys for coming into the position and opening an account without registering another company.',
     'eugene' => 'Eugeny',
