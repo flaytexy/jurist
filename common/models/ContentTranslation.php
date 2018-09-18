@@ -64,6 +64,10 @@ class ContentTranslation extends ActiveRecord
             //[['slug'], 'unique', 'message' => 'Постоянная ссылка должна быть уникальной'],
             //[['short_description'], 'required', 'message' => 'Введите краткое содержание новости'],
             [['description'], 'required', 'message' => 'Введите содержание новости'],
+            ['description', 'filter', 'filter' => function ($value) {
+                $value = str_replace('&nbsp;', ' ', $value);
+                return $value;
+            }],
             [['language'], 'in', 'range' => ['ru-RU', 'en-US'], 'message' => 'Неверное значение языка'], // 'uk-UA',
             [['public_status'], 'boolean'],
             [['video_link'], 'string'],

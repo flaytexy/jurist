@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
 <section id="world-map-markers-block">
     <div class="row">
-        <div class="col-md-12 hidden-xs">
+        <div class="col-md-12 hidden-xs hidden-sm">
             <article class="format-standard">
                 <figure>
                     <div id="world-map-markers" style="margin:0 auto; width: 1020px; height: 400px"></div>

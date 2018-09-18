@@ -66,82 +66,82 @@ $(function () {
     };
 
 
-
-    $('#world-map-markers').vectorMap({
-        map: mapType,
-        zoomMin: mapData[mapType].zoomMin,
-        focusOn: {x: mapData[mapType].focusX, y: mapData[mapType].focusY, scale: mapData[mapType].scale},
-        zoomOnScroll: false,
-        scaleColors: ['#C8EEFF', '#b70000'],
-        normalizeFunction: 'polynomial',
-        hoverOpacity: 0.7,
-        hoverColor: false,
-        markerStyle: {
-            initial: {
-                fill: '#5da0ff',
-                stroke: '#2B4773',
-                "fill-opacity": 1,
-                "stroke-width": 1,
-                "stroke-opacity": 1,
-                r: 5
-            },
-            hover: {
-                stroke: '#15107',
-                "stroke-width": 15
-            },
-            selected: {
-                fill: 'blue'
-            },
-            selectedHover: {}
-        },
-        markerLabelStyle: {
-            initial: {
-                fill: '#000'
-            },
-            hover: {
-                fill: '#2B4773'
-            }
-        },
-        regionStyle: {
-            initial: {
-                'font-family': 'Verdana',
-                'font-size': '15',
-                'font-weight': 'bold',
-                cursor: 'default',
-                fill: '#7DC20F'
-            },
-            hover: {
-                fill: "#7DC20F",
-                cursor: 'default'
-            }
-        },
-        regionLabelStyle: {},
-        backgroundColor: '#A3C7FF', //'transparent', //3B5BC6 //
-        markers: myMarker,
-        labels: {
-            markers: {
-                render: function (index) {
-                    return myMarker[index].name;
+    if($(window).width()>1000){
+        $('#world-map-markers').vectorMap({
+            map: mapType,
+            zoomMin: mapData[mapType].zoomMin,
+            focusOn: {x: mapData[mapType].focusX, y: mapData[mapType].focusY, scale: mapData[mapType].scale},
+            zoomOnScroll: false,
+            scaleColors: ['#C8EEFF', '#b70000'],
+            normalizeFunction: 'polynomial',
+            hoverOpacity: 0.7,
+            hoverColor: false,
+            markerStyle: {
+                initial: {
+                    fill: '#5da0ff',
+                    stroke: '#2B4773',
+                    "fill-opacity": 1,
+                    "stroke-width": 1,
+                    "stroke-opacity": 1,
+                    r: 5
                 },
-                offsets: function (index) {
-                    var offset = myMarker[index]['offsets'] || [0, 0];
-
-                    return [offset[0] - 2, offset[1] + 0];
+                hover: {
+                    stroke: '#15107',
+                    "stroke-width": 15
+                },
+                selected: {
+                    fill: 'blue'
+                },
+                selectedHover: {}
+            },
+            markerLabelStyle: {
+                initial: {
+                    fill: '#000'
+                },
+                hover: {
+                    fill: '#2B4773'
                 }
-            }
-        },
-        series: {
-            markers: [{
-                attribute: 'image',
-                scale: {
-                    'closed': '/img/icon-np-3.png',
-                    'activeUntil2018': '/img/icon-np-2.png',
-                    'activeUntil2022': '/img/icon-np-1.png'
+            },
+            regionStyle: {
+                initial: {
+                    'font-family': 'Verdana',
+                    'font-size': '15',
+                    'font-weight': 'bold',
+                    cursor: 'default',
+                    fill: '#7DC20F'
                 },
-                values: myMarker.reduce(function (p, c, i) {
-                    p[i] = c.status;
-                    return p
-                }, {})/*,
+                hover: {
+                    fill: "#7DC20F",
+                    cursor: 'default'
+                }
+            },
+            regionLabelStyle: {},
+            backgroundColor: '#A3C7FF', //'transparent', //3B5BC6 //
+            markers: myMarker,
+            labels: {
+                markers: {
+                    render: function (index) {
+                        return myMarker[index].name;
+                    },
+                    offsets: function (index) {
+                        var offset = myMarker[index]['offsets'] || [0, 0];
+
+                        return [offset[0] - 2, offset[1] + 0];
+                    }
+                }
+            },
+            series: {
+                markers: [{
+                    attribute: 'image',
+                    scale: {
+                        'closed': '/img/icon-np-3.png',
+                        'activeUntil2018': '/img/icon-np-2.png',
+                        'activeUntil2022': '/img/icon-np-1.png'
+                    },
+                    values: myMarker.reduce(function (p, c, i) {
+                        p[i] = c.status;
+                        return p
+                    }, {})/*,
                  legend: {
                  horizontal: true,
                  title: 'Nuclear power station status',
@@ -153,20 +153,24 @@ $(function () {
                  }[v];
                  }
                  }*/
-            }]
-        },
-        onMarkerClick: function (events, label, index, weburl) {
-            //console.log(myMarker[label].weburl);
-            $('#menu-show-block-zone').show();
-            $('#menu-show-block-zone .block-zone').hide();
-            //alert('#' + myMarker[label].weburl);
-            var mark = $('#' + myMarker[label].weburl);
-            mark.show();
-            mark.find('button:visible').click();
-            //$('button:visible').click();
-        }
-        /*onMarkerOver: function (event, code, region) {
-         console.log('sdadas22');
-         }*/
-    });
+                }]
+            },
+            onMarkerClick: function (events, label, index, weburl) {
+                //console.log(myMarker[label].weburl);
+                $('#menu-show-block-zone').show();
+                $('#menu-show-block-zone .block-zone').hide();
+                //alert('#' + myMarker[label].weburl);
+                var mark = $('#' + myMarker[label].weburl);
+                mark.show();
+                mark.find('button:visible').click();
+                //$('button:visible').click();
+            }
+            /*onMarkerOver: function (event, code, region) {
+             console.log('sdadas22');
+             }*/
+        });
+        $('#world-map-markers-block').show();
+    }else{
+        $('#world-map-markers-block').hide();
+    }
 });

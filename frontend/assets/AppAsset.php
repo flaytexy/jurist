@@ -50,7 +50,7 @@ class AppAsset extends AssetBundle
         'css/animate.3.2.3.css', //*last
 //        //'css/prefix.min.css?v=2017-02-25-2',
         'css/prefix2.css?v=2018-01-18-v01', //*last
-        'css/styles.css?v=2018-05-16-v05', //*last
+        'css/style_all.min.css?v=2018-09-11-v02', //*last
 //        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
 
 
@@ -87,7 +87,7 @@ class AppAsset extends AssetBundle
         //'/uploads/newin.js?v=2017-11-13-v3',
 
         'js/all.js?v=2018-07-11-v01',
-        'js/scripts.js?v=2018-09-02-v01',
+        'js/scripts.js?v=2018-09-02-v03',
         //'//code.jquery.com/jquery-2.2.4.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js',
         //'//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
