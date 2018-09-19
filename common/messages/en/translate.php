@@ -207,12 +207,17 @@ Did not find the information you need? Contact our specialists for online suppor
     //Bank Table
     'name' => 'Name',
     'country' => 'Country',
-    'visitBank' => 'With a visit to the bank',
+    'visitBank' => 'With personal visit',
     'price' =>  'Price',
     'bankSite' =>  'Bank website',
-    'minDeposit' => 'Deposit minimum',
-    'Term' => 'Term'
-
+    'minDeposit' => 'Minimum deposit',
+    'term' => 'Term',
+    'topBanks' =>'Top Banks',
+    'bestTerm' => 'Best banking conditions',
+    'articles' => 'Interesting articles',
+    'popularNews' =>'Popular news',
+    'goodPropositions' => 'Good Propositions',
+    'interestingCountries' => 'Interesting countries for business',
 
 
 

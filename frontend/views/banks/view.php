@@ -90,8 +90,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <!-- Widget3 -->
             <div class="widget villa-photos-widget">
                 <div class="title1 style2">
-                    <h2>Топ банки</h2>
-                    <span>Лучшие банковские условия</span>
+                    <h2><?= Yii::t('easyii', 'topBanks') ?></h2>
+                    <span><?= Yii::t('easyii', 'bestTerm') ?></span>
                 </div>
                 <ul class="widget-gallery">
                     <?php foreach($top_banks as $item) : ?>
@@ -107,8 +107,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <div class="widget vertical-menu-widget top10">
                 <div class="recent-posts-widget">
                     <div class="title1 style2">
-                        <h2>Интересные статьи</h2>
-                        <span>Популярные новости</span>
+                        <h2><?= Yii::t('easyii', 'articles') ?></h2>
+                        <span><?= Yii::t('easyii', 'popularNews') ?></span>
                     </div>
                     <div class="recent-posts">
                         <?php foreach($top_news as $item) : ?>

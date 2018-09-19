@@ -290,4 +290,18 @@ return [
     'more_details' => 'Подробнее',
     'search' => 'Поиск',
 
+    //Bank Table
+    'name' => 'Имя',
+    'country' => 'Страна',
+    'visitBank' => 'С посещением банка',
+    'price' =>  'Цена',
+    'bankSite' =>  'Сайт банка',
+    'minDeposit' => 'Минимальный депозит',
+    'term' => 'Срок',
+    'topBanks' =>'Топ банки',
+    'bestTerm' => 'Лучшие банковские условия',
+    'articles' => 'Интересные статьи',
+    'popularNews' =>'Популярные новости',
+    'goodPropositions' => 'Хорошие предложения',
+    'interestingCountries' => 'Интересные страны для бизнеса',
 ];
