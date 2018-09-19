@@ -73,8 +73,8 @@ $addeng = Yii::t('easyii', 'free');
     <!-- end: Top Bar -->
     <div class="logomenu-sec hidden-xs" id="logomenu-sec">
         <div class="container">
-            <div class="row">
-                <div class="col-md-2 ">
+            <div class="row align-items-center">
+                <div class="col-md-2 align-self-start">
                     <div class="logo logo_main"><a href="/" title=""><img id="logo-img" src="/uploads/logo/newLogo.gif" data-src="/uploads/logo/logo_main_png.png" alt=""></a>
                     </div>
                 </div>
@@ -121,10 +121,10 @@ $addeng = Yii::t('easyii', 'free');
                                 ['label' => Yii::t('easyii', 'contact'), 'url' => ['/contact']],
                                 ['label' => 'contact', 'url' => ['/contact'],
                                     'template' => '
-                                <li class="contact-m2">
-                                    <div class="row">
-                                        <div class="col-md-12 tel-m"><div><a href=' . Url::to('/contact') .'> <p class="lenta">' . $addeng . ' </p></a></div></div>
-                                    </div>
+                                <li>
+                                                          
+                                        <a href=' . Url::to('/contact') .' class="consult-btn"><span>' . $addeng . ' </span> </a>
+                              
                                 </li>'
                                 ],
                             ],
