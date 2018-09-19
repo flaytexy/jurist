@@ -300,7 +300,7 @@ $iteration = 1;
                                         <li><?= Yii::t('easyii', '15') ?></li>
                                         <li><?= Yii::t('easyii', '16') ?></li>
                                     </ul>
-                                    <a href="<?= Url::to(['banks']) ?>" class="theme-btn"
+                                    <a href="<?= Url::to('/banks') ?>" class="theme-btn"
                                        title="Банки"><?= Yii::t('easyii', 'detail') ?></a>
                                 </div>
                             </div>
