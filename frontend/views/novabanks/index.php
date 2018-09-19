@@ -183,7 +183,7 @@ $this->params['breadcrumbs'][] = $page->title;
                             <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
                                     <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
                                 </a>
-                                <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / <?= Yii::t('easyii', 'days') ?> : <?= $item->model->child->how_days ?></b></a></span></li>
+                                <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / <?= Yii::t('easyii', 'days') ?>: <?= $item->model->child->how_days ?></b></a></span></li>
                         <?php endforeach; ?>
 
                     </ul>

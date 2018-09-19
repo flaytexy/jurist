@@ -58,10 +58,10 @@ $this->params['breadcrumbs'][] = $page->title;
                         <table id="example" class="table table-bordered display" style="width:100%">
                             <thead>
                             <tr>
-                                <th>Имя</th>
-                                <th>Страна</th>
-                                <th>С посещением банка</th>
-                                <th>Цена</th>
+                                <th><?= Yii::t('easyii', 'name') ?></th>
+                                <th><?= Yii::t('easyii', 'country') ?></th>
+                                <th><?= Yii::t('easyii', 'visitBank') ?></th>
+                                <th><?= Yii::t('easyii', 'price') ?></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -92,7 +92,7 @@ $this->params['breadcrumbs'][] = $page->title;
                                                 <tr>
                                                     <td>
                                                         <p class="f" title="Открытие счета без личного присутствия">
-                                                            С посещением банка </p>
+                                                            <?= Yii::t('easyii', 'visitBank') ?> </p>
                                                         <?php if ($item->model->bank->personal === 1): ?>
                                                             <div class="green_yes "><i class="fa fa-check fa-3" aria-hidden="true"></i></div>
                                                         <? else: ?>
@@ -100,11 +100,11 @@ $this->params['breadcrumbs'][] = $page->title;
                                                         <? endif; ?>
                                                     </td>
                                                     <td>
-                                                        <p class="f">Сайт банка</p>
+                                                        <p class="f"><?= Yii::t('easyii', 'paySite') ?> </p>
                                                         <div class="hegg"><?= $item->model->bank->website ?></div>
                                                     </td>
                                                     <td>
-                                                        <p class="f">Минимальный депозит</p>
+                                                        <p class="f"><?= Yii::t('easyii', 'minDeposit') ?> </p>
                                                         <div class="hegg">
                                                             <? if ($item->model->bank->min_deposit > 0): ?><?= $item->model->bank->min_deposit ?>
                                                             <? else: ?><div class="">0</div> <? endif ?>
@@ -119,7 +119,7 @@ $this->params['breadcrumbs'][] = $page->title;
                                         </td>
                                         <td data-order="<?= $item->model->bank->price ?>" class="col-md-4 col-lg-2 bg-green-price">
                                             <div class="h6 text-center">
-                                                <span>Цена</span>
+                                                <span><?= Yii::t('easyii', 'price') ?> </span>
                                             </div>
                                             <div class="h6 text-center cena">€<?= $item->model->bank->price ?></div>
                                             <div class="bnk-btn text-center">
@@ -138,8 +138,8 @@ $this->params['breadcrumbs'][] = $page->title;
                 <!-- Widget3 -->
                 <div class="widget villa-photos-widget top20">
                     <div class="title1 style2">
-                        <h2>Топ банки</h2>
-                        <span>Лучшие банковские условия</span>
+                        <h2><?= Yii::t('easyii', 'topPay') ?> </h2>
+                        <span><?= Yii::t('easyii', 'bestTerm') ?> </span>
                     </div>
                     <ul class="widget-gallery">
                         <?php foreach($top_banks as $item) : ?>
@@ -155,8 +155,8 @@ $this->params['breadcrumbs'][] = $page->title;
                 <div class="widget vertical-menu-widget top10">
                     <div class="recent-posts-widget">
                         <div class="title1 style2">
-                            <h2>Интересные статьи</h2>
-                            <span>Популярные новости</span>
+                            <h2><?= Yii::t('easyii', 'articles') ?> </h2>
+                            <span><?= Yii::t('easyii', 'popularNews') ?> </span>
                         </div>
                         <div class="recent-posts">
                             <?php foreach($top_news as $item) : ?>
@@ -174,15 +174,15 @@ $this->params['breadcrumbs'][] = $page->title;
                 <!-- Widget2 -->
                 <div class="widget villa-photos-widget top20">
                     <div class="title1 style2">
-                        <h2>Хорошие предложения</h2>
-                        <span>Интересные страны для бизнеса</span>
+                        <h2><?= Yii::t('easyii', 'goodPropositions') ?> </h2>
+                        <span><?= Yii::t('easyii', 'interestingCountries') ?> </span>
                     </div>
                     <ul class="widget-gallery">
                         <?php foreach($top_offers as $item) : ?>
                             <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
                                     <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
                                 </a>
-                                <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / Дней: <?= $item->model->child->how_days ?></b></a></span></li>
+                                <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / <?= Yii::t('easyii', 'days') ?>: <?= $item->model->child->how_days ?></b></a></span></li>
                         <?php endforeach; ?>
 
                     </ul>
@@ -190,7 +190,7 @@ $this->params['breadcrumbs'][] = $page->title;
 
                 <!-- Widget4 -->
                 <div class="widget vertical-menu">
-                    <a href="#" class="active">Банки</a>
+                    <a href="#" class="active"><?= Yii::t('easyii', 'pay_system') ?> </a>
                     <?php foreach ($banksPist as $itemList) : ?>
                         <a href="<?= Url::to(['banks/'.$itemList->slug]) ?>"><?=$itemList->title?> <b>€<?= $itemList->model->bank->price ?></b></a>
                     <?php endforeach; ?>

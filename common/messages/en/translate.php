@@ -218,6 +218,8 @@ Did not find the information you need? Contact our specialists for online suppor
     'popularNews' =>'Popular news',
     'goodPropositions' => 'Good Propositions',
     'interestingCountries' => 'Interesting countries for business',
+    'paySite' => 'Pay System Website',
+    'topPay' => 'Top pay systems'
 
 
 
