@@ -347,8 +347,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <div class="vertical-menu-widget">
                 <div class="widget recent-posts-widget">
                     <div class="title1 style2">
-                        <h2>Интересные статьи</h2>
-                        <span>Популярные новости</span>
+                        <h2><?= Yii::t('easyii', 'articles') ?> </h2>
+                        <span><?= Yii::t('easyii', 'popularNews') ?> </span>
                     </div>
                     <div class="recent-posts">
                         <?php foreach($top_news as $item) : ?>
@@ -367,15 +367,15 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
             <div class="widget villa-photos-widget">
                 <div class="title1 style2">
-                    <h2>Хорошие предложения</h2>
-                    <span>Интересные страны для бизнеса</span>
+                    <h2><?= Yii::t('easyii', 'goodPropositions') ?></h2>
+                    <span><?= Yii::t('easyii', 'interestingCountries') ?></span>
                 </div>
                 <ul class="widget-gallery">
                     <?php foreach($top_offers as $item) : ?>
                         <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
                                 <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
                             </a>
-                            <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $item['price'] ?> / Дней: <?= $item['how_days']?></b></a></span></li>
+                            <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $item['price'] ?> / <?= Yii::t('easyii', 'days') ?>: <?= $item['how_days']?></b></a></span></li>
                     <?php endforeach; ?>
 
                 </ul>

@@ -218,8 +218,12 @@ Did not find the information you need? Contact our specialists for online suppor
     'popularNews' =>'Popular news',
     'goodPropositions' => 'Good Propositions',
     'interestingCountries' => 'Interesting countries for business',
+    //Pay System
     'paySite' => 'Pay System Website',
-    'topPay' => 'Top pay systems'
+    'topPay' => 'Top pay systems',
+    //Offer
+    'seekingJ' => 'Seeking jurisdiction..',
+    'juris' => 'Jurisdiction',
 
 
 

@@ -78,8 +78,8 @@ $this->params['breadcrumbs'][] = $page->title;
                     <?php if(isset($top_offers)) :?>
                     <div class="widget villa-photos-widget">
                         <div class="title1 style2">
-                            <h2>Хорошие предложения</h2>
-                            <span>Интересные страны для бизнеса</span>
+                            <h2><?= Yii::t('easyii', 'goodPropositions') ?></h2>
+                            <span><?= Yii::t('easyii', 'interestingCountries') ?></span>
                         </div>
                         <ul class="widget-gallery">
                             <?php foreach($top_offers as $item) : ?>
@@ -116,8 +116,8 @@ $this->params['breadcrumbs'][] = $page->title;
 
                     <div class="widget recent-posts-widget">
                         <div class="title1 style2">
-                            <h2>Интересные статьи</h2>
-                            <span>Популярные новости</span>
+                            <h2><?= Yii::t('easyii', 'articles') ?> </h2>
+                            <span><?= Yii::t('easyii', 'popularNews') ?> </span>
                         </div>
                         <div class="recent-posts">
                             <?php foreach($top_news as $item) : ?>

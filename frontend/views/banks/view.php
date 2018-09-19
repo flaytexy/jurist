@@ -53,8 +53,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                         <?= Html::img(Image::thumb($page->photos[1]->image, 1200, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
-                                <strong class="per-night" style="font-family: Arial"><span>€</span><?= $page->price; ?> <i>Дней: <?= $page->model->how_days; ?></i></strong>
-                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title="">Заказать</a>
+                                <strong class="per-night" style="font-family: Arial"><span>€</span><?= $page->price; ?> <i><?= Yii::t('easyii', 'days') ?>: <?= $page->model->how_days; ?></i></strong>
+                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title=""><?= Yii::t('easyii', '10') ?></a>
                                 <div class="title-video alignleft">
                                     <h1><?= $page->seo('h1', $page->title) ?></h1>
                                     <span><?= $page->seo('h1', $page->short) ?></span>
@@ -126,15 +126,15 @@ $this->params['breadcrumbs'][] = $page->model->title;
             <!-- Widget2 -->
             <div class="widget villa-photos-widget top20">
                 <div class="title1 style2">
-                    <h2>Хорошие предложения</h2>
-                    <span>Интересные страны для бизнеса</span>
+                    <h2><?= Yii::t('easyii', 'goodPropositions') ?></h2>
+                    <span><?= Yii::t('easyii', 'interestingCountries') ?></span>
                 </div>
                 <ul class="widget-gallery">
                     <?php foreach($top_offers as $item) : ?>
                         <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
                                 <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
                             </a>
-                            <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $item['price'] ?> / Дней: <?= $item['how_days']?></b></a></span></li>
+                            <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $item['price'] ?> / <?= Yii::t('easyii', 'days') ?>: <?= $item['how_days']?></b></a></span></li>
                     <?php endforeach; ?>
 
                 </ul>

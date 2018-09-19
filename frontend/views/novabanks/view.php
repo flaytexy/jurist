@@ -93,8 +93,8 @@ Yii::$app->view->registerMetaTag([
                                         <?= Html::img(Image::thumb($page->model->image, 1200, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
-                                <strong class="per-night" style="font-family: Arial"><span>€</span><?= $page->model->bank->price; ?> <i>Дней: <?= $page->model->bank->how_days; ?></i></strong>
-                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title="">Заказать</a>
+                                <strong class="per-night" style="font-family: Arial"><span>€</span><?= $page->model->bank->price; ?> <i><?= Yii::t('easyii', 'days') ?>: <?= $page->model->bank->how_days; ?></i></strong>
+                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title=""><?= Yii::t('easyii', '10') ?></a>
                             </div><!-- Widget -->
                         <?php endif; ?>
 
@@ -128,8 +128,8 @@ Yii::$app->view->registerMetaTag([
             <!-- Widget3 -->
             <div class="widget villa-photos-widget top20">
                 <div class="title1 style2">
-                    <h2>Топ банки</h2>
-                    <span>Лучшие банковские условия</span>
+                    <h2><?= Yii::t('easyii', 'topBanks') ?></h2>
+                    <span><?= Yii::t('easyii', 'bestTerm') ?></span>
                 </div>
                 <ul class="widget-gallery">
                     <?php foreach($top_banks as $item) : ?>
@@ -146,8 +146,8 @@ Yii::$app->view->registerMetaTag([
             <div class="widget vertical-menu-widget top10">
                 <div class="recent-posts-widget">
                     <div class="title1 style2">
-                        <h2>Интересные статьи</h2>
-                        <span>Популярные новости</span>
+                        <h2><?= Yii::t('easyii', 'articles') ?></h2>
+                        <span><?= Yii::t('easyii', 'popularNews') ?></span>
                     </div>
                     <div class="recent-posts">
                         <?php foreach($top_news as $item) : ?>
@@ -166,15 +166,15 @@ Yii::$app->view->registerMetaTag([
             <!-- Widget2 -->
             <div class="widget villa-photos-widget top20">
                 <div class="title1 style2">
-                    <h2>Хорошие предложения</h2>
-                    <span>Интересные страны для бизнеса</span>
+                    <h2><?= Yii::t('easyii', 'goodPropositions') ?></h2>
+                    <span><?= Yii::t('easyii', 'interestingCountries') ?></span>
                 </div>
                 <ul class="widget-gallery">
                     <?php foreach($top_offers as $item) : ?>
                         <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
                                 <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
                             </a>
-                            <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->model->offer->price ?> / Дней: <?= $item->model->offer->how_days ?></b></a></span></li>
+                            <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->model->offer->price ?> / <?= Yii::t('easyii', 'days') ?>: <?= $item->model->offer->how_days ?></b></a></span></li>
                     <?php endforeach; ?>
 
                 </ul>

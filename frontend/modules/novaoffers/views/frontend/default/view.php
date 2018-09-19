@@ -320,7 +320,7 @@ Yii::$app->view->registerMetaTag([
     <div class="block">
         <div class="sidesidebar">
             <div class="vertical-menu">
-                <a href="#" class="active">Юрисдикции</a>
+                <a href="#" class="active"><?= Yii::t('easyii', 'juris') ?></a>
                 <?php foreach ($offersList as $itemList) : ?>
                     <a href="<?= Url::to(['offers/'.$itemList->slug]) ?>"><?=$itemList->title?> <b>€<?= $itemList->price ?></b></a>
                 <?php endforeach; ?>
@@ -330,8 +330,8 @@ Yii::$app->view->registerMetaTag([
             <div class="vertical-menu-widget">
                 <div class="widget recent-posts-widget">
                     <div class="title1 style2">
-                        <h2>Интересные статьи</h2>
-                        <span>Популярные новости</span>
+                        <h2><?= Yii::t('easyii', 'articles') ?> </h2>
+                        <span><?= Yii::t('easyii', 'popularNews') ?> </span>
                     </div>
                     <div class="recent-posts">
                         <?php foreach($top_news as $item) : ?>
@@ -352,15 +352,15 @@ Yii::$app->view->registerMetaTag([
             <?php if(isset($top_offers) && count($top_offers)>0): ?>
                 <div class="widget villa-photos-widget">
                     <div class="title1 style2">
-                        <h2>Хорошие предложения</h2>
-                        <span>Интересные страны для бизнеса</span>
+                        <h2><?= Yii::t('easyii', 'goodPropositions') ?></h2>
+                        <span><?= Yii::t('easyii', 'interestingCountries') ?></span>
                     </div>
                     <ul class="widget-gallery">
                         <?php foreach($top_offers as $item) : ?>
                             <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
                                     <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
                                 </a>
-                                <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / Дней: <?= $item->how_days?></b></a></span></li>
+                                <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / <?= Yii::t('easyii', 'days') ?>: <?= $item->how_days?></b></a></span></li>
                         <?php endforeach; ?>
 
                     </ul>
@@ -413,8 +413,8 @@ Yii::$app->view->registerMetaTag([
                                 <? endif ?>
                             </div>
                             <!-- <i class="fa fa-play-circle"></i>-->
-                            <strong class="per-night" style="font-family: Arial"><span>€</span><?= $offers->price; ?> <i>Дней: <?= $offers->how_days; ?></i></strong>
-                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title="">Заказать</a>
+                            <strong class="per-night" style="font-family: Arial"><span>€</span><?= $offers->price; ?> <i><?= Yii::t('easyii', 'days') ?>: <?= $offers->how_days; ?></i></strong>
+                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title=""><?= Yii::t('easyii', '10') ?></a>
 
                             <!--<div class="title-video alignleft">
                                 <h1><?= $offers->seo('h1', $offers->title) ?></h1>

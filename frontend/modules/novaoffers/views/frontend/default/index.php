@@ -88,13 +88,13 @@ $this->params['breadcrumbs'][] = $page->model->title;
     <div class="row">
         <div class="col-md-3">
             <nav id="menus" class="navbar no-padding">
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск юрисдикции..">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="<?= Yii::t('easyii', 'seekingJ') ?>">
 
                 <ul id="myUL" class="off-ul">
                     <?php foreach ($offers as $item) : ?><? if($region_name != $item->region_name ): ?>
                     <?php $region_name = $item->region_name; ?>
                     <li  id="reg_<?= $item->model->region_id ?>"><a href="#" class="header"><?= $region_name ?></a></li><? endif ?>
-                    <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?> / <span>€<?= $item->price ?> / Дней: <?= $item->how_days?></span></a></li>
+                    <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>"  data-show-block="b_<?= $item->id ?>"><?= $item->title ?> / <span>€<?= $item->price ?> / <?= Yii::t('easyii', 'days') ?>: <?= $item->how_days?></span></a></li>
                     <?php endforeach; ?>
                 </ul>
 
@@ -150,7 +150,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             <a href="<?= Url::to(['offers/'.$item->slug]) ?>">
                                                 <div class="package-thumb">
                                                     <?= Html::img($item->thumb(500, 375)) ?>
-                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $item->price ?></i><b> / <? if ($item->how_days): ?>Дней: <?= $item->how_days?><? else: ?>Минимал<? endif; ?></b></span>
+                                                    <span style="font-family: Arial; font-stretch: extra-condensed"><i>€<?= $item->price ?></i><b> / <? if ($item->how_days): ?><?= Yii::t('easyii', 'days') ?>: <?= $item->how_days?><? else: ?>Минимал<? endif; ?></b></span>
                                                 </div>
                                             </a>
                                             <div class="package-detail">
@@ -159,7 +159,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                     <li class="book-btn"><i class="fa fa-info"></i>
                                                        <a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= Yii::t('easyii', 'more_details') ?></a></li>
                                                     <li class="book-btn"><i class="fa fa-shopping-basket"></i>
-                                                        <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
+                                                        <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
                                                     </li>
                                                 </ul>
                                             </div>

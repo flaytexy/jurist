@@ -118,7 +118,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             </div>
                                             <div class="h6 text-center cena">€<?= $item->price ?></div>
                                             <div class="bnk-btn text-center">
-                                                <a class="btn btn-success" href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
+                                                <a class="btn btn-success" href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
                                                 <!--    <a href="<?= Url::to(['banks/view', 'slug' => $item->slug]) ?>"
                                                class="btn btn-success">Заказать</a>-->
                                             </div>
@@ -135,8 +135,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <!-- Widget3 -->
                 <div class="widget villa-photos-widget top20">
                     <div class="title1 style2">
-                        <h2>Топ банки</h2>
-                        <span>Лучшие банковские условия</span>
+                        <h2><?= Yii::t('easyii', 'topBanks') ?></h2>
+                        <span><?= Yii::t('easyii', 'bestTerm') ?></span>
                     </div>
                     <ul class="widget-gallery">
                         <?php foreach($top_banks as $item) : ?>
@@ -152,8 +152,8 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <div class="widget vertical-menu-widget top10">
                     <div class="recent-posts-widget">
                         <div class="title1 style2">
-                            <h2>Интересные статьи</h2>
-                            <span>Популярные новости</span>
+                            <h2><?= Yii::t('easyii', 'articles') ?></h2>
+                            <span><?= Yii::t('easyii', 'popularNews') ?></span>
                         </div>
                         <div class="recent-posts">
                             <?php foreach($top_news as $item) : ?>
@@ -171,15 +171,15 @@ $this->params['breadcrumbs'][] = $page->model->title;
                 <!-- Widget2 -->
                 <div class="widget villa-photos-widget top20">
                     <div class="title1 style2">
-                        <h2>Хорошие предложения</h2>
-                        <span>Интересные страны для бизнеса</span>
+                        <h2><?= Yii::t('easyii', 'goodPropositions') ?></h2>
+                        <span><?= Yii::t('easyii', 'interestingCountries') ?></span>
                     </div>
                     <ul class="widget-gallery">
                         <?php foreach($top_offers as $item) : ?>
                             <li><a href="<?= Url::to(['offers/'.$item['slug']]) ?>">
                                     <?= Html::img(\frontend\helpers\Image::thumb($item['image'], 300, 200)) ?>
                                 </a>
-                                <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $item['price'] ?> / Дней: <?= $item['how_days']?></b></a></span></li>
+                                <span><a href="<?= Url::to(['offers/'.$item['slug']]) ?>"><?= $item['title'] ?><br><b>€<?= $item['price'] ?> / <?= Yii::t('easyii', 'days') ?>: <?= $item['how_days']?></b></a></span></li>
                         <?php endforeach; ?>
 
                     </ul>
@@ -228,7 +228,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                                 <?= Html::a( Yii::t('easyii', 'more_details'),
                                                                     ['banks/view', 'slug' => $item->slug]) ?></li>
                                                             <li class="book-btn"><i class="fa fa-shopping-basket"></i>
-                                                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">Заказать</a>
+                                                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
                                                             </li>
                                                         </ul>
                                                     </div>
