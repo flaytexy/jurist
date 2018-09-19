@@ -299,8 +299,8 @@ $this->params['breadcrumbs'][] = $offers->model->title;
             <!-- Widget2 -->
             <div class="widget villa-photos-widget">
                 <div class="title1 style2">
-                    <h2>Банки</h2>
-                    <span>Лучшие банковские условия</span>
+                    <h2><?= Yii::t('easyii', 'goodPropositions') ?></h2>
+                    <span><?= Yii::t('easyii', 'interestingCountries') ?></span>
                 </div>
                 <ul class="widget-gallery" id="dottedbord">
                     <?php foreach($top_banks as $item) : ?>

@@ -142,7 +142,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
 
             <!-- Widget4 -->
             <div class="widget vertical-menu">
-                <a href="#" class="active">Банки</a>
+                <a href="#" class="active"><?= Yii::t('easyii', 'banks') ?></a>
                 <?php foreach ($banksPist as $itemList) : ?>
                     <a href="<?= Url::to(['banks/'.$itemList->slug]) ?>"><?=$itemList->title?> <b>€<?= $itemList->model->price ?></b></a>
                 <?php endforeach; ?>

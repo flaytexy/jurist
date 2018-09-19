@@ -160,8 +160,8 @@ Yii::$app->view->registerMetaTag([
                                     <!-- Widget2 -->
                                     <div class="widget villa-photos-widget">
                                         <div class="title1 style2">
-                                            <h2>Банки</h2>
-                                            <span>Лучшие банковские условия</span>
+                                            <h2><?= Yii::t('easyii', 'topBanks') ?></h2>
+                                            <span><?= Yii::t('easyii', 'bestTerm') ?></span>
                                         </div>
                                         <ul class="widget-gallery">
                                             <?php foreach($top_banks as $item) : ?>
