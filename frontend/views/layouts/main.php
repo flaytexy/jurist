@@ -391,10 +391,10 @@ $addeng = Yii::t('easyii', 'free');
         <div class="bottom-menu">
             <div class="container">
                 <ul class="footer-links">
-                    <li><a href="/" title=""><?= Yii::t('easyii', 'main') ?></a></li>
-                    <li><a href="/news" title=""><?= Yii::t('easyii', 'news') ?></a></li>
-                    <li><a href="/contact" title=""><?= Yii::t('easyii', 'contact') ?></a></li>
-                    <li><a href="/privacy-policy" title=""><?= Yii::t('easyii', 'privacy-policy') ?></a></li>
+                    <li><a href="<?= Url::to(['/']) ?>" title=""><?= Yii::t('easyii', 'main') ?></a></li>
+                    <li><a href="<?= Url::to(['/news']) ?>" title=""><?= Yii::t('easyii', 'news') ?></a></li>
+                    <li><a href="<?= Url::to(['/contact']) ?>/" title=""><?= Yii::t('easyii', 'contact') ?></a></li>
+                    <li><a href="http://iq-offshore.com/down/Privacy_Policy_IQ_Decision_UK_Ltd_2018.pdf"><?= Yii::t('easyii', 'privacy-policy') ?></a></li>
                 </ul>
                 <ul class="Social-btn">
                     <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
