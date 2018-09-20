@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $page->title;
 <section class="content-zone top20" id="new-index">
     <div class="container">
         <div class="row">
-            <div class="col-md-9 col-sm-8">
+            <div class="col-md-9 col-sm-12">
                 <div class="recent-news">
                     <div class="remove-ext">
                         <div class="row">
@@ -66,7 +66,7 @@ $this->params['breadcrumbs'][] = $page->title;
                 <div class="sidebar">
                     <div class="widget widget-categories">
                         <div class="title1 style2">
-                            <h2>Категории</h2>
+                            <h2><?= Yii::t('easyii', 'Categories') ?></h2>
                             <!-- <span>We Provide Best Services</span>-->
                         </div>
                         <ul>

@@ -296,8 +296,8 @@ $iteration = 1;
                                     </div>
                                     <p><?= Yii::t('easyii', '13') ?></p>
                                     <ul class="about-serlist style2">
-                                        <li><?= Yii::t('easyii', '14') ?></li>
-                                        <li><?= Yii::t('easyii', '15') ?></li>
+                                        <li><a href="<?= Url::to(['banks/'.$toMainBank->slug]) ?>"><?= Yii::t('easyii', '14') ?></a></li>
+                                        <li><a href="<?= Url::to(['processing/']) ?>"><?= Yii::t('easyii', '15') ?></a></li>
                                         <li><?= Yii::t('easyii', '16') ?></li>
                                     </ul>
                                     <a href="<?= Url::to('/banks') ?>" class="theme-btn"
@@ -442,6 +442,9 @@ $iteration = 1;
                                     <li><?= Yii::t('easyii', '29') ?></li>
                                     <li><?= Yii::t('easyii', '30') ?></li>
                                 </ul>
+                                <div class="text-center">
+                                    <a href="<?= Url::to(['fonds/']) ?>" class = "theme-btn theme-btn--inline"><?= Yii::t('easyii', '9') ?></a>
+                                </div>
                             </div>
                             <!-- Recent News Carousel -->
                         </div>

@@ -6131,6 +6131,12 @@ form.check-sec > .row > div {
     z-index: 1;
 }
 
+.theme-btn--inline {
+    display: inline-block;
+    float: none;
+    margin: 20px 0;
+}
+
 button.theme-btn {
     border: 0;
 }

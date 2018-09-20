@@ -156,7 +156,7 @@ $addeng = Yii::t('easyii', 'free');
         </div>
         <div class="responsive-menu ps-container" data-ps-id="3359a5b1-f4a3-6575-dffa-5413f2e717d2">
             <span class="close-btn"><i class="fa fa-close"></i></span>
-            <gcse:search></gcse:search>
+<!--            <gcse:search></gcse:search>-->
             <?= Menu::widget([
                 'options' => ['class' => 'nav navbar-nav'],
                 'items' => [

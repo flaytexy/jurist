@@ -232,6 +232,7 @@ Did not find the information you need? Contact our specialists for online suppor
 
 
 
-    'copyright_text' => 'Our services are provided by the company Copwork Commerce LP'
+    'copyright_text' => 'Our services are provided by the company Copwork Commerce LP',
+    'Categories' => 'Categories',
 
 ];
