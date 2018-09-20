@@ -130,7 +130,7 @@ Yii::$app->view->registerMetaTag([
                                 <div class="sidebar">
                                     <div class="widget widget-categories">
                                         <div class="title1 style2">
-                                            <h2>Категории</h2>
+                                            <h2><?= Yii::t('easyii', 'Categories') ?></h2>
                                            <!-- <span>We Provide Best Services</span>-->
                                         </div>
                                         <ul>

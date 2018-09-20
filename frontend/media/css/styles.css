@@ -1572,6 +1572,12 @@ form.check-sec > .row > div {
     z-index: 1;
 }
 
+.theme-btn--inline {
+    display: inline-block;
+    float: none;
+    margin: 20px 0;
+}
+
 button.theme-btn {
     border: 0;
 }
@@ -6190,9 +6196,6 @@ input.gsc-search-button-v2:hover {
 
 
 
-#logomenu-sec .navbar22 > ul li .tel-m a:hover {
-    border: 3px solid #a90329;
-}
 
 #rc-phone {
     right: 50% !important;

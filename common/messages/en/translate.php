@@ -231,4 +231,6 @@ Did not find the information you need? Contact our specialists for online suppor
     //Offer
     'seekingJ' => 'Seeking jurisdiction..',
     'juris' => 'Jurisdiction',
+
+    'Categories' => 'Categories',
 ];
