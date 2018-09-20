@@ -293,7 +293,7 @@ return [
     'reg_company' => 'Регистрация компании:',
     'more_details' => 'Подробнее',
     'search' => 'Поиск',
-    'copyright_text' => 'Our services are provided by the company Copwork Commerce LP'
+    'copyright_text' => 'Our services are provided by the company Copwork Commerce LP',
 
     //Bank
     'name' => 'Имя',
