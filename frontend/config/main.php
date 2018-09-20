@@ -257,6 +257,11 @@ $config = [
                     'route' => 'novanews/view',
                     'defaults' => ['slug' => 'page-about'],
                 ],
+                [
+                    'pattern' => 'privacy-policy',
+                    'route' => 'novanews/view',
+                    'defaults' => ['slug' => 'page-privacy-policy'],
+                ],
 //                [
 //                    'pattern' => 'offshornyie-predlozheniya',
 //                    'route' => 'offers/index',

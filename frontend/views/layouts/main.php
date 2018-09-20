@@ -394,6 +394,7 @@ $addeng = Yii::t('easyii', 'free');
                     <li><a href="/" title=""><?= Yii::t('easyii', 'main') ?></a></li>
                     <li><a href="/news" title=""><?= Yii::t('easyii', 'news') ?></a></li>
                     <li><a href="/contact" title=""><?= Yii::t('easyii', 'contact') ?></a></li>
+                    <li><a href="/privacy-policy" title=""><?= Yii::t('easyii', 'privacy-policy') ?></a></li>
                 </ul>
                 <ul class="Social-btn">
                     <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
