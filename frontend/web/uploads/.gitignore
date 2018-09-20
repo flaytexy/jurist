@@ -1,8 +1,0 @@
-*.jpg
-*.png
-*.gif
-!.gitignore
-!.htaccess
-
-!logo
-!logo/*

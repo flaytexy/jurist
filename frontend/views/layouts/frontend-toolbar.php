@@ -16,7 +16,7 @@ $this->registerCss('body {padding-'.$position.': 50px;}');
         </ul>
         <p class="navbar-text"><i class="glyphicon glyphicon-pencil"></i> <?= Yii::t('easyii', 'Live edit') ?></p>
         <?= Html::checkbox('', LIVE_EDIT, ['data-link' => Url::to(['/admin/system/live-edit'])]) ?>
-
+        <p class="navbar-text"><i class="glyphicon glyphicon-pencil"></i> sadasdasd</p>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="<?= Url::to(['/admin/sign/out']) ?>"><span class="glyphicon glyphicon-log-out"></span> <?= Yii::t('easyii', 'Logout') ?></a></li>
         </ul>

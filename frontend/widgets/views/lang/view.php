@@ -33,7 +33,7 @@ use yii\helpers\Html;
     }
     #current-lang .Rus {
         color: transparent;
-        background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png);
+        background-image: url('/images/flag/Flag_of_Russia.png');
         background-size: 30px 15px;
         background-repeat: no-repeat;
         background-position: right top;
@@ -41,7 +41,7 @@ use yii\helpers\Html;
     }
     #current-lang .Eng {
         color: transparent;
-        background-image: url(https://qph.ec.quoracdn.net/main-qimg-45ee634d5a033b5bbb11d231864cc6c3);
+        background-image: url('/images/flag/eng.jpg');
         background-size: 30px 15px;
         background-repeat: no-repeat;
         background-position: right top;

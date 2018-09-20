@@ -5416,17 +5416,23 @@ header {
 }
 
 .logomenu-sec nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     list-style: outside none none;
     margin-bottom: 0;
     padding-left: 0;
 }
 
 .logomenu-sec nav ul li {
+    display: flex;
     color: #444;
-    float: left;
     font-size: 13px;
     font-weight: 500;
     position: relative;
+}
+.logomenu-sec li+li{
+    padding-right: 0.4em;
 }
 
 .logomenu-sec nav ul li:last-child {
@@ -7026,6 +7032,10 @@ footer .title1.style2 > h2 {
     -moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
     -webkit-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
     box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+}
+
+#pricing-table ul > li strong {
+    display: block;
 }
 
 #pricing-table .plan:nth-child(1) {
@@ -9615,17 +9625,20 @@ header .row .fa {
 
 .copyright {
     float: left;
-    padding: 2px 0 17px;
+    padding: 2px 0 0;
     text-align: center;
+    margin-top: 7px;
     width: 100%;
 }
 
 .copyright p {
-    color: #e5e5e5;
+    color: #808080;
     font-family: Georgia, serif;
     font-size: 12px;
     font-weight: 500;
+    opacity: 0.7;
 }
+
 
 /*=============== About Us ===============*/
 .style2 .featuredimage-content {
@@ -10716,20 +10729,25 @@ input.gsc-search-button-v2:hover {
     display: block;
 }
 
-.lenta {
-    position: absolute;
-    top: 34px;
+.consult-btn {
+
     background: #7dc20f;
-    background: -moz-linear-gradient(top, #7dc20f 0%, #7abc0d 44%, #456d0b 100%);
-    background: -webkit-linear-gradient(top, #7dc20f 0%, #7abc0d 44%, #456d0b 100%);
-    background: linear-gradient(to bottom, #7dc20f 0%, #7abc0d 44%, #456d0b 100%);
+    background: -moz-linear-gradient(top, #7dc20f 0%, #7abc0d 100%);
+    background: -webkit-linear-gradient(top, #7dc20f 0%, #7abc0d 100%);
+    background: linear-gradient(to bottom, #7dc20f 0%, #7abc0d 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7dc20f', endColorstr='#456d0b', GradientType=0);
     padding: 3px 6px;
-    color: white;
+    font-size: 12px;
     box-shadow: 0 1px 1px 0 #0a0000;
-    left: 48px;
     white-space: nowrap;
+    border: none !important;
 }
+.consult-btn span{
+    color: #fff;
+}
+
+
+
 
 #logomenu-sec .navbar22 > ul li .tel-m a:hover {
     border: 3px solid #a90329;
@@ -11571,7 +11589,7 @@ blockquote > p a,
     }
 
     #paddinglist .subs-main .btn {
-        font-size: 22px;
+        font-size: 20px;
     }
     .packages-detail img {
         width: 100% !important;
@@ -11690,6 +11708,9 @@ blockquote > p a,
 @media (max-width: 540px) {
     .instagram-gallery > ul > li {
         max-width: 50%;
+    }
+    #paddinglist .subs-main .btn {
+        font-size: 17px;
     }
 }
 

@@ -73,9 +73,9 @@ $addeng = Yii::t('easyii', 'free');
     <!-- end: Top Bar -->
     <div class="logomenu-sec hidden-xs" id="logomenu-sec">
         <div class="container">
-            <div class="row">
-                <div class="col-md-2 ">
-                    <div class="logo logo_main"><a href="/" title=""><img id="logo-img" src="/uploads/logo/logo_main_png.png" data-src="/uploads/logo/logo_main_fsd_1.gif" alt=""></a>
+            <div class="row align-items-center">
+                <div class="col-md-2 align-self-start">
+                    <div class="logo logo_main"><a href="/" title=""><img id="logo-img" src="/uploads/logo/newLogo.gif" data-src="/uploads/logo/logo_main_png.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-3" id="searchBlock">
@@ -121,10 +121,10 @@ $addeng = Yii::t('easyii', 'free');
                                 ['label' => Yii::t('easyii', 'contact'), 'url' => ['/contact']],
                                 ['label' => 'contact', 'url' => ['/contact'],
                                     'template' => '
-                                <li class="contact-m2">
-                                    <div class="row">
-                                        <div class="col-md-12 tel-m"><div><a href=' . Url::to('/contact') .'> <p class="lenta">' . $addeng . ' </p></a></div></div>
-                                    </div>
+                                <li>
+                                                          
+                                        <a href=' . Url::to('/contact') .' class="consult-btn"><span>' . $addeng . ' </span> </a>
+                              
                                 </li>'
                                 ],
                             ],
@@ -335,8 +335,8 @@ $addeng = Yii::t('easyii', 'free');
                                 <?= Yii::t('easyii', 'addressinfo3') ?>
                             </p>
                             <p style="color: white"><strong style="color: #7dc20f"><i
-                                            class="fa fa-phone"></i> <?= Yii::t('easyii', 'number') ?></strong><br>
-                                +44 7940 507811</p>
+                                            class="fa fa-phone"></i> <?= Yii::t('easyii', 'number_eng') ?></strong><br>
+                                +44 7562 787794,<br /> +44 (0) 1727 834359</p>
                             <p style="color: white">
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i
@@ -404,9 +404,10 @@ $addeng = Yii::t('easyii', 'free');
             </div>
         </div>
         <div class="copyright">
-            <?php /*<div class="container">
-                <p><span>Copyright 2016.</span> Created by <a title="Cyber Brain - Web Studio">Cyber Brain </a></p>
-            </div> */ ?>
+            <div class="container">
+                <?php if(false) :?><p><span>Copyright 2016.</span> Created by <a title="Cyber Brain - Web Studio">Cyber Brain </a></p><? endif; ?>
+                <p class="flu"><?= Yii::t('easyii','copyright_text')?></p>
+            </div>
         </div>
     </div>
     <!-- Bottom Line -->

@@ -127,7 +127,7 @@ $iteration = 1;
                         <div class="ticker__viewport">
                             <ul class="ticker__list" data-ticker="list">
                             <? foreach ($ticker_viewport as $item): ?>
-                            <li class="ticker__item" data-ticker="item"><a href="<?= $item->url ?>"><?= $item->title ?></a></li>
+                            <li class="ticker__item" data-ticker="item"><a href="<?= $item->url ?>"><? if ( Yii::$app->language==='en-US'): ?><?= $item->model->title_en ?><? else: ?><?= $item->model->title ?><? endif; ?></a></li>
                             <? endforeach; ?>
                             </ul>
                         </div>
@@ -300,7 +300,7 @@ $iteration = 1;
                                         <li><?= Yii::t('easyii', '15') ?></li>
                                         <li><?= Yii::t('easyii', '16') ?></li>
                                     </ul>
-                                    <a href="<?= Url::to(['banks']) ?>" class="theme-btn"
+                                    <a href="<?= Url::to('/banks') ?>" class="theme-btn"
                                        title="Банки"><?= Yii::t('easyii', 'detail') ?></a>
                                 </div>
                             </div>

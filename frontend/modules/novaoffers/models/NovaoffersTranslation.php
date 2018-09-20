@@ -31,6 +31,10 @@ class NovaoffersTranslation extends ContentTranslation
             //[['slug'], 'unique', 'message' => 'Постоянная ссылка должна быть уникальной'],
             //[['short_description'], 'required', 'message' => 'Введите краткое содержание Компании'],
             [['description'], 'required', 'message' => 'Введите содержание Компании'],
+            ['description', 'filter', 'filter' => function ($value) {
+                $value = str_replace('&nbsp;', ' ', $value);
+                return $value;
+            }],
             [['language'], 'in', 'range' => ['ru-RU', 'en-US'], 'message' => 'Неверное значение языка'],
             [['public_status'], 'boolean'],
             [['name', 'short_description', 'description', 'meta_title', 'meta_keywords', 'meta_description'], 'trim'],
