@@ -207,6 +207,10 @@ Did not find the information you need? Contact our specialists for online suppor
     'reg_company' => 'Company registration:',
     'more_details' => 'Learn more',
     'search' => 'Search',
+
+    'copyright_text' => 'Our services are provided by the company Copwork Commerce LP',
+    'privacy-policy' => 'Privacy policy',
+
     //Bank Table
     'name' => 'Name',
     'country' => 'Country',
@@ -227,11 +231,4 @@ Did not find the information you need? Contact our specialists for online suppor
     //Offer
     'seekingJ' => 'Seeking jurisdiction..',
     'juris' => 'Jurisdiction',
-
-
-
-
-
-    'copyright_text' => 'Our services are provided by the company Copwork Commerce LP'
-
 ];
