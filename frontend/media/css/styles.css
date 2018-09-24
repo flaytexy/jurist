@@ -810,9 +810,7 @@ header {
     border-bottom: 1px solid #002b36;
 }
 
-.logo {
-    float: left;
-}
+
 
 /* здесь изменено*/
 .logo > a {

@@ -3,9 +3,9 @@ use frontend\modules\banks\api\Banks;
 use frontend\modules\page\api\Page;
 
 use frontend\helpers\Image;
-
 use yii\helpers\Html;
 use yii\helpers\Url;
+use frontend\widgets\TopBanks;
 
 \frontend\assets\BanksAsset::register($this);
 
@@ -136,21 +136,8 @@ $this->params['breadcrumbs'][] = $page->title;
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12">
                 <!-- Widget3 -->
-                <div class="widget villa-photos-widget top20">
-                    <div class="title1 style2">
-                        <h2><?= Yii::t('easyii', 'topBanks') ?></h2>
-                        <span><?= Yii::t('easyii', 'bestTerm') ?></span>
-                    </div>
-                    <ul class="widget-gallery">
-                        <?php foreach($top_banks as $item) : ?>
-                            <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
-                                    <?= Html::img(Image::thumb($item->image, 332, 83)) ?>
-                                </a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div><!-- end: Widget3 -->
-
+                <!-- end: Widget3 -->
+                <?= TopBanks::widget(['banks' =>$top_banks,'bankNum' =>2])?>
                 <!-- Widget1 -->
                 <div class="widget vertical-menu-widget top10">
                     <div class="recent-posts-widget">
