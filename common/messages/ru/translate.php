@@ -294,6 +294,7 @@ return [
     'more_details' => 'Подробнее',
     'search' => 'Поиск',
     'copyright_text' => 'Our services are provided by the company Copwork Commerce LP',
+    'privacy-policy' => 'Политика конфиденциальности',
 
     //Bank
     'name' => 'Имя',
