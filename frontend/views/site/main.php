@@ -169,7 +169,7 @@ $iteration = 1;
             <h2 style="text-align: center;"><?= Yii::t('easyii', '49') ?></h2>
             <div class="row">
                 <? foreach ($news as $item): ?>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="package ">
                             <a href="<?= Url::to(['news/'.$item->slug]) ?>">
                                 <div class="package-thumb">

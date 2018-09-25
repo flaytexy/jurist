@@ -84,10 +84,10 @@ $addeng = Yii::t('easyii', 'free');
                             'method' => 'post',
                         ]); ?>
                         <div class="search-inp row no-padding">
-                            <div class="col-md-9 no-padding ">
+                            <div class="col-md-8 no-padding ">
                                 <?= Html::input('text', 'search', $this->params['search'], []) ?>
                             </div>
-                            <div class="col-md-3 no-padding ">
+                            <div class="col-md-4 no-padding ">
                                 <?= Html::submitButton(Yii::t('easyii', 'search'), ['class' => 'btn btn-primary submit']) ?>
                             </div>
                         </div>
