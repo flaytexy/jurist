@@ -47,7 +47,7 @@ $addeng = Yii::t('easyii', 'free');
 </script>
 <? endif; ?>
 <header class="stick scrollup" id="top-header">
-    <div class="top-bar visible-md-block visible-lg">
+    <div class="top-bar visible-md">
         <div class="container">
             <div class="topbar-data">
                 <?= Menu::widget([
@@ -140,19 +140,17 @@ $addeng = Yii::t('easyii', 'free');
     <div class="responsive-header">
         <div class="logomenu-bar">
             <div class="logodiv"><a href="/" title=""><img src="/uploads/logo/logo-small.png" alt=""></a></div>
-            <div class="container">
-                <div class="centeredmenulist">
-                    <span class="vmenu"><a href="/banks"><?= Yii::t('easyii', 'banks') ?>&nbsp;</a></span>
-                    <span class="vmenu">|&nbsp;</span>
-                    <span class="vmenu"><a href="/offshornyie-predlozheniya"><?= Yii::t('easyii', 'companies') ?>
-                            &nbsp;</a></span>
-                    <span class="vmenu">|&nbsp;</span>
-                    <span class="vmenu"><a href="/licenses"><?= Yii::t('easyii', 'licenses') ?>&nbsp;</a></span>
-                    <span class="vmenu">|&nbsp;</span>
-                    <span class="vmenu"><a href="/fonds"><?= Yii::t('easyii', 'funds') ?>&nbsp;</a></span>
-                </div>
+                <ul class="centeredmenulist">
+                    <li class="vmenu"><a href="<?=Url::to(['/banks'])?>"><?= Yii::t('easyii', 'banks' ) ?>&nbsp;</a></li>
+                    <li class="vmenu"><a href="<?= Url::to(['/offshornyie-predlozheniya'])?>"><?= Yii::t('easyii', 'companies') ?>
+                    <li class="vmenu"><a href="<?= Url::to(['/licenses'])?>"><?= Yii::t('easyii', 'licenses') ?>&nbsp;</a></li>
+                    <li class="vmenu"><a href="<?=Url::to(['/fonds'])?>"><?= Yii::t('easyii', 'funds') ?>&nbsp;</a></li>
+                </ul>
+            <div class="btncenter">
+                <?= WLang::widget() ?>
+                <span class="menu-btn">&nbsp;<i class="fa fa-list"></i></span>
+
             </div>
-            <div class="btncenter"><span class="menu-btn">&nbsp;<i class="fa fa-list"></i></span></div>
         </div>
         <div class="responsive-menu ps-container" data-ps-id="3359a5b1-f4a3-6575-dffa-5413f2e717d2">
             <span class="close-btn"><i class="fa fa-close"></i></span>
