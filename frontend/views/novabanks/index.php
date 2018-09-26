@@ -137,7 +137,7 @@ $this->params['breadcrumbs'][] = $page->title;
             <div class="col-lg-3 col-md-3 col-sm-12">
                 <!-- Widget3 -->
                 <!-- end: Widget3 -->
-                <?= TopBanks::widget(['banks' =>$top_banks,'bankNum' =>2])?>
+                <?= TopBanks::widget(['banks' =>$top_banks,'bankNum' =>3])?>
                 <!-- Widget1 -->
                 <div class="widget vertical-menu-widget top10">
                     <div class="recent-posts-widget">

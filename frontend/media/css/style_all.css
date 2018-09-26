@@ -5625,7 +5625,7 @@ header.stick .top-menus i.fa.fa-skype {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3px 45px 6px 20px;
+    padding: 3px 10px 6px 10px;
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -11715,12 +11715,18 @@ blockquote > p a,
         font-size: 17px;
     }
 }
+@media (max-width: 480px){
+   .logomenu-bar .centeredmenulist {
+        display:none;
+    }
+}
 
 @media (max-width: 480px), (max-device-width: 480px) {
     .blog-post2 p > img {
         margin: 0 !important;
         padding: 0 !important;
     }
+
 
     .search-luxuriousvilla.overlape {
         margin-bottom: 0;

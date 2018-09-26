@@ -9,7 +9,7 @@ use frontend\helpers\Image;
     </div>
     <ul class="widget-gallery">
         <?php if ($bankNum > count($banks))  $bankNum = count($banks);
-        for ($i=1; $i<$bankNum; $i++) {?>
+        for ($i=0; $i<$bankNum; $i++) {?>
             <li><a href="<?= Url::to(['banks/'.$banks[$i]->slug]) ?>">
                     <?= Html::img(Image::thumb($banks[$i]->image, 332, 83)) ?>
                 </a>
