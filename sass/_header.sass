@@ -1,0 +1,206 @@
+/*=============== Header ===============
+
+header
+  z-index: 99
+  position: sticky
+  top: 0
+
+/*===== Top Bar =====
+
+.top-bar
+  width: 100%
+  background: #000
+  position: relative
+  .top-menus
+    padding-left: 0
+    display: flex
+    justify-content: flex-end
+    list-style: none
+    margin-bottom: 0
+    & > li
+      color: #e4e3e3
+      font-weight: 300
+      margin: 3px 0
+      &> a
+        display: block
+        background: #121212
+        color: inherit
+        text-align: center
+        font-family: Arial, serif
+        padding: 18px 11px
+.top-menus > li:hover
+  color: #7dc20f
+  &> a
+    background: #1d1d1d
+.logomenu-sec
+  background: #fff
+  border-bottom: 1px solid #002b36
+  position: relative
+  ul
+    display: flex
+    align-items: center
+    justify-content: space-between
+    list-style: outside none none
+    margin-bottom: 0
+    padding-left: 0
+    li
+      display: flex
+      color: #444
+      font-size: 13px
+      font-weight: 500
+      a
+        background-color: transparent
+        border: 3px solid transparent
+        color: inherit
+        padding: 0 8px
+        text-align: center
+        &:hover
+          border: 3px solid #7dc20f
+  li + li
+    padding-right: 0.4em
+
+.consult-btn
+  background: #7dc20f
+  background: linear-gradient(to bottom, #7dc20f 0%, #7abc0d 100%)
+  padding: 3px 6px
+  font-size: 12px
+  box-shadow: 0 1px 1px 0 #0a0000
+  white-space: nowrap
+  border: none !important
+  span
+    color: #fff
+    //Logo
+.logodiv
+  align-items: center
+  justify-content: center
+  img
+    display: block
+.logo img
+      max-width: 100%
+.logo_main
+  position: absolute
+  top: -50px
+  img
+    width: 170px
+    height: 100%
+
+/*================ Responsive Header ================
+
+.responsive-header
+  display: none
+  .top-bar > ul
+    list-style: outside none none
+    margin-bottom: 0
+    padding-left: 0
+.logomenu-bar
+  display: flex
+  width: 100%
+  justify-content: space-between
+  align-items: center
+  padding: 3px 10px 6px 10px
+  position: sticky
+  top: 0
+  z-index: 100
+  .logodiv img
+    height: 15px
+  .centeredmenulist
+    list-style: none
+    display: flex
+    align-items: center
+    justify-content: center
+    padding-inline-start: 0
+    overflow: auto
+    margin-bottom: 0
+.btncenter
+  vertical-align: middle
+  overflow: auto
+  .menu-btn
+    color: #fbfbfb
+    cursor: pointer
+    font-size: 20px
+  span
+    vertical-align: middle
+
+.responsive-menu
+  background: #1c1c1c none repeat scroll 0 0
+  bottom: 0
+  left: 0
+  opacity: 0
+  padding: 30px
+  position: fixed
+  right: 0
+  visibility: hidden
+  text-align: center
+  top: -100%
+  z-index: 999
+  &.slidein
+    opacity: 1
+    visibility: visible
+    top: 0
+
+.close-btn
+  color: #ffffff
+  cursor: pointer
+  height: 30px
+  line-height: 30px
+  position: absolute
+  right: 0
+  text-align: center
+  top: 0
+  width: 30px
+
+.responsive-menu
+  ul
+    display: inline-block
+    list-style: outside none none
+    margin-bottom: 0
+    max-width: 250px
+    padding-left: 0
+    text-align: left
+    width: 100%
+    li
+      color: #eeeeee
+      font-size: 12px
+      font-weight: 500
+      width: 100%
+      position: relative
+      a
+        display: block
+        color: inherit
+        margin-bottom: 1px
+        padding: 18px 30px 16px 35px
+      &:last-child a
+        margin-bottom: 0
+      i
+        display: none
+      &.menu-item-has-children
+        &> i
+          cursor: pointer
+          display: block
+          font-size: 15px
+          position: absolute
+          right: 35px
+          top: 18px
+        &.active > i
+          -webkit-transform: rotateX(180deg)
+          -moz-transform: rotateX(180deg)
+          -ms-transform: rotateX(180deg)
+          -o-transform: rotateX(180deg)
+          transform: rotateX(180deg)
+    ul
+      display: none
+      li.menu-item-has-children > a
+        border-bottom: 1px solid #353535
+      ul
+        padding-left: 40px
+      li
+        a
+          padding: 10px 30px 10px 40px
+        &.menu-item-has-children > i
+          top: 10px
+  &> ul > li
+    &.menu-item-has-children.active > a
+      color: #ffffff
+    &> a
+      background: #2d2d2d none repeat scroll 0 0
+

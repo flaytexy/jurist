@@ -143,7 +143,7 @@ class ContentAdminController extends CategoryController
                     Yii::$app->session->setFlash('flash-admin-message-success', $is_new_record ? 'Операция по созданию успешна.' : 'Операция по обновлению успешна.');
 
                     if($model->validate() && !$model->post_telegram){
-                        if($model->type_id==2){
+                        if($model->type_id==2 && $model->translation->public_status==1 ){
                             $title = $model->translation->name;
                             $description = (!empty($model->translation->meta_description)) ? $model->translation->meta_description : '';
 
@@ -154,7 +154,7 @@ class ContentAdminController extends CategoryController
                             $link = Url::base('https') . '/news/'. $model->slug ;
                             $text = "<a href='".trim($img)."'>✉</a>\n<a href='".$link."'>".trim($title)."</a>\n".trim($description);
 
-                            Telegram::sendMessage($text);
+                           Telegram::sendMessage($text);
 
                             $model->post_telegram = 1;
                             $model->save(false);

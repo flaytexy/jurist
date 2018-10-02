@@ -675,19 +675,6 @@
     padding: 19px 50px;
 }
 
-.we-offers {
-    float: left;
-    padding-left: 70px;
-    width: 100%;
-}
-
-.we-offers > .row {
-    margin: 0;
-}
-
-.we-offers > .row > div {
-    padding: 0;
-}
 
 .villa-arrangements.style2 {
     padding: 0;
@@ -695,10 +682,8 @@
 
 /*=============== Villa Locations ===============*/
 .villa-locationslist {
-    background: #ffffff none repeat scroll 0 0;
-    float: left;
+    background: transparent none repeat scroll 0 0;
     margin-top: 20px;
-    padding: 0 20px 20px;
     width: 100%;
 }
 
@@ -798,9 +783,6 @@
     margin-bottom: 9px;
 }
 
-.villa-location.last .villa-locationinfo > span {
-    color: #7dc20f;
-}
 
 .villa-locationinfo > span:hover {
     color: #7dc20f;

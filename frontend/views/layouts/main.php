@@ -49,7 +49,6 @@ $addeng = Yii::t('easyii', 'free');
 <header class="stick scrollup" id="top-header">
     <div class="top-bar visible-md">
         <div class="container">
-            <div class="topbar-data">
                 <?= Menu::widget([
                     'options' => ['class' => 'top-menus', 'id' => 'top-menus'],
                     'items' => [
@@ -67,7 +66,6 @@ $addeng = Yii::t('easyii', 'free');
                     ],
                 ]); ?>
                 <?= WLang::widget() ?>
-            </div>
         </div>
     </div>
     <!-- end: Top Bar -->
@@ -214,8 +212,7 @@ $addeng = Yii::t('easyii', 'free');
     <div class="push"></div>
 
     <!-- popularly -->
-    <section class="top20">
-        <div class="block no-padding">
+    <section>
             <div class="row">
                 <div class="col-md-12 top20">
                     <div class="instagram">
@@ -243,69 +240,72 @@ $addeng = Yii::t('easyii', 'free');
                     <!-- Instagram -->
                 </div>
             </div>
-        </div>
     </section>
     <!-- _end popularly -->
 </div>
-<footer>
-    <div class="block dark">
+<footer class="clear">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <section>
+                    <section clas="pad">
                         <div class="feature-box-grid">
-                            <div class="col-md-4 col-sm-4">
-                                <div class="featured-item border-box text-center">
-                                    <div class="icon">
-                                        <i class="fa fa-globe"></i>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3">
+                                        <div class="featured-item border-box text-center">
+                                            <div class="icon">
+                                                <i class="fa fa-globe"></i>
+                                            </div>
+                                            <div class="title text-uppercase">
+                                                <h4><?= Yii::t('easyii', 'successful') ?></h4>
+                                            </div>
+                                            <div class="desc">
+                                                <?= Yii::t('easyii', 'reg28') ?><br><br>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="title text-uppercase">
-                                        <h4><?= Yii::t('easyii', 'successful') ?></h4>
+                                    <div class="col-md-3 col-sm-3">
+                                        <div class="featured-item border-box text-center">
+                                            <div class="icon">
+                                                <i class="fa fa-university"></i>
+                                            </div>
+                                            <div class="title text-uppercase">
+                                                <h4><?= Yii::t('easyii', 'openaccounts') ?></h4>
+                                            </div>
+                                            <div class="desc">
+                                                <?= Yii::t('easyii', '48banks') ?>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="desc">
-                                        <?= Yii::t('easyii', 'reg28') ?><br><br>
+                                    <div class="col-md-3 col-sm-3">
+                                        <div class="featured-item border-box text-center">
+                                            <div class="icon">
+                                                <i class="flaticon-people"></i>
+                                            </div>
+                                            <div class="title text-uppercase">
+                                                <h4><?= Yii::t('easyii', 'consult') ?></h4>
+                                            </div>
+                                            <div class="desc">
+                                                <?= Yii::t('easyii', 'goodtime') ?><br><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3">
+                                        <div class="featured-item border-box text-center">
+                                            <div class="icon">
+                                                <i class="fa fa-handshake-o"></i>
+                                            </div>
+                                            <div class="title text-uppercase">
+                                                <h4><?= Yii::t('easyii', 'terpelivo') ?></h4>
+                                            </div>
+                                            <div class="desc">
+                                                <?= Yii::t('easyii', 'talkyou') ?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="featured-item border-box text-center">
-                                    <div class="icon">
-                                        <i class="fa fa-university"></i>
-                                    </div>
-                                    <div class="title text-uppercase">
-                                        <h4><?= Yii::t('easyii', 'openaccounts') ?></h4>
-                                    </div>
-                                    <div class="desc">
-                                        <?= Yii::t('easyii', '48banks') ?>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="featured-item border-box text-center">
-                                    <div class="icon">
-                                        <i class="flaticon-people"></i>
-                                    </div>
-                                    <div class="title text-uppercase">
-                                        <h4><?= Yii::t('easyii', 'consult') ?></h4>
-                                    </div>
-                                    <div class="desc">
-                                        <?= Yii::t('easyii', 'goodtime') ?><br><br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="featured-item border-box text-center">
-                                    <div class="icon">
-                                        <i class="fa fa-handshake-o"></i>
-                                    </div>
-                                    <div class="title text-uppercase">
-                                        <h4><?= Yii::t('easyii', 'terpelivo') ?></h4>
-                                    </div>
-                                    <div class="desc">
-                                        <?= Yii::t('easyii', 'talkyou') ?>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </section>
                 </div>
@@ -344,7 +344,7 @@ $addeng = Yii::t('easyii', 'free');
                             </p>
                             <p style="color: white"><strong style="color: #7dc20f"><i
                                             class="fa fa-phone"></i> <?= Yii::t('easyii', 'number') ?></strong><br>
-                                +7 925 470 50 02</p>
+                                <a href="tel:+79254705002">+7 925 470 50 02</a></p>
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i
                                             class="fa fa-map-marker"></i> <?= Yii::t('easyii', 'address_in_kiev') ?>
@@ -353,7 +353,7 @@ $addeng = Yii::t('easyii', 'free');
                             </p>
                             <p style="color: white"><strong style="color: #7dc20f"><i
                                             class="fa fa-phone"></i> <?= Yii::t('easyii', 'number') ?></strong><br>
-                                +38 067 193 11 17</p>
+                                <a href="tel:380671931117">+38 067 193 11 17</a></p>
                             <p style="color: white"><strong style="color: #7dc20f"><i
                                             class="fa fa-clock-o"></i> <?= Yii::t('easyii', 'worktime') ?></strong><br>
                                 09:00-19:00</p>
@@ -374,9 +374,6 @@ $addeng = Yii::t('easyii', 'free');
                         <div id="map" style="height: 450px;width: 100%"></div>
                     </div>
                     <div class="footer-widget">
-                        <div class="title1 style2">
-                            <h2>Быстрый переход</h2>
-                        </div>
                         <div class="menu-links">
                             <div class="privy-embed-form" data-campaign="216143"></div>
                         </div>
@@ -385,7 +382,6 @@ $addeng = Yii::t('easyii', 'free');
             </div>
         </div>
     </div>
-    <div class="bottom-line">
         <div class="bottom-menu">
             <div class="container">
                 <ul class="footer-links">
@@ -394,34 +390,33 @@ $addeng = Yii::t('easyii', 'free');
                     <li><a href="<?= Url::to(['/contact']) ?>/" title=""><?= Yii::t('easyii', 'contact') ?></a></li>
                     <li><a href="http://iq-offshore.com/down/Privacy_Policy_IQ_Decision_UK_Ltd_2018.pdf" target="_blank"><?= Yii::t('easyii', 'privacy-policy') ?></a></li>
                 </ul>
-                <ul class="Social-btn">
-                    <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" title=""><i class="fa fa-skype"></i></a></li>
-                </ul>
+<!--                <ul class="Social-btn">-->
+<!--                    <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>-->
+<!--                    <li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>-->
+<!--                    <li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>-->
+<!--                    <li><a href="#" title=""><i class="fa fa-skype"></i></a></li>-->
+<!--                </ul>-->
             </div>
-        </div>
         <div class="copyright">
             <div class="container">
                 <?php if(false) :?><p><span>Copyright 2016.</span> Created by <a title="Cyber Brain - Web Studio">Cyber Brain </a></p><? endif; ?>
                 <p class="flu"><?= Yii::t('easyii','copyright_text')?></p>
             </div>
         </div>
-    </div>
+
     <!-- Bottom Line -->
 </footer>
 
 
-<div id="stl_left" style="display: block; opacity: 1; width: 178px;" class="">
-    <div id="stl_bg">
-        <nobr id="stl_text">Вверх</nobr>
-    </div>
-</div>
-<a href="#" class="scrollToTop"></a>
-<div id="dialog-vyhodnoy" class="" style="display: none">
-    Выходной 30 апреля на 1 мая.
-</div>
+<!--<div id="stl_left" style="display: block; opacity: 1; width: 178px;" class="">-->
+<!--    <div id="stl_bg">-->
+<!--        <nobr id="stl_text">Вверх</nobr>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<a href="#" class="scrollToTop"></a>-->
+<!--<div id="dialog-vyhodnoy" class="" style="display: none">-->
+<!--    Выходной 30 апреля на 1 мая.-->
+<!--</div>-->
 <?php //if (!YII_DEBUG): ?>
 <!--    <script type='text/javascript'>-->
 <!--        var _d_site = _d_site || '411086831FF94A27DC0340B2';-->

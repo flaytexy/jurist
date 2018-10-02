@@ -25,7 +25,7 @@ use \frontend\widgets\ScriptsFooter;
 
         <?php $this->head() ?>
     </head>
-    <body>
+    <body class="clearfix">
         <style>
             #privy-container {
                 display: none;

@@ -200,6 +200,7 @@ $moduleName = $this->context->module->id;
         </div>
     </div>
 </div>
+
 <?php $this->endBody() ?>
 </body>
 </html>

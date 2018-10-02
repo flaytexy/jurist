@@ -8,6 +8,8 @@ var minifyJS = require('gulp-uglify');
 var cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
+var prefixer = require('gulp-autoprefixer');
+var sass = require('gulp-sass');
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,6 +40,18 @@ var concat = require('gulp-concat');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// css
+gulp.task('sass:build', function () {
+    gulp.src('sass/styles.sass') //Выберем наш main.scss
+
+        .pipe(sass()) //Скомпилируем
+        .pipe(prefixer()) //Добавим вендорные префиксы
+        .pipe(gulp.dest('frontend/media/css/')); //И в build
+
+});
+
+
+
+
 
 gulp.task('css', function () {
     return gulp.src([
@@ -64,7 +78,8 @@ gulp.task('css', function () {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// default
-gulp.task('default', ['css'], function () {
+gulp.task('default', ['sass:build','css']
+    // , function () {
 
     // gulp.src(["!public_html/css/*.min.css", 'public_html/css/*.css'])
     //     .pipe(cssmin())
@@ -76,4 +91,5 @@ gulp.task('default', ['css'], function () {
     //     .pipe(rename({suffix: '.min'}))
     //     .pipe( gulp.dest('public_html/js'))
 
-});
+// }
+);

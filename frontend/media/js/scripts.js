@@ -218,20 +218,20 @@ $(function (e) {
         }
     });
 
-    $("b:contains('Русский')").addClass('Rus');
-    $("b:contains('English')").addClass('Eng');
-    $("li:contains('English')").addClass('Eng');
-    $("li:contains('Русский')").addClass('Rus');
+    $("b:contains('Рус')").addClass('Rus');
+    $("b:contains('Eng')").addClass('Eng');
+    $("li:contains('Eng')").addClass('Eng');
+    $("li:contains('Рус')").addClass('Rus');
 
 
     //Check to see if the window is top if not then display button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 500) {
-            $('.scrollToTop').fadeIn();
-        } else {
-            $('.scrollToTop').fadeOut();
-        }
-    });
+    // $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 500) {
+    //         $('.scrollToTop').fadeIn();
+    //     } else {
+    //         $('.scrollToTop').fadeOut();
+    //     }
+    // });
 
     //Click event to scroll to top
     $('.scrollToTop').click(function () {

@@ -20,7 +20,7 @@ $iteration = 1;
 
 <? if (true): ?>
     <section>
-        <div class="block no-padding">
+
             <div class="row">
                 <div class="col-md-12">
                     <div id="Slider-Main" class="" style="display: none">
@@ -113,12 +113,10 @@ $iteration = 1;
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 <? endif; ?>
 
-<section>
-    <div class="block gray no-padding">
+<section class="gray">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -160,11 +158,9 @@ $iteration = 1;
                 <!-- Search luxurious Villa -->
             </div>
         </div>
-    </div>
 </section>
 <? if(isset($news) && !empty($news)): ?>
-<section id="paddinglist" class="top20">
-    <div class="block no-padding gray2 top20">
+<section id="paddinglist" class="gray2 pad">
         <div class="container">
             <h2 style="text-align: center;"><?= Yii::t('easyii', '49') ?></h2>
             <div class="row">
@@ -216,19 +212,16 @@ $iteration = 1;
             </div>
         </div>
         <!-- Sponsor Carousel -->
-    </div>
 </section>
 <? endif; ?>
-<section>
-    <div class="block ext-toppadd-one">
-        <div class="fixed-bg2" style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax2.jpg', 900, 420) ?>');"></div>
+<section class="popular-yuris pad">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="villaeditors-picks">
                         <div class="title1">
                             <h2><?= Yii::t('easyii', '6') ?></h2>
-                            <span><?= Yii::t('easyii', '7') ?></span>
+                            <div><?= Yii::t('easyii', '7') ?></div>
 
                             <p><?= Yii::t('easyii', '8') ?></p>
                         </div>
@@ -278,11 +271,9 @@ $iteration = 1;
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
-<section>
-    <div class="block">
+<section class="pad">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -292,7 +283,7 @@ $iteration = 1;
                                 <div class="villa-arrangementsinfo">
                                     <div class="title1">
                                         <h2><?= Yii::t('easyii', '11') ?></h2>
-                                        <span><?= Yii::t('easyii', '12') ?></span>
+                                        <div><?= Yii::t('easyii', '12') ?></div>
                                     </div>
                                     <p><?= Yii::t('easyii', '13') ?></p>
                                     <ul class="about-serlist style2">
@@ -346,20 +337,17 @@ $iteration = 1;
             </div>
             <!-- We Offers -->
         </div>
-    </div>
 </section>
 
 <?php if (true): ?>
-<section>
-    <div class="block" id="block1">
-        <div class="fixed-bg2" style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax3.jpg', 900, 420) ?>');"></div>
+<section class="license pad">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="villa-locations">
                         <div class="title1">
                             <h2><?= Yii::t('easyii', '17') ?></h2>
-                            <span><?= Yii::t('easyii', '18') ?></span>
+                            <div><?= Yii::t('easyii', '18') ?></div>
                             <p><?= Yii::t('easyii', '19') ?></p>
                         </div>
                         <div class="villa-locationslist">
@@ -387,19 +375,17 @@ $iteration = 1;
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <? endif; ?>
 
-<section>
-    <div class="block" id="block2">
+<section class="pad">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="recent-news">
                         <div class="title1">
                             <h2><a href="/processing"><?= Yii::t('easyii', '21') ?></a></h2>
-                            <span><?= Yii::t('easyii', '22') ?></span>
+                            <div><?= Yii::t('easyii', '22') ?></div>
 
                             <p><?= Yii::t('easyii', '23') ?></p>
 
@@ -453,10 +439,8 @@ $iteration = 1;
                 </div>
             </div>
         </div>
-    </div>
 </section>
-<section>
-    <div class="block grayish high-opacity">
+<section class=" grayish high-opacity pad">
         <div class="fixed-bg"></div>
         <div class="container">
             <div class="row">
@@ -464,7 +448,7 @@ $iteration = 1;
                     <div class="spec-services">
                         <div class="title1 vertical">
                             <h2><?= Yii::t('easyii', '31') ?> <span><?= Yii::t('easyii', '32') ?></span></h2>
-                            <span><?= Yii::t('easyii', '33') ?></span>
+                            <div><?= Yii::t('easyii', '33') ?></div>
                         </div>
                         <div class="about-services">
                             <p><?= Yii::t('easyii', '34') ?></p>
@@ -524,10 +508,9 @@ $iteration = 1;
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
-<section class="top20">
+<section class="top20 pad">
     <div class="container">
 
         <div class="row">
@@ -610,8 +593,7 @@ $iteration = 1;
 </section>
 
 <? if(false): ?>
-<section>
-    <div class="block no-padding blackish high2-opacity">
+<section class="blackish high2-opacity">
         <div class="parallax" data-velocity="-.4"
              style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax4-3.jpg', 900, 420) ?>');"></div>
         <div class="container">
@@ -638,7 +620,6 @@ $iteration = 1;
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <? endif; ?>
 
