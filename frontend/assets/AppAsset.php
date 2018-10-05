@@ -50,7 +50,7 @@ class AppAsset extends AssetBundle
         'css/animate.3.2.3.css', //*last
 //        //'css/prefix.min.css?v=2017-02-25-2',
         'css/prefix2.css?v=2018-01-18-v01', //*last
-        'css/style_all.min.css?v=1.0.1', //*last
+        'css/style_all.min.css?v=1.0.3', //*last
 //        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
 
 
@@ -70,22 +70,22 @@ class AppAsset extends AssetBundle
         'js/bootstrap/bootstrap.4.1.0.min.js',
         'js/bootstrap/popper.1.14.0.min.js',
 
-        'js/bootstrap-datepicker.js',
+//        'js/bootstrap-datepicker.js',
         'js/fancybox/jquery.fancybox.pack.js',
 
         'js/owl.carousel.min.js',
         //'js/select2.full.js',
 
         //'js/scrollupbar.js',
-        'js/perfect-scrollbar.js',
-        'js/perfect-scrollbar.jquery.js',
-        'js/jquery.scrolly.js', //
+//        'js/perfect-scrollbar.js',
+//        'js/perfect-scrollbar.jquery.js',
+//        'js/jquery.scrolly.js', //
         'js/bootstrap-submenu.js',
         //'//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
         'js/slick.1.8.0.js',
 
         //'/uploads/newin.js?v=2017-11-13-v3',
-
+        'js/jquery.lazy.min.js',
         'js/all.js',
         'js/scripts.js',
         //'//code.jquery.com/jquery-2.2.4.min.js',
@@ -111,7 +111,7 @@ class AppAsset extends AssetBundle
     {
         if (!YII_DEBUG) {
             $this->css = [
-                'css/style_all.min.css?v=1.0.1'
+                'css/style_all.min.css?v=1.0.3'
             ];
         }
 

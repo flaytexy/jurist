@@ -134,7 +134,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <?= Yii::t('easyii','addressinfo3')?>
                     </p>
                     <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number_eng')?></strong><br>
-                        +44 7562 787794,<br /> +44 (0) 1727 834359</p>
+                        <a href="tel:+447562787794">+44 7562 787794</a>,<br /> <a href="tel:+441727834359">+44 (0) 1727 834359</a></p>
 
                     <p><strong><i class="fa fa-clock-o"></i> <?= Yii::t('easyii','works_time_eng')?></strong><br>09:00-19:00</p>
                     <p><strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
@@ -157,7 +157,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <?= Yii::t('easyii','addressinfo1')?>
                     </p>
                     <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number')?></strong><br>
-                        +7 925 470 50 02</p>
+                        <a href="tel:+79254705002">+7 925 470 50 02</a></p>
 
                     <p><strong><i class="fa fa-clock-o"></i> <?= Yii::t('easyii','works_time')?></strong><br>09:00-19:00</p>
                     <p><strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">
@@ -180,7 +180,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <?= Yii::t('easyii','addressinfo2')?>
                     </p>
                     <p><strong><i class="fa fa-phone"></i> <?= Yii::t('easyii','number')?></strong><br>
-                         +38 067 193 11 17</p>
+                        <a href="tel:+380671931117">+38 067 193 11 17</a></p>
 
                     <p><strong><i class="fa fa-clock-o"></i> <?= Yii::t('easyii','works_time')?></strong><br>09:00-19:00</p>
                     <p><strong><i class="fa fa-envelope"></i> E-mail</strong><br><a href="mailto:one@iq-offshore.com">

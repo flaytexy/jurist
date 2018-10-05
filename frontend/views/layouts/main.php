@@ -121,7 +121,7 @@ $addeng = Yii::t('easyii', 'free');
                                     'template' => '
                                 <li>
                                                           
-                                        <a href=' . Url::to('/contact') .' class="consult-btn"><span>' . $addeng . ' </span> </a>
+                                        <a href=' . Url::to('/sale/aktualnyj-perecen-gotovyh-kompanij-s-otkrytym-scetom') .' class="consult-btn"><span>' . $addeng . ' </span> </a>
                               
                                 </li>'
                                 ],
@@ -334,7 +334,7 @@ $addeng = Yii::t('easyii', 'free');
                             </p>
                             <p style="color: white"><strong style="color: #7dc20f"><i
                                             class="fa fa-phone"></i> <?= Yii::t('easyii', 'number_eng') ?></strong><br>
-                                +44 7562 787794,<br /> +44 (0) 1727 834359</p>
+                                <a href="tel:+447562787794">+44 7562 787794</a>,<br /> <a href="tel:+441727834359">+44 (0) 1727 834359</a></p>
                             <p style="color: white">
                             <p style="color: white">
                                 <strong style="color: #7dc20f"><i
@@ -363,7 +363,7 @@ $addeng = Yii::t('easyii', 'free');
                             <p style="color: white"><strong style="color: #7dc20f"><i class="fa fa-skype"></i>
                                     Skype</strong><br>
                                 <a href="skype:live:asmofad?call">IQ Decision</a></p>
-                            <a class="theme-btn" title="" href="javascript:void( window.open( 'https://forms.amocrm.ru/forms/html/form_326401_ab9058f531bfbd2671c5d24aa0d8dc90.html?date=<?php echo time(); ?>', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">
+                            <a class="theme-btn" title="" href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">
                                 <?= Yii::t('easyii', 'contactus') ?></a>
                         </div>
                     </div>

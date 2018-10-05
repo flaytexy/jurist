@@ -335,7 +335,7 @@ $config = [
         ],
 
         'assetManager' => [
-            'appendTimestamp' => true,
+//            'appendTimestamp' => true,
             // uncomment the following line if you want to auto update your assets (unix hosting only)
             //'linkAssets' => true,
             'bundles' => [

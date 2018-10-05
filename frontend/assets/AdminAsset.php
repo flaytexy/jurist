@@ -28,7 +28,7 @@ class AdminAsset extends \yii\web\AssetBundle
         //'https://code.jquery.com/jquery-3.3.1.slim.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
         'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
-        'js/vendor.js?v=1',
+        'js/vendor.js?v=2',
         //'js/Sortable.min.js',
         //'js/jquery.binding.js',
         //'js/bootstrap-toolkit-1.5.0.min.js',

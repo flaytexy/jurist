@@ -6,7 +6,7 @@ return [
     'news' => 'News',
     'faq' => 'FAQ',
     'contact' => 'Contact Info',
-    'free' => 'First consultation is<br> free!',
+    'free' => 'Ready-made companies with<br> bank account',
     'funds' => 'Funds',
     'banks' => 'Banks',
     'pay_system' => 'Pay system',

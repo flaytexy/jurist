@@ -71,6 +71,10 @@ use \frontend\widgets\ScriptsFooter;
         <?/* if (YII_ENV_PROD) : */?>
         <?= ScriptsFooter::widget([]) ?>
        <!-- --><?/* endif */?>
+        <script>$('.lazy').lazy({
+                beforeLoad: function(element){
+                    console.log('image "' + element.data('src') + '" is about to be loaded');
+                }});</script>
     </body>
 </html>
 <?php $this->endPage() ?>

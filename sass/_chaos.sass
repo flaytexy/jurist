@@ -1528,11 +1528,12 @@ footer .title1.style2 > h2
 /* ----- Pricing-table ----------
 
 #pricing-table
-  margin: 50px auto
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
   text-align: center
   width: 100%
   /* total computed width = 222 x 3 + 226
-  padding-left: 18%
   .plan
     font: 12px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica
     text-shadow: 0 1px rgba(255, 255, 255, 0.8)
@@ -3064,6 +3065,7 @@ section.client .section-title
   position: relative
 
 .bx-wrapper
+  margin: 0 auto
   .bx-pager
     text-align: center
     padding-top: 3px
@@ -3074,11 +3076,11 @@ section.client .section-title
   .bx-pager.bx-default-pager a
     background: #ffffff
     text-indent: -9999px
-    display: block
     width: 10px
     height: 10px
     margin: 0 5px
     outline: 0
+    display: inline-block
     border-radius: 5px
 
 .client

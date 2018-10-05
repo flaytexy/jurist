@@ -1870,11 +1870,17 @@ footer .title1.style2 > h2 {
 
 /* ----- Pricing-table ---------- */
 #pricing-table {
-  margin: 50px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   text-align: center;
   width: 100%;
-  /* total computed width = 222 x 3 + 226 */
-  padding-left: 18%; }
+  /* total computed width = 222 x 3 + 226 */ }
   #pricing-table .plan {
     font: 12px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
     text-shadow: 0 1px rgba(255, 255, 255, 0.8);
@@ -3423,24 +3429,24 @@ section.client .section-title {
 .bx-controls {
   position: relative; }
 
-.bx-wrapper .bx-pager {
-  text-align: center;
-  padding-top: 3px; }
-  .bx-wrapper .bx-pager .bx-pager-item {
+.bx-wrapper {
+  margin: 0 auto; }
+  .bx-wrapper .bx-pager {
+    text-align: center;
+    padding-top: 3px; }
+    .bx-wrapper .bx-pager .bx-pager-item {
+      display: inline; }
+  .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
     display: inline; }
-
-.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
-  display: inline; }
-
-.bx-wrapper .bx-pager.bx-default-pager a {
-  background: #ffffff;
-  text-indent: -9999px;
-  display: block;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  outline: 0;
-  border-radius: 5px; }
+  .bx-wrapper .bx-pager.bx-default-pager a {
+    background: #ffffff;
+    text-indent: -9999px;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    outline: 0;
+    display: inline-block;
+    border-radius: 5px; }
 
 .client {
   width: 100%; }

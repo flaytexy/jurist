@@ -249,7 +249,7 @@ $iteration = 1;
                                                     <li class="book-btn"><i class="fa fa-info"></i>
                                                         <a href="<?= Url::to(['offers/'.$offer->slug]) ?>" title=""><?= Yii::t('easyii', '9') ?></a></li>
                                                     <li class="book-btn"><i class="fa fa-shopping-basket"></i>
-                                                        <a href="javascript:void( window.open( 'https://forms.amocrm.ru/forms/html/form_326401_ab9058f531bfbd2671c5d24aa0d8dc90.html?date=<?php echo time(); ?>', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">
+                                                        <a href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">
                                                             <?= Yii::t('easyii', '10') ?></a>
                                                     </li>
                                                 </ul>

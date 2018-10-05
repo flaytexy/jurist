@@ -756,24 +756,24 @@
     transform: scale(1.1);
 }
 
-.villa-locationinfo {
-    padding: 15px 32px;
-    left: 62px;
-    position: absolute;
-    text-align: left;
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    -webkit-transform-origin: left top 0;
-    -moz-transform-origin: left top 0;
-    -ms-transform-origin: left top 0;
-    -o-transform-origin: left top 0;
-    transform-origin: left top 0;
-    width: 165%;
-    z-index: 1;
-}
+/*.villa-locationinfo {*/
+    /*padding: 15px 32px;*/
+    /*left: 62px;*/
+    /*position: absolute;*/
+    /*text-align: left;*/
+    /*-webkit-transform: rotate(-90deg);*/
+    /*-moz-transform: rotate(-90deg);*/
+    /*-ms-transform: rotate(-90deg);*/
+    /*-o-transform: rotate(-90deg);*/
+    /*transform: rotate(-90deg);*/
+    /*-webkit-transform-origin: left top 0;*/
+    /*-moz-transform-origin: left top 0;*/
+    /*-ms-transform-origin: left top 0;*/
+    /*-o-transform-origin: left top 0;*/
+    /*transform-origin: left top 0;*/
+    /*width: 165%;*/
+    /*z-index: 1;*/
+/*}*/
 
 .villa-locationinfo > span {
     color: #ffffff;
@@ -783,7 +783,19 @@
     margin-bottom: 9px;
 }
 
-
+.villa-locationinfo {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    transform: none;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    padding: 15px 32px;
+}
+.villa-location {
+    height: 160px;
+}
 .villa-locationinfo > span:hover {
     color: #7dc20f;
 }
@@ -1001,31 +1013,14 @@
         margin-bottom: 5px;
     }
 
-    .villa-location {
-        height: 160px;
-    }
 
-    .villa-locationinfo {
-        top: 20px;
-        left: 5px;
-        transform: none;
-        height: 100%;
-        width: 100%;
-    }
+
 
     .sponsor > a img {
         height: 100px;
     }
 }
 
-@media (max-width: 1280px) {
-
-}
-
-
-@media (max-width: 991px) {
-
-}
 
 @media (max-width: 767px) {
     .bdanzer-card {
@@ -1037,6 +1032,7 @@
     }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 1920px) {
+
 
 }

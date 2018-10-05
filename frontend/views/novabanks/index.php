@@ -76,7 +76,8 @@ $this->params['breadcrumbs'][] = $page->title;
 
                                             <div class="top15">
                                                 <div class="hide-for-small-down text-left">
-                                                    <a href="<?= Url::to(['banks/'.$item->model->slug]) ?>"><?= Html::img($item->thumb(160, 40)) ?></a>
+                                                    <a href="<?= Url::to(['banks/'.$item->model->slug]) ?>"><img data-src="<?=$item->thumb(160, 40)?>"
+                                                                                                                 alt="" class="lazy"></a>
                                                 </div>
                                             </div>
                                         </td>
@@ -123,7 +124,7 @@ $this->params['breadcrumbs'][] = $page->title;
                                             </div>
                                             <div class="h6 text-center cena">€<?= $item->model->bank->price ?></div>
                                             <div class="bnk-btn text-center">
-                                                <a class="btn btn-success" href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
+                                                <a class="btn btn-success" href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
                                             </div>
                                         </td>
                                     </tr>
@@ -220,7 +221,7 @@ $this->params['breadcrumbs'][] = $page->title;
                                                                 <?= Html::a(Yii::t('easyii', 'more_details'),
                                                                     ['banks/view', 'slug' => $item->model->slug]) ?></li>
                                                             <li class="book-btn"><i class="fa fa-shopping-basket"></i>
-                                                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
+                                                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
                                                             </li>
                                                         </ul>
                                                     </div>
