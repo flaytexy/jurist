@@ -289,7 +289,7 @@ $iteration = 1;
                                     <ul class="about-serlist style2">
                                         <li><a href="<?= Url::to(['banks/'.$toMainBank->slug]) ?>"><?= Yii::t('easyii', '14') ?></a></li>
                                         <li><a href="<?= Url::to(['processing/']) ?>"><?= Yii::t('easyii', '15') ?></a></li>
-                                        <li><?= Yii::t('easyii', '16') ?></li>
+                                        <li><a href="<?= Url::to(['news/kak-otkryt-licnyj-scet']) ?>"><?= Yii::t('easyii', '16') ?></a></li>
                                     </ul>
                                     <a href="<?= Url::to('/banks') ?>" class="theme-btn"
                                        title="Банки"><?= Yii::t('easyii', 'detail') ?></a>
