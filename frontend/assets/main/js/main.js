@@ -1,7 +1,7 @@
 $(function () {
 
     $("#Slider-Main").show().slick({
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 10000,
         speed: 600,
         slidesToShow: 1,

@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\assets\AdminAsset;
 
+
 $asset = AdminAsset::register($this);
 $moduleName = $this->context->module->id;
 ?>
@@ -96,7 +97,7 @@ $moduleName = $this->context->module->id;
                 <div class="box sidebar">
                     <a href="<?= Url::to(['/admin/novanews']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novanews') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
-                        Статии (Новое)
+                        Статьи (Новое)
                     </a>
 
                     <a href="<?= Url::to(['/admin/novabanks']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novabanks') ? 'active' :'' ?>">
@@ -107,6 +108,10 @@ $moduleName = $this->context->module->id;
                     <a href="<?= Url::to(['/admin/novaoffers']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novaoffers') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         Компании (Новое)
+                    </a>
+                    <a href="<?= Url::to(['/admin/licenses']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'licenses') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Лицензии
                     </a>
 
                     <a href="<?= Url::to(['/admin/slidemain']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'slidesmall') ? 'active' :'' ?>">
@@ -186,6 +191,7 @@ $moduleName = $this->context->module->id;
                     <?php endif; ?>
                 </div>
                 <div class="box content">
+
                     <div class="page-title">
                         <?= $this->title ?>
                     </div>

@@ -25,6 +25,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\PageSearch;
 
 use yii\web\NotFoundHttpException;
 
@@ -391,5 +392,7 @@ class SiteController extends Controller
     {
         ex_print('saddasdsa');
     }
+
+
 
 }

@@ -23,14 +23,14 @@ $this->params['breadcrumbs'][] = $page->title;
 </div>
 
 <section class="content-zone top20" id="new-index">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-9 col-sm-12">
+            <div class="col-lg-9 col-md-8 col-sm-12">
                 <div class="recent-news">
                     <div class="remove-ext">
-                        <div class="row">
+                        <div class="row align-items-center justify-content-md-center">
                             <?php foreach ($news as $item) : ?>
-                                <div class="col-md-6">
+                                <div class=" col-lg-4 col-md-6">
                                     <div class="recentnew-post">
                                         <a href="<?= Url::to(['news/'.$item->slug]) ?>" class="">
                                             <?php if(isset($item->model->pre_image) && !empty($item->model->pre_image)): ?>
@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $page->title;
 
                 <?php if($page->text): ?><div><?= $page->text; ?></div><? endif; ?>
             </div>
-            <div class="col-md-3 col-sm-4">
+            <div class=" col-lg-3 col-md-4 ">
                 <div class="sidebar">
                     <div class="widget widget-categories">
                         <div class="title1 style2">
@@ -137,7 +137,7 @@ $this->params['breadcrumbs'][] = $page->title;
 
 </section>
 <style>
-    @media (max-width: 1024px) {
+    @media (max-width: 850px) {
         .sidebar {
             display: none !important;
 

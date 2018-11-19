@@ -301,9 +301,9 @@ $config = [
                 //'<name:(licenses|offshore|processing|fonds|sale)>' => 'pages/index',                  //@todo
                 //'<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'pages/view',     //@todo
 
-                '<name:(licenses|offshore|processing|fonds|sale)>/page<page:\d+>' => 'novanews/index',
-                '<name:(licenses|offshore|processing|fonds|sale)>' => 'novanews/index',
-                '<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'novanews/view',
+                '<name:(offshore|processing|fonds|sale)>/page<page:\d+>' => 'novanews/index',
+                '<name:(offshore|processing|fonds|sale)>' => 'novanews/index',
+                '<name:(offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'novanews/view',
 
                 '<name:(banks|novabanks)>/page<page:\d+>' => 'novabanks/index',
                 '<name:(banks|novabanks)>/<slug:[\w-]+>' => 'novabanks/view', //'banks/view',
@@ -528,6 +528,12 @@ $config = [
                     'controllerNamespace' => 'frontend\modules\novanews\controllers\backend',
                     'viewPath' => '@frontend/modules/novanews/views/backend',
                 ],
+                'licenses' => [
+                    'class' => 'frontend\modules\licenses\Module',
+                    'controllerNamespace' => 'frontend\modules\licenses\controllers\backend',
+                    'viewPath' => '@frontend/modules/licenses/views/backend',
+                ],
+
 
                 'novabanks' => [
                     'class' => 'frontend\modules\novabanks\Module',
@@ -562,7 +568,8 @@ $config = [
         //'gii',
         'frontend\modules\novanews\Bootstrap',
         'frontend\modules\novabanks\Bootstrap',
-        'frontend\modules\novaoffers\Bootstrap'
+        'frontend\modules\novaoffers\Bootstrap',
+        'frontend\modules\licenses\Bootstrap',
     ]
 
 ];

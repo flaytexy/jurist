@@ -179,7 +179,7 @@ $iteration = 1;
                                     <div id="newsinfo">
                                         <i class="fa fa-calendar"></i><b> <?= $item->date ?></b> /
                                         <i class="fa fa-eye"
-                                           aria-hidden="true"><b></i> <?= $item->views * 3 ?> <?= Yii::t('easyii', 'viewed') ?></b>
+                                           aria-hidden="true"><b></i> <?= $item->views * 2 ?> <?= Yii::t('easyii', 'viewed') ?></b>
 
                                     </div>
                                     <div class="package-centered">

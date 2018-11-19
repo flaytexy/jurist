@@ -50,7 +50,7 @@ class AppAsset extends AssetBundle
         'css/animate.3.2.3.css', //*last
 //        //'css/prefix.min.css?v=2017-02-25-2',
         'css/prefix2.css?v=2018-01-18-v01', //*last
-        'css/style_all.min.css?v=1.0.3', //*last
+        'css/style_all.min.css?v=1.0.4', //*last
 //        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
 
 
@@ -111,7 +111,7 @@ class AppAsset extends AssetBundle
     {
         if (!YII_DEBUG) {
             $this->css = [
-                'css/style_all.min.css?v=1.0.3'
+                'css/style_all.min.css?v=1.0.4'
             ];
         }
 

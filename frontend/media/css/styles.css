@@ -2268,7 +2268,7 @@ ul.simlist > li:before, div.simlistdiv ul > li:before {
       margin-right: 5px; }
 
 #new-index .recentnew-post {
-  min-height: 375px; }
+  min-height: 150px; }
 
 .title1.alignleft {
   text-align: left; }
@@ -4766,8 +4766,6 @@ blockquote > p > span, blockquote > p > a {
     margin: 0 !important; }
   .top-bar {
     display: none; }
-  #new-index .recentnew-post {
-    min-height: 350px; }
   .theme-layout {
     padding-top: 0 !important; }
   .search-luxuriousvilla > h3 {
@@ -4976,8 +4974,6 @@ blockquote > p > span, blockquote > p > a {
     width: 100% !important;
     height: auto !important;
     margin: auto !important; }
-  #new-index .recentnew-post {
-    min-height: 310px; }
   .bloglist-sec.remove-ext3.overlape {
     margin-top: 0; }
   .top-menus > li > a {

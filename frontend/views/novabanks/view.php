@@ -90,11 +90,11 @@ Yii::$app->view->registerMetaTag([
                             <div class="package-video">
                                 <div>
                                     <?php if (!empty($page->model->image)) : ?>
-                                        <img src="" data-srcset="<?=Image::thumb($page->model->image, 700, 300)?>991w,
-		<?=Image::thumb($page->model->image, 850, 300)?>1200w,
-		<?=Image::thumb($page->model->image, 1200, 300)?> 1920w"
-                                             alt="" class="lazy">
-<!--                                        --><?//= Html::img(Image::thumb($page->model->image, 1200, 300), ['width' => '100%', 'height' => '100%']) ?>
+<!--                                        <img src="" data-srcset="--><?//=Image::thumb($page->model->image, 700, 300)?><!--991w,-->
+<!--		--><?//=Image::thumb($page->model->image, 850, 300)?><!--1200w,-->
+<!--		--><?//=Image::thumb($page->model->image, 1200, 300)?><!-- 1920w"-->
+<!--                                             alt="" class="lazy">-->
+                                        <?= Html::img(Image::thumb($page->model->image, 1200, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
                                 <strong class="per-night" style="font-family: Arial"><span>€</span><?= $page->model->bank->price; ?> <i><?= Yii::t('easyii', 'days') ?>: <?= $page->model->bank->how_days; ?></i></strong>

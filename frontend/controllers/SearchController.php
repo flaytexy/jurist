@@ -97,14 +97,15 @@ class SearchController extends Controller
 
         $search = Yii::$app->request->post('search');
 
-        $query = (new Query())->select("content_translation.*, content.*, content_categories.slug as slug_category, (MATCH (`description`) AGAINST ('".$search."' IN BOOLEAN MODE)) as REL")
+        $query = (new Query())->select(['content_translation.*', 'content.*', 'content_categories.slug as slug_category', 'MATCH (`name`,`description`) AGAINST ( :search IN BOOLEAN MODE) as REL'])
             ->from('content_translation')
             ->leftJoin('content', 'content.id = content_translation.content_id')
             ->leftJoin('content_categories', 'content.category_id = content_categories.category_id')
-            ->where("(MATCH (`description`) AGAINST ('".$search."' IN BOOLEAN MODE)) ")
+            ->where('(MATCH (`name`,`description`) AGAINST (:search IN BOOLEAN MODE)) ')
             ->andWhere(['content' . '.status' => Novanews::STATUS_ON])
             ->andWhere([NovanewsTranslation::tableName() . '.public_status' => NovanewsTranslation::STATUS_ON])
             ->andWhere([NovanewsTranslation::tableName() . '.language' => Yii::$app->language ])
+            ->addParams([':search' => $search])
             //->groupBy(['content.id'])
             ->orderBy('REL DESC');
 

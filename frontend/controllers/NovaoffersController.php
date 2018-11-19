@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use frontend\models\Popularly;
 use frontend\modules\novaoffers\api\Novaoffers;
 use frontend\modules\novaoffers\models\Novaoffers as NovaoffersModel;
+use yii\web\NotFoundHttpException;
 
 /**
  * Class OffersController
@@ -64,6 +65,9 @@ class NovaoffersController extends General
         $this->getView()->registerJsFile(\Yii::$app->request->BaseUrl . '/js/site.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
         $offers = Novaoffers::get($slug);
+        if(!$offers){
+            throw new NotFoundHttpException('Page Houston, we have a problem.');
+        }
 
         $popularly  = Popularly::findOne(['class' => \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id]);
         if(empty($popularly)){ $popularly  = new Popularly; }
