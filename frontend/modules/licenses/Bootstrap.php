@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\modules\Licenses;
+namespace frontend\modules\licenses;
 
 use yii\base\BootstrapInterface;
 

@@ -1,14 +1,14 @@
 <?php
 
-namespace frontend\modules\Licenses\controllers\frontend;
+namespace frontend\modules\licenses\controllers\frontend;
 
 use Yii;
 use yii\data\Pagination;
 use frontend\controllers\General;
 
 use frontend\models\Popularly;
-use frontend\modules\Licenses\api\Licenses;
-use frontend\modules\Licenses\models\Licenses as LicensesModel;
+use frontend\modules\licenses\api\Licenses;
+use frontend\modules\licenses\models\Licenses as LicensesModel;
 
 class DefaultController extends General
 {

@@ -35,6 +35,7 @@
 }
 
 .slick-slide {
+    cursor:pointer;
     float: left /* If RTL Make This Right */ ;
     padding: 0;
 }

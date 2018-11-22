@@ -1,14 +1,14 @@
 <?php
 
-namespace frontend\modules\Licenses\controllers\backend;
+namespace frontend\modules\licenses\controllers\backend;
 
 use common\controllers\ContentAdminController;
 use common\models\Language;
 
-use frontend\modules\Licenses\models\Licenses;
-use frontend\modules\Licenses\models\LicensesTranslation;
+use frontend\modules\licenses\models\Licenses;
+use frontend\modules\licenses\models\LicensesTranslation;
 
-use frontend\modules\Licenses\models\Offers;
+use frontend\modules\licenses\models\LicensesExt;
 use Yii;
 use yii\helpers\Url;
 use yii\data\Pagination;
@@ -57,7 +57,7 @@ class DefaultController extends ContentAdminController
 
     public function beforeAction($action)
     {
-        $this->view->title = 'Компании – ' . Yii::$app->params['sitePrefix'];
+        $this->view->title = 'Лицензии – ' . Yii::$app->params['sitePrefix'];
 
         return parent::beforeAction($action);
     }
@@ -139,21 +139,23 @@ class DefaultController extends ContentAdminController
                 $translation_models[$language['local']] = $translation_model;
             }
 
-            $model->category_detail = Licenses::TYPE_ID . ':30';
+            $model->category_detail = Licenses::TYPE_ID . ':3';
         }
 
         if (isset($model->child)) {
             //$child = Banks::find()->where(['bank_id'=>$model->child->primaryKey])->one();
             $child = $model->child;
         } else {
-            $child = new Offers();
+            $child = new LicensesExt();
             $child->loadDefaultValues();
         }
 
 
 
         if ($request->post()) {
+
             $this->_saveItem($model, $request, $translation_models, $child);
+//            $this->_saveItem($model, $request, $translation_models);
         }
 
         $query = new \yii\db\Query;

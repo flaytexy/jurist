@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\modules\Licenses\api;
+namespace frontend\modules\licenses\api;
 
 
-use frontend\modules\Licenses\models\LicensesTranslation;
+use frontend\modules\licenses\models\LicensesTranslation;
 use Yii;
 use yii\data\ActiveDataProvider;
 use frontend\models\Tag;
 use frontend\widgets\Fancybox;
 use yii\widgets\LinkPager;
-use frontend\modules\Licenses\models\Licenses as LicensesModel;
+use frontend\modules\licenses\models\Licenses as LicensesModel;
 
 /**
  * Page module API

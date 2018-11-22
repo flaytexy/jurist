@@ -1,10 +1,10 @@
 <?php
-namespace frontend\modules\Licenses\api;
+namespace frontend\modules\licenses\api;
 
 use Yii;
 use common\components\APIObject;
 use frontend\models\Photo;
-use frontend\modules\Licenses\models\Licenses as LicensesModel;
+use frontend\modules\licenses\models\Licenses as LicensesModel;
 
 /**
  * Class LicensesObject

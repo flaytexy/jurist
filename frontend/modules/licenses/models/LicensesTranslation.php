@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\modules\Licenses\models;
+namespace frontend\modules\licenses\models;
 
 use common\models\ContentTranslation;
 
@@ -26,11 +26,11 @@ class LicensesTranslation extends ContentTranslation
     public function rules()
     {
         return [
-            [['name'], 'required', 'message' => 'Введите заголовок Компании'],
-            [['slug'], 'required', 'message' => 'Введите постоянную ссылку для Компании'],
+            [['name'], 'required', 'message' => 'Введите заголовок Лицензии'],
+            [['slug'], 'required', 'message' => 'Введите постоянную ссылку для Лицензии'],
             //[['slug'], 'unique', 'message' => 'Постоянная ссылка должна быть уникальной'],
             //[['short_description'], 'required', 'message' => 'Введите краткое содержание Компании'],
-            [['description'], 'required', 'message' => 'Введите содержание Компании'],
+            [['description'], 'required', 'message' => 'Введите содержание Лицензии'],
             ['description', 'filter', 'filter' => function ($value) {
                 $value = str_replace('&nbsp;', ' ', $value);
                 return $value;
