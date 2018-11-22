@@ -127,7 +127,7 @@ class DefaultController extends ContentAdminController
             $model->category_detail =  $model->type_id . ":" . $model->category_id;
         } else {
             if ($id) {
-                return $this->redirect(['/admin/Licenses/default/index']);
+                return $this->redirect(['/admin/licenses/default/index']);
             }
 
             $model = new Licenses;
@@ -205,7 +205,7 @@ class DefaultController extends ContentAdminController
             Yii::$app->session->setFlash('flash-admin-message-success', 'Новость удалена.');
         }
 
-        return $this->redirect(Url::to(['/admin/Licenses/default/index']));
+        return $this->redirect(Url::to(['/admin/licenses/default/index']));
     }
 
 

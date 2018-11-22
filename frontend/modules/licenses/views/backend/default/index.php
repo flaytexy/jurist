@@ -26,7 +26,7 @@ $moduleName = $this->context->module->id;
             <div class="col-md-6">
                 <h3 class="title">
                     Компании
-                    <a href="<?= Url::to(['/admin/Licenses/default/edit', 'id' => 0]); ?>" class="btn btn-primary btn-sm rounded-s">
+                    <a href="<?= Url::to(['/admin/licenses/default/edit', 'id' => 0]); ?>" class="btn btn-primary btn-sm rounded-s">
                         добавить
                     </a>
                 </h3>
@@ -46,7 +46,7 @@ $moduleName = $this->context->module->id;
 
 
                     <?
-                    $searchform = ActiveForm::begin(['action' => '/admin/Licenses',
+                    $searchform = ActiveForm::begin(['action' => '/admin/licenses',
                         'method' => 'post',
                     ]);
 

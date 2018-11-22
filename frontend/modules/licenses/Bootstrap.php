@@ -8,12 +8,12 @@ class Bootstrap implements BootstrapInterface
 {
     public function bootstrap($app)
     {
-        $app->i18n->translations['modules/Licenses/*'] = [
+        $app->i18n->translations['modules/licenses/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'forceTranslation' => true,
             'basePath' => '@app/modules/licenses/messages',
             'fileMap' => [
-                'modules/Licenses/module' => 'module.php',
+                'modules/licenses/module' => 'module.php',
             ],
         ];
     }
