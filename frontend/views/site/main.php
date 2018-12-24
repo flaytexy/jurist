@@ -20,156 +20,154 @@ $iteration = 1;
 
 <? if (true): ?>
     <section>
-        <div class="block no-padding">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="Slider-Main" class="" style="display: none">
-                        <? foreach ($slide_main as $item): ?>
-                            <div class="item blo<?php $div = ($iteration % 2); echo"$div"; ?> ">
-                                <div class="img-fill-main">
-                                    <div class="item-img adslightSpeedIn" style="background-image: url('<?= $item->model->image ?>');">
-                                    </div>
-                                    <div class="info">
-                                        <div>
-                                            <!-- LAYER NR. 1 -->
-                                            <div class="slimain slick-div1 sli-01-01 anim1"
-                                                 data-x="center" data-hoffset=""
-                                                 data-y="70" data-voffset=""
-                                                 data-width="['auto','auto','auto','auto']"
-                                                 data-height="['auto','auto','auto','auto']"
-                                                 data-transform_idle="o:1;"
-                                                 data-transform_in="x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
-                                                 data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                                 data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
-                                                 data-start="500"
-                                                 data-splitin="none"
-                                                 data-splitout="none"
-                                                 data-responsive_offset="on"
-                                                 data-elementdelay="0.05"
-                                                 onclick="location.href='<?= $item->model->url ?>'"
-                                                 style="">
-                                                <? if ( Yii::$app->language==='en-US'): ?>
-                                                    <?=  $item->model->title_en ?>
-                                                <? else: ?>
-                                                    <?=  $item->model->title ?>
-                                                <? endif; ?>
-                                            </div>
+        <div class="slideshow-container">
 
-                                            <!-- LAYER NR. 2 -->
-                                            <div class="slimain slick-div2 sli-01-02 anim2"
-                                                 data-x="center" data-hoffset=""
-                                                 data-y="143" data-voffset=""
-                                                 data-width="['auto','auto','auto','auto']"
-                                                 data-height="['auto','auto','auto','auto']"
-                                                 data-transform_idle="o:1;"
-                                                 data-transform_in="x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
-                                                 data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                                 data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
-                                                 data-start="500"
-                                                 data-splitin="none"
-                                                 data-splitout="none"
-                                                 data-responsive_offset="on"
-                                                 data-elementdelay="0.05"
-                                                 onclick="location.href='<?= $item->model->url ?>'"
-                                                 style="">
-                                            <span>
-                                            <? if ( Yii::$app->language==='en-US'): ?>
-                                                <?=  $item->model->short_en ?>
-                                            <? else: ?>
-                                                <?=  $item->model->short ?>
-                                            <? endif; ?>
-                                            </span>
-                                            </div>
-
-                                            <!-- LAYER NR. 3 -->
-                                            <p class="slimain slick-div3 sli-01-01 anim3"
-                                               data-x="center" data-hoffset=""
-                                               data-y="197" data-voffset=""
-                                               data-width="['auto','auto','auto','auto']"
-                                               data-height="['auto','auto','auto','auto']"
-                                               data-transform_idle="o:1;"
-                                               data-transform_in="x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
-                                               data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                               data-mask_in="x:[-100%];y:0;s:inherit;e:inherit;"
-                                               data-start="500"
-                                               data-splitin="none"
-                                               data-splitout="none"
-                                               data-responsive_offset="on"
-                                               data-elementdelay="0.05"
-                                               onclick="location.href='<?= $item->model->url ?>'"
-                                               style="">
-                                                <? if ( Yii::$app->language==='en-US'): ?>
-                                                    <?=  $item->model->text_en ?>
-                                                <? else: ?>
-                                                    <?=  $item->model->text ?>
-                                                <? endif; ?>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php $iteration++; ?>
-                        <? endforeach; ?>
+            <div class ="banner fadeAnim" style="display: flex;">
+                    <div class="banner-slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 248 595" preserveAspectRatio="none">
+                            <polygon fill="#35393F" points="62,595 62,0 170,0"></polygon>
+                            <polygon fill="#81c41d" points="118,0 62,595 0,595"></polygon>
+                            <polygon fill="#85ab08" points="0,0 118,0 0,595"></polygon>
+                            <polygon fill="#9ac116" points="0,305 62,595 0,595"></polygon>
+                        </svg>
+                        <div  class="banner__image" style="background-image:url(/uploads/slidemain/slide.jpg);  height: 595px;" ></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 248 595" preserveAspectRatio="none">
+                            <polygon fill="#35393F" points="0,595 86,595 86,0"></polygon>
+                            <polygon fill="#80c51d" points="60,595 147,210 248,595"></polygon>
+                            <polygon fill="#85ab08" points="60,595 86,0 147,210"></polygon>
+                            <polygon fill="#9ac116" points="86,0 147,210 192,0"></polygon>
+                        </svg>
                     </div>
+                    <div class="banner-text">
+                        <div style="align-self: center">
+                            <h2 class="banner__title">Чешская <br>платежная <br>система</h2>
+                            <div class="banner__price">65000 EUR</div>
+                            <a href="<?=Url::to(['/news/redkoe-predlozenie-prodaetsa-gotovaa-plateznaa-sistema-v-cehii-s-otkrytymi-scetami'])?>" class="banner__link">Подробнее</a>
+                        </div>
+
+                        <div class="banner__logo"><img style="display: block;" src="/uploads/slidemain/iq-map.png" alt="">
+                            IQ DECISION</div>
+                    </div>
+
+            </div>
+
+            <div class ="banner fadeAnim">
+                <div class="banner-slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 248 595" preserveAspectRatio="none">
+                        <polygon fill="#35393F" points="62,595 62,0 170,0"></polygon>
+                        <polygon fill="#81c41d" points="118,0 62,595 0,595"></polygon>
+                        <polygon fill="#85ab08" points="0,0 118,0 0,595"></polygon>
+                        <polygon fill="#9ac116" points="0,305 62,595 0,595"></polygon>
+                    </svg>
+                    <div  class="banner__image" style="background-image:url(/uploads/slidemain/slide3.jpg);  height: 595px;" ></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 248 595" preserveAspectRatio="none">
+                        <polygon fill="#35393F" points="0,595 86,595 86,0"></polygon>
+                        <polygon fill="#80c51d" points="60,595 147,210 248,595"></polygon>
+                        <polygon fill="#85ab08" points="60,595 86,0 147,210"></polygon>
+                        <polygon fill="#9ac116" points="86,0 147,210 192,0"></polygon>
+                    </svg>
+                </div>
+                <div class="banner-text">
+                    <div style="align-self: center">
+                        <h2 class="banner__title">Криптофонд <br> в Лихтенштейне</h2>
+                        <div class="banner__price">25000 EUR</div>
+                        <div class="banner__info">со счетом <br>в местном банке<br><span>Готовый и Удаленно</span></div>
+                        <a href="<?=Url::to(['/sale/investicionnyy-fond-v-lihtenshteyne-gotovoe-predlozhenie'])?>" class="banner__link">Подробнее</a>
+                    </div>
+
+                    <div class="banner__logo"><img style="display: block;" src="/uploads/slidemain/iq-map.png" alt="">
+                        IQ DECISION</div>
                 </div>
             </div>
+            <div class ="banner fadeAnim">
+                <div class="banner-slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 248 595" preserveAspectRatio="none">
+                        <polygon fill="#35393F" points="62,595 62,0 170,0"></polygon>
+                        <polygon fill="#81c41d" points="118,0 62,595 0,595"></polygon>
+                        <polygon fill="#85ab08" points="0,0 118,0 0,595"></polygon>
+                        <polygon fill="#9ac116" points="0,305 62,595 0,595"></polygon>
+                    </svg>
+                    <div  class="banner__image" style="background-image:url(/uploads/slidemain/slide4.jpg);  height: 595px;" ></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 248 595" preserveAspectRatio="none">
+                        <polygon fill="#35393F" points="0,595 86,595 86,0"></polygon>
+                        <polygon fill="#80c51d" points="60,595 147,210 248,595"></polygon>
+                        <polygon fill="#85ab08" points="60,595 86,0 147,210"></polygon>
+                        <polygon fill="#9ac116" points="86,0 147,210 192,0"></polygon>
+                    </svg>
+                </div>
+                <div class="banner-text">
+                    <div style="align-self: center">
+                        <h2 class="banner__title">ГОТОВАЯ КОМПАНИЯ<br>В ЧЕХИИ</h2>
+                        <div class="banner__info">С ЛИЦЕНЗИЕЙ sEMI</div>
+                        <div class="banner__price">65 000 EUR</div>
+                        <div class="banner__info">ВЫПУСК СОБСТВЕННОЙ<br> ЭЛЕКТРОННОЙ ВАЛЮТЫ</div>
+                        <a href="<?=Url::to(['/sale/gotovaya-kompaniya-s-licenziey-semi-chehiya'])?>" class="banner__link">Подробнее</a>
+                    </div>
+
+                    <div class="banner__logo"><img style="display: block;" src="/uploads/slidemain/iq-map.png" alt="">
+                        IQ DECISION</div>
+                </div>
+
+            </div>
+            <div class ="banner fadeAnim">
+                <div class="banner-slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 248 595" preserveAspectRatio="none">
+                        <polygon fill="#35393F" points="62,595 62,0 170,0"></polygon>
+                        <polygon fill="#81c41d" points="118,0 62,595 0,595"></polygon>
+                        <polygon fill="#85ab08" points="0,0 118,0 0,595"></polygon>
+                        <polygon fill="#9ac116" points="0,305 62,595 0,595"></polygon>
+                    </svg>
+                    <div  class="banner__image" style="background-image:url(/uploads/slidemain/slide5.jpg);  height: 595px;" ></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 248 595" preserveAspectRatio="none">
+                        <polygon fill="#35393F" points="0,595 86,595 86,0"></polygon>
+                        <polygon fill="#80c51d" points="60,595 147,210 248,595"></polygon>
+                        <polygon fill="#85ab08" points="60,595 86,0 147,210"></polygon>
+                        <polygon fill="#9ac116" points="86,0 147,210 192,0"></polygon>
+                    </svg>
+                </div>
+                <div class="banner-text">
+                    <div style="align-self: center">
+                        <h2 class="banner__title">ГОТОВЫЕ КОМПАНИИ <br>  СО СЧЕТОМ <br> В ГОНКОНГЕ</h2>
+                        <div class="banner__price">
+                            <ul>
+                                <li>LTD + счет в Hang Seng bank 20 900 EUR</li>
+                                <li>LTD + счет в HSBC 25 000 EUR</li>
+                                <li>LTD + счет в Dah Sing 19 900 EUR</li>
+                            </ul>
+                        </div>
+                            <div class="banner__info">С ПОЛНЫМ <br> НОМИНАЛЬНЫМ СЕРВИСОМ</div>
+                        <a href="<?=Url::to(['/sale/gonkongskie-kompanii-s-otkrytymi-schetami'])?>" class="banner__link">Подробнее</a>
+                    </div>
+
+                    <div class="banner__logo"><img style="display: block;" src="/uploads/slidemain/iq-map.png" alt="">
+                        IQ DECISION</div>
+                </div>
+
+            </div>
+
+            <a class="slide-btn prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="slide-btn next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+
+        <script>
+
+        </script>
+<!--                    </div>-->
+
+
+<!--                </div>-->
+<!--            </div>-->
     </section>
 <? endif; ?>
 
-<section>
-    <div class="block gray no-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="search-luxuriousvilla overlape">
-                        <!-- WIP -->
-                        <div class="ticker__viewport">
-                            <ul class="ticker__list" data-ticker="list">
-                            <? foreach ($ticker_viewport as $item): ?>
-                            <li class="ticker__item" data-ticker="item"><a href="<?= $item->url ?>"><? if ( Yii::$app->language==='en-US'): ?><?= $item->model->title_en ?><? else: ?><?= $item->model->title ?><? endif; ?></a></li>
-                            <? endforeach; ?>
-                            </ul>
-                        </div>
-                        <? if (isset($slide_small) && count($slide_small) > 0): ?>
-                        <div class="Modern-Slider" id="Modern-Slider" style="display: none">
-                                <!-- Item -->
-                                <? foreach ($slide_small as $item): ?>
-                                <div class="item">
-                                    <div class="img-fill">
-                                        <div class="info">
-                                            <div>
-                                                <? if ( Yii::$app->language==='en-US'): ?>
-                                                <div class="h3"><?= $item->model->title_en ?></div>
-                                                <div class="h5"><?= $item->model->text_en ?></div>
-                                                <? else: ?>
-                                                    <div class="h3"><?= $item->model->title ?></div>
-                                                    <div class="h5"><?= $item->model->text ?></div>
-                                                <? endif; ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- // Item -->
-                                <? endforeach; ?>
-                            </div>
-                        <? endif; ?>
-                    </div>
-                    <!-- Search Luxurious Form -->
-                </div>
-                <!-- Search luxurious Villa -->
-            </div>
-        </div>
-    </div>
-</section>
+
 <? if(isset($news) && !empty($news)): ?>
-<section id="paddinglist" class="top20">
-    <div class="block no-padding gray2 top20">
+<section id="paddinglist" class="gray2 pad">
         <div class="container">
             <h2 style="text-align: center;"><?= Yii::t('easyii', '49') ?></h2>
             <div class="row">
                 <? foreach ($news as $item): ?>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
                         <div class="package ">
                             <a href="<?= Url::to(['news/'.$item->slug]) ?>">
                                 <div class="package-thumb">
@@ -183,7 +181,7 @@ $iteration = 1;
                                     <div id="newsinfo">
                                         <i class="fa fa-calendar"></i><b> <?= $item->date ?></b> /
                                         <i class="fa fa-eye"
-                                           aria-hidden="true"><b></i> <?= $item->views * 3 ?> <?= Yii::t('easyii', 'viewed') ?></b>
+                                           aria-hidden="true"><b></i> <?= $item->views * 2 ?> <?= Yii::t('easyii', 'viewed') ?></b>
 
                                     </div>
                                     <div class="package-centered">
@@ -216,19 +214,16 @@ $iteration = 1;
             </div>
         </div>
         <!-- Sponsor Carousel -->
-    </div>
 </section>
 <? endif; ?>
-<section>
-    <div class="block ext-toppadd-one">
-        <div class="fixed-bg2" style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax2.jpg', 900, 420) ?>');"></div>
+<section class="popular-yuris pad">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="villaeditors-picks">
                         <div class="title1">
                             <h2><?= Yii::t('easyii', '6') ?></h2>
-                            <span><?= Yii::t('easyii', '7') ?></span>
+                            <div><?= Yii::t('easyii', '7') ?></div>
 
                             <p><?= Yii::t('easyii', '8') ?></p>
                         </div>
@@ -256,7 +251,7 @@ $iteration = 1;
                                                     <li class="book-btn"><i class="fa fa-info"></i>
                                                         <a href="<?= Url::to(['offers/'.$offer->slug]) ?>" title=""><?= Yii::t('easyii', '9') ?></a></li>
                                                     <li class="book-btn"><i class="fa fa-shopping-basket"></i>
-                                                        <a href="javascript:void( window.open( 'https://forms.amocrm.ru/forms/html/form_326401_ab9058f531bfbd2671c5d24aa0d8dc90.html?date=<?php echo time(); ?>', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">
+                                                        <a href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )">
                                                             <?= Yii::t('easyii', '10') ?></a>
                                                     </li>
                                                 </ul>
@@ -278,11 +273,9 @@ $iteration = 1;
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
-<section>
-    <div class="block">
+<section class="pad">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -292,13 +285,13 @@ $iteration = 1;
                                 <div class="villa-arrangementsinfo">
                                     <div class="title1">
                                         <h2><?= Yii::t('easyii', '11') ?></h2>
-                                        <span><?= Yii::t('easyii', '12') ?></span>
+                                        <div><?= Yii::t('easyii', '12') ?></div>
                                     </div>
                                     <p><?= Yii::t('easyii', '13') ?></p>
                                     <ul class="about-serlist style2">
                                         <li><a href="<?= Url::to(['banks/'.$toMainBank->slug]) ?>"><?= Yii::t('easyii', '14') ?></a></li>
                                         <li><a href="<?= Url::to(['processing/']) ?>"><?= Yii::t('easyii', '15') ?></a></li>
-                                        <li><?= Yii::t('easyii', '16') ?></li>
+                                        <li><a href="<?= Url::to(['news/kak-otkryt-licnyj-scet']) ?>"><?= Yii::t('easyii', '16') ?></a></li>
                                     </ul>
                                     <a href="<?= Url::to('/banks') ?>" class="theme-btn"
                                        title="Банки"><?= Yii::t('easyii', 'detail') ?></a>
@@ -346,20 +339,17 @@ $iteration = 1;
             </div>
             <!-- We Offers -->
         </div>
-    </div>
 </section>
 
 <?php if (true): ?>
-<section>
-    <div class="block" id="block1">
-        <div class="fixed-bg2" style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax3.jpg', 900, 420) ?>');"></div>
+<section class="license pad">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="villa-locations">
                         <div class="title1">
                             <h2><?= Yii::t('easyii', '17') ?></h2>
-                            <span><?= Yii::t('easyii', '18') ?></span>
+                            <div><?= Yii::t('easyii', '18') ?></div>
                             <p><?= Yii::t('easyii', '19') ?></p>
                         </div>
                         <div class="villa-locationslist">
@@ -387,76 +377,104 @@ $iteration = 1;
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <? endif; ?>
 
-<section>
-    <div class="block" id="block2">
-        <div class="container">
+<section class="pad">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="recent-news">
+                    <div class="recent-news" style="margin: 0 auto;">
                         <div class="title1">
                             <h2><a href="/processing"><?= Yii::t('easyii', '21') ?></a></h2>
-                            <span><?= Yii::t('easyii', '22') ?></span>
+                            <div><?= Yii::t('easyii', '22') ?></div>
 
                             <p><?= Yii::t('easyii', '23') ?></p>
-
-                            <div class="remove-ext">
-                                <div class="recentnews-carousel2">
-                                    <div class="recentnew-post">
-                                        <?= Html::img(
-                                            Image::thumb('/uploads/processing/processing_main.jpg', 660, 372),
-                                            ['alt' => 'Процессинг Мерчант', 'onclick' => "location.href='/processing'", 'class' => 'recimg']
-                                        ); ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="remove-ext">
-                            <div class="h5"><?= Yii::t('easyii', '24') ?></div>
-                            <div class="recentnews-carousel" id="recentnews-carouselka">
-                                <? foreach ($fonds as $item): ?>
-                                    <div class="recentnew-post"
-                                         onclick="location.href='/fonds/<?= $item->model->slug ?>'">
-                                        <?= Html::img($item->thumb(315, 200), array('class' => 'main-banks')) ?>
-
-                                        <div class="recentnew-detail">
-                                            <h4>
-                                                <a href="/fonds/<?= $item->model->slug ?>"
-                                                   title="<?= $item->model->title ?>"><?= $item->model->title ?></a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                <? endforeach; ?>
-                            </div>
-                            <div>
-                                <p><?= Yii::t('easyii', '25') ?></p>
-                                <p class="text-center">
-                                    <span class="h5"><?= Yii::t('easyii', '26') ?></span>
-                                </p>
-                                <ul>
-                                    <li><?= Yii::t('easyii', '27') ?></li>
-                                    <li><?= Yii::t('easyii', '28') ?></li>
-                                    <li><?= Yii::t('easyii', '29') ?></li>
-                                    <li><?= Yii::t('easyii', '30') ?></li>
-                                </ul>
-                                <div class="text-center">
-                                    <a href="<?= Url::to(['fonds/']) ?>" class = "theme-btn theme-btn--inline"><?= Yii::t('easyii', '9') ?></a>
-                                </div>
-                            </div>
-                            <!-- Recent News Carousel -->
                         </div>
                     </div>
-                    <!-- Recent News -->
+                            <div class="processing">
+                                <h2 class="processing__title">Подключение процессинга (мерчанта, эквайринга) к веб-сайту </h2>
+                                <p class="processing__text">Интересует быстрое решение для Вашего бизнеса? Сложности в работе с подключенным мерчантом?</p>
+                                <p class="processing__text"> <b>Это решается с нашей помощью.</b></p>
+                                <ul class="processing__feature">
+                                    <li>Быстрое и легкое подключение</li>
+                                    <li>Международная сеть</li>
+                                    <li>Тройная защита</li>
+                                </ul>
+                                <a href="/processing" class="processing__button">Подробнее</a>
+                                <ul class="processing__pay">
+                                    <li><img src="/uploads/processing/1.png" alt=""></li>
+                                    <li><img src="/uploads/processing/2.png" alt=""></li>
+                                    <li><img src="/uploads/processing/3.png" alt=""></li>
+                                    <li><img src="/uploads/processing/4.png" alt=""></li>
+                                    <li><img src="/uploads/processing/5.png" alt=""></li>
+                                </ul>
+                            </div>
+<!---->
+<!--                            <div class="remove-ext">-->
+<!--                                <div class="recentnews-carousel2">-->
+<!--                                    <div class="recentnew-post">-->
+<!--                                        --><?//= Html::img(
+//                                            Image::thumb('/uploads/processing/processing_main.jpg', 660, 372),
+//                                            ['alt' => 'Процессинг Мерчант', 'onclick' => "location.href='/processing'", 'class' => 'recimg']
+//                                        ); ?>
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <style>-->
+<!--                                .merchant{-->
+<!--                                    background-image: '/uploads/theme-villa/merchant-bg'-->
+<!--                                }-->
+<!--                            </style>-->
+<!--                            <div class="merchant">-->
+<!---->
+<!--                            </div>-->
+
+
+            </div>
+        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="remove-ext">
+                    <div class="h5"><?= Yii::t('easyii', '24') ?></div>
+                    <div class="recentnews-carousel" id="recentnews-carouselka">
+                        <? foreach ($fonds as $item): ?>
+                            <div class="recentnew-post"
+                                 onclick="location.href='/fonds/<?= $item->model->slug ?>'">
+                                <?= Html::img($item->thumb(315, 200), array('class' => 'main-banks')) ?>
+
+                                <div class="recentnew-detail">
+                                    <h4>
+                                        <a href="/fonds/<?= $item->model->slug ?>"
+                                           title="<?= $item->model->title ?>"><?= $item->model->title ?></a>
+                                    </h4>
+                                </div>
+                            </div>
+                        <? endforeach; ?>
+                    </div>
+                    <div>
+                        <p><?= Yii::t('easyii', '25') ?></p>
+                        <p class="text-center">
+                            <span class="h5"><?= Yii::t('easyii', '26') ?></span>
+                        </p>
+                        <ul>
+                            <li><?= Yii::t('easyii', '27') ?></li>
+                            <li><?= Yii::t('easyii', '28') ?></li>
+                            <li><?= Yii::t('easyii', '29') ?></li>
+                            <li><?= Yii::t('easyii', '30') ?></li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="<?= Url::to(['fonds/']) ?>" class = "theme-btn theme-btn--inline"><?= Yii::t('easyii', '9') ?></a>
+                        </div>
+                    </div>
+                    <!-- Recent News Carousel -->
                 </div>
+            </div>
             </div>
         </div>
     </div>
 </section>
-<section>
-    <div class="block grayish high-opacity">
+<section class=" grayish high-opacity pad">
         <div class="fixed-bg"></div>
         <div class="container">
             <div class="row">
@@ -464,7 +482,7 @@ $iteration = 1;
                     <div class="spec-services">
                         <div class="title1 vertical">
                             <h2><?= Yii::t('easyii', '31') ?> <span><?= Yii::t('easyii', '32') ?></span></h2>
-                            <span><?= Yii::t('easyii', '33') ?></span>
+                            <div><?= Yii::t('easyii', '33') ?></div>
                         </div>
                         <div class="about-services">
                             <p><?= Yii::t('easyii', '34') ?></p>
@@ -509,7 +527,7 @@ $iteration = 1;
                                 <div class="col-md-6">
                                     <div class="service1">
                                         <span><i class="flaticon-new-coin"></i></span>
-                                        <h4><a href="#services-list1" title=""><?= Yii::t('easyii', '44') ?></a></h4>
+                                        <h4><a href=" <?=Url::to(['/fonds/holding-obschaya-informaciya-preimuschestva-i-nedostatki'])?>"><?= Yii::t('easyii', '44') ?></a></h4>
                                         <i><?= Yii::t('easyii', '45') ?></i>
                                     </div>
                                 </div>
@@ -524,10 +542,9 @@ $iteration = 1;
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
-<section class="top20">
+<section class="top20 pad">
     <div class="container">
 
         <div class="row">
@@ -610,8 +627,7 @@ $iteration = 1;
 </section>
 
 <? if(false): ?>
-<section>
-    <div class="block no-padding blackish high2-opacity">
+<section class="blackish high2-opacity">
         <div class="parallax" data-velocity="-.4"
              style="background-image: url('<?= Image::thumb('/uploads/theme_villa/parallax4-3.jpg', 900, 420) ?>');"></div>
         <div class="container">
@@ -638,7 +654,12 @@ $iteration = 1;
                 </div>
             </div>
         </div>
-    </div>
 </section>
+<script>
+    $(function() {
+        $('.sadsa').lazy();
+    });
+
+</script>
 <? endif; ?>
 

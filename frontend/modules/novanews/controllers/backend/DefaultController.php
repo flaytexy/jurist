@@ -7,8 +7,10 @@ use common\models\Language;
 
 use frontend\modules\banks\api\Banks;
 use frontend\modules\novanews\models\Novanews;
+use frontend\modules\novanews\models\NewsPlan;
 use frontend\modules\novanews\models\NovanewsTranslation;
-
+use frontend\helpers\Image;
+use common\helpers\Telegram;
 use Yii;
 use yii\helpers\Url;
 use yii\data\Pagination;
@@ -64,6 +66,7 @@ class DefaultController extends ContentAdminController
 
     public function actionIndex()
     {
+        $searchpage = Yii::$app->request->post('searchpage');
         $query = Novanews::find()
             ->joinWith('translations')
             ->where(['type' => Novanews::$_type])
@@ -79,6 +82,7 @@ class DefaultController extends ContentAdminController
 
         $models = $query
             ->where(['type' => Novanews::$_type])
+           ->filterWhere(['like', 'name', $searchpage])
             //->orderBy([Novanews::tableName() . '.time' => SORT_DESC])//publish_date' => SORT_DESC
             ->orderBy([Novanews::tableName() . '.id' => SORT_DESC])
             ->offset($pages->offset)
@@ -154,12 +158,18 @@ class DefaultController extends ContentAdminController
 //            $child = new Banks(); //@todo
 //            //$child->loadDefaultValues();
 //        }
+//        if (isset($model->child)) {
+//            //$child = Banks::find()->where(['bank_id'=>$model->child->primaryKey])->one();
+//            $child = $model->child;
+//        } else {
+//            $child = new NewsPlan();
+//            $child->loadDefaultValues();
+//        }
 
 
 
         if ($request->post()) {
-            //$this->_saveItem($model, $request, $translation_models, $child); //@todo
-            $modelFinish = $this->_saveItem($model, $request, $translation_models);
+            $this->_saveItem($model, $request, $translation_models); //@todo
         }
 
 
@@ -212,6 +222,38 @@ class DefaultController extends ContentAdminController
 
         return $this->redirect(Url::to(['/admin/novanews/default/index']));
     }
+   public  function  actionPostnews(){
+       $timeNow = date('Y-m-d');
+       $models = Novanews::find()
+           -> join('RIGHT JOIN', 'content_translation','content_translation.content_id = content.id')
+           -> with ('translations')
+           -> where (['content_translation.publish_date'=>$timeNow])
+           ->all();
+$text ='';
+       foreach ($models as $model){
+           $title = $model->translation->name;
+           $description = (!empty($model->translation->meta_description)) ? $model->translation->meta_description : '';
 
+           //$img = (isset($model->image) && !empty($model->image)) ? Image::thumb($model->image, 800, 200) : Image::thumb($model->pre_image, 800, 450);
+           $img = Image::thumb($model->pre_image, 800, 450);
+           $img = Url::base('https') . $img;
+
+           $link = Url::base('https') . '/news/'. $model->slug ;
+           $text = "<a href='".trim($img)."'>✉</a>\n<a href='".$link."'>".trim($title)."</a>\n".trim($description);
+//
+            Telegram::sendMessage($text);
+
+           $translation = $model->translation;
+           $translation->public_status= Novanews::STATUS_ON;
+           $translation->publish_date=NULL;
+           $translation->save(false);
+           $model->time = time();
+           $model->post_telegram = 1;
+           $model->save(false);
+
+       }
+
+
+   }
 
 }

@@ -64,6 +64,7 @@ class DefaultController extends ContentAdminController
 
     public function actionIndex()
     {
+        $searchpage = Yii::$app->request->post('searchpage');
         $query = Novaoffers::find()
             ->joinWith('translations')
             ->where(['type' => Novaoffers::$_type])
@@ -78,6 +79,7 @@ class DefaultController extends ContentAdminController
 
         $models = $query
             ->where(['type' => Novaoffers::$_type])
+            ->filterWhere(['like', 'name', $searchpage])
             ->orderBy([Novaoffers::tableName() . '.time' => SORT_DESC])//publish_date' => SORT_DESC
             ->offset($pages->offset)
             ->limit($pages->limit)

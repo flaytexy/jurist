@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\assets\AdminAsset;
 
+
 $asset = AdminAsset::register($this);
 $moduleName = $this->context->module->id;
 ?>
@@ -96,7 +97,7 @@ $moduleName = $this->context->module->id;
                 <div class="box sidebar">
                     <a href="<?= Url::to(['/admin/novanews']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novanews') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
-                        Статии (Новое)
+                        Статьи (Новое)
                     </a>
 
                     <a href="<?= Url::to(['/admin/novabanks']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novabanks') ? 'active' :'' ?>">
@@ -108,7 +109,14 @@ $moduleName = $this->context->module->id;
                         <i class="glyphicon glyphicon-file"></i>
                         Компании (Новое)
                     </a>
-
+                    <a href="<?= Url::to(['/admin/licenses']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'licenses') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Лицензии
+                    </a>
+                    <a href="<?= Url::to(['/admin/sale']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'sale') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Предложения
+                    </a>
                     <a href="<?= Url::to(['/admin/slidemain']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'slidesmall') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         Слайдер (верхний)
@@ -120,6 +128,10 @@ $moduleName = $this->context->module->id;
                     <a href="<?= Url::to(['/admin/slidesmall']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'slidesmall') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         Слайдер (нижний)
+                    </a>
+                    <a href="<?= Url::to(['/admin/default/flush']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novanews') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Сброс кеша
                     </a>
                     <!--
                     <a href="<?= Url::to(['/admin/page?type=6']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'offshore') ? 'active' :'' ?>">
@@ -186,6 +198,7 @@ $moduleName = $this->context->module->id;
                     <?php endif; ?>
                 </div>
                 <div class="box content">
+
                     <div class="page-title">
                         <?= $this->title ?>
                     </div>
@@ -200,6 +213,7 @@ $moduleName = $this->context->module->id;
         </div>
     </div>
 </div>
+
 <?php $this->endBody() ?>
 </body>
 </html>

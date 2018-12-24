@@ -6,7 +6,7 @@ use Yii;
 class Admin extends \common\components\ActiveRecord implements \yii\web\IdentityInterface
 {
     static $rootUser = [
-        'admin_id' => 0,
+        'admin_id' => 5,
         'username' => 'root',
         'password' => '',
         'auth_key' => '',

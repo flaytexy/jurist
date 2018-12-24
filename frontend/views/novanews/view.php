@@ -78,7 +78,7 @@ Yii::$app->view->registerMetaTag([
         box-shadow:  0 4px 16px rgba(0,0,0,.5);
     }
     .vertical-menu-widget {
-        width: 280px; /* Set a width if you like */
+        /*width: 280px; !* Set a width if you like *!*/
         position: relative;
         -webkit-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
@@ -106,7 +106,9 @@ Yii::$app->view->registerMetaTag([
         -moz-box-shadow:  0 4px 16px rgba(0,0,0,.5);
         box-shadow:  0 4px 16px rgba(0,0,0,.5);
     }
-
+    ul.widget-gallery>li>a {
+        padding: 0;
+    }
     .widget-gallery span {
         bottom: 10px !important;
         top: unset !important;
@@ -173,9 +175,9 @@ Yii::$app->view->registerMetaTag([
     @media (max-width: 1800px) {
 
         .packages-detail {
-            max-width: 80%;
+            max-width: 90%
             margin: auto;
-            margin-left: 105px;
+
 
         }
         .bx-wrapper {
@@ -364,55 +366,40 @@ Yii::$app->view->registerMetaTag([
         -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;
         box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;
     }
+    div.villa-photos-widget ul>li>span {
+        border-radius : 5px;
+        background-color: #FFF;
+    }
 </style>
 
 <section>
     <div class="block">
-        <div class="sidesidebar">
 
-            <div class="vertical-menu-widget">
-                <div class="widget recent-posts-widget">
-                    <div class="title1 style2">
-                        <h2><?= Yii::t('easyii', 'articles') ?> </h2>
-                        <span><?= Yii::t('easyii', 'popularNews') ?> </span>
-                    </div>
-                    <div class="recent-posts">
-                        <?php foreach($top_news as $item) : ?>
-                            <div class="recent-post">
-                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 90, 90)) ?>
-                                <h4><a href="<?= Url::to(['news/'.$item->slug]) ?>"><?= $item->title ?></a></h4>
-                                <span><i class="fa fa-calendar"></i> <?= $item->date ?></span>
-                            </div>
-                        <?php endforeach; ?>
-
-                    </div>
-                </div><!-- Widget -->
-            </div>
-        </div>
-        <div class="sidesidebar2">
-            <?php if(isset($top_offers)) :?>
-            <div class="widget villa-photos-widget">
-                <div class="title1 style2">
-                    <h2><?= Yii::t('easyii', 'goodPropositions') ?></h2>
-                    <span><?= Yii::t('easyii', 'interestingCountries') ?></span>
-                </div>
-                <ul class="widget-gallery">
-                    <?php foreach($top_offers as $item) : ?>
-                        <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
-                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
-                            </a>
-                            <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / <?= Yii::t('easyii', 'days') ?>: <?= $item->how_days?></b></a></span></li>
-                    <?php endforeach; ?>
-
-                </ul>
-            </div><!-- Widget -->
-            <? endif; ?>
-
-        </div>
-        <div class="container container-c">
+        <div class="container-fluid container-c">
             <!-- 1-block -->
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row justify-content-around">
+                <div class="col-lg-3 d-none d-lg-block">
+
+                    <div class="vertical-menu-widget">
+                        <div class="widget recent-posts-widget">
+                            <div class="title1 style2">
+                                <h2><?= Yii::t('easyii', 'articles') ?> </h2>
+                                <span><?= Yii::t('easyii', 'popularNews') ?> </span>
+                            </div>
+                            <div class="recent-posts">
+                                <?php foreach($top_news as $item) : ?>
+                                    <div class="recent-post">
+                                        <?= Html::img(\frontend\helpers\Image::thumb($item->image, 90, 90)) ?>
+                                        <h4><a href="<?= Url::to(['news/'.$item->slug]) ?>"><?= $item->title ?></a></h4>
+                                        <span><i class="fa fa-calendar"></i> <?= $item->date ?></span>
+                                    </div>
+                                <?php endforeach; ?>
+
+                            </div>
+                        </div><!-- Widget -->
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6">
 
                     <div class="packages-detail">
                         <?php if (!empty($page->model->image)) : ?>
@@ -434,6 +421,27 @@ Yii::$app->view->registerMetaTag([
                         </p>
                     </div>
                     <!-- Blog List Posts -->
+                </div>
+
+                <div class="col-lg-3  d-none d-lg-block">
+                    <?php if(isset($top_offers)) :?>
+                        <div class="widget villa-photos-widget">
+                            <div class="title1 style2">
+                                <h2><?= Yii::t('easyii', 'goodPropositions') ?></h2>
+                                <span><?= Yii::t('easyii', 'interestingCountries') ?></span>
+                            </div>
+                            <ul class="widget-gallery">
+                                <?php foreach($top_offers as $item) : ?>
+                                    <li><a href="<?= Url::to(['offers/'.$item->slug]) ?>">
+                                            <?= Html::img(\frontend\helpers\Image::thumb($item->image, 300, 200)) ?>
+                                        </a>
+                                        <span><a href="<?= Url::to(['offers/'.$item->slug]) ?>"><?= $item->title ?><br><b>€<?= $item->price ?> / <?= Yii::t('easyii', 'days') ?>: <?= $item->how_days?></b></a></span></li>
+                                <?php endforeach; ?>
+
+                            </ul>
+                        </div><!-- Widget -->
+                    <? endif; ?>
+
                 </div>
             </div>
 

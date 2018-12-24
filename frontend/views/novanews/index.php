@@ -53,17 +53,18 @@ if(!$page->text && empty($pages)){
                             <?php foreach ($pages as $item) : ?>
                                 <div class="col-md-4">
                                     <div class="package">
-
+                                        <a href="<?= Url::to([$typeTitle.'/'.$item->slug]) ?>" class="">
                                         <div class="package-thumb">
-                                            <a href="<?= Url::to([$typeTitle.'/'.$item->slug]) ?>" class="">
+
                                                 <?php if(isset($item->model->pre_image) && !empty($item->model->pre_image)): ?>
                                                     <?= Html::img(Image::thumb($item->model->pre_image, 320, 180)) ?>
                                                 <?php else: ?>
                                                     <?= Html::img(Image::thumb($item->model->image, 320, 180)) ?>
                                                 <?php endif; ?>
-                                            </a>
+
                                             <!--<span><i>$<?/*= $item->model->price */?></i> / <?/* if ($item->model->how_days): */?><?/*= $item->model->how_days*/?><?/* else: */?>Минимал<?/* endif; */?></span>-->
                                         </div>
+                                        </a>
                                         <div class="package-detail">
 <!--                                        <span class="cate">
                                             <?php /*foreach ($item->tags as $tag) : */?>
@@ -77,7 +78,7 @@ if(!$page->text && empty($pages)){
 
                                                     <?= Html::a(Yii::t('easyii', 'more_details'), [$typeTitle.'/'.$item->slug]) ?></li>
                                                 <li class="book-btn"><i class="fa fa-shopping-basket"></i>
-                                                    <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
+                                                    <a href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
                                                 </li>
                                             </ul>
                                         </div>

@@ -6,7 +6,7 @@ return [
     'news' => 'News',
     'faq' => 'FAQ',
     'contact' => 'Contact Info',
-    'free' => 'Free<br> Consultation!',
+    'free' => 'Ready-made companies with<br> bank account',
     'funds' => 'Funds',
     'banks' => 'Banks',
     'pay_system' => 'Pay system',
@@ -233,4 +233,5 @@ Did not find the information you need? Contact our specialists for online suppor
     'juris' => 'Jurisdiction',
 
     'Categories' => 'Categories',
+    'From' => 'from',
 ];

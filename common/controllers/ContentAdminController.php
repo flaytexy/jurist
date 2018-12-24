@@ -46,7 +46,9 @@ class ContentAdminController extends CategoryController
             $model->publish_date = date('d.m.Y', ($model->publish_date ? $model->publish_date : time()));
 
             foreach ($translation_models as $language => $translation_model) {
+
                 $translation_model->language = $language;
+
 
                 if (!InflectorTextTranslate::slug($translation_model->slug)) {
                     $translation_model->slug = InflectorTextTranslate::slug($translation_model->name);
@@ -54,10 +56,18 @@ class ContentAdminController extends CategoryController
                         $model->slug = $translation_model->slug;
                     }
                 }
-
+                $translation_model->publish_date = date('Y-m-d', strtotime($translation_model->publish_date) );
                 if ($language !== $model->language && !$translation_model->validate()) {
                     $translation_model->public_status = $model::STATUS_OFF;
                 }
+
+                if ( $translation_model->publish_date !='1970-01-01'){
+                    $translation_model->public_status = $model::STATUS_OFF;
+                }
+                else{
+                    $translation_model->publish_date= NULL;
+                }
+
 
                 $translation_model->clearErrors();
             }
@@ -65,10 +75,12 @@ class ContentAdminController extends CategoryController
             $model->publish_date = strtotime($model->publish_date);
 
             if(isset($child) && $child!=false){
+
                 $child->load($request->post());
-                //$child->content_id = $model->primaryKey;
+
                 if ($child->validate()) {
                     $child->save();
+
                 }
             }
 
@@ -102,11 +114,11 @@ class ContentAdminController extends CategoryController
 
             if($model->save(false)){ //@todo true  #langValidAndAddidional
 
-                if(isset($child) && $child!=false){
-                    if($child->validate()){
+                if(isset($child) && $child!=false) {
+                    if ($child->validate()) {
                         $model->link('child', $child);
-                    }else{
-                        Yii::$app->session->setFlash('error', Yii::t('easyii','Update error. {0}', $child->formatErrors()));
+                    } else {
+                        Yii::$app->session->setFlash('error', Yii::t('easyii', 'Update error. {0}', $child->formatErrors()));
                     }
                 }
 
@@ -143,7 +155,7 @@ class ContentAdminController extends CategoryController
                     Yii::$app->session->setFlash('flash-admin-message-success', $is_new_record ? 'Операция по созданию успешна.' : 'Операция по обновлению успешна.');
 
                     if($model->validate() && !$model->post_telegram){
-                        if($model->type_id==2){
+                        if($model->type_id==2 && $model->translation->public_status==1 ){
                             $title = $model->translation->name;
                             $description = (!empty($model->translation->meta_description)) ? $model->translation->meta_description : '';
 
@@ -154,7 +166,7 @@ class ContentAdminController extends CategoryController
                             $link = Url::base('https') . '/news/'. $model->slug ;
                             $text = "<a href='".trim($img)."'>✉</a>\n<a href='".$link."'>".trim($title)."</a>\n".trim($description);
 
-                            Telegram::sendMessage($text);
+                          // Telegram::sendMessage($text);
 
                             $model->post_telegram = 1;
                             $model->save(false);

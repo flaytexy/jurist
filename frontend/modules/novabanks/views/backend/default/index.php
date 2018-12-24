@@ -10,6 +10,7 @@
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 use frontend\modules\novabanks\models\Novabanks;
 
@@ -29,6 +30,7 @@ $moduleName = $this->context->module->id;
                         добавить
                     </a>
                 </h3>
+
             </div>
         </div>
     </div>
@@ -40,6 +42,21 @@ $moduleName = $this->context->module->id;
             <div class="item-row">
                 <div class="item-col item-col-header item-col-title">
                     <div> <span>Банки</span> </div>
+                </div>
+                <div>
+
+
+                    <?
+                    $searchform = ActiveForm::begin(['action' => '/admin/novabanks',
+                        'method' => 'post',
+                    ]);
+
+                    ?>
+                    <?= Html::input('text', 'searchpage', $this->params['searchpage'], []) ?>
+                    <?= Html::submitButton(Yii::t('easyii', 'search'), ['class' => 'btn btn-primary submit']) ?>
+
+                    <?php ActiveForm::end(); ?>
+
                 </div>
                 <div class="item-col item-col-header fixed item-col-actions-dropdown"> </div>
             </div>

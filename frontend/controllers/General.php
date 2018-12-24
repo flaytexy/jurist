@@ -28,7 +28,8 @@ class General extends \yii\web\Controller
         return array(
             $this->getTopNews(),
             $this->getTopBanks(),
-            $this->getTopOffers()
+            $this->getTopOffers(),
+            $this->getTopPaySystem()
         );
     }
 
@@ -84,7 +85,31 @@ class General extends \yii\web\Controller
 
         return $topBanks;
     }
+    public function getTopPaySystem($limit = false){
+        if ($limit == false) {
+            $limit = 3;
+        }
 
+        $rows = NovabanksModel::find()
+            //->select([NovabanksModel::tableName().'.*', NovabanksTranslation::tableName().'.*'])
+            ->joinWith('translation')
+            ->joinWith('bank')
+            ->andWhere([NovabanksModel::tableName() . '.type_id' => 151])
+            ->andWhere([NovabanksTranslation::tableName() . '.public_status' => NovabanksTranslation::STATUS_ON])
+            ->status(NovabanksModel::STATUS_ON)
+            ->orderBy(['rating' => SORT_DESC])
+            ->limit(3)
+            //->asArray()
+            ->all();
+
+        foreach ($rows as $item) {
+            $obj = new NovabanksObject($item);
+
+            $topPay[] = $obj;
+        }
+
+        return $topPay;
+    }
     /**
      * @return NovaOffersObject[]
      */

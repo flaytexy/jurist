@@ -218,20 +218,20 @@ $(function (e) {
         }
     });
 
-    $("b:contains('Русский')").addClass('Rus');
-    $("b:contains('English')").addClass('Eng');
-    $("li:contains('English')").addClass('Eng');
-    $("li:contains('Русский')").addClass('Rus');
+    $("b:contains('Рус')").addClass('Rus');
+    $("b:contains('Eng')").addClass('Eng');
+    $("li:contains('Eng')").addClass('Eng');
+    $("li:contains('Рус')").addClass('Rus');
 
 
     //Check to see if the window is top if not then display button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 500) {
-            $('.scrollToTop').fadeIn();
-        } else {
-            $('.scrollToTop').fadeOut();
-        }
-    });
+    // $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 500) {
+    //         $('.scrollToTop').fadeIn();
+    //     } else {
+    //         $('.scrollToTop').fadeOut();
+    //     }
+    // });
 
     //Click event to scroll to top
     $('.scrollToTop').click(function () {
@@ -365,24 +365,24 @@ $(window).load(function () {
 
     initMaps();
 
-    // executes when complete page is fully loaded, including all frames, objects and images
-    (function () {
-        var cx = '014824414261944164439:sfk3fpa6eoq';
-        var gcse = document.createElement('script');
-        gcse.type = 'text/javascript';
-        gcse.async = true;
-        //gcse.class = 'gsc-search-button gsc-search-button-v2 fa fa-search';
-        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-        //gcse.src = '/js/google-async-ads.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(gcse, s);
-
-        //console.log("cse.google.com/cse.js loaded.");
-    })();
-    setTimeout(function () {
-        $('.gsc-search-box td.gsc-search-button').addClass("fa fa-search");
-        $('td.gsc-search-button input').attr('type', 'button').attr('src', '');
-    }, 1000);
+    // // executes when complete page is fully loaded, including all frames, objects and images
+    // (function () {
+    //     var cx = '014824414261944164439:sfk3fpa6eoq';
+    //     var gcse = document.createElement('script');
+    //     gcse.type = 'text/javascript';
+    //     gcse.async = true;
+    //     //gcse.class = 'gsc-search-button gsc-search-button-v2 fa fa-search';
+    //     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    //     //gcse.src = '/js/google-async-ads.js';
+    //     var s = document.getElementsByTagName('script')[0];
+    //     s.parentNode.insertBefore(gcse, s);
+    //
+    //     //console.log("cse.google.com/cse.js loaded.");
+    // })();
+    // setTimeout(function () {
+    //     $('.gsc-search-box td.gsc-search-button').addClass("fa fa-search");
+    //     $('td.gsc-search-button input').attr('type', 'button').attr('src', '');
+    // }, 1000);
 
     // if(typeof(_DEBUG_MODE)=='undefined' || _DEBUG_MODE == false){
     //     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();

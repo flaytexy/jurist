@@ -11,7 +11,7 @@ use yii\helpers\Html;
         display: inline-block;
         position: absolute;
         color: white;
-        top: 15%;
+        top: 35%;
         right: 13px;
     }
 

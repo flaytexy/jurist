@@ -7,7 +7,7 @@ use common\models\ContentTranslation;
 /**
  * Class NovanewsTranslation
  * @package frontend\modules\novanews\models
- *
+ * @property string $publish_date
  * @property int $id
  * @property int $content_id
  * @property string $language
@@ -37,6 +37,7 @@ class NovanewsTranslation extends ContentTranslation
             }],
             [['language'], 'in', 'range' => ['ru-RU', 'en-US'], 'message' => 'Неверное значение языка'],
             [['public_status'], 'boolean'],
+            [['publish_date'], 'safe'],
             [['name', 'short_description', 'description', 'meta_title', 'meta_keywords', 'meta_description', 'meta_h1'], 'trim'],
             [['meta_title', 'meta_keywords', 'meta_description', 'meta_h1', 'tagNames'], 'safe'],
         ];
@@ -50,6 +51,7 @@ class NovanewsTranslation extends ContentTranslation
             'short_description' => 'Краткое содержание (до 100)',
             'description' => 'Содержание',
             'language' => 'Язык',
+            'publish_date' => 'Дата публикации'
         ];
     }
 

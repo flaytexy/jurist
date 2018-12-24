@@ -84,7 +84,7 @@ Yii::$app->view->registerMetaTag([
                                         <?= Html::img(Image::thumb($page->model->pre_image, 800, 450)) ?>
                                     <?php endif; ?>
 
-                                    <div class="blogpost-detail">
+                                    <div class="packages-detail">
                                         <ul class="post-meta style2">
                                             <li><i class="fa fa-calendar"></i> <?= $page->date ?></li>
                                             <li><i class="fa fa-comment"></i><a href="#" title="">Прочитали <?= $page->views * 3 ?> человек</a></li>
@@ -93,23 +93,23 @@ Yii::$app->view->registerMetaTag([
                                         <div class="text-con">
                                             <?= $page->getDescription() ?>
                                         </div>
-
-                                        <div class="tags-social">
-                                            <div class="tags">
-                                                <ul class="cate-list">
-                                                    <?php foreach($page->tags as $tag) : ?>
-                                                        <li><a href="<?= Url::to(['/news/tag/'.$tag]) ?>" class="label label-info"><?= $tag ?></a></li>
-                                                    <?php endforeach; ?>
-                                                </ul>
-                                            </div>
-                                            <div class="social-btns">
-                                                <ul>
-                                                    <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
-                                                    <li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+<!---->
+<!--                                        <div class="tags-social">-->
+<!--                                            <div class="tags">-->
+<!--                                                <ul class="cate-list">-->
+<!--                                                    --><?php //foreach($page->tags as $tag) : ?>
+<!--                                                        <li><a href="--><?//= Url::to(['/news/tag/'.$tag]) ?><!--" class="label label-info">--><?//= $tag ?><!--</a></li>-->
+<!--                                                    --><?php //endforeach; ?>
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                            <div class="social-btns">-->
+<!--                                                <ul>-->
+<!--                                                    <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>-->
+<!--                                                    <li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>-->
+<!--                                                    <li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
 
                                         <?php if(count($page->photos)) : ?>
                                         <div class="comments-sec">

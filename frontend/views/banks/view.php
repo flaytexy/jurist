@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                     <? endif ?>
                                 </div>
                                 <strong class="per-night" style="font-family: Arial"><span>€</span><?= $page->price; ?> <i><?= Yii::t('easyii', 'days') ?>: <?= $page->model->how_days; ?></i></strong>
-                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title=""><?= Yii::t('easyii', '10') ?></a>
+                                <a href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title=""><?= Yii::t('easyii', '10') ?></a>
                                 <div class="title-video alignleft">
                                     <h1><?= $page->seo('h1', $page->title) ?></h1>
                                     <span><?= $page->seo('h1', $page->short) ?></span>

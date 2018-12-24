@@ -15,4 +15,6 @@ include_once('./amocrm/src/Models/CustomField.php');
 include_once('./amocrm/src/Models/Note.php');
 include_once('./amocrm/src/Models/WebHooks.php');
 include_once('./amocrm/src/Webhooks/Listener.php');
+include_once ('./amocrm/src/Models/Call.php');
+include_once ('./amocrm/src/Models/Links.php');
 ?>

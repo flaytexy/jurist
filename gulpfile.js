@@ -8,6 +8,8 @@ var minifyJS = require('gulp-uglify');
 var cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
+var prefixer = require('gulp-autoprefixer');
+var sass = require('gulp-sass');
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,17 +40,37 @@ var concat = require('gulp-concat');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// css
+gulp.task('sass:build', function () {
+    gulp.src('sass/styles.sass') //Выберем наш main.scss
+
+        .pipe(sass()) //Скомпилируем
+        .pipe(prefixer()) //Добавим вендорные префиксы
+        .pipe(gulp.dest('frontend/media/css/')); //И в build
+
+});
+
+gulp.task('sass:buildmain', function(){
+    gulp.src('sass/main.sass')
+        .pipe(sass()) //Скомпилируем
+        .pipe(prefixer()) //Добавим вендорные префиксы
+        .pipe(gulp.dest('frontend/assets/main/css')); //И в build
+
+})
+
+
+
+
 
 gulp.task('css', function () {
     return gulp.src([
         //'frontend/media/css/bootstrap.css',
-       'frontend/media/css/jquery-ui.smoothness.1.12.1.css',
+       // 'frontend/media/css/jquery-ui.smoothness.1.12.1.css',
        'frontend/media/css/bootstrap.4.1.3.min.css',
         //'vendor/bower-asset/jquery-ui/themes/smoothness/jquery-ui.min.css',
         //'vendor/bower-asset/jquery-ui/themes/smoothness/theme.css',
         'frontend/media/css/flaticon.css',
         'frontend/media/css/font-awesome/css/font-awesome.min.css',
-        'frontend/media/css/animate.3.2.3.css',
+        // 'frontend/media/css/animate.3.2.3.css',
         'frontend/media/css/prefix2.css',
         'frontend/media/css/styles.css'
     ])
@@ -64,7 +86,8 @@ gulp.task('css', function () {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// default
-gulp.task('default', ['css'], function () {
+gulp.task('default', ['sass:build','css']
+    // , function () {
 
     // gulp.src(["!public_html/css/*.min.css", 'public_html/css/*.css'])
     //     .pipe(cssmin())
@@ -76,4 +99,5 @@ gulp.task('default', ['css'], function () {
     //     .pipe(rename({suffix: '.min'}))
     //     .pipe( gulp.dest('public_html/js'))
 
-});
+// }
+);

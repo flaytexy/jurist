@@ -15,7 +15,7 @@ use kartik\date\DatePicker;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-
+use kartik\date\DatePicker as DateWidget;
 use frontend\widgets\DateTimePicker;
 use frontend\helpers\Image;
 use frontend\widgets\TagsInput;
@@ -29,7 +29,11 @@ if(IS_ROOT){
 }
 
 ?>
-
+<style>
+    .datepicker>div{
+        display: block;
+    }
+</style>
 <div class="item-editor-page">
 
     <div class="title-block">
@@ -120,6 +124,9 @@ if(IS_ROOT){
             //            ?>
 
             <?= Html::submitButton($model->isNewRecord ? 'Сохранить(new)' : 'Сохранить', ['class' => 'btn btn-primary btn-block']) ?>
+            <?php if (isset($model->slug)) :?>
+                <a class="btn btn-primary btn-block" target="_blank" href="<?=Url::to(['/news/'.$model->slug]) ?>">Посмотреть запись </a>
+            <?php   endif;?>
         </div>
 
 
@@ -277,15 +284,15 @@ JS
                     'preset' => 'full',
                     'clientOptions' => ElFinder::ckeditorOptions('elfinder',
                         [
-                            //'allowedContent' => true,
+                            'disallowedContent' => 'h1 h2 span; p li{color,background*,text-align,font-size,list-style*}',
                             //"extraAllowedContent" => 'span;ul;li;table;td;style;*[id];*(*);*{*}', // all-style: *{*}, all-class: *(*), all-id: *[id]
-                            "extraAllowedContent" => '*(*);*[id];table{*};', // all-style: *{*}, all-class: *(*), all-id: *[id]
+                            "extraAllowedContent" => '*(*);*[id];table{*}; p[color];', // all-style: *{*}, all-class: *(*), all-id: *[id]
                             'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
-                            'extraPlugins' => 'justify,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog,liststyle',
-                            'contentsCss' => ['/css/style_all.min.css?v=2018-02-07-v03'],
+                            'extraPlugins' => 'justify,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog,liststyle,inserthtmlfile,googleDocPastePlugin',
+                            'contentsCss' => ['/css/style_all.min.css'],
                             'toolbar' => [
                                 ['name' => 'document', 'groups' => ['mode', 'document', 'doctools'], 'items' => ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']],
-                                ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']],
+                                ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','inserthtmlfile']],
                                 ['name' => 'editing', 'groups' => ['find', 'selection', 'spellchecker'], 'items' => ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt']],
                                 ['name' => 'forms', 'items' => ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField']],
                                 '/',
@@ -352,6 +359,13 @@ JS
                 echo $form->field($translation_model, "[$language]meta_description", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
                     ->label(null, ['class' => 'form-control-label'])
                     ->textInput(['class' => 'form-control boxed']);
+                echo $form->field($translation_model,"[$language]publish_date",  ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]]) ->widget(DateWidget::classname(), [
+                    'options' => ['placeholder' => 'Enter publish date ...'],
+                    'pluginOptions' => [
+                        'autoclose'=>true,
+                        'format' => 'yyyy-mm-dd'
+                    ]
+                ]);
 
                 if (IS_ROOT) {
                     echo $form->field($translation_model, "[$language]slug", ['options' => ['class' => 'form-group language_' . $language . ($model->language !== $language ? ' hidden' : '')]])
@@ -365,6 +379,7 @@ JS
             }
 
             echo $form->field($model, 'to_main')->checkbox(['id' => 'to_main', 'checked' => true])->label(false)->error(false);
+
             echo $form->field($model, 'time')->widget(DateTimePicker::className());
             echo $form->field($model, 'tagNames')->widget(TagsInput::className()) ;
 

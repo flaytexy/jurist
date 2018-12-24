@@ -85,4 +85,8 @@ class NovaoffersObject extends APIObject
     public function gethow_days(){
         return ($this->how_days!==null) ?  $this->how_days: $this->model->child->how_days;
     }
+    public function getprice_prefix(){
+        return ($this->price_prefix!==null) ?  $this->price_prefix: $this->model->child->price_prefix;
+    }
+
 }

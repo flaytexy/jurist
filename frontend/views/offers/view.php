@@ -6,6 +6,8 @@ use frontend\helpers\Image;
 $this->title = $offers->seo('title', $offers->model->title);
 $this->params['breadcrumbs'][] = ['label' => 'Компании', 'url' => ['offers/index']];
 $this->params['breadcrumbs'][] = $offers->model->title;
+
+
 ?>
 
 <style>
@@ -344,7 +346,7 @@ $this->params['breadcrumbs'][] = $offers->model->title;
                             </div>
                             <!-- <i class="fa fa-play-circle"></i>-->
                             <strong class="per-night" style="font-family: Arial"><span>€</span><?= $offers->price; ?> <i><?= Yii::t('easyii', 'days') ?>: <?= $offers->model->how_days; ?></i></strong>
-                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title=""><?= Yii::t('easyii', '10') ?></a>
+                            <a href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title=""><?= Yii::t('easyii', '10') ?></a>
 
                             <div class="title-video alignleft">
                                 <h1><?= $offers->seo('h1', $offers->title) ?></h1>

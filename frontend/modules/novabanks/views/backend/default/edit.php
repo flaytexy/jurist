@@ -122,6 +122,9 @@ if(IS_ROOT){
             //            ?>
 
             <?= Html::submitButton($model->isNewRecord ? 'Сохранить(new)' : 'Сохранить', ['class' => 'btn btn-primary btn-block']) ?>
+            <?php if (isset($model->slug)) :?>
+                <a class="btn btn-primary btn-block" target="_blank" href="<?=Url::to(['/banks/'.$model->slug]) ?>">Посмотреть запись </a>
+               <?php   endif;?>
         </div>
 
 
@@ -219,7 +222,7 @@ if(IS_ROOT){
                         '2' => 'Личный счет'
                     ]) ?>
                     <?= $form->field($child, 'personal')->checkbox(['id' => 'personal', 'checked' => true])->error(false) ?>
-
+                    <?= $form->field($child, 'price_prefix')->checkbox() ?>
                     <?= $form->field($child, 'price') ?>
                     <?= $form->field($child, 'how_days') ?>
 
@@ -332,15 +335,16 @@ JS
                     'preset' => 'full',
                     'clientOptions' => ElFinder::ckeditorOptions('elfinder',
                         [
+                            'disallowedContent' => 'h1 h2 span; p li{color,background*,text-align,font-size,list-style*}',
                             //'allowedContent' => true,
                             //"extraAllowedContent" => 'span;ul;li;table;td;style;*[id];*(*);*{*}', // all-style: *{*}, all-class: *(*), all-id: *[id]
                             "extraAllowedContent" => '*(*);*[id];table{*};', // all-style: *{*}, all-class: *(*), all-id: *[id]
                             'filebrowserImageUploadUrl' => Url::to(['/admin/redactor/uploader', 'dir' => 'offers']),
-                            'extraPlugins' => 'justify,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog,liststyle',
+                            'extraPlugins' => 'justify,link,font,div,table,tableresize,tabletools,uicolor,colorbutton,colordialog,liststyle,inserthtmlfile,googleDocPastePlugin',
                             'contentsCss' => ['/css/style_all.min.css?v=2018-02-07-v03'],
                             'toolbar' => [
                                 ['name' => 'document', 'groups' => ['mode', 'document', 'doctools'], 'items' => ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']],
-                                ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']],
+                                ['name' => 'clipboard', 'groups' => ['clipboard', 'undo'], 'items' => ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','inserthtmlfile']],
                                 ['name' => 'editing', 'groups' => ['find', 'selection', 'spellchecker'], 'items' => ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt']],
                                 ['name' => 'forms', 'items' => ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField']],
                                 '/',

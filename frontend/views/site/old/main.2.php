@@ -656,7 +656,7 @@ MainAsset::register($this);
                                                                 href="/offers/<?= $offer->model->slug ?>"
                                                                 title=""><?= Yii::t('easyii', '9') ?></a></li>
                                                     <li class="book-btn"><i class="fa fa-shopping-basket"></i> <a
-                                                                href="javascript:void( window.open( 'https://form.jotformeu.com/71136944138357', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
+                                                                href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )"><?= Yii::t('easyii', '10') ?></a>
                                                     </li>
                                                 </ul>
                                             </div>
