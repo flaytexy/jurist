@@ -97,8 +97,10 @@ Yii::$app->view->registerMetaTag([
                                         <?= Html::img(Image::thumb($page->model->image, 1200, 300), ['width' => '100%', 'height' => '100%']) ?>
                                     <? endif ?>
                                 </div>
-                                <strong class="per-night" style="font-family: Arial"><span>€</span><?= $page->model->bank->price; ?> <i><?= Yii::t('easyii', 'days') ?>: <?= $page->model->bank->how_days; ?></i></strong>
+                                <?php if ( $page->model->bank->price >0): ?>
+                                <strong class="per-night" style="font-family: Arial"> <?php if ($page->model->bank->price_prefix): ?><?=Yii::t('easyii','From')?>  <?endif; ?><span>€</span><?= $page->model->bank->price; ?> <i><?= Yii::t('easyii', 'days') ?>: <?= $page->model->bank->how_days; ?></i></strong>
                                 <a href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title=""><?= Yii::t('easyii', '10') ?></a>
+                                <?php endif; ?>
                             </div><!-- Widget -->
                         <?php endif; ?>
 

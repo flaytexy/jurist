@@ -47,7 +47,7 @@ class PaysystemController extends General
             'bank_type' => $type_id,
             //
             'banksPist' => $this->getBankPist(),
-            'top_banks' => $this->getTopBanks(),
+            'top_banks' => $this->getTopPaySystem(),
             'top_offers' => $this->getTopOffers(),
             'top_news' => $this->getTopNews()
         ]);

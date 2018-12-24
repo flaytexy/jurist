@@ -1,6 +1,5 @@
 <?php
-use frontend\modules\banks\api\Banks;
-use frontend\modules\page\api\Page;
+
 
 use frontend\helpers\Image;
 
@@ -71,12 +70,12 @@ $this->params['breadcrumbs'][] = $page->title;
                                     <tr>
                                         <td data-order="<?= $item->title ?>" class="col-md-8 col-lg-2">
                                             <h6>
-                                                <?= Html::a($item->title, ['banks/'.$item->model->slug]) ?>
+                                                <?= Html::a($item->title, ['pay-system/'.$item->model->slug]) ?>
                                             </h6>
 
                                             <div class="top15">
                                                 <div class="hide-for-small-down text-left">
-                                                    <a href="<?= Url::to(['banks/'.$item->model->slug]) ?>"><?= Html::img($item->thumb(160, 40)) ?></a>
+                                                    <a href="<?= Url::to(['pay-system/'.$item->model->slug]) ?>"><?= Html::img($item->thumb(160, 40)) ?></a>
                                                 </div>
                                             </div>
                                         </td>
@@ -144,9 +143,10 @@ $this->params['breadcrumbs'][] = $page->title;
                     <ul class="widget-gallery">
                         <?php foreach($top_banks as $item) : ?>
                             <li><a href="<?= Url::to(['banks/'.$item->slug]) ?>">
-                                    <?= Html::img(Image::thumb($item->image, 240, 120)) ?>
+                                    <?= Html::img($item->image) ?>
                                 </a>
-                                <span><a href="<?= Url::to(['banks/'.$item->slug]) ?>"><?= $item->title ?></a></span> </li>
+                                <div class="iq__line"></div>
+                               </li>
                         <?php endforeach; ?>
                     </ul>
                 </div><!-- end: Widget3 -->

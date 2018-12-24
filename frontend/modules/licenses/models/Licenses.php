@@ -4,7 +4,6 @@ namespace frontend\modules\licenses\models;
 
 use common\behaviors\MySluggableBehavior;
 use common\models\Content;
-use frontend\behaviors\CountryAble;
 use frontend\behaviors\Optionable;
 use frontend\behaviors\SeoBehavior;
 use frontend\behaviors\Taggable;

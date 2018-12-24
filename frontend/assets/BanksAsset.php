@@ -9,7 +9,7 @@ class BanksAsset extends \yii\web\AssetBundle
 
     public $css = [
         //'css/frontend.css',
-        'css/banks.css',
+//        'css/banks.css',
     ];
     public $js = [
         'js/banks.js',

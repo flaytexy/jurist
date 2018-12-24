@@ -1313,11 +1313,10 @@ footer .title1.style2 > h2
     max-height: 38px
     max-width: 160px
     position: absolute
-    right: -61px
+    right: 2%
     text-align: center
     text-transform: uppercase
-    top: 50%
-    transform: translateY(-50%) rotate(-90deg)
+    top: 15%
     width: 100%
     &> i
       font-size: 15px
@@ -1346,7 +1345,11 @@ footer .title1.style2 > h2
   padding: 30px 20px 25px
   text-align: center
   width: 100%
-  min-height: 157px
+  min-height: 170px
+  & > *:first-child
+    float: right
+    width: 100%
+    margin-left: -5px
 
 .cate
   display: block
@@ -1358,14 +1361,38 @@ footer .title1.style2 > h2
   color: #555555
   font-size: 16px
   font-weight: 500
+  height: 75px
+  overflow: hidden
   > a
     color: inherit
+  &:before
+    display: block;
+    content: ""
+    float: left
+    width: 5px
+    height: 75px
+  &:after
+    display: block;
+    content: "\02026"
+    box-sizing: content-box
+    float: right
+    position: relative
+    top: -25px
+    left: 100%
+    width: 3em
+    margin-left: -3em
+    padding-right: 5px
+    text-align: right
+    background-size: 100% 100%
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white)
 
 .location-book
-  display: inline-block
+  display: flex
+  justify-content: center
   list-style: outside none none
   margin-bottom: -30px
   padding-left: 0
+  width: 100%
   position: relative
 
 .blacklink a
@@ -1382,13 +1409,14 @@ footer .title1.style2 > h2
   float: left
   font-family: Arial, serif
   font-size: 12px
-  height: 35px
+  padding: 0
   line-height: 35px
-  margin-right: 3px
+  margin-right: 2%
   margin-top: 8px
   overflow: hidden
   position: relative
-  width: 35px
+  width: 36px
+  height: 36px
   z-index: 1
   &:last-child
     margin-right: 0
@@ -1425,7 +1453,7 @@ footer .title1.style2 > h2
       width: 100%
       z-index: -1
     &:hover, &.active
-      width: 165px
+      width: 70%
     &:hover > i, &.active > i
       margin: 0
       opacity: 0
@@ -1442,7 +1470,7 @@ footer .title1.style2 > h2
     white-space: nowrap
     width: 0
   &:hover > a, &.active > a
-    font-size: 16px
+    font-size: 14px
     margin: -2px -6px
     opacity: 1
     visibility: visible
@@ -1596,16 +1624,17 @@ footer .title1.style2 > h2
 .titlebg
   background: rgb(125, 194, 15)
   padding: 7px 0 7px 0
-  font-size: 15px !important
+  font-size: 20px !important
+  text-align: center
   font-family: 'Roboto Condensed', sans-serif
   text-transform: uppercase
   color: white
   margin-bottom: 20px
   p
-    font-size: 15px !important
+    font-size: inherit
     padding: 0
     margin: 0
-    text-align: center !important
+    text-align: inherit
     color: #ffffff
 
 .firstl:first-letter
@@ -2119,7 +2148,6 @@ ul.simlist > li:before, div.simlistdiv ul > li:before
 .package-thumb > span
   font-size: 14px
   font-family: Arial, Arial, Helvetica, Tahoma, sans-serif
-  transform: translateY(-240%) translateX(-40%)
 
 .listcenter
   font-size: 20px
@@ -2201,6 +2229,7 @@ table.dataTable thead
     color: white
 
 .widget-gallery
+  padding: 5%
   span
     bottom: 10px !important
     top: unset !important
@@ -2731,7 +2760,7 @@ table.dataTable thead
     width: 100%
 
 blockquote
-  background: rgba(0, 0, 0, 0) url(/uploads/theme_villa/blockquote-bg.jpg) no-repeat scroll center (center / cover)
+  background: rgba(0, 0, 0, 0) url(/uploads/theme_villa/coffee.jpg) no-repeat scroll center (center / cover)
   border-left: 0 none
   color: #ffffff
   float: left
@@ -2740,8 +2769,7 @@ blockquote
   font-style: italic
   font-weight: 500
   line-height: 30px
-  margin-bottom: 5px
-  margin-top: 45px
+  margin: 5px 0
   padding: 40px
   position: relative
   text-align: center
@@ -2752,13 +2780,13 @@ blockquote
     bottom: 0
     content: ""
     left: 0
-    opacity: 0.6
+    opacity: 0.5
     position: absolute
     right: 0
     top: 0
     z-index: -1
   & > p
-    color: #ffffff
+    color: #7dfc0f
     display: inline-block
     font-family: Georgia, serif
     font-size: 16px
@@ -2934,7 +2962,6 @@ blockquote
     float: left
     list-style: outside none none
     margin-bottom: 0
-    padding-left: 0
     width: 100%
     & > li
       background: #fafafa none repeat scroll 0 0
@@ -2974,11 +3001,13 @@ div.villa-photos-widget
   ul > li > span
     left: 10px
     min-width: 50%
-    padding: 8px
+    padding: 3%
     position: absolute
     text-align: center
     top: 131px
     width: 93%
+    background: #fff
+    border-radius: 5px
 
 ul.widget-gallery > li
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0
@@ -3471,7 +3500,7 @@ header .row .fa
     margin-top: 0
     max-height: 129px
     max-width: 121px
-    padding: 35px 25px
+    padding: 20px 25px
     position: absolute
     right: 105px
     text-align: center

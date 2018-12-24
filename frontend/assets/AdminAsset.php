@@ -13,9 +13,10 @@ class AdminAsset extends \yii\web\AssetBundle
         //'css/vendor.css?v=1562456',
         'css/glyphicons.css',
         'css/style_all.min.css', //
-
+//       'css/jquery-ui.smoothness.1.12.1.css',
+        'css/bootstrap.4.1.3.min.css'
 //        // style_all.min.css:
-//        //'frontend/media/css/jquery-ui.smoothness.1.12.1.css',
+        //'frontend/media/css/jquery-ui.smoothness.1.12.1.css',
 //        //'frontend/media/css/bootstrap.4.1.3.min.css',
 //        //'frontend/media/css/flaticon.css',
 //        //'frontend/media/css/font-awesome/css/font-awesome.min.css',
@@ -25,7 +26,9 @@ class AdminAsset extends \yii\web\AssetBundle
 
     ];
     public $js = [
+
         //'https://code.jquery.com/jquery-3.3.1.slim.min.js',
+        'https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',
         'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js',
         'js/vendor.js?v=2',
@@ -36,6 +39,7 @@ class AdminAsset extends \yii\web\AssetBundle
     ];
     public $depends = [
         'yii\web\JqueryAsset',
+//        'frontend\assets\JqueryUIAsset',
         //'yii\bootstrap\BootstrapPluginAsset',
         'frontend\assets\SwitcherAsset',
     ];

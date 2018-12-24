@@ -204,7 +204,8 @@ $this->params['breadcrumbs'][] = $page->title;
                                             <div class="col-md-4">
                                                 <div class="package">
                                                     <div class="package-thumb">
-                                                        <?= Html::img($item->thumb(240, 60)) ?>
+                                                        <img data-src="<?=$item->thumb(240, 60)?>" class="lazy" alt="">
+<!--                                                        --><?//= Html::img($item->thumb(240, 60)) ?>
                                                         <span><b><? if ($item->model->child->countries[0]->name_ru): ?><?= $item->child->countries[0]->name_ru ?><? else: ?><?= $item->model->bank->location_title ?><? endif; ?></b></span>
                                                     </div>
                                                     <div class="package-detail">

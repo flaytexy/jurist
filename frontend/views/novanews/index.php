@@ -53,17 +53,18 @@ if(!$page->text && empty($pages)){
                             <?php foreach ($pages as $item) : ?>
                                 <div class="col-md-4">
                                     <div class="package">
-
+                                        <a href="<?= Url::to([$typeTitle.'/'.$item->slug]) ?>" class="">
                                         <div class="package-thumb">
-                                            <a href="<?= Url::to([$typeTitle.'/'.$item->slug]) ?>" class="">
+
                                                 <?php if(isset($item->model->pre_image) && !empty($item->model->pre_image)): ?>
                                                     <?= Html::img(Image::thumb($item->model->pre_image, 320, 180)) ?>
                                                 <?php else: ?>
                                                     <?= Html::img(Image::thumb($item->model->image, 320, 180)) ?>
                                                 <?php endif; ?>
-                                            </a>
+
                                             <!--<span><i>$<?/*= $item->model->price */?></i> / <?/* if ($item->model->how_days): */?><?/*= $item->model->how_days*/?><?/* else: */?>Минимал<?/* endif; */?></span>-->
                                         </div>
+                                        </a>
                                         <div class="package-detail">
 <!--                                        <span class="cate">
                                             <?php /*foreach ($item->tags as $tag) : */?>

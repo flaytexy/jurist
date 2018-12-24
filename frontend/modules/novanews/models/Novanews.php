@@ -26,4 +26,12 @@ class Novanews extends Content
     {
         self::$_translateModel = NovanewsTranslation::className();
     }
+
+//    public function getChild() {
+//        return $this->getPlan();
+//    }
+//
+//    public function getPlan() {
+//        return $this->hasOne(NewsPlan::className(), ['content_id' => 'id']);
+//    }
 }

@@ -248,7 +248,6 @@ $config = [
                 'offers' => 'novaoffers/index',
                 'offshornyie-predlozheniya' => 'novaoffers/index',
                 //'offshornyie-predlozheniya' => 'novaoffers/default/index',
-
                 'banks' => 'novabanks/index',
                 'pay-system' => 'paysystem/index',
                 'feed' => 'rss/feed',
@@ -301,14 +300,19 @@ $config = [
                 //'<name:(licenses|offshore|processing|fonds|sale)>' => 'pages/index',                  //@todo
                 //'<name:(licenses|offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'pages/view',     //@todo
 
-                '<name:(offshore|processing|fonds|sale)>/page<page:\d+>' => 'novanews/index',
-                '<name:(offshore|processing|fonds|sale)>' => 'novanews/index',
-                '<name:(offshore|processing|fonds|sale)>/<slug:[\w-]+>' => 'novanews/view',
-
+                '<name:(offshore|processing|fonds)>/page<page:\d+>' => 'novanews/index',
+                '<name:(offshore|processing|fonds)>' => 'novanews/index',
+                '<name:(offshore|processing|fonds)>/<slug:[\w-]+>' => 'novanews/view',
+                '<name:(licenses)>/page<page:\d+>' => 'licenses/index',
+                '<name:(licenses)>/<slug:[\w-]+>' => 'licenses/view',
+                '<name:(licenses)>/<lic_type:[\w-]+>' => 'licenses/index',
+                '<name:(licenses)>/<lic_type:[\w-]+>/<country:[\w-]+' => 'licenses/index',
+                '<name:(sale)>/page<page:\d+>' => 'sale/index',
+                '<name:(sale)>/<slug:[\w-]+>' => 'sale/view', //'banks/view',
                 '<name:(banks|novabanks)>/page<page:\d+>' => 'novabanks/index',
                 '<name:(banks|novabanks)>/<slug:[\w-]+>' => 'novabanks/view', //'banks/view',
-                '<name:(pay-system)>/<slug:[\w-]+>' => 'paysystem/view', //'banks/view',
-
+                '<name:(paysystem)>/<slug:[\w-]+>' => 'pay-system/view', //'banks/view',
+                '<name:(paysystem)>/page<page:\d+>' => 'pay-system/index', //'banks/view',
                 //'<module>/<controller>/<action>/<id:\w+>' => '<module>/<controller>/<action>',
                 //'<module:\w+>/<controller:\w+>/<action:[0-9a-zA-Z_\-]+>/<id:\d+>' => '<module>/<controller>/<action>',
 
@@ -335,27 +339,30 @@ $config = [
         ],
 
         'assetManager' => [
-//            'appendTimestamp' => true,
+            'appendTimestamp' => true,
+//            'forceCopy' => true,
+//            'linkAssets' => true,
             // uncomment the following line if you want to auto update your assets (unix hosting only)
-            //'linkAssets' => true,
+           // 'linkAssets' => true,
             'bundles' => [
+
                 'yii\web\JqueryAsset' => [
                     //'js' => [YII_DEBUG ? 'jquery.js' : 'jquery.min.js']
                     //'js' => [YII_DEBUG ? '//code.jquery.com/jquery-2.2.4.js' : '//code.jquery.com/jquery-2.2.4.min.js']
                     'js' => [
                         //https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
                         //YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js' : '//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
-                        YII_DEBUG ? '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js' : '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+                        YII_DEBUG ? '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' : '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
                         //'//code.jquery.com/jquery-1.12.4.js',
                         //YII_DEBUG ? '//code.jquery.com/jquery-migrate-1.4.1.js' : '//code.jquery.com/jquery-migrate-1.4.1.min.js',
-                        //YII_DEBUG ? '//code.jquery.com/jquery-migrate-3.0.1.js' : '//code.jquery.com/jquery-migrate-3.0.1.min.js'
+                        YII_DEBUG ? '//code.jquery.com/jquery-migrate-3.0.1.js' : '//code.jquery.com/jquery-migrate-3.0.1.min.js'
                     ]
                 ],
                 'yii\bootstrap\BootstrapAsset' => [
                     'css' => [
                         //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css',
                         //YII_DEBUG ? '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' : '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'
-                        //'//stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
+                        //'//stackpath.boots``trapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
                     ],
                 ],
 //                'yii\bootstrap\BootstrapAsset' => [
@@ -367,17 +374,7 @@ $config = [
 //                        '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css',
 //                    ],
 //                ],
-                'yii\jui\JuiAsset' => [
-                    'css' => [],
-//                    'css' => [
-//                        YII_DEBUG ? '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css'
-//                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css' : '//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css'
-//                    ],
-//                    'js' => [
-//                        YII_DEBUG ? '//code.jquery.com/ui/1.12.1/jquery-ui.js' : '//code.jquery.com/ui/1.12.1/jquery-ui.min.js'
-//                        //YII_DEBUG ? '//code.jquery.com/ui/1.7.2/jquery-ui.min.js' : '//code.jquery.com/ui/1.7.2/jquery-ui.min.js'
-//                    ],
-                ],
+
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js' => [
                         //YII_DEBUG ? '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.js' : '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js',
@@ -396,8 +393,8 @@ $config = [
 
         'view' => [
             'class' => '\rmrevin\yii\minify\View',
-            //'enableMinify' => !YII_DEBUG,
-            'enableMinify' => true,
+      'enableMinify' => !YII_DEBUG,
+//            'enableMinify' => true,
             'concatCss' => true, // concatenate css
             'minifyCss' => true, // minificate css
             'concatJs' => true, // concatenate js
@@ -534,6 +531,11 @@ $config = [
                     'viewPath' => '@frontend/modules/licenses/views/backend',
                 ],
 
+                'sale' => [
+                    'class' => 'frontend\modules\sale\Module',
+                    'controllerNamespace' => 'frontend\modules\sale\controllers\backend',
+                    'viewPath' => '@frontend/modules/sale/views/backend',
+                ],
 
                 'novabanks' => [
                     'class' => 'frontend\modules\novabanks\Module',
@@ -574,10 +576,10 @@ $config = [
 
 ];
 
-if (YII_ENV_DEV) {
-
-    $config['components']['assetManager']['forceCopy'] = true;
-}
+//if (YII_ENV_DEV) {
+//
+//    $config['components']['assetManager']['forceCopy'] = true;
+//}
 
 return $config;
 

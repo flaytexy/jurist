@@ -96,6 +96,7 @@ $(function () {
             },
             markerLabelStyle: {
                 initial: {
+                    'font-size': '0',
                     fill: '#000'
                 },
                 hover: {

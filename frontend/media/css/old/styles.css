@@ -2755,7 +2755,7 @@ footer .title1.style2 > h2 {
 
 .villa-locationslist > ul > li:first-child:nth-last-child(5),
 .villa-locationslist > ul > li:first-child:nth-last-child(5) ~ li {
-    width: 20%;
+    width: 16%;
 }
 
 .villa-location {

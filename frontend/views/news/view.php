@@ -84,7 +84,7 @@ Yii::$app->view->registerMetaTag([
                                         <?= Html::img(Image::thumb($page->model->pre_image, 800, 450)) ?>
                                     <?php endif; ?>
 
-                                    <div class="blogpost-detail">
+                                    <div class="packages-detail">
                                         <ul class="post-meta style2">
                                             <li><i class="fa fa-calendar"></i> <?= $page->date ?></li>
                                             <li><i class="fa fa-comment"></i><a href="#" title="">Прочитали <?= $page->views * 3 ?> человек</a></li>

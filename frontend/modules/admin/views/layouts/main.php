@@ -113,7 +113,10 @@ $moduleName = $this->context->module->id;
                         <i class="glyphicon glyphicon-file"></i>
                         Лицензии
                     </a>
-
+                    <a href="<?= Url::to(['/admin/sale']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'sale') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Предложения
+                    </a>
                     <a href="<?= Url::to(['/admin/slidemain']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'slidesmall') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         Слайдер (верхний)
@@ -125,6 +128,10 @@ $moduleName = $this->context->module->id;
                     <a href="<?= Url::to(['/admin/slidesmall']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'slidesmall') ? 'active' :'' ?>">
                         <i class="glyphicon glyphicon-file"></i>
                         Слайдер (нижний)
+                    </a>
+                    <a href="<?= Url::to(['/admin/default/flush']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'novanews') ? 'active' :'' ?>">
+                        <i class="glyphicon glyphicon-file"></i>
+                        Сброс кеша
                     </a>
                     <!--
                     <a href="<?= Url::to(['/admin/page?type=6']) ?>" class="menu-item <?= ($moduleName == 'admin' && $this->context->id == 'offshore') ? 'active' :'' ?>">

@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
         /* Remove default list styling */
         list-style-type: none;
         padding: 0;
-        margin: 0;
+        margin: 0 auto;
     }
 
     #myUL li a {
@@ -144,7 +144,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                         <div class="packages style2 remove-ext2">
                             <div class="row">
                                 <?php foreach ($offersPerPage as $item) : ?>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-4 col-md-6 ">
                                         <div class="package">
 
                                             <a href="<?= Url::to(['offers/'.$item->slug]) ?>">

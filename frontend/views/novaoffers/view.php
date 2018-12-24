@@ -413,7 +413,10 @@ Yii::$app->view->registerMetaTag([
                                 <? endif ?>
                             </div>
                             <!-- <i class="fa fa-play-circle"></i>-->
-                            <strong class="per-night" style="font-family: Arial"><span>€</span><?= $offers->price; ?> <i><?= Yii::t('easyii', 'days') ?>: <?= $offers->how_days; ?></i></strong>
+                            <strong class="per-night" style="font-family: Arial"><span>
+                                    <?php if ($offers->price_prefix):?> <?=Yii::t('easyii','From')?> <?php  endif; ?>
+                                    €</span><?= $offers->price; ?>
+                                <i><?= Yii::t('easyii', 'days') ?>: <?= $offers->how_days; ?></i></strong>
                             <a href="javascript:void( window.open( 'https://form.jotformeu.com/82774951021356', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=700, align=center' ) )" class="book-btn2" title=""><?= Yii::t('easyii', '10') ?></a>
 
                             <!--<div class="title-video alignleft">

@@ -213,8 +213,9 @@ $addeng = Yii::t('easyii', 'free');
 
     <!-- popularly -->
     <section>
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 top20">
+                <div class="top20" style="width: 100%;">
                     <div class="instagram">
                         <div class="title1 light">
                             <h2> <?= Yii::t('easyii', 'lastviews') ?></h2>
@@ -224,15 +225,15 @@ $addeng = Yii::t('easyii', 'free');
                             <ul>
                                 <?php foreach ($popularly as $item) : ?>
                                     <?php if (!empty($item->image) || !empty($item->pre_image)): ?>
-                                    <li>
-                                        <a href="<?= Url::to([$item->slug]) ?>">
-                                            <?= Html::img(\frontend\helpers\Image::thumb($item->image, 150, 150), array('class' => 'main-news')) ?>
-                                            <div class="offered-serviceinfo">
-                                                <span style="font-weight: bolder; color: white;  text-shadow: -5px 0 10px black, 0 5px 10px black, 5px 0 10px black, 0 -5px 10px black; "><?= $item->title ?></span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                <? endif; ?><? endforeach; ?>
+                                        <li>
+                                            <a href="<?= Url::to([$item->slug]) ?>">
+                                                <?= Html::img(\frontend\helpers\Image::thumb($item->image, 150, 150), array('class' => 'main-news')) ?>
+                                                <div class="offered-serviceinfo">
+                                                    <span style="font-weight: bolder; color: white;  text-shadow: -5px 0 10px black, 0 5px 10px black, 5px 0 10px black, 0 -5px 10px black; "><?= $item->title ?></span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    <? endif; ?><? endforeach; ?>
                             </ul>
                         </div>
                         <!-- Instagram Gallery -->
@@ -240,6 +241,8 @@ $addeng = Yii::t('easyii', 'free');
                     <!-- Instagram -->
                 </div>
             </div>
+        </div>
+
     </section>
     <!-- _end popularly -->
 </div>

@@ -13,6 +13,7 @@ use Yii;
  * @property string $pos
  * @property string $coordinates
  * @property string $price
+ * @property boolean $price_prefix
  * @property string $min_deposit
  * @property string $personal
  * @property string $time
@@ -59,7 +60,7 @@ class Banks extends \common\components\ActiveRecord
             [['website', 'location_title'], 'string', 'max' => 128],
             [['website', 'location_title'], 'trim'],
             [['pos', 'coordinates'], 'string', 'max' => 64],
-
+            ['price_prefix','boolean'],
             ['personal', 'integer', 'max' => 1],
             [['price'], 'required'],
             [['price', 'min_deposit'], 'number', 'max' => 100000000],
@@ -99,6 +100,7 @@ class Banks extends \common\components\ActiveRecord
             'short' => Yii::t('easyii/banks', 'Short'),
             'to_main' => Yii::t('easyii/banks', 'На главную'),
             'price' => Yii::t('easyii/banks', 'Цена'),
+            'price_prefix' => Yii::t('easyii/banks', 'Цена от'),
             'how_days' => Yii::t('easyii/banks', 'Дней'),
             'image' => Yii::t('easyii', 'Image'),
             'time' => Yii::t('easyii', 'Date'),

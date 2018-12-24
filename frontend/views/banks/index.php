@@ -64,7 +64,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                             <?php if ($items): ?>
                                 <?php foreach ($items as $item) : ?>
                                     <tr>
-                                        <td data-order="<?= $item->title ?>" class="col-md-8 col-lg-2">
+                                        <td data-order="<?= $item->title ?>" class="col-md-8 col-lg-2 col-sm-4">
                                             <h6>
                                                 <?= Html::a($item->title, ['banks/view', 'slug' => $item->slug]) ?>
                                             </h6>
@@ -76,7 +76,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                             </div>
                                         </td>
 
-                                        <td data-order="<? if ($item->model->countries[0]->name_ru): ?><?= $item->model->countries[0]->name_ru ?><? else: ?><?= $item->model->location_title ?><? endif ?>" class="col-md-8 col-lg-2 text-center">
+                                        <td data-order="<? if ($item->model->countries[0]->name_ru): ?><?= $item->model->countries[0]->name_ru ?><? else: ?><?= $item->model->location_title ?><? endif ?>" class="col-md-8 col-lg-2 col-sm-3 text-center">
                                             <div class="bnk-country">
                                                 <? if ($item->model->countries[0]->alpha): ?><div class="text-center"><div class="bnk-flag"> <div class="label flag flag-icon-background flag-icon-<?= $item->model->countries[0]->alpha ?>">&nbsp;</div></div></div><? endif ?>
                                                 <div class="left tBankLi" style="margin: 2px 0 0 0"><? if ($item->model->countries[0]->name_ru): ?><?= $item->model->countries[0]->name_ru ?><? else: ?><?= $item->model->location_title ?><? endif ?></div>
@@ -112,7 +112,7 @@ $this->params['breadcrumbs'][] = $page->model->title;
                                                 </tr>
                                             </table>
                                         </td>
-                                        <td data-order="<?= $item->price ?>" class="col-md-4 col-lg-2 bg-green-price">
+                                        <td data-order="<?= $item->price ?>" class="col-md-4 col-lg-2 col-sm-3 bg-green-price">
                                             <div class="h6 text-center">
                                                 <span>Цена</span>
                                             </div>

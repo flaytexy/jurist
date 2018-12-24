@@ -5,7 +5,6 @@ class FrontendAsset extends \yii\web\AssetBundle
 {
     public $sourcePath = '@frontend/media';
     public $css = [
-        'css/frontend.css',
         'jquery.switchButton.css'
     ];
     public $js = [

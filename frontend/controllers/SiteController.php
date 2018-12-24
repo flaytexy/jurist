@@ -4,6 +4,8 @@ namespace frontend\controllers;
 
 use frontend\models\Setting;
 
+
+use frontend\modules\licenses\api\Licenses;
 use frontend\modules\novabanks\api\Novabanks;
 use frontend\modules\novabanks\models\NovabanksTranslation;
 use frontend\modules\novanews\api\Novanews;
@@ -203,7 +205,7 @@ class SiteController extends Controller
 
         $fonds = Novanews::items([
             'where' => ['type_id' => 4, 'to_main' => 1, 'status' => 1],
-            'pagination' => ['pageSize' => 2]
+            'pagination' => ['pageSize' => 4]
         ]);
 
         $sale = Novanews::items([

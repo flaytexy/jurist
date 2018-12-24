@@ -49,6 +49,14 @@ gulp.task('sass:build', function () {
 
 });
 
+gulp.task('sass:buildmain', function(){
+    gulp.src('sass/main.sass')
+        .pipe(sass()) //Скомпилируем
+        .pipe(prefixer()) //Добавим вендорные префиксы
+        .pipe(gulp.dest('frontend/assets/main/css')); //И в build
+
+})
+
 
 
 
@@ -56,13 +64,13 @@ gulp.task('sass:build', function () {
 gulp.task('css', function () {
     return gulp.src([
         //'frontend/media/css/bootstrap.css',
-       'frontend/media/css/jquery-ui.smoothness.1.12.1.css',
+       // 'frontend/media/css/jquery-ui.smoothness.1.12.1.css',
        'frontend/media/css/bootstrap.4.1.3.min.css',
         //'vendor/bower-asset/jquery-ui/themes/smoothness/jquery-ui.min.css',
         //'vendor/bower-asset/jquery-ui/themes/smoothness/theme.css',
         'frontend/media/css/flaticon.css',
         'frontend/media/css/font-awesome/css/font-awesome.min.css',
-        'frontend/media/css/animate.3.2.3.css',
+        // 'frontend/media/css/animate.3.2.3.css',
         'frontend/media/css/prefix2.css',
         'frontend/media/css/styles.css'
     ])

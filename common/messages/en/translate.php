@@ -233,4 +233,5 @@ Did not find the information you need? Contact our specialists for online suppor
     'juris' => 'Jurisdiction',
 
     'Categories' => 'Categories',
+    'From' => 'from',
 ];

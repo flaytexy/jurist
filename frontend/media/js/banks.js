@@ -69,7 +69,9 @@ function reCheckJsFilter(whoChange) {
 $(function () {
 // $('input.switch').switcher({copy: {en: {yes: '', no: ''}}});
 // reCheckJsFilter();
-
+    $('.lazy').lazy({
+        visibleOnly: true
+    });
     $('.switcher').on('click', function(){
         reCheckJsFilter();
     });
@@ -93,13 +95,14 @@ $(function () {
 
 $(document).ready(function() {
     ///$('#example').DataTable();
+
     $('#example').DataTable({
         "language": {
             "search": "Поиск"
         },
         "paging": false,
         "aaSorting": []
-    })
+    });
     $('#example_filter input[type="search"]').attr("placeholder", "Имя, страна, срок и т.д.");
 
 } );

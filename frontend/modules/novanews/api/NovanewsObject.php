@@ -42,4 +42,7 @@ class NovanewsObject extends APIObject
         }
         return $this->_photos;
     }
+    public function getchild(){
+        return $this->model->child;
+    }
 }

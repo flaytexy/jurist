@@ -2,50 +2,46 @@
 namespace frontend\controllers;
 
 use frontend\models\Popularly;
-use frontend\modules\Licenses\api\Licenses;
-use frontend\modules\Licenses\models\Licenses as LicensesModel;
+use frontend\modules\licenses\api\Licenses;
+use frontend\modules\licenses\models\Licenses as LicensesModel;
+use frontend\modules\licenses\models\LicensesExt;
 use yii\web\NotFoundHttpException;
-
+use yii;
 /**
- * Class OffersController
+ * Class offersController
  * @package frontend\controllers
  */
 class LicensesController extends General
 {
     public function actionIndex($tag = null)
     {
-        $offers = Licenses::items(['tags' => $tag, 'list' => 1, 'orderBy'=>'title', 'pagination' => ['pageSize' => 1000]]);
-
-        $markers = array();
-        foreach($offers as $offer){
-            $data = array();
-            $cords = explode(';', $offer->coordinates);
-            $data['latLng'] = [$cords[0],$cords[1]];
-            $data['name'] = $offer->title;
-            $data['weburl'] = 'b_' . $offer->id;
-
-            $offsetX = isset($cords[2]) ?  $cords[2] : 0;
-            $offsetY = isset($cords[3]) ?  $cords[3] : 0;
-            $data['offsets'] = array($offsetX,$offsetY);
-            //$data['offsets'] = [$cords[2],$cords[3]];
-
-            $markers[] = $data;
+        $request = Yii::$app->request;
+        $lic_type = $request->get('lic_type');
+        $country =$request->get('country');
+        if(isset($lic_type)) {
+            $licensesPerPage = Licenses::items([
+                'tags' => $tag, 'list' => 1,
+                'orderBy'=>'title',
+                'type_id' => (int)LicensesModel::TYPE_ID,
+                'pagination' => ['pageSize' => 21],
+                'where' => [LicensesExt::tableName().'.lic_type' => $lic_type],
+                'whereCountry' =>[LicensesExt::tableName().'.country' => $country]
+            ]); }
+            else{
+                $licensesPerPage = Licenses::items([
+                    'tags' => $tag, 'list' => 1,
+                    'orderBy'=>'title',
+                    'type_id' => (int)LicensesModel::TYPE_ID,
+                    'pagination' => ['pageSize' => 21],
+                ]);
+            }
+        if (count($licensesPerPage)==1) {
+            return $this->redirect('licenses/'.$licensesPerPage[0]->slug,302)->send();
         }
 
-        Licenses::clear();
-
-        $offersPerPage = Licenses::items([
-            'tags' => $tag, 'list' => 1,
-            'orderBy'=>'title',
-            'type_id' => (int)LicensesModel::TYPE_ID,
-            'pagination' => ['pageSize' => 21]
-        ]);
-
         return $this->render('index', [
-            'markers' => json_encode($markers),
-            'offers' => $offers,
-            'offersPerPage' => $offersPerPage,
-            'mapType' => 'world_mill'
+            'licensesPerPage' => $licensesPerPage,
+
         ]);
     }
 
@@ -64,36 +60,18 @@ class LicensesController extends General
 
         $this->getView()->registerJsFile(\Yii::$app->request->BaseUrl . '/js/site.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
-        $offers = Licenses::get($slug);
-        if(!$offers){
+        $licenses = Licenses::get($slug);
+        if(!licenses){
             throw new NotFoundHttpException('Page Houston, we have a problem.');
         }
 
-        $popularly  = Popularly::findOne(['class' => \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id]);
-        if(empty($popularly)){ $popularly  = new Popularly; }
-        //$popularly->getInherit($news, $popularly);
-        $popularly->class = \Yii::$app->controller->id.'\\'.\Yii::$app->controller->action->id;
-        $popularly->slug = 'offers/'.$offers->slug;
-        $popularly->title = $offers->title;
-        $popularly->item_id = $offers->id;
-        $popularly->image = $offers->image;
-        $popularly->time = time();
-        $popularly->save();
-
-        $offersList = Licenses::items(['list' => 1, 'type_id' => (int) LicensesModel::TYPE_ID]);
-
         // News
         $topNews = $this->getTopNews();
-        // Banks
-        $topBanks = $this->getTopBanks();
-        // Offers
+        // offers
         $topOffers = $this->getTopOffers();
 
         return $this->render('view', [
-            'offers' => $offers,
-            'offersList' => $offersList,
-
-            'top_banks' => $topBanks,
+            'licenses' => $licenses,
             'top_offers' => $topOffers,
             'top_news' => $topNews
         ]);

@@ -144,7 +144,7 @@
 			clipboardUpload: true, // or false
 			clipboardUploadUrl: false, // url
 
-			dnbImageTypes: ['image/png', 'image/jpeg', 'image/gif'], // or false
+			dnbImageTypes: ['image/png', 'image/jpeg', 'image/gif', 'image/html'], // or false
 
 			s3: false,
 			uploadFields: false,

@@ -3,6 +3,7 @@
 namespace frontend\modules\licenses\api;
 
 
+use frontend\modules\licenses\models\LicensesExt;
 use frontend\modules\licenses\models\LicensesTranslation;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -10,6 +11,7 @@ use frontend\models\Tag;
 use frontend\widgets\Fancybox;
 use yii\widgets\LinkPager;
 use frontend\modules\licenses\models\Licenses as LicensesModel;
+use yii\web\NotFoundHttpException;
 
 /**
  * Page module API
@@ -31,6 +33,7 @@ class Licenses extends \common\components\API
     private $_items;
     private $_item = [];
 
+
     public function api_items($options = [])
     {
         $this->_items = [];
@@ -50,6 +53,9 @@ class Licenses extends \common\components\API
 
         if (!empty($options['where'])) {
             $query->andFilterWhere($options['where']);
+        }
+        if (!empty($options['whereCountry'])){
+            $query->andFilterWhere($options['whereCountry']);
         }
 
         if (!empty($options['tags'])) {
@@ -93,7 +99,10 @@ class Licenses extends \common\components\API
         if (!isset($this->_item[$id_slug])) {
             $this->_item[$id_slug] = $this->findPage($id_slug);
         }
-        return $this->_item[$id_slug];
+        if( !$this->_item[$id_slug]){
+            throw new NotFoundHttpException('Page Houston, we have a problem.');
+        }
+        else return $this->_item[$id_slug];
     }
 
     public function api_last($limit = 1)
@@ -166,6 +175,7 @@ class Licenses extends \common\components\API
             $page = LicensesModel::find()
                 //->joinWith('translation')
                 ->where(['or', LicensesModel::tableName() . '.id=:id_slug', LicensesModel::tableName() . '.slug=:id_slug'], [':id_slug' => $id_slug])
+                ->andWhere([LicensesModel::tableName().'.type_id'=>LicensesModel::TYPE_ID])
                 ->status(LicensesModel::STATUS_ON)
                 ->one();
         }
@@ -195,6 +205,14 @@ class Licenses extends \common\components\API
         $this->_items = false;
         $this->_item = [];
     }
-
+    public function api_getcountry($cat){
+        $countryList = LicensesExt::find()
+            -> select (['country'])
+            ->distinct()
+            -> where([LicensesExt::tableName().'.lic_type' => $cat])
+            -> orderBy(['country' => SORT_ASC])
+            ->all();
+        return $countryList;
+    }
 
 }

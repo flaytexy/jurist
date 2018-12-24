@@ -59,6 +59,8 @@ class RedactorController extends \frontend\components\Controller
     }
 
 
+
+
 //    public function actionClipboard()
 //    {
 //        if (!Yii::$app->request->isAjax) {

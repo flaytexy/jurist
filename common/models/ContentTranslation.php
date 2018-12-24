@@ -21,7 +21,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $meta_keywords
  * @property string $meta_description
  * @property string $meta_h1
- *
+ * @property string $publish_date
  * @property int $public_status
  * @property int $created_at
  * @property int $updated_at
@@ -71,6 +71,7 @@ class ContentTranslation extends ActiveRecord
             [['language'], 'in', 'range' => ['ru-RU', 'en-US'], 'message' => 'Неверное значение языка'], // 'uk-UA',
             [['public_status'], 'boolean'],
             [['video_link'], 'string'],
+            [['publish_date'], 'safe'],
             [['name', 'short_description', 'description', 'meta_title', 'meta_keywords', 'meta_description', 'meta_h1'], 'trim'],
             [['meta_title', 'meta_keywords', 'meta_description', 'meta_h1', 'tagNames'], 'safe'],
         ];
