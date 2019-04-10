@@ -101,25 +101,27 @@ class SiteController extends Controller
                     'wp-login',
                     'slug=',
                     'apple-touch',
-                    'minify/'
+                    'minify/',
+                    'backups/'//,
+                    //'backups/',
                 )
             )==false
         ){
             //e_print(strpos_array(Yii::$app->request->url, array('debug/default/toolbar', 'assets/')),'saddassda');
             //e_print('not finded');
             try {
-                $mail =  Yii::$app->mailer->compose()
-                    ->setFrom(Setting::get('robot_email'))
-                    //->setFrom('itc@iq-offshore.com')
-                    ->setTo('akvamiris@gmail.com')
-                    ->setSubject(' Рапорт об ошибке 33 (404)' . Yii::$app->getRequest()->serverName )
-                    ->setHtmlBody('
-                        <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
-                        <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
-                        <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
-            '       )//Url::to()
-                    //->setReplyTo(Setting::get('admin_email'))
-                    ->send();
+//                $mail =  Yii::$app->mailer->compose()
+//                    ->setFrom(Setting::get('robot_email'))
+//                    //->setFrom('itc@iq-offshore.com')
+//                    ->setTo('akvamiris@gmail.com')
+//                    ->setSubject(' Рапорт об ошибке 33 (404)' . Yii::$app->getRequest()->serverName )
+//                    ->setHtmlBody('
+//                        <b>404: ' . Url::base('https') . Yii::$app->request->url . '</b><br />
+//                        <span>Referrer: ' . Yii::$app->request->referrer . '</span><br />
+//                        <span>IP: ' . Yii::$app->request->remoteIP . '</span><br />
+//            '       )//Url::to()
+//                    //->setReplyTo(Setting::get('admin_email'))
+//                    ->send();
             } catch (\Exception $e) {
                 //throw new ErrorException('xxxxxxxxxxfjjidshghadfg');
                 //@to
@@ -172,7 +174,7 @@ class SiteController extends Controller
         $news = Novanews::items([
             'where' => ['type_id' => 2, 'to_main' => 1, 'status' => 1],
             'pagination' => ['pageSize' => 3],
-            'orderBy' => [NovanewsTranslation::tableName().'.id' => SORT_DESC]
+            'orderBy' => ['content.time' => SORT_DESC]
         ]);
 
         $licenses = Novanews::items([
